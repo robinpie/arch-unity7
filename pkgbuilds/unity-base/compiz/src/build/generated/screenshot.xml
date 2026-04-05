@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="screenshot">
+	<short>Screenshot</short>
+	<short xml:lang="am">የመመልከቻ ፎቶ</short>
+	<short xml:lang="ast">Captura pantalla</short>
+	<short xml:lang="be">Здымак экрану</short>
+	<short xml:lang="bg">Снимка на екрана</short>
+	<short xml:lang="bs">Snimak ekrana</short>
+	<short xml:lang="ca">Captura de pantalla</short>
+	<short xml:lang="cs">Snímek obrazovky</short>
+	<short xml:lang="da">Skærmbillede</short>
+	<short xml:lang="de">Bildschirmfoto</short>
+	<short xml:lang="el">Στιγμιότυπο οθόνης</short>
+	<short xml:lang="en_AU">Screenshot</short>
+	<short xml:lang="en_GB">Screenshot</short>
+	<short xml:lang="es">Captura de Pantalla</short>
+	<short xml:lang="eu">Pantaila argazkia</short>
+	<short xml:lang="fi">Kuvakaappaus</short>
+	<short xml:lang="fr">Capture d'écran</short>
+	<short xml:lang="gl">Captura de pantalla</short>
+	<short xml:lang="gu">સ્ક્રીનશોટ</short>
+	<short xml:lang="he">צילום מסך</short>
+	<short xml:lang="hr">Snimka zaslona</short>
+	<short xml:lang="hu">Képernyőkép</short>
+	<short xml:lang="it">Cattura schermate</short>
+	<short xml:lang="ja">スクリーンショット</short>
+	<short xml:lang="ko">스크린샷</short>
+	<short xml:lang="ku">Wêneyê sermaseyê</short>
+	<short xml:lang="ms">Cekupan Skrin</short>
+	<short xml:lang="nb">Skjermbilde</short>
+	<short xml:lang="nl">Schermafdruk</short>
+	<short xml:lang="oc">Captura d'ecran</short>
+	<short xml:lang="or">ସ୍କ୍ରିନ ସଟ</short>
+	<short xml:lang="pl">Zrzut ekranu</short>
+	<short xml:lang="pt">Captura de ecrã</short>
+	<short xml:lang="pt_BR">Capturar tela</short>
+	<short xml:lang="ro">Captură de ecran</short>
+	<short xml:lang="ru">Снимок экрана</short>
+	<short xml:lang="sk">Snímka obrazovky</short>
+	<short xml:lang="sl">Posnetek zaslona</short>
+	<short xml:lang="sq">Pamje ekrani</short>
+	<short xml:lang="sr">Снимљена слика екрана</short>
+	<short xml:lang="sv">Skärmbild</short>
+	<short xml:lang="tr">Ekran Görüntüsü</short>
+	<short xml:lang="ug">ئېكران كۆرۈنۈشى</short>
+	<short xml:lang="uk">Зняток екрану</short>
+	<short xml:lang="vi">Chụp màn hình</short>
+	<short xml:lang="zh_CN">截屏</short>
+	<short xml:lang="zh_HK">螢幕擷取</short>
+	<short xml:lang="zh_TW">螢幕擷取</short>
+	<long>Easily capture parts of your screen and save them as .png image</long>
+	<long xml:lang="bs">S lakoćom uslikajte područja vašeg zaslona i spremite ga kao .png sliku</long>
+	<long xml:lang="cs">Snadno zachytit část obrazovky a uložit jako obrázek .png</long>
+	<long xml:lang="de">Auf einfache Weise Bildschirmfotos von Teilbereichen erstellen und diese als .png-Bild speichern</long>
+	<long xml:lang="en_AU">Easily capture parts of your screen and save them as .png image</long>
+	<long xml:lang="en_GB">Easily capture parts of your screen and save them as .png image</long>
+	<long xml:lang="es">Captura fácilmente partes de su pantalla y las guardar como una imagen .png</long>
+	<long xml:lang="fr">Capture facile de zones de votre écran et sauvegarde au format .png</long>
+	<long xml:lang="gl">Capture facilmente partes da pantalla e gárdeas como imaxes .png.</long>
+	<long xml:lang="hr">S lakoćom uslikajte područja vašeg zaslona i spremite ga kao .png sliku</long>
+	<long xml:lang="ko">사용자 화면 중 일부를 쉽게 캡쳐하여 PNG 이미지로 저장</long>
+	<long xml:lang="ms">Tangkap bahagian skrin anda dengan mudah dan simpan ia sebagai imej .png</long>
+	<long xml:lang="pt">Capture facilmente partes do seu ecrã e guarde-as como uma imagem .png</long>
+	<long xml:lang="ro">Captați cu ușurință părți ale ecranului dumneavoastră și salvați-le ca imagine .png</long>
+	<long xml:lang="ru">Позволяет делать снимки областей экрана и сохранять их в формате .png</long>
+	<long xml:lang="sl">Preprosto zajamite dele vašega zaslona in jih shranite kot slike .png</long>
+	<long xml:lang="sv">Fånga enkelt delar av din skärm och spara dem som .png-bilder</long>
+	<long xml:lang="uk">Дозволяє робити знятки ділянок екрану та зберігати їх у форматі .png</long>
+	<long xml:lang="zh_CN">截取窗口一部分，并保存为 PNG。</long>
+	<category>Extras</category>
+	<deps>
+	    <requirement>
+		<plugin>opengl</plugin>
+		<plugin>compiztoolbox</plugin>
+		<feature>imageext:png</feature>
+	    </requirement>
+	    <relation type="after">
+		<plugin>decor</plugin>
+	    </relation>
+	</deps>
+	<options>
+	    <option type="button" name="initiate_button">
+		<short>Initiate</short>
+		<short xml:lang="ast">Entamar</short>
+		<short xml:lang="be">Ініцыяваць</short>
+		<short xml:lang="bg">Започни</short>
+		<short xml:lang="bn">শুরু</short>
+		<short xml:lang="bn_IN">শুরু</short>
+		<short xml:lang="bs">Započni</short>
+		<short xml:lang="ca">Inicia</short>
+		<short xml:lang="cs">Iniciovat</short>
+		<short xml:lang="da">Start</short>
+		<short xml:lang="de">Initiieren</short>
+		<short xml:lang="el">Εκκίνηση</short>
+		<short xml:lang="en_AU">Initiate</short>
+		<short xml:lang="en_GB">Initiate</short>
+		<short xml:lang="es">Iniciar</short>
+		<short xml:lang="eu">Hasi</short>
+		<short xml:lang="fi">Aktivoi</short>
+		<short xml:lang="fr">Lancer</short>
+		<short xml:lang="gl">Iniciar</short>
+		<short xml:lang="he">התחל</short>
+		<short xml:lang="hr">Pokreni</short>
+		<short xml:lang="hu">Indítás</short>
+		<short xml:lang="id">Mengawali</short>
+		<short xml:lang="it">Avvia</short>
+		<short xml:lang="ja">開始</short>
+		<short xml:lang="ko">시작</short>
+		<short xml:lang="mn">Эхлэл</short>
+		<short xml:lang="ms">Awalkan</short>
+		<short xml:lang="nb">Begynn</short>
+		<short xml:lang="nds">Losgahn</short>
+		<short xml:lang="nl">Starten</short>
+		<short xml:lang="oc">Aviar</short>
+		<short xml:lang="or">ପ୍ରାରମ୍ଭ କର</short>
+		<short xml:lang="pl">Inicjuj</short>
+		<short xml:lang="pt">Iniciar</short>
+		<short xml:lang="pt_BR">Iniciar</short>
+		<short xml:lang="ro">Inițiere</short>
+		<short xml:lang="ru">Инициировать</short>
+		<short xml:lang="si">අරම්භ කරන්න</short>
+		<short xml:lang="sk">Začať</short>
+		<short xml:lang="sl">Inicializiraj</short>
+		<short xml:lang="sq">Nise</short>
+		<short xml:lang="sr">Започни</short>
+		<short xml:lang="sv">Initiera</short>
+		<short xml:lang="tr">Başla</short>
+		<short xml:lang="ug">دەسلەپكى</short>
+		<short xml:lang="uk">Ініціювати</short>
+		<short xml:lang="vi">Bắt đầu</short>
+		<short xml:lang="zh_CN">启动</short>
+		<short xml:lang="zh_HK">開始畫按鍵</short>
+		<short xml:lang="zh_TW">開始畫按鍵</short>
+		<long>Initiate the capture, release the button to take the shot.</long>
+		<long xml:lang="bs">Pokrenite slikanje, oslobodite tipku za slikanje.</long>
+		<long xml:lang="cs">Snímání zahájíte uvolněním tlačítka pro zachycení snímku.</long>
+		<long xml:lang="de">Bildschirmfotoaufnahme beginnen, Knopf loslassen zum Auslösen.</long>
+		<long xml:lang="en_AU">Initiate the capture, release the button to take the shot.</long>
+		<long xml:lang="en_GB">Initiate the capture, release the button to take the shot.</long>
+		<long xml:lang="es">Inicie la captura y suelte el botón para realizarla.</long>
+		<long xml:lang="fr">Activation de la capture, relâchez le bouton pour prendre le cliché</long>
+		<long xml:lang="gl">Iniciar a captura, libere o botón para facer unha foto.</long>
+		<long xml:lang="hr">Pokrenite slikanje, oslobodite tipku za slikanje.</long>
+		<long xml:lang="ko">누른 단추에서 손을 떼면 화면을 캡쳐합니다.</long>
+		<long xml:lang="ms">Awalkan tangkapan, lepaskan butang untuk membuat syot.</long>
+		<long xml:lang="pt">Inicie a captura, solte o botão para disparar.</long>
+		<long xml:lang="ro">Inițiați captura, eliberați butonul pentru a face fotografia.</long>
+		<long xml:lang="ru">Инициировать захват и отпустить кнопку для получения снимка.</long>
+		<long xml:lang="sl">Začnite zajem, spustite gumb za zajem slike.</long>
+		<long xml:lang="sv">Starta fångst, släpp knappen för att ta bilden.</long>
+		<long xml:lang="uk">Ініціювати захоплення та відпустити кнопку для отримання знятку.</long>
+		<long xml:lang="zh_CN">启动截取，释放按钮以截屏。</long>
+		<default>&lt;Super&gt;Button1</default>
+	    </option>
+		<option type="bool" name="draw_selection_indicator">
+			<short>Draw Screenshot Selection Indicator</short>
+			<short xml:lang="bs">Iscrtaj pokazivač odabira zaslona snimka</short>
+			<short xml:lang="cs">Selekce obrysu pro snímek</short>
+			<short xml:lang="de">Umriss des Bildschirmfoto-Auswahlbereichs anzeigen</short>
+			<short xml:lang="en_AU">Draw Screenshot Selection Indicator</short>
+			<short xml:lang="en_GB">Draw Screenshot Selection Indicator</short>
+			<short xml:lang="es">Dibujar el indicador de selección de captura de pantalla</short>
+			<short xml:lang="gl">Debuxar o indicador da captura</short>
+			<short xml:lang="hr">Iscrtaj pokazivač odabira zaslona snimke</short>
+			<short xml:lang="ko">스크린샷으로 선택한 영역을 그려서 알려줍니다.</short>
+			<short xml:lang="ms">Lukis Penunjuk Pemilihan Cekupan Skrin</short>
+			<short xml:lang="pt">Tirar indicador de seleçãode capturas de ecrã</short>
+			<short xml:lang="ro">Indicator de desenare selecție captură de ecran</short>
+			<short xml:lang="ru">Отображать область снимка</short>
+			<short xml:lang="sl">Narišite kazalnik izbire zaslonske slike</short>
+			<short xml:lang="uk">Показувати ділянку знятка</short>
+			<short xml:lang="zh_CN">绘制矩形</short>
+			<long>Draw a rectangle outline indicating the screenshot selection.</long>
+			<long xml:lang="bs">scrtaj pravougaone granice koji prikazuje odabir snimke zaslona.</long>
+			<long xml:lang="cs">Nakreslete obdélníkový obrys vyznačující výběr pro snímek.</long>
+			<long xml:lang="de">Rechteckigen Umriss beim Auswählen eines Bereiches für das Bildschirmfoto darstellen.</long>
+			<long xml:lang="en_AU">Draw a rectangle outline indicating the screenshot selection.</long>
+			<long xml:lang="en_GB">Draw a rectangle outline indicating the screenshot selection.</long>
+			<long xml:lang="es">Dibujar un marco rectangular para indicar la selección de captura de pantalla.</long>
+			<long xml:lang="fr">Dessinez un rectangle indiquant la zone à capturer.</long>
+			<long xml:lang="gl">Debuxar un contorno rectangular indicando a captura.</long>
+			<long xml:lang="hr">Iscrtaj pravokutni obrub koji prikazuje odabir snimke zaslona.</long>
+			<long xml:lang="it">Disegna un rettangolo di contorno che indica la selezione della schermata.</long>
+			<long xml:lang="ko">직사각형의 외곽선을 그려 스크린샷으로 선택한 영역을 알려줍니다.</long>
+			<long xml:lang="ms">Lukis garis luar segiempat yang menunjukkan pemilihan cekupan skrin.</long>
+			<long xml:lang="pt">Desenhe um rectângulo a contornar a seleção da captura de ecrã.</long>
+			<long xml:lang="ru">Показывать прямоугольник, определяющий область экрана для снимка.</long>
+			<long xml:lang="sl">Narišite oris pravokotnika, ki označuje izbiro zaslonske slike.</long>
+			<long xml:lang="uk">Показувати прямокутник, що визначає ділянку екрана для знятку.</long>
+			<long xml:lang="zh_CN">使用矩形框显示截屏选择区域。</long>
+			<default>true</default>
+		</option>
+		<option type="color" name="selection_outline_color">
+			<short>Selection Indicator Outline Color</short>
+			<short xml:lang="bs">Boja odabira granica pokazivača</short>
+			<short xml:lang="cs">Barva obrysu selekce</short>
+			<short xml:lang="de">Farbe des Umrisses für den Auswahlbereich</short>
+			<short xml:lang="en_AU">Selection Indicator Outline Colour</short>
+			<short xml:lang="en_GB">Selection Indicator Outline Colour</short>
+			<short xml:lang="es">Color del marco indicador de la selección</short>
+			<short xml:lang="fr">Indicateur de sélection de la couleur du contour</short>
+			<short xml:lang="gl">Cor do contorno da selección.</short>
+			<short xml:lang="hr">Boja odabira obruba pokazivača</short>
+			<short xml:lang="ko">선택 알림의 외곽선 색</short>
+			<short xml:lang="ms">Warna Garis Luar Penunjuk Pemilihan</short>
+			<short xml:lang="pt">Indicador de Selecção de Contorno de Cor</short>
+			<short xml:lang="ru">Цвет контура индикатора выбора</short>
+			<short xml:lang="sl">Orisna barva izbirnega kazalnika</short>
+			<short xml:lang="sv">Konturfärg för markeringsindikator</short>
+			<short xml:lang="uk">Колір контуру індикатора вибору</short>
+			<short xml:lang="zh_CN">选择框颜色</short>
+			<long>Color and opacity of the screenshot selection rectangle outline.</long>
+			<long xml:lang="bs">Boja i zasićenost odabira pravougaonih granica snimke zaslona.</long>
+			<long xml:lang="cs">Barva a průhlednost obrysu obdélníkové selekce pro snímek.</long>
+			<long xml:lang="de">Farbe und Deckkraft des Umrisses für den Bildschirmfoto-Auswahlbereich.</long>
+			<long xml:lang="en_AU">Colour and opacity of the screenshot selection rectangle outline.</long>
+			<long xml:lang="en_GB">Colour and opacity of the screenshot selection rectangle outline.</long>
+			<long xml:lang="es">Color y opacidad de marco rectangular de selección de captura de pantalla.</long>
+			<long xml:lang="fr">Couleur et opacité du contour rectangulaire de la capture d'écran.</long>
+			<long xml:lang="gl">Cor e opacidade do contorno rectangular da captura.</long>
+			<long xml:lang="hr">Boja i prozirnost odabira pravokutnog obruba snimke zaslona.</long>
+			<long xml:lang="ko">스크린샷으로 선택한 영역을 알려주는 사각형의 외곽선 색과 투명도를 설정합니다.</long>
+			<long xml:lang="ms">Warna dan kelegapan garis luar segiempat pemilihan cekupan skrin.</long>
+			<long xml:lang="pt">Cor e opacidade do contorno do rectângulo da seleção da captura de ecrã.</long>
+			<long xml:lang="ru">Цвет и прозрачность контура прямоугольника, который определяет область снимка экрана.</long>
+			<long xml:lang="sl">Barva in raven prekrivnosti pravokotnega orisa izbirne zaslonske slike.</long>
+			<long xml:lang="uk">Колір і прозорість контуру прямокутника, який визначає ділянку знятка екрану.</long>
+			<long xml:lang="zh_CN">截屏选择矩形颜色和透明度。</long>
+			<default>
+			    <red>0x2fff</red>
+			    <green>0x2fff</green>
+			    <blue>0x4fff</blue>
+			    <alpha>0x9f9f</alpha>
+			</default>
+		</option>
+		<option type="color" name="selection_fill_color">
+			<short>Selection Indicator Fill Color</short>
+			<short xml:lang="bs">Boja popune odabira pokazivača</short>
+			<short xml:lang="cs">Výplňová barva selekce</short>
+			<short xml:lang="de">Auswahlanzeige der Füllfarbe</short>
+			<short xml:lang="en_AU">Selection Indicator Fill Colour</short>
+			<short xml:lang="en_GB">Selection Indicator Fill Colour</short>
+			<short xml:lang="es">Color de relleno del indicador de selecciń</short>
+			<short xml:lang="fr">Indicateur de sélection de la couleur de remplissage</short>
+			<short xml:lang="gl">Cor do recheo da selección</short>
+			<short xml:lang="hr">Boja popune odabira pokazivača</short>
+			<short xml:lang="ko">선택 알림을 채울 색</short>
+			<short xml:lang="ms">Warna Isian Penunjuk Pemilihan</short>
+			<short xml:lang="pt">Indicador de selecção de Cor de Preenchimento</short>
+			<short xml:lang="ru">Цвет заполнения индикатора выбора</short>
+			<short xml:lang="sl">Barva polnila izbirnega kazalnika</short>
+			<short xml:lang="sv">Fyllnadsfärg för valindikator</short>
+			<short xml:lang="uk">Колір заповнення індикатора вибору</short>
+			<short xml:lang="zh_CN">选择提示器填充颜色</short>
+			<long>Fill color and opacity of the screenshot selection rectangle.</long>
+			<long xml:lang="bs">Boja popune i zasićenosti pravougaonih granica snimke zaslona.</long>
+			<long xml:lang="cs">Výplňová barva a průhlednost obdélníkové selekce pro snímek.</long>
+			<long xml:lang="de">Farbe und Deckkraft des Bildschirmfoto-Auswahlbereichs.</long>
+			<long xml:lang="en_AU">Fill colour and opacity of the screenshot selection rectangle.</long>
+			<long xml:lang="en_GB">Fill colour and opacity of the screenshot selection rectangle.</long>
+			<long xml:lang="es">Color de relleno y opacidad del rectángulo de selección de captura de pantalla</long>
+			<long xml:lang="fr">Couleur de remplissage et opacité du rectangle de sélection de capture d'écran.</long>
+			<long xml:lang="gl">Cor do recheo e opacidade do rectángulo da captura.</long>
+			<long xml:lang="hr">Boja popune i prozirnost pravokutnog odabira snimke zaslona.</long>
+			<long xml:lang="ko">스크린샷으로 선택한 영역을 알려주는 사각형을 설정한 투명도를 가진 색으로 체웁니다.</long>
+			<long xml:lang="ms">Warna Isian dan kelegapan bagi segiempat pemilihan cekupan skrin.</long>
+			<long xml:lang="pt">Preenche a cor e opacidade do rectângulo de seleção da captura de ecrã.</long>
+			<long xml:lang="ru">Цвет заполнения и прозрачность прямоугольника, который определяет область снимка экрана.</long>
+			<long xml:lang="sl">Barva polnila in raven prekrivnosti izbirnega pravokotnika zaslonske slike.</long>
+			<long xml:lang="sv">Fyllnadsfärg och ogenomskinlighet för rektangeln för skärmdumpval.</long>
+			<long xml:lang="uk">Колір заповнення та прозорість прямокутника, який визначає ділянку знятка екрану.</long>
+			<long xml:lang="zh_CN">在截屏选择矩形中填充颜色。</long>
+			<default>
+			    <red>0x2fff</red>
+			    <green>0x2fff</green>
+			    <blue>0x4fff</blue>
+			    <alpha>0x4fff</alpha>
+			</default>
+		</option>
+	    <option type="string" name="directory">
+		<short>Save Directory</short>
+		<short xml:lang="am">ዳይሬክቶሪ ማስቀመጫ</short>
+		<short xml:lang="bs">Spremi direktorij</short>
+		<short xml:lang="de">Speicherordner</short>
+		<short xml:lang="en_AU">Save Directory</short>
+		<short xml:lang="en_GB">Save Directory</short>
+		<short xml:lang="es">Guardar directorio</short>
+		<short xml:lang="fr">Répertoire de sauvegarde</short>
+		<short xml:lang="gl">Gardar o cartafol</short>
+		<short xml:lang="hr">Spremi direktorij</short>
+		<short xml:lang="ko">저장 디렉터리</short>
+		<short xml:lang="ms">Simpan Direktori</short>
+		<short xml:lang="pl">Katalog zapisywania</short>
+		<short xml:lang="pt">Guardar Diretório</short>
+		<short xml:lang="ro">Dosarul de salvare</short>
+		<short xml:lang="ru">Сохранить в ...</short>
+		<short xml:lang="sl">Mapa za shranjevanje</short>
+		<short xml:lang="sv">Målmapp</short>
+		<short xml:lang="tr">Dizini Kaydet</short>
+		<short xml:lang="ug">مۇندەرىجە ساقلا</short>
+		<short xml:lang="uk">Зберегти у...</short>
+		<short xml:lang="zh_CN">保存目录</short>
+		<long>Save screenshot images in this directory. If empty, the desktop directory will be used.</long>
+		<long xml:lang="bs">Spremi snimak zaslona u ovaj direktorij. Ako je polje prazno, koristiti će se direktorij radne površine.</long>
+		<long xml:lang="cs">Složka pro uložení snímků. Pokud je prázdná, uloží se na plochu.</long>
+		<long xml:lang="de">Bildschirmfotos in diesen Ordner speichern. Leer lassen, um auf dem Schreibtisch zu speichern.</long>
+		<long xml:lang="en_AU">Save screenshot images in this directory. If empty, the desktop directory will be used.</long>
+		<long xml:lang="en_GB">Save screenshot images in this directory. If empty, the desktop directory will be used.</long>
+		<long xml:lang="es">Guardar las imágenes capturadas en este directorio. Si deja en blanco, se usará el directorio del escritorio.</long>
+		<long xml:lang="fr">Enregistrer les captures d'écran dans ce répertoire. Si vide, le répertoire de bureau sera utilisé.</long>
+		<long xml:lang="gl">Gardar as capturas de pantalla neste cartafol. Se está baleiro, usarase o cartafol do escritorio.</long>
+		<long xml:lang="hr">Spremi snimak zaslona u ovaj direktorij. Ako je polje prazno, koristiti će se direktorij radne površine.</long>
+		<long xml:lang="it">Salvare le immagini della schermata in questa directory; se non indicata, verrà utilizzata la directory del desktop.</long>
+		<long xml:lang="ko">스크린샷 이미지를 이 디렉터리에 저장합니다. 디렉터리가 없으면 바탕 화면 디렉터리를 사용합니다.</long>
+		<long xml:lang="ms">Simpan imej cekupan skrin dalam direktori ini. Jika kosong, direktori dekstop akan digunakan,</long>
+		<long xml:lang="pt">Guardar as imagens de captura de ecrã nesta diretoria. Se vazia, a diretoria de área de trabalho será usada.</long>
+		<long xml:lang="ru">Сохранить снимок экрана в данный каталог. Если каталог не выбран, снимок будет сохранен в каталог "Рабочий стол".</long>
+		<long xml:lang="sl">Shranite zaslonske slike v to mapo.  Če je prazna, bo uporabljeno namizje.</long>
+		<long xml:lang="sv">Spara skärmdumpsbilder i den här mappen. Om fältet lämnas tomt kommer skrivbordskatalogen användas.</long>
+		<long xml:lang="uk">Зберегти зняток екрану в даний каталог. Якщо каталог не вибрано, зняток буде збережено у каталог "Стільниця".</long>
+		<long xml:lang="zh_CN">将截屏图像保存在此目录。如果为空，将使用桌面文件夹。</long>
+		<hints>directory;</hints>
+		<default/>
+	    </option>
+	    <option type="string" name="launch_app">
+		<short>Launch Application</short>
+		<short xml:lang="am">መተግበሪያ ማስጀመሪያ</short>
+		<short xml:lang="ast">Llanzar Aplicación</short>
+		<short xml:lang="be">Урухоміць дастасаваньне</short>
+		<short xml:lang="bg">Стартирай приложение</short>
+		<short xml:lang="bn">স্থাপনকার্যের অনুপ্রয়োগ</short>
+		<short xml:lang="bn_IN">স্থাপনকার্যের অনুপ্রয়োগ</short>
+		<short xml:lang="bs">Pokreni aplikaciju</short>
+		<short xml:lang="ca">Inicia l'aplicació</short>
+		<short xml:lang="cs">Spustit aplikaci :</short>
+		<short xml:lang="de">Anwendung starten</short>
+		<short xml:lang="el">Εκκίνηση Εφαρμογής</short>
+		<short xml:lang="en_AU">Launch Application</short>
+		<short xml:lang="en_GB">Launch Application</short>
+		<short xml:lang="es">Iniciar Aplicación</short>
+		<short xml:lang="eu">Abiarazi aplikazioa</short>
+		<short xml:lang="fi">Suorita sovellus</short>
+		<short xml:lang="fr">Lancer une Application</short>
+		<short xml:lang="gl">Iniciar aplicativo</short>
+		<short xml:lang="gu">કાર્યક્રમ લાવો</short>
+		<short xml:lang="he">שגר יישום</short>
+		<short xml:lang="hi">अनुप्रयोग लांच करें</short>
+		<short xml:lang="hr">Pokreni aplikaciju</short>
+		<short xml:lang="hu">Alkalmazás indítása</short>
+		<short xml:lang="it">Applicazione da eseguire</short>
+		<short xml:lang="ja">起動アプリケーション</short>
+		<short xml:lang="ko">프로그램 실행</short>
+		<short xml:lang="ms">Lancarkan Aplikasi</short>
+		<short xml:lang="nb">Kjør program</short>
+		<short xml:lang="nl">Start toepassing</short>
+		<short xml:lang="oc">Aviar l'aplicacion</short>
+		<short xml:lang="or">ପ୍ରାରମ୍ଭକରିବା ପ୍ରଯୋଗ</short>
+		<short xml:lang="pl">Uruchom program</short>
+		<short xml:lang="pt">Iniciar Aplicação</short>
+		<short xml:lang="pt_BR">Iniciar Aplicação</short>
+		<short xml:lang="ro">Lansare aplicație</short>
+		<short xml:lang="ru">Запустить приложение</short>
+		<short xml:lang="sk">Spustiť aplikáciu</short>
+		<short xml:lang="sl">Zaženi program</short>
+		<short xml:lang="sr">Покрени програм</short>
+		<short xml:lang="sv">Kör program</short>
+		<short xml:lang="tr">Uygulamayı Başlat</short>
+		<short xml:lang="ug">پروگرامما ئىجرا قىل</short>
+		<short xml:lang="uk">Запустити проґраму</short>
+		<short xml:lang="vi">Chạy ứng dụng</short>
+		<short xml:lang="zh_CN">启动应用程序</short>
+		<short xml:lang="zh_HK">啟動的應用程式</short>
+		<short xml:lang="zh_TW">啟動的應用程式</short>
+		<long>Automatically open the screenshot in this application.</long>
+		<long xml:lang="bs">Automatski otvara snimak zaslona u ovoj aplikaciji</long>
+		<long xml:lang="cs">Automaticky otevře snímek v této aplikaci.</long>
+		<long xml:lang="de">Diese Anwendung automatisch mit dem Bildschirmfoto öffnen.</long>
+		<long xml:lang="en_AU">Automatically open the screenshot in this application.</long>
+		<long xml:lang="en_GB">Automatically open the screenshot in this application.</long>
+		<long xml:lang="es">Abrir automáticamente las capturas de pantalla con esta aplicación.</long>
+		<long xml:lang="fr">Ouvrir automatiquement la capture d'écran dans cette application.</long>
+		<long xml:lang="gl">Abrir automaticamente a captura de pantalla con este aplicativo</long>
+		<long xml:lang="hr">Automatski otvara snimak zaslona u ovoj aplikaciji</long>
+		<long xml:lang="it">Aprire automaticamente la schermata in questa applicazione.</long>
+		<long xml:lang="ko">이 프로그램을 사용하여 스크린샷을 자동으로 엽니다.</long>
+		<long xml:lang="ms">Buka cekupan skrin secara automatik dalam aplikasi ini.</long>
+		<long xml:lang="pt">Abrir automaticamente a imagem nesta aplicação.</long>
+		<long xml:lang="ro">Deschide automat captura de ecran în această aplicație.</long>
+		<long xml:lang="ru">Автоматически открывать снимки экрана при помощи данного приложения.</long>
+		<long xml:lang="sl">Samodejno odpri zaslonske slike v temu programu.</long>
+		<long xml:lang="sv">Öppna automatiskt skärmdumpen i detta program.</long>
+		<long xml:lang="tr">Ekran görüntüsünü otomatik olarak bu uygulamada aç.</long>
+		<long xml:lang="uk">Автоматично відкривати знятки екрану за допомогою даного застосунку.</long>
+		<long xml:lang="zh_CN">用此程序自动打开截屏。</long>
+		<default/>
+	    </option>
+	</options>
+    </plugin>
+</compiz>

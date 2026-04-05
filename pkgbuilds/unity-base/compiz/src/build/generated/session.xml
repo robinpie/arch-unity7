@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="session">
+	<short>Session Management</short>
+	<short xml:lang="da">Sessionsstyring</short>
+	<short xml:lang="uk">Керування сеансами</short>
+	<long>Talk to session manager and save/load window state</long>
+	<long xml:lang="uk">Звернутись до керівника сеансу, щоб зберегти/завантажити стан вікна</long>
+	<category>Utility</category>
+	<deps>
+	    <relation type="after">
+		<plugin>composite</plugin>
+		<plugin>opengl</plugin>
+		<plugin>place</plugin>
+		<plugin>decor</plugin>
+	    </relation>
+	</deps>
+	<options>
+	    <option type="bool" name="save_legacy">
+		<short>Save Legacy Apps</short>
+		<short xml:lang="uk">Зберегти успадковані програми</short>
+		<long>Also try to save and restore legacy apps that don't support the X session management protocol. This setting only should be used in KDE, as only KDE's session manager also saves those applications.</long>
+		<long xml:lang="uk">Спробуйте також зберегти або відновити успадковані програми, які не підтримуються протоколом керування X-сеансом. Цей параметр має використовуватися лише в KDE, бо лише керівник сеансів KDE може зберігати такі програми.</long>
+		<default>false</default>
+	    </option>
+	    <option type="match" name="ignore_match">
+	    	<short>Windows to ignore</short>
+	    	<short xml:lang="uk">Нехтувані вікна</short>
+	    	<long>Matching windows will not be handled by the session plugin</long>
+	    	<long xml:lang="uk">Відповідні вікна не будуть опрацьовуватися втулком сеансів</long>
+    		<default/>
+            </option>
+	</options>
+    </plugin>
+</compiz>
