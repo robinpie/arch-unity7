@@ -1,0 +1,55 @@
+# Maintainer: arch-unity7 port
+# GLEW 1.13.0 with MX (multi-context) support
+# GLEW 2.0+ removed MX/GLEWContext support; nux requires libGLEWmx.so + GLEWContext type
+# Headers installed to /usr/include/glewmx/ to avoid conflicting with system glew
+
+pkgname=glewmx
+pkgver=1.13.0
+pkgrel=2
+pkgdesc="OpenGL Extension Wrangler Library with multi-context (MX) support"
+arch=('x86_64')
+url="https://glew.sourceforge.net/"
+license=('BSD-3-Clause' 'MIT' 'GPL-2.0-or-later')
+depends=('libgl' 'libx11' 'libxext' 'libxi' 'libxmu')
+makedepends=('pkgconf' 'mesa' 'libxmu' 'libxi')
+source=(
+    "glew-${pkgver}.tgz::https://sourceforge.net/projects/glew/files/glew/${pkgver}/glew-${pkgver}.tgz/download"
+)
+sha256sums=('SKIP')
+
+build() {
+    cd "glew-${pkgver}"
+    make GLEW_DEST=/usr LIBDIR=/usr/lib glew.lib.mx
+}
+
+package() {
+    cd "glew-${pkgver}"
+
+    # Install MX shared library
+    install -Dm755 lib/libGLEWmx.so.${pkgver} \
+        "$pkgdir/usr/lib/libGLEWmx.so.${pkgver}"
+    ln -s "libGLEWmx.so.${pkgver}" "$pkgdir/usr/lib/libGLEWmx.so.1.13"
+    ln -s "libGLEWmx.so.${pkgver}" "$pkgdir/usr/lib/libGLEWmx.so"
+
+    # Install MX headers to separate path (avoid conflicting with system glew)
+    # nux and other packages should use pkg-config --cflags glewmx to get this path
+    install -Dm644 include/GL/glew.h  "$pkgdir/usr/include/glewmx/GL/glew.h"
+    install -Dm644 include/GL/glxew.h "$pkgdir/usr/include/glewmx/GL/glxew.h"
+    install -Dm644 include/GL/wglew.h "$pkgdir/usr/include/glewmx/GL/wglew.h"
+
+    # Install custom pkgconfig pointing to glewmx headers
+    install -dm755 "$pkgdir/usr/lib/pkgconfig"
+    cat > "$pkgdir/usr/lib/pkgconfig/glewmx.pc" << EOF
+prefix=/usr
+exec_prefix=\${prefix}
+libdir=\${prefix}/lib
+includedir=\${prefix}/include/glewmx
+
+Name: glewmx
+Description: The OpenGL Extension Wrangler library (MX multi-context variant)
+Version: ${pkgver}
+Cflags: -I\${includedir} -DGLEW_MX
+Libs: -L\${libdir} -lGLEWmx
+Requires: glu
+EOF
+}

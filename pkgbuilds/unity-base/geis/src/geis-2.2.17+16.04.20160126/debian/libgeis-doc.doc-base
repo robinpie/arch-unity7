@@ -1,0 +1,10 @@
+Document: libgeis
+Title: libgeis
+Author: Stephen M. Webb
+Abstract: This manual describes the GEIS gesture API.
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/geis/html/index.html
+Files: /usr/share/doc/geis/html/*.html
+

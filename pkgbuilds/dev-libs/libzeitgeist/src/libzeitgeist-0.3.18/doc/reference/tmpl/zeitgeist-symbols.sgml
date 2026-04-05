@@ -1,0 +1,61 @@
+<!-- ##### SECTION Title ##### -->
+Symbol comprehension
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION zeitgeist_symbol_get_all_children ##### -->
+<para>
+
+</para>
+
+@symbol: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_symbol_get_children ##### -->
+<para>
+
+</para>
+
+@symbol: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_symbol_get_parents ##### -->
+<para>
+
+</para>
+
+@symbol: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_symbol_is_a ##### -->
+<para>
+
+</para>
+
+@symbol: 
+@parent: 
+@Returns: 
+
+

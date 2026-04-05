@@ -1,0 +1,61 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/ido
+# Note: orig.tar.gz extracts flat (no top-level subdir)
+
+pkgname=ido
+pkgver=13.10.0
+_uver=+22.10.20221007
+_urev=0ubuntu4
+pkgrel=1
+pkgdesc="Widgets and objects for Unity7 indicators"
+arch=('x86_64')
+url="https://launchpad.net/ido"
+license=('LGPL-2.1-or-later' 'LGPL-3.0-or-later')
+depends=('glib2' 'gtk3' 'cairo' 'gdk-pixbuf2' 'pango' 'libx11' 'libxi')
+makedepends=('pkgconf' 'autoconf' 'automake' 'libtool' 'gnome-common'
+             'gobject-introspection' 'vala')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+)
+sha256sums=('SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+
+    # Apply monolithic diff (adds debian/ and patches source)
+    patch -p1 -i "${pkgname}_${pkgver}${_uver}-${_urev}.diff"
+
+    # Apply debian patch series if present
+    if [ -f debian/patches/series ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p"
+        done < debian/patches/series
+    fi
+
+    # idomenuitemfactory.c requires Ubuntu-patched GTK3 (ubuntu-private.h).
+    # Disable it until we have a patched gtk3 package.
+    # TODO: enable after building gtk3-unity (see downstreamDevlog.md)
+    sed -i '/idomenuitemfactory\.c/d' src/Makefile.am
+    # libido.c calls ido_menu_item_factory_get_type which is now removed
+    sed -i '/ido_menu_item_factory_get_type/d' src/libido.c
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "$srcdir"
+    ./configure \
+        --prefix=/usr \
+        --libdir=/usr/lib \
+        --disable-static \
+        --enable-introspection=yes
+    make
+}
+
+package() {
+    cd "$srcdir"
+    make DESTDIR="$pkgdir" install
+    find "$pkgdir" -name '*.la' -delete
+}

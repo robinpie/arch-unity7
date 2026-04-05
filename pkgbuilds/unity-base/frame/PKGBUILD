@@ -1,0 +1,58 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/frame
+# Note: orig.tar.gz extracts flat (no top-level subdir), as per S="${WORKDIR}" in ebuild
+
+pkgname=frame
+pkgver=2.5.0
+_uver=daily13.06.05+16.10.20160809
+_urev=0ubuntu5
+pkgrel=1
+pkgdesc="Touch Frame Library"
+arch=('x86_64')
+url="https://launchpad.net/frame"
+license=('GPL-3.0-or-later' 'LGPL-3.0-or-later')
+depends=('libx11' 'libxi')
+makedepends=('pkgconf' 'autoconf' 'automake' 'libtool' 'gnome-common'
+             'xorgproto' 'xorg-server-devel')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+)
+sha256sums=('SKIP' 'SKIP')
+
+prepare() {
+    # Sources extract flat into $srcdir (no subdir) — matches S="${WORKDIR}" in Gentoo
+    cd "$srcdir"
+
+    # Skip doc generation
+    sed -i ':api/html:,+1 d' doc/Makefile.am 2>/dev/null || true
+
+    # Apply the monolithic Ubuntu diff (adds debian/ and patches source)
+    patch -p1 -i "${pkgname}_${pkgver}${_uver}-${_urev}.diff"
+
+    # Apply debian patch series if present
+    if [ -f debian/patches/series ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p"
+        done < debian/patches/series
+    fi
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "$srcdir"
+    ./configure \
+        --prefix=/usr \
+        --libdir=/usr/lib \
+        --disable-static \
+        --enable-integration-tests=no
+    make
+}
+
+package() {
+    cd "$srcdir"
+    make DESTDIR="$pkgdir" install
+    find "$pkgdir" -name '*.la' -delete
+}

@@ -1,0 +1,26 @@
+{
+	"InstallScripts" : 
+	[
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/include/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/include/unity/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/include/unity/api/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/include/unity/shell/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/include/unity/shell/notifications/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/include/unity/shell/launcher/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/include/unity/shell/application/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/include/unity/shell/scopes/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/include/unity/util/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/src/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/src/unity/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/src/unity/api/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/src/unity/api/internal/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/src/unity/api/scopes/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/src/unity/api/scopes/internal/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/src/unity/internal/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/src/unity/util/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/src/unity/util/internal/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/unity-api/src/build/data/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

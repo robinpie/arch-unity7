@@ -1,0 +1,64 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/dee
+# Note: orig.tar.gz extracts flat (S="${WORKDIR}" in Gentoo ebuild)
+# debian.tar.xz extracts to debian/ in same directory
+
+pkgname=dee
+pkgver=1.2.7
+_uver=+17.10.20170616
+_urev=8build1
+pkgrel=1
+pkgdesc="Model-View-Controller objects library over DBus"
+arch=('x86_64')
+url="https://launchpad.net/dee"
+license=('GPL-3.0-or-later' 'LGPL-3.0-or-later')
+depends=('dbus-glib' 'glib2' 'icu' 'python3' 'python-gobject')
+makedepends=('pkgconf' 'autoconf' 'automake' 'libtool' 'gnome-common'
+             'gobject-introspection' 'vala' 'gtk-doc' 'dbus' 'python3')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.debian.tar.xz"
+)
+sha256sums=('SKIP' 'SKIP')
+
+prepare() {
+    # Both orig.tar.gz and debian.tar.xz extract flat into $srcdir
+    # orig extracts to $srcdir directly; debian.tar.xz to $srcdir/debian/
+    cd "$srcdir"
+
+    # Apply debian patch series
+    if [ -f debian/patches/series ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p"
+        done < debian/patches/series
+    fi
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "$srcdir"
+    ./configure \
+        --prefix=/usr \
+        --libdir=/usr/lib \
+        --disable-silent-rules \
+        --disable-static \
+        --enable-introspection=yes \
+        --enable-icu \
+        --disable-gtk-doc \
+        --disable-tests \
+        --disable-examples
+    make
+}
+
+package() {
+    cd "$srcdir"
+    make DESTDIR="$pkgdir" install
+
+    # Install man page from debian dir
+    [ -f debian/dee-tool.1 ] && install -Dm644 debian/dee-tool.1 \
+        "$pkgdir/usr/share/man/man1/dee-tool.1"
+
+    find "$pkgdir" -name '*.la' -delete
+}

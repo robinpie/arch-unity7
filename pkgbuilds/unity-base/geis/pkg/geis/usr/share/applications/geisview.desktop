@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=geisview
+Comment=GEIS gesture event viewer
+Exec=geisview
+Icon=geisview32x32
+Categories=Utility;
+Keywords=multi-touch;gestures;

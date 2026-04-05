@@ -1,0 +1,11 @@
+prefix=/usr
+includedir=${prefix}/include
+plugindir_suffix=
+plugindir=${prefix}/${plugindir_suffix}
+
+Name: unity-shell-application
+Description: unity-shell-application
+Version: 27
+
+Requires: Qt5Core
+Cflags: -I${includedir}

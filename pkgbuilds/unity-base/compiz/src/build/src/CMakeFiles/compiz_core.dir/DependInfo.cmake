@@ -1,0 +1,49 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  )
+
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/build/generated/core_options.cpp" "src/CMakeFiles/compiz_core.dir/__/generated/core_options.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/__/generated/core_options.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/action.cpp" "src/CMakeFiles/compiz_core.dir/action.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/action.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/actions.cpp" "src/CMakeFiles/compiz_core.dir/actions.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/actions.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/atoms.cpp" "src/CMakeFiles/compiz_core.dir/atoms.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/atoms.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/event.cpp" "src/CMakeFiles/compiz_core.dir/event.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/event.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/eventsource.cpp" "src/CMakeFiles/compiz_core.dir/eventsource.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/eventsource.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/global.cpp" "src/CMakeFiles/compiz_core.dir/global.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/global.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/icon.cpp" "src/CMakeFiles/compiz_core.dir/icon.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/icon.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/match.cpp" "src/CMakeFiles/compiz_core.dir/match.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/match.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/modifierhandler.cpp" "src/CMakeFiles/compiz_core.dir/modifierhandler.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/modifierhandler.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/option.cpp" "src/CMakeFiles/compiz_core.dir/option.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/option.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/plugin.cpp" "src/CMakeFiles/compiz_core.dir/plugin.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/plugin.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/propertywriter.cpp" "src/CMakeFiles/compiz_core.dir/propertywriter.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/propertywriter.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/screen.cpp" "src/CMakeFiles/compiz_core.dir/screen.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/screen.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/session.cpp" "src/CMakeFiles/compiz_core.dir/session.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/session.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/signalsource.cpp" "src/CMakeFiles/compiz_core.dir/signalsource.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/signalsource.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/stackdebugger.cpp" "src/CMakeFiles/compiz_core.dir/stackdebugger.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/stackdebugger.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/window.cpp" "src/CMakeFiles/compiz_core.dir/window.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/window.cpp.o.d"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/src/windowgeometry.cpp" "src/CMakeFiles/compiz_core.dir/windowgeometry.cpp.o" "gcc" "src/CMakeFiles/compiz_core.dir/windowgeometry.cpp.o.d"
+  "" "src/libcompiz_core.so" "gcc" "src/CMakeFiles/compiz_core.dir/link.d"
+  )
+
+# Pairs of files generated by the same build rule.
+set(CMAKE_MULTIPLE_OUTPUT_PAIRS
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/build/src/libcompiz_core.so" "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/build/src/libcompiz_core.so.0.9.14.2"
+  "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/build/src/libcompiz_core.so.ABI-20180221" "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/build/src/libcompiz_core.so.0.9.14.2"
+  )
+
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

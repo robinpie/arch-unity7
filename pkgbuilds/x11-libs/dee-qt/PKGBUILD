@@ -1,0 +1,45 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/dee-qt
+
+pkgname=dee-qt
+pkgver=3.3
+_uver=+14.04.20140317
+_urev=0ubuntu9
+pkgrel=1
+pkgdesc="Qt binding and QML plugin for Dee"
+arch=('x86_64')
+url="https://launchpad.net/dee-qt"
+license=('GPL-3.0-or-later')
+depends=('dee' 'qt5-base' 'qt5-declarative' 'glib2')
+makedepends=('cmake' 'pkgconf')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+)
+sha256sums=('SKIP')
+
+prepare() {
+    cd "${pkgname}-${pkgver}${_uver}"
+
+    # Fix lib path (remove lib/ prefix so it uses /usr/lib directly)
+    sed -i "s:lib/::" CMakeLists.txt libdee-qt.pc.in
+
+    # Fix CMake minimum version for CMake 4
+    sed -i 's/cmake_minimum_required(VERSION [0-9.]*/cmake_minimum_required(VERSION 3.10/' CMakeLists.txt || true
+}
+
+build() {
+    cmake -B build -S "${pkgname}-${pkgver}${_uver}" \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+        -DWITHQT5=1 \
+        -DCMAKE_LIBRARY_ARCHITECTURE=lib \
+        -DLIB_SUFFIX="" \
+        -Wno-dev
+    cmake --build build
+}
+
+package() {
+    DESTDIR="$pkgdir" cmake --install build
+}

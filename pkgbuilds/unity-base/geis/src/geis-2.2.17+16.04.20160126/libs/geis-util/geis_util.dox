@@ -1,0 +1,6 @@
+/**
+ * @defgroup geis_util GEIS internal utility library
+ *
+ * This is a collection of various utilities used throughout the GEIS
+ * implementation.  It is not a part of the public API.
+ */

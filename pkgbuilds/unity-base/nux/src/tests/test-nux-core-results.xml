@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="131" failures="1" disabled="0" errors="0" time="0.006" timestamp="2024-02-19T23:26:19.990" name="AllTests">
+  <testsuite name="TestAnimationController" tests="8" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.990">
+    <testcase name="NoInstance" file="gtest-nuxcore-animation.cpp" line="32" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationController" />
+    <testcase name="CreatingControllerSetsInstance" file="gtest-nuxcore-animation.cpp" line="43" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationController" />
+    <testcase name="DestroyingControllerUnsetsInstance" file="gtest-nuxcore-animation.cpp" line="49" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationController" />
+    <testcase name="CreatingSecondControllerEmitsWarning" file="gtest-nuxcore-animation.cpp" line="57" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationController" />
+    <testcase name="TicksOnSourceAreListenedTo" file="gtest-nuxcore-animation.cpp" line="94" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationController" />
+    <testcase name="TicksAfterControllerDtorIgnored" file="gtest-nuxcore-animation.cpp" line="109" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationController" />
+    <testcase name="HasRunningAnimations" file="gtest-nuxcore-animation.cpp" line="137" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationController" />
+    <testcase name="RemoveValueInTick" file="gtest-nuxcore-animation.cpp" line="160" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationController" />
+  </testsuite>
+  <testsuite name="TestAnimation" tests="10" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.990">
+    <testcase name="TestInitialState" file="gtest-nuxcore-animation.cpp" line="188" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
+    <testcase name="TestStarting" file="gtest-nuxcore-animation.cpp" line="194" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
+    <testcase name="TestStoppingEmitsFinished" file="gtest-nuxcore-animation.cpp" line="201" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
+    <testcase name="TestDestructorStops" file="gtest-nuxcore-animation.cpp" line="212" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
+    <testcase name="TestStoppingStoppedDoesntEmitsFinished" file="gtest-nuxcore-animation.cpp" line="227" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
+    <testcase name="TestCantPauseStopped" file="gtest-nuxcore-animation.cpp" line="237" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
+    <testcase name="TestPause" file="gtest-nuxcore-animation.cpp" line="244" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
+    <testcase name="TestResume" file="gtest-nuxcore-animation.cpp" line="252" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
+    <testcase name="TestResumeStarted" file="gtest-nuxcore-animation.cpp" line="261" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
+    <testcase name="TestResumeStopped" file="gtest-nuxcore-animation.cpp" line="269" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
+  </testsuite>
+  <testsuite name="TestEasingCurve" tests="4" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.990">
+    <testcase name="TestLinear" file="gtest-nuxcore-animation.cpp" line="281" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestEasingCurve" />
+    <testcase name="TestInQuad" file="gtest-nuxcore-animation.cpp" line="299" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestEasingCurve" />
+    <testcase name="TestOutQuad" file="gtest-nuxcore-animation.cpp" line="317" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestEasingCurve" />
+    <testcase name="TestInOutQuad" file="gtest-nuxcore-animation.cpp" line="335" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestEasingCurve" />
+  </testsuite>
+  <testsuite name="TestAnimateValue" tests="12" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.990">
+    <testcase name="TestConstruction" file="gtest-nuxcore-animation.cpp" line="358" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
+    <testcase name="TestStartEmitsInitialValue" file="gtest-nuxcore-animation.cpp" line="385" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
+    <testcase name="TestAdvance" file="gtest-nuxcore-animation.cpp" line="396" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
+    <testcase name="TestAdvanceOnlyRunning" file="gtest-nuxcore-animation.cpp" line="427" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
+    <testcase name="TestUsesEasingFunction" file="gtest-nuxcore-animation.cpp" line="451" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
+    <testcase name="TestAnimateIntReverseStopped" file="gtest-nuxcore-animation.cpp" line="472" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
+    <testcase name="TestAnimateIntReverse" file="gtest-nuxcore-animation.cpp" line="481" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
+    <testcase name="TestAnimateIntReversePaused" file="gtest-nuxcore-animation.cpp" line="510" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
+    <testcase name="TestAnimateIntReverseMultipleTimes" file="gtest-nuxcore-animation.cpp" line="542" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
+    <testcase name="TestAnimatePoint" file="gtest-nuxcore-animation.cpp" line="598" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
+    <testcase name="TestAnimateRect" file="gtest-nuxcore-animation.cpp" line="620" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
+    <testcase name="TestAnimateColor" file="gtest-nuxcore-animation.cpp" line="642" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
+  </testsuite>
+  <testsuite name="TestAnimationHookup" tests="3" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.990">
+    <testcase name="TestSingleAnimation" file="gtest-nuxcore-animation.cpp" line="706" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationHookup" />
+    <testcase name="TestTwoAnimation" file="gtest-nuxcore-animation.cpp" line="742" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationHookup" />
+    <testcase name="TestIntProperty" file="gtest-nuxcore-animation.cpp" line="785" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationHookup" />
+  </testsuite>
+  <testsuite name="TestAsyncfileWriter" tests="3" failures="0" disabled="0" skipped="0" errors="0" time="0.003" timestamp="2024-02-19T23:26:19.990">
+    <testcase name="TestConstructor" file="gtest-nuxcore-async-file-writer.cpp" line="65" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAsyncfileWriter" />
+    <testcase name="TestWrites" file="gtest-nuxcore-async-file-writer.cpp" line="76" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.991" classname="TestAsyncfileWriter" />
+    <testcase name="TestWriteLots" file="gtest-nuxcore-async-file-writer.cpp" line="89" status="run" result="completed" time="0.002" timestamp="2024-02-19T23:26:19.991" classname="TestAsyncfileWriter" />
+  </testsuite>
+  <testsuite name="TestColor" tests="22" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.993">
+    <testcase name="TestColorConstructor0" file="gtest-nuxcore-color.cpp" line="32" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorConstructor1" file="gtest-nuxcore-color.cpp" line="43" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorConstructor2" file="gtest-nuxcore-color.cpp" line="70" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorConstructor3" file="gtest-nuxcore-color.cpp" line="87" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorConstructorHex" file="gtest-nuxcore-color.cpp" line="106" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorConstructorHexInvalid" file="gtest-nuxcore-color.cpp" line="145" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorPremultiplied0" file="gtest-nuxcore-color.cpp" line="163" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorRGBToHSV0" file="gtest-nuxcore-color.cpp" line="181" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorHSVToRGB0" file="gtest-nuxcore-color.cpp" line="191" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorRGBToHSV1" file="gtest-nuxcore-color.cpp" line="201" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorHSVToRGB1" file="gtest-nuxcore-color.cpp" line="211" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorRGBToHSV2" file="gtest-nuxcore-color.cpp" line="221" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorHSVToRGB2" file="gtest-nuxcore-color.cpp" line="232" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorRGBToHLS0" file="gtest-nuxcore-color.cpp" line="242" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorHLSToRGB0" file="gtest-nuxcore-color.cpp" line="252" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorRGBToHLS1" file="gtest-nuxcore-color.cpp" line="262" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorHLSToRGB1" file="gtest-nuxcore-color.cpp" line="272" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorRGBToHLS2" file="gtest-nuxcore-color.cpp" line="282" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorHLSToRGB2" file="gtest-nuxcore-color.cpp" line="292" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestSubtraction" file="gtest-nuxcore-color.cpp" line="303" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestColorToRGB" file="gtest-nuxcore-color.cpp" line="315" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+    <testcase name="TestRandomColor" file="gtest-nuxcore-color.cpp" line="325" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
+  </testsuite>
+  <testsuite name="TestColorPrivate" tests="3" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.993">
+    <testcase name="TestIsValidHex" file="gtest-nuxcore-colorprivate.cpp" line="31" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColorPrivate" />
+    <testcase name="TestHexToInt" file="gtest-nuxcore-colorprivate.cpp" line="48" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColorPrivate" />
+    <testcase name="TestHexToRGBA" file="gtest-nuxcore-colorprivate.cpp" line="56" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColorPrivate" />
+  </testsuite>
+  <testsuite name="TestLogger" tests="6" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.993">
+    <testcase name="TestSimpleConstruction" file="gtest-nuxcore-logger.cpp" line="20" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestLogger" />
+    <testcase name="TestModuleName" file="gtest-nuxcore-logger.cpp" line="29" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestLogger" />
+    <testcase name="TestSetLevel" file="gtest-nuxcore-logger.cpp" line="34" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestLogger" />
+    <testcase name="TestLevelsSharedForSameModule" file="gtest-nuxcore-logger.cpp" line="75" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestLogger" />
+    <testcase name="TestModuleLowered" file="gtest-nuxcore-logger.cpp" line="84" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestLogger" />
+    <testcase name="TestLevelsInherited" file="gtest-nuxcore-logger.cpp" line="92" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestLogger" />
+  </testsuite>
+  <testsuite name="TestLoggingWriter" tests="1" failures="1" disabled="0" skipped="0" errors="0" time="0.001" timestamp="2024-02-19T23:26:19.993">
+    <testcase name="TestWriteMessage" file="gtest-nuxcore-logger.cpp" line="158" status="run" result="completed" time="0.001" timestamp="2024-02-19T23:26:19.993" classname="TestLoggingWriter">
+      <failure message="gtest-nuxcore-logger.cpp:171&#x0A;Value of: result&#x0A;Expected: is equal to 0x55e9e9828b60 pointing to &quot;ERROR 2010-09-10 06:34:45 test.module testfile.cpp:1234 my message\n&quot;&#x0A;  Actual: &quot;ERROR 2010-09-10 07:34:45 test.module testfile.cpp:1234 my message\n&quot;&#x0A;" type=""><![CDATA[gtest-nuxcore-logger.cpp:171
+Value of: result
+Expected: is equal to 0x55e9e9828b60 pointing to "ERROR 2010-09-10 06:34:45 test.module testfile.cpp:1234 my message\n"
+  Actual: "ERROR 2010-09-10 07:34:45 test.module testfile.cpp:1234 my message\n"
+]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="TestLogStream" tests="6" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.994">
+    <testcase name="TestSimpleConstruction" file="gtest-nuxcore-logger.cpp" line="174" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogStream" />
+    <testcase name="TestOutput" file="gtest-nuxcore-logger.cpp" line="179" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogStream" />
+    <testcase name="TestShortenedFilename" file="gtest-nuxcore-logger.cpp" line="193" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogStream" />
+    <testcase name="TestTemporary" file="gtest-nuxcore-logger.cpp" line="205" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogStream" />
+    <testcase name="TestDebugMacro" file="gtest-nuxcore-logger.cpp" line="218" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogStream" />
+    <testcase name="TestBlockTracer" file="gtest-nuxcore-logger.cpp" line="240" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogStream" />
+  </testsuite>
+  <testsuite name="TestLogHelpers" tests="7" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.994">
+    <testcase name="TestGetLoggingLevel" file="gtest-nuxcore-logger.cpp" line="256" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogHelpers" />
+    <testcase name="TestResetLogging" file="gtest-nuxcore-logger.cpp" line="276" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogHelpers" />
+    <testcase name="TestHasModule" file="gtest-nuxcore-logger.cpp" line="289" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogHelpers" />
+    <testcase name="TestConfigureLoggingNull" file="gtest-nuxcore-logger.cpp" line="356" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogHelpers" />
+    <testcase name="TestConfigureLoggingRoot" file="gtest-nuxcore-logger.cpp" line="369" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogHelpers" />
+    <testcase name="TestConfigureLoggingSingleModule" file="gtest-nuxcore-logger.cpp" line="376" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestLogHelpers" />
+    <testcase name="TestConfigureLoggingMultipleModules" file="gtest-nuxcore-logger.cpp" line="384" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestLogHelpers" />
+  </testsuite>
+  <testsuite name="TestStaticFileFunction" tests="1" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.995">
+    <testcase name="TestLoggerConstruction" file="gtest-nuxcore-logger.cpp" line="299" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestStaticFileFunction" />
+  </testsuite>
+  <testsuite name="TestLoggerMacros" tests="2" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.995">
+    <testcase name="TestPassingObject" file="gtest-nuxcore-logger.cpp" line="308" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestLoggerMacros" />
+    <testcase name="TestPassingFunction" file="gtest-nuxcore-logger.cpp" line="332" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestLoggerMacros" />
+  </testsuite>
+  <testsuite name="TestObject" tests="10" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.995">
+    <testcase name="TestObject" file="gtest-nuxcore-object.cpp" line="87" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
+    <testcase name="TestObjectReference" file="gtest-nuxcore-object.cpp" line="102" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
+    <testcase name="TestObjectPtr" file="gtest-nuxcore-object.cpp" line="128" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
+    <testcase name="TestObjectPtrAdopt" file="gtest-nuxcore-object.cpp" line="141" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
+    <testcase name="TestObjectPtrGetPointer" file="gtest-nuxcore-object.cpp" line="152" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
+    <testcase name="TestObjectPtr1" file="gtest-nuxcore-object.cpp" line="164" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
+    <testcase name="TestObjectPtr2" file="gtest-nuxcore-object.cpp" line="185" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
+    <testcase name="TestObjectSignal" file="gtest-nuxcore-object.cpp" line="212" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
+    <testcase name="TestObjectAdoptUnOwned" file="gtest-nuxcore-object.cpp" line="221" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
+    <testcase name="TestObjectAdoptOwned" file="gtest-nuxcore-object.cpp" line="232" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
+  </testsuite>
+  <testsuite name="TestTypeTraits" tests="3" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.995">
+    <testcase name="TestSerialization" file="gtest-nuxcore-properties.cpp" line="42" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestTypeTraits" />
+    <testcase name="TestDeserialization" file="gtest-nuxcore-properties.cpp" line="53" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestTypeTraits" />
+    <testcase name="TestConversionHolds" file="gtest-nuxcore-properties.cpp" line="100" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestTypeTraits" />
+  </testsuite>
+  <testsuite name="TestProperty" tests="10" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.996">
+    <testcase name="TestDefaultConstructor" file="gtest-nuxcore-properties.cpp" line="108" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
+    <testcase name="TestValueExplicitConstructor" file="gtest-nuxcore-properties.cpp" line="118" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
+    <testcase name="TestAssignment" file="gtest-nuxcore-properties.cpp" line="128" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
+    <testcase name="TestChanged" file="gtest-nuxcore-properties.cpp" line="151" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
+    <testcase name="TestEnableAndDisableNotifications" file="gtest-nuxcore-properties.cpp" line="164" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
+    <testcase name="TestSetterConstructor" file="gtest-nuxcore-properties.cpp" line="195" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
+    <testcase name="TestCustomSetterFunction" file="gtest-nuxcore-properties.cpp" line="229" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
+    <testcase name="TestCustomSetterFunctionLambda" file="gtest-nuxcore-properties.cpp" line="254" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
+    <testcase name="TestIntOperators" file="gtest-nuxcore-properties.cpp" line="281" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
+    <testcase name="TestStringOperators" file="gtest-nuxcore-properties.cpp" line="321" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
+  </testsuite>
+  <testsuite name="TestROProperty" tests="7" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.996">
+    <testcase name="TestDefaultConstructor" file="gtest-nuxcore-properties.cpp" line="364" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestROProperty" />
+    <testcase name="TestGetterConstructor" file="gtest-nuxcore-properties.cpp" line="383" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestROProperty" />
+    <testcase name="TestSetGetter" file="gtest-nuxcore-properties.cpp" line="400" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestROProperty" />
+    <testcase name="TestSetGetterLambda" file="gtest-nuxcore-properties.cpp" line="412" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestROProperty" />
+    <testcase name="TestChangedEvent" file="gtest-nuxcore-properties.cpp" line="423" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestROProperty" />
+    <testcase name="TestIntOperators" file="gtest-nuxcore-properties.cpp" line="452" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestROProperty" />
+    <testcase name="TestStringOperators" file="gtest-nuxcore-properties.cpp" line="492" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestROProperty" />
+  </testsuite>
+  <testsuite name="TestRWProperty" tests="5" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.996">
+    <testcase name="TestDefaultConstructor" file="gtest-nuxcore-properties.cpp" line="536" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRWProperty" />
+    <testcase name="TestFunctionConstructor" file="gtest-nuxcore-properties.cpp" line="555" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRWProperty" />
+    <testcase name="TestPimplClassExample" file="gtest-nuxcore-properties.cpp" line="621" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRWProperty" />
+    <testcase name="TestIntOperators" file="gtest-nuxcore-properties.cpp" line="660" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRWProperty" />
+    <testcase name="TestStringOperators" file="gtest-nuxcore-properties.cpp" line="700" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRWProperty" />
+  </testsuite>
+  <testsuite name="TestIntrospectableProperty" tests="2" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.996">
+    <testcase name="TestSimplePropertyAccess" file="gtest-nuxcore-properties.cpp" line="754" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestIntrospectableProperty" />
+    <testcase name="TestPropertyAccessByName" file="gtest-nuxcore-properties.cpp" line="774" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestIntrospectableProperty" />
+  </testsuite>
+  <testsuite name="TestRollingFileAppender" tests="6" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.996">
+    <testcase name="NoTestRoot" file="gtest-nuxcore-rolling-file-appender.cpp" line="64" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRollingFileAppender" />
+    <testcase name="TestLogFileRollsAtFlush" file="gtest-nuxcore-rolling-file-appender.cpp" line="69" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRollingFileAppender" />
+    <testcase name="TestExistingLogFileMoved" file="gtest-nuxcore-rolling-file-appender.cpp" line="89" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRollingFileAppender" />
+    <testcase name="TestDeletingOld" file="gtest-nuxcore-rolling-file-appender.cpp" line="105" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRollingFileAppender" />
+    <testcase name="TestFullPathNeeded" file="gtest-nuxcore-rolling-file-appender.cpp" line="128" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRollingFileAppender" />
+    <testcase name="TestFileNeeded" file="gtest-nuxcore-rolling-file-appender.cpp" line="133" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRollingFileAppender" />
+  </testsuite>
+</testsuites>

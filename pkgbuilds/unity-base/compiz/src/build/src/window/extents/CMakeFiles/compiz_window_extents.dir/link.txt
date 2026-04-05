@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_window_extents.a CMakeFiles/compiz_window_extents.dir/src/windowextents.cpp.o
+/usr/bin/ranlib libcompiz_window_extents.a

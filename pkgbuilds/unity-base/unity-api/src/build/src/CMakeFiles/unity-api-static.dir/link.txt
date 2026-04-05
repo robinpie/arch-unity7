@@ -1,0 +1,2 @@
+/usr/bin/ar qc libunity-api.a "CMakeFiles/unity-api-obj.dir/unity/api/Version.cpp.o" "CMakeFiles/unity-api-obj.dir/unity/util/internal/DaemonImpl.cpp.o" "CMakeFiles/unity-api-obj.dir/unity/util/Daemon.cpp.o" "CMakeFiles/unity-api-obj.dir/unity/util/FileIO.cpp.o" "CMakeFiles/unity-api-obj.dir/unity/util/IniParser.cpp.o" "CMakeFiles/unity-api-obj.dir/unity/util/SnapPath.cpp.o" "CMakeFiles/unity-api-obj.dir/unity/Exception.cpp.o" "CMakeFiles/unity-api-obj.dir/unity/UnityExceptions.cpp.o"
+/usr/bin/ranlib libunity-api.a

@@ -1,0 +1,11 @@
+prefix=/usr
+includedir=${prefix}/include
+plugindir_suffix=
+plugindir=${prefix}/${plugindir_suffix}
+
+Name: unity-shell-notifications
+Description: unity-shell-notifications
+Version: 3
+
+Requires: Qt5Core
+Cflags: -I${includedir}

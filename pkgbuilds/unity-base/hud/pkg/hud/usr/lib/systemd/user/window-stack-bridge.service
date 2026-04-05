@@ -1,0 +1,7 @@
+[Unit]
+Description=Window Stack Bridge
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/libexec/hud/window-stack-bridge
+Restart=on-failure

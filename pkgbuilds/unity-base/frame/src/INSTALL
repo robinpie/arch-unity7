@@ -1,0 +1,25 @@
+frame - Touch Frame Library
+
+To build, you need to have the autoconf, libtool, and x11 developer
+packages installed. Then, do
+
+   ./autogen.sh
+   ./configure
+   make
+
+To test the touch properties of an MT device at /dev/input/eventX, do
+
+   sudo ./test/frame-test /dev/input/eventX
+
+You should be able to see touch events in the terminal. After five
+seconds of inactivity, the program exits.
+
+To install frame, do
+
+   sudo make install
+
+By default, frame installs to /usr/local. To change, use the --prefix
+configure option.
+
+Enjoy,
+Henrik

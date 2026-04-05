@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_outputdevices.a CMakeFiles/compiz_outputdevices.dir/outputdevices.cpp.o CMakeFiles/compiz_outputdevices.dir/outputdevices_x11.cpp.o
+/usr/bin/ranlib libcompiz_outputdevices.a

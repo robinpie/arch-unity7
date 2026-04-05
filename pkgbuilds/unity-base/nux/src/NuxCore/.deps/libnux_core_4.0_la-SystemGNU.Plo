@@ -1,0 +1,2 @@
+libnux_core_4.0_la-SystemGNU.lo: SystemGNU.cpp /usr/include/stdc-predef.h
+/usr/include/stdc-predef.h:

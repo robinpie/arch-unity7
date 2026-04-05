@@ -1,0 +1,54 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/libunity-misc
+
+pkgname=libunity-misc
+pkgver=4.0.5
+_uver=+14.04.20140115
+_urev=0ubuntu6
+pkgrel=1
+pkgdesc="Miscellaneous Unity7 utility modules"
+arch=('x86_64')
+url="https://launchpad.net/libunity-misc"
+license=('GPL-2.0-or-later' 'LGPL-2.0-or-later' 'LGPL-3.0-or-later')
+depends=('glib2' 'gtk3' 'cairo')
+makedepends=('pkgconf' 'autoconf' 'automake' 'libtool' 'gnome-common')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+)
+sha256sums=('SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+    if [ -f "${pkgname}_${pkgver}${_uver}-${_urev}.diff" ]; then
+        patch -d "${pkgname}-${pkgver}${_uver}" -p1 \
+            -i "../${pkgname}_${pkgver}${_uver}-${_urev}.diff"
+    fi
+
+    cd "${pkgname}-${pkgver}${_uver}"
+
+    if [ -f debian/patches/series ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p"
+        done < debian/patches/series
+    fi
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "${pkgname}-${pkgver}${_uver}"
+    ./configure \
+        --prefix=/usr \
+        --libdir=/usr/lib \
+        --disable-static \
+        --disable-gtk-doc
+    make
+}
+
+package() {
+    cd "${pkgname}-${pkgver}${_uver}"
+    make DESTDIR="$pkgdir" install
+    find "$pkgdir" -name '*.la' -delete
+}

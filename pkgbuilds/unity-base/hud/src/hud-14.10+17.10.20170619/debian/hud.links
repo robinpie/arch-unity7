@@ -1,0 +1,6 @@
+usr/lib/systemd/user/window-stack-bridge.service usr/lib/systemd/user/unity-session.target.wants/window-stack-bridge.service
+usr/lib/systemd/user/window-stack-bridge.service usr/lib/systemd/user/unity-session.target.wants/window-stack-bridge.service
+usr/lib/systemd/user/window-stack-bridge.service usr/lib/systemd/user/unity-session.target.wants/window-stack-bridge.service
+usr/lib/systemd/user/window-stack-bridge.service usr/lib/systemd/user/unity-session.target.wants/window-stack-bridge.service
+usr/lib/systemd/user/window-stack-bridge.service usr/lib/systemd/user/unity-session.target.wants/window-stack-bridge.service
+usr/lib/systemd/user/window-stack-bridge.service usr/lib/systemd/user/unity-session.target.wants/window-stack-bridge.service

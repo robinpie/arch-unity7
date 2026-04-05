@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgtk_window_decorator_settings_storage_gsettings.a "CMakeFiles/gtk_window_decorator_settings_storage_gsettings.dir/gwd-settings-storage.c.o"
+/usr/bin/ranlib libgtk_window_decorator_settings_storage_gsettings.a

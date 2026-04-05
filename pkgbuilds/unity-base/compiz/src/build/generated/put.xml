@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="put">
+	<short>Put</short>
+	<short xml:lang="da">Sæt</short>
+	<short xml:lang="uk">Розташування</short>
+	<long>Put window</long>
+	<long xml:lang="uk">Розташувати вікно</long>
+	<category>Window Management</category>
+	<deps>
+	    <relation type="after">
+		<plugin>opengl</plugin>
+		<plugin>decor</plugin>
+	    </relation>
+	    <relation type="before">
+		<plugin>wobbly</plugin>
+		<plugin>fade</plugin>
+	    </relation>
+	    <requirement>
+		<plugin>opengl</plugin>
+		<plugin>composite</plugin>
+	    </requirement>
+	</deps>
+	<options>
+	    <option type="action" name="put_viewport">
+		<short>Put On Viewport</short>
+		<short xml:lang="uk">Розташувати в проєкції</short>
+		<long>Move window to a certain viewport</long>
+		<long xml:lang="uk">Перемістити вікно до конкретної проєкції</long>
+		<allowed/>
+		<default/>
+	    </option>
+	    <group>
+		<short>Bindings</short>
+		<short xml:lang="ast">Lligadures</short>
+		<short xml:lang="be">Прывязваньні</short>
+		<short xml:lang="bg">Задължителни</short>
+		<short xml:lang="bs">Povezivanja</short>
+		<short xml:lang="cs">Klávesové zkratky</short>
+		<short xml:lang="da">Bindinger</short>
+		<short xml:lang="de">Tastenkombinationen</short>
+		<short xml:lang="el">Συνδυασμοί</short>
+		<short xml:lang="en_AU">Bindings</short>
+		<short xml:lang="en_GB">Bindings</short>
+		<short xml:lang="es">Vínculos</short>
+		<short xml:lang="eu">Laster-bideak</short>
+		<short xml:lang="fi">Pikanäppäimet</short>
+		<short xml:lang="fr">Assignations</short>
+		<short xml:lang="gl">Asociacións</short>
+		<short xml:lang="he">צירופים</short>
+		<short xml:lang="hr">Tipkovničke kratice</short>
+		<short xml:lang="hu">Gyorsbillentyűk</short>
+		<short xml:lang="it">Associazioni</short>
+		<short xml:lang="ja">割り当て</short>
+		<short xml:lang="ko">바로 가기</short>
+		<short xml:lang="ms">Pengikatan</short>
+		<short xml:lang="nl">Bindingen</short>
+		<short xml:lang="oc">Assignacions</short>
+		<short xml:lang="pl">Przyporządkowanie klawiszy</short>
+		<short xml:lang="pt">Atalhos</short>
+		<short xml:lang="pt_BR">Atalhos</short>
+		<short xml:lang="ro">Asocieri</short>
+		<short xml:lang="ru">Закрепление</short>
+		<short xml:lang="sl">Vezave</short>
+		<short xml:lang="sq">Bindings</short>
+		<short xml:lang="sr">Повезивања</short>
+		<short xml:lang="sv">Bindningar</short>
+		<short xml:lang="tr">Bağlayıcılar</short>
+		<short xml:lang="ug">باغلانمىلار</short>
+		<short xml:lang="uk">Закріплення</short>
+		<short xml:lang="vi">Gán</short>
+		<short xml:lang="zh_CN">绑定</short>
+		<short xml:lang="zh_HK">連結</short>
+		<short xml:lang="zh_TW">連結</short>
+		<subgroup>
+		    <short>Put to arbitrary viewport</short>
+		    <short xml:lang="uk">Розташувати в довільній проєкції</short>
+		    <option type="key" name="put_viewport_1_key">
+			<short>Put On Viewport 1</short>
+			<short xml:lang="uk">Розташувати в проєкції 1</short>
+			<long>Move window to viewport 1</long>
+			<long xml:lang="uk">Перемістити вікно до проєкції 1</long>
+		    </option>
+		    <option type="key" name="put_viewport_2_key">
+			<short>Put On Viewport 2</short>
+			<short xml:lang="uk">Розташувати в проєкції 2</short>
+			<long>Move window to viewport 2</long>
+			<long xml:lang="uk">Перемістити вікно до проєкції 2</long>
+		    </option>
+		    <option type="key" name="put_viewport_3_key">
+			<short>Put On Viewport 3</short>
+			<short xml:lang="uk">Розташувати в проєкції 3</short>
+			<long>Move window to viewport 3</long>
+			<long xml:lang="uk">Перемістити вікно до проєкції 3</long>
+		    </option>
+		    <option type="key" name="put_viewport_4_key">
+			<short>Put On Viewport 4</short>
+			<short xml:lang="uk">Розташувати в проєкції 4</short>
+			<long>Move window to viewport 4</long>
+			<long xml:lang="uk">Перемістити вікно до проєкції 4</long>
+		    </option>
+		    <option type="key" name="put_viewport_5_key">
+			<short>Put On Viewport 5</short>
+			<short xml:lang="uk">Розташувати в проєкції 5</short>
+			<long>Move window to viewport 5</long>
+			<long xml:lang="uk">Перемістити вікно до проєкції 5</long>
+		    </option>
+		    <option type="key" name="put_viewport_6_key">
+			<short>Put On Viewport 6</short>
+			<short xml:lang="uk">Розташувати в проєкції 6</short>
+			<long>Move window to viewport 6</long>
+			<long xml:lang="uk">Перемістити вікно до проєкції 6</long>
+		    </option>
+		    <option type="key" name="put_viewport_7_key">
+			<short>Put On Viewport 7</short>
+			<short xml:lang="uk">Розташувати в проєкції 7</short>
+			<long>Move window to viewport 7</long>
+			<long xml:lang="uk">Перемістити вікно до проєкції 7</long>
+		    </option>
+		    <option type="key" name="put_viewport_8_key">
+			<short>Put On Viewport 8</short>
+			<short xml:lang="uk">Розташувати в проєкції 8</short>
+			<long>Move window to viewport 8</long>
+			<long xml:lang="uk">Перемістити вікно до проєкції 8</long>
+		    </option>
+		    <option type="key" name="put_viewport_9_key">
+			<short>Put On Viewport 9</short>
+			<short xml:lang="uk">Розташувати в проєкції 9</short>
+			<long>Move window to viewport 9</long>
+			<long xml:lang="uk">Перемістити вікно до проєкції 9</long>
+		    </option>
+			<option type="key" name="put_viewport_10_key">
+			<short>Put On Viewport 10</short>
+			<short xml:lang="uk">Розташувати в проєкції 10</short>
+			<long>Move window to viewport 10</long>
+			<long xml:lang="uk">Перемістити вікно до проєкції 10</long>
+		    </option>
+		    <option type="key" name="put_viewport_11_key">
+			<short>Put On Viewport 11</short>
+			<short xml:lang="uk">Розташувати в проєкції 11</short>
+			<long>Move window to viewport 11</long>
+			<long xml:lang="uk">Перемістити вікно до проєкції 11</long>
+		    </option>
+		    <option type="key" name="put_viewport_12_key">
+			<short>Put On Viewport 12</short>
+			<short xml:lang="uk">Розташувати в проєкції 12</short>
+			<long>Move window to viewport 12</long>
+			<long xml:lang="uk">Перемістити вікно до проєкції 12</long>
+		    </option>
+		</subgroup>
+		<subgroup>
+		    <short>Put to adjacent viewport</short>
+		    <short xml:lang="uk">Розташувати в суміжній проєкції</short>
+		    <option type="key" name="put_viewport_left_key">
+			<short>Viewport Left</short>
+			<short xml:lang="uk">Проєкція ліворуч</short>
+			<long>Move window to the viewport on the left</long>
+			<long xml:lang="uk">Перемістити вікно до проєкції ліворуч</long>
+		    </option>
+		    <option type="key" name="put_viewport_right_key">
+			<short>Viewport Right</short>
+			<short xml:lang="uk">Проєкція праворуч</short>
+			<long>Move window to the viewport on the right</long>
+			<long xml:lang="uk">Перемістити вікно до проєкції праворуч</long>
+		    </option>
+		    <option type="key" name="put_viewport_up_key">
+			<short>Viewport Top</short>
+			<short xml:lang="uk">Проєкція зверху</short>
+			<long>Move window to the viewport on the top</long>
+			<long xml:lang="uk">Перемістити вікно до проєкції вгору</long>
+		    </option>
+		    <option type="key" name="put_viewport_down_key">
+			<short>Viewport Bottom</short>
+			<short xml:lang="uk">Проєкція знизу</short>
+			<long>Move window to the viewport on the bottom</long>
+			<long xml:lang="uk">Перемістити вікно до проєкції вниз</long>
+		    </option>
+		</subgroup>
+		<subgroup>
+		    <short>Put within viewport</short>
+		    <short xml:lang="uk">Розташувати у межах проєкції</short>
+		    <option type="key" name="put_center_key">
+			<short>Put Center</short>
+			<short xml:lang="uk">Розташувати у центрі</short>
+			<long>Move window to the center</long>
+			<long xml:lang="uk">Перемістити вікно у центр</long>
+			<default>&lt;Super&gt;KP_Begin</default>
+		    </option>
+		    <option type="button" name="put_center_button">
+			<short>Put Center</short>
+			<short xml:lang="uk">Розташувати у центрі</short>
+			<long>Move window to the center</long>
+			<long xml:lang="uk">Перемістити вікно у центр</long>
+			</option>
+		    <option type="key" name="put_left_key">
+			<short>Put Left</short>
+			<short xml:lang="uk">Розташувати ліворуч</short>
+			<long>Move window to the left edge</long>
+			<long xml:lang="uk">Перемістити вікно до лівого краю</long>
+			<default>&lt;Super&gt;KP_Left</default>
+		    </option>
+		    <option type="button" name="put_left_button">
+			<short>Put Left</short>
+			<short xml:lang="uk">Розташувати ліворуч</short>
+			<long>Move window to the left edge</long>
+			<long xml:lang="uk">Перемістити вікно до лівого краю</long>
+		    </option>
+		    <option type="key" name="put_right_key">
+			<short>Put Right</short>
+			<short xml:lang="uk">Розташувати праворуч</short>
+			<long>Move window to the right edge</long>
+			<long xml:lang="uk">Перемістити вікно до правого краю</long>
+			<default>&lt;Super&gt;KP_Right</default>
+		    </option>
+		    <option type="button" name="put_right_button">
+			<short>Put Right</short>
+			<short xml:lang="uk">Розташувати праворуч</short>
+			<long>Move window to the right edge</long>
+			<long xml:lang="uk">Перемістити вікно до правого краю</long>
+		    </option>
+		    <option type="key" name="put_top_key">
+			<short>Put Top</short>
+			<short xml:lang="uk">Розташувати зверху</short>
+			<long>Move window to the top edge</long>
+			<long xml:lang="uk">Перемістити вікно до верхнього краю</long>
+			<default>&lt;Super&gt;KP_Up</default>
+		    </option>
+		    <option type="button" name="put_top_button">
+			<short>Put Top</short>
+			<short xml:lang="uk">Розташувати зверху</short>
+			<long>Move window to the top edge</long>
+			<long xml:lang="uk">Перемістити вікно до верхнього краю</long>
+		    </option>
+		    <option type="key" name="put_bottom_key">
+			<short>Put Bottom</short>
+			<short xml:lang="uk">Розташувати знизу</short>
+			<long>Move window to the bottom edge</long>
+			<long xml:lang="uk">Перемістити вікно до нижнього краю</long>
+			<default>&lt;Super&gt;KP_Down</default>
+		    </option>
+		    <option type="button" name="put_bottom_button">
+			<short>Put Bottom</short>
+			<short xml:lang="uk">Розташувати знизу</short>
+			<long>Move window to the bottom edge</long>
+			<long xml:lang="uk">Перемістити вікно до нижнього краю</long>
+			<default>&lt;Super&gt;KP_Down</default>
+		    </option>
+		    <option type="key" name="put_topleft_key">
+			<short>Put Top Left</short>
+			<short xml:lang="uk">Розташувати зверху ліворуч</short>
+			<long>Move window to the top left corner</long>
+			<long xml:lang="uk">Перемістити вікно до лівого верхнього кута</long>
+			<default>&lt;Super&gt;KP_Home</default>
+		    </option>
+		    <option type="button" name="put_topleft_button">
+			<short>Put Top Left</short>
+			<short xml:lang="uk">Розташувати зверху ліворуч</short>
+			<long>Move window to the top left corner</long>
+			<long xml:lang="uk">Перемістити вікно до лівого верхнього кута</long>
+		    </option>
+		    <option type="key" name="put_topright_key">
+			<short>Put Top Right</short>
+			<short xml:lang="uk">Розташувати зверху праворуч</short>
+			<long>Move window to the top right corner</long>
+			<long xml:lang="uk">Перемістити вікно до правого верхнього кута</long>
+			<default>&lt;Super&gt;KP_Prior</default>
+		    </option>
+		    <option type="button" name="put_topright_button">
+			<short>Put Top Right</short>
+			<short xml:lang="uk">Розташувати зверху праворуч</short>
+			<long>Move window to the top right corner</long>
+			<long xml:lang="uk">Перемістити вікно до правого верхнього кута</long>
+		    </option>
+		    <option type="key" name="put_bottomleft_key">
+			<short>Put Bottom Left</short>
+			<short xml:lang="uk">Розташувати знизу ліворуч</short>
+			<long>Move window to the bottom left corner</long>
+			<long xml:lang="uk">Перемістити вікно у лівий нижній кут</long>
+			<default>&lt;Super&gt;KP_End</default>
+		    </option>
+		    <option type="button" name="put_bottomleft_button">
+			<short>Put Bottom Left</short>
+			<short xml:lang="uk">Розташувати знизу ліворуч</short>
+			<long>Move window to the bottom left corner</long>
+			<long xml:lang="uk">Перемістити вікно у лівий нижній кут</long>
+		    </option>
+		    <option type="key" name="put_bottomright_key">
+			<short>Put Bottom Right</short>
+			<short xml:lang="uk">Розташувати внизу праворуч</short>
+			<long>Move window to the bottom right corner</long>
+			<long xml:lang="uk">Перемістити вікно у правий нижній кут</long>
+			<default>&lt;Super&gt;KP_Next</default>
+		    </option>
+		    <option type="button" name="put_bottomright_button">
+			<short>Put Bottom Right</short>
+			<short xml:lang="uk">Розташувати внизу праворуч</short>
+			<long>Move window to the bottom right corner</long>
+			<long xml:lang="uk">Перемістити вікно у правий нижній кут</long>
+		    </option>
+		</subgroup>
+		<subgroup>
+		    <short>Put on empty regions</short>
+		    <option type="key" name="put_empty_center_key">
+			<short>Put Center</short>
+			<short xml:lang="uk">Розташувати у центрі</short>
+			<long>Move window to the center</long>
+			<long xml:lang="uk">Перемістити вікно у центр</long>
+		    </option>
+		    <option type="button" name="put_empty_center_button">
+			<short>Put Center</short>
+			<short xml:lang="uk">Розташувати у центрі</short>
+			<long>Move window to the center</long>
+			<long xml:lang="uk">Перемістити вікно у центр</long>
+		    </option>
+		    <option type="key" name="put_empty_left_key">
+			<short>Put Left</short>
+			<short xml:lang="uk">Розташувати ліворуч</short>
+			<long>Move window to the left edge</long>
+			<long xml:lang="uk">Перемістити вікно до лівого краю</long>
+		    </option>
+		    <option type="button" name="put_empty_left_button">
+			<short>Put Left</short>
+			<short xml:lang="uk">Розташувати ліворуч</short>
+			<long>Move window to the left edge</long>
+			<long xml:lang="uk">Перемістити вікно до лівого краю</long>
+		    </option>
+		    <option type="key" name="put_empty_right_key">
+			<short>Put Right</short>
+			<short xml:lang="uk">Розташувати праворуч</short>
+			<long>Move window to the right edge</long>
+			<long xml:lang="uk">Перемістити вікно до правого краю</long>
+		    </option>
+		    <option type="button" name="put_empty_right_button">
+			<short>Put Right</short>
+			<short xml:lang="uk">Розташувати праворуч</short>
+			<long>Move window to the right edge</long>
+			<long xml:lang="uk">Перемістити вікно до правого краю</long>
+		    </option>
+		    <option type="key" name="put_empty_top_key">
+			<short>Put Top</short>
+			<short xml:lang="uk">Розташувати зверху</short>
+			<long>Move window to the top edge</long>
+			<long xml:lang="uk">Перемістити вікно до верхнього краю</long>
+		    </option>
+		    <option type="button" name="put_empty_top_button">
+			<short>Put Top</short>
+			<short xml:lang="uk">Розташувати зверху</short>
+			<long>Move window to the top edge</long>
+			<long xml:lang="uk">Перемістити вікно до верхнього краю</long>
+		    </option>
+		    <option type="key" name="put_empty_bottom_key">
+			<short>Put Bottom</short>
+			<short xml:lang="uk">Розташувати знизу</short>
+			<long>Move window to the bottom edge</long>
+			<long xml:lang="uk">Перемістити вікно до нижнього краю</long>
+		    </option>
+		    <option type="button" name="put_empty_bottom_button">
+			<short>Put Bottom</short>
+			<short xml:lang="uk">Розташувати знизу</short>
+			<long>Move window to the bottom edge</long>
+			<long xml:lang="uk">Перемістити вікно до нижнього краю</long>
+		    </option>
+		    <option type="key" name="put_empty_topleft_key">
+			<short>Put Top Left</short>
+			<short xml:lang="uk">Розташувати зверху ліворуч</short>
+			<long>Move window to the top left corner</long>
+			<long xml:lang="uk">Перемістити вікно до лівого верхнього кута</long>
+		    </option>
+		    <option type="button" name="put_empty_topleft_button">
+			<short>Put Top Left</short>
+			<short xml:lang="uk">Розташувати зверху ліворуч</short>
+			<long>Move window to the top left corner</long>
+			<long xml:lang="uk">Перемістити вікно до лівого верхнього кута</long>
+		    </option>
+		    <option type="key" name="put_empty_topright_key">
+			<short>Put Top Right</short>
+			<short xml:lang="uk">Розташувати зверху праворуч</short>
+			<long>Move window to the top right corner</long>
+			<long xml:lang="uk">Перемістити вікно до правого верхнього кута</long>
+		    </option>
+		    <option type="button" name="put_empty_topright_button">
+			<short>Put Top Right</short>
+			<short xml:lang="uk">Розташувати зверху праворуч</short>
+			<long>Move window to the top right corner</long>
+			<long xml:lang="uk">Перемістити вікно до правого верхнього кута</long>
+		    </option>
+		    <option type="key" name="put_empty_bottomleft_key">
+			<short>Put Bottom Left</short>
+			<short xml:lang="uk">Розташувати знизу ліворуч</short>
+			<long>Move window to the bottom left corner</long>
+			<long xml:lang="uk">Перемістити вікно у лівий нижній кут</long>
+		    </option>
+		    <option type="button" name="put_empty_bottomleft_button">
+			<short>Put Bottom Left</short>
+			<short xml:lang="uk">Розташувати знизу ліворуч</short>
+			<long>Move window to the bottom left corner</long>
+			<long xml:lang="uk">Перемістити вікно у лівий нижній кут</long>
+		    </option>
+		    <option type="key" name="put_empty_bottomright_key">
+			<short>Put Bottom Right</short>
+			<short xml:lang="uk">Розташувати внизу праворуч</short>
+			<long>Move window to the bottom right corner</long>
+			<long xml:lang="uk">Перемістити вікно у правий нижній кут</long>
+		    </option>
+		    <option type="button" name="put_empty_bottomright_button">
+			<short>Put Bottom Right</short>
+			<short xml:lang="uk">Розташувати внизу праворуч</short>
+			<long>Move window to the bottom right corner</long>
+			<long xml:lang="uk">Перемістити вікно у правий нижній кут</long>
+		    </option>
+		</subgroup>
+		<option type="key" name="put_restore_key">
+		    <short>Restore Position</short>
+		    <short xml:lang="uk">Відновити позицію</short>
+		    <long>Move window to the last position</long>
+		    <long xml:lang="uk">Перемістити вікно на останню позицію</long>
+		    <default>&lt;Super&gt;KP_Insert</default>
+		</option>
+		<option type="button" name="put_restore_button">
+		    <short>Restore Position</short>
+		    <short xml:lang="uk">Відновити позицію</short>
+		    <long>Move window to the last position</long>
+		    <long xml:lang="uk">Перемістити вікно на останню позицію</long>
+		</option>
+		<option type="key" name="put_pointer_key">
+		    <short>Put Pointer</short>
+		    <short xml:lang="uk">Розташувати вказівник</short>
+		    <long>Move window to the pointer position</long>
+		    <long xml:lang="uk">Перемістити вікно на позицію вказівника</long>
+		    <default>&lt;Super&gt;z</default>
+		</option>
+		<option type="button" name="put_pointer_button">
+		    <short>Put Pointer</short>
+		    <short xml:lang="uk">Розташувати вказівник</short>
+		    <long>Move window to the pointer position</long>
+		    <long xml:lang="uk">Перемістити вікно на позицію вказівника</long>
+		</option>
+		<option type="key" name="put_next_output_key">
+		    <short>Put To Next Output</short>
+		    <short xml:lang="uk">Розташувати у наступному пристрої введення</short>
+		    <long>Move window to the next output device</long>
+		    <long xml:lang="uk">Перемістити вікно до наступного пристрою виводу</long>
+		</option>
+		<option type="button" name="put_next_output_button">
+		    <short>Put To Next Output</short>
+		    <short xml:lang="uk">Розташувати у наступному пристрої введення</short>
+		    <long>Move window to the next output device</long>
+		    <long xml:lang="uk">Перемістити вікно до наступного пристрою виводу</long>
+		</option>
+		<option type="key" name="put_previous_output_key">
+		    <short>Put To Previous Output</short>
+		    <long>Move window to the previous output device</long>
+		</option>
+		<option type="button" name="put_previous_output_button">
+		    <short>Put To Previous Output</short>
+		    <long>Move window to the previous output device</long>
+		</option>
+		<option type="action" name="put_put">
+		    <short>Put</short>
+		    <short xml:lang="da">Sæt</short>
+		    <short xml:lang="uk">Розташування</short>
+		    <long>Move window arbitrarily by passing x, y and type.</long>
+		    <long xml:lang="uk">Перемістити вікно довільно при проходженні x, y.</long>
+		    <allowed/>
+		    <default/>
+		</option>
+	    </group>
+	    <group>
+		<short>Misc. Options</short>
+		<short xml:lang="bg">Други опции</short>
+		<short xml:lang="da">Diverse valgmuligheder</short>
+		<short xml:lang="es">Opciones varias</short>
+		<short xml:lang="tr">Diğer Seçenekler</short>
+		<short xml:lang="uk">Різне</short>
+		<subgroup>
+		    <short>Padding</short>
+		    <short xml:lang="uk">Заповнення</short>
+		    <option type="int" name="pad_left">
+			<short>Pad Left</short>
+			<short xml:lang="uk">Відступ ліворуч</short>
+			<long>Number of pixels from the left edge where the window will come to rest</long>
+			<long xml:lang="uk">Кількість пікселів від лівого краю, де вікна будуть зупинятись</long>
+			<default>0</default>
+			<min>0</min>
+			<max>500</max>
+		    </option>
+		    <option type="int" name="pad_right">
+			<short>Pad Right</short>
+			<short xml:lang="uk">Відступ праворуч</short>
+			<long>Number of pixels from the right edge where the window will come to rest</long>
+			<long xml:lang="uk">Кількість пікселів від правого краю, де вікна будуть зупинятись</long>
+			<default>0</default>
+			<min>0</min>
+			<max>500</max>
+		    </option>
+		    <option type="int" name="pad_top">
+			<short>Pad Top</short>
+			<short xml:lang="uk">Відступ зверху</short>
+			<long>Number of pixels from the top edge where the window will come to rest</long>
+			<long xml:lang="uk">Кількість пікселів від верхнього краю, де вікна будуть зупинятись</long>
+			<default>0</default>
+			<min>0</min>
+			<max>500</max>
+		    </option>
+		    <option type="int" name="pad_bottom">
+			<short>Pad Bottom</short>
+			<short xml:lang="uk">Відступ знизу</short>
+			<long>Number of pixels from the bottom edge where the window will come to rest</long>
+			<long xml:lang="uk">Кількість пікселів від нижнього краю, де вікна будуть зупинятись</long>
+			<default>0</default>
+			<min>0</min>
+			<max>500</max>
+		    </option>
+		</subgroup>
+		<option type="bool" name="unfocus_window">
+		    <short>Unfocus Window</short>
+		    <short xml:lang="uk">Забрати фокус із вікна</short>
+		    <long>Unfocus windows that are moved off the viewport</long>
+		    <long xml:lang="uk">Забрати фокус із вікна, яке переміщається з проєкції</long>
+		    <default>false</default>
+		</option>
+		<option type="bool" name="window_center">
+		    <short>Window Center</short>
+		    <short xml:lang="uk">Центр вікна</short>
+		    <long>Put pointer uses the center of the window</long>
+		    <long xml:lang="uk">Розташувати вказівник у центрі вікна</long>
+		    <default>false</default>
+		</option>
+		<option type="bool" name="avoid_offscreen">
+		    <short>Avoid Offscreen</short>
+		    <short xml:lang="uk">Уникати виштовхування поза екран</short>
+		    <long>Avoids putting window borders offscreen</long>
+		    <long xml:lang="uk">Уникати виштовхування меж вікна за екран</long>
+		    <default>false</default>
+		</option>
+	    </group>
+	    <group>
+		<short>Animation</short>
+		<short xml:lang="uk">Анімація</short>
+		<option type="float" name="speed">
+		    <short>Speed</short>
+		    <short xml:lang="am">ፍጥነት</short>
+		    <short xml:lang="ast">Velocidá</short>
+		    <short xml:lang="be">Хуткасьць</short>
+		    <short xml:lang="bg">Скорост</short>
+		    <short xml:lang="bs">Brzina</short>
+		    <short xml:lang="ca">Velocitat</short>
+		    <short xml:lang="cs">Rychlost</short>
+		    <short xml:lang="da">Hastighed</short>
+		    <short xml:lang="de">Geschwindigkeit</short>
+		    <short xml:lang="el">Ταχύτητα</short>
+		    <short xml:lang="en_AU">Speed</short>
+		    <short xml:lang="en_GB">Speed</short>
+		    <short xml:lang="es">Velocidad</short>
+		    <short xml:lang="eu">Abiadura</short>
+		    <short xml:lang="fi">Nopeus</short>
+		    <short xml:lang="fr">Vitesse</short>
+		    <short xml:lang="gl">Velocidade</short>
+		    <short xml:lang="gu">ઝડપ</short>
+		    <short xml:lang="he">מהירות</short>
+		    <short xml:lang="hr">Brzina</short>
+		    <short xml:lang="hu">Sebesség</short>
+		    <short xml:lang="id">Kecepatan</short>
+		    <short xml:lang="it">Velocità</short>
+		    <short xml:lang="ja">速度</short>
+		    <short xml:lang="ko">속도</short>
+		    <short xml:lang="ku">Lez</short>
+		    <short xml:lang="ms">Kelajuan</short>
+		    <short xml:lang="my">အလျင်</short>
+		    <short xml:lang="nb">Hastighet</short>
+		    <short xml:lang="nds">Gauheit</short>
+		    <short xml:lang="nl">Snelheid</short>
+		    <short xml:lang="oc">Velocitat</short>
+		    <short xml:lang="or">ଗତି</short>
+		    <short xml:lang="pl">Szybkość</short>
+		    <short xml:lang="pt">Velocidade</short>
+		    <short xml:lang="pt_BR">Velocidade</short>
+		    <short xml:lang="ro">Viteză</short>
+		    <short xml:lang="ru">Скорость</short>
+		    <short xml:lang="sk">Rýchlosť</short>
+		    <short xml:lang="sl">Hitrost</short>
+		    <short xml:lang="sq">Shpejtësia</short>
+		    <short xml:lang="sr">Брзина</short>
+		    <short xml:lang="sv">Hastighet</short>
+		    <short xml:lang="tr">Hız</short>
+		    <short xml:lang="ug">سۈرئىتى</short>
+		    <short xml:lang="uk">Швидкість</short>
+		    <short xml:lang="vi">Tốc độ</short>
+		    <short xml:lang="zh_CN">速度</short>
+		    <short xml:lang="zh_HK">速度</short>
+		    <short xml:lang="zh_TW">速度</short>
+		    <long>Animation speed</long>
+		    <long xml:lang="uk">Швидкість анімації</long>
+		    <default>2.5</default>
+		    <min>0.1</min>
+		    <max>50.0</max>
+		    <precision>0.1</precision>
+		</option>
+		<option type="float" name="timestep">
+		    <short>Timestep</short>
+		    <short xml:lang="ast">Pasu</short>
+		    <short xml:lang="be">সময়ধাপ</short>
+		    <short xml:lang="bg">Времева стъпка</short>
+		    <short xml:lang="bs">Korak vremena</short>
+		    <short xml:lang="ca">Etapa</short>
+		    <short xml:lang="cs">Časový krok</short>
+		    <short xml:lang="da">Tidstrin</short>
+		    <short xml:lang="de">Zeitintervall</short>
+		    <short xml:lang="el">Χρονικό Βήμα</short>
+		    <short xml:lang="en_AU">Timestep</short>
+		    <short xml:lang="en_GB">Timestep</short>
+		    <short xml:lang="es">Paso</short>
+		    <short xml:lang="eu">denbora-pausoa</short>
+		    <short xml:lang="fi">Aikaviive</short>
+		    <short xml:lang="fr">Intervalle</short>
+		    <short xml:lang="gl">Intervalo de tempo</short>
+		    <short xml:lang="gu">સમયપગલું</short>
+		    <short xml:lang="he">יחידת זמן</short>
+		    <short xml:lang="hr">Vremenski korak</short>
+		    <short xml:lang="hu">Időköz</short>
+		    <short xml:lang="it">Intervallo</short>
+		    <short xml:lang="ja">描画の時間刻み</short>
+		    <short xml:lang="ko">시간 간격</short>
+		    <short xml:lang="ms">Langkah Masa</short>
+		    <short xml:lang="nb">Tidsskritt</short>
+		    <short xml:lang="nl">Tijdstempel</short>
+		    <short xml:lang="oc">Interval</short>
+		    <short xml:lang="or">ସମଯସୋପାନ</short>
+		    <short xml:lang="pl">Opóźnienie</short>
+		    <short xml:lang="pt">Espaço de tempo</short>
+		    <short xml:lang="pt_BR">Intervalo de tempo</short>
+		    <short xml:lang="ro">Pas de timp</short>
+		    <short xml:lang="ru">Шаг времени</short>
+		    <short xml:lang="sk">Krok</short>
+		    <short xml:lang="sl">Časovni interval</short>
+		    <short xml:lang="sr">Корак времена</short>
+		    <short xml:lang="sv">Tidsintervall</short>
+		    <short xml:lang="tr">Süre aralığı</short>
+		    <short xml:lang="ug">ۋاقىت قەدەم ئۇزۇنلۇقى</short>
+		    <short xml:lang="uk">Крок часу</short>
+		    <short xml:lang="vi">Bước</short>
+		    <short xml:lang="zh_CN">时间步长</short>
+		    <short xml:lang="zh_HK">時間間隔</short>
+		    <short xml:lang="zh_TW">時間間隔</short>
+		   <long>Animation timestep</long>
+		   <long xml:lang="uk">Затримка анімації</long>
+		    <default>0.5</default>
+		    <min>0.1</min>
+		    <max>50.0</max>
+		    <precision>0.1</precision>
+		</option>
+	    </group>
+	</options>
+    </plugin>
+</compiz>

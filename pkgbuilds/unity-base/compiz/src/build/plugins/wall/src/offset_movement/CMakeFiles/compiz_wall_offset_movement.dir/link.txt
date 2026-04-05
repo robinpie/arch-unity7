@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_wall_offset_movement.a "CMakeFiles/compiz_wall_offset_movement.dir/src/offset-movement.cpp.o"
+/usr/bin/ranlib libcompiz_wall_offset_movement.a

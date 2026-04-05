@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+
+export DPKG_GENSYMBOLS_CHECK_LEVEL = 4
+
+ifneq (,$(filter $(DEB_HOST_ARCH), amd64 ppc64el))
+  export DEB_CFLAGS_MAINT_STRIP = -O3
+  export DEB_CXXFLAGS_MAINT_STRIP = -O3
+  export DEB_CFLAGS_MAINT_APPEND = -O2
+  export DEB_CXXFLAGS_MAINT_APPEND = -O2
+endif
+
+%:
+	dh $@ --with python3,autoreconf --parallel
+
+override_dh_autoreconf:
+	NO_CONFIGURE=1 dh_autoreconf ./autogen.sh
+
+override_dh_auto_build-indep:
+	dh_auto_build -- doc-html
+
+override_dh_auto_test-indep:
+
+override_dh_auto_install-indep:
+	dh_auto_install -- -C doc install
+
+override_dh_install:
+	dh_install --fail-missing -X.la -X.a -X.pyo -X.pyc -Xjquery.js
+

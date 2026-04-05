@@ -1,0 +1,38 @@
+Filter by Window
+================
+
+These tests verify the "select by window" filter is functional.
+
+Filter by Window
+----------------
+
+#. Run tools/geisview/geisview with the debug trave activate and a window
+   selected.  For example, ::
+   
+   GEIS_DEBUG=3 geisview --backend grail --window 0x4800006
+
+Outcome
+   A line similar to the following should appear in the debug output. ::
+
+   GEIS(debug)-_geis_grail_activate_for_device_region:635 subscribing for device 55568 'N-Trig MultiTouch', window 0x04800006
+
+No Filter by Window
+-------------------
+
+#. Determine the X root window id using the following command. ::
+
+   xwininfo -root | grep "Window id" | cut -d' ' -f4
+
+#. Run tools/geisview/geisview with the debug trace active For example, ::
+   
+   GEIS_DEBUG=3 geisview --backend grail 
+
+
+Outcome
+   A line similar to the following should appear in the debug output. ::
+
+   GEIS(debug)-_geis_grail_activate_for_device_region:635 subscribing for device 56400 'N-Trig MultiTouch', window 0x0000015d
+
+   where the 'window' value is the same as the root window id determined in the
+   first step above.
+

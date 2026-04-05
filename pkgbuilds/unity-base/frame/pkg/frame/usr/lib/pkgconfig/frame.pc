@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib
+includedir=${prefix}/include
+
+Name: frame
+Description: Touch Frame Library
+Version: 2.5.0
+Cflags: -I${includedir}
+Libs: -L${libdir} -lframe

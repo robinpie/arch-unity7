@@ -1,0 +1,536 @@
+# ccsm hr translation.
+# Copyright (C) 2007 compiz-fusion.org
+# This file is distributed under the same license as the ccsm package.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ccsm\n"
+"Report-Msgid-Bugs-To: http://bugs.opencompositing.org\n"
+"POT-Creation-Date: 2009-03-24 12:33+0530\n"
+"PO-Revision-Date: 2017-06-19 21:12+0000\n"
+"Last-Translator: mfolnovic <Unknown>\n"
+"Language-Team: Matija Folnovic <matijafolnovic@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2019-02-21 18:44+0000\n"
+"X-Generator: Launchpad (build 18886)\n"
+
+#, python-format
+msgid ""
+"The new value for the %(binding)s binding for the action <b>%(action)s</b> "
+"in plugin <b>%(plugin)s</b> conflicts with the action "
+"<b>%(action_conflict)s</b> of the <b>%(plugin_conflict)s</b> plugin.\n"
+"Do you wish to disable <b>%(action_conflict)s</b> in the "
+"<b>%(plugin_conflict)s</b> plugin?"
+msgstr ""
+"Nova vrijednost za %(binding)s kombinacija tipki za radnju <b>%(action)s</b> "
+"u priključku <b>%(plugin)s</b> u sukobu je radnjom "
+"<b>%(action_conflict)s</b> od <b>%(plugin_conflict)s</b> priključka.\n"
+"Želite li onemogućiti <b>%(action_conflict)s</b> u "
+"<b>%(plugin_conflict)s</b> priključku?"
+
+#, python-format
+msgid "Disable %(action_conflict)s"
+msgstr "Onemogući %(action_conflict)s"
+
+#, python-format
+msgid "Don't set %(action)s"
+msgstr "Nemoj postaviti %(action)s"
+
+#, python-format
+msgid "Set %(action)s anyway"
+msgstr "Postavi %(action)s"
+
+msgid "key"
+msgstr "tipka"
+
+msgid "button"
+msgstr "tipka"
+
+msgid "edge"
+msgstr "rub"
+
+#, python-format
+msgid ""
+"You are trying to use the feature <b>%(feature)s</b> which is <b>not</b> "
+"provided by any plugin.\n"
+"Do you wish to use this feature anyway?"
+msgstr ""
+"Pokušavate koristiti značajku <b>%(feature)s</b> koja <b>nije</b> omogućena "
+"nijednim dodatkom.\n"
+"Želite li ipak koristi ovu značajku?"
+
+#, python-format
+msgid "Use %(feature)s"
+msgstr "Koristi %(feature)s"
+
+#, python-format
+msgid "Don't use %(feature)s"
+msgstr "Nemoj koristiti %(feature)s"
+
+#, python-format
+msgid ""
+"You are trying to use the feature <b>%(feature)s</b> which is provided by "
+"<b>%(plugin)s</b>.\n"
+"This plugin is currently disabled.\n"
+"Do you wish to enable <b>%(plugin)s</b> so the feature is available?"
+msgstr ""
+"Pokušavate koristiti značajku <b>%(feature)s</b> koja je omogućena dodatkom "
+"<b>%(plugin)s</b>.\n"
+"Ovaj dodatak je trenutno onemogućen.\n"
+"Želite li omogućiti <b>%(plugin)s</b> tako da je ova značajka dostupna?"
+
+#, python-format
+msgid "Enable %(plugin)s"
+msgstr "Omogući %(plugin)s"
+
+#, python-format
+msgid "Don't enable %(feature)s"
+msgstr "Nemoj omogućiti %(feature)s"
+
+#, python-format
+msgid ""
+"Some %(bindings)s bindings of Plugin <b>%(plugin)s</b> conflict with other "
+"plugins. Do you want to resolve these conflicts?"
+msgstr ""
+"Neki %(bindings)s kombinacije tipki priključka <b>%(plugin)s</b> su u sukobu "
+"s drugim priključcima. Želite li riješiti te sukobe?"
+
+msgid "Resolve conflicts"
+msgstr "Riješi sukobe"
+
+msgid "Ignore conflicts"
+msgstr "Zanemari sukobe"
+
+#, python-format
+msgid ""
+"Plugin <b>%(plugin_conflict)s</b> provides feature <b>%(feature)s</b> which "
+"is also provided by <b>%(plugin)s</b>"
+msgstr ""
+"Dodatak <b>%(plugin_conflict)s</b> pruža značajku <b>%(feature)s</b> koju "
+"isto pruža <b>%(plugin)s</b>"
+
+#, python-format
+msgid "Disable %(plugin_conflict)s"
+msgstr "Onemogući %(plugin_conflict)s"
+
+#, python-format
+msgid "Don't enable %(plugin)s"
+msgstr "Nemoj omogućiti %(plugin)s"
+
+#, python-format
+msgid "Plugin <b>%(plugin_conflict)s</b> conflicts with <b>%(plugin)s</b>."
+msgstr "Dodatak <b>%(plugin_conflict)s</b> je u sukobu s <b>%(plugin)s</b>"
+
+#, python-format
+msgid ""
+"<b>%(plugin)s</b> requires feature <b>%(feature)s</b> which is provided by "
+"the following plugins:\n"
+"%(plugin_list)s"
+msgstr ""
+"<b>%(plugin)s</b> zahtijeva značajku <b>%(feature)s</b> koju pružaju "
+"sljedeći dodaci:\n"
+"%(plugin_list)s"
+
+msgid "Enable these plugins"
+msgstr "Omogući ove dodatke"
+
+#, python-format
+msgid "<b>%(plugin)s</b> requires the plugin <b>%(require)s</b>."
+msgstr "<b>%(plugin)s</b> zahtijeva dodatak <b>%(require)s</b>"
+
+#, python-format
+msgid "Enable %(require)s"
+msgstr "Omogući %(require)s"
+
+#, python-format
+msgid ""
+"<b>%(plugin)s</b> provides the feature <b>%(feature)s</b> which is required "
+"by the plugins <b>%(plugin_list)s</b>."
+msgstr ""
+"<b>%(plugin)s<b/> pruža značajku <b>%(feature)s<b/> koja je potrebna "
+"dodacima <b>%(plugin_list)s</b>"
+
+msgid "Disable these plugins"
+msgstr "Onemogući ove dodatke"
+
+#, python-format
+msgid "Don't disable %(plugin)s"
+msgstr "Nemoj onemogućiti %(plugin)s"
+
+#, python-format
+msgid "<b>%(plugin)s</b> is required by the plugins <b>%(plugin_list)s</b>."
+msgstr "<b>%(plugin_list)s</b> je potreban ovim dodacima <b>%(plugin)s</b>"
+
+msgid "General"
+msgstr "Općenito"
+
+msgid "Accessibility"
+msgstr "Pristupačnost"
+
+msgid "Desktop"
+msgstr "Radna površina"
+
+msgid "Extras"
+msgstr "Dodaci"
+
+msgid "Window Management"
+msgstr "Upravljanje prozorima"
+
+msgid "Effects"
+msgstr "Efekti"
+
+msgid "Image Loading"
+msgstr "Učitavanje slike"
+
+msgid "Utility"
+msgstr "Pomagala"
+
+msgid "All"
+msgstr "Sve"
+
+msgid "Uncategorized"
+msgstr "Nekategorizirano"
+
+msgid "N/A"
+msgstr "nedostupno"
+
+msgid "Reset setting to the default value"
+msgstr "Vrati postavke na zadanu vrijednost"
+
+msgid "Edit"
+msgstr "Uredi"
+
+msgid "Multi-list settings. You can double-click a row to edit the values."
+msgstr ""
+"Više popisne postavke. Možete dvostuko kliknuti na redak za uređivanje "
+"vrijednosti."
+
+#, python-format
+msgid "Edit %s"
+msgstr "Uredi %s"
+
+#, python-format
+msgid "\"%s\" is not a valid shortcut"
+msgstr "\"%s\" nije valjani prečac"
+
+msgid "Disabled"
+msgstr "Onemogućen"
+
+msgid "Enabled"
+msgstr "Omogućen"
+
+msgid "Grab key combination"
+msgstr "Uhvati kombinaciju tipki"
+
+#, python-format
+msgid "\"%s\" is not a valid button"
+msgstr "\"%s\" nije valjana tipka"
+
+#, python-format
+msgid ""
+"Using Button1 without modifiers can prevent any left click and thus break "
+"your configuration. Do you really want to set \"%s\" button to Button1 ?"
+msgstr ""
+"Korištenje Tipka1 bez parametra može spriječiti bilo koji lijevi klik i to "
+"može slomiti vaša podaešavanja. Želite li stvarno postaviti \"%s\"tipku u "
+"Tipku1?"
+
+#, python-format
+msgid "\"%s\" is not a valid edge mask"
+msgstr "\"%s\" nije valjana maska ruba"
+
+msgid "None"
+msgstr "Ništa"
+
+msgid "CompizConfig Settings Manager"
+msgstr "CompizConfig upravitelj postavkama"
+
+msgid "Plugin"
+msgstr "Priključak"
+
+msgid "Please press the new key combination"
+msgstr "Pritisnite novu kombinaciju tipki"
+
+msgid "Window Title"
+msgstr "Naslov prozora"
+
+msgid "Window Role"
+msgstr "Funkcija prozora"
+
+msgid "Window Name"
+msgstr "Naziv prozora"
+
+msgid "Window Class"
+msgstr "Klasa prozora"
+
+msgid "Window Type"
+msgstr "Vrsta prozora"
+
+msgid "Window ID"
+msgstr "ID prozora"
+
+msgid "And"
+msgstr "I"
+
+msgid "Or"
+msgstr "Ili"
+
+msgid "Edit match"
+msgstr "Uredi podudarnost"
+
+#. Type
+msgid "Type"
+msgstr "Vrsta"
+
+#. Value
+msgid "Value"
+msgstr "Vrijednost"
+
+msgid "Grab"
+msgstr "Uhvati"
+
+#. Relation
+msgid "Relation"
+msgstr "Odnos"
+
+#. Invert
+msgid "Invert"
+msgstr "Obrni"
+
+msgid "Browse..."
+msgstr "Pregledaj..."
+
+msgid "Images"
+msgstr "Slike"
+
+msgid "File"
+msgstr "Datoteka"
+
+msgid "Open directory..."
+msgstr "Otvori direktorij..."
+
+msgid "Open file..."
+msgstr "Otvori datoteku..."
+
+msgid "This is a settings manager for the CompizConfig configuration system."
+msgstr "Ovo je upravitelj postavkama za CompizConfig sustav podešavanja."
+
+msgid "translator-credits"
+msgstr ""
+"O prevodiocima\n"
+"\n"
+"Launchpad Contributions:\n"
+"  gogo https://launchpad.net/~trebelnik-stefina\n"
+"  mfolnovic https://launchpad.net/~matijafolnovic"
+
+msgid "An error has occured"
+msgstr "Dogodila se greška"
+
+msgid "Warning"
+msgstr "Upozorenje"
+
+#, python-format
+msgid "Enable %s"
+msgstr "Omogući %s"
+
+msgid "Filter"
+msgstr "Filter"
+
+#, python-format
+msgid "Search %s Plugin Options"
+msgstr "Pretraži %s mogućnosti priključka"
+
+msgid "Use This Plugin"
+msgstr "Koristi ovaj priključak"
+
+msgid "Search Compiz Core Options"
+msgstr "Pretraži mogućnosti Compizove jezgre"
+
+msgid "Error"
+msgstr "Greška"
+
+msgid ""
+"Enter a filter.\n"
+"Click the keyboard image to grab a key for which to search."
+msgstr ""
+"Odaberite filter.\n"
+"Kliknite na sliku tipkovnice za hvatanje tipke koja se traži."
+
+msgid "Search in..."
+msgstr "Pretraži u..."
+
+#. Options
+msgid "Short description and name"
+msgstr "Kratak opis i naziv"
+
+msgid "Long description"
+msgstr "Duži opis"
+
+msgid "Settings value"
+msgstr "Vrijednost postavke"
+
+msgid "Group"
+msgstr "Grupa"
+
+msgid "Subgroup"
+msgstr "Podgrupa"
+
+#. Notebook
+msgid "Settings"
+msgstr "Postavke"
+
+msgid "Loading Advanced Search"
+msgstr "Učitavanje napredne pretrage"
+
+msgid "Add a New Profile"
+msgstr "Dodaj novi profil"
+
+msgid "Remove This Profile"
+msgstr "Pobrisi ovaj profil"
+
+msgid "Default"
+msgstr "GNOME uobičajeno"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Import"
+msgstr "Uvezi"
+
+msgid "Import a CompizConfig Profile"
+msgstr "Uvezi CompizConfig profil"
+
+msgid "Import as..."
+msgstr "Uvezi kao..."
+
+msgid "Import a CompizConfig Profile as a new profile"
+msgstr "Uvezi CompizConfig profil kao novi profil"
+
+msgid "Export"
+msgstr "Izvezi"
+
+msgid "Export your CompizConfig Profile"
+msgstr "Izvezite svoj CompizConfig profil"
+
+msgid "Reset to defaults"
+msgstr "Vrati na zadano"
+
+msgid "Reset your CompizConfig Profile to the global defaults"
+msgstr "Vratite svoj CompizConfig profil na zadane vrijednosti"
+
+msgid "Backend"
+msgstr "Pozadinski program"
+
+msgid "Integration"
+msgstr "Integracija"
+
+msgid "Enable integration into the desktop environment"
+msgstr "Omogući integraciju u radno okruženje"
+
+msgid "Profiles (*.profile)"
+msgstr "Profil (*.profile)"
+
+msgid "All files"
+msgstr "Sve datoteke"
+
+msgid "Save file.."
+msgstr "Spremi datoteku..."
+
+msgid ""
+"Do you want to skip default option values while exporting your profile?"
+msgstr ""
+"Želite li preskočiti početne vrijednosti mogućnosti pri izvozu profila?"
+
+msgid "Open file.."
+msgstr "Otvori datoteku..."
+
+msgid "Enter a profile name"
+msgstr "Upišite naziv profila"
+
+msgid "Please enter a name for the new profile:"
+msgstr "Upišite naziv za novi profil:"
+
+msgid "Backend not found."
+msgstr "Pozadinski program nije pronađen."
+
+#. Auto sort
+msgid "Automatic plugin sorting"
+msgstr "Automatsko razvrstavanje priključka"
+
+msgid "Disabled Plugins"
+msgstr "Onemogućeni priključci"
+
+msgid "Enabled Plugins"
+msgstr "Omogućeni priključci"
+
+msgid ""
+"Do you really want to disable automatic plugin sorting? This will also "
+"disable conflict handling. You should only do this if you know what you are "
+"doing."
+msgstr ""
+"Želite li stvarno onemogućiti automatsko razvrstavanje priključka? Ovo će "
+"isto onemogućiti rukovanje sukobima. Ovo bi trebali učini samo ako znate što "
+"činite."
+
+msgid "Add plugin"
+msgstr "Dodaj priljučak"
+
+msgid "Plugin name:"
+msgstr "Naziv priključka:"
+
+msgid "Insert plugin name"
+msgstr "Upišite naziv priključka"
+
+msgid "Preferences"
+msgstr "Osobitosti"
+
+msgid ""
+"Configure the backend, profile and other internal settings used by the "
+"Compiz Configuration System."
+msgstr ""
+"Podesite pozadinski program, profil i ostale unutrašnje postavke koje "
+"koristi Compiz sustav podešavanja."
+
+msgid "About"
+msgstr "O programu"
+
+msgid "About CCSM..."
+msgstr "O CCSM..."
+
+msgid "Profile & Backend"
+msgstr "Profil i pozadinski program"
+
+msgid "Plugin List"
+msgstr "Popis priključaka"
+
+msgid "Filter your Plugin list"
+msgstr "Filtirirajte svoj popis priključka"
+
+#, python-format
+msgid "Screen %i"
+msgstr "Zaslon %i"
+
+msgid "Screen"
+msgstr "Zaslon"
+
+msgid "Category"
+msgstr "Kategorija"
+
+msgid "Advanced Search"
+msgstr "Napredna pretraga"
+
+#, python-format
+msgid ""
+"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
+"\n"
+" Your filter \"<b>%s</b>\" does not match any items.</span>"
+msgstr ""
+"<span size=\"large\"><b>Nema traženih stavki.</b> </span><span>\n"
+"\n"
+" Vaš upit \"<b>%s</b>\" ne podudara se ni s jednom stavkom.</span>"
+
+msgid "Configure Compiz with CompizConfig"
+msgstr "Podesite Compiz s CompizConfig"

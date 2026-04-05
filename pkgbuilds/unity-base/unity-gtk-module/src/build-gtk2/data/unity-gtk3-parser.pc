@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib
+includedir=${prefix}/include
+
+Name: unity-gtk3-parser
+Description: GtkMenuShell to GMenuModel parser
+Version: 0.0.0
+Requires: gtk+-3.0
+Cflags: -I${includedir}/unity-gtk-parser
+Libs: -L${libdir} -lunity-gtk3-parser

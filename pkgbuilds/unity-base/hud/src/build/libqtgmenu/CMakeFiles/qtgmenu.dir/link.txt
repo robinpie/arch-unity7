@@ -1,0 +1,2 @@
+/usr/bin/ar qc libqtgmenu.a CMakeFiles/qtgmenu.dir/qtgmenu_autogen/mocs_compilation.cpp.o CMakeFiles/qtgmenu.dir/QtGMenuExporter.cpp.o CMakeFiles/qtgmenu.dir/QtGMenuImporter.cpp.o
+/usr/bin/ranlib libqtgmenu.a

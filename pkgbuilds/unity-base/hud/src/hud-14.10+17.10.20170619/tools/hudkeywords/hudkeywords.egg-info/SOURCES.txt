@@ -1,0 +1,10 @@
+README
+setup.py
+bin/hudkeywords
+hudkeywords/__init__.py
+hudkeywords/cli.py
+hudkeywords/po.py
+hudkeywords.egg-info/PKG-INFO
+hudkeywords.egg-info/SOURCES.txt
+hudkeywords.egg-info/dependency_links.txt
+hudkeywords.egg-info/top_level.txt

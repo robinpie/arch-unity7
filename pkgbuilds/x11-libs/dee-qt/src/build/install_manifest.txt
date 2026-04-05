@@ -1,0 +1,7 @@
+/usr/lib/libdee-qt5.so.3.0.0
+/usr/lib/libdee-qt5.so.3
+/usr/lib/libdee-qt5.so
+/usr/include/libdee-qt5/deelistmodel.h
+/usr/lib/pkgconfig/libdee-qt5.pc
+/usr/lib/qt/qml/Dee.3/libDeePlugin.so
+/usr/lib/qt/qml/Dee.3/qmldir

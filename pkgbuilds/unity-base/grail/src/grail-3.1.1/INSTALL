@@ -1,0 +1,25 @@
+grail - Gesture Recognition And Instantiation Library
+
+To build, you need to have the autoconf, libtool, and libframe-dev
+packages installed. Then, do
+
+   ./autogen.sh
+   ./configure
+   make
+
+To test gestures, do
+
+   sudo ./test/grail-gesture 0xffffffff /dev/input/eventX
+
+You should be able to see gesture events in the terminal. After five
+seconds of inactivity, the program exits.
+
+To install grail, do
+
+   sudo make install
+
+By default, grail installs to /usr/local. To change, use the --prefix
+configure option.
+
+Enjoy,
+Henrik

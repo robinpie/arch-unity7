@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib
+includedir=${prefix}/include
+
+Name: libido
+Description: Ayatana Indicator Display Objects
+Version: 13.10.1
+Libs: -L${libdir} -lido-0.1
+Cflags: -I${includedir}/libido-0.1
+Requires: gtk+-2.0

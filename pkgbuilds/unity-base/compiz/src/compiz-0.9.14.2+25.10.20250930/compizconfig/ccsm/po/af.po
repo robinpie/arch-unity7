@@ -1,0 +1,533 @@
+# Afrikaans translation for compiz
+# Copyright (c) 2020 Rosetta Contributors and Canonical Ltd 2020
+# This file is distributed under the same license as the compiz package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: compiz\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2009-03-24 12:33+0530\n"
+"PO-Revision-Date: 2020-06-10 14:54+0000\n"
+"Last-Translator: Bernard Stafford <Unknown>\n"
+"Language-Team: Afrikaans <af@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2022-08-20 07:00+0000\n"
+"X-Generator: Launchpad (build a7ed8521180d7bb33e1a127e53ad65268d6ca88f)\n"
+
+#, python-format
+msgid ""
+"The new value for the %(binding)s binding for the action <b>%(action)s</b> "
+"in plugin <b>%(plugin)s</b> conflicts with the action "
+"<b>%(action_conflict)s</b> of the <b>%(plugin_conflict)s</b> plugin.\n"
+"Do you wish to disable <b>%(action_conflict)s</b> in the "
+"<b>%(plugin_conflict)s</b> plugin?"
+msgstr ""
+"Die nuwe waarde vir die %(binding)s bindend vir die aksie <b>%(action)s</b> "
+"in inprop <b>%(plugin)s</b> konflikte met die aksie "
+"<b>%(action_conflict)s</b> van die <b>%(plugin_conflict)s</b> inprop.\n"
+"Doen jy wens om deaktiveer <b>%(action_conflict)s</b> in die "
+"<b>%(plugin_conflict)s</b> inprop?"
+
+#, python-format
+msgid "Disable %(action_conflict)s"
+msgstr "Deaktiveer %(action_conflict)s"
+
+#, python-format
+msgid "Don't set %(action)s"
+msgstr "Stel nie %(action)s"
+
+#, python-format
+msgid "Set %(action)s anyway"
+msgstr "Stel %(action)s elk geval"
+
+msgid "key"
+msgstr "sleutel"
+
+msgid "button"
+msgstr "knoppie"
+
+msgid "edge"
+msgstr "rand"
+
+#, python-format
+msgid ""
+"You are trying to use the feature <b>%(feature)s</b> which is <b>not</b> "
+"provided by any plugin.\n"
+"Do you wish to use this feature anyway?"
+msgstr ""
+"Jy probeer om die funksie te gebruik <b>%(feature)s</b> wat is <b>not</b> "
+"voorsien deur enige inprop.\n"
+"Wil jy hierdie funksie in elk geval gebruik?"
+
+#, python-format
+msgid "Use %(feature)s"
+msgstr "Gebruik %(feature)s"
+
+#, python-format
+msgid "Don't use %(feature)s"
+msgstr "Moenie gebruik %(feature)s"
+
+#, python-format
+msgid ""
+"You are trying to use the feature <b>%(feature)s</b> which is provided by "
+"<b>%(plugin)s</b>.\n"
+"This plugin is currently disabled.\n"
+"Do you wish to enable <b>%(plugin)s</b> so the feature is available?"
+msgstr ""
+"Jy probeer om die funksie te gebruik <b>%(feature)s</b> wat verskaf word "
+"deur <b>%(plugin)s</b>.\n"
+"Hierdie inprop is tans gedeaktiveer.\n"
+"Doen jy wens om in staat stel <b>%(plugin)s</b> sodat die funksie beskikbaar "
+"is?"
+
+#, python-format
+msgid "Enable %(plugin)s"
+msgstr "In staat stel %(plugin)s"
+
+#, python-format
+msgid "Don't enable %(feature)s"
+msgstr "Moenie in staat stel %(feature)s"
+
+#, python-format
+msgid ""
+"Some %(bindings)s bindings of Plugin <b>%(plugin)s</b> conflict with other "
+"plugins. Do you want to resolve these conflicts?"
+msgstr ""
+"Sommige %(bindings)s bindings van Inprop <b>%(plugin)s</b> konflik met ander "
+"inproppe. Wil jy hierdie konflikte op te los?"
+
+msgid "Resolve conflicts"
+msgstr "Los konflikte op"
+
+msgid "Ignore conflicts"
+msgstr "Ignoreer konflikte"
+
+#, python-format
+msgid ""
+"Plugin <b>%(plugin_conflict)s</b> provides feature <b>%(feature)s</b> which "
+"is also provided by <b>%(plugin)s</b>"
+msgstr ""
+"Inprop <b>%(plugin_conflict)s</b> bied funksie <b>%(feature)s</b> watter is "
+"ook verskaf deur <b>%(plugin)s</b>"
+
+#, python-format
+msgid "Disable %(plugin_conflict)s"
+msgstr "Deaktiveer %(plugin_conflict)s"
+
+#, python-format
+msgid "Don't enable %(plugin)s"
+msgstr "Moenie in staat stel %(plugin)s"
+
+#, python-format
+msgid "Plugin <b>%(plugin_conflict)s</b> conflicts with <b>%(plugin)s</b>."
+msgstr "Inprop <b>%(plugin_conflict)s</b> konflik met <b>%(plugin)s</b>."
+
+#, python-format
+msgid ""
+"<b>%(plugin)s</b> requires feature <b>%(feature)s</b> which is provided by "
+"the following plugins:\n"
+"%(plugin_list)s"
+msgstr ""
+"<b>%(plugin)s</b> vereis funksie <b>%(feature)s</b> watter is wat verskaf "
+"word deur die volgende plugins:\n"
+"%(plugin_list)s"
+
+msgid "Enable these plugins"
+msgstr "Aktiveer hierdie inproppe"
+
+#, python-format
+msgid "<b>%(plugin)s</b> requires the plugin <b>%(require)s</b>."
+msgstr "<b>%(plugin)s</b> vereis die inprop <b>%(require)s</b>."
+
+#, python-format
+msgid "Enable %(require)s"
+msgstr "In staat stel %(require)s"
+
+#, python-format
+msgid ""
+"<b>%(plugin)s</b> provides the feature <b>%(feature)s</b> which is required "
+"by the plugins <b>%(plugin_list)s</b>."
+msgstr ""
+"<b>%(plugin)s</b> bied die funksie <b>%(feature)s</b> watter is benodig deur "
+"die inproppe <b>%(plugin_list)s</b>."
+
+msgid "Disable these plugins"
+msgstr "Deaktiveer hierdie inproppe"
+
+#, python-format
+msgid "Don't disable %(plugin)s"
+msgstr "Moenie deaktiveer %(plugin)s"
+
+#, python-format
+msgid "<b>%(plugin)s</b> is required by the plugins <b>%(plugin_list)s</b>."
+msgstr ""
+"<b>%(plugin)s</b> word benodig deur die inproppe <b>%(plugin_list)s</b>."
+
+msgid "General"
+msgstr "Algemene"
+
+msgid "Accessibility"
+msgstr "Toeganklikheid"
+
+msgid "Desktop"
+msgstr "Bureaublad"
+
+msgid "Extras"
+msgstr "Ekstras"
+
+msgid "Window Management"
+msgstr "Venster Bestuur"
+
+msgid "Effects"
+msgstr "Effekte"
+
+msgid "Image Loading"
+msgstr "Beeld Laai tans"
+
+msgid "Utility"
+msgstr "Nutsprogram"
+
+msgid "All"
+msgstr "Alle"
+
+msgid "Uncategorized"
+msgstr "Ongekategoriseerd"
+
+msgid "N/A"
+msgstr "N/A"
+
+msgid "Reset setting to the default value"
+msgstr "Stel instelling terug na die verstek waarde"
+
+msgid "Edit"
+msgstr "Wysig"
+
+msgid "Multi-list settings. You can double-click a row to edit the values."
+msgstr ""
+"Multi-lys instellings. Jy kan dubbel-kliek 'n ry om die waardes te wysig."
+
+#, python-format
+msgid "Edit %s"
+msgstr "Wysig %s"
+
+#, python-format
+msgid "\"%s\" is not a valid shortcut"
+msgstr "\"%s\" is nie 'n geldige kortpad"
+
+msgid "Disabled"
+msgstr "Gedeaktiveer"
+
+msgid "Enabled"
+msgstr "Instaatstel"
+
+msgid "Grab key combination"
+msgstr "Gryp sleutel kombinasie"
+
+#, python-format
+msgid "\"%s\" is not a valid button"
+msgstr "\"%s\" is nie 'n geldige knoppie"
+
+#, python-format
+msgid ""
+"Using Button1 without modifiers can prevent any left click and thus break "
+"your configuration. Do you really want to set \"%s\" button to Button1 ?"
+msgstr ""
+"Die gebruik van Button1 sonder wysigers kan verhoed enige linkerklik en "
+"hierdie pouse jou konfigurasie. Wil jy regtig om stel \"%s\" knoppie na "
+"Knoppie1 ?"
+
+#, python-format
+msgid "\"%s\" is not a valid edge mask"
+msgstr "\"%s\" is nie 'n geldige rand masker"
+
+msgid "None"
+msgstr "Geeneen"
+
+msgid "CompizConfig Settings Manager"
+msgstr "CompizConfig Instellings Bestuurder"
+
+msgid "Plugin"
+msgstr "Inprop"
+
+msgid "Please press the new key combination"
+msgstr "Druk asseblief die nuwe sleutel kombinasie"
+
+msgid "Window Title"
+msgstr "Venster Titel"
+
+msgid "Window Role"
+msgstr "Venster Rol"
+
+msgid "Window Name"
+msgstr "Venster Naam"
+
+msgid "Window Class"
+msgstr "Venster Klas"
+
+msgid "Window Type"
+msgstr "Venster Tipe"
+
+msgid "Window ID"
+msgstr "Venster ID"
+
+msgid "And"
+msgstr "En"
+
+msgid "Or"
+msgstr "Of"
+
+msgid "Edit match"
+msgstr "Wysig ooreenstem"
+
+#. Type
+msgid "Type"
+msgstr "Tipe"
+
+#. Value
+msgid "Value"
+msgstr "Waarde"
+
+msgid "Grab"
+msgstr "Gryp"
+
+#. Relation
+msgid "Relation"
+msgstr "Verhouding"
+
+#. Invert
+msgid "Invert"
+msgstr "Inverteren"
+
+msgid "Browse..."
+msgstr "Snuffel..."
+
+msgid "Images"
+msgstr "Beelde"
+
+msgid "File"
+msgstr "Lêer"
+
+msgid "Open directory..."
+msgstr "Oop directory..."
+
+msgid "Open file..."
+msgstr "Maak lêer oop..."
+
+msgid "This is a settings manager for the CompizConfig configuration system."
+msgstr ""
+"Hierdie is 'n instelling bestuurder vir die CompizConfig konfigurasie "
+"stelsel."
+
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Bernard Stafford https://launchpad.net/~bernard010"
+
+msgid "An error has occured"
+msgstr "'N Fout het voorgekom"
+
+msgid "Warning"
+msgstr "Waarskuwing"
+
+#, python-format
+msgid "Enable %s"
+msgstr "In staat stel %s"
+
+msgid "Filter"
+msgstr "Filter"
+
+#, python-format
+msgid "Search %s Plugin Options"
+msgstr "Soek %s Inprop Opsies"
+
+msgid "Use This Plugin"
+msgstr "Gebruik Hierdie Inprop"
+
+msgid "Search Compiz Core Options"
+msgstr "Soek Compiz Kern Opsies"
+
+msgid "Error"
+msgstr "Fout"
+
+msgid ""
+"Enter a filter.\n"
+"Click the keyboard image to grab a key for which to search."
+msgstr ""
+"Voer 'n filter in.\n"
+"Klik die sleutelbord beeld om gryp 'n sleutel vir watter te soek."
+
+msgid "Search in..."
+msgstr "Soek in..."
+
+#. Options
+msgid "Short description and name"
+msgstr "Kort beskrywing en naam"
+
+msgid "Long description"
+msgstr "Lang beskrywing"
+
+msgid "Settings value"
+msgstr "Instellings waarde"
+
+msgid "Group"
+msgstr "Groep"
+
+msgid "Subgroup"
+msgstr "Subgroep"
+
+#. Notebook
+msgid "Settings"
+msgstr "Instellings"
+
+msgid "Loading Advanced Search"
+msgstr "Laai tans Gevorderde Soektog"
+
+msgid "Add a New Profile"
+msgstr "Voeg 'n Nuwe Profiel"
+
+msgid "Remove This Profile"
+msgstr "Verwyder Hierdie Profiel"
+
+msgid "Default"
+msgstr "Verstek"
+
+msgid "Profile"
+msgstr "Profiel"
+
+msgid "Import"
+msgstr "Invoer"
+
+msgid "Import a CompizConfig Profile"
+msgstr "Invoer 'n CompizConfig Profiel"
+
+msgid "Import as..."
+msgstr "Invoer as..."
+
+msgid "Import a CompizConfig Profile as a new profile"
+msgstr "Invoer 'n CompizConfig Profiel as 'n nuwe profiel"
+
+msgid "Export"
+msgstr "Uitvoer"
+
+msgid "Export your CompizConfig Profile"
+msgstr "Uitvoer jou CompizConfig Profiel"
+
+msgid "Reset to defaults"
+msgstr "Stel terug na versteke"
+
+msgid "Reset your CompizConfig Profile to the global defaults"
+msgstr "Terugstel jou CompizConfig Profiel om die wêreldwye verstek"
+
+msgid "Backend"
+msgstr "Terug einde"
+
+msgid "Integration"
+msgstr "Integrasie"
+
+msgid "Enable integration into the desktop environment"
+msgstr "Aktiveer integrasie in die bureaublad omgewing"
+
+msgid "Profiles (*.profile)"
+msgstr "Profiele (*.profile)"
+
+msgid "All files"
+msgstr "Alle lêers"
+
+msgid "Save file.."
+msgstr "Stoor lêer.."
+
+msgid ""
+"Do you want to skip default option values while exporting your profile?"
+msgstr ""
+"Doen jy wil hê om huppel verstek waardes terwyl uitvoer tans jou profiel?"
+
+msgid "Open file.."
+msgstr "Oop leêr.."
+
+msgid "Enter a profile name"
+msgstr "Voer 'n profiel naam in"
+
+msgid "Please enter a name for the new profile:"
+msgstr "Voer asseblief 'n naam vir die nuwe profiel:"
+
+msgid "Backend not found."
+msgstr "Terug einde nie gevind."
+
+#. Auto sort
+msgid "Automatic plugin sorting"
+msgstr "Outomatiese inprop sorteer"
+
+msgid "Disabled Plugins"
+msgstr "Gedeaktiveer Inproppe"
+
+msgid "Enabled Plugins"
+msgstr "Geaktiveer Inproppe"
+
+msgid ""
+"Do you really want to disable automatic plugin sorting? This will also "
+"disable conflict handling. You should only do this if you know what you are "
+"doing."
+msgstr "Wil jy regtig die outomatiese inprop sortering deaktiveer?"
+
+msgid "Add plugin"
+msgstr "Voeg inprop"
+
+msgid "Plugin name:"
+msgstr "Inprop naam:"
+
+msgid "Insert plugin name"
+msgstr "Insetsel plugin naam"
+
+msgid "Preferences"
+msgstr "Voorkeure"
+
+msgid ""
+"Configure the backend, profile and other internal settings used by the "
+"Compiz Configuration System."
+msgstr ""
+"Konfigureer die terug einde, profiel en ander interne instellings gebruik "
+"deur die Compiz Konfigurasie Stelsel."
+
+msgid "About"
+msgstr "Omtrent"
+
+msgid "About CCSM..."
+msgstr "Omtrent CCSM..."
+
+msgid "Profile & Backend"
+msgstr "Profiel & Terug einde"
+
+msgid "Plugin List"
+msgstr "Inprop Lys"
+
+msgid "Filter your Plugin list"
+msgstr "Filter jou Inprop lys"
+
+#, python-format
+msgid "Screen %i"
+msgstr "Skerm %i"
+
+msgid "Screen"
+msgstr "Skerm"
+
+msgid "Category"
+msgstr "Kategorie"
+
+msgid "Advanced Search"
+msgstr "Gevorderde Soektog"
+
+#, python-format
+msgid ""
+"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
+"\n"
+" Your filter \"<b>%s</b>\" does not match any items.</span>"
+msgstr ""
+"<span size=\"large\"><b>Geen vuurhoutjies gevind.</b> </span><span>\n"
+"\n"
+" Jou filter \"<b>%s</b>\" kom nie ooreen met enige items.</span>"
+
+msgid "Configure Compiz with CompizConfig"
+msgstr "Konfigureer Compiz met CompizConfig"

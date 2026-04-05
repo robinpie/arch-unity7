@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_composite_backbuffertracking.a CMakeFiles/compiz_composite_backbuffertracking.dir/src/backbuffertracking.cpp.o
+/usr/bin/ranlib libcompiz_composite_backbuffertracking.a

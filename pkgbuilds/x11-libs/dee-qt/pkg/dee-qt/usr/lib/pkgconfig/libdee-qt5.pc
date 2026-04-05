@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/libdee-qt5
+
+Name: dee-qt5
+Description: Qt binding and QML plugin for Dee.
+Version: 3.3
+
+Requires: Qt5Core dee-1.0
+Libs: -L${libdir} -ldee-qt5
+Cflags: -I${includedir}

@@ -1,0 +1,50 @@
+Device Events
+=============
+
+This test shows that the 'input device available' and 'input device unavailable'
+events are handled correctly.
+
+These events indicate that an input device has been made available or unavailble
+to the system.  Input devices are potentially hotpluggable.
+
+Prerequisites
+-------------
+
+Before running these tests you need to have a current evemu-tools package
+installed.
+
+
+Add Touchscreen
+---------------
+
+#. Start tools/geisview/geisview
+#. Run sudo evemu-device testsuite/manual-tests/touchscreen.desc
+
+Outcome
+  An event `Device NNNN Added` message should appear in the geisview window
+  with `device name` ``N-Trig MultiTouch``.  When expanded, it should have
+  property `direct touch` set to 1 and property `independent touch` set to 0.
+
+Add Touchpad
+------------
+
+
+#. Start tools/geisview/geisview
+#. Run sudo evemu-device testsuite/manual-tests/touchpad.desc
+
+Outcome
+  An event `Device NNNN Added` message should appear in the geisview window
+  with `device name` ``SynPS/2 Synaptics Touchpad``.  When expanded, it
+  should have property `direct touch` set to 0 and property `independent touch`
+  set to 0.
+
+Device Removal
+----------------
+
+#. Perform one of the above tests.
+#. Use control-C to kill the evemu-device process
+
+Outcome
+  An even `Device NNNN Removed` message wit hthe same device name as the Added
+  event should be displayed.
+

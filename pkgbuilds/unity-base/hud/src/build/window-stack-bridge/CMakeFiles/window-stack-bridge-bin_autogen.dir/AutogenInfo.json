@@ -1,0 +1,129 @@
+{
+	"BUILD_DIR" : "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge/window-stack-bridge-bin_autogen",
+	"CMAKE_BINARY_DIR" : "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/hud-14.10+17.10.20170619/window-stack-bridge",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/hud-14.10+17.10.20170619/window-stack-bridge/CMakeLists.txt"
+	],
+	"CMAKE_SOURCE_DIR" : "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/hud-14.10+17.10.20170619",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge/window-stack-bridge-bin_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "window-stack-bridge-bin_autogen/timestamp",
+	"HEADERS" : [],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge/window-stack-bridge-bin_autogen/include",
+	"MOC_COMPILATION_FILE" : "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge/window-stack-bridge-bin_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"DATADIR=\"/usr/share\"",
+		"ENABLE_BAMF=1",
+		"GETTEXT_PACKAGE=\"hud\"",
+		"GNOMELOCALEDIR=\"/usr/share/locale\"",
+		"LIBEXECDIR=\"/usr/libexec\"",
+		"QT_CORE_LIB",
+		"QT_DBUS_LIB",
+		"QT_NO_DEBUG",
+		"QT_NO_SIGNALS_SLOTS_KEYWORDS=1"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/hud-14.10+17.10.20170619/window-stack-bridge",
+		"/usr/include/glib-2.0",
+		"/usr/lib/glib-2.0/include",
+		"/usr/include/sysprof-6",
+		"/usr/include/libmount",
+		"/usr/include/blkid",
+		"/usr/include/gio-unix-2.0",
+		"/usr/include/dee-1.0",
+		"/usr/include/libdbusmenu-glib-0.4",
+		"/usr/include/gtk-3.0",
+		"/usr/include/pango-1.0",
+		"/usr/include/cloudproviders",
+		"/usr/include/cairo",
+		"/usr/include/gdk-pixbuf-2.0",
+		"/usr/include/glycin-2",
+		"/usr/include/at-spi2-atk/2.0",
+		"/usr/include/at-spi-2.0",
+		"/usr/include/atk-1.0",
+		"/usr/include/dbus-1.0",
+		"/usr/lib/dbus-1.0/include",
+		"/usr/include/fribidi",
+		"/usr/include/pixman-1",
+		"/usr/include/harfbuzz",
+		"/usr/include/freetype2",
+		"/usr/include/libpng16",
+		"/usr/include/columbus1",
+		"/usr/include/qt/QtWidgets",
+		"/usr/include/qt/QtGui",
+		"/usr/include/qt/QtSql",
+		"/usr/include/libdee-qt5",
+		"/usr/include/qt5/QGSettings",
+		"/usr/include/dbusmenu-qt5",
+		"/usr/include/qt/QtTest",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/hud-14.10+17.10.20170619",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build",
+		"/usr/include/qt",
+		"/usr/include/qt/QtCore",
+		"/usr/lib/qt/mkspecs/linux-g++",
+		"/usr/include/qt/QtDBus",
+		"/usr/include",
+		"/usr/include/c++/15.2.1",
+		"/usr/include/c++/15.2.1/x86_64-pc-linux-gnu",
+		"/usr/include/c++/15.2.1/backward",
+		"/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include",
+		"/usr/local/include",
+		"/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include-fixed"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-w",
+		"-dM",
+		"-E",
+		"/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge/window-stack-bridge-bin_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : 
+	[
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge/BamfInterface.cpp",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge/BamfInterface.h",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge/BamfViewInterface.cpp",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge/BamfViewInterface.h",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge/WindowStackAdaptor.cpp",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge/WindowStackAdaptor.h",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge/window-stack-bridge_autogen/mocs_compilation.cpp"
+	],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 14,
+	"PARSE_CACHE_FILE" : "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge/CMakeFiles/window-stack-bridge-bin_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/bin/moc",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge/CMakeFiles/window-stack-bridge-bin_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/hud-14.10+17.10.20170619/window-stack-bridge/main.cpp",
+			"Mu",
+			null
+		]
+	],
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

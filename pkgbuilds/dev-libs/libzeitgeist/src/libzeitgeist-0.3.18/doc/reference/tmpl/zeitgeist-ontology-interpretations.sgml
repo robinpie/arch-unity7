@@ -1,0 +1,493 @@
+<!-- ##### SECTION Title ##### -->
+Interpretation Ontology
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### MACRO ZEITGEIST_NCAL_ALARM ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NCAL_CALENDAR ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NCAL_EVENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NCAL_FREEBUSY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NCAL_JOURNAL ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NCAL_TIMEZONE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NCAL_TODO ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NCO_CONTACT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NCO_CONTACT_GROUP ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NCO_CONTACT_LIST ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NCO_ORGANIZATION_CONTACT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NCO_PERSON_CONTACT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_APPLICATION ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_ARCHIVE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_AUDIO ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_BOOKMARK ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_BOOKMARK_FOLDER ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_CURSOR ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_DATA_CONTAINER ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_DOCUMENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_EXECUTABLE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_FILESYSTEM ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_FILESYSTEM_IMAGE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_FOLDER ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_FONT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_HTML_DOCUMENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_ICON ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_IMAGE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_MEDIA ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_MEDIA_LIST ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_MIND_MAP ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_OPERATING_SYSTEM ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_PAGINATED_TEXT_DOCUMENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_PLAIN_TEXT_DOCUMENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_PRESENTATION ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_RASTER_IMAGE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_SOFTWARE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_SOURCE_CODE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_SPREADSHEET ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_TEXT_DOCUMENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_TRASH ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_VECTOR_IMAGE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_VIDEO ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_VISUAL ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NFO_WEBSITE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NMM_MOVIE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NMM_MUSIC_ALBUM ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NMM_MUSIC_PIECE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NMM_TVSERIES ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NMM_TVSHOW ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NMO_EMAIL ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NMO_IMMESSAGE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NMO_MAILBOX ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NMO_MESSAGE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_NMO_MIME_ENTITY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_ZG_ACCEPT_EVENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_ZG_ACCESS_EVENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_ZG_CREATE_EVENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_ZG_DELETE_EVENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_ZG_DENY_EVENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_ZG_EVENT_INTERPRETATION ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_ZG_EXPIRE_EVENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_ZG_LEAVE_EVENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_ZG_MODIFY_EVENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_ZG_MOVE_EVENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_ZG_RECEIVE_EVENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_ZG_SEND_EVENT ##### -->
+<para>
+
+</para>
+
+
+

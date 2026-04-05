@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr/bin
+libdir=/usr/lib
+includedir=/usr/include/columbus1
+
+Name: libcolumbus
+Description: Error tolerant matcher
+Version: 1.1.0
+Libs: -L${libdir} -lcolumbus
+Cflags: -I${includedir}

@@ -1,0 +1,2322 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.2"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:doc="http://www.gtk.org/introspection/doc/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="Gtk" version="3.0"/>
+  <doc:format name="unknown"/>
+  <namespace name="Ido3"
+             version="0.1"
+             shared-library="libido3-0.1.so.0"
+             c:identifier-prefixes="Ido"
+             c:symbol-prefixes="ido">
+    <function-macro name="CALENDAR_MENU_ITEM"
+                    c:identifier="IDO_CALENDAR_MENU_ITEM"
+                    introspectable="0">
+      <source-position filename="idocalendarmenuitem.h" line="34"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CALENDAR_MENU_ITEM_CLASS"
+                    c:identifier="IDO_CALENDAR_MENU_ITEM_CLASS"
+                    introspectable="0">
+      <source-position filename="idocalendarmenuitem.h" line="35"/>
+      <parameters>
+        <parameter name="c">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CALENDAR_MENU_ITEM_GET_CLASS"
+                    c:identifier="IDO_CALENDAR_MENU_ITEM_GET_CLASS"
+                    introspectable="0">
+      <source-position filename="idocalendarmenuitem.h" line="38"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <class name="CalendarMenuItem"
+           c:symbol-prefix="calendar_menu_item"
+           c:type="IdoCalendarMenuItem"
+           parent="Gtk.MenuItem"
+           glib:type-name="IdoCalendarMenuItem"
+           glib:get-type="ido_calendar_menu_item_get_type"
+           glib:type-struct="CalendarMenuItemClass">
+      <source-position filename="idocalendarmenuitem.h" line="54"/>
+      <implements name="Atk.ImplementorIface"/>
+      <implements name="Gtk.Actionable"/>
+      <implements name="Gtk.Activatable"/>
+      <implements name="Gtk.Buildable"/>
+      <constructor name="new" c:identifier="ido_calendar_menu_item_new">
+        <doc xml:space="preserve"
+             filename="idocalendarmenuitem.c"
+             line="363">Creates a new #IdoCalendarMenuItem</doc>
+        <source-position filename="idocalendarmenuitem.h" line="58"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idocalendarmenuitem.c"
+               line="368">a new #IdoCalendarMenuItem.</doc>
+          <type name="Gtk.Widget" c:type="GtkWidget*"/>
+        </return-value>
+      </constructor>
+      <constructor name="new_from_model"
+                   c:identifier="ido_calendar_menu_item_new_from_model">
+        <source-position filename="idocalendarmenuitem.h" line="74"/>
+        <return-value transfer-ownership="none">
+          <type name="Gtk.MenuItem" c:type="GtkMenuItem*"/>
+        </return-value>
+        <parameters>
+          <parameter name="menuitem" transfer-ownership="none">
+            <type name="Gio.MenuItem" c:type="GMenuItem*"/>
+          </parameter>
+          <parameter name="actions" transfer-ownership="none">
+            <type name="Gio.ActionGroup" c:type="GActionGroup*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="clear_marks"
+              c:identifier="ido_calendar_menu_item_clear_marks">
+        <doc xml:space="preserve"
+             filename="idocalendarmenuitem.c"
+             line="428">Remove all visual markers.</doc>
+        <source-position filename="idocalendarmenuitem.h" line="62"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="430">A #IdoCalendarMenuItem</doc>
+            <type name="CalendarMenuItem" c:type="IdoCalendarMenuItem*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_calendar"
+              c:identifier="ido_calendar_menu_item_get_calendar">
+        <doc xml:space="preserve"
+             filename="idocalendarmenuitem.c"
+             line="376">Returns the calendar associated with this menu item.</doc>
+        <source-position filename="idocalendarmenuitem.h" line="59"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idocalendarmenuitem.c"
+               line="382">The #GtkCalendar used in this item.</doc>
+          <type name="Gtk.Widget" c:type="GtkWidget*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="378">A #IdoCalendarMenuItem</doc>
+            <type name="CalendarMenuItem" c:type="IdoCalendarMenuItem*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_date" c:identifier="ido_calendar_menu_item_get_date">
+        <doc xml:space="preserve"
+             filename="idocalendarmenuitem.c"
+             line="473">Gets the selected date.</doc>
+        <source-position filename="idocalendarmenuitem.h" line="65"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="475">A #IdoCalendarMenuItem</doc>
+            <type name="CalendarMenuItem" c:type="IdoCalendarMenuItem*"/>
+          </instance-parameter>
+          <parameter name="year"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full"
+                     optional="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="476">location to store the year as a decimal number (e.g. 2011), or #NULL.</doc>
+            <type name="guint" c:type="guint*"/>
+          </parameter>
+          <parameter name="month"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full"
+                     optional="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="477">location to store the month number (between 0 and 11), or #NULL.</doc>
+            <type name="guint" c:type="guint*"/>
+          </parameter>
+          <parameter name="day"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full"
+                     optional="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="478">location to store the day number (between 1 and 31), or #NULL.</doc>
+            <type name="guint" c:type="guint*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_display_options"
+              c:identifier="ido_calendar_menu_item_get_display_options">
+        <doc xml:space="preserve"
+             filename="idocalendarmenuitem.c"
+             line="457">Get the display options for the calendar.</doc>
+        <source-position filename="idocalendarmenuitem.h" line="64"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idocalendarmenuitem.c"
+               line="463">the display options in use</doc>
+          <type name="Gtk.CalendarDisplayOptions"
+                c:type="GtkCalendarDisplayOptions"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="459">A #IdoCalendarMenuItem</doc>
+            <type name="CalendarMenuItem" c:type="IdoCalendarMenuItem*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="mark_day" c:identifier="ido_calendar_menu_item_mark_day">
+        <doc xml:space="preserve"
+             filename="idocalendarmenuitem.c"
+             line="392">Places a visual marker on a particular day.</doc>
+        <source-position filename="idocalendarmenuitem.h" line="60"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idocalendarmenuitem.c"
+               line="399">#TRUE</doc>
+          <type name="gboolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="394">A #IdoCalendarMenuItem</doc>
+            <type name="CalendarMenuItem" c:type="IdoCalendarMenuItem*"/>
+          </instance-parameter>
+          <parameter name="day" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="395">the day number to unmark between 1 and 31.</doc>
+            <type name="guint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_date" c:identifier="ido_calendar_menu_item_set_date">
+        <doc xml:space="preserve"
+             filename="idocalendarmenuitem.c"
+             line="492">Set the date shown on the calendar.</doc>
+        <source-position filename="idocalendarmenuitem.h" line="69"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idocalendarmenuitem.c"
+               line="501">#TRUE</doc>
+          <type name="gboolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="494">A #IdoCalendarMenuItem</doc>
+            <type name="CalendarMenuItem" c:type="IdoCalendarMenuItem*"/>
+          </instance-parameter>
+          <parameter name="year" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="495">the year to show (e.g. 2011).</doc>
+            <type name="guint" c:type="guint"/>
+          </parameter>
+          <parameter name="month" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="496">a month number (between 0 and 11).</doc>
+            <type name="guint" c:type="guint"/>
+          </parameter>
+          <parameter name="day" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="497">The day number (between 1 and 31).</doc>
+            <type name="guint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_display_options"
+              c:identifier="ido_calendar_menu_item_set_display_options">
+        <doc xml:space="preserve"
+             filename="idocalendarmenuitem.c"
+             line="442">Set the display options for the calendar.</doc>
+        <source-position filename="idocalendarmenuitem.h" line="63"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="444">A #IdoCalendarMenuItem</doc>
+            <type name="CalendarMenuItem" c:type="IdoCalendarMenuItem*"/>
+          </instance-parameter>
+          <parameter name="flags" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="445">the display options to set</doc>
+            <type name="Gtk.CalendarDisplayOptions"
+                  c:type="GtkCalendarDisplayOptions"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="unmark_day"
+              c:identifier="ido_calendar_menu_item_unmark_day">
+        <doc xml:space="preserve"
+             filename="idocalendarmenuitem.c"
+             line="410">Removes the visual marker from a particular day.</doc>
+        <source-position filename="idocalendarmenuitem.h" line="61"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idocalendarmenuitem.c"
+               line="417">#TRUE</doc>
+          <type name="gboolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="412">A #IdoCalendarMenuItem</doc>
+            <type name="CalendarMenuItem" c:type="IdoCalendarMenuItem*"/>
+          </instance-parameter>
+          <parameter name="day" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idocalendarmenuitem.c"
+                 line="413">the day number to unmark between 1 and 31.</doc>
+            <type name="guint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <field name="parent_instance">
+        <type name="Gtk.MenuItem" c:type="GtkMenuItem"/>
+      </field>
+      <field name="priv">
+        <type name="CalendarMenuItemPrivate"
+              c:type="IdoCalendarMenuItemPrivate*"/>
+      </field>
+      <glib:signal name="day-selected" when="last">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="day-selected-double-click" when="last">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="month-changed" when="last">
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+    </class>
+    <record name="CalendarMenuItemClass"
+            c:type="IdoCalendarMenuItemClass"
+            glib:is-gtype-struct-for="CalendarMenuItem">
+      <source-position filename="idocalendarmenuitem.h" line="54"/>
+      <field name="parent_class">
+        <type name="Gtk.MenuItemClass" c:type="GtkMenuItemClass"/>
+      </field>
+    </record>
+    <record name="CalendarMenuItemPrivate"
+            c:type="IdoCalendarMenuItemPrivate"
+            disguised="1"
+            opaque="1">
+      <source-position filename="idocalendarmenuitem.h" line="42"/>
+    </record>
+    <function-macro name="ENTRY_MENU_ITEM"
+                    c:identifier="IDO_ENTRY_MENU_ITEM"
+                    introspectable="0">
+      <source-position filename="idoentrymenuitem.h" line="34"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="ENTRY_MENU_ITEM_CLASS"
+                    c:identifier="IDO_ENTRY_MENU_ITEM_CLASS"
+                    introspectable="0">
+      <source-position filename="idoentrymenuitem.h" line="35"/>
+      <parameters>
+        <parameter name="c">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="ENTRY_MENU_ITEM_GET_CLASS"
+                    c:identifier="IDO_ENTRY_MENU_ITEM_GET_CLASS"
+                    introspectable="0">
+      <source-position filename="idoentrymenuitem.h" line="38"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <class name="EntryMenuItem"
+           c:symbol-prefix="entry_menu_item"
+           c:type="IdoEntryMenuItem"
+           parent="Gtk.MenuItem"
+           glib:type-name="IdoEntryMenuItem"
+           glib:get-type="ido_entry_menu_item_get_type"
+           glib:type-struct="EntryMenuItemClass">
+      <source-position filename="idoentrymenuitem.h" line="54"/>
+      <implements name="Atk.ImplementorIface"/>
+      <implements name="Gtk.Actionable"/>
+      <implements name="Gtk.Activatable"/>
+      <implements name="Gtk.Buildable"/>
+      <constructor name="new" c:identifier="ido_entry_menu_item_new">
+        <doc xml:space="preserve"
+             filename="idoentrymenuitem.c"
+             line="263">Creates a new #IdoEntryMenuItem.</doc>
+        <source-position filename="idoentrymenuitem.h" line="58"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idoentrymenuitem.c"
+               line="268">the newly created #IdoEntryMenuItem.</doc>
+          <type name="Gtk.Widget" c:type="GtkWidget*"/>
+        </return-value>
+      </constructor>
+      <method name="get_entry" c:identifier="ido_entry_menu_item_get_entry">
+        <doc xml:space="preserve"
+             filename="idoentrymenuitem.c"
+             line="276">Get the #GtkEntry used in this menu item.</doc>
+        <source-position filename="idoentrymenuitem.h" line="59"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idoentrymenuitem.c"
+               line="282">The #GtkEntry inside this menu item.</doc>
+          <type name="Gtk.Widget" c:type="GtkWidget*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoentrymenuitem.c"
+                 line="278">The #IdoEntryMenuItem.</doc>
+            <type name="EntryMenuItem" c:type="IdoEntryMenuItem*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <field name="parent_instance">
+        <type name="Gtk.MenuItem" c:type="GtkMenuItem"/>
+      </field>
+      <field name="priv">
+        <type name="EntryMenuItemPrivate" c:type="IdoEntryMenuItemPrivate*"/>
+      </field>
+    </class>
+    <record name="EntryMenuItemClass"
+            c:type="IdoEntryMenuItemClass"
+            glib:is-gtype-struct-for="EntryMenuItem">
+      <source-position filename="idoentrymenuitem.h" line="54"/>
+      <field name="parent_class">
+        <type name="Gtk.MenuItemClass" c:type="GtkMenuItemClass"/>
+      </field>
+    </record>
+    <record name="EntryMenuItemPrivate"
+            c:type="IdoEntryMenuItemPrivate"
+            disguised="1"
+            opaque="1">
+      <source-position filename="idoentrymenuitem.h" line="42"/>
+    </record>
+    <function-macro name="IS_CALENDAR_MENU_ITEM"
+                    c:identifier="IDO_IS_CALENDAR_MENU_ITEM"
+                    introspectable="0">
+      <source-position filename="idocalendarmenuitem.h" line="36"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_CALENDAR_MENU_ITEM_CLASS"
+                    c:identifier="IDO_IS_CALENDAR_MENU_ITEM_CLASS"
+                    introspectable="0">
+      <source-position filename="idocalendarmenuitem.h" line="37"/>
+      <parameters>
+        <parameter name="c">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_ENTRY_MENU_ITEM"
+                    c:identifier="IDO_IS_ENTRY_MENU_ITEM"
+                    introspectable="0">
+      <source-position filename="idoentrymenuitem.h" line="36"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_ENTRY_MENU_ITEM_CLASS"
+                    c:identifier="IDO_IS_ENTRY_MENU_ITEM_CLASS"
+                    introspectable="0">
+      <source-position filename="idoentrymenuitem.h" line="37"/>
+      <parameters>
+        <parameter name="c">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_MESSAGE_DIALOG"
+                    c:identifier="IDO_IS_MESSAGE_DIALOG"
+                    introspectable="0">
+      <source-position filename="idomessagedialog.h" line="37"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_MESSAGE_DIALOG_CLASS"
+                    c:identifier="IDO_IS_MESSAGE_DIALOG_CLASS"
+                    introspectable="0">
+      <source-position filename="idomessagedialog.h" line="38"/>
+      <parameters>
+        <parameter name="k">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_RANGE"
+                    c:identifier="IDO_IS_RANGE"
+                    introspectable="0">
+      <source-position filename="idorange.h" line="36"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_RANGE_CLASS"
+                    c:identifier="IDO_IS_RANGE_CLASS"
+                    introspectable="0">
+      <source-position filename="idorange.h" line="37"/>
+      <parameters>
+        <parameter name="k">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_SCALE_MENU_ITEM"
+                    c:identifier="IDO_IS_SCALE_MENU_ITEM"
+                    introspectable="0">
+      <source-position filename="idoscalemenuitem.h" line="37"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_SCALE_MENU_ITEM_CLASS"
+                    c:identifier="IDO_IS_SCALE_MENU_ITEM_CLASS"
+                    introspectable="0">
+      <source-position filename="idoscalemenuitem.h" line="38"/>
+      <parameters>
+        <parameter name="c">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_SWITCH_MENU_ITEM"
+                    c:identifier="IDO_IS_SWITCH_MENU_ITEM"
+                    introspectable="0">
+      <source-position filename="idoswitchmenuitem.h" line="31"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_SWITCH_MENU_ITEM_CLASS"
+                    c:identifier="IDO_IS_SWITCH_MENU_ITEM_CLASS"
+                    introspectable="0">
+      <source-position filename="idoswitchmenuitem.h" line="32"/>
+      <parameters>
+        <parameter name="c">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_TIMELINE"
+                    c:identifier="IDO_IS_TIMELINE"
+                    introspectable="0">
+      <source-position filename="idotimeline.h" line="32"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_TIMELINE_CLASS"
+                    c:identifier="IDO_IS_TIMELINE_CLASS"
+                    introspectable="0">
+      <source-position filename="idotimeline.h" line="33"/>
+      <parameters>
+        <parameter name="k">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="MESSAGE_DIALOG"
+                    c:identifier="IDO_MESSAGE_DIALOG"
+                    introspectable="0">
+      <source-position filename="idomessagedialog.h" line="35"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="MESSAGE_DIALOG_CLASS"
+                    c:identifier="IDO_MESSAGE_DIALOG_CLASS"
+                    introspectable="0">
+      <source-position filename="idomessagedialog.h" line="36"/>
+      <parameters>
+        <parameter name="k">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="MESSAGE_DIALOG_GET_CLASS"
+                    c:identifier="IDO_MESSAGE_DIALOG_GET_CLASS"
+                    introspectable="0">
+      <source-position filename="idomessagedialog.h" line="39"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <class name="MessageDialog"
+           c:symbol-prefix="message_dialog"
+           c:type="IdoMessageDialog"
+           parent="Gtk.MessageDialog"
+           glib:type-name="IdoMessageDialog"
+           glib:get-type="ido_message_dialog_get_type"
+           glib:type-struct="MessageDialogClass">
+      <source-position filename="idomessagedialog.h" line="58"/>
+      <implements name="Atk.ImplementorIface"/>
+      <implements name="Gtk.Buildable"/>
+      <constructor name="new"
+                   c:identifier="ido_message_dialog_new"
+                   introspectable="0">
+        <doc xml:space="preserve"
+             filename="idomessagedialog.c"
+             line="244">Creates a new message dialog, which is based upon
+GtkMessageDialog so it shares API and functionality
+with it.  IdoMessageDialog differs in that it has two
+states.  The initial state hides the action buttons
+and the secondary message.  When a user clicks on the
+dialog it will expand to provide the secondary message
+and the action buttons.</doc>
+        <source-position filename="idomessagedialog.h" line="62"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idomessagedialog.c"
+               line="261">a new #IdoMessageDialog</doc>
+          <type name="Gtk.Widget" c:type="GtkWidget*"/>
+        </return-value>
+        <parameters>
+          <parameter name="parent" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idomessagedialog.c"
+                 line="246">transient parent, or %NULL for none</doc>
+            <type name="Gtk.Window" c:type="GtkWindow*"/>
+          </parameter>
+          <parameter name="flags" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idomessagedialog.c"
+                 line="247">flags</doc>
+            <type name="Gtk.DialogFlags" c:type="GtkDialogFlags"/>
+          </parameter>
+          <parameter name="type" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idomessagedialog.c"
+                 line="248">type of message</doc>
+            <type name="Gtk.MessageType" c:type="GtkMessageType"/>
+          </parameter>
+          <parameter name="buttons" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idomessagedialog.c"
+                 line="249">a set of buttons to use</doc>
+            <type name="Gtk.ButtonsType" c:type="GtkButtonsType"/>
+          </parameter>
+          <parameter name="message_format" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idomessagedialog.c"
+                 line="250">printf()-style format string, or %NULL</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="..." transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idomessagedialog.c"
+                 line="251">arguments for @message_format</doc>
+            <varargs/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_with_markup"
+                   c:identifier="ido_message_dialog_new_with_markup"
+                   introspectable="0">
+        <doc xml:space="preserve"
+             filename="idomessagedialog.c"
+             line="308">Creates a new message dialog, which is based upon
+GtkMessageDialog so it shares API and functionality
+with it.  IdoMessageDialog differs in that it has two
+states.  The initial state hides the action buttons
+and the secondary message.  When a user clicks on the
+dialog it will expand to provide the secondary message
+and the action buttons.</doc>
+        <source-position filename="idomessagedialog.h" line="69"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idomessagedialog.c"
+               line="325">a new #IdoMessageDialog</doc>
+          <type name="Gtk.Widget" c:type="GtkWidget*"/>
+        </return-value>
+        <parameters>
+          <parameter name="parent" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idomessagedialog.c"
+                 line="310">transient parent, or %NULL for none</doc>
+            <type name="Gtk.Window" c:type="GtkWindow*"/>
+          </parameter>
+          <parameter name="flags" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idomessagedialog.c"
+                 line="311">flags</doc>
+            <type name="Gtk.DialogFlags" c:type="GtkDialogFlags"/>
+          </parameter>
+          <parameter name="type" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idomessagedialog.c"
+                 line="312">type of message</doc>
+            <type name="Gtk.MessageType" c:type="GtkMessageType"/>
+          </parameter>
+          <parameter name="buttons" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idomessagedialog.c"
+                 line="313">a set of buttons to use</doc>
+            <type name="Gtk.ButtonsType" c:type="GtkButtonsType"/>
+          </parameter>
+          <parameter name="message_format" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idomessagedialog.c"
+                 line="314">printf()-style format string, or %NULL</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="..." transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idomessagedialog.c"
+                 line="315">arguments for @message_format. They will be escaped to allow valid XML.</doc>
+            <varargs/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <field name="parent_instance">
+        <type name="Gtk.MessageDialog" c:type="GtkMessageDialog"/>
+      </field>
+    </class>
+    <record name="MessageDialogClass"
+            c:type="IdoMessageDialogClass"
+            glib:is-gtype-struct-for="MessageDialog">
+      <source-position filename="idomessagedialog.h" line="58"/>
+      <field name="parent_class">
+        <type name="Gtk.MessageDialogClass" c:type="GtkMessageDialogClass"/>
+      </field>
+      <field name="_ido_reserved1" introspectable="0">
+        <callback name="_ido_reserved1">
+          <source-position filename="idomessagedialog.h" line="54"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="_ido_reserved2" introspectable="0">
+        <callback name="_ido_reserved2">
+          <source-position filename="idomessagedialog.h" line="55"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="_ido_reserved3" introspectable="0">
+        <callback name="_ido_reserved3">
+          <source-position filename="idomessagedialog.h" line="56"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="_ido_reserved4" introspectable="0">
+        <callback name="_ido_reserved4">
+          <source-position filename="idomessagedialog.h" line="57"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <function-macro name="RANGE" c:identifier="IDO_RANGE" introspectable="0">
+      <source-position filename="idorange.h" line="34"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="RANGE_CLASS"
+                    c:identifier="IDO_RANGE_CLASS"
+                    introspectable="0">
+      <source-position filename="idorange.h" line="35"/>
+      <parameters>
+        <parameter name="k">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="RANGE_GET_CLASS"
+                    c:identifier="IDO_RANGE_GET_CLASS"
+                    introspectable="0">
+      <source-position filename="idorange.h" line="38"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <class name="Range"
+           c:symbol-prefix="range"
+           c:type="IdoRange"
+           parent="Gtk.Scale"
+           glib:type-name="IdoRange"
+           glib:get-type="ido_range_get_type"
+           glib:type-struct="RangeClass">
+      <source-position filename="idorange.h" line="65"/>
+      <implements name="Atk.ImplementorIface"/>
+      <implements name="Gtk.Buildable"/>
+      <implements name="Gtk.Orientable"/>
+      <constructor name="new" c:identifier="ido_range_new">
+        <doc xml:space="preserve"
+             filename="idorange.c"
+             line="169">Creates a new #IdoRange widget.</doc>
+        <source-position filename="idorange.h" line="69"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idorange.c"
+               line="176">A new #IdoRange</doc>
+          <type name="Gtk.Widget" c:type="GtkWidget*"/>
+        </return-value>
+        <parameters>
+          <parameter name="adj" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idorange.c"
+                 line="171">A #GtkAdjustment providing the range values</doc>
+            <type name="GObject.Object" c:type="GObject*"/>
+          </parameter>
+          <parameter name="style" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idorange.c"
+                 line="172">The range style</doc>
+            <type name="RangeStyle" c:type="IdoRangeStyle"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <property name="range-style"
+                introspectable="0"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none"
+                default-value="IDO_RANGE_STYLE_SMALL">
+        <type/>
+      </property>
+      <field name="parent_instance">
+        <type name="Gtk.Scale" c:type="GtkScale"/>
+      </field>
+      <field name="priv">
+        <type name="RangePrivate" c:type="IdoRangePrivate*"/>
+      </field>
+    </class>
+    <record name="RangeClass"
+            c:type="IdoRangeClass"
+            glib:is-gtype-struct-for="Range">
+      <source-position filename="idorange.h" line="65"/>
+      <field name="parent_class">
+        <type name="Gtk.ScaleClass" c:type="GtkScaleClass"/>
+      </field>
+      <field name="_ido_reserved1" introspectable="0">
+        <callback name="_ido_reserved1">
+          <source-position filename="idorange.h" line="61"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="_ido_reserved2" introspectable="0">
+        <callback name="_ido_reserved2">
+          <source-position filename="idorange.h" line="62"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="_ido_reserved3" introspectable="0">
+        <callback name="_ido_reserved3">
+          <source-position filename="idorange.h" line="63"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="_ido_reserved4" introspectable="0">
+        <callback name="_ido_reserved4">
+          <source-position filename="idorange.h" line="64"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <record name="RangePrivate"
+            c:type="IdoRangePrivate"
+            disguised="1"
+            opaque="1">
+      <source-position filename="idorange.h" line="47"/>
+    </record>
+    <enumeration name="RangeStyle" c:type="IdoRangeStyle">
+      <source-position filename="idorange.h" line="44"/>
+      <member name="default" value="0" c:identifier="IDO_RANGE_STYLE_DEFAULT">
+      </member>
+      <member name="small" value="1" c:identifier="IDO_RANGE_STYLE_SMALL">
+      </member>
+    </enumeration>
+    <function-macro name="SCALE_MENU_ITEM"
+                    c:identifier="IDO_SCALE_MENU_ITEM"
+                    introspectable="0">
+      <source-position filename="idoscalemenuitem.h" line="35"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="SCALE_MENU_ITEM_CLASS"
+                    c:identifier="IDO_SCALE_MENU_ITEM_CLASS"
+                    introspectable="0">
+      <source-position filename="idoscalemenuitem.h" line="36"/>
+      <parameters>
+        <parameter name="c">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="SCALE_MENU_ITEM_GET_CLASS"
+                    c:identifier="IDO_SCALE_MENU_ITEM_GET_CLASS"
+                    introspectable="0">
+      <source-position filename="idoscalemenuitem.h" line="39"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="SWITCH_MENU_ITEM"
+                    c:identifier="IDO_SWITCH_MENU_ITEM"
+                    introspectable="0">
+      <source-position filename="idoswitchmenuitem.h" line="29"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="SWITCH_MENU_ITEM_CLASS"
+                    c:identifier="IDO_SWITCH_MENU_ITEM_CLASS"
+                    introspectable="0">
+      <source-position filename="idoswitchmenuitem.h" line="30"/>
+      <parameters>
+        <parameter name="c">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="SWITCH_MENU_ITEM_GET_CLASS"
+                    c:identifier="IDO_SWITCH_MENU_ITEM_GET_CLASS"
+                    introspectable="0">
+      <source-position filename="idoswitchmenuitem.h" line="33"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <class name="ScaleMenuItem"
+           c:symbol-prefix="scale_menu_item"
+           c:type="IdoScaleMenuItem"
+           parent="Gtk.MenuItem"
+           glib:type-name="IdoScaleMenuItem"
+           glib:get-type="ido_scale_menu_item_get_type"
+           glib:type-struct="ScaleMenuItemClass">
+      <source-position filename="idoscalemenuitem.h" line="66"/>
+      <implements name="Atk.ImplementorIface"/>
+      <implements name="Gtk.Actionable"/>
+      <implements name="Gtk.Activatable"/>
+      <implements name="Gtk.Buildable"/>
+      <constructor name="new" c:identifier="ido_scale_menu_item_new">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="656">Creates a new #IdoScaleMenuItem with an empty label.</doc>
+        <source-position filename="idoscalemenuitem.h" line="70"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idoscalemenuitem.c"
+               line="664">a new #IdoScaleMenuItem.</doc>
+          <type name="Gtk.Widget" c:type="GtkWidget*"/>
+        </return-value>
+        <parameters>
+          <parameter name="label" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="658">the text of the new menu item.</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="size" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="659">The size style of the range.</doc>
+            <type name="RangeStyle" c:type="IdoRangeStyle"/>
+          </parameter>
+          <parameter name="adjustment" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="660">A #GtkAdjustment describing the slider value.</doc>
+            <type name="Gtk.Adjustment" c:type="GtkAdjustment*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_from_model"
+                   c:identifier="ido_scale_menu_item_new_from_model">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="1043">Creates a new #IdoScaleMenuItem. If @menuitem contains an action, it
+will be bound to that action in @actions.</doc>
+        <source-position filename="idoscalemenuitem.h" line="95"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="idoscalemenuitem.c"
+               line="1049">a new #IdoScaleMenuItem</doc>
+          <type name="Gtk.MenuItem" c:type="GtkMenuItem*"/>
+        </return-value>
+        <parameters>
+          <parameter name="menuitem" transfer-ownership="none">
+            <type name="Gio.MenuItem" c:type="GMenuItem*"/>
+          </parameter>
+          <parameter name="actions" transfer-ownership="none">
+            <type name="Gio.ActionGroup" c:type="GActionGroup*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_with_range"
+                   c:identifier="ido_scale_menu_item_new_with_range">
+        <source-position filename="idoscalemenuitem.h" line="73"/>
+        <return-value transfer-ownership="none">
+          <type name="Gtk.Widget" c:type="GtkWidget*"/>
+        </return-value>
+        <parameters>
+          <parameter name="label" transfer-ownership="none">
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="size" transfer-ownership="none">
+            <type name="RangeStyle" c:type="IdoRangeStyle"/>
+          </parameter>
+          <parameter name="value" transfer-ownership="none">
+            <type name="gdouble" c:type="gdouble"/>
+          </parameter>
+          <parameter name="min" transfer-ownership="none">
+            <type name="gdouble" c:type="gdouble"/>
+          </parameter>
+          <parameter name="max" transfer-ownership="none">
+            <type name="gdouble" c:type="gdouble"/>
+          </parameter>
+          <parameter name="step" transfer-ownership="none">
+            <type name="gdouble" c:type="gdouble"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <virtual-method name="primary_clicked" invoker="primary_clicked">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="939">Emits the "primary-clicked" signal.
+
+The default handler for this signal lowers the scale's
+adjustment to its lower bound.</doc>
+        <source-position filename="idoscalemenuitem.h" line="64"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="941">the #IdoScaleMenuItem</doc>
+            <type name="ScaleMenuItem" c:type="IdoScaleMenuItem*"/>
+          </instance-parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="secondary_clicked" invoker="secondary_clicked">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="962">Emits the "secondary-clicked" signal.
+
+The default handler for this signal raises the scale's
+adjustment to its upper bound.</doc>
+        <source-position filename="idoscalemenuitem.h" line="65"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="964">the #IdoScaleMenuItem</doc>
+            <type name="ScaleMenuItem" c:type="IdoScaleMenuItem*"/>
+          </instance-parameter>
+        </parameters>
+      </virtual-method>
+      <method name="get_primary_image"
+              c:identifier="ido_scale_menu_item_get_primary_image">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="770">Retrieves a pointer to the image widget used in the primary slot.
+Whether this is visible depends upon the return value from
+ido_scale_menu_item_get_style().</doc>
+        <source-position filename="idoscalemenuitem.h" line="84"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idoscalemenuitem.c"
+               line="778">A #GtkWidget pointer for the primary image.</doc>
+          <type name="Gtk.Widget" c:type="GtkWidget*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="772">The #IdoScaleMenuItem</doc>
+            <type name="ScaleMenuItem" c:type="IdoScaleMenuItem*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_primary_label"
+              c:identifier="ido_scale_menu_item_get_primary_label">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="845">Retrieves a string of the text for the primary label widget.
+Whether this is visible depends upon the return value from
+ido_scale_menu_item_get_style().</doc>
+        <source-position filename="idoscalemenuitem.h" line="86"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idoscalemenuitem.c"
+               line="853">The label text.</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="847">The #IdoScaleMenuItem</doc>
+            <type name="ScaleMenuItem" c:type="IdoScaleMenuItem*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_scale" c:identifier="ido_scale_menu_item_get_scale">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="706">Retrieves the scale widget.</doc>
+        <source-position filename="idoscalemenuitem.h" line="79"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idoscalemenuitem.c"
+               line="712">The #IdoRange in this item</doc>
+          <type name="Gtk.Widget" c:type="GtkWidget*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="708">The #IdoScaleMenuItem</doc>
+            <type name="ScaleMenuItem" c:type="IdoScaleMenuItem*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_secondary_image"
+              c:identifier="ido_scale_menu_item_get_secondary_image">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="792">Retrieves a pointer to the image widget used in the secondary slot.
+Whether this is visible depends upon the return value from
+ido_scale_menu_item_get_style().</doc>
+        <source-position filename="idoscalemenuitem.h" line="85"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idoscalemenuitem.c"
+               line="800">A #GtkWidget pointer for the secondary image.</doc>
+          <type name="Gtk.Widget" c:type="GtkWidget*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="794">The #IdoScaleMenuItem</doc>
+            <type name="ScaleMenuItem" c:type="IdoScaleMenuItem*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_secondary_label"
+              c:identifier="ido_scale_menu_item_get_secondary_label">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="867">Retrieves a string of the text for the secondary label widget.
+Whether this is visible depends upon the return value from
+ido_scale_menu_item_get_style().</doc>
+        <source-position filename="idoscalemenuitem.h" line="89"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idoscalemenuitem.c"
+               line="875">The label text.</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="869">The #IdoScaleMenuItem</doc>
+            <type name="ScaleMenuItem" c:type="IdoScaleMenuItem*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_style" c:identifier="ido_scale_menu_item_get_style">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="726">Retrieves the type of widgets being used for the primary and
+secondary widget slots.  This could be images, labels, or nothing.</doc>
+        <source-position filename="idoscalemenuitem.h" line="81"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idoscalemenuitem.c"
+               line="733">A #IdoScaleMenuItemStyle enum describing the style.</doc>
+          <type name="ScaleMenuItemStyle" c:type="IdoScaleMenuItemStyle"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="728">The #IdoScaleMenuItem</doc>
+            <type name="ScaleMenuItem" c:type="IdoScaleMenuItem*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="primary_clicked"
+              c:identifier="ido_scale_menu_item_primary_clicked">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="939">Emits the "primary-clicked" signal.
+
+The default handler for this signal lowers the scale's
+adjustment to its lower bound.</doc>
+        <source-position filename="idoscalemenuitem.h" line="92"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="941">the #IdoScaleMenuItem</doc>
+            <type name="ScaleMenuItem" c:type="IdoScaleMenuItem*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="secondary_clicked"
+              c:identifier="ido_scale_menu_item_secondary_clicked">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="962">Emits the "secondary-clicked" signal.
+
+The default handler for this signal raises the scale's
+adjustment to its upper bound.</doc>
+        <source-position filename="idoscalemenuitem.h" line="93"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="964">the #IdoScaleMenuItem</doc>
+            <type name="ScaleMenuItem" c:type="IdoScaleMenuItem*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="set_primary_label"
+              c:identifier="ido_scale_menu_item_set_primary_label">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="889">Sets the text for the label widget in the primary slot.  This
+widget will only be visibile if the return value of
+ido_scale_menu_item_get_style() is set to %IDO_SCALE_MENU_ITEM_STYLE_LABEL.</doc>
+        <source-position filename="idoscalemenuitem.h" line="87"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="891">The #IdoScaleMenuItem</doc>
+            <type name="ScaleMenuItem" c:type="IdoScaleMenuItem*"/>
+          </instance-parameter>
+          <parameter name="label" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="892">The label text</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_secondary_label"
+              c:identifier="ido_scale_menu_item_set_secondary_label">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="914">Sets the text for the label widget in the secondary slot.  This
+widget will only be visibile if the return value of
+ido_scale_menu_item_get_style() is set to %IDO_SCALE_MENU_ITEM_STYLE_LABEL.</doc>
+        <source-position filename="idoscalemenuitem.h" line="90"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="916">The #IdoScaleMenuItem</doc>
+            <type name="ScaleMenuItem" c:type="IdoScaleMenuItem*"/>
+          </instance-parameter>
+          <parameter name="label" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="917">The label text</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_style" c:identifier="ido_scale_menu_item_set_style">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="747">Sets the type of widgets being used for the primary and
+secondary widget slots.  This could be images, labels, or nothing.</doc>
+        <source-position filename="idoscalemenuitem.h" line="82"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="menuitem" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="749">The #IdoScaleMenuItem</doc>
+            <type name="ScaleMenuItem" c:type="IdoScaleMenuItem*"/>
+          </instance-parameter>
+          <parameter name="style" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="750">Set the style use for the primary and secondary widget slots.</doc>
+            <type name="ScaleMenuItemStyle" c:type="IdoScaleMenuItemStyle"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="accessory-style"
+                introspectable="0"
+                writable="1"
+                transfer-ownership="none"
+                default-value="IDO_SCALE_MENU_ITEM_STYLE_NONE">
+        <type/>
+      </property>
+      <property name="adjustment" writable="1" transfer-ownership="none">
+        <type name="Gtk.Adjustment"/>
+      </property>
+      <property name="range-style"
+                introspectable="0"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none"
+                default-value="IDO_RANGE_STYLE_DEFAULT">
+        <type/>
+      </property>
+      <property name="reverse-scroll-events"
+                writable="1"
+                transfer-ownership="none"
+                default-value="TRUE">
+        <type name="gboolean" c:type="gboolean"/>
+      </property>
+      <field name="parent_instance">
+        <type name="Gtk.MenuItem" c:type="GtkMenuItem"/>
+      </field>
+      <field name="priv">
+        <type name="ScaleMenuItemPrivate" c:type="IdoScaleMenuItemPrivate*"/>
+      </field>
+      <glib:signal name="primary-clicked"
+                   when="first"
+                   no-recurse="1"
+                   no-hooks="1">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="279">The ::primary-clicked signal is emitted when the pointer clicks the primary label.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="secondary-clicked"
+                   when="first"
+                   no-recurse="1"
+                   no-hooks="1">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="294">The ::secondary-clicked signal is emitted when the pointer clicks the secondary label.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="slider-grabbed" when="first">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="251">The ::slider-grabbed signal is emitted when the pointer selects the slider.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="slider-released" when="first">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="265">The ::slider-released signal is emitted when the pointer releases the slider.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="value-changed" when="last">
+        <doc xml:space="preserve"
+             filename="idoscalemenuitem.c"
+             line="309">Emitted whenever the value of the contained scale changes because
+of user input.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="value" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoscalemenuitem.c"
+                 line="312">the new value</doc>
+            <type name="gdouble" c:type="gdouble"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <record name="ScaleMenuItemClass"
+            c:type="IdoScaleMenuItemClass"
+            glib:is-gtype-struct-for="ScaleMenuItem">
+      <source-position filename="idoscalemenuitem.h" line="66"/>
+      <field name="parent_class">
+        <type name="Gtk.MenuItemClass" c:type="GtkMenuItemClass"/>
+      </field>
+      <field name="primary_clicked">
+        <callback name="primary_clicked">
+          <source-position filename="idoscalemenuitem.h" line="64"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="menuitem" transfer-ownership="none">
+              <doc xml:space="preserve"
+                   filename="idoscalemenuitem.c"
+                   line="941">the #IdoScaleMenuItem</doc>
+              <type name="ScaleMenuItem" c:type="IdoScaleMenuItem*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="secondary_clicked">
+        <callback name="secondary_clicked">
+          <source-position filename="idoscalemenuitem.h" line="65"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="menuitem" transfer-ownership="none">
+              <doc xml:space="preserve"
+                   filename="idoscalemenuitem.c"
+                   line="964">the #IdoScaleMenuItem</doc>
+              <type name="ScaleMenuItem" c:type="IdoScaleMenuItem*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+    </record>
+    <record name="ScaleMenuItemPrivate"
+            c:type="IdoScaleMenuItemPrivate"
+            disguised="1"
+            opaque="1">
+      <source-position filename="idoscalemenuitem.h" line="50"/>
+    </record>
+    <enumeration name="ScaleMenuItemStyle" c:type="IdoScaleMenuItemStyle">
+      <source-position filename="idoscalemenuitem.h" line="46"/>
+      <member name="none"
+              value="0"
+              c:identifier="IDO_SCALE_MENU_ITEM_STYLE_NONE">
+      </member>
+      <member name="image"
+              value="1"
+              c:identifier="IDO_SCALE_MENU_ITEM_STYLE_IMAGE">
+      </member>
+      <member name="label"
+              value="2"
+              c:identifier="IDO_SCALE_MENU_ITEM_STYLE_LABEL">
+      </member>
+    </enumeration>
+    <class name="SwitchMenuItem"
+           c:symbol-prefix="switch_menu_item"
+           c:type="IdoSwitchMenuItem"
+           parent="Gtk.CheckMenuItem"
+           glib:type-name="IdoSwitchMenuItem"
+           glib:get-type="ido_switch_menu_item_get_type"
+           glib:type-struct="SwitchMenuItemClass">
+      <source-position filename="idoswitchmenuitem.h" line="49"/>
+      <implements name="Atk.ImplementorIface"/>
+      <implements name="Gtk.Actionable"/>
+      <implements name="Gtk.Activatable"/>
+      <implements name="Gtk.Buildable"/>
+      <constructor name="new" c:identifier="ido_switch_menu_item_new">
+        <doc xml:space="preserve"
+             filename="idoswitchmenuitem.c"
+             line="107">Creates a new #IdoSwitchMenuItem</doc>
+        <source-position filename="idoswitchmenuitem.h" line="52"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idoswitchmenuitem.c"
+               line="112">a new #IdoSwitchMenuItem.</doc>
+          <type name="Gtk.Widget" c:type="GtkWidget*"/>
+        </return-value>
+      </constructor>
+      <constructor name="new_from_menu_model"
+                   c:identifier="ido_switch_menu_item_new_from_menu_model">
+        <source-position filename="idoswitchmenuitem.h" line="55"/>
+        <return-value transfer-ownership="none">
+          <type name="Gtk.MenuItem" c:type="GtkMenuItem*"/>
+        </return-value>
+        <parameters>
+          <parameter name="menuitem" transfer-ownership="none">
+            <type name="Gio.MenuItem" c:type="GMenuItem*"/>
+          </parameter>
+          <parameter name="actions" transfer-ownership="none">
+            <type name="Gio.ActionGroup" c:type="GActionGroup*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_content_area"
+              c:identifier="ido_switch_menu_item_get_content_area">
+        <doc xml:space="preserve"
+             filename="idoswitchmenuitem.c"
+             line="120">Get the #GtkContainer to add additional widgets into.
+
+This function is dperecated.</doc>
+        <source-position filename="idoswitchmenuitem.h" line="53"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idoswitchmenuitem.c"
+               line="128">The #GtkContainer to add additional widgets into.</doc>
+          <type name="Gtk.Container" c:type="GtkContainer*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="item" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoswitchmenuitem.c"
+                 line="122">The #IdoSwitchMenuItem.</doc>
+            <type name="SwitchMenuItem" c:type="IdoSwitchMenuItem*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="set_icon" c:identifier="ido_switch_menu_item_set_icon">
+        <doc xml:space="preserve"
+             filename="idoswitchmenuitem.c"
+             line="176">Set the icon of @item to @icon.</doc>
+        <source-position filename="idoswitchmenuitem.h" line="61"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="item" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoswitchmenuitem.c"
+                 line="178">a #IdoSwitchMenuItem.</doc>
+            <type name="SwitchMenuItem" c:type="IdoSwitchMenuItem*"/>
+          </instance-parameter>
+          <parameter name="icon"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="idoswitchmenuitem.c"
+                 line="179">a #GIcon</doc>
+            <type name="Gio.Icon" c:type="GIcon*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_label" c:identifier="ido_switch_menu_item_set_label">
+        <doc xml:space="preserve"
+             filename="idoswitchmenuitem.c"
+             line="147">Set the label of @item to @label.</doc>
+        <source-position filename="idoswitchmenuitem.h" line="58"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="item" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoswitchmenuitem.c"
+                 line="149">a #IdoSwitchMenuItem.</doc>
+            <type name="SwitchMenuItem" c:type="IdoSwitchMenuItem*"/>
+          </instance-parameter>
+          <parameter name="label" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idoswitchmenuitem.c"
+                 line="150">a string to set as the label of @item</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <field name="parent_instance">
+        <type name="Gtk.CheckMenuItem" c:type="GtkCheckMenuItem"/>
+      </field>
+      <field name="priv">
+        <type name="SwitchMenuItemPrivate" c:type="IdoSwitchMenuItemPrivate*"/>
+      </field>
+    </class>
+    <record name="SwitchMenuItemClass"
+            c:type="IdoSwitchMenuItemClass"
+            glib:is-gtype-struct-for="SwitchMenuItem">
+      <source-position filename="idoswitchmenuitem.h" line="49"/>
+      <field name="parent_class">
+        <type name="Gtk.CheckMenuItemClass" c:type="GtkCheckMenuItemClass"/>
+      </field>
+    </record>
+    <record name="SwitchMenuItemPrivate"
+            c:type="IdoSwitchMenuItemPrivate"
+            disguised="1"
+            opaque="1">
+      <source-position filename="idoswitchmenuitem.h" line="37"/>
+    </record>
+    <function-macro name="TIMELINE"
+                    c:identifier="IDO_TIMELINE"
+                    introspectable="0">
+      <source-position filename="idotimeline.h" line="30"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="TIMELINE_CLASS"
+                    c:identifier="IDO_TIMELINE_CLASS"
+                    introspectable="0">
+      <source-position filename="idotimeline.h" line="31"/>
+      <parameters>
+        <parameter name="k">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="TIMELINE_GET_CLASS"
+                    c:identifier="IDO_TIMELINE_GET_CLASS"
+                    introspectable="0">
+      <source-position filename="idotimeline.h" line="34"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <class name="Timeline"
+           c:symbol-prefix="timeline"
+           c:type="IdoTimeline"
+           parent="GObject.Object"
+           glib:type-name="IdoTimeline"
+           glib:get-type="ido_timeline_get_type"
+           glib:type-struct="TimelineClass">
+      <source-position filename="idotimeline.h" line="71"/>
+      <constructor name="new" c:identifier="ido_timeline_new">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="354">Creates a new #IdoTimeline with the specified number of frames.</doc>
+        <source-position filename="idotimeline.h" line="76"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="idotimeline.c"
+               line="360">the newly created #IdoTimeline</doc>
+          <type name="Timeline" c:type="IdoTimeline*"/>
+        </return-value>
+        <parameters>
+          <parameter name="duration" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="356">duration in milliseconds for the timeline</doc>
+            <type name="guint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_for_screen"
+                   c:identifier="ido_timeline_new_for_screen">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="370">Creates a new #IdoTimeline with the specified number of frames on the given screen.</doc>
+        <source-position filename="idotimeline.h" line="77"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="idotimeline.c"
+               line="377">the newly created #IdoTimeline</doc>
+          <type name="Timeline" c:type="IdoTimeline*"/>
+        </return-value>
+        <parameters>
+          <parameter name="duration" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="372">duration in milliseconds for the timeline</doc>
+            <type name="guint" c:type="guint"/>
+          </parameter>
+          <parameter name="screen" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="373">Screen to start on.</doc>
+            <type name="Gdk.Screen" c:type="GdkScreen*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <function name="calculate_progress"
+                c:identifier="ido_timeline_calculate_progress">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="790">Transform a linear progress position using the given transform.</doc>
+        <source-position filename="idotimeline.h" line="110"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idotimeline.c"
+               line="797">the progress position using the provided transform.</doc>
+          <type name="gdouble" c:type="gdouble"/>
+        </return-value>
+        <parameters>
+          <parameter name="linear_progress" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="792">The progress from 0.0 (start) to 1.0 (end)</doc>
+            <type name="gdouble" c:type="gdouble"/>
+          </parameter>
+          <parameter name="progress_type" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="793">The progress transform to apply</doc>
+            <type name="TimelineProgressType"
+                  c:type="IdoTimelineProgressType"/>
+          </parameter>
+        </parameters>
+      </function>
+      <virtual-method name="finished">
+        <source-position filename="idotimeline.h" line="61"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="frame">
+        <source-position filename="idotimeline.h" line="64"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+          <parameter name="progress" transfer-ownership="none">
+            <type name="gdouble" c:type="gdouble"/>
+          </parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="paused">
+        <source-position filename="idotimeline.h" line="62"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+        </parameters>
+      </virtual-method>
+      <virtual-method name="started">
+        <source-position filename="idotimeline.h" line="60"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+        </parameters>
+      </virtual-method>
+      <method name="get_direction" c:identifier="ido_timeline_get_direction">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="679">Returns the direction of the timeline.</doc>
+        <source-position filename="idotimeline.h" line="102"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idotimeline.c"
+               line="685">direction</doc>
+          <type name="TimelineDirection" c:type="IdoTimelineDirection"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="681">A #IdoTimeline</doc>
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_duration"
+              c:identifier="ido_timeline_get_duration"
+              glib:get-property="duration">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="635">Set the animation duration.</doc>
+        <source-position filename="idotimeline.h" line="94"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idotimeline.c"
+               line="641">Duration in milliseconds.</doc>
+          <type name="guint" c:type="guint"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="637">A #IdoTimeline</doc>
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_fps"
+              c:identifier="ido_timeline_get_fps"
+              glib:get-property="fps">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="514">Returns the number of frames per second.</doc>
+        <source-position filename="idotimeline.h" line="86"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idotimeline.c"
+               line="520">frames per second</doc>
+          <type name="guint" c:type="guint"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="516">A #IdoTimeline</doc>
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_loop"
+              c:identifier="ido_timeline_get_loop"
+              glib:get-property="loop">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="566">Returns whether the timeline loops to the
+beginning when it has reached the end.</doc>
+        <source-position filename="idotimeline.h" line="90"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idotimeline.c"
+               line="573">%TRUE if the timeline loops</doc>
+          <type name="gboolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="568">A #IdoTimeline</doc>
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_progress" c:identifier="ido_timeline_get_progress">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="743">Get the progress on the timeline.</doc>
+        <source-position filename="idotimeline.h" line="106"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idotimeline.c"
+               line="749">The progress from 0.0 (start) to 1.0 (end)</doc>
+          <type name="gdouble" c:type="gdouble"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="745">A #IdoTimeline</doc>
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_screen"
+              c:identifier="ido_timeline_get_screen"
+              glib:get-property="screen">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="724">Get the screen this timeline is running on.</doc>
+        <source-position filename="idotimeline.h" line="98"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idotimeline.c"
+               line="730">The #GdkScreen this timeline is running on.</doc>
+          <type name="Gdk.Screen" c:type="GdkScreen*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="726">A #IdoTimeline</doc>
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="is_running" c:identifier="ido_timeline_is_running">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="494">Returns whether the timeline is running or not.</doc>
+        <source-position filename="idotimeline.h" line="84"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="idotimeline.c"
+               line="500">%TRUE if the timeline is running</doc>
+          <type name="gboolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="496">A #IdoTimeline</doc>
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="pause" c:identifier="ido_timeline_pause">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="440">Pauses the timeline.</doc>
+        <source-position filename="idotimeline.h" line="81"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="442">A #IdoTimeline</doc>
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="rewind" c:identifier="ido_timeline_rewind">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="464">Rewinds the timeline.</doc>
+        <source-position filename="idotimeline.h" line="82"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="466">A #IdoTimeline</doc>
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="set_direction" c:identifier="ido_timeline_set_direction">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="655">Sets the direction of the timeline.</doc>
+        <source-position filename="idotimeline.h" line="103"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="657">A #IdoTimeline</doc>
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+          <parameter name="direction" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="658">direction</doc>
+            <type name="TimelineDirection" c:type="IdoTimelineDirection"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_duration"
+              c:identifier="ido_timeline_set_duration"
+              glib:set-property="duration">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="611">Set the animation duration.</doc>
+        <source-position filename="idotimeline.h" line="95"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="613">A #IdoTimeline</doc>
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+          <parameter name="duration" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="614">Duration in milliseconds.</doc>
+            <type name="guint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_fps"
+              c:identifier="ido_timeline_set_fps"
+              glib:set-property="fps">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="533">Sets the number of frames per second that
+the timeline will play.</doc>
+        <source-position filename="idotimeline.h" line="87"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="535">A #IdoTimeline</doc>
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+          <parameter name="fps" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="536">frames per second</doc>
+            <type name="guint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_loop"
+              c:identifier="ido_timeline_set_loop"
+              glib:set-property="loop">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="586">Sets whether the timeline loops to the beginning
+when it has reached the end.</doc>
+        <source-position filename="idotimeline.h" line="91"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="588">A #IdoTimeline</doc>
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+          <parameter name="loop" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="589">%TRUE to make the timeline loop</doc>
+            <type name="gboolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_progress" c:identifier="ido_timeline_set_progress">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="762">Set the progress on the timeline.</doc>
+        <source-position filename="idotimeline.h" line="107"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="764">A #IdoTimeline</doc>
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+          <parameter name="progress" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="765">The progress from 0.0 (start) to 1.0 (end)</doc>
+            <type name="gdouble" c:type="gdouble"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_screen"
+              c:identifier="ido_timeline_set_screen"
+              glib:set-property="screen">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="698">Set the screen the timeline is running on.</doc>
+        <source-position filename="idotimeline.h" line="99"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="700">A #IdoTimeline</doc>
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+          <parameter name="screen" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="701">A #GdkScreen to use</doc>
+            <type name="Gdk.Screen" c:type="GdkScreen*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="start" c:identifier="ido_timeline_start">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="389">Runs the timeline from the current frame.</doc>
+        <source-position filename="idotimeline.h" line="80"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="timeline" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="391">A #IdoTimeline</doc>
+            <type name="Timeline" c:type="IdoTimeline*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <property name="direction"
+                introspectable="0"
+                writable="1"
+                transfer-ownership="none"
+                default-value="IDO_TIMELINE_DIRECTION_FORWARD">
+        <type/>
+      </property>
+      <property name="duration"
+                writable="1"
+                transfer-ownership="none"
+                setter="set_duration"
+                getter="get_duration"
+                default-value="0">
+        <type name="guint" c:type="guint"/>
+      </property>
+      <property name="fps"
+                writable="1"
+                transfer-ownership="none"
+                setter="set_fps"
+                getter="get_fps"
+                default-value="30">
+        <type name="guint" c:type="guint"/>
+      </property>
+      <property name="loop"
+                writable="1"
+                transfer-ownership="none"
+                setter="set_loop"
+                getter="get_loop"
+                default-value="FALSE">
+        <type name="gboolean" c:type="gboolean"/>
+      </property>
+      <property name="screen"
+                writable="1"
+                transfer-ownership="none"
+                setter="set_screen"
+                getter="get_screen">
+        <type name="Gdk.Screen"/>
+      </property>
+      <field name="parent_instance">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <glib:signal name="finished" when="last">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="165">The ::paused signal is emitted when the timeline finishes.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="frame" when="last">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="180">The ::frame signal is emitted when a frame should be drawn.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="progress" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="idotimeline.c"
+                 line="183">The progress position for this frame from 0.0 (start) to 1.0 (end).</doc>
+            <type name="gdouble" c:type="gdouble"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="paused" when="last">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="150">The ::paused signal is emitted when the timeline pauses.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="started" when="last">
+        <doc xml:space="preserve"
+             filename="idotimeline.c"
+             line="135">The ::started signal is emitted when the timeline starts.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+    </class>
+    <record name="TimelineClass"
+            c:type="IdoTimelineClass"
+            glib:is-gtype-struct-for="Timeline">
+      <source-position filename="idotimeline.h" line="71"/>
+      <field name="parent_class">
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="started">
+        <callback name="started">
+          <source-position filename="idotimeline.h" line="60"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="timeline" transfer-ownership="none">
+              <type name="Timeline" c:type="IdoTimeline*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="finished">
+        <callback name="finished">
+          <source-position filename="idotimeline.h" line="61"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="timeline" transfer-ownership="none">
+              <type name="Timeline" c:type="IdoTimeline*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="paused">
+        <callback name="paused">
+          <source-position filename="idotimeline.h" line="62"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="timeline" transfer-ownership="none">
+              <type name="Timeline" c:type="IdoTimeline*"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="frame">
+        <callback name="frame">
+          <source-position filename="idotimeline.h" line="64"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="timeline" transfer-ownership="none">
+              <type name="Timeline" c:type="IdoTimeline*"/>
+            </parameter>
+            <parameter name="progress" transfer-ownership="none">
+              <type name="gdouble" c:type="gdouble"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+      <field name="__ido_reserved1" introspectable="0">
+        <callback name="__ido_reserved1">
+          <source-position filename="idotimeline.h" line="67"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="__ido_reserved2" introspectable="0">
+        <callback name="__ido_reserved2">
+          <source-position filename="idotimeline.h" line="68"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="__ido_reserved3" introspectable="0">
+        <callback name="__ido_reserved3">
+          <source-position filename="idotimeline.h" line="69"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+      <field name="__ido_reserved4" introspectable="0">
+        <callback name="__ido_reserved4">
+          <source-position filename="idotimeline.h" line="70"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+        </callback>
+      </field>
+    </record>
+    <enumeration name="TimelineDirection" c:type="IdoTimelineDirection">
+      <source-position filename="idotimeline.h" line="42"/>
+      <member name="forward"
+              value="0"
+              c:identifier="IDO_TIMELINE_DIRECTION_FORWARD">
+      </member>
+      <member name="backward"
+              value="1"
+              c:identifier="IDO_TIMELINE_DIRECTION_BACKWARD">
+      </member>
+    </enumeration>
+    <enumeration name="TimelineProgressType" c:type="IdoTimelineProgressType">
+      <source-position filename="idotimeline.h" line="49"/>
+      <member name="linear"
+              value="0"
+              c:identifier="IDO_TIMELINE_PROGRESS_LINEAR">
+      </member>
+      <member name="sinusoidal"
+              value="1"
+              c:identifier="IDO_TIMELINE_PROGRESS_SINUSOIDAL">
+      </member>
+      <member name="exponential"
+              value="2"
+              c:identifier="IDO_TIMELINE_PROGRESS_EXPONENTIAL">
+      </member>
+      <member name="ease_in_ease_out"
+              value="3"
+              c:identifier="IDO_TIMELINE_PROGRESS_EASE_IN_EASE_OUT">
+      </member>
+    </enumeration>
+  </namespace>
+</repository>

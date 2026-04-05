@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin name="copytex">
+	<short>Copy to texture</short>
+	<short xml:lang="ast">Copiar a testura</short>
+	<short xml:lang="bs">Kopiraj u teksturu</short>
+	<short xml:lang="ca">Còpia a la textura</short>
+	<short xml:lang="cs">Kopírovat do textury</short>
+	<short xml:lang="da">Kopiér til struktur</short>
+	<short xml:lang="de">In Textur kopieren</short>
+	<short xml:lang="el">Αντιγραφή στην υφή</short>
+	<short xml:lang="en_AU">Copy to texture</short>
+	<short xml:lang="en_GB">Copy to texture</short>
+	<short xml:lang="es">Copiar a textura</short>
+	<short xml:lang="fi">Kopioi tekstuuriksi</short>
+	<short xml:lang="fr">Copie vers texture</short>
+	<short xml:lang="gl">Copiar á textura</short>
+	<short xml:lang="hr">Kopiraj u teksturu</short>
+	<short xml:lang="it">Copia nella texture</short>
+	<short xml:lang="ja">テクスチャーにコピー</short>
+	<short xml:lang="ko">텍스처로 복사</short>
+	<short xml:lang="ms">Salin ke tekstur</short>
+	<short xml:lang="nl">Kopiëren naar textuur</short>
+	<short xml:lang="oc">Còpia cap a textura</short>
+	<short xml:lang="pl">Skopiuj do struktury</short>
+	<short xml:lang="pt">Copiar para textura</short>
+	<short xml:lang="pt_BR">Copie a textura</short>
+	<short xml:lang="ru">Копировать в текстуру</short>
+	<short xml:lang="sl">Kopiraj v teksturo</short>
+	<short xml:lang="sv">Kopiera till textur</short>
+	<short xml:lang="tr">Dokuya kopyala</short>
+	<short xml:lang="ug">ئىزناغا كۆچۈر</short>
+	<short xml:lang="uk">Копіювати до текстури</short>
+	<short xml:lang="vi">Sao chép vào ảnh phủ</short>
+	<short xml:lang="zh_CN">拷贝到纹理</short>
+	<long>Copy pixmap content to texture</long>
+	<long xml:lang="ast">Copiar conteníu de mapa de bits a testura</long>
+	<long xml:lang="bs">Kopiraj sadržaj sličice u teksturu</long>
+	<long xml:lang="ca">Còpia el contingut del mapa de píxels a la textura</long>
+	<long xml:lang="cs">Zkopírovat pixmapu do textury</long>
+	<long xml:lang="de">Pixmap-Inhalt in Textur kopieren</long>
+	<long xml:lang="el">Αντιγραφή των περιεχομένων pixmap στην υφή</long>
+	<long xml:lang="en_AU">Copy pixmap content to texture</long>
+	<long xml:lang="en_GB">Copy pixmap content to texture</long>
+	<long xml:lang="es">Copiar conterido de mapa de bits a textura</long>
+	<long xml:lang="fr">Copier le contenu des pixmaps dans des textures</long>
+	<long xml:lang="gl">Copiar o contido do mapa de píxeles á textura</long>
+	<long xml:lang="hr">Kopiraj sadržaj pixmape u teksturu</long>
+	<long xml:lang="it">Copia il contenuto della pixmap nella texture</long>
+	<long xml:lang="ko">픽스맵 항목을 텍스처로 복사합니다</long>
+	<long xml:lang="ms">Salin kandungan peta pix ke tekstur</long>
+	<long xml:lang="nl">Pixmap-inhoud kopiëren naar textuur</long>
+	<long xml:lang="oc">Copiar lo contengut dels pixmaps dins de texturas</long>
+	<long xml:lang="pl">Skopiuj zawartość pixmap do struktury</long>
+	<long xml:lang="pt">Copia o conteúdo do pixmap para texto.</long>
+	<long xml:lang="pt_BR">Copie o conteúdo pixmap à textura</long>
+	<long xml:lang="ru">Скопировать растровое содержимое в текстуру</long>
+	<long xml:lang="sl">Kopiraj vsebino večbitne sličice v teksturo</long>
+	<long xml:lang="sv">Kopiera bitavbildningsinnehåll till textur</long>
+	<long xml:lang="ug">رەسىم مەزمۇنىنى ئىزناغا كۆچۈر</long>
+	<long xml:lang="uk">Скопіювати растровий вміст у текстуру</long>
+	<long xml:lang="vi">Sao chép nội dung pixmap vào ảnh phủ</long>
+	<long xml:lang="zh_CN">将像素内容拷贝到纹理</long>
+	<category>General</category>
+	<deps>
+	    <requirement>
+		<plugin>opengl</plugin>
+	    </requirement>
+	</deps>
+    </plugin>
+</compiz>

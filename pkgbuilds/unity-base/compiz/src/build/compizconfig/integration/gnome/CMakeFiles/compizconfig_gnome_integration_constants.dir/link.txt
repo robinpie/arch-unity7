@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompizconfig_gnome_integration_constants.a CMakeFiles/compizconfig_gnome_integration_constants.dir/src/ccs_gnome_integration_constants.c.o
+/usr/bin/ranlib libcompizconfig_gnome_integration_constants.a

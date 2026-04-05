@@ -1,0 +1,411 @@
+--- libunity-misc-4.0.5+14.04.20140115.orig/configure.ac
++++ libunity-misc-4.0.5+14.04.20140115/configure.ac
+@@ -64,7 +64,7 @@
+ fi
+ AC_SUBST(GCC_FLAGS)
+ 
+-MAINTAINER_CFLAGS="-Werror -Wno-error=deprecated-declarations -Wall -Wshadow -Wcast-align -Wno-uninitialized -Wempty-body -Wformat-security -Winit-self"
++MAINTAINER_CFLAGS="-Wno-error=deprecated-declarations -Wall -Wshadow -Wcast-align -Wno-uninitialized -Wempty-body -Wformat-security -Winit-self"
+ AC_SUBST(MAINTAINER_CFLAGS)
+ 
+ dnl = GTK Doc Check ===========================================================
+--- libunity-misc-4.0.5+14.04.20140115.orig/debian/changelog
++++ libunity-misc-4.0.5+14.04.20140115/debian/changelog
+@@ -0,0 +1,147 @@
++libunity-misc (4.0.5+14.04.20140115-0ubuntu6) resolute; urgency=medium
++
++  * No-change mass rebuild for Ubuntu 26.04 (LP: #2132257)
++
++ -- Sebastien Bacher <seb128@debian.org>  Mon, 08 Dec 2025 22:08:18 +0100
++
++libunity-misc (4.0.5+14.04.20140115-0ubuntu5) noble; urgency=medium
++
++  * No-change rebuild for CVE-2024-3094
++
++ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 31 Mar 2024 02:19:14 +0000
++
++libunity-misc (4.0.5+14.04.20140115-0ubuntu4) noble; urgency=medium
++
++  * No-change rebuild against libglib2.0-0t64
++
++ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 08 Mar 2024 05:31:04 +0000
++
++libunity-misc (4.0.5+14.04.20140115-0ubuntu3) eoan; urgency=medium
++
++  * Don't build with -Werror.
++
++ -- Matthias Klose <doko@ubuntu.com>  Tue, 03 Sep 2019 18:25:41 +0200
++
++libunity-misc (4.0.5+14.04.20140115-0ubuntu2) eoan; urgency=medium
++
++  * No-change rebuild to drop multiarch-support dependency.
++
++ -- Matthias Klose <doko@ubuntu.com>  Sun, 01 Sep 2019 03:41:39 +0000
++
++libunity-misc (4.0.5+14.04.20140115-0ubuntu1) trusty; urgency=low
++
++  [ Sebastien Bacher ]
++  * Build with -Wno-error=deprecated-declarations.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 39
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 15 Jan 2014 12:04:47 +0000
++
++libunity-misc (4.0.5daily13.06.05-0ubuntu1) saucy; urgency=low
++
++  * Automatic snapshot from revision 37
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 06:20:14 +0000
++
++libunity-misc (4.0.5daily13.05.01.1ubuntu.unity.next-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 36 (ubuntu-unity/next)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 01 May 2013 21:58:05 +0000
++
++libunity-misc (4.0.5daily13.02.26-0ubuntu1) raring; urgency=low
++
++  [ Michael Terry ]
++  * Convert to dh9
++  * Bump standards to 3.9.4
++  * Update copyright to dep5 format
++  * Automatic snapshot from revision 34 (bootstrap)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 35
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Tue, 26 Feb 2013 04:01:32 +0000
++
++libunity-misc (4.0.4-0ubuntu2) oneiric; urgency=low
++
++  * Cherry-pick from upstream:
++    - update-notifier systray icons showed and the wrong place and size
++      (LP: #856125)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 29 Sep 2011 17:03:57 +0200
++
++libunity-misc (4.0.4-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++  * debian/libunity-misc4.symbols:
++    - add the new symbols
++  * debian/control:
++    - build-dep on libx11-dev
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 01 Aug 2011 17:35:56 +0200
++
++libunity-misc (4.0.2-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++  * debian/control:
++    - build-dep now on libgtk-3-dev
++  * debian/libunity-misc4.install, debian/libunity-misc4.symbols,
++    debian/control:
++    - bump and adapt new symbols to new soname for gtk3
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 21 Jun 2011 19:43:58 +0200
++
++libunity-misc (0.2.1-0ubuntu2) natty; urgency=low
++
++  * cherry-pick:
++    - the .pc file shouldn't depend on clutter anymore
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 17 Feb 2011 19:55:25 +0100
++
++libunity-misc (0.2.1-0ubuntu1) natty; urgency=low
++
++  * New upstream release:
++    - readd systray support to unity (LP: #596879)
++  * debian/control:
++    - don't build with clutter anymore
++    - remove -dbg package
++    - don't dep on gtk-doc
++    - add libgtk2.0-dev build-dep
++  * debian/rules:
++    - don't build the documentation
++    - remove uneeded DEB_DH_MAKESHLIBS_ARGS
++  * debian/libunity-misc0.symbols:
++    - updated
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 17 Feb 2011 19:04:43 +0100
++
++libunity-misc (0.1.1-0ubuntu3) natty; urgency=low
++
++  * debian/control:
++    - change the description 
++  * debian/libunity-misc0.symbols:
++    - add symbol file (LP: #591158)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 03 Aug 2010 13:07:44 +0200
++
++libunity-misc (0.1.1-0ubuntu1) maverick; urgency=low
++
++  * New upstream release
++  * Fix debian/copyright
++  * debian/rules:
++    - fix rm *{,l}a files
++    - fix LDFLAGS syntax
++  * debian/control:
++    - bump Standards-Version
++    - fix homepage
++    - remove uneeded build-dep
++  * added debian/watch
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 03 Jun 2010 19:19:11 +0200
++
++libunity-misc (0.1.0-0ubuntu1~ppa1) lucid; urgency=low
++
++  * Initial release  
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 28 Jan 2010 22:04:01 +0100
+--- libunity-misc-4.0.5+14.04.20140115.orig/debian/compat
++++ libunity-misc-4.0.5+14.04.20140115/debian/compat
+@@ -0,0 +1 @@
++9
+--- libunity-misc-4.0.5+14.04.20140115.orig/debian/control
++++ libunity-misc-4.0.5+14.04.20140115/debian/control
+@@ -0,0 +1,53 @@
++Source: libunity-misc
++Priority: optional
++Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
++Build-Depends: debhelper (>= 9),
++               dh-autoreconf,
++               gnome-common,
++               gtk-doc-tools,
++               libglib2.0-dev (>= 2.22.0),
++               libgtk-3-dev (>= 3.0),
++               libx11-dev,
++Standards-Version: 3.9.4
++Section: libs
++Homepage: https://launchpad.net/libunity-misc
++# If you aren't a member of ~unity-team but need to upload packaging changes,
++# just go ahead.  ~unity-team will notice and sync up the code again.
++Vcs-Bzr: https://code.launchpad.net/~unity-team/libunity-misc/trunk
++
++Package: libunity-misc-dev
++Section: libdevel
++Architecture: any
++Depends: ${misc:Depends},
++         libunity-misc4 (= ${binary:Version}),
++         libglib2.0-dev (>= 2.22.0),
++         libgtk-3-dev (>= 3.0),
++Description: Miscellaneous functions for Unity - development files
++ libunity-misc is a shared library that provides miscellaneous functions for
++ Unity.
++ .
++ This package contains files that are needed to build applications.
++
++Package: libunity-misc4
++Section: libs
++Architecture: any
++Pre-Depends: ${misc:Pre-Depends}
++Depends: ${misc:Depends},
++         ${shlibs:Depends},
++Description: Miscellaneous functions for Unity - shared library
++ libunity-misc is a shared library that provides miscellaneous functions for
++ Unity.
++ .
++ This package contains shared libraries to be used by application.
++
++Package: libunity-misc-doc
++Architecture: all
++Section: doc
++Depends: ${misc:Depends},
++Suggests: devhelp,
++Description: Miscellaneous functions for Unity - documentation
++ libunity-misc is a shared library that provides miscellaneous functions for
++ Unity.
++ .
++ This package contains the documentation.
++
+--- libunity-misc-4.0.5+14.04.20140115.orig/debian/copyright
++++ libunity-misc-4.0.5+14.04.20140115/debian/copyright
+@@ -0,0 +1,100 @@
++Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
++Upstream-Name: libunity-misc
++Source: http://launchpad.net/libunity-misc
++
++Files: *
++Copyright: 2010-2012 Canonical, Ltd.
++License: LGPL-2+
++
++Files: unity-misc/fixedtip.c
++Copyright: 2001 Havoc Pennington
++           2003-2006 Vincent Untz
++License: GPL-2+
++
++Files: unity-misc/fixedtip.h
++Copyright: 2001 Havoc Pennington
++           2002 Red Hat Inc.
++           2003-2006 Vincent Untz
++License: GPL-2+
++
++Files: unity-misc/gnome-bg-slideshow.c
++Copyright: 2000 Eazel, Inc.
++           2007-2008 Red Hat, Inc.
++           2011 Canonical Ltd.
++License: LGPL-2+
++
++Files: unity-misc/gnome-bg-slideshow.h
++Copyright: 2007 Red Hat, Inc.
++License: LGPL-2+
++
++Files: unity-misc/na-tray-manager.[ch]
++       unity-misc/na-tray.h
++Copyright: 2002 Anders Carlsson <andersca@gnu.org>
++           2003-2006 Vincent Untz
++License: LGPL-2+
++
++Files: unity-misc/na-tray-child.[ch]
++Copyright: 2002 Anders Carlsson <andersca@gnu.org>
++           2003-2006 Vincent Untz
++           2008 Red Hat, Inc.
++License: LGPL-2+
++
++Files: unity-misc/na-tray.c
++Copyright: 2002 Red Hat, Inc.
++           2003-2006 Vincent Untz
++           2007 Christian Persch
++License: GPL-2+
++
++Files: debian/*
++Copyright: 2010-2012 Canonical Ltd
++License: GPL-3
++
++License: GPL-2+
++ This program is free software: you can redistribute it and/or modify
++ it under the terms of the GNU General Public License as published by
++ the Free Software Foundation, either version 2 of the License, or
++ (at your option) any later version.
++ .
++ This program is distributed in the hope that it will be useful,
++ but WITHOUT ANY WARRANTY; without even the implied warranty of
++ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ GNU General Public License for more details.
++ .
++ You should have received a copy of the GNU General Public License
++ along with this program.  If not, see <http://www.gnu.org/licenses/>.
++ .
++ On Debian systems, the complete text of the GNU General Public License
++ can be found in `/usr/share/common-licenses/GPL-2'
++
++License: GPL-3
++ This program is free software: you can redistribute it and/or modify
++ it under the terms of the GNU General Public License as published by
++ the Free Software Foundation, version 3 of the License.
++ .
++ This program is distributed in the hope that it will be useful,
++ but WITHOUT ANY WARRANTY; without even the implied warranty of
++ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ GNU General Public License for more details.
++ .
++ You should have received a copy of the GNU General Public License
++ along with this program.  If not, see <http://www.gnu.org/licenses/>.
++ .
++ On Debian systems, the complete text of the GNU General Public License
++ can be found in `/usr/share/common-licenses/GPL-3'
++
++License: LGPL-2+
++ This program is free software: you can redistribute it and/or modify
++ it under the terms of the GNU Lesser General Public License as published by
++ the Free Software Foundation, either version 2 of the License, or
++ (at your option) any later version.
++ .
++ This program is distributed in the hope that it will be useful,
++ but WITHOUT ANY WARRANTY; without even the implied warranty of
++ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ GNU Lesser General Public License for more details.
++ .
++ You should have received a copy of the GNU Lesser General Public License
++ along with this program.  If not, see <http://www.gnu.org/licenses/>.
++ .
++ On Debian systems, the complete text of the GNU Lesser General Public License
++ can be found in `/usr/share/common-licenses/LGPL-2'
+--- libunity-misc-4.0.5+14.04.20140115.orig/debian/libunity-misc-dev.install
++++ libunity-misc-4.0.5+14.04.20140115/debian/libunity-misc-dev.install
+@@ -0,0 +1,3 @@
++usr/include/*
++usr/lib/*/lib*.so
++usr/lib/*/pkgconfig/*
+--- libunity-misc-4.0.5+14.04.20140115.orig/debian/libunity-misc-doc.install
++++ libunity-misc-4.0.5+14.04.20140115/debian/libunity-misc-doc.install
+@@ -0,0 +1 @@
++usr/share/gtk-doc/
+--- libunity-misc-4.0.5+14.04.20140115.orig/debian/libunity-misc4.install
++++ libunity-misc-4.0.5+14.04.20140115/debian/libunity-misc4.install
+@@ -0,0 +1 @@
++usr/lib/*/lib*.so.*
+--- libunity-misc-4.0.5+14.04.20140115.orig/debian/libunity-misc4.symbols
++++ libunity-misc-4.0.5+14.04.20140115/debian/libunity-misc4.symbols
+@@ -0,0 +1,40 @@
++libunity-misc.so.4 libunity-misc4 #MINVER#
++ _na_marshal_VOID__OBJECT_LONG@Base 0.1.1
++ _na_marshal_VOID__OBJECT_OBJECT@Base 0.1.1
++ _na_marshal_VOID__OBJECT_STRING_LONG_LONG@Base 0.1.1
++ get_current_slide@Base 4.0.4
++ get_slide_timeout@Base 4.0.4
++ na_fixed_tip_get_type@Base 0.2.1
++ na_fixed_tip_new@Base 0.2.1
++ na_fixed_tip_set_markup@Base 0.2.1
++ na_fixed_tip_set_orientation@Base 0.2.1
++ na_tray_child_force_redraw@Base 0.1.1
++ na_tray_child_get_title@Base 0.1.1
++ na_tray_child_get_type@Base 0.1.1
++ na_tray_child_get_wm_class@Base 0.2.1
++ na_tray_child_has_alpha@Base 0.1.1
++ na_tray_child_new@Base 0.1.1
++ na_tray_child_set_composited@Base 0.1.1
++ na_tray_force_redraw@Base 0.2.1
++ na_tray_get_manager@Base 0.2.1
++ na_tray_get_orientation@Base 0.2.1
++ na_tray_get_type@Base 0.2.1
++ na_tray_manager_check_running@Base 0.1.1
++ na_tray_manager_get_orientation@Base 0.1.1
++ na_tray_manager_get_type@Base 0.1.1
++ na_tray_manager_manage_screen@Base 0.1.1
++ na_tray_manager_new@Base 0.1.1
++ na_tray_manager_set_colors@Base 4.0.2
++ na_tray_manager_set_icon_size@Base 4.0.2
++ na_tray_manager_set_orientation@Base 0.1.1
++ na_tray_manager_set_padding@Base 4.0.2
++ na_tray_new_for_screen@Base 0.2.1
++ na_tray_set_colors@Base 4.0.2
++ na_tray_set_icon_size@Base 4.0.2
++ na_tray_set_orientation@Base 0.2.1
++ na_tray_set_padding@Base 4.0.2
++ ordered_roles@Base 0.2.1
++ read_slideshow_file@Base 4.0.4
++ slideshow_ref@Base 4.0.4
++ slideshow_unref@Base 4.0.4
++ wmclass_roles@Base 0.2.1
+--- libunity-misc-4.0.5+14.04.20140115.orig/debian/rules
++++ libunity-misc-4.0.5+14.04.20140115/debian/rules
+@@ -0,0 +1,18 @@
++#!/usr/bin/make -f
++
++export DEB_LDFLAGS_MAINT_APPEND = -Wl,-O1 -Wl,--as-needed
++export DPKG_GENSYMBOLS_CHECK_LEVEL = 4
++
++%:
++	dh $@ --with autoreconf
++
++override_dh_autoreconf:
++	NOCONFIGURE=1 dh_autoreconf ./autogen.sh
++
++override_dh_auto_configure:
++	dh_auto_configure -- --enable-gtk-doc
++
++override_dh_install:
++	find debian/tmp/usr/lib -name \*.la -exec rm {} \;
++	find debian/tmp/usr/lib -name \*.a -exec rm {} \;
++	dh_install --fail-missing
+--- libunity-misc-4.0.5+14.04.20140115.orig/debian/source/format
++++ libunity-misc-4.0.5+14.04.20140115/debian/source/format
+@@ -0,0 +1 @@
++1.0
+--- libunity-misc-4.0.5+14.04.20140115.orig/debian/watch
++++ libunity-misc-4.0.5+14.04.20140115/debian/watch
+@@ -0,0 +1,2 @@
++version=3
++https://launchpad.net/libunity-misc/+download .*/libunity-misc-([0-9.]+)\.tar\.gz

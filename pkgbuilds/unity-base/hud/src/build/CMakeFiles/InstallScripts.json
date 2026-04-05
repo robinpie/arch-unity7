@@ -1,0 +1,18 @@
+{
+	"InstallScripts" : 
+	[
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/data/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/common/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/libhud-client/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/libhud/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/libhud-gtk/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/libqtgmenu/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/libqtgmenu/internal/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/service/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/tools/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/window-stack-bridge/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/build/tools-vala/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

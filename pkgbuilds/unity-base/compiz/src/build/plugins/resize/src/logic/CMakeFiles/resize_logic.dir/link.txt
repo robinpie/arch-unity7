@@ -1,0 +1,2 @@
+/usr/bin/ar qc libresize_logic.a "CMakeFiles/resize_logic.dir/src/resize-logic.cpp.o"
+/usr/bin/ranlib libresize_logic.a

@@ -1,0 +1,42 @@
+file(REMOVE_RECURSE
+  ".0"
+  "CMakeFiles/compizconfig.dir/link.d"
+  "CMakeFiles/compizconfig.dir/bindings.c.o"
+  "CMakeFiles/compizconfig.dir/bindings.c.o.d"
+  "CMakeFiles/compizconfig.dir/ccs_backend_loader.c.o"
+  "CMakeFiles/compizconfig.dir/ccs_backend_loader.c.o.d"
+  "CMakeFiles/compizconfig.dir/ccs_backend_loader_interface.c.o"
+  "CMakeFiles/compizconfig.dir/ccs_backend_loader_interface.c.o.d"
+  "CMakeFiles/compizconfig.dir/ccs_config_file.c.o"
+  "CMakeFiles/compizconfig.dir/ccs_config_file.c.o.d"
+  "CMakeFiles/compizconfig.dir/ccs_config_file_interface.c.o"
+  "CMakeFiles/compizconfig.dir/ccs_config_file_interface.c.o.d"
+  "CMakeFiles/compizconfig.dir/compiz.cpp.o"
+  "CMakeFiles/compizconfig.dir/compiz.cpp.o.d"
+  "CMakeFiles/compizconfig.dir/compizconfig.pb.cc.o"
+  "CMakeFiles/compizconfig.dir/compizconfig.pb.cc.o.d"
+  "CMakeFiles/compizconfig.dir/config.c.o"
+  "CMakeFiles/compizconfig.dir/config.c.o.d"
+  "CMakeFiles/compizconfig.dir/filewatch.c.o"
+  "CMakeFiles/compizconfig.dir/filewatch.c.o.d"
+  "CMakeFiles/compizconfig.dir/ini.c.o"
+  "CMakeFiles/compizconfig.dir/ini.c.o.d"
+  "CMakeFiles/compizconfig.dir/iniparser.c.o"
+  "CMakeFiles/compizconfig.dir/iniparser.c.o.d"
+  "CMakeFiles/compizconfig.dir/lists.c.o"
+  "CMakeFiles/compizconfig.dir/lists.c.o.d"
+  "CMakeFiles/compizconfig.dir/log.c.o"
+  "CMakeFiles/compizconfig.dir/log.c.o.d"
+  "CMakeFiles/compizconfig.dir/main.c.o"
+  "CMakeFiles/compizconfig.dir/main.c.o.d"
+  "compizconfig.pb.cc"
+  "libcompizconfig.pdb"
+  "libcompizconfig.so"
+  "libcompizconfig.so.0"
+  "libcompizconfig.so.0.0.0"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C CXX)
+  include(CMakeFiles/compizconfig.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

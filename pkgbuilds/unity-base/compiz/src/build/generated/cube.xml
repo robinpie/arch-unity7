@@ -1,0 +1,1570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="cube">
+	<short>Desktop Cube</short>
+	<short xml:lang="ast">Cubu d'escritoriu</short>
+	<short xml:lang="be">Куб стальца</short>
+	<short xml:lang="bg">Десктоп куб</short>
+	<short xml:lang="bn">ডেস্কটপ ঘনক</short>
+	<short xml:lang="bn_IN">ডেস্কটপ ঘনক</short>
+	<short xml:lang="bs">Kocka radne površi</short>
+	<short xml:lang="ca">Cub de l'escriptori</short>
+	<short xml:lang="cs">Kostka plochy</short>
+	<short xml:lang="da">Skrivebordskube</short>
+	<short xml:lang="de">Schreibtischwürfel</short>
+	<short xml:lang="el">Κύβος Επιφάνειας Εργασίας</short>
+	<short xml:lang="en_AU">Desktop Cube</short>
+	<short xml:lang="en_GB">Desktop Cube</short>
+	<short xml:lang="es">Cubo de escritorio</short>
+	<short xml:lang="eu">Mahaigain Kuboa</short>
+	<short xml:lang="fi">Työpöytäkuutio</short>
+	<short xml:lang="fr">Cube du Bureau</short>
+	<short xml:lang="gl">Cubo de escritorios</short>
+	<short xml:lang="gu">ડેસ્કટોપ ઘન</short>
+	<short xml:lang="he">שולחן קוביה</short>
+	<short xml:lang="hr">Kocka radne površine</short>
+	<short xml:lang="hu">Munkaasztal kocka</short>
+	<short xml:lang="id">Kubus Desktop</short>
+	<short xml:lang="it">Desktop cubico</short>
+	<short xml:lang="ja">デスクトップ・キューブ</short>
+	<short xml:lang="ko">데스크톱 큐브</short>
+	<short xml:lang="ms">Kiub Desktop</short>
+	<short xml:lang="nb">Skrivebordskube</short>
+	<short xml:lang="nl">Bureaubladkubus</short>
+	<short xml:lang="oc">Cub de burèu</short>
+	<short xml:lang="or">ଡେସ୍କଟପ ଘନକ୍ଷେତ୍ର</short>
+	<short xml:lang="pl">Kostka pulpitu</short>
+	<short xml:lang="pt">Cubo da Área de Trabalho</short>
+	<short xml:lang="pt_BR">Cubo da Área de Trabalho</short>
+	<short xml:lang="ro">Cub de birou</short>
+	<short xml:lang="ru">Куб рабочего стола</short>
+	<short xml:lang="sk">Kocka plochy</short>
+	<short xml:lang="sl">Kocka namizja</short>
+	<short xml:lang="sq">Kub Desktopi</short>
+	<short xml:lang="sr">Коцка радне површине</short>
+	<short xml:lang="sv">Skrivbordskub</short>
+	<short xml:lang="tr">Masaüstü Küpü</short>
+	<short xml:lang="ug">ئۈستەلئۈستى كۈپى</short>
+	<short xml:lang="uk">Куб стільниці</short>
+	<short xml:lang="vi">Khối màn hình</short>
+	<short xml:lang="zh_CN">桌面立方体</short>
+	<short xml:lang="zh_HK">桌面立方體</short>
+	<short xml:lang="zh_TW">桌面立方體</short>
+	<long>Place windows and viewports on a cube</long>
+	<long xml:lang="bs">Postavi prozore i prikaze na kocku</long>
+	<long xml:lang="de">Platziert Fenster und Sichtfelder auf einem Würfel</long>
+	<long xml:lang="en_AU">Place windows and viewports on a cube</long>
+	<long xml:lang="en_GB">Place windows and viewports on a cube</long>
+	<long xml:lang="es">Situar las ventanas y vistas en un cubo</long>
+	<long xml:lang="fr">Placer les fenêtres et les bureaux sur un cube</long>
+	<long xml:lang="gl">Situar as xanelas e as áreas de traballo nun cubo</long>
+	<long xml:lang="hr">Smjesti prozore i priključke pogleda na kocku</long>
+	<long xml:lang="it">Posizione finestre e aree di lavoro su un cubo</long>
+	<long xml:lang="ko">큐브에 창과 작업 공간을 배치합니다.</long>
+	<long xml:lang="ms">Letak tetingkap dan port pandang pada kiub</long>
+	<long xml:lang="pt">Coloque janelas e janelas de exibição em um cubo</long>
+	<long xml:lang="ru">Поместить окна и рабочие столы на куб</long>
+	<long xml:lang="sl">Postavi okna in vidna polja na kocko</long>
+	<long xml:lang="sv">Placera fönster och vyer på en kub</long>
+	<long xml:lang="ug">كۇپ ئۈستىدە كۆزنەك قوي ۋە كۆرسەت</long>
+	<long xml:lang="uk">Розташувати вікна та стільниці на кубі</long>
+	<long xml:lang="zh_CN">将窗口和工作区置于立方体</long>
+	<category>Desktop</category>
+	<feature>largedesktop</feature>
+	<deps>
+	    <requirement>
+		<plugin>opengl</plugin>
+	    </requirement>
+	    <relation type="before">
+		<plugin>switcher</plugin>
+		<plugin>scale</plugin>
+	    </relation>
+	    <relation type="after">
+		<plugin>decor</plugin>
+	    </relation>
+	</deps>
+	<options>
+	    <option type="key" name="unfold_key">
+		<short>Unfold Cube Key</short>
+		<short xml:lang="bs">Otvori ključ kocke</short>
+		<short xml:lang="cs">Rozvinout klíč krychle</short>
+		<short xml:lang="de">Taste zum entfalten des Würfels</short>
+		<short xml:lang="en_AU">Unfold Cube Key</short>
+		<short xml:lang="en_GB">Unfold Cube Key</short>
+		<short xml:lang="es">Tecla para desplegar el cubo</short>
+		<short xml:lang="fr">Touche pour déplier le cube</short>
+		<short xml:lang="gl">Tecla para despregar o cubo</short>
+		<short xml:lang="hr">Tipka rasklapanja kocke</short>
+		<short xml:lang="it">Tasto per distendere il cubo</short>
+		<short xml:lang="ko">큐브를 펼칠 키</short>
+		<short xml:lang="ms">Buka kekunci Kiub</short>
+		<short xml:lang="nl">Kubus-uitvouwtoets</short>
+		<short xml:lang="pt">Desdobrar a chave de Cubo</short>
+		<short xml:lang="ro">Tasta desfășurare cub</short>
+		<short xml:lang="ru">Клавиша развёртывания куба</short>
+		<short xml:lang="sl">Odgrni tipko kocke</short>
+		<short xml:lang="sv">Veckla ut kub-tangent</short>
+		<short xml:lang="ug">كۇب يايى ئاچقۇچى</short>
+		<short xml:lang="uk">Клавіш розгортання куба</short>
+		<short xml:lang="zh_CN">立方体展开键</short>
+		<long>Keyboard shortcut to unfold the cube.</long>
+		<long xml:lang="bs">Prečica na tastaturi za otvaranje kocke.</long>
+		<long xml:lang="cs">Klávesová zkratka pro rozvinutí krychle</long>
+		<long xml:lang="de">Tastenkombination um den Würfel zu entfalten</long>
+		<long xml:lang="en_AU">Keyboard shortcut to unfold the cube.</long>
+		<long xml:lang="en_GB">Keyboard shortcut to unfold the cube.</long>
+		<long xml:lang="es">Atajo de teclado para desplegar el cubo</long>
+		<long xml:lang="fr">Raccourci clavier pour déplier le cube.</long>
+		<long xml:lang="gl">Atallo do teclado para despregar o cubo.</long>
+		<long xml:lang="hr">Tipka za pokretanje rasklapanja kocke.</long>
+		<long xml:lang="it">Scorciatoia da tastiera per distendere il cubo.</long>
+		<long xml:lang="ko">큐브를 펼칠 때 사용할 키보드 바로 가기입니다.</long>
+		<long xml:lang="ms">Pintasan papan kekunci untuk membuka kiub.</long>
+		<long xml:lang="nl">Toetsencombinatie voor het uitvouwen van de kubus</long>
+		<long xml:lang="pt">Tecla de atalho para desdobrar a chave de Cubo</long>
+		<long xml:lang="pt_BR">Tecla de atalho para desdobrar o cubo.</long>
+		<long xml:lang="ro">Scurtătura de tastatură pentru desfășurarea cubului.</long>
+		<long xml:lang="ru">Комбинация клавиш для развёртывания куба</long>
+		<long xml:lang="sl">Tipkovna bližnjica za odgrnitev kocke.</long>
+		<long xml:lang="sv">Tangentgenväg för att veckla ut kuben.</long>
+		<long xml:lang="ug">كۇپ يايى تىزلەتمىسى</long>
+		<long xml:lang="uk">Сполучення клавішів для розгортання куба</long>
+		<long xml:lang="zh_CN">展开桌面立方体的快捷键。</long>
+		<default>&lt;Control&gt;&lt;Alt&gt;Down</default>
+	    </option>
+	    <option type="bool" name="mipmap">
+		<short>Mipmap</short>
+		<short xml:lang="ast">Mipmap</short>
+		<short xml:lang="be">মিপম্যাপ</short>
+		<short xml:lang="bg">Mipmap</short>
+		<short xml:lang="bn">মিপম্যাপ</short>
+		<short xml:lang="bn_IN">মিপম্যাপ</short>
+		<short xml:lang="bs">Mip mapa</short>
+		<short xml:lang="ca">Mipmap</short>
+		<short xml:lang="cs">Mipmap</short>
+		<short xml:lang="da">Mipmap</short>
+		<short xml:lang="de">Mipmaps</short>
+		<short xml:lang="el">Mipmap</short>
+		<short xml:lang="en_AU">Mipmap</short>
+		<short xml:lang="en_GB">Mipmap</short>
+		<short xml:lang="es">Mipmap</short>
+		<short xml:lang="eu">Mipmap</short>
+		<short xml:lang="fi">Mipmap</short>
+		<short xml:lang="fr">Mipmap</short>
+		<short xml:lang="gl">Mapa de imaxe</short>
+		<short xml:lang="gu">મીપમેપ</short>
+		<short xml:lang="he">הפעלת Mipmap</short>
+		<short xml:lang="hr">Mipmapiranje</short>
+		<short xml:lang="hu">MIP térkép</short>
+		<short xml:lang="it">Mipmap</short>
+		<short xml:lang="ja">ミップマップ</short>
+		<short xml:lang="ko">밉맵</short>
+		<short xml:lang="ms">Mipmap</short>
+		<short xml:lang="my">Mipmap</short>
+		<short xml:lang="nb">MIP-kart</short>
+		<short xml:lang="nds">Mipmap</short>
+		<short xml:lang="nl">Mipmap</short>
+		<short xml:lang="oc">Mipmap</short>
+		<short xml:lang="or">ମିପ୍ ମ୍ଯାପ</short>
+		<short xml:lang="pl">Mipmapa</short>
+		<short xml:lang="pt">Mipmap</short>
+		<short xml:lang="pt_BR">MipMap</short>
+		<short xml:lang="ro">Hartă MIP</short>
+		<short xml:lang="ru">Мипмэппинг</short>
+		<short xml:lang="sk">Mipmapy</short>
+		<short xml:lang="sl">Mini zemljevid</short>
+		<short xml:lang="sr">Мипмап</short>
+		<short xml:lang="sv">Mipmap</short>
+		<short xml:lang="tr">Mipmap</short>
+		<short xml:lang="ug">Mipسۈرەت</short>
+		<short xml:lang="uk">Mipmap</short>
+		<short xml:lang="vi">Mipmap</short>
+		<short xml:lang="zh_CN">Mipmap</short>
+		<short xml:lang="zh_HK">Mipmap</short>
+		<short xml:lang="zh_TW">Mipmap</short>
+		<long>Generate mipmaps for higher quality scaling.</long>
+		<long xml:lang="bs">Genrisanje mip mapa za kvalitetnije skaliranje.</long>
+		<long xml:lang="cs">Generování mipmap pro kvalitnější škálování.</long>
+		<long xml:lang="de">Mipmaps für bessere Skalierungsqualität erstellen.</long>
+		<long xml:lang="en_AU">Generate mipmaps for higher quality scaling.</long>
+		<long xml:lang="en_GB">Generate mipmaps for higher quality scaling.</long>
+		<long xml:lang="es">Generar mipmaps para una mayor calidad del escalado.</long>
+		<long xml:lang="fr">Générer des mipmaps pour une mise à l'échelle de plus grande qualité.</long>
+		<long xml:lang="gl">Xerar mapas de imaxes para un escalado de mellor calidade</long>
+		<long xml:lang="hr">Generiraj minimape za više kvalitetno razmjeravanje.</long>
+		<long xml:lang="it">Genera mipmap per una migliore qualità nel ridimensionamento.</long>
+		<long xml:lang="ko">밉맵을 만들어 보다 높은 품질로 크기를 조정합니다.</long>
+		<long xml:lang="ms">Jana peta mip untuk penskalaan kualiti yang lebih tinggi.</long>
+		<long xml:lang="nl">Mipmaps genereren voor een hogere opschaalkwaliteit</long>
+		<long xml:lang="pt">Gera 'mipmaps' para escala de alta qualidade</long>
+		<long xml:lang="ru">Использовать MIP-текстурирование для повышения качества масштабирования.</long>
+		<long xml:lang="sl">Ustvari podporne slike za kvalitetnejšo povečavo.</long>
+		<long xml:lang="sv">Skapa mipmaps för skalning med bättre kvalitet.</long>
+		<long xml:lang="uk">Використовувати MIP-текстурування для підвищення якости масштабування.</long>
+		<long xml:lang="zh_CN">生成可进行高品质缩放的贴图。</long>
+		<default>true</default>
+	    </option>
+	    <option type="int" name="multioutput_mode">
+		<short>Multi Output Mode</short>
+		<short xml:lang="ast">Mou multi salida</short>
+		<short xml:lang="be">বিবিধ আউটপুট প্রণালী</short>
+		<short xml:lang="bg">Многоизходен режим</short>
+		<short xml:lang="bn">বিবিধ আউটপুট প্রণালী</short>
+		<short xml:lang="bn_IN">বিবিধ আউটপুট প্রণালী</short>
+		<short xml:lang="bs">Mod više izlaza</short>
+		<short xml:lang="ca">Mode de sortida múltiple</short>
+		<short xml:lang="cs">Režim více výstupů</short>
+		<short xml:lang="de">Modus für Mehrfachausgabe</short>
+		<short xml:lang="el">Kατάσταση Πολλαπλών Οθονών</short>
+		<short xml:lang="en_AU">Multi Output Mode</short>
+		<short xml:lang="en_GB">Multi Output Mode</short>
+		<short xml:lang="es">Modo de multi salidas</short>
+		<short xml:lang="eu">Irteera anitzeko modua</short>
+		<short xml:lang="fi">Useita ulostuloja</short>
+		<short xml:lang="fr">Mode de sorties multiples</short>
+		<short xml:lang="gl">Modo de saídas múltiples</short>
+		<short xml:lang="gu">વિવિધ આઉટપુટ સ્થિતિ</short>
+		<short xml:lang="he">מצב פלט מרובה</short>
+		<short xml:lang="hi">मल्टी आउटपुट प्रकार</short>
+		<short xml:lang="hr">Više izlazni način</short>
+		<short xml:lang="hu">Többkimenetes üzemmód</short>
+		<short xml:lang="it">Modalità multi-output</short>
+		<short xml:lang="ja">マルチ出力の形式</short>
+		<short xml:lang="ko">다중 화면 모드</short>
+		<short xml:lang="ms">Mod Output Berbilang</short>
+		<short xml:lang="nb">Flerskjermsmodus</short>
+		<short xml:lang="nds">Multiutgav</short>
+		<short xml:lang="nl">Multi uitvoer modus</short>
+		<short xml:lang="oc">Mòde de sortidas multiplas</short>
+		<short xml:lang="or">ବହୁ-ଆଉଟପୁଟ ମୋଡ</short>
+		<short xml:lang="pa">ਮਲਟੀ ਆਉਟਪੁੱਟ ਮੋਡ</short>
+		<short xml:lang="pl">Tryb wielu urządzeń wyjściowych</short>
+		<short xml:lang="pt">Modo de Multi Saída</short>
+		<short xml:lang="pt_BR">Modo de Multi Saída</short>
+		<short xml:lang="ro">Regim „Ieșiri multiple”</short>
+		<short xml:lang="ru">Режим множественного вывода</short>
+		<short xml:lang="sk">Viacnásobný výstupný režim</short>
+		<short xml:lang="sl">Način z več izhodi</short>
+		<short xml:lang="sr">Режим више излаза</short>
+		<short xml:lang="sv">Läge för multipla utmatningar</short>
+		<short xml:lang="tr">Çoklu Çıktı Kipi</short>
+		<short xml:lang="ug">كۆپ چىقىرىش ھالىتى</short>
+		<short xml:lang="uk">Режим множинного виводу</short>
+		<short xml:lang="vi">Chế độ đa đầu ra</short>
+		<short xml:lang="zh_CN">多重输出模式</short>
+		<short xml:lang="zh_HK">多重輸出模式</short>
+		<short xml:lang="zh_TW">多重輸出模式</short>
+		<long>Select how the cube is displayed, if multiple output devices are used.</long>
+		<long xml:lang="bs">Odaberi kako je kocka prikazana, ukoliko je korišteno više izlaznih uređaja.</long>
+		<long xml:lang="cs">Vyberte způsob zobrazení krychle, je-li použito více výstupních zařízení.</long>
+		<long xml:lang="de">Wählen Sie aus wie der Würfel dargestellt wird, falls mehrere Ausgabegeräte verwendet werden.</long>
+		<long xml:lang="en_AU">Select how the cube is displayed, if multiple output devices are used.</long>
+		<long xml:lang="en_GB">Select how the cube is displayed, if multiple output devices are used.</long>
+		<long xml:lang="es">Seleccionar como mostrar el cubo, si se usan varios dispositivos de salida.</long>
+		<long xml:lang="fr">Sélectionner la façon dont le cube est affiché, si de multiples périphériques de sortie sont utilisés.</long>
+		<long xml:lang="gl">Seleccionar como se mostrará o cubo, se se están usando varios dispositivos de saída.</long>
+		<long xml:lang="hr">Odaberite kako je kocka prikazana, ako se koristi više izlaznih uređaja.</long>
+		<long xml:lang="it">Se si utilizzano più dispositivi di output, selezionare la modalità di visualizzazione del cubo.</long>
+		<long xml:lang="ko">다수의 출력 장치를 사용할 때 큐브를 표시할 방법을 선택합니다.</long>
+		<long xml:lang="ms">Pilih bagaimana kiub dipapar, jika peranti output berbilang digunakan.</long>
+		<long xml:lang="nl">Kies hoe een kubus wordt weergegeven als er meerdere beeldschermen worden gebruikt.</long>
+		<long xml:lang="pt">Seleciona como o cubo é mostrado, se vários dispositivos de saída estão em uso.</long>
+		<long xml:lang="ro">Alegeți modul cum este afișat cubul, dacă sunt folosite mai multe dispozitive de ieșire.</long>
+		<long xml:lang="ru">Выбрать способ отображения куба при использовании нескольких устройств вывода.</long>
+		<long xml:lang="sl">Izberi način prikaza kocke, če je uporabljenih več naprav.</long>
+		<long xml:lang="sv">Välj hur kuben visas, om flera utdataenheter användas.</long>
+		<long xml:lang="ug">كۆپ خىل چىقىرىش ئۈسكۈنىسىنى ئىشلەتكەندە كۇپنى قانداق كۆرسىتىشنى تاللا</long>
+		<long xml:lang="uk">Обрати спосіб показу куба при використанні декількох пристроїв виводу.</long>
+		<long xml:lang="zh_CN">使用多重输出设备时，选择立方体的显示方式。</long>
+		<min>0</min>
+		<max>2</max>
+		<default>0</default>
+		<desc>
+		    <value>0</value>
+		    <name>Automatic</name>
+		    <name xml:lang="am">ራሱ በራሱ</name>
+		    <name xml:lang="ast">Automáticu</name>
+		    <name xml:lang="be">Аўтаматычна</name>
+		    <name xml:lang="bg">Автоматично</name>
+		    <name xml:lang="bs">Automatski</name>
+		    <name xml:lang="cs">Automaticky</name>
+		    <name xml:lang="de">Automatisch</name>
+		    <name xml:lang="el">Αυτόματα</name>
+		    <name xml:lang="en_AU">Automatic</name>
+		    <name xml:lang="en_GB">Automatic</name>
+		    <name xml:lang="es">Automático</name>
+		    <name xml:lang="eu">Automatiko</name>
+		    <name xml:lang="fi">Automaattinen</name>
+		    <name xml:lang="fr">Automatique</name>
+		    <name xml:lang="gl">Automático</name>
+		    <name xml:lang="he">אוטומטי</name>
+		    <name xml:lang="hr">Automatski</name>
+		    <name xml:lang="hu">Automatikus</name>
+		    <name xml:lang="it">Automatico</name>
+		    <name xml:lang="ja">自動調整</name>
+		    <name xml:lang="ko">자동</name>
+		    <name xml:lang="ku">Bixweber</name>
+		    <name xml:lang="ms">Automatik</name>
+		    <name xml:lang="my">အလိုအလျှောက်</name>
+		    <name xml:lang="nb">Automatisk</name>
+		    <name xml:lang="nds">Automaatsch</name>
+		    <name xml:lang="nl">Automatisch</name>
+		    <name xml:lang="oc">Automatic</name>
+		    <name xml:lang="or">ସ୍ବଯଂଚାଳିତ</name>
+		    <name xml:lang="pl">Automatycznie</name>
+		    <name xml:lang="pt">Automático</name>
+		    <name xml:lang="pt_BR">Automático</name>
+		    <name xml:lang="ro">Automat</name>
+		    <name xml:lang="ru">Автоматический</name>
+		    <name xml:lang="sk">Automatický</name>
+		    <name xml:lang="sl">Samodejno</name>
+		    <name xml:lang="sq">Automatik</name>
+		    <name xml:lang="sr">Аутоматски</name>
+		    <name xml:lang="sv">Automatisk</name>
+		    <name xml:lang="tr">Otomatik</name>
+		    <name xml:lang="ug">ئاپتوماتىك</name>
+		    <name xml:lang="uk">Автоматично</name>
+		    <name xml:lang="vi">Tự động</name>
+		    <name xml:lang="zh_CN">自动</name>
+		    <name xml:lang="zh_HK">自動</name>
+		    <name xml:lang="zh_TW">自動</name>
+		</desc>
+		<desc>
+		    <value>1</value>
+		    <name>Multiple cubes</name>
+		    <name xml:lang="ast">Cubos múltiples</name>
+		    <name xml:lang="be">বহুবিধ ঘনকগুলি</name>
+		    <name xml:lang="bg">Много кубове</name>
+		    <name xml:lang="bn">বহুবিধ ঘনকগুলি</name>
+		    <name xml:lang="bn_IN">বহুবিধ ঘনকগুলি</name>
+		    <name xml:lang="bs">Višestruke kocke</name>
+		    <name xml:lang="cs">Vícenásobné krychle</name>
+		    <name xml:lang="de">Mehrere Würfel</name>
+		    <name xml:lang="el">Πολλαπλοί κύβοι</name>
+		    <name xml:lang="en_AU">Multiple cubes</name>
+		    <name xml:lang="en_GB">Multiple cubes</name>
+		    <name xml:lang="es">Multiples cubos</name>
+		    <name xml:lang="eu">Kubo anitz</name>
+		    <name xml:lang="fi">Useita kuutioita</name>
+		    <name xml:lang="fr">Cubes multiples</name>
+		    <name xml:lang="gl">Cubos múltiples</name>
+		    <name xml:lang="gu">વિવિધ ઘન</name>
+		    <name xml:lang="he">קוביות מרובות</name>
+		    <name xml:lang="hi">बहुमुखी घन</name>
+		    <name xml:lang="hr">Više kocki</name>
+		    <name xml:lang="hu">Több kocka</name>
+		    <name xml:lang="it">Cubi multipli</name>
+		    <name xml:lang="ja">複数のキューブ</name>
+		    <name xml:lang="ko">복수 큐브</name>
+		    <name xml:lang="ms">Kiub berbilang</name>
+		    <name xml:lang="nb">Flere kuber</name>
+		    <name xml:lang="nl">Meerdere kubussen</name>
+		    <name xml:lang="oc">Cubs multiples</name>
+		    <name xml:lang="or">ବହୁବିଧ ଘନକ୍ଷେତ୍ରଗୁଡିକ</name>
+		    <name xml:lang="pa">ਮਲਟੀਪਲ ਕਿਊਬ</name>
+		    <name xml:lang="pl">Wiele kostek</name>
+		    <name xml:lang="pt">Múltiplos cubos</name>
+		    <name xml:lang="pt_BR">Múltiplos cubos</name>
+		    <name xml:lang="ro">Cuburi multiple</name>
+		    <name xml:lang="ru">Несколько кубов</name>
+		    <name xml:lang="sk">Viacnásobné kocky</name>
+		    <name xml:lang="sl">Več kock</name>
+		    <name xml:lang="sr">Више коцки</name>
+		    <name xml:lang="sv">Flera kuber</name>
+		    <name xml:lang="tr">Çoklu küp</name>
+		    <name xml:lang="ug">كۆپ كۇب</name>
+		    <name xml:lang="uk">Декілька кубів</name>
+		    <name xml:lang="vi">Đa khối</name>
+		    <name xml:lang="zh_CN">多个立方体</name>
+		    <name xml:lang="zh_HK">多重立方體</name>
+		    <name xml:lang="zh_TW">多重立方體</name>
+		</desc>
+		<desc>
+		    <value>2</value>
+		    <name>One big cube</name>
+		    <name xml:lang="ast">Un cubu grande</name>
+		    <name xml:lang="be">Адзін вялікі куб</name>
+		    <name xml:lang="bg">Един голям куб</name>
+		    <name xml:lang="bs">Jedna velika kocka</name>
+		    <name xml:lang="cs">Jedna velká krychle</name>
+		    <name xml:lang="de">Auf großem Würfel</name>
+		    <name xml:lang="el">Ένας μεγάλος κύβος</name>
+		    <name xml:lang="en_AU">One big cube</name>
+		    <name xml:lang="en_GB">One big cube</name>
+		    <name xml:lang="es">Un cubo grande</name>
+		    <name xml:lang="eu">Kubo handian</name>
+		    <name xml:lang="fi">Yksi iso kuutio</name>
+		    <name xml:lang="fr">Un grand cube</name>
+		    <name xml:lang="gl">Un cubo grande</name>
+		    <name xml:lang="he">קוביה גדולה אחת</name>
+		    <name xml:lang="hr">Jedna velika kocka</name>
+		    <name xml:lang="hu">Egy nagy kocka</name>
+		    <name xml:lang="it">Un grande cubo</name>
+		    <name xml:lang="ja">１つの大きなキューブ</name>
+		    <name xml:lang="ko">커다란 단일 큐브</name>
+		    <name xml:lang="ms">Satu kiub besar</name>
+		    <name xml:lang="nb">En stor kube</name>
+		    <name xml:lang="nl">Één grote kubus</name>
+		    <name xml:lang="oc">Un grand cub</name>
+		    <name xml:lang="pl">Jedna duża kostka</name>
+		    <name xml:lang="pt">Um cubo grande</name>
+		    <name xml:lang="pt_BR">Um cubo grande</name>
+		    <name xml:lang="ro">Un cub mare</name>
+		    <name xml:lang="ru">Один большой куб</name>
+		    <name xml:lang="sk">Jedna veľká kocka</name>
+		    <name xml:lang="sl">Ena velika kocka</name>
+		    <name xml:lang="sr">Једна велика коцка</name>
+		    <name xml:lang="sv">En stor kub</name>
+		    <name xml:lang="tr">Tek büyük küp</name>
+		    <name xml:lang="ug">بىر چوڭ كۇب</name>
+		    <name xml:lang="uk">Один великий куб</name>
+		    <name xml:lang="vi">Một khối lớn</name>
+		    <name xml:lang="zh_CN">单一大立方体</name>
+		    <name xml:lang="zh_HK">一個大的單獨立方體</name>
+		    <name xml:lang="zh_TW">單一大立方體</name>
+		</desc>
+	    </option>
+	    <group>
+		<short>Behaviour</short>
+		<short xml:lang="am">ባህሪው</short>
+		<short xml:lang="ast">Comportamientu</short>
+		<short xml:lang="be">Паводзіны</short>
+		<short xml:lang="bg">Поведение</short>
+		<short xml:lang="bs">Ponašanje</short>
+		<short xml:lang="cs">Chování</short>
+		<short xml:lang="de">Verhalten</short>
+		<short xml:lang="el">Συμπεριφορά</short>
+		<short xml:lang="en_AU">Behaviour</short>
+		<short xml:lang="en_GB">Behaviour</short>
+		<short xml:lang="es">Comportamiento</short>
+		<short xml:lang="eu">Portaera</short>
+		<short xml:lang="fi">Käyttäytyminen</short>
+		<short xml:lang="fr">Comportement</short>
+		<short xml:lang="gl">Comportamento</short>
+		<short xml:lang="he">אופן</short>
+		<short xml:lang="hr">Ponašanje</short>
+		<short xml:lang="hu">Viselkedés</short>
+		<short xml:lang="it">Comportamento</short>
+		<short xml:lang="ja">動作</short>
+		<short xml:lang="ko">동작</short>
+		<short xml:lang="ms">Kelakuan</short>
+		<short xml:lang="nb">Oppførsel</short>
+		<short xml:lang="nds">Verhollen</short>
+		<short xml:lang="nl">Gedrag</short>
+		<short xml:lang="oc">Compòrtament</short>
+		<short xml:lang="pl">Zachowanie</short>
+		<short xml:lang="pt">Comportamento</short>
+		<short xml:lang="pt_BR">Comportamento</short>
+		<short xml:lang="ro">Comportament</short>
+		<short xml:lang="ru">Поведение</short>
+		<short xml:lang="sl">Obnašanje</short>
+		<short xml:lang="sq">Sjellja</short>
+		<short xml:lang="sr">Понашање</short>
+		<short xml:lang="sv">Beteende</short>
+		<short xml:lang="te">ప్రవర్తన</short>
+		<short xml:lang="tr">Davranış</short>
+		<short xml:lang="ug">قىلمىش</short>
+		<short xml:lang="uk">Поведінка</short>
+		<short xml:lang="vi">Hành vi</short>
+		<short xml:lang="zh_CN">特性</short>
+		<short xml:lang="zh_HK">特性</short>
+		<short xml:lang="zh_TW">特性</short>
+			<option type="bool" name="in">
+			<short>Inside Cube</short>
+			<short xml:lang="ast">Dientro del cubu</short>
+			<short xml:lang="be">ঘনকের অভ্যন্তরে</short>
+			<short xml:lang="bg">Във куба</short>
+			<short xml:lang="bn">ঘনকের অভ্যন্তরে</short>
+			<short xml:lang="bn_IN">ঘনকের অভ্যন্তরে</short>
+			<short xml:lang="bs">Unutrašnja kocka</short>
+			<short xml:lang="ca">Interior del cub</short>
+			<short xml:lang="cs">Uvnitř kostky</short>
+			<short xml:lang="da">Inden i kube</short>
+			<short xml:lang="de">In Würfel</short>
+			<short xml:lang="el">Εσωτερικός Κύβος</short>
+			<short xml:lang="en_AU">Inside Cube</short>
+			<short xml:lang="en_GB">Inside Cube</short>
+			<short xml:lang="es">Cubo interior</short>
+			<short xml:lang="eu">Kubo Barrua</short>
+			<short xml:lang="fi">Kuution sisäpinta</short>
+			<short xml:lang="fr">Vue de l'intérieur du Cube</short>
+			<short xml:lang="gl">Interior do cubo</short>
+			<short xml:lang="gu">ઘનની અંદર</short>
+			<short xml:lang="he">מבט מתוך הקוביה</short>
+			<short xml:lang="hi">भीतरी घन</short>
+			<short xml:lang="hr">Unutar kocke</short>
+			<short xml:lang="hu">A kocka belseje</short>
+			<short xml:lang="it">Dentro il cubo</short>
+			<short xml:lang="ja">キューブ内部</short>
+			<short xml:lang="ko">큐브 내부</short>
+			<short xml:lang="ms">Dalam Kiub</short>
+			<short xml:lang="nb">Innsiden av kuben</short>
+			<short xml:lang="nl">Binnen in de kubus</short>
+			<short xml:lang="oc">Vista de l'interior del cub</short>
+			<short xml:lang="or">ଘନକ୍ଷେତ୍ର ଭିତରେ</short>
+			<short xml:lang="pa">ਕਿਊਬ ਅੰਦਰ</short>
+			<short xml:lang="pl">Wewnątrz kostki</short>
+			<short xml:lang="pt">Dentro do Cubo</short>
+			<short xml:lang="pt_BR">Dentro do Cubo</short>
+			<short xml:lang="ro">În cub</short>
+			<short xml:lang="ru">Внутренняя поверхность куба</short>
+			<short xml:lang="sk">Vnútri kocky</short>
+			<short xml:lang="sl">Notranja kocka</short>
+			<short xml:lang="sr">Унутрашња коцка</short>
+			<short xml:lang="sv">I kuben</short>
+			<short xml:lang="tr">Küpün İçerisine Gir</short>
+			<short xml:lang="ug">كۇب ئىچى</short>
+			<short xml:lang="uk">Внутрішня поверхня куба</short>
+			<short xml:lang="vi">Ở bên trong khối</short>
+			<short xml:lang="zh_CN">立方体内部</short>
+			<short xml:lang="zh_HK">立方體內部</short>
+			<short xml:lang="zh_TW">立方體內部</short>
+			<long>Place the camera inside the cube.</long>
+			<long xml:lang="bs">Postavi kameru unutar kocke.</long>
+			<long xml:lang="cs">Umístit kameru do krychle.</long>
+			<long xml:lang="de">Setze die Kamera in den Würfel.</long>
+			<long xml:lang="en_AU">Place the camera inside the cube.</long>
+			<long xml:lang="en_GB">Place the camera inside the cube.</long>
+			<long xml:lang="es">Pone la cámara dentro del cubo.</long>
+			<long xml:lang="fr">Placer la caméra à l'intérieur du cube.</long>
+			<long xml:lang="gl">Situar a cámara dentro do cubo.</long>
+			<long xml:lang="hr">Smjesti kameru unutar kocke.</long>
+			<long xml:lang="it">Collocare la fotocamera all'interno del cubo.</long>
+			<long xml:lang="ko">큐브 안에 카메라를 배치합니다.</long>
+			<long xml:lang="ms">Letak kamera didalam kiub.</long>
+			<long xml:lang="nl">Plaats een camera in de kubus</long>
+			<long xml:lang="pt">Coloca a câmara dentro do cubo.</long>
+			<long xml:lang="ro">Așezați camera în interiorul cubului.</long>
+			<long xml:lang="ru">Поместить камеру внутрь куба.</long>
+			<long xml:lang="sl">Postavi kamero v notranjost kocke.</long>
+			<long xml:lang="sv">Placera kameran inuti kuben.</long>
+			<long xml:lang="tr">Kamerayı küpün içine yerleştir.</long>
+			<long xml:lang="ug">كۈب ئىچىنى سىنغا ئال</long>
+			<long xml:lang="uk">Розташувати камеру всередину куба.</long>
+			<long xml:lang="zh_CN">视点置于立方体内部。</long>
+			<default>false</default>
+			</option>
+			<option type="float" name="acceleration">
+			<short>Fold Acceleration</short>
+			<short xml:lang="ast">Aceleración del pliegue</short>
+			<short xml:lang="be">ফোল্ডের গতিবৃদ্ধি</short>
+			<short xml:lang="bg">Ускорение на сгъването</short>
+			<short xml:lang="bs">Ubrzanje savijanja</short>
+			<short xml:lang="ca">Acceleració de plegament</short>
+			<short xml:lang="cs">Zrychlení sbalení</short>
+			<short xml:lang="da">Foldeaccelaration</short>
+			<short xml:lang="de">Beschleunigung beim Falten</short>
+			<short xml:lang="el">Επιτάχυνση Διπλώματος</short>
+			<short xml:lang="en_AU">Fold Acceleration</short>
+			<short xml:lang="en_GB">Fold Acceleration</short>
+			<short xml:lang="es">Aceleración del pliegue</short>
+			<short xml:lang="eu">Bueltatze azelerazioa</short>
+			<short xml:lang="fi">Kiihdytyskerroin</short>
+			<short xml:lang="fr">Accélération de pliage</short>
+			<short xml:lang="gl">Aceleración de dobrado</short>
+			<short xml:lang="gu">ફોલ્ડ પ્રવેગ</short>
+			<short xml:lang="he">האצת קיפול</short>
+			<short xml:lang="hr">Ubrzanje sklapanja</short>
+			<short xml:lang="hu">Hajtás gyorsulása</short>
+			<short xml:lang="id">Akselerasi Lipat</short>
+			<short xml:lang="it">Accelerazione ripiegatura</short>
+			<short xml:lang="ja">展開加速度</short>
+			<short xml:lang="ko">접기 가속</short>
+			<short xml:lang="ms">Pecutan Lipat</short>
+			<short xml:lang="nb">Akselerasjon for bretting</short>
+			<short xml:lang="nl">Uitvouw versnelling</short>
+			<short xml:lang="oc">Acceleracion de plegatge</short>
+			<short xml:lang="or">ବେଗବର୍ଦ୍ଧନ ଭାଙ୍ଗକର</short>
+			<short xml:lang="pl">Przyspieszenie zwijania</short>
+			<short xml:lang="pt">Aceleração de dobragem</short>
+			<short xml:lang="pt_BR">Aceleração de dobragem</short>
+			<short xml:lang="ro">Accelerație pliere</short>
+			<short xml:lang="ru">Ускорение свертывания</short>
+			<short xml:lang="sk">Zrýchlenie zloženia</short>
+			<short xml:lang="sl">Pospešek obračanja</short>
+			<short xml:lang="sr">Убрзање савијања</short>
+			<short xml:lang="sv">Vikningsaccelerering</short>
+			<short xml:lang="tr">Katlama Hızlandırması</short>
+			<short xml:lang="ug">ھەسسە بويىچە تىزلىتىش</short>
+			<short xml:lang="uk">Пришвидшення згортання</short>
+			<short xml:lang="vi">Gia tốc gấp</short>
+			<short xml:lang="zh_CN">折叠加速</short>
+			<short xml:lang="zh_HK">摺痕加速</short>
+			<short xml:lang="zh_TW">摺疊加速</short>
+			<long>The acceleration of folding and unfolding.</long>
+			<long xml:lang="bs">Ubrzanje sklapanja i rasklapanja.</long>
+			<long xml:lang="cs">Akcelerace sloučení a rozvinutí</long>
+			<long xml:lang="de">Die Beschleunigung des Faltens und Entfaltens.</long>
+			<long xml:lang="en_AU">The acceleration of folding and unfolding.</long>
+			<long xml:lang="en_GB">The acceleration of folding and unfolding.</long>
+			<long xml:lang="es">Aceleración de plegado y desplegado</long>
+			<long xml:lang="fr">Accélération du pliage et du dépliage.</long>
+			<long xml:lang="gl">Aceleración do pregamento e despregamento.</long>
+			<long xml:lang="hr">Ubrzanje skalpanja i raskalpanja.</long>
+			<long xml:lang="it">L'accelerazione nelle operazioni di ripiegatura.</long>
+			<long xml:lang="ko">접기와 펼치기 가속을 설정합니다.</long>
+			<long xml:lang="ms">Pemecutan melipat dan menyahlipat.</long>
+			<long xml:lang="nl">De in- en uitvouwsnelheid</long>
+			<long xml:lang="pt">A aceleração de dobragem e desdobragem.</long>
+			<long xml:lang="ro">Accelerarea de pliere și de desfășurare.</long>
+			<long xml:lang="ru">Ускорение свёртывания и развёртывания.</long>
+			<long xml:lang="sl">Pospešek zagrnitve in odgrnitve.</long>
+			<long xml:lang="sv">Acceleration för vikning och utveckling.</long>
+			<long xml:lang="ug">قاتلاش ۋە ئېچىش تىزلەتكۈچى</long>
+			<long xml:lang="uk">Пришвидшення згортання та розгортання.</long>
+			<long xml:lang="zh_CN">展开和折叠的加速度。</long>
+			<default>4.0</default>
+			<min>1.0</min>
+			<max>20.0</max>
+			<precision>0.1</precision>
+			</option>
+			<option type="float" name="speed">
+			<short>Fold Speed</short>
+			<short xml:lang="ast">Velocidá del pliegue</short>
+			<short xml:lang="be">ফোল্ডের গতি</short>
+			<short xml:lang="bg">Скорост на сгъването</short>
+			<short xml:lang="bs">Brzina savijanja</short>
+			<short xml:lang="ca">Velocitat de plegament</short>
+			<short xml:lang="cs">Rychlost sbalení</short>
+			<short xml:lang="da">Foldehastighed</short>
+			<short xml:lang="de">Faltgeschwindigkeit</short>
+			<short xml:lang="el">Ταχύτητα Διπλώματος</short>
+			<short xml:lang="en_AU">Fold Speed</short>
+			<short xml:lang="en_GB">Fold Speed</short>
+			<short xml:lang="es">Velocidad del pliegue</short>
+			<short xml:lang="eu">Bueltatze abiadura</short>
+			<short xml:lang="fi">Nopeuskerroin</short>
+			<short xml:lang="fr">Vitesse de pliage</short>
+			<short xml:lang="gl">Velocidade de dobrado</short>
+			<short xml:lang="gu">ફોલ્ડ ઝડપ</short>
+			<short xml:lang="he">מהירות קיפול</short>
+			<short xml:lang="hr">Brzina sklapanja</short>
+			<short xml:lang="hu">Hajtás sebessége</short>
+			<short xml:lang="id">Kecepatan Lipat</short>
+			<short xml:lang="it">Velocità ripiegatura</short>
+			<short xml:lang="ja">展開速度</short>
+			<short xml:lang="ko">접는 속도</short>
+			<short xml:lang="ms">Kelajuan Lipat</short>
+			<short xml:lang="nb">Brettehastighet</short>
+			<short xml:lang="nl">Uitvouw snelheid</short>
+			<short xml:lang="oc">Velocitat de plegatge</short>
+			<short xml:lang="or">ଗତି ଭାଙ୍ଗକର</short>
+			<short xml:lang="pl">Szybkość zwijania</short>
+			<short xml:lang="pt">Velocidade de dobragem</short>
+			<short xml:lang="pt_BR">Velocidade de dobragem</short>
+			<short xml:lang="ro">Viteză pliere</short>
+			<short xml:lang="ru">Скорость свертывания</short>
+			<short xml:lang="sk">Rýchlosť zloženia</short>
+			<short xml:lang="sl">Hitrost obračanja</short>
+			<short xml:lang="sr">Брзина савијања</short>
+			<short xml:lang="sv">Vikningshastighet</short>
+			<short xml:lang="tr">Katlama Hızı</short>
+			<short xml:lang="ug">ھەسسە تېزلىك</short>
+			<short xml:lang="uk">Швидкість згортання</short>
+			<short xml:lang="vi">Tốc độ gấp</short>
+			<short xml:lang="zh_CN">折叠速度</short>
+			<short xml:lang="zh_HK">摺痕速度</short>
+			<short xml:lang="zh_TW">摺疊速度</short>
+			<long>The speed of folding and unfolding.</long>
+			<long xml:lang="bs">Brzina sklapanja i rasklapanja.</long>
+			<long xml:lang="cs">Rychlost sloučení a rozvinutí</long>
+			<long xml:lang="de">Die Geschwindigkeit des Faltens und Entfaltens.</long>
+			<long xml:lang="en_AU">The speed of folding and unfolding.</long>
+			<long xml:lang="en_GB">The speed of folding and unfolding.</long>
+			<long xml:lang="es">Velocidad de plegado y desplegado</long>
+			<long xml:lang="fr">Vitesse du pliage et du dépliage.</long>
+			<long xml:lang="gl">Velocidade do pregamento e despregamento.</long>
+			<long xml:lang="hr">Brzina skalpanja i raskalpanja.</long>
+			<long xml:lang="it">La velocità nelle operazioni di ripiegatura.</long>
+			<long xml:lang="ko">접기와 펼치기 속도를 설정합니다.</long>
+			<long xml:lang="ms">Kelajuan melipat dan menyahlipat.</long>
+			<long xml:lang="nl">De snelheid waarmee wordt in- en uitgevouwen</long>
+			<long xml:lang="pt">A velocidade de dobragem e desdobragem.</long>
+			<long xml:lang="ro">Viteza de pliere și de desfășurare.</long>
+			<long xml:lang="ru">Скорость свёртывания и развёртывания.</long>
+			<long xml:lang="sl">Hitrost zagrnitve in odgrnitve.</long>
+			<long xml:lang="sv">Hastighet för vikning och utveckling.</long>
+			<long xml:lang="ug">قاتلاش ۋە ئېچىش تىزلىكى</long>
+			<long xml:lang="uk">Швидкість згортання та розгортання.</long>
+			<long xml:lang="zh_CN">展开和折叠的速度。</long>
+			<default>1.5</default>
+			<min>0.1</min>
+			<max>50.0</max>
+			<precision>0.1</precision>
+			</option>
+			<option type="float" name="timestep">
+			<short>Timestep</short>
+			<short xml:lang="ast">Pasu</short>
+			<short xml:lang="be">সময়ধাপ</short>
+			<short xml:lang="bg">Времева стъпка</short>
+			<short xml:lang="bs">Korak vremena</short>
+			<short xml:lang="ca">Etapa</short>
+			<short xml:lang="cs">Časový krok</short>
+			<short xml:lang="da">Tidstrin</short>
+			<short xml:lang="de">Zeitintervall</short>
+			<short xml:lang="el">Χρονικό Βήμα</short>
+			<short xml:lang="en_AU">Timestep</short>
+			<short xml:lang="en_GB">Timestep</short>
+			<short xml:lang="es">Paso</short>
+			<short xml:lang="eu">denbora-pausoa</short>
+			<short xml:lang="fi">Aikaviive</short>
+			<short xml:lang="fr">Intervalle</short>
+			<short xml:lang="gl">Intervalo de tempo</short>
+			<short xml:lang="gu">સમયપગલું</short>
+			<short xml:lang="he">יחידת זמן</short>
+			<short xml:lang="hr">Vremenski korak</short>
+			<short xml:lang="hu">Időköz</short>
+			<short xml:lang="it">Intervallo</short>
+			<short xml:lang="ja">描画の時間刻み</short>
+			<short xml:lang="ko">시간 간격</short>
+			<short xml:lang="ms">Langkah Masa</short>
+			<short xml:lang="nb">Tidsskritt</short>
+			<short xml:lang="nl">Tijdstempel</short>
+			<short xml:lang="oc">Interval</short>
+			<short xml:lang="or">ସମଯସୋପାନ</short>
+			<short xml:lang="pl">Opóźnienie</short>
+			<short xml:lang="pt">Espaço de tempo</short>
+			<short xml:lang="pt_BR">Intervalo de tempo</short>
+			<short xml:lang="ro">Pas de timp</short>
+			<short xml:lang="ru">Шаг времени</short>
+			<short xml:lang="sk">Krok</short>
+			<short xml:lang="sl">Časovni interval</short>
+			<short xml:lang="sr">Корак времена</short>
+			<short xml:lang="sv">Tidsintervall</short>
+			<short xml:lang="tr">Süre aralığı</short>
+			<short xml:lang="ug">ۋاقىت قەدەم ئۇزۇنلۇقى</short>
+			<short xml:lang="uk">Крок часу</short>
+			<short xml:lang="vi">Bước</short>
+			<short xml:lang="zh_CN">时间步长</short>
+			<short xml:lang="zh_HK">時間間隔</short>
+			<short xml:lang="zh_TW">時間間隔</short>
+			<long>The timestep of folding and unfolding.</long>
+			<long xml:lang="bs">Vrijeme sklapanja i rasklapanja.</long>
+			<long xml:lang="cs">Časový úsek rozkládání a skládání.</long>
+			<long xml:lang="de">Der Zeitschritt des Faltens und Entfaltens</long>
+			<long xml:lang="en_AU">The timestep of folding and unfolding.</long>
+			<long xml:lang="en_GB">The timestep of folding and unfolding.</long>
+			<long xml:lang="es">Paso de tiempo de plegado y desplegado</long>
+			<long xml:lang="fr">Temps de pliage et de dépliage.</long>
+			<long xml:lang="gl">Intervalo do pregamento e despregamento.</long>
+			<long xml:lang="hr">Vremesnki korak skalpanja i raskalpanja.</long>
+			<long xml:lang="ko">접기와 펼치기 시간 단계를 설정합니다.</long>
+			<long xml:lang="ms">Langkah masa melipat dan menyahlipat.</long>
+			<long xml:lang="pt">O tempo de dobragem e desdobragem</long>
+			<long xml:lang="ru">Временной интервал свёртывания и развёртывания.</long>
+			<long xml:lang="sl">Časovni korak zagrnitve in odgrnitve.</long>
+			<long xml:lang="sv">Tidsstämpel för vikning och utveckling.</long>
+			<long xml:lang="ug">قاتلاش ۋە ئېچىش ۋاقىت ئۇزۇنلۇقى</long>
+			<long xml:lang="uk">Часовий інтервал згортання та розгортання.</long>
+			<long xml:lang="zh_CN">展开和折叠的时间步长。</long>
+			<default>1.2</default>
+			<min>0.1</min>
+			<max>50.0</max>
+			<precision>0.1</precision>
+			</option>
+	    </group>
+	    <group>
+		<short>Appearance</short>
+		<short xml:lang="am">አቀራረብ</short>
+		<short xml:lang="ast">Aspeutu</short>
+		<short xml:lang="be">Вонкавы выгляд</short>
+		<short xml:lang="bg">Външен вид</short>
+		<short xml:lang="bs">Izgled</short>
+		<short xml:lang="cs">Vzhled</short>
+		<short xml:lang="da">Udseende</short>
+		<short xml:lang="de">Erscheinung</short>
+		<short xml:lang="el">Εμφάνιση</short>
+		<short xml:lang="en_AU">Appearance</short>
+		<short xml:lang="en_GB">Appearance</short>
+		<short xml:lang="es">Apariencia</short>
+		<short xml:lang="eu">Itxura</short>
+		<short xml:lang="fi">Ulkoasu</short>
+		<short xml:lang="fr">Apparence</short>
+		<short xml:lang="fy">Foarkommen</short>
+		<short xml:lang="gl">Aparencia</short>
+		<short xml:lang="he">מראה</short>
+		<short xml:lang="hr">Izgled</short>
+		<short xml:lang="hu">Megjelenés</short>
+		<short xml:lang="it">Aspetto</short>
+		<short xml:lang="ja">外観</short>
+		<short xml:lang="ko">모양</short>
+		<short xml:lang="ms">Penampilan</short>
+		<short xml:lang="my">ပုံပန်းသဏ္ဍာန်</short>
+		<short xml:lang="nb">Utseende</short>
+		<short xml:lang="nds">Utsehn</short>
+		<short xml:lang="nl">Uiterlijk</short>
+		<short xml:lang="oc">Aparéncia</short>
+		<short xml:lang="pl">Wygląd</short>
+		<short xml:lang="pt">Aparência</short>
+		<short xml:lang="pt_BR">Aparência</short>
+		<short xml:lang="ro">Aspect</short>
+		<short xml:lang="ru">Внешний вид</short>
+		<short xml:lang="sl">Videz</short>
+		<short xml:lang="sq">Pamja</short>
+		<short xml:lang="sr">Изглед</short>
+		<short xml:lang="sv">Utseende</short>
+		<short xml:lang="tr">Görünüm</short>
+		<short xml:lang="ug">كۆرۈنۈشى</short>
+		<short xml:lang="uk">Зовнішній вигляд</short>
+		<short xml:lang="vi">Diện mạo</short>
+		<short xml:lang="zh_CN">外观</short>
+		<short xml:lang="zh_HK">外觀</short>
+		<short xml:lang="zh_TW">外觀</short>
+			<subgroup>
+			<short>Cube Cap Colors</short>
+			<short xml:lang="bs">Boja vrhova kocke</short>
+			<short xml:lang="cs">Barva horní plochy krychle</short>
+			<short xml:lang="de">Farben der Würfelflächen</short>
+			<short xml:lang="el">Χρώματα καπακιών κύβου</short>
+			<short xml:lang="en_AU">Cube Cap Colours</short>
+			<short xml:lang="en_GB">Cube Cap Colours</short>
+			<short xml:lang="es">Color de la tapa del cubo</short>
+			<short xml:lang="fr">Couleurs du Couvercle du Cube</short>
+			<short xml:lang="gl">Cor da tapa do cubo</short>
+			<short xml:lang="hr">Boja vrha i dna kocke</short>
+			<short xml:lang="it">Colori facce del cubo</short>
+			<short xml:lang="ko">큐브 뚜껑 색</short>
+			<short xml:lang="ms">Warna Penutup Kiub</short>
+			<short xml:lang="nl">Cube Cap Colors</short>
+			<short xml:lang="oc">Colors del Tap del Cub</short>
+			<short xml:lang="pt">Cores da Capa do Cubo</short>
+			<short xml:lang="pt_BR">Cores da tampa do cubo</short>
+			<short xml:lang="ru">Цвет граней куба</short>
+			<short xml:lang="sl">Barve pokrova kocke</short>
+			<short xml:lang="sv">Kubtoppens färger</short>
+			<short xml:lang="ug">كۇب ياپما رەڭگى</short>
+			<short xml:lang="uk">Кольори верхівки куба</short>
+			<short xml:lang="zh_CN">立方体覆盖颜色</short>
+			<option type="color" name="top_color">
+				<short>Top</short>
+				<short xml:lang="am">ከ ላይ</short>
+				<short xml:lang="bs">Vrh</short>
+				<short xml:lang="de">Oberseite</short>
+				<short xml:lang="el">Πάνω</short>
+				<short xml:lang="en_AU">Top</short>
+				<short xml:lang="en_GB">Top</short>
+				<short xml:lang="es">Superior</short>
+				<short xml:lang="fi">Päällimmäisenä</short>
+				<short xml:lang="fr">Haut</short>
+				<short xml:lang="gl">Superior</short>
+				<short xml:lang="hr">Vrh</short>
+				<short xml:lang="it">Faccia superiore</short>
+				<short xml:lang="ko">위</short>
+				<short xml:lang="ms">Atas</short>
+				<short xml:lang="my">ထိပ်</short>
+				<short xml:lang="nl">Bovenzijde</short>
+				<short xml:lang="oc">Naut</short>
+				<short xml:lang="pt">Topo</short>
+				<short xml:lang="pt_BR">Topo</short>
+				<short xml:lang="ro">Sus</short>
+				<short xml:lang="ru">Верх</short>
+				<short xml:lang="sl">Zgoraj</short>
+				<short xml:lang="sv">Toppen</short>
+				<short xml:lang="tr">Üst</short>
+				<short xml:lang="ug">ئۈستى</short>
+				<short xml:lang="uk">Верхній</short>
+				<short xml:lang="zh_CN">顶部</short>
+				<long>Color and opacity of top face of the cube.</long>
+				<long xml:lang="bs">Boja i neprozirnost prednje strane kocke.</long>
+				<long xml:lang="cs">Barva a průhlednost horní stěny krychle</long>
+				<long xml:lang="de">Farbe und Deckkraft der Oberseite des Würfels.</long>
+				<long xml:lang="en_AU">Colour and opacity of top face of the cube.</long>
+				<long xml:lang="en_GB">Coloor and opacity of top face of the cube.</long>
+				<long xml:lang="es">Color y opacidad de la cara superior del cubo.</long>
+				<long xml:lang="fr">Couleur et opacité de la face supérieure du cube.</long>
+				<long xml:lang="gl">Cor e opacidade da cara superior do cubo.</long>
+				<long xml:lang="hr">Boja i neprozirnost vrha kocke.</long>
+				<long xml:lang="it">Colore e opacità della faccia superiore del cubo.</long>
+				<long xml:lang="ko">큐브 윗 면의 색과 투명도를 설정합니다.</long>
+				<long xml:lang="ms">Warna dan kelegapan permukaan atas kiub.</long>
+				<long xml:lang="nl">Kleur en doorzichtigheid van de bovenste zijde van de kubs</long>
+				<long xml:lang="pt">Core e opacidade do face do topo do cubo</long>
+				<long xml:lang="pt_BR">Cor e opacidade da face do topo do cubo.</long>
+				<long xml:lang="ro">Culoarea și opacitatea feței de sus a cubului.</long>
+				<long xml:lang="ru">Цвет и прозрачность верхней поверхности куба.</long>
+				<long xml:lang="sl">Barva in raven prekrivnosti  zgornje ploskve kocke.</long>
+				<long xml:lang="sv">Färg och ogenomskinlighet för kubens ovansida.</long>
+				<long xml:lang="tr">Küpün üst yüzünün rengi ve matlığı.</long>
+				<long xml:lang="ug">كۇب چوققىسىنىڭ رەڭگى ۋە غۇۋالىقى</long>
+				<long xml:lang="uk">Колір і прозорість верхньої поверхні куба.</long>
+				<long xml:lang="zh_CN">立方体顶部的颜色和透明度。</long>
+				<default>
+					<red>0xffff</red>
+					<green>0xffff</green>
+					<blue>0xffff</blue>
+				</default>
+			</option>
+			<option type="color" name="bottom_color">
+				<short>Bottom</short>
+				<short xml:lang="am">ከ ታች</short>
+				<short xml:lang="bs">Dno</short>
+				<short xml:lang="de">Unterseite</short>
+				<short xml:lang="el">Κάτω</short>
+				<short xml:lang="en_AU">Bottom</short>
+				<short xml:lang="en_GB">Bottom</short>
+				<short xml:lang="es">Inferior</short>
+				<short xml:lang="fi">Alimmaisena</short>
+				<short xml:lang="fr">Bas</short>
+				<short xml:lang="gl">Inferior</short>
+				<short xml:lang="hr">Dno</short>
+				<short xml:lang="it">Faccia inferiore</short>
+				<short xml:lang="ko">아래</short>
+				<short xml:lang="ms">Bawah</short>
+				<short xml:lang="my">အောက်ခြေ</short>
+				<short xml:lang="nl">Onderzĳde</short>
+				<short xml:lang="oc">Bas</short>
+				<short xml:lang="pt">Fundo</short>
+				<short xml:lang="pt_BR">Parte inferior</short>
+				<short xml:lang="ro">Jos</short>
+				<short xml:lang="ru">Низ</short>
+				<short xml:lang="sl">Spodaj</short>
+				<short xml:lang="sv">Botten</short>
+				<short xml:lang="tr">Alt</short>
+				<short xml:lang="ug">ئاستى</short>
+				<short xml:lang="uk">Нижній</short>
+				<short xml:lang="zh_CN">底部</short>
+				<long>Color and opacity of bottom face of the cube.</long>
+				<long xml:lang="bs">Boja i neprozirnost donje strane kocke.</long>
+				<long xml:lang="cs">Barva a průhlednost dolní stěny krychle</long>
+				<long xml:lang="de">Farbe und Deckkraft der Unterseite des Würfels.</long>
+				<long xml:lang="en_AU">Colour and opacity of bottom face of the cube.</long>
+				<long xml:lang="en_GB">Colour and opacity of bottom face of the cube.</long>
+				<long xml:lang="es">Color y opacidad de la cara inferior del cubo.</long>
+				<long xml:lang="fr">Couleur et opacité de la face inférieure du cube.</long>
+				<long xml:lang="gl">Cor e opacidade da cara inferior do cubo.</long>
+				<long xml:lang="hr">Boja i neprozirnost dna kocke.</long>
+				<long xml:lang="it">Colore e opacità della faccia inferiore del cubo.</long>
+				<long xml:lang="ko">큐브 아래 면의 색과 투명도를 설정합니다.</long>
+				<long xml:lang="ms">Warna dan kelegapan permukaan bawah kiub.</long>
+				<long xml:lang="nl">Kleur en doorzichtigheid van de onderkant van de kubus</long>
+				<long xml:lang="pt">Core e opacidade do face do fundo do cubo</long>
+				<long xml:lang="ro">Culoarea și opacitatea feței de jos a cubului.</long>
+				<long xml:lang="ru">Цвет и прозрачность нижней поверхности куба.</long>
+				<long xml:lang="sl">Barva in raven prekrivnosti  spodnje ploskve kocke.</long>
+				<long xml:lang="sv">Färg och ogenomskinlighet för kubens undersida.</long>
+				<long xml:lang="tr">Küpün alt yüzünün rengi ve matlığı.</long>
+				<long xml:lang="ug">كۇب ئاستىنىڭ رەڭگى ۋە غۇۋالىقى</long>
+				<long xml:lang="uk">Колір і прозорість нижньої поверхні куба.</long>
+				<long xml:lang="zh_CN">立方体底部的颜色和透明度。</long>
+				<default>
+					<red>0xffff</red>
+					<green>0xffff</green>
+					<blue>0xffff</blue>
+				</default>
+			</option>
+			</subgroup>
+			<subgroup>
+				<short>Skydome</short>
+				<short xml:lang="ast">Cúpula</short>
+				<short xml:lang="be">স্কাইডোম</short>
+				<short xml:lang="bg">Небе</short>
+				<short xml:lang="bn">স্কাইডোম</short>
+				<short xml:lang="bn_IN">স্কাইডোম</short>
+				<short xml:lang="bs">Kupola</short>
+				<short xml:lang="ca">Cúpula</short>
+				<short xml:lang="cs">Nebeská báň</short>
+				<short xml:lang="da">Himmelkuppel</short>
+				<short xml:lang="de">Himmelskuppel</short>
+				<short xml:lang="el">Skydome</short>
+				<short xml:lang="en_AU">Skydome</short>
+				<short xml:lang="en_GB">Skydome</short>
+				<short xml:lang="es">Cúpula</short>
+				<short xml:lang="eu">Skydome</short>
+				<short xml:lang="fi">Taivas</short>
+				<short xml:lang="fr">Skydome</short>
+				<short xml:lang="gl">Skydome</short>
+				<short xml:lang="gu">Skydome</short>
+				<short xml:lang="he">כיפת-רקיע</short>
+				<short xml:lang="hr">Svod</short>
+				<short xml:lang="hu">Kupola</short>
+				<short xml:lang="it">Volta del cielo</short>
+				<short xml:lang="ja">スカイドーム</short>
+				<short xml:lang="ko">스카이 돔</short>
+				<short xml:lang="ms">Kubah Langit</short>
+				<short xml:lang="nb">Himmelkuppel</short>
+				<short xml:lang="nl">Hemelkoepel</short>
+				<short xml:lang="oc">Skydome</short>
+				<short xml:lang="or">ସ୍କାଇଡୋମ</short>
+				<short xml:lang="pa">ਸਕਾਈਡੋਮ</short>
+				<short xml:lang="pl">Tło dla kostki</short>
+				<short xml:lang="pt">Skydome</short>
+				<short xml:lang="pt_BR">Skydome</short>
+				<short xml:lang="ro">Fundal</short>
+				<short xml:lang="ru">Фон</short>
+				<short xml:lang="sk">Skydome</short>
+				<short xml:lang="sl">Panorama</short>
+				<short xml:lang="sq">Skydome</short>
+				<short xml:lang="sr">Skydome</short>
+				<short xml:lang="sv">Skydome</short>
+				<short xml:lang="tr">Arkaplan</short>
+				<short xml:lang="uk">Тло</short>
+				<short xml:lang="vi">Vòm trời</short>
+				<short xml:lang="zh_CN">天穹</short>
+				<short xml:lang="zh_HK">天空頂</short>
+				<short xml:lang="zh_TW">天空頂</short>
+			<option type="bool" name="skydome">
+			<short>Skydome</short>
+			<short xml:lang="ast">Cúpula</short>
+			<short xml:lang="be">স্কাইডোম</short>
+			<short xml:lang="bg">Небе</short>
+			<short xml:lang="bn">স্কাইডোম</short>
+			<short xml:lang="bn_IN">স্কাইডোম</short>
+			<short xml:lang="bs">Kupola</short>
+			<short xml:lang="ca">Cúpula</short>
+			<short xml:lang="cs">Nebeská báň</short>
+			<short xml:lang="da">Himmelkuppel</short>
+			<short xml:lang="de">Himmelskuppel</short>
+			<short xml:lang="el">Skydome</short>
+			<short xml:lang="en_AU">Skydome</short>
+			<short xml:lang="en_GB">Skydome</short>
+			<short xml:lang="es">Cúpula</short>
+			<short xml:lang="eu">Skydome</short>
+			<short xml:lang="fi">Taivas</short>
+			<short xml:lang="fr">Skydome</short>
+			<short xml:lang="gl">Skydome</short>
+			<short xml:lang="gu">Skydome</short>
+			<short xml:lang="he">כיפת-רקיע</short>
+			<short xml:lang="hr">Svod</short>
+			<short xml:lang="hu">Kupola</short>
+			<short xml:lang="it">Volta del cielo</short>
+			<short xml:lang="ja">スカイドーム</short>
+			<short xml:lang="ko">스카이 돔</short>
+			<short xml:lang="ms">Kubah Langit</short>
+			<short xml:lang="nb">Himmelkuppel</short>
+			<short xml:lang="nl">Hemelkoepel</short>
+			<short xml:lang="oc">Skydome</short>
+			<short xml:lang="or">ସ୍କାଇଡୋମ</short>
+			<short xml:lang="pa">ਸਕਾਈਡੋਮ</short>
+			<short xml:lang="pl">Tło dla kostki</short>
+			<short xml:lang="pt">Skydome</short>
+			<short xml:lang="pt_BR">Skydome</short>
+			<short xml:lang="ro">Fundal</short>
+			<short xml:lang="ru">Фон</short>
+			<short xml:lang="sk">Skydome</short>
+			<short xml:lang="sl">Panorama</short>
+			<short xml:lang="sq">Skydome</short>
+			<short xml:lang="sr">Skydome</short>
+			<short xml:lang="sv">Skydome</short>
+			<short xml:lang="tr">Arkaplan</short>
+			<short xml:lang="uk">Тло</short>
+			<short xml:lang="vi">Vòm trời</short>
+			<short xml:lang="zh_CN">天穹</short>
+			<short xml:lang="zh_HK">天空頂</short>
+			<short xml:lang="zh_TW">天空頂</short>
+			<long>Render a specified skydome texture.</long>
+			<long xml:lang="bs">Prikazati navedenu skydome teksturu.</long>
+			<long xml:lang="cs">Vyrenderovat specifikovanou skydome texturu</long>
+			<long xml:lang="de">Eine eigene Himmelskuppeltextur darstellen.</long>
+			<long xml:lang="en_AU">Render a specified skydome texture.</long>
+			<long xml:lang="en_GB">Render a specified skydome texture.</long>
+			<long xml:lang="es">Generar una textura de cúpula celeste específica.</long>
+			<long xml:lang="fr">Créer une texture particulière pour la voûte céleste.</long>
+			<long xml:lang="gl">Renderizar unha textura específica para o skydome.</long>
+			<long xml:lang="hr">Prikaži određenu teksturu svoda.</long>
+			<long xml:lang="ko">지정한 스카이돔 텍스쳐를 그립니다.</long>
+			<long xml:lang="ms">Terap tekstur kubah langit tertentu.</long>
+			<long xml:lang="pt">Renderização de uma textura de cúpula celestial especificada.</long>
+			<long xml:lang="ru">Отобразить назначенную текстуру сферы.</long>
+			<long xml:lang="sl">Izriši določeno strukturo kupole</long>
+			<long xml:lang="uk">Показати призначену текстуру сфери.</long>
+			<long xml:lang="zh_CN">渲染指定的天幕纹理</long>
+			<default>false</default>
+			</option>
+			<option type="string" name="skydome_image">
+			<short>Skydome Image</short>
+			<short xml:lang="ast">Imaxe de cúpula</short>
+			<short xml:lang="be">স্কাইডোম চিত্র</short>
+			<short xml:lang="bg">Иображение на небето</short>
+			<short xml:lang="bn">স্কাইডোম চিত্র</short>
+			<short xml:lang="bn_IN">স্কাইডোম চিত্র</short>
+			<short xml:lang="bs">Slika kupole</short>
+			<short xml:lang="ca">Imatge de la cúpula</short>
+			<short xml:lang="cs">Obrázek nebeské báně</short>
+			<short xml:lang="da">Billede til himmelkuppel</short>
+			<short xml:lang="de">Himmelskuppelbild</short>
+			<short xml:lang="el">Εικόνα Skydome</short>
+			<short xml:lang="en_AU">Skydome Image</short>
+			<short xml:lang="en_GB">Skydome Image</short>
+			<short xml:lang="es">Imagen de cúpula</short>
+			<short xml:lang="eu">Skydome irudia</short>
+			<short xml:lang="fi">Taivaan kuva</short>
+			<short xml:lang="fr">Image du Skydome</short>
+			<short xml:lang="gl">Imaxe do Skydome</short>
+			<short xml:lang="gu">Skydome ચિત્ર</short>
+			<short xml:lang="he">תמונת כיפת-הרקיע</short>
+			<short xml:lang="hr">Slika svoda</short>
+			<short xml:lang="hu">Kupola képe</short>
+			<short xml:lang="it">Immagine volta del cielo</short>
+			<short xml:lang="ja">スカイドーム画像</short>
+			<short xml:lang="ko">스카이 돔 그림</short>
+			<short xml:lang="ms">Imej Kubah Langit</short>
+			<short xml:lang="nb">Bilde for himmelkuppel</short>
+			<short xml:lang="nl">Hemelkoepel afbeelding</short>
+			<short xml:lang="oc">Imatge del Skydome</short>
+			<short xml:lang="or">ସ୍କାଇଡୋମ ଚିତ୍ର</short>
+			<short xml:lang="pa">ਸਕਾਈਡੋਮ ਚਿੱਤਰ</short>
+			<short xml:lang="pl">Obrazek tła dla kostki</short>
+			<short xml:lang="pt">Imagem do Skydome</short>
+			<short xml:lang="pt_BR">Imagem do Skydome</short>
+			<short xml:lang="ro">Imagine fundal</short>
+			<short xml:lang="ru">Изображение для фона</short>
+			<short xml:lang="sk">Obrázok Skydome</short>
+			<short xml:lang="sl">Slika za panoramo</short>
+			<short xml:lang="sr">Skydome слика</short>
+			<short xml:lang="sv">Skydome bild</short>
+			<short xml:lang="tr">Arkaplan Resmi</short>
+			<short xml:lang="uk">Зображення для тла</short>
+			<short xml:lang="vi">Ảnh vòm trời</short>
+			<short xml:lang="zh_CN">天穹图像</short>
+			<short xml:lang="zh_HK">天空頂影像</short>
+			<short xml:lang="zh_TW">天空頂影像</short>
+			<long>Image to use as texture for the skydome.</long>
+			<long xml:lang="bs">Slika za korištenje kao tekstura za skydome.</long>
+			<long xml:lang="cs">Obrázek, který použít jako texturu pro skydome</long>
+			<long xml:lang="de">Bild, das als Himmelskuppeltextur verwendet wird.</long>
+			<long xml:lang="en_AU">Image to use as texture for the skydome.</long>
+			<long xml:lang="en_GB">Image to use as texture for the skydome.</long>
+			<long xml:lang="es">Imagen a usar como textura para la cúpula celeste.</long>
+			<long xml:lang="fr">Image à utiliser comme texture pour la voûte céleste.</long>
+			<long xml:lang="gl">Imaxe a usar como textura no skydome.</long>
+			<long xml:lang="hr">Slika koja će se koristiti kao teksutra svoda.</long>
+			<long xml:lang="it">Immagine da usare come texture per la volta del cielo.</long>
+			<long xml:lang="ko">스카이돔의 텍스쳐로 사용할 그림을 지정합니다.</long>
+			<long xml:lang="ms">Imej yang digunakan sebagai tekstur untuk kubah langit.</long>
+			<long xml:lang="pt">Imagem para use como textura da uma cúpula celestial.</long>
+			<long xml:lang="ru">Изображение, используемое в качестве текстуры сферы.</long>
+			<long xml:lang="sl">Uporaba slike kot teksturo za kupolo.</long>
+			<long xml:lang="uk">Зображення, що використовується у якості текстури сфери.</long>
+			<long xml:lang="zh_CN">天幕纹理使用的图像</long>
+			<hints>file;image;</hints>
+			</option>
+			<option type="bool" name="skydome_animated">
+			<short>Animate Skydome</short>
+			<short xml:lang="ast">Cúpula animada</short>
+			<short xml:lang="be">স্কাইডোম অ্যানিমেট করা</short>
+			<short xml:lang="bg">Анимиране на небе</short>
+			<short xml:lang="bn">স্কাইডোম অ্যানিমেট করা</short>
+			<short xml:lang="bn_IN">স্কাইডোম অ্যানিমেট করা</short>
+			<short xml:lang="bs">Animiraj kupolu</short>
+			<short xml:lang="ca">Cúpula animada</short>
+			<short xml:lang="cs">Animovat nebeskou báň</short>
+			<short xml:lang="da">Animer himmelkuppel</short>
+			<short xml:lang="de">Himmelskuppel animieren</short>
+			<short xml:lang="el">Κίνηση Skydome</short>
+			<short xml:lang="en_AU">Animate Skydome</short>
+			<short xml:lang="en_GB">Animate Skydome</short>
+			<short xml:lang="es">Cúpula animada</short>
+			<short xml:lang="eu">Skydome animatu</short>
+			<short xml:lang="fi">Animoi Taivaankansi</short>
+			<short xml:lang="fr">Animer le Skydome</short>
+			<short xml:lang="gl">Animar o Skydome</short>
+			<short xml:lang="gu">Skydome એનીમેટ કરો</short>
+			<short xml:lang="he">כיפת-רקיע מונפשת</short>
+			<short xml:lang="hi">स्काइडोम एनिमेट करें</short>
+			<short xml:lang="hr">Animirani svod</short>
+			<short xml:lang="hu">Kupola animálása</short>
+			<short xml:lang="it">Animare la volta del cielo</short>
+			<short xml:lang="ja">スカイドームをアニメーション化</short>
+			<short xml:lang="ko">스카이 돔 움직이기</short>
+			<short xml:lang="ms">Animasikan Kubah Langit</short>
+			<short xml:lang="nb">Animer himmelkuppel</short>
+			<short xml:lang="nds">Skydome animeren</short>
+			<short xml:lang="nl">Geanimeerde skydome</short>
+			<short xml:lang="oc">Animar lo Skydome</short>
+			<short xml:lang="or">ସ୍କାଇଡୋମ ଚଳନ୍ତିକର</short>
+			<short xml:lang="pa">ਸਕਾਈਡੋਮ ਐਨੀਮੇਟ</short>
+			<short xml:lang="pl">Animacja tła dla kostki</short>
+			<short xml:lang="pt">Animar Skydome</short>
+			<short xml:lang="pt_BR">Animar Skydome</short>
+			<short xml:lang="ro">Animare fundal</short>
+			<short xml:lang="ru">Анимировать фон</short>
+			<short xml:lang="sk">Animovať Skydome</short>
+			<short xml:lang="sl">Animiraj panoramsko sliko</short>
+			<short xml:lang="sr">Анимирај Skydome</short>
+			<short xml:lang="sv">Animera Skydome</short>
+			<short xml:lang="tr">Arkaplanı Canlandır</short>
+			<short xml:lang="uk">Анімувати тло</short>
+			<short xml:lang="zh_CN">制作动画天穹</short>
+			<short xml:lang="zh_HK">天空頂動態展示</short>
+			<short xml:lang="zh_TW">天空頂動態展示</short>
+			<long>Animate the skydome when rotating the cube.</long>
+			<long xml:lang="bs">Animiraj skydome prilokom rotacije kocke.</long>
+			<long xml:lang="cs">Animovat skydome při rotaci krychle</long>
+			<long xml:lang="de">Himmelskuppel mitbewegen, wenn der Würfel gedreht wird.</long>
+			<long xml:lang="en_AU">Animate the skydome when rotating the cube.</long>
+			<long xml:lang="en_GB">Animate the skydome when rotating the cube.</long>
+			<long xml:lang="es">Animar la cúpula celeste al rotar el cubo.</long>
+			<long xml:lang="fr">Animer la voûte céleste lors de la rotation du cube.</long>
+			<long xml:lang="gl">Animar o Skydome ao rotar o cubo</long>
+			<long xml:lang="hr">Animiraj svod pri zakretanju kocke.</long>
+			<long xml:lang="it">Anima la volta del cielo alla rotazione del cubo.</long>
+			<long xml:lang="ko">큐브를 돌릴 때 스카이돔을 움직입니다.</long>
+			<long xml:lang="ms">Animasikan kubah langit bila memutar kiub.</long>
+			<long xml:lang="nl">De skydome animeren als de kubus wordt geroteerd.</long>
+			<long xml:lang="pt">Animar a cúpula ao girar o cubo.</long>
+			<long xml:lang="ru">Анимировать сферу при вращении куба.</long>
+			<long xml:lang="sl">Animiraj kupolo med vrtenjem kocke.</long>
+			<long xml:lang="uk">Анімувати сферу при повертанні куба.</long>
+			<long xml:lang="zh_CN">旋转立方体时天幕的动画</long>
+			<default>false</default>
+			</option>
+			<option type="color" name="skydome_gradient_start_color">
+			<short>Skydome Gradient Start Color</short>
+			<short xml:lang="ast">Color inicial del dilíu de la cúpula</short>
+			<short xml:lang="be">স্কাইডোম গ্র্যাডিয়েন্ট আরম্ভের রঙ</short>
+			<short xml:lang="bg">Начален цвят на изграждане на небето</short>
+			<short xml:lang="bn">স্কাইডোম গ্র্যাডিয়েন্ট আরম্ভের রঙ</short>
+			<short xml:lang="bn_IN">স্কাইডোম গ্র্যাডিয়েন্ট আরম্ভের রঙ</short>
+			<short xml:lang="bs">Početna boja priliva kupole</short>
+			<short xml:lang="ca">Color inicial del degradat de la cúpula</short>
+			<short xml:lang="cs">Počáteční barva gradientu nebeské báně</short>
+			<short xml:lang="da">Startfarve på himmelkuplens gradient</short>
+			<short xml:lang="de">Anfangsfarbe für Himmelskuppel-Verlauf</short>
+			<short xml:lang="el">Αρχικό Χρώμα Διαβάθμισης Skydome</short>
+			<short xml:lang="en_AU">Skydome Gradient Start Color</short>
+			<short xml:lang="en_GB">Skydome Gradient Start Colour</short>
+			<short xml:lang="es">Color de inicio del degradado de cúpula</short>
+			<short xml:lang="eu">Skydomeko gradientearen hasiera kolorea</short>
+			<short xml:lang="fi">Liukuvärin aloitusväri</short>
+			<short xml:lang="fr">Couleur de début du gradient du Skydome</short>
+			<short xml:lang="gl">Cor inicial da gradación do Skydome</short>
+			<short xml:lang="gu">Skydome ઢાળ શરૂઆત રંગ</short>
+			<short xml:lang="he">צבע הדרגתי התחלי של כיפת-הרקיע</short>
+			<short xml:lang="hi">स्काइडोम ढाल प्रारंभ रंग</short>
+			<short xml:lang="hr">Početna boja prijelaza svoda</short>
+			<short xml:lang="hu">Kupola színátmenetének induló színe</short>
+			<short xml:lang="it">Colore gradiente iniziale</short>
+			<short xml:lang="ja">スカイドームグラデーション開始色</short>
+			<short xml:lang="ko">스카이 돔 그라디언트 시작 색상</short>
+			<short xml:lang="ms">Warna Mula Gradien Kubah Langit</short>
+			<short xml:lang="nb">Startfarge for himmelkuppelens fargeovergang</short>
+			<short xml:lang="nl">Hemelkoepel gradatie start kleur</short>
+			<short xml:lang="oc">Color de començament del gradient del Skydome</short>
+			<short xml:lang="or">ସ୍କାଇଡୋମ କ୍ରମାବନତି ଆରମ୍ଭ ରଙ୍ଗ</short>
+			<short xml:lang="pa">ਸਕਾਈਡੋਮੇ ਗਰੇਡੀਐਂਟ ਸ਼ੁਰੂ ਰੰਗ</short>
+			<short xml:lang="pl">Początkowy kolor gradientu tła kostki</short>
+			<short xml:lang="pt">Cor Inicial do gradiente Skydome</short>
+			<short xml:lang="pt_BR">Cor Inicial do gradiente Skydome</short>
+			<short xml:lang="ro">Culoare inițială pentru gradient fundal</short>
+			<short xml:lang="ru">Начальный цвет градиента для фона</short>
+			<short xml:lang="sk">Počiatočná farba gradientu Skydome</short>
+			<short xml:lang="sl">Začetna barva barvne rampe panorame</short>
+			<short xml:lang="sr">Почетна боја прелива Skydome-а</short>
+			<short xml:lang="sv">Första toningsfärgen för Skydome</short>
+			<short xml:lang="tr">Arkaplan Gradyan Başlangıç Rengi</short>
+			<short xml:lang="uk">Початковий колір градієнту для тла</short>
+			<short xml:lang="vi">Màu bắt đầu gra-đi-en vòm trời</short>
+			<short xml:lang="zh_CN">天穹渐变起始颜色</short>
+			<short xml:lang="zh_HK">天空頂漸層開始顏色</short>
+			<short xml:lang="zh_TW">天空頂漸層開始色彩</short>
+			<long>Color and opacity to use for the top color-stop of the skydome-fallback gradient.</long>
+			<long xml:lang="bs">Boja i zasićenost koja će se koristiti za završnu boju zaustavljanja prijelaza usporavanja gradijenta.</long>
+			<long xml:lang="de">Farbe und Deckkraft für das obere Ende des Himmelskuppel-Verlaufs.</long>
+			<long xml:lang="en_AU">Colour and opacity to use for the top colour-stop of the skydome-fallback gradient.</long>
+			<long xml:lang="en_GB">Colour and opacity to use for the top colour-stop of the skydome-fallback gradient.</long>
+			<long xml:lang="es">Color y opacidad a usar para el color superior del gradiente descendiente de la cúpula celeste.</long>
+			<long xml:lang="fr">Couleur et opacité à utiliser pour le dessus du dégradé du ciel.</long>
+			<long xml:lang="gl">Cor e opacidade a utilizar para a cor superior da gradación de reserva do skydome.</long>
+			<long xml:lang="hr">Boja i prozirnost koja će se koristiti za vršnu boju zaustavljanja prijelaza usporavanja svoda.</long>
+			<long xml:lang="ko">스카이돔 복구 모드 그라디언트의 위쪽 시작 색과 투명도를 설정합니다.</long>
+			<long xml:lang="ms">Warna dan kelegapan yang diguna untuk hentian-warna atas bagi gradien jatuh balik kubah langit.</long>
+			<long xml:lang="nl">Kleur en doorzichtigheid van de bovenste eindkleur van het skydome fallback-kleurverloop</long>
+			<long xml:lang="pt">Cor e opacidade a usar para o topo parar a cor do gradiente da cúpula ao deslocar-se para trás.</long>
+			<long xml:lang="ru">Цвет и прозрачность верхнего стоп-цвета в градиенте skydome-fallback.</long>
+			<long xml:lang="sl">Barva in prosojnost zgornje končne barve nadomestnega preliva kupole.</long>
+			<long xml:lang="uk">Колір і прозорість горішнього стоп-кольору у градієнті skydome-fallback.</long>
+			<long xml:lang="zh_CN">默认天穹渐变中顶部颜色节点使用的颜色和透明度。</long>
+			<default>
+				<red>0x0d0d</red>
+				<green>0xb1b1</green>
+				<blue>0xfdfd</blue>
+			</default>
+			</option>
+			<option type="color" name="skydome_gradient_end_color">
+			<short>Skydome Gradient End Color</short>
+			<short xml:lang="ast">Color final del dilíu de la cúpula</short>
+			<short xml:lang="be">স্কাইডোম গ্র্যাডিয়েন্ট শেষের রঙ</short>
+			<short xml:lang="bg">Завършващ цвят на изграждане на небето</short>
+			<short xml:lang="bn">স্কাইডোম গ্র্যাডিয়েন্ট শেষের রঙ</short>
+			<short xml:lang="bn_IN">স্কাইডোম গ্র্যাডিয়েন্ট শেষের রঙ</short>
+			<short xml:lang="bs">Krajnja boja priliva kupole</short>
+			<short xml:lang="ca">Color final del degradat de la cúpula</short>
+			<short xml:lang="cs">Konečná barva gradientu nebeské báně</short>
+			<short xml:lang="da">Slutfarve på himmelkuplens gradient</short>
+			<short xml:lang="de">Endfarbe für Himmelskuppel-Verlauf</short>
+			<short xml:lang="el">Τελικό Χρώμα Διαβάθμισης Skydome</short>
+			<short xml:lang="en_AU">Skydome Gradient End Color</short>
+			<short xml:lang="en_GB">Skydome Gradient End Colour</short>
+			<short xml:lang="es">Color de fin del degradado de cúpula</short>
+			<short xml:lang="eu">Skydomeko gradientearen amaiera kolorea</short>
+			<short xml:lang="fi">Liukuvärin lopetusväri</short>
+			<short xml:lang="fr">Couleur de fin du gradient du Skydome</short>
+			<short xml:lang="gl">Cor final da gradación do Skydome</short>
+			<short xml:lang="gu">Skydome ઢાળ અંત રંગ</short>
+			<short xml:lang="he">צבע הדרגתי סופי של כיפת-הרקיע</short>
+			<short xml:lang="hi">झुकाव ढाल अंत रंग</short>
+			<short xml:lang="hr">Završna boja prijelaza svoda</short>
+			<short xml:lang="hu">Kupola színátmenetének záró színe</short>
+			<short xml:lang="it">Colore gradiente finale</short>
+			<short xml:lang="ja">スカイドームグラデーション終了色</short>
+			<short xml:lang="ko">스카이 돔 그라디언트 최종 색상</short>
+			<short xml:lang="ms">Warna Tamat Gradien Kubah Langit</short>
+			<short xml:lang="nb">Sluttfarge for himmelkuppelens fargeovergang</short>
+			<short xml:lang="nl">Hemelkoepel gradatie eind kleur</short>
+			<short xml:lang="oc">Color de fin del gradient del Skydome</short>
+			<short xml:lang="or">ସ୍କାଇଡୋମ କ୍ରମାବନତି ଶେଷ ରଙ୍ଗ</short>
+			<short xml:lang="pa">ਸਕਾਈਡੋਮੇ ਗਰੇਡੀਐਂਟ ਅੰਤ ਰੰਗ</short>
+			<short xml:lang="pl">Końcowy kolor gradientu tła kostki</short>
+			<short xml:lang="pt">Cor Final do gradiente Skydome</short>
+			<short xml:lang="pt_BR">Cor Final do gradiente Skydome</short>
+			<short xml:lang="ro">Culoare finală pentru gradient fundal</short>
+			<short xml:lang="ru">Конечный цвет градиента для фона</short>
+			<short xml:lang="sk">Konečná farba gradientu Skydome</short>
+			<short xml:lang="sl">Zaključna barva barvne rampe panorame</short>
+			<short xml:lang="sr">Крајња боја прелива Skydome-а</short>
+			<short xml:lang="sv">Andra toningsfärgen för Skydome</short>
+			<short xml:lang="tr">Arkaplan Gradyan Bitim Rengi</short>
+			<short xml:lang="uk">Кінцевий колір градієнту для тла</short>
+			<short xml:lang="vi">Màu kết thúc gra-đi-en vòm trời</short>
+			<short xml:lang="zh_CN">天穹渐变结束颜色</short>
+			<short xml:lang="zh_HK">天空頂漸層結束顏色</short>
+			<short xml:lang="zh_TW">天空頂漸層結束色彩</short>
+			<long>Color and opacity to use for the bottom color-stop of the skydome-fallback gradient.</long>
+			<long xml:lang="bs">Boja i zasićenost koja će se koristiti za donju boju zaustavljanja prijelaza usporavanja gradijenta.</long>
+			<long xml:lang="de">Farbe und Deckkraft für das untere Ende des Himmelskuppel-Verlaufs.</long>
+			<long xml:lang="en_AU">Colour and opacity to use for the bottom colour-stop of the skydome-fallback gradient.</long>
+			<long xml:lang="en_GB">Colour and opacity to use for the bottom colour-stop of the skydome-fallback gradient.</long>
+			<long xml:lang="es">Color y opacidad a usar para el color inferior del gradiente descendiente de la cúpula celeste.</long>
+			<long xml:lang="fr">Couleur et opacité à utiliser pour le bas du dégradé du ciel.</long>
+			<long xml:lang="gl">Cor e opacidade a utilizar para a cor inferior da gradación de reserva do skydome.</long>
+			<long xml:lang="hr">Boja i prozirnost koja će se koristiti za donju boju zaustavljanja prijelaza usporavanja svoda.</long>
+			<long xml:lang="ko">스카이돔 복구 모드 그라디언트의 아래쪽 시작 색과 투명도를 설정합니다.</long>
+			<long xml:lang="ms">Warna dan kelegapan yang diguna untuk hentian-warna bawah bagi gradien jatuh balik kubah langit.</long>
+			<long xml:lang="nl">Kleur en doorzichtigheid van de onderste eindkleur van het skydome fallback-kleurverloop</long>
+			<long xml:lang="pt">Cor e opacidade a usar para a base parar a cor do gradiente da cúpula ao deslocar-se para trás.</long>
+			<long xml:lang="ru">Цвет и прозрачность нижнего стоп-цвета в градиенте skydome-fallback.</long>
+			<long xml:lang="sl">Barva in prosojnost spodnje končne barve nadomestnega preliva kupole.</long>
+			<long xml:lang="uk">Колір і прозорість долішнього стоп-кольору у градієнті skydome-fallback.</long>
+			<long xml:lang="zh_CN">默认天穹渐变中底部颜色节点使用的颜色和透明度。</long>
+			<default>
+				<red>0xfefe</red>
+				<green>0xffff</green>
+				<blue>0xc7c7</blue>
+			</default>
+			</option>
+			</subgroup>
+	    </group>
+	    <group>
+		<short>Transparent Cube</short>
+		<short xml:lang="ast">Cubu Tresparente</short>
+		<short xml:lang="bg">Прозрачен куб</short>
+		<short xml:lang="bs">Prozirna kocka</short>
+		<short xml:lang="cs">Průhledná krychle</short>
+		<short xml:lang="de">Durchsichtiger Würfel</short>
+		<short xml:lang="el">Διάφανος Κύβος</short>
+		<short xml:lang="en_AU">Transparent Cube</short>
+		<short xml:lang="en_GB">Transparent Cube</short>
+		<short xml:lang="es">Cubo Transparente</short>
+		<short xml:lang="eu">Kubo gardena</short>
+		<short xml:lang="fi">Läpinäkyvä kuutio</short>
+		<short xml:lang="fr">Cube transparent</short>
+		<short xml:lang="gl">Cubo transparente</short>
+		<short xml:lang="he">קוביה שקופה</short>
+		<short xml:lang="hr">Prozirnost kocke</short>
+		<short xml:lang="hu">Áttetsző kocka</short>
+		<short xml:lang="it">Cubo trasparente</short>
+		<short xml:lang="ja">キューブの透明化</short>
+		<short xml:lang="ko">투명 큐브</short>
+		<short xml:lang="ms">Kiub Lutsinar</short>
+		<short xml:lang="nb">Gjennomsiktig kube</short>
+		<short xml:lang="nl">Doorzichtige kubus</short>
+		<short xml:lang="oc">Cub transparent</short>
+		<short xml:lang="pl">Przezroczysta kostka</short>
+		<short xml:lang="pt">Cubo Transparente</short>
+		<short xml:lang="pt_BR">Cubo transparente</short>
+		<short xml:lang="ro">Cub transparent</short>
+		<short xml:lang="ru">Прозрачность куба</short>
+		<short xml:lang="sl">Prosojna kocka</short>
+		<short xml:lang="sr">Провидна коцка</short>
+		<short xml:lang="sv">Genomskinlig kub</short>
+		<short xml:lang="tr">Saydam Küp</short>
+		<short xml:lang="ug">سۈزۈك كۈب</short>
+		<short xml:lang="uk">Прозорість куба</short>
+		<short xml:lang="vi">Khối trong suốt</short>
+		<short xml:lang="zh_CN">透明立方体</short>
+		<short xml:lang="zh_HK">透明立方體</short>
+		<short xml:lang="zh_TW">透明立方體</short>
+			<option type="float" name="active_opacity">
+			<short>Opacity During Rotation</short>
+			<short xml:lang="ast">Opacidá na rotación</short>
+			<short xml:lang="be">ঘোরানোর সময় অস্বচ্ছতা</short>
+			<short xml:lang="bg">Прозрачност при въртене</short>
+			<short xml:lang="bn">ঘোরানোর সময় অস্বচ্ছতা</short>
+			<short xml:lang="bn_IN">ঘোরানোর সময় অস্বচ্ছতা</short>
+			<short xml:lang="bs">Neprovidnost prilikom okretanja</short>
+			<short xml:lang="cs">Krytí během rotace</short>
+			<short xml:lang="de">Deckkraft während Drehung</short>
+			<short xml:lang="el">Αδιαφάνεια Kατα την Περιστροφή</short>
+			<short xml:lang="en_AU">Opacity During Rotation</short>
+			<short xml:lang="en_GB">Opacity During Rotation</short>
+			<short xml:lang="es">Opacidad durante rotacion</short>
+			<short xml:lang="eu">Opakutasuna biratzean</short>
+			<short xml:lang="fi">Läpikuultavuus pyörityksen aikana</short>
+			<short xml:lang="fr">Opacité pendant la rotation</short>
+			<short xml:lang="gl">Opacidad durante a rotacion</short>
+			<short xml:lang="gu">ફેરવવા દરમ્યાન અપારદર્શકતા</short>
+			<short xml:lang="he">אטימות בעת סיבוב</short>
+			<short xml:lang="hi">घुमाव के दौरान अपारदर्शिता</short>
+			<short xml:lang="hr">Prozirnost tijekom zakretanja</short>
+			<short xml:lang="hu">Átlátszatlanság forgatás közben</short>
+			<short xml:lang="it">Opacità durante la rotazione</short>
+			<short xml:lang="ja">回転時の不透明度</short>
+			<short xml:lang="ko">회전할 때의 투명도</short>
+			<short xml:lang="ms">Kelegapan Semasa Putaran</short>
+			<short xml:lang="nb">Dekkevne ved rotasjon</short>
+			<short xml:lang="nds">Döörschienen bi de Rotatschoon</short>
+			<short xml:lang="nl">Ondoorzichtigheid tijdens draaien</short>
+			<short xml:lang="oc">Opacitat pendent la rotacion</short>
+			<short xml:lang="or">ଘୁର୍ଣ୍ଣନ ସମଯରେ ଅସ୍ବଚ୍ଛତା</short>
+			<short xml:lang="pa">ਘੁੰਮਾਉਣ ਦੌਰਾਨ ਧੁੰਦਲਾਪਨ</short>
+			<short xml:lang="pl">Nieprzezroczystość kostki podczas obracania</short>
+			<short xml:lang="pt">Opacidade Durante Rotação</short>
+			<short xml:lang="pt_BR">Opacidade Durante Rotação</short>
+			<short xml:lang="ro">Opacitate în timpul rotației</short>
+			<short xml:lang="ru">Прозрачность во время вращения</short>
+			<short xml:lang="sk">Nepriehľadnosť počas otáčania</short>
+			<short xml:lang="sl">Prekrivnost med obračanjem</short>
+			<short xml:lang="sr">Провидност за време ротације</short>
+			<short xml:lang="sv">Opacitet under rotation</short>
+			<short xml:lang="tr">Döndürme Sırasındaki Matlık</short>
+			<short xml:lang="ug">ئايلاندۇرغاندىكى غۇۋالىقى</short>
+			<short xml:lang="uk">Прозорість під час обертання</short>
+			<short xml:lang="vi">Độ trong suốt khi quay</short>
+			<short xml:lang="zh_CN">旋转时的不透明度</short>
+			<short xml:lang="zh_HK">旋轉時的不透明度</short>
+			<short xml:lang="zh_TW">旋轉時的透明度</short>
+			<long>Opacity of the desktop during cube rotation (in percent).</long>
+			<long xml:lang="bs">Neprozirnost radne površine tokom rotacije kocke (u procentima).</long>
+			<long xml:lang="cs">Průhlednost plochy při rotaci krychle (v procentech).</long>
+			<long xml:lang="de">Deckkraft des Schreibtischs, während der Würfel gedreht wird (in Prozent).</long>
+			<long xml:lang="en_AU">Opacity of the desktop during cube rotation (in percent).</long>
+			<long xml:lang="en_GB">Opacity of the desktop during cube rotation (in percent).</long>
+			<long xml:lang="es">Opacidad del escritorio durante la rotación del cubo (en porcentaje).</long>
+			<long xml:lang="fr">Opacité du bureau lors de la rotation du cube (en pourcentage).</long>
+			<long xml:lang="gl">Opacidade do escritorio durante a rotación do cubo (en %).</long>
+			<long xml:lang="hr">Prozirnost radne površine tijekom zakretanja kocke (u postocima)</long>
+			<long xml:lang="it">Opacità del desktop durante la rotazione del cubo (in percentuale).</long>
+			<long xml:lang="ko">큐브를 돌릴 때 데스크톱의 투명한 정도를 설정합니다(단위: 백분을).</long>
+			<long xml:lang="ms">Kelegapan dekstop semasa putaran kiub (dalam peratus).</long>
+			<long xml:lang="nl">Doorzichtigheid van het bureaublad tijdens kubusrotatie (in procenten)</long>
+			<long xml:lang="pt">Opacidade do ambiente de trabalho durante a rotação do cubo (em percentagem).</long>
+			<long xml:lang="ro">Opacitatea biroului de lucru în timpul rotației cubului (în procente).</long>
+			<long xml:lang="ru">Прозрачность рабочего стола при вращении куба (в процентах).</long>
+			<long xml:lang="sl">Raven prekrivnosti namizja med vrtenjem kocke (v odstotkih).</long>
+			<long xml:lang="sv">Ogenomskinlighet för skrivbordet vid kubrotation (i procent).</long>
+			<long xml:lang="tr">Küp dönüşü sırasında masaüstünün matlığı (yüzde olarak).</long>
+			<long xml:lang="ug">ئۈستەلئۈستى كۈبىنى ئايلاندۇرۇش غۇۋالىقى(پىرسەنت)</long>
+			<long xml:lang="uk">Прозорість стільниці при повертанні куба (у відсотках).</long>
+			<long xml:lang="zh_CN">桌面立方体旋转时，桌面的不透明度(百分比)。</long>
+			<default>100.0</default>
+			<min>0.0</min>
+			<max>100.0</max>
+			<precision>1.0</precision>
+			</option>
+			<option type="float" name="inactive_opacity">
+			<short>Non Rotating Opacity</short>
+			<short xml:lang="bs">Nerotirajuća neprovidnost</short>
+			<short xml:lang="de">Deckkraft ohne Drehung</short>
+			<short xml:lang="en_AU">Non Rotating Opacity</short>
+			<short xml:lang="en_GB">Non Rotating Opacity</short>
+			<short xml:lang="es">Opacidad no rotatoria</short>
+			<short xml:lang="fr">Opacité Inerte</short>
+			<short xml:lang="gl">Sen opacidade na rotación</short>
+			<short xml:lang="hr">Prozirnost tijekom nezakretanja</short>
+			<short xml:lang="ko">회전 안할 때의 투명도</short>
+			<short xml:lang="ms">Kelegapan Tidak Berputar</short>
+			<short xml:lang="nl">Niet-rotatie doorzichtigheid</short>
+			<short xml:lang="pt">Sem Opacidade na Rotação</short>
+			<short xml:lang="ru">Прозрачность при отсутствии вращения</short>
+			<short xml:lang="sl">Raven prekrivnosti med mirovanjem</short>
+			<short xml:lang="sv">Icke-roterande ogenomskinlighet</short>
+			<short xml:lang="ug">ئايلاندۇرغاندا غۇۋالىق يوق</short>
+			<short xml:lang="uk">Прозорість при відсутності повертання</short>
+			<short xml:lang="zh_CN">透明旋转</short>
+			<long>Opacity of the desktop when not rotating the cube (in percent).</long>
+			<long xml:lang="bs">Neprozirnost na radnoj površini kada se ne rotira kocka (u procentima).</long>
+			<long xml:lang="cs">Průhlednost plochy když není krychle zrovna rotována (v procentech).</long>
+			<long xml:lang="de">Deckkraft des Schreibtischs, während der Würfel nicht gedreht wird (in Prozent).</long>
+			<long xml:lang="en_AU">Opacity of the desktop when not rotating the cube (in percent).</long>
+			<long xml:lang="en_GB">Opacity of the desktop when not rotating the cube (in percent).</long>
+			<long xml:lang="es">Opacidad del escritorio cuando no está girando el cubo (en porcentaje).</long>
+			<long xml:lang="fr">Opacité du bureau lorsque le cube ne tourne pas (en pourcentage).</long>
+			<long xml:lang="gl">Opacidade do escritorio cando non hai rotación do cubo (en %).</long>
+			<long xml:lang="hr">Prozirnost radne površine kada se kocka ne zakreće (u postocima)</long>
+			<long xml:lang="it">Opacità del desktop quando il cubo non ruota (in percentuale).</long>
+			<long xml:lang="ko">큐브를 돌리지 않을 때 데스크톱의 투명한 정도를 설정합니다(단위: 백분을).</long>
+			<long xml:lang="ms">Kelegapan dekstop bila tidak memutarkan kiub (dalam peratus).</long>
+			<long xml:lang="nl">Doorzichtigheid van het bureaublad as als het niet wordt geroteerd</long>
+			<long xml:lang="pt">Opacidade do ambiente de trabalho quando o cubo não está a rodar (em percentagem).</long>
+			<long xml:lang="ro">Opacitatea spațiului de lucru atunci când nu se rotește cubul (în procente).</long>
+			<long xml:lang="ru">Прозрачность рабочего стола при отсутствии вращения куба (в процентах).</long>
+			<long xml:lang="sl">Raven prekrivnosti namizja med mirovanjem kocke (v odstotkih).</long>
+			<long xml:lang="sv">Ogenomskinlighet för skrivbordet när kuben inte roteras (i procent).</long>
+			<long xml:lang="ug">ئۈستەلئۈستى كۈبىنى ئايلاندۇرمىغاندىكى غۇۋالىقى</long>
+			<long xml:lang="uk">Прозорість стільниці при відсутності повертання куба (у відсотках).</long>
+			<long xml:lang="zh_CN">立方体不旋转时桌面的透明度 (百分比)</long>
+			<default>100.0</default>
+			<min>0.0</min>
+			<max>100.0</max>
+			<precision>1.0</precision>
+			</option>
+			<option type="bool" name="transparent_manual_only">
+			<short>Transparency Only On Mouse Rotate</short>
+			<short xml:lang="bs">Transparentnost samo na rotaciji miša.</short>
+			<short xml:lang="cs">Průhlednost pouze když rotuje myš</short>
+			<short xml:lang="de">Durchsichtigkeit nur bei Mausdrehung</short>
+			<short xml:lang="en_AU">Transparency Only On Mouse Rotate</short>
+			<short xml:lang="en_GB">Transparency Only On Mouse Rotate</short>
+			<short xml:lang="es">Transparencia sólo al rotar el ratón</short>
+			<short xml:lang="fr">Transparence uniquement sur rotation de la souris.</short>
+			<short xml:lang="gl">Transparencia só cando rota co rato</short>
+			<short xml:lang="hr">Prozirnost samo pri zakretanju mišem</short>
+			<short xml:lang="it">Trasparenza solo sulla rotazione del mouse</short>
+			<short xml:lang="ko">마우스로 회전할 때만 투명하게</short>
+			<short xml:lang="ms">Kelutsinaran Hanya Bila Putar Guna Tetikus</short>
+			<short xml:lang="nl">Transparantie alleen bij rotatie met muis</short>
+			<short xml:lang="pt">Transparência só na rotação do rato</short>
+			<short xml:lang="pt_BR">Transparência apenas na rotação do mouse</short>
+			<short xml:lang="ru">Прозрачность только при вращении мышью</short>
+			<short xml:lang="sl">Prozornost samo med vrtenjem z miško</short>
+			<short xml:lang="sv">Genomskinlighet endast vid musrotering</short>
+			<short xml:lang="ug">چاشقىنەك ئارقىلىق ئايلاندۇررغاندىكى سۈزۈكلۈكى</short>
+			<short xml:lang="uk">Прозорість лише при повертанні мишею</short>
+			<short xml:lang="zh_CN">只有鼠标旋转时透明</short>
+			<long>Initiates cube transparency only, if the rotation is mouse driven.</long>
+			<long xml:lang="bs">Inicira transparentnost kocke samo ako je rotacija pokrenuta mišem.</long>
+			<long xml:lang="cs">Vyvolá průhlednost krychle pouze pokud jí rotuje myš.</long>
+			<long xml:lang="de">Deckkraft des Würfels nur zeigen, wenn die Drehung mit der Maus gemacht wird.</long>
+			<long xml:lang="en_AU">Initiates cube transparency only, if the rotation is mouse driven.</long>
+			<long xml:lang="en_GB">Initiates cube transparency only, if the rotation is mouse driven.</long>
+			<long xml:lang="es">Inicia la transparencia del subo solo si el giro es controlado por el ratón.</long>
+			<long xml:lang="fr">Active la transparence du cube uniquement, si la rotation est menée par la souris.</long>
+			<long xml:lang="gl">Iniciar transparencia do cubo só se a rotación se fai co rato.</long>
+			<long xml:lang="hr">Pokreće samo prozirnost kocke, ako je zakretanje upravljano mišem.</long>
+			<long xml:lang="it">Avvia la trasparenza del cubo solo se la rotazione è guidata dal mouse.</long>
+			<long xml:lang="ko">마우스로 큐브가 회전할 때 큐브의 투명도만을 바꿉니다.</long>
+			<long xml:lang="ms">Memulakan kelutsinaran kiub sahaja, jika putaran dipacu tetikus.</long>
+			<long xml:lang="nl">Start de transparantie alleen als de rotatie met de muis wordt gestart.</long>
+			<long xml:lang="pt">Inicia só transparência de cubo, se a rotação for efectuada pelo rato.</long>
+			<long xml:lang="ru">Включает прозрачность куба, только если вращение выполняется с использованием мыши.</long>
+			<long xml:lang="sl">Začenja prozornost kocke samo, če je vrtenje gnano z miško.</long>
+			<long xml:lang="sv">Startar kubgenomskinlighet endast, om rotationen är musdriven.</long>
+			<long xml:lang="ug">چاشقىنەك بىلەن ئايلاندۇرلغاندا، كۇب سۈزۈكلۈكىنى قوزغات</long>
+			<long xml:lang="uk">Вмикає прозорість куба, лише якщо повертання виконується з використанням миші.</long>
+			<long xml:lang="zh_CN">如果旋转是鼠标驱动的，只启动立方体透明。</long>
+			<default>true</default>
+			</option>
+	    </group>
+	</options>
+    </plugin>
+</compiz>

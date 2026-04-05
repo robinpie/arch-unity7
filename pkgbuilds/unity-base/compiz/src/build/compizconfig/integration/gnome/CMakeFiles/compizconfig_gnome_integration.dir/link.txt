@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompizconfig_gnome_integration.a CMakeFiles/compizconfig_gnome_integration.dir/src/ccs_gnome_integration.c.o
+/usr/bin/ranlib libcompizconfig_gnome_integration.a

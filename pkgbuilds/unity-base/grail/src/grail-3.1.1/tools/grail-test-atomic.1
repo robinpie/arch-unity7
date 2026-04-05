@@ -1,0 +1,21 @@
+.TH GRAIL-TEST-ATOMIC 1 "March 14, 2012" "grail" "Open Input Framework"
+
+.SH NAME
+grail-test-atomic \- dump grail v3 atomic gesture events 
+
+.SH SYNPOSIS
+.B grail-test-atomic [
+.I window
+.B ]
+.br
+
+.SH OPTIONS
+.I window
+Specifies the
+.I X window
+of a specific window to associate with gestures.
+
+.SH DESCRIPTION
+Prints grail gesture events to stdout, with the recognizer operating in atomic
+mode.  Requires an X11 server which supports multi-touch through XInput 2.2.
+

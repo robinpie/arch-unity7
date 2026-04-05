@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib
+includedir=${prefix}/include
+binary=${pc_top_builddir}/unity-settings-daemon/unity-settings-daemon
+
+Name: unity-settings-daemon
+Description: Utility library for accessing unity-settings-daemon over DBUS
+Requires: glib-2.0
+Version: 1.0
+Libs: ${pc_top_builddir}/${pcfiledir}/../unity-settings-daemon/libgsd.la
+Cflags: -I${pc_top_builddir}/${pcfiledir}/..

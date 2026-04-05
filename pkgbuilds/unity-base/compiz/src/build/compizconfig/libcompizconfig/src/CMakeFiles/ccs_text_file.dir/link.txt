@@ -1,0 +1,2 @@
+/usr/bin/ar qc libccs_text_file.a CMakeFiles/ccs_text_file.dir/ccs_text_file.c.o
+/usr/bin/ranlib libccs_text_file.a

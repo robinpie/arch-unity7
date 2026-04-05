@@ -1,0 +1,58 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/libzeitgeist
+
+pkgname=libzeitgeist
+pkgver=0.3.18
+_urev=1ubuntu7
+pkgrel=1
+pkgdesc="Client library for interacting with the Zeitgeist daemon"
+arch=('x86_64')
+url="https://launchpad.net/libzeitgeist"
+license=('GPL-3.0-or-later' 'LGPL-2.1-or-later')
+depends=('glib2' 'zeitgeist')
+makedepends=('pkgconf' 'autoconf' 'automake' 'libtool' 'dbus' 'gtk-doc')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}-${_urev}.debian.tar.xz"
+)
+sha256sums=('SKIP' 'SKIP')
+
+prepare() {
+    cd "${pkgname}-${pkgver}"
+
+    # Move debian/ from srcdir if needed
+    if [ ! -d debian ] && [ -d "$srcdir/debian" ]; then
+        cp -r "$srcdir/debian" .
+    fi
+
+    # Fix doc directory naming
+    sed -i "s:/doc/libzeitgeist:/doc/libzeitgeist-${pkgver}:" Makefile.am 2>/dev/null || true
+    # Remove doc subdir from build (avoids gtk-doc.make dependency)
+    sed -i '/[[:space:]]doc[[:space:]]/d; /^doc$/d' Makefile.am 2>/dev/null || true
+
+    # Apply debian patches
+    if [ -f debian/patches/series ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p"
+        done < debian/patches/series
+    fi
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "${pkgname}-${pkgver}"
+    ./configure \
+        --prefix=/usr \
+        --libdir=/usr/lib \
+        --disable-static \
+        --disable-gtk-doc
+    make
+}
+
+package() {
+    cd "${pkgname}-${pkgver}"
+    make DESTDIR="$pkgdir" install
+    find "$pkgdir" -name '*.la' -delete
+}

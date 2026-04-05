@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_opengl_fsregion.a CMakeFiles/compiz_opengl_fsregion.dir/fsregion.cpp.o
+/usr/bin/ranlib libcompiz_opengl_fsregion.a

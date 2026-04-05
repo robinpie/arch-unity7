@@ -1,0 +1,8 @@
+	../schemas/com.ubuntu.notifications.hub.gschema.xml.in.in \
+	../schemas/com.ubuntu.notifications.settings.gschema.xml.in.in \
+	../schemas/com.ubuntu.phone.gschema.xml.in.in \
+	../schemas/com.ubuntu.sound.gschema.xml.in.in \
+	../schemas/com.ubuntu.touch.network.gschema.xml.in.in \
+	../schemas/com.ubuntu.touch.sound.gschema.xml.in.in \
+	../schemas/com.ubuntu.touch.system.gschema.xml.in.in \
+	../schemas/com.ubuntu.user-interface.gschema.xml.in.in

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompizconfig_gnome_integration_gsettings_setting_factory.a CMakeFiles/compizconfig_gnome_integration_gsettings_setting_factory.dir/src/ccs_gnome_integration_gsettings_integrated_setting_factory.c.o
+/usr/bin/ranlib libcompizconfig_gnome_integration_gsettings_setting_factory.a

@@ -1,0 +1,158 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/compiz
+
+pkgname=compiz
+pkgver=0.9.14.2
+_uver=+25.10.20250930
+_urev=0ubuntu3
+pkgrel=1
+pkgdesc="Compiz Fusion OpenGL window and compositing manager patched for Unity7"
+arch=('x86_64')
+url="https://launchpad.net/compiz"
+license=('GPL-2.0-or-later' 'LGPL-2.1-or-later' 'MIT')
+depends=(
+    'glibmm'
+    'glib2'
+    'libxslt'
+    'protobuf'
+    'gsettings-desktop-schemas'
+    'librsvg'
+    'libjpeg-turbo'
+    'libpng'
+    'glu'
+    'cairo'
+    'gtk3'
+    'libice'
+    'libnotify'
+    'libsm'
+    'libwnck3'
+    'libx11'
+    'libxcomposite'
+    'libxcursor'
+    'libxdamage'
+    'libxext'
+    'libxfixes'
+    'libxi'
+    'libxinerama'
+    'libxrandr'
+    'libxrender'
+    'pango'
+    'startup-notification'
+    'metacity'
+    'python'
+    'python-gobject'
+    'at-spi2-core'
+    'libsigc++'
+    'dconf'
+    'dbus'
+    'gdk-pixbuf2'
+    'libxml2'
+    'glewmx'
+)
+makedepends=(
+    'cmake'
+    'pkgconf'
+    'intltool'
+    'libtool'
+    'dbus-glib'
+    'perl-xml-parser'
+    'mesa'
+    'xorgproto'
+    'xorg-server'
+    'boost'
+    'cython'
+    'python-setuptools'
+    'cmake-extras'
+)
+# compiz build must be single-threaded (upstream requirement, link order issues)
+options=('!makeflags')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.tar.xz"
+)
+sha256sums=('SKIP')
+
+prepare() {
+    cd "${pkgname}-${pkgver}${_uver}"
+
+    # Fix desktop freeze for Chromium, Chrome and Kodi when returning from fullscreen video
+    sed -i \
+        -e 's:!(class=chromium-browser):!(class=chromium-browser) \&amp; !(class=Chromium-browser-chromium) \&amp; !(class=Google-chrome) \&amp; !(class=Kodi):' \
+        plugins/composite/composite.xml.in || true
+
+    # Fix Expo y-offset and y-bottom-offset
+    printf '\n[org.compiz.expo]\ny-offset = 35\ny-bottom-offset = 5\n' \
+        >> debian/compiz-gnome.gsettings-override || true
+
+    # Disable recompiling GSettings schemas inside build
+    sed -i \
+        -e "/# Recompile GSettings Schemas/,+6 d" \
+        cmake/CompizGSettings.cmake || true
+
+    # Disable updating icon cache inside build
+    sed -i \
+        -e "/# Update icon cache/,+11 d" \
+        compizconfig/ccsm/setup.py || true
+
+    # Fix Python shebangs
+    find compizconfig/ccsm -name "*.py" -exec sed -i 's|#!/usr/bin/python$|#!/usr/bin/python3|' {} \; 2>/dev/null || true
+
+    # Patchset already applied in this source tarball (no patches/ dir exists)
+    mkdir -p debian/patches
+    > debian/patches/series
+
+    # Fix CMake minimum version for CMake 4
+    find . -name "CMakeLists.txt" -exec sed -i \
+        's/cmake_minimum_required(VERSION 2\.[0-9]\+\.[0-9]\+/cmake_minimum_required(VERSION 3.10/' {} \; 2>/dev/null || true
+}
+
+build() {
+    # Must build single-threaded due to link ordering issues in compiz
+    cmake -B build -S "${pkgname}-${pkgver}${_uver}" \
+        -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DCMAKE_INSTALL_LOCALSTATEDIR=/var \
+        -DCMAKE_INSTALL_SYSCONFDIR=/etc \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.10 \
+        -DBUILD_GLES=OFF \
+        -DBUILD_XORG_GTEST=OFF \
+        -DCOMPIZ_BUILD_TESTING=OFF \
+        -DCOMPIZ_BUILD_WITH_RPATH=OFF \
+        -DCOMPIZ_DISABLE_GS_SCHEMAS_INSTALL=OFF \
+        -DCOMPIZ_PACKAGING_ENABLED=ON \
+        -DCOMPIZ_WERROR=OFF \
+        -Wno-dev
+    cmake --build build -j1
+}
+
+package() {
+    DESTDIR="$pkgdir" cmake --install build
+
+    # Get CMake modules directory
+    local cmake_dir
+    cmake_dir=$(cmake --system-information 2>/dev/null | grep "^CMAKE_ROOT " | cut -d '"' -f 2)
+    if [ -n "$cmake_dir" ]; then
+        install -Dm644 "${pkgname}-${pkgver}${_uver}/cmake/FindCompiz.cmake" \
+            "$pkgdir${cmake_dir}/Modules/FindCompiz.cmake"
+        install -Dm644 "${pkgname}-${pkgver}${_uver}/cmake/FindOpenGLES2.cmake" \
+            "$pkgdir${cmake_dir}/Modules/FindOpenGLES2.cmake"
+        install -Dm644 "${pkgname}-${pkgver}${_uver}/compizconfig/libcompizconfig/cmake/FindCompizConfig.cmake" \
+            "$pkgdir${cmake_dir}/Modules/FindCompizConfig.cmake"
+    fi
+
+    # Install GSettings override
+    install -Dm644 "${pkgname}-${pkgver}${_uver}/debian/compiz-gnome.gsettings-override" \
+        "$pkgdir/usr/share/glib-2.0/schemas/10_compiz-ubuntu.gschema.override"
+
+    # Install migration convert files
+    install -d "$pkgdir/usr/lib/compiz/migration"
+    install -m644 "${pkgname}-${pkgver}${_uver}/postinst/convert-files/"*.convert \
+        "$pkgdir/usr/lib/compiz/migration/" 2>/dev/null || true
+
+    # Symlinks for unity-control-center keybindings
+    install -d "$pkgdir/usr/share/unity-control-center/keybindings"
+    ln -sf /usr/share/gnome-control-center/keybindings/50-compiz-navigation.xml \
+        "$pkgdir/usr/share/unity-control-center/keybindings/50-compiz-navigation.xml" 2>/dev/null || true
+    ln -sf /usr/share/gnome-control-center/keybindings/50-compiz-windows.xml \
+        "$pkgdir/usr/share/unity-control-center/keybindings/50-compiz-windows.xml" 2>/dev/null || true
+}

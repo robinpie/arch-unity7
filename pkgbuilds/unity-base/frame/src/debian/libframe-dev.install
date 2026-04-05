@@ -1,0 +1,3 @@
+usr/include
+usr/lib/*/libframe.so
+usr/lib/*/pkgconfig

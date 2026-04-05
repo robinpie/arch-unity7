@@ -1,0 +1,101 @@
+Source: geis
+Section: libs
+Priority: extra
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>= 9),
+               dh-autoreconf,
+               dh-python,
+               doxygen,
+               libdbus-1-dev,
+               libgrail-dev (>= 3.0.8),
+               libx11-xcb-dev,
+               libxcb1-dev,
+               libxi-dev,
+               pkg-config,
+               python3-dev,
+               xcb-proto (<< 2.0),
+               xcb-proto (>= 1.6),
+               xserver-xorg-dev (>= 2:1.10.1),
+               xsltproc (>= 1.1.19),
+Standards-Version: 3.9.5
+Homepage: https://launchpad.net/geis
+# If you aren't a member of ~oif-team but need to upload
+# packaging changes, just go ahead.  ~oif-team will notice
+# and sync up the code again.
+Vcs-Bzr: https://code.launchpad.net/~oif-team/geis/trunk
+Vcs-Browser: https://bazaar.launchpad.net/~oif-team/geis/trunk/files
+X-Python-Version: >= 2.7
+
+Package: libgeis1
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: Gesture engine interface support
+ A common API for clients of a systemwide gesture recognition and propagation
+ engine.
+ .
+ This package provides just the runtime required for applications making use of
+ the GEIS API.
+
+Package: libgeis-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends},
+Depends: libgeis1 (= ${binary:Version}),
+         ${misc:Depends},
+Conflicts: libutouch-geis-dev,
+Replaces: libutouch-geis-dev,
+Description: Gesture engine interface support - dev files
+ A common API for clients of a systemwide gesture recognition and propagation
+ engine.
+ .
+ Headers and static link libraries for developing against the common gesture
+ API.
+
+Package: python3-geis
+Section: python
+Architecture: any
+Depends: ${misc:Depends},
+         ${python3:Depends},
+         ${shlibs:Depends},
+Conflicts: python-utouch-geis, python-geis
+Replaces: python-utouch-geis, python-geis
+Description: python bindings for libgeis
+ A common API for clients of a systemwide gesture recognition and propagation
+ engine.
+ .
+ This package provides native bindings so that you can use GEIS from
+ a Python program.
+
+Package: libgeis-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends},
+Conflicts: libutouch-geis-doc,
+Replaces: libutouch-geis-doc,
+Description: Gesture engine interface support - documentation
+ A common API for clients of a systemwide gesture recognition and propagation
+ engine.
+ .
+ API and specification documentation for developing with libgeis.
+
+Package: geis-tools
+Section: libdevel
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends},
+Depends: libgeis1 (= ${binary:Version}),
+         python3-geis (= ${binary:Version}),
+         ${misc:Depends},
+         ${python3:Depends},
+         ${shlibs:Depends},
+Conflicts: libutouch-geis-tools,
+Replaces: libutouch-geis-tools,
+Description: Gesture engine interface support - test tools
+ A common API for clients of a systemwide gesture recognition and propagation
+ engine.
+ .
+ Tools that can be used to verify gesture API behaviour.

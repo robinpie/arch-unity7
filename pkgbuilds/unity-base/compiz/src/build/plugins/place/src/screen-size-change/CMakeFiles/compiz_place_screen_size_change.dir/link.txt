@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_place_screen_size_change.a "CMakeFiles/compiz_place_screen_size_change.dir/src/screen-size-change.cpp.o"
+/usr/bin/ranlib libcompiz_place_screen_size_change.a

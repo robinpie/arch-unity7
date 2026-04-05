@@ -1,0 +1,303 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'HudAdaptor.h'
+**
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.15.18)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include <memory>
+#include "HudAdaptor.h"
+#include <QtCore/qbytearray.h>
+#include <QtCore/qmetatype.h>
+#include <QtCore/QList>
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'HudAdaptor.h' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 67
+#error "This file was generated using the moc from 5.15.18. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_DEPRECATED
+struct qt_meta_stringdata_HudAdaptor_t {
+    QByteArrayData data[34];
+    char stringdata0[2406];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_HudAdaptor_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_HudAdaptor_t qt_meta_stringdata_HudAdaptor = {
+    {
+QT_MOC_LITERAL(0, 0, 10), // "HudAdaptor"
+QT_MOC_LITERAL(1, 11, 15), // "D-Bus Interface"
+QT_MOC_LITERAL(2, 27, 17), // "com.canonical.hud"
+QT_MOC_LITERAL(3, 45, 19), // "D-Bus Introspection"
+QT_MOC_LITERAL(4, 65, 1962), // "  <interface name=\"com.canon..."
+QT_MOC_LITERAL(5, 1844, 12), // "UpdatedQuery"
+QT_MOC_LITERAL(6, 1857, 0), // ""
+QT_MOC_LITERAL(7, 1858, 6), // "target"
+QT_MOC_LITERAL(8, 1865, 30), // "QList<hud::common::Suggestion>"
+QT_MOC_LITERAL(9, 1896, 11), // "suggestions"
+QT_MOC_LITERAL(10, 1908, 12), // "QDBusVariant"
+QT_MOC_LITERAL(11, 1921, 8), // "querykey"
+QT_MOC_LITERAL(12, 1930, 10), // "CloseQuery"
+QT_MOC_LITERAL(13, 1941, 11), // "CreateQuery"
+QT_MOC_LITERAL(14, 1953, 15), // "QDBusObjectPath"
+QT_MOC_LITERAL(15, 1969, 5), // "query"
+QT_MOC_LITERAL(16, 1975, 8), // "QString&"
+QT_MOC_LITERAL(17, 1984, 11), // "resultsName"
+QT_MOC_LITERAL(18, 1996, 12), // "appstackName"
+QT_MOC_LITERAL(19, 2009, 4), // "int&"
+QT_MOC_LITERAL(20, 2014, 13), // "modelRevision"
+QT_MOC_LITERAL(21, 2028, 12), // "ExecuteQuery"
+QT_MOC_LITERAL(22, 2041, 3), // "key"
+QT_MOC_LITERAL(23, 2045, 9), // "timestamp"
+QT_MOC_LITERAL(24, 2055, 19), // "RegisterApplication"
+QT_MOC_LITERAL(25, 2075, 2), // "id"
+QT_MOC_LITERAL(26, 2078, 10), // "StartQuery"
+QT_MOC_LITERAL(27, 2089, 7), // "entries"
+QT_MOC_LITERAL(28, 2097, 31), // "QList<hud::common::Suggestion>&"
+QT_MOC_LITERAL(29, 2129, 13), // "QDBusVariant&"
+QT_MOC_LITERAL(30, 2143, 12), // "Applications"
+QT_MOC_LITERAL(31, 2156, 30), // "QList<hud::common::NameObject>"
+QT_MOC_LITERAL(32, 2187, 11), // "OpenQueries"
+QT_MOC_LITERAL(33, 2199, 22) // "QList<QDBusObjectPath>"
+
+    },
+    "HudAdaptor\0D-Bus Interface\0com.canonical.hud\0"
+    "D-Bus Introspection\0"
+    "  <interface name=\"com.canonical.hud\">\n    <property access=\"read\""
+    " type=\"ao\" name=\"OpenQueries\"/>\n    <property access=\"read\" typ"
+    "e=\"a(so)\" name=\"Applications\">\n      <annotation value=\"QList&lt"
+    ";hud::common::NameObject&gt;\" name=\"org.qtproject.QtDBus.QtTypeName\""
+    "/>\n    </property>\n    <method name=\"CreateQuery\">\n      <arg dir"
+    "ection=\"in\" type=\"s\" name=\"query\"/>\n      <arg direction=\"out\""
+    " type=\"o\" name=\"queryObject\"/>\n      <arg direction=\"out\" type="
+    "\"s\" name=\"resultsName\"/>\n      <arg direction=\"out\" type=\"s\" "
+    "name=\"appstackName\"/>\n      <arg direction=\"out\" type=\"i\" name="
+    "\"modelRevision\"/>\n    </method>\n    <method name=\"RegisterApplica"
+    "tion\">\n      <arg direction=\"in\" type=\"s\" name=\"id\"/>\n      <"
+    "arg direction=\"out\" type=\"o\" name=\"appObject\"/>\n    </method>\n"
+    "    <method name=\"StartQuery\">\n      <arg direction=\"in\" type=\"s"
+    "\" name=\"query\"/>\n      <arg direction=\"in\" type=\"i\" name=\"ent"
+    "ries\"/>\n      <arg direction=\"out\" type=\"s\" name=\"target\"/>\n "
+    "     <annotation value=\"QList&lt;hud::common::Suggestion&gt;\" name=\""
+    "org.qtproject.QtDBus.QtTypeName.Out1\"/>\n      <arg direction=\"out\""
+    " type=\"a(sssssv)\" name=\"suggestions\"/>\n      <arg direction=\"out"
+    "\" type=\"v\" name=\"querykey\"/>\n    </method>\n    <method name=\"E"
+    "xecuteQuery\">\n      <arg direction=\"in\" type=\"v\" name=\"key\"/>\n"
+    "      <arg direction=\"in\" type=\"u\" name=\"timestamp\"/>\n    </met"
+    "hod>\n    <method name=\"CloseQuery\">\n      <arg direction=\"in\" ty"
+    "pe=\"v\" name=\"querykey\"/>\n    </method>\n    <signal name=\"Update"
+    "dQuery\">\n      <arg direction=\"out\" type=\"s\" name=\"target\"/>\n"
+    "      <annotation value=\"QList&lt;hud::common::Suggestion&gt;\" name="
+    "\"org.qtproject.QtDBus.QtTypeName.In1\"/>\n      <arg direction=\"out\""
+    " type=\"a(sssssv)\" name=\"suggestions\"/>\n      <arg direction=\"out"
+    "\" type=\"v\" name=\"querykey\"/>\n    </signal>\n  </interface>\n\0"
+    "UpdatedQuery\0\0target\0"
+    "QList<hud::common::Suggestion>\0"
+    "suggestions\0QDBusVariant\0querykey\0"
+    "CloseQuery\0CreateQuery\0QDBusObjectPath\0"
+    "query\0QString&\0resultsName\0appstackName\0"
+    "int&\0modelRevision\0ExecuteQuery\0key\0"
+    "timestamp\0RegisterApplication\0id\0"
+    "StartQuery\0entries\0QList<hud::common::Suggestion>&\0"
+    "QDBusVariant&\0Applications\0"
+    "QList<hud::common::NameObject>\0"
+    "OpenQueries\0QList<QDBusObjectPath>"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_HudAdaptor[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       2,   14, // classinfo
+       6,   18, // methods
+       2,   84, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       1,       // signalCount
+
+ // classinfo: key, value
+       1,    2,
+       3,    4,
+
+ // signals: name, argc, parameters, tag, flags
+       5,    3,   48,    6, 0x06 /* Public */,
+
+ // slots: name, argc, parameters, tag, flags
+      12,    1,   55,    6, 0x0a /* Public */,
+      13,    4,   58,    6, 0x0a /* Public */,
+      21,    2,   67,    6, 0x0a /* Public */,
+      24,    1,   72,    6, 0x0a /* Public */,
+      26,    4,   75,    6, 0x0a /* Public */,
+
+ // signals: parameters
+    QMetaType::Void, QMetaType::QString, 0x80000000 | 8, 0x80000000 | 10,    7,    9,   11,
+
+ // slots: parameters
+    QMetaType::Void, 0x80000000 | 10,   11,
+    0x80000000 | 14, QMetaType::QString, 0x80000000 | 16, 0x80000000 | 16, 0x80000000 | 19,   15,   17,   18,   20,
+    QMetaType::Void, 0x80000000 | 10, QMetaType::UInt,   22,   23,
+    0x80000000 | 14, QMetaType::QString,   25,
+    QMetaType::QString, QMetaType::QString, QMetaType::Int, 0x80000000 | 28, 0x80000000 | 29,   15,   27,    9,   11,
+
+ // properties: name, type, flags
+      30, 0x80000000 | 31, 0x00095009,
+      32, 0x80000000 | 33, 0x00095009,
+
+       0        // eod
+};
+
+void HudAdaptor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<HudAdaptor *>(_o);
+        (void)_t;
+        switch (_id) {
+        case 0: _t->UpdatedQuery((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QList<hud::common::Suggestion>(*)>(_a[2])),(*reinterpret_cast< const QDBusVariant(*)>(_a[3]))); break;
+        case 1: _t->CloseQuery((*reinterpret_cast< const QDBusVariant(*)>(_a[1]))); break;
+        case 2: { QDBusObjectPath _r = _t->CreateQuery((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])));
+            if (_a[0]) *reinterpret_cast< QDBusObjectPath*>(_a[0]) = std::move(_r); }  break;
+        case 3: _t->ExecuteQuery((*reinterpret_cast< const QDBusVariant(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2]))); break;
+        case 4: { QDBusObjectPath _r = _t->RegisterApplication((*reinterpret_cast< const QString(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< QDBusObjectPath*>(_a[0]) = std::move(_r); }  break;
+        case 5: { QString _r = _t->StartQuery((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< QList<hud::common::Suggestion>(*)>(_a[3])),(*reinterpret_cast< QDBusVariant(*)>(_a[4])));
+            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
+        default: ;
+        }
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+        case 0:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 2:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QDBusVariant >(); break;
+            case 1:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QList<hud::common::Suggestion> >(); break;
+            }
+            break;
+        case 1:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QDBusVariant >(); break;
+            }
+            break;
+        case 3:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QDBusVariant >(); break;
+            }
+            break;
+        }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        {
+            using _t = void (HudAdaptor::*)(const QString & , const QList<hud::common::Suggestion> & , const QDBusVariant & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&HudAdaptor::UpdatedQuery)) {
+                *result = 0;
+                return;
+            }
+        }
+    } else if (_c == QMetaObject::RegisterPropertyMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+        case 1:
+            *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QList<QDBusObjectPath> >(); break;
+        case 0:
+            *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QList<hud::common::NameObject> >(); break;
+        }
+    }
+
+#ifndef QT_NO_PROPERTIES
+    else if (_c == QMetaObject::ReadProperty) {
+        auto *_t = static_cast<HudAdaptor *>(_o);
+        (void)_t;
+        void *_v = _a[0];
+        switch (_id) {
+        case 0: *reinterpret_cast< QList<hud::common::NameObject>*>(_v) = _t->applications(); break;
+        case 1: *reinterpret_cast< QList<QDBusObjectPath>*>(_v) = _t->openQueries(); break;
+        default: break;
+        }
+    } else if (_c == QMetaObject::WriteProperty) {
+    } else if (_c == QMetaObject::ResetProperty) {
+    }
+#endif // QT_NO_PROPERTIES
+}
+
+QT_INIT_METAOBJECT const QMetaObject HudAdaptor::staticMetaObject = { {
+    QMetaObject::SuperData::link<QDBusAbstractAdaptor::staticMetaObject>(),
+    qt_meta_stringdata_HudAdaptor.data,
+    qt_meta_data_HudAdaptor,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *HudAdaptor::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *HudAdaptor::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_HudAdaptor.stringdata0))
+        return static_cast<void*>(this);
+    return QDBusAbstractAdaptor::qt_metacast(_clname);
+}
+
+int HudAdaptor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QDBusAbstractAdaptor::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 6)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 6;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 6)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 6;
+    }
+#ifndef QT_NO_PROPERTIES
+    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
+            || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
+        qt_static_metacall(this, _c, _id, _a);
+        _id -= 2;
+    } else if (_c == QMetaObject::QueryPropertyDesignable) {
+        _id -= 2;
+    } else if (_c == QMetaObject::QueryPropertyScriptable) {
+        _id -= 2;
+    } else if (_c == QMetaObject::QueryPropertyStored) {
+        _id -= 2;
+    } else if (_c == QMetaObject::QueryPropertyEditable) {
+        _id -= 2;
+    } else if (_c == QMetaObject::QueryPropertyUser) {
+        _id -= 2;
+    }
+#endif // QT_NO_PROPERTIES
+    return _id;
+}
+
+// SIGNAL 0
+void HudAdaptor::UpdatedQuery(const QString & _t1, const QList<hud::common::Suggestion> & _t2, const QDBusVariant & _t3)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+QT_WARNING_POP
+QT_END_MOC_NAMESPACE

@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib
+includedir=${prefix}/include
+
+Name: Nux
+Description: Nux OpenGL Toolkit
+Version: 4.0.8
+Libs: -L${libdir} -lnux-4.0
+Cflags: -I${includedir}/Nux-4.0
+Requires: glib-2.0 nux-core-4.0 nux-graphics-4.0 gl glu glewmx xext x11 sigc++-2.0 libpcre2-8

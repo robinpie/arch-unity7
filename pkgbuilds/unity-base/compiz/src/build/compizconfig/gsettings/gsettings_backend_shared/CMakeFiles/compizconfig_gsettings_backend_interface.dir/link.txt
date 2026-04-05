@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompizconfig_gsettings_backend_interface.a CMakeFiles/compizconfig_gsettings_backend_interface.dir/ccs_gsettings_backend_interface.c.o
+/usr/bin/ranlib libcompizconfig_gsettings_backend_interface.a

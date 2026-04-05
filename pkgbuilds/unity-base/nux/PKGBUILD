@@ -1,0 +1,81 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/nux
+# Note: orig.tar.gz extracts flat (S="${WORKDIR}" in ebuild)
+# Requires glewmx (libGLEWmx.so) for multi-context OpenGL
+
+pkgname=nux
+pkgver=4.0.8
+_uver=+18.10.20180623
+_urev=0ubuntu11
+pkgrel=1
+pkgdesc="Visual rendering toolkit for Unity7 UI"
+arch=('x86_64')
+url="https://launchpad.net/nux"
+license=('GPL-3.0-or-later' 'LGPL-3.0-or-later')
+depends=('ibus' 'boost-libs' 'glib2' 'pcre2' 'libsigc++'
+         'libpng' 'pciutils' 'geis' 'glu' 'cairo'
+         'gdk-pixbuf2' 'libx11' 'libxcomposite' 'libxdamage'
+         'libxinerama' 'libxxf86vm' 'pango' 'libxext' 'libxfixes'
+         'glew' 'glewmx' 'mesa')
+makedepends=('pkgconf' 'autoconf' 'automake' 'libtool'
+             'gobject-introspection' 'boost')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+    # Patch from overlay: migrate from PCRE to PCRE2
+    "migrate-validator-from-pcre-to-pcre2.patch"
+)
+sha256sums=('SKIP' 'SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+
+    # Apply Ubuntu diff
+    # The diff has a known issue with AM_CXXFLAGS= typo; fix with sed per ebuild
+    patch -p1 --batch --forward -i "${pkgname}_${pkgver}${_uver}-${_urev}.diff" || true
+
+    # Fix AM_CXXFLAGS typo introduced by the Ubuntu diff
+    sed -i 's/+AM_CXXFLAGS-/+AM_CXXFLAGS=/' "${pkgname}_${pkgver}${_uver}-${_urev}.diff" 2>/dev/null || true
+
+    # Apply debian patches (skip if already applied via quilt state)
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p"
+        done < debian/patches/series
+    fi
+
+    # Apply overlay patch: migrate from PCRE to PCRE2
+    patch -p1 -i migrate-validator-from-pcre-to-pcre2.patch
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "$srcdir"
+    ./configure \
+        --prefix=/usr \
+        --libdir=/usr/lib \
+        --disable-static \
+        --disable-debug \
+        --disable-documentation \
+        --disable-examples \
+        --disable-gputests \
+        --disable-tests \
+        --enable-opengles-20=no
+    make
+}
+
+package() {
+    cd "$srcdir"
+    make DESTDIR="$pkgdir" install
+
+    # Install unity_support_test symlink
+    install -dm755 "$pkgdir/usr/libexec/nux"
+    if [ -f "$pkgdir/usr/lib/nux/unity_support_test" ]; then
+        ln -sf /usr/lib/nux/unity_support_test \
+            "$pkgdir/usr/libexec/nux/unity_support_test"
+    fi
+
+    find "$pkgdir" -name '*.la' -delete
+}

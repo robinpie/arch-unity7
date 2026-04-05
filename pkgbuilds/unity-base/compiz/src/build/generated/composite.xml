@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="composite">
+	<short>Composite</short>
+	<short xml:lang="ast">Composite</short>
+	<short xml:lang="bg">Наслагване</short>
+	<short xml:lang="bs">Kompozitno</short>
+	<short xml:lang="cs">Kompozitní</short>
+	<short xml:lang="da">Sammensætning</short>
+	<short xml:lang="de">Komposit</short>
+	<short xml:lang="el">Σύνθεση</short>
+	<short xml:lang="en_AU">Composite</short>
+	<short xml:lang="en_GB">Composite</short>
+	<short xml:lang="es">Composición</short>
+	<short xml:lang="fi">Kompositio</short>
+	<short xml:lang="fr">Composition</short>
+	<short xml:lang="gl">Composición</short>
+	<short xml:lang="hr">Kompozitna slika</short>
+	<short xml:lang="it">Composite</short>
+	<short xml:lang="ko">컴포지트</short>
+	<short xml:lang="ms">Komposit</short>
+	<short xml:lang="my">ပေါင်းစပ်ပါ</short>
+	<short xml:lang="nl">Composite</short>
+	<short xml:lang="oc">Composita</short>
+	<short xml:lang="pl">Kompozyt</short>
+	<short xml:lang="pt">Composição</short>
+	<short xml:lang="pt_BR">Composto</short>
+	<short xml:lang="ro">Compus</short>
+	<short xml:lang="ru">Композитный режим</short>
+	<short xml:lang="sl">Sestavljeno</short>
+	<short xml:lang="sv">Sammansättning</short>
+	<short xml:lang="tr">Birleştirme</short>
+	<short xml:lang="ug">بېرىككەن</short>
+	<short xml:lang="uk">Композит</short>
+	<short xml:lang="vi">Composite</short>
+	<short xml:lang="zh_CN">混成</short>
+	<short xml:lang="zh_TW">綜合</short>
+	<long>Composite plugin</long>
+	<long xml:lang="ast">Complementu de composición</long>
+	<long xml:lang="bg">Приставка за наслагване</long>
+	<long xml:lang="bs">Kompozitni dodak</long>
+	<long xml:lang="ca">Connector de composició</long>
+	<long xml:lang="cs">Kompozitní plugin</long>
+	<long xml:lang="da">Sammensætning-plugin</long>
+	<long xml:lang="de">Kompositerweiterung</long>
+	<long xml:lang="el">Πρόσθετο σύνθεσης</long>
+	<long xml:lang="en_AU">Composite plugin</long>
+	<long xml:lang="en_GB">Composite plug-in</long>
+	<long xml:lang="es">Complemento de composición</long>
+	<long xml:lang="fi">Kompositioliitännäinen</long>
+	<long xml:lang="fr">Extension Composition</long>
+	<long xml:lang="gl">Engadido de composición</long>
+	<long xml:lang="hr">Priključak za kompozitnu sliku</long>
+	<long xml:lang="it">Plugin Composite</long>
+	<long xml:lang="ja">コンポジットプラグイン</long>
+	<long xml:lang="ko">컴포지트 플러그인</long>
+	<long xml:lang="ms">Pemalam komposit</long>
+	<long xml:lang="nl">Composite-plug-in</long>
+	<long xml:lang="oc">Extension Composicion</long>
+	<long xml:lang="pl">Wtyczka kompozytowa</long>
+	<long xml:lang="pt">'Plugin' composto</long>
+	<long xml:lang="pt_BR">Plug-in composto</long>
+	<long xml:lang="ro">Modul compus</long>
+	<long xml:lang="ru">Композитный плагин</long>
+	<long xml:lang="sl">Vstavek sestavljanja</long>
+	<long xml:lang="sv">Sammansättningsinstick</long>
+	<long xml:lang="tr">Birleştirme eklentisi</long>
+	<long xml:lang="ug">قىستۇرما بىرىكتۈرۈش</long>
+	<long xml:lang="uk">Композитний втулок</long>
+	<long xml:lang="vi">Phần bổ sung Composite</long>
+	<long xml:lang="zh_CN">混成插件</long>
+	<long xml:lang="zh_TW">綜合外掛程式</long>
+	<category>General</category>
+	<options>
+	    <option type="key" name="slow_animations_key">
+		<short>Slow Animations</short>
+		<short xml:lang="ast">Ralentizar animaciones</short>
+		<short xml:lang="be">Павольная анімацыя</short>
+		<short xml:lang="bg">Бавни анимации</short>
+		<short xml:lang="bs">Spore animacije</short>
+		<short xml:lang="ca">Animacions lentes</short>
+		<short xml:lang="cs">Pomalé animace</short>
+		<short xml:lang="da">Langsomme animationer</short>
+		<short xml:lang="de">Langsame Animationen</short>
+		<short xml:lang="el">Αργές Γραφικές Απεικονίσεις</short>
+		<short xml:lang="en_AU">Slow Animations</short>
+		<short xml:lang="en_GB">Slow Animations</short>
+		<short xml:lang="es">Ralentizar animaciones</short>
+		<short xml:lang="eu">Animazioak motel</short>
+		<short xml:lang="fi">Hitaat animaatiot</short>
+		<short xml:lang="fr">Ralentir les animations</short>
+		<short xml:lang="gl">Animacións lentas</short>
+		<short xml:lang="gu">ધીમ એનીમેશનો</short>
+		<short xml:lang="he">אנימציה איטית</short>
+		<short xml:lang="hr">Spore animacije</short>
+		<short xml:lang="hu">Lassú animációk</short>
+		<short xml:lang="it">Animazioni lente</short>
+		<short xml:lang="ja">アニメーションのスロー再生</short>
+		<short xml:lang="ko">느린 애니메이션</short>
+		<short xml:lang="ku">Anîmasiyonên Hêdî</short>
+		<short xml:lang="ms">Animasi Perlahan</short>
+		<short xml:lang="nb">Trege animasjoner</short>
+		<short xml:lang="nl">Langzame animaties</short>
+		<short xml:lang="oc">Alentir las animacions</short>
+		<short xml:lang="or">ଧୀର ଚଳଚ୍ଚିତ୍ର</short>
+		<short xml:lang="pl">Powolne animacje</short>
+		<short xml:lang="pt">Animações Lentas</short>
+		<short xml:lang="pt_BR">Animações Lentas</short>
+		<short xml:lang="ro">Afișare animații</short>
+		<short xml:lang="ru">Замедлить анимацию</short>
+		<short xml:lang="sk">Pomalé animácie</short>
+		<short xml:lang="sl">Upočasni animacije</short>
+		<short xml:lang="sr">Споре анимације</short>
+		<short xml:lang="sv">Långsamma animeringar</short>
+		<short xml:lang="tr">Yavaş Animasyonlar</short>
+		<short xml:lang="ug">جانلاندۇرۇمنى ئاستىلات</short>
+		<short xml:lang="uk">Повільна анімація</short>
+		<short xml:lang="vi">Hoạt họa chậm</short>
+		<short xml:lang="zh_CN">慢速动画</short>
+		<short xml:lang="zh_HK">減慢動畫速度</short>
+		<short xml:lang="zh_TW">減慢動畫速度</short>
+		<long>Toggle use of slow animations</long>
+		<long xml:lang="ast">Activa o desactiva l'usu d'animaciones lentes</long>
+		<long xml:lang="be">মন্থর অ্যানিমেশনগুলির ব্যবহার টগল করা</long>
+		<long xml:lang="bg">Превключване на използване на бавни анимации</long>
+		<long xml:lang="bn">মন্থর অ্যানিমেশনগুলির ব্যবহার টগল করা</long>
+		<long xml:lang="bn_IN">মন্থর অ্যানিমেশনগুলির ব্যবহার টগল করা</long>
+		<long xml:lang="bs">Uključi / Isključi korištenje sporih animacija</long>
+		<long xml:lang="ca">Commuta l'ús d'animacions lentes</long>
+		<long xml:lang="cs">Přepnout použití pomalých animací</long>
+		<long xml:lang="da">Brug af langsomme animationer til/fra</long>
+		<long xml:lang="de">Verwenden langsamer Animationen ein/aus</long>
+		<long xml:lang="el">Εκκίνηση-Σταμάτημα της χρήσης των αργών γραφικών απεικονίσεων</long>
+		<long xml:lang="en_AU">Toggle use of slow animations</long>
+		<long xml:lang="en_GB">Toggle use of slow animations</long>
+		<long xml:lang="es">Activa o desactiva el uso de animaciones lentas</long>
+		<long xml:lang="eu">Gaitu/ezgaitu animazio motelen erabilpena</long>
+		<long xml:lang="fi">Ota käyttöön hitaat animaatiot</long>
+		<long xml:lang="fr">Basculer l'utilisation d'animations lentes</long>
+		<long xml:lang="gl">Activar ou desactivar o uso de animacións lentas</long>
+		<long xml:lang="gu">ધીમા એનીમેશનોનો વપરાશ બદલો</long>
+		<long xml:lang="he">הפעלת\ניטרול שימוש באנימציה איטית</long>
+		<long xml:lang="hi">धीमा संजीवन के प्रयोग को टॉगल करें</long>
+		<long xml:lang="hr">Uključi/isključi upotrebu sporih animacija</long>
+		<long xml:lang="hu">„Lassú animációk” effektus kapcsoló</long>
+		<long xml:lang="it">Commuta l'uso di animazioni lente</long>
+		<long xml:lang="ja">スロー再生アニメーション使用のオンオフ</long>
+		<long xml:lang="ko">느린 애니메이션 사용</long>
+		<long xml:lang="ms">Togol untuk guna animasi perlahan</long>
+		<long xml:lang="nb">Skru av/på bruk av trege animasjoner</long>
+		<long xml:lang="nl">Schakel het gebruik van langzame animaties</long>
+		<long xml:lang="oc">Bascuolar l'utilizacion d'animacions lentas</long>
+		<long xml:lang="or">ଧୀର ଚଳଚିତ୍ରଗୁଡିକର ଉପୟୋଗକୁ ଟୋଗଲକର</long>
+		<long xml:lang="pa">ਹੌਲੀ ਐਨੀਮੇਸ਼ਨ ਲਈ ਟਾਗਲ ਵਰਤੋਂ</long>
+		<long xml:lang="pl">Wyłącz powolne animacje</long>
+		<long xml:lang="pt">Alternar uso de animações lentas</long>
+		<long xml:lang="pt_BR">Alternar uso de animações lentas</long>
+		<long xml:lang="ro">Comută utilizarea animațiilor lente</long>
+		<long xml:lang="ru">Переключатель для использования медленной анимации</long>
+		<long xml:lang="sk">Prepnúť použitie pomalých animácií</long>
+		<long xml:lang="sl">Preklopi upočasnjevanje animacij</long>
+		<long xml:lang="sr">Пребацује коришћење спорих анимација</long>
+		<long xml:lang="sv">Växla användning av långsamma animeringar</long>
+		<long xml:lang="tr">Yavaş animasyonları aç/kapat</long>
+		<long xml:lang="ug">ئاستا جانلاندۇرۇمنى ئىشلىتىشنى قوزغات</long>
+		<long xml:lang="uk">Перемикач для використання повільної анімації</long>
+		<long xml:lang="vi">Bật/tắt hoạt họa chậm</long>
+		<long xml:lang="zh_CN">切换使用慢速动画</long>
+		<long xml:lang="zh_HK">切換使用減慢動畫速度</long>
+		<long xml:lang="zh_TW">切換使用減慢動畫速度</long>
+	    </option>
+	    <option type="bool" name="detect_refresh_rate">
+		<short>Detect Refresh Rate</short>
+		<short xml:lang="ast">Detectar frecuencia d'actualización</short>
+		<short xml:lang="be">পুনঃসজীবের হার সন্ধান করা</short>
+		<short xml:lang="bg">Засичане на честотата на обновяване</short>
+		<short xml:lang="bs">Otkrij učestanost osvježavanja</short>
+		<short xml:lang="ca">Detecta la freqüència d'actualització</short>
+		<short xml:lang="cs">Zjistit obnovovací frekvenci</short>
+		<short xml:lang="da">Registrer opdateringshastighed</short>
+		<short xml:lang="de">Aktualisierungsrate erkennen</short>
+		<short xml:lang="el">Ανίχνευση Ρυθμού Ανανέωσης</short>
+		<short xml:lang="en_AU">Detect Refresh Rate</short>
+		<short xml:lang="en_GB">Detect Refresh Rate</short>
+		<short xml:lang="es">Detectar frecuencia de actualización</short>
+		<short xml:lang="eu">Freskatze-tasa detektatu</short>
+		<short xml:lang="fi">Tunnista virkistystaajuus</short>
+		<short xml:lang="fr">Détecter la fréquence de rafraîchissement</short>
+		<short xml:lang="gl">Detectar a frecuencia de actualización</short>
+		<short xml:lang="gu">પુનઃતાજું કરવાનો દર શોધો</short>
+		<short xml:lang="he">זהה קצב עדכון</short>
+		<short xml:lang="hr">Otkrij frekvenciju osvježavanja</short>
+		<short xml:lang="hu">Frissítési frekvencia felismerése</short>
+		<short xml:lang="it">Rilevare frequenza aggiornamento</short>
+		<short xml:lang="ja">リフレッシュレートの検出</short>
+		<short xml:lang="ko">갱신 주기 감지</short>
+		<short xml:lang="ms">Kesan Kadar Segar Semula</short>
+		<short xml:lang="nb">Gjenkjenn oppfriskingshastighet</short>
+		<short xml:lang="nds">Billschirmopfrischrate erkennen</short>
+		<short xml:lang="nl">Detecteer verversings snelheid</short>
+		<short xml:lang="oc">Detectar la frequéncia de refrescament</short>
+		<short xml:lang="or">ରିଫ୍ରେସ ଦର ଚିହ୍ନଟକର</short>
+		<short xml:lang="pl">Wykryj częstotliwość odświeżania</short>
+		<short xml:lang="pt">Detectar Taxa de Atualização</short>
+		<short xml:lang="pt_BR">Detectar Taxa de Atualização</short>
+		<short xml:lang="ro">Detectează rata de reîmprospătare</short>
+		<short xml:lang="ru">Определить частоту обновления</short>
+		<short xml:lang="sk">Deteguj Obnovovaciu Frekvenciu</short>
+		<short xml:lang="sl">Zaznaj frekvenco osveževanja</short>
+		<short xml:lang="sq">Dallo Shkallën e Rifreskimit</short>
+		<short xml:lang="sr">Препознај учесталост освежавања</short>
+		<short xml:lang="sv">Detektera uppdateringsfrekvens</short>
+		<short xml:lang="tr">Tazeleme Oranını Bul</short>
+		<short xml:lang="ug">يېڭىلاش تېزلىكىنى بايقا</short>
+		<short xml:lang="uk">Визначити швидкість оновлення</short>
+		<short xml:lang="vi">Phát hiện tốc độ cập nhật</short>
+		<short xml:lang="zh_CN">检测刷新率</short>
+		<short xml:lang="zh_HK">偵測重新整理速率</short>
+		<short xml:lang="zh_TW">偵測重新整理速率</short>
+		<long>Automatic detection of refresh rate</long>
+		<long xml:lang="ast">Deteición automática de la frecuencia d'actualización</long>
+		<long xml:lang="be">পুনঃসজীব মাত্রার স্বয়ংক্রিয় সন্ধান</long>
+		<long xml:lang="bg">Автоматично засичане на скоростта на опресняване</long>
+		<long xml:lang="bn">পুনঃসজীব মাত্রার স্বয়ংক্রিয় সন্ধান</long>
+		<long xml:lang="bn_IN">পুনঃসজীব মাত্রার স্বয়ংক্রিয় সন্ধান</long>
+		<long xml:lang="bs">Automatsko otkrivanje učestanosti osjvežavanja</long>
+		<long xml:lang="ca">Detecció automàtica de la freqüència d'actualització</long>
+		<long xml:lang="cs">Automatická detekce obnovovací frekvence</long>
+		<long xml:lang="da">Automatisk registrering af opdateringshastighed</long>
+		<long xml:lang="de">Automatische Erkennung der Aktualisierungsrate</long>
+		<long xml:lang="el">Αυτόματος εντοπισμός του ρυθμού ανανέωσης</long>
+		<long xml:lang="en_AU">Automatic detection of refresh rate</long>
+		<long xml:lang="en_GB">Automatic detection of refresh rate</long>
+		<long xml:lang="es">Detección automática de la frecuencia de actualización</long>
+		<long xml:lang="eu">Freskatze tasaren detekzio automatikoa</long>
+		<long xml:lang="fi">Virkistystaajuuden automaattinen tunnistus</long>
+		<long xml:lang="fr">Détection automatique de la fréquence de rafraîchissement</long>
+		<long xml:lang="gl">Detección automática da frecuencia de actualización</long>
+		<long xml:lang="gu">પુનઃતાજું કરવાના દરની આપોઆપ શોધ</long>
+		<long xml:lang="he">זיהוי אוטומטי של קצב רענון</long>
+		<long xml:lang="hi">ताज़ा दर की स्वचालित जांच</long>
+		<long xml:lang="hr">Automatsko otkrivanje frekvencije osvježavanja</long>
+		<long xml:lang="hu">Frissítési frekvencia automatikus érzékelése</long>
+		<long xml:lang="it">Rilevamento automatico della frequenza di aggiornamento</long>
+		<long xml:lang="ja">リフレッシュレートの自動検出</long>
+		<long xml:lang="ko">갱신 주기를 자동으로 감지</long>
+		<long xml:lang="ms">Pengesanan kadar segar semula secara automatik</long>
+		<long xml:lang="nb">Automatisk gjenkjennelse av oppdateringshastighet</long>
+		<long xml:lang="nl">Automatische herkenning van verversings snelheid</long>
+		<long xml:lang="oc">Deteccion automatica de la frequéncia de refrescament</long>
+		<long xml:lang="or">ରିଫ୍ରେସ ଦରର ସ୍ବଯଂଚାଳିତ ଚିହ୍ନଟକରଣ</long>
+		<long xml:lang="pa">ਤਾਜ਼ਾ ਦਰ ਲਈ ਆਟੋਮੈਟਿਕ ਖੋਜ</long>
+		<long xml:lang="pl">Automatyczne wykrywanie częstotliwości odświeżania</long>
+		<long xml:lang="pt">Detecção automática da taxa de atualização</long>
+		<long xml:lang="pt_BR">Detecção automática da taxa de atualização</long>
+		<long xml:lang="ro">Detecție automată a ratei de reîmprospătare</long>
+		<long xml:lang="ru">Автоматическое определение частоты обновления</long>
+		<long xml:lang="sk">Automatická detekcia obnovovacej frekvencie</long>
+		<long xml:lang="sl">Samodejno zaznavanje hitrosti osveževanja</long>
+		<long xml:lang="sr">Аутоматско препозавање учесталости освежавања</long>
+		<long xml:lang="sv">Automatisk identifiering av uppdateringsfrekvens</long>
+		<long xml:lang="tr">Tazeleme oranını otomatik bul</long>
+		<long xml:lang="ug">يېڭىلاش تېزلىكىنى ئاپتوماتىك بايقايدۇ</long>
+		<long xml:lang="uk">Автоматичне визначення частоти поновлювання</long>
+		<long xml:lang="vi">Tự động phát hiện tốc độ cập nhập</long>
+		<long xml:lang="zh_CN">自动检测刷新率</long>
+		<long xml:lang="zh_HK">自動偵測重新整理速率</long>
+		<long xml:lang="zh_TW">自動偵測重新整理速率</long>
+		<default>true</default>
+	    </option>
+	    <option type="int" name="refresh_rate">
+		<short>Refresh Rate</short>
+		<short xml:lang="am">ማነቃቂያ መጠን</short>
+		<short xml:lang="ast">Refrescar índiz</short>
+		<short xml:lang="be">Частата абнаўленьня</short>
+		<short xml:lang="bg">Честота на обновяване</short>
+		<short xml:lang="bs">Učestanost osvježenja</short>
+		<short xml:lang="ca">Freqüència d'actualització</short>
+		<short xml:lang="cs">Obnovovací frekvence</short>
+		<short xml:lang="da">Opdateringshastighed</short>
+		<short xml:lang="de">Aktualisierungsrate</short>
+		<short xml:lang="el">Ρυθμός Ανανέωσης</short>
+		<short xml:lang="en_AU">Refresh Rate</short>
+		<short xml:lang="en_GB">Refresh Rate</short>
+		<short xml:lang="es">Frecuencia de actualización</short>
+		<short xml:lang="eu">Freskatze-tasa</short>
+		<short xml:lang="fi">Virkistystaajuus</short>
+		<short xml:lang="fr">Fréquence de rafraîchissement</short>
+		<short xml:lang="gl">Frecuencia de actualización</short>
+		<short xml:lang="he">קצב רענון</short>
+		<short xml:lang="hr">Frekvencija osvježavanja</short>
+		<short xml:lang="hu">Frissítési frekvencia</short>
+		<short xml:lang="it">Frequenza di aggiornamento</short>
+		<short xml:lang="ja">リフレッシュレート</short>
+		<short xml:lang="ko">갱신 주기</short>
+		<short xml:lang="ms">Kadar Segar Semula</short>
+		<short xml:lang="nb">Oppfriskingsrate</short>
+		<short xml:lang="nds">Bild-Wedderhalen</short>
+		<short xml:lang="nl">Verversings snelheid</short>
+		<short xml:lang="oc">Frequéncia de refrescament</short>
+		<short xml:lang="or">ରିଫ୍ରେସ ଦର</short>
+		<short xml:lang="pl">Częstotliwość odświeżania</short>
+		<short xml:lang="pt">Taxa de Atualização</short>
+		<short xml:lang="pt_BR">Taxa de Atualização</short>
+		<short xml:lang="ro">Rata de reîmprospătare</short>
+		<short xml:lang="ru">Частота обновления</short>
+		<short xml:lang="sk">Obnovovacia frekvencia</short>
+		<short xml:lang="sl">Hitrost osveževanja</short>
+		<short xml:lang="sq">Shkalla e rifreskimit</short>
+		<short xml:lang="sr">Учесталост освежавања</short>
+		<short xml:lang="sv">Uppdateringsfrekvens</short>
+		<short xml:lang="tr">Tazeleme Oranı</short>
+		<short xml:lang="ug">يېڭىلاش تېزلىكى</short>
+		<short xml:lang="uk">Частота поновлювання</short>
+		<short xml:lang="vi">Tốc độ cập nhật</short>
+		<short xml:lang="zh_CN">刷新率</short>
+		<short xml:lang="zh_HK">更新速率</short>
+		<short xml:lang="zh_TW">重新整理速率</short>
+		<long>The rate at which the screen is redrawn (times/second)</long>
+		<long xml:lang="ast">La frecuencia cola que se vuelve a dibuxar la pantalla (vegaes per segundu) (de 1 a 200)</long>
+		<long xml:lang="be">যে হারে স্ক্রিনটি পুনরায় অঙ্কন করা হবে (গুণ/সেকেন্ড)</long>
+		<long xml:lang="bg">Колко често се прерисува екрана (пъти в секунда)</long>
+		<long xml:lang="bn">যে হারে স্ক্রিনটি পুনরায় অঙ্কন করা হবে (গুণ/সেকেন্ড)</long>
+		<long xml:lang="bn_IN">যে হারে স্ক্রিনটি পুনরায় অঙ্কন করা হবে (গুণ/সেকেন্ড)</long>
+		<long xml:lang="bs">Stopa po kojoj se ekran ponovno crta (broj/sekundi)</long>
+		<long xml:lang="ca">La velocitat a la qual es torna a dibuixar la pantalla (vegades/segon)</long>
+		<long xml:lang="cs">Rychlost překreslování obrazovky (počet/s)</long>
+		<long xml:lang="de">Bildwiederholungsrate (Häufigkeit/Sekunde)</long>
+		<long xml:lang="el">Ο ρυθμός κατα τον οποίο η οθόνη επανασχεδιάζεται (φορές/δευτερόλεπτο)</long>
+		<long xml:lang="en_AU">The rate at which the screen is redrawn (times/second)</long>
+		<long xml:lang="en_GB">The rate at which the screen is redrawn (times/second)</long>
+		<long xml:lang="es">Velocidad con la que se redibuja la pantalla (veces/segundo)</long>
+		<long xml:lang="eu">Pantaila marrazteko maiztasuna (aldiz/segunduko)</long>
+		<long xml:lang="fi">Kuinka usein ruutu päivitetään (1-200 krt/s)</long>
+		<long xml:lang="fr">Vitesse à laquelle l'écran est redessiné (fois/seconde)</long>
+		<long xml:lang="gl">Frecuencia de actualización da pantalla (veces/segundo)</long>
+		<long xml:lang="gu">દર કે જેનાથી સ્ક્રીન પુનઃદોરાય છે (સમય/સેકન્ડો)</long>
+		<long xml:lang="he">הקצב שבו מתעדכן המסך (פעמים\שניה)</long>
+		<long xml:lang="hi">दर जिसपर स्क्रीन फिर खीचा जाता है (समय/सेकेंड)</long>
+		<long xml:lang="hr">Frekvencija ponovnog iscrtavnja zaslona (puta/sekundi) Hz</long>
+		<long xml:lang="hu">A képernyő-újrarajzolás gyakorisága (alkalom/másodperc)</long>
+		<long xml:lang="it">La velocità di aggiornamento della schermata (volte/secondo)</long>
+		<long xml:lang="ja">画面の再描画レート(回/秒)</long>
+		<long xml:lang="ko">화면이 다시 그려지는 비율(횟수/초)</long>
+		<long xml:lang="ms">Kadar yang mana skrin dilukis semula (kali/saat)</long>
+		<long xml:lang="nb">Hastigheten for omtegning av skjermen (ganger/sekund)</long>
+		<long xml:lang="nl">De snelheid waarin een scherm opnieuw getekend wordt (tijd/seconden)</long>
+		<long xml:lang="oc">Velocitat a la quala l'ecran es redessenhat (còps/segonda)</long>
+		<long xml:lang="or">ଦର ୟେଉଁଥିରେ ସ୍କ୍ରିନ ପୁନଃଅଂକିତ ହୋଇଛି (ସମଯ/ସେକେଣ୍ଡ)</long>
+		<long xml:lang="pa">ਰੇਟ, ਜਿਸ ਮੁਤਾਬਕ ਸਕਰੀਨ ਨੂੰ ਰੀ-ਡਰਾਅ ਕੀਤਾ ਜਾਵੇ (ਟਾਈਮ/ਸਕਿੰਟ)</long>
+		<long xml:lang="pl">Częstotliwość przerysowywania ekranu (razy na sekundę)</long>
+		<long xml:lang="pt">Taxa em que o ecrã é redesenhado (vezes/segundo)</long>
+		<long xml:lang="pt_BR">Taxa em que a tela é redesenhada (vezes/segundo)</long>
+		<long xml:lang="ro">Rata de redesenare a ecranului (ori/secundă)</long>
+		<long xml:lang="ru">Частота, с которой перерисовывается содержимое экрана (раз/сек)</long>
+		<long xml:lang="sk">Frekvencia prekresľovania obrazovky v Hz</long>
+		<long xml:lang="sl">Hitrost osveževanja zaslona (osvežitev/sekundo)</long>
+		<long xml:lang="sr">Брзина којом се екран поново исцртава (број/секунди)</long>
+		<long xml:lang="sv">Frekvensen för updatering av skärmen (gånger/sekund)</long>
+		<long xml:lang="tr">Ekranın yeniden çizilmesinde kullanılacak oran (tekrar sayısı/saniye)</long>
+		<long xml:lang="ug">مۇشۇ ئىكراندا قايتا سىزىش تىزلىكى(قېتىم /سىكۇنت</long>
+		<long xml:lang="uk">Частота, з якою перемальовується вміст екрану (раз / сек)</long>
+		<long xml:lang="vi">Tốc độ vẽ lại màn hình (số lần/giây)</long>
+		<long xml:lang="zh_CN">屏幕重绘速率(次/秒)</long>
+		<long xml:lang="zh_HK">螢幕重新描繪的速率 (次數/秒)</long>
+		<long xml:lang="zh_TW">螢幕重新描繪的速率 (次數/秒)</long>
+		<default>60</default>
+		<min>1</min>
+		<max>200</max>
+	    </option>
+	    <option type="bool" name="unredirect_fullscreen_windows">
+		<short>Unredirect Fullscreen Windows</short>
+		<short xml:lang="ast">Anular redireición de ventanes a pantalla completa</short>
+		<short xml:lang="be">পূর্ণস্ক্রিনের উইন্ডোগুলি পুনর্নির্দেশ না করা</short>
+		<short xml:lang="bg">Без пренасочване на прозорци на цял екран</short>
+		<short xml:lang="bn">পূর্ণস্ক্রিনের উইন্ডোগুলি পুনর্নির্দেশ না করা</short>
+		<short xml:lang="bn_IN">পূর্ণস্ক্রিনের উইন্ডোগুলি পুনর্নির্দেশ না করা</short>
+		<short xml:lang="bs">Preusmjeravaj prozore koji su preko cijelog ekrana</short>
+		<short xml:lang="ca">No redirigeixis les finestres a pantalla completa</short>
+		<short xml:lang="cs">Unredirect Fullscreen Windows</short>
+		<short xml:lang="da">Omdiriger ikke fuldskærmsvinduer</short>
+		<short xml:lang="de">Umleitung von Vollbildfenstern aufheben</short>
+		<short xml:lang="el">Μη-επανακατεύθυνση Παραθύρων Πλήρους Οθόνης</short>
+		<short xml:lang="en_AU">Unredirect Fullscreen Windows</short>
+		<short xml:lang="en_GB">Unredirect Fullscreen Windows</short>
+		<short xml:lang="es">Anular redirección de ventanas a pantalla completa</short>
+		<short xml:lang="eu">Ez-birbideratu pantaila osoko leihoak</short>
+		<short xml:lang="fi">Kokoruutuikkunoita ei uudelleenohjata</short>
+		<short xml:lang="fr">Ne pas rediriger les fenêtres plein écran</short>
+		<short xml:lang="gl">Anular a redirección de xanelas a pantalla completa</short>
+		<short xml:lang="gu">પૂર્ણસ્ક્રીન વિન્ડોનું પુનઃદિશામાન દૂર કરો</short>
+		<short xml:lang="he">אל תעביר חלונות במסך מלא</short>
+		<short xml:lang="hi">पूर्ण स्क्रीन विंडोज़ को पुनर्निर्देशित मत करें</short>
+		<short xml:lang="hr">Odpreusmjeri cjelozaslonske prozore</short>
+		<short xml:lang="hu">Teljes méretű ablakok visszairányítása</short>
+		<short xml:lang="it">Annullare re-indirizzamento finestre a schermo intero</short>
+		<short xml:lang="ja">全画面ウィンドウのリダイレクトを解除</short>
+		<short xml:lang="ko">전체 화면 창의 포커스 변경 방지</short>
+		<short xml:lang="ms">Nyahubah Hala Tetingkap Berskrin Penuh</short>
+		<short xml:lang="nb">Ikke-videresend vinduer i fullskjerm</short>
+		<short xml:lang="nl">Niet omleiden van schermvullende vensters</short>
+		<short xml:lang="oc">Redirigir pas las fenèstras en ecran complet</short>
+		<short xml:lang="or">ଅଣ-ପୁନଃନିର୍ଦ୍ଦେଶିତ ପୂର୍ଣ୍ଣ ସ୍କ୍ରିନ ଉଇଣ୍ଡୋ</short>
+		<short xml:lang="pa">ਪੂਰੀ-ਸਕਰੀਨ ਵਿੰਡੋ ਗ਼ੈਰ-ਡਿਰੈਕਸ਼ਨ</short>
+		<short xml:lang="pl">Cofnij przekierowanie okien pełnoekranowych</short>
+		<short xml:lang="pt">Anular redirecionamento de janelas de tela inteira</short>
+		<short xml:lang="pt_BR">Anular redirecionamento de janelas de tela inteira</short>
+		<short xml:lang="ro">Dezredirecționează  ferestrele în ecran complet</short>
+		<short xml:lang="ru">Отменить перенаправление окон в полноэкранном режиме</short>
+		<short xml:lang="sk">Nepresmerovať okná v celoobrazovkovom režime</short>
+		<short xml:lang="sl">Ne preusmerjaj celozaslonskih oken</short>
+		<short xml:lang="sr">Не преусмеравај прозоре који су преко целог екрана</short>
+		<short xml:lang="sv">Omdirigera tillbaka helskärmsfönster</short>
+		<short xml:lang="tr">Tam Ekran Pencerelerin Yönlendirmesini Geri Al</short>
+		<short xml:lang="ug">پۈتۈن ئىكران كۆزنەكنى قايتا بەلگىلىمە</short>
+		<short xml:lang="uk">Скасувати переспрямування вікон на весь екран</short>
+		<short xml:lang="vi">Huỷ điều hướng các cửa sổ toàn màn hình</short>
+		<short xml:lang="zh_CN">取消重定向全屏窗口</short>
+		<short xml:lang="zh_HK">全螢幕視窗解除重新導向</short>
+		<short xml:lang="zh_TW">全螢幕視窗解除重新導向</short>
+		<long>Allow drawing of fullscreen windows to not be redirected to offscreen pixmaps</long>
+		<long xml:lang="ast">Permitir que'l dibuxu de ventanes a pantalla completa nun se reempobine a pixmaps fuera de pantalla</long>
+		<long xml:lang="be">অফস্ক্রিন পিক্সম্যাপে পুনর্নির্দেশিত না করার জন্য পূর্ণস্ক্রিন উইন্ডো অঙ্কন সম্মত করা</long>
+		<long xml:lang="bg">Разреши чертеж на пълен екран на прозорци, да не бъдат пренасочени към offscreen pixmaps</long>
+		<long xml:lang="bn">অফস্ক্রিন পিক্সম্যাপে পুনর্নির্দেশিত না করার জন্য পূর্ণস্ক্রিন উইন্ডো অঙ্কন সম্মত করা</long>
+		<long xml:lang="bn_IN">অফস্ক্রিন পিক্সম্যাপে পুনর্নির্দেশিত না করার জন্য পূর্ণস্ক্রিন উইন্ডো অঙ্কন সম্মত করা</long>
+		<long xml:lang="bs">Omogući da crtanje prozora preko cijelog ekrana ne preusmjerava slike van ekrana</long>
+		<long xml:lang="ca">Permet que la representació de finestres a pantalla completa no es redirigeixi cap a mapes de píxels fora de la pantalla</long>
+		<long xml:lang="cs">Povolit vykreslování celoobrazovkových oken bez přesměrování do mimoobrazovkových pixmap</long>
+		<long xml:lang="da">Tillad tegning af fuldskærmsvinduer, uden at der omdirrigeres til pixelkort uden for skærmbilledet</long>
+		<long xml:lang="de">Aufbau von Vollbildfenstern ohne Umleitung zu Offscreen-Pixmaps erlauben</long>
+		<long xml:lang="el">Επέτρεψε τη σχεδίαση πλήρους οθόνης παραθύρων να μην επανακατευθύνονται στα εκτός οθόνης pixmaps</long>
+		<long xml:lang="en_AU">Allow drawing of fullscreen windows to not be redirected to offscreen pixmaps</long>
+		<long xml:lang="en_GB">Allow drawing of fullscreen windows to avoid being redirected to offscreen pixmaps</long>
+		<long xml:lang="es">Permitir que el dibujado de ventanas a pantalla completa no se redireccione a mapas de píxeles de fuera de pantalla</long>
+		<long xml:lang="eu">Gaitu pantaila osoa marraztean ez birbideratzea  pantailaz kanpoko pixmapsera</long>
+		<long xml:lang="fi">Kokoruutuikkunoita ei uudelleenohjata piilotetuille pikselikartoille</long>
+		<long xml:lang="fr">Empêcher la redirection vers des pixmaps hors de l'écran lors de l'affichage des fenêtres plein écran</long>
+		<long xml:lang="gl">Permitir que o renderizado das xanelas a pantalla completa non se redirixa a mapas de píxeles fóra da pantalla</long>
+		<long xml:lang="gu">પૂર્ણસ્ક્રીન વિન્ડોને દોરાવાની પરવાનગી આપવાનું ઓફસ્ક્રીન પિક્સમેપમાં પુનઃદિશામાન થયેલ નથી</long>
+		<long xml:lang="he">אל תנתב חלונות במסך מלא למפות פיקסלים שמחוץ למסך</long>
+		<long xml:lang="hi">ऑफस्क्रीन पिक्समैप में फिर नहीं निर्देशित किए जाने के लिए पूर्णस्क्रीण विंडो के आरेख को स्वीकृति दें</long>
+		<long xml:lang="hr">Dopusti da se iscrtavanje cjelozaslonskih prozora ne preusmjerava u vanzaslonske pixmape</long>
+		<long xml:lang="hu">A teljes méretű ablakok nem irányíthatók át képen kívüli pixeltérképekre</long>
+		<long xml:lang="it">Consenti il disegno finestre a schermo intero di non essere reindirizzato a pixmap fuori schermo</long>
+		<long xml:lang="ja">オフスクリーン・ピクスマップにリダイレクトしない直接の全画面ウィンドウ描画を許可</long>
+		<long xml:lang="ko">전체 화면 창을 그릴 때, 화면 밖의 픽스맵으로 포커스가 변경되지 않도록 허용함</long>
+		<long xml:lang="ms">Benarkan pelukisan tetingkap berskrin penuh tidak dihala semula ke peta pix luar skrin</long>
+		<long xml:lang="nb">Tilatt tegning av fullskjermvinduer å ikke bli omdirigert til bilder utenfor skjermen</long>
+		<long xml:lang="nl">Schermvullende vensters toestaan om niet omgeleid te worden naar offscreen pixmaps</long>
+		<long xml:lang="oc">Empachar la redireccion cap a de pixmaps en defòra de l'ecran al moment de l'afichatge de las fenèstras en ecran complet</long>
+		<long xml:lang="or">ପୂର୍ଣ୍ଣସ୍କ୍ରିନ ଉଇଣ୍ଡୋର ଅଂକନକୁ ସ୍ବୀକୃତି ଦିଅ, ଅଫ୍ସ୍କ୍ରିନ ପିକ୍ସମ୍ଯାପଗୁଡିକୁ ପୁନଃନିର୍ଦ୍ଦେଶିତ ହେବ ନାହିଁ</long>
+		<long xml:lang="pa">ਪੂਰੀ ਸਕਰੀਨ ਵਿੰਡੋਜ਼ ਦੀ ਡਰਾਇੰਗ ਨੂੰ ਆਫ਼-ਸਕਰੀਨ ਪਿਕਸਮੈਪ ਨੂੰ ਰੀ-ਡਿਰੈਕਟ ਨਾ ਕਰਨ ਲਈ ਮਨਜ਼ੂਰੀ</long>
+		<long xml:lang="pl">Zezwól na to, by rysowanie okien pełnoekranowych nie było przekierowywane do obrazków rastrowych poza ekranem</long>
+		<long xml:lang="pt">Permitir que o desenho das janelas em tela inteira não seja redirecionado para pixmaps fora da tela</long>
+		<long xml:lang="pt_BR">Permitir que o desenho das janelas em tela inteira não seja redirecionado para pixmaps fora da tela</long>
+		<long xml:lang="ro">Permite ca desenarea ferestrelor în ecran complet să nu fie redirecționată către hărți de pixeli</long>
+		<long xml:lang="ru">Позволяет рисовать окна в полноэкранном режиме без перенаправления в области растрового отображения за пределами экрана</long>
+		<long xml:lang="sk">Povoliť vykresľovanie celoobrazovkových okien bez presmerovania do mimoobrazovkových pixmapov</long>
+		<long xml:lang="sl">Omogoči celozaslonskim oknom, da ne bodo preusmerjena na zunajzaslonsko izrisovanje</long>
+		<long xml:lang="sr">Дозволи да се цртање прозора преко целог екрана не преусмерава на слике ван екрана</long>
+		<long xml:lang="sv">Tillåt att inte utritning av helskärmsfönster omdirigeras till bilder utanför skärmen</long>
+		<long xml:lang="tr">Pencere dışındaki gözek haritalarına yönlendirilmemeleri için tam ekran pencerelerini germeye izin ver</long>
+		<long xml:lang="uk">Дозволяє малювати вікна на весь екран без переспрямування в області растрового відображення за межами екрану</long>
+		<long xml:lang="vi">Cho phép vẽ cửa sổ đày màn hình không bị chuyển hướng sang ánh xạ điểm ngoài màn hình (offscreen pixmaps)</long>
+		<long xml:lang="zh_CN">允许全屏窗口的绘制不重定向到屏幕外的象素映射</long>
+		<long xml:lang="zh_HK">使全螢幕的描繪動作不會重新導向到幕後像素映射</long>
+		<long xml:lang="zh_TW">使全螢幕的描繪動作不會重新導向到幕後像素映射</long>
+		<default>true</default>
+	    </option>
+	    <option type="match" name="unredirect_match">
+		<short>Unredirect Match</short>
+		<short xml:lang="bs">Nepreusjmjereno preklapanje</short>
+		<short xml:lang="cs">Nepřesměrovatelná shoda</short>
+		<short xml:lang="de">Treffer nicht umleiten</short>
+		<short xml:lang="en_AU">Unredirect Match</short>
+		<short xml:lang="en_GB">Unredirect Match</short>
+		<short xml:lang="es">Coincidencias para no redirección</short>
+		<short xml:lang="fr">Correspondance indirecte</short>
+		<short xml:lang="gl">Coincidencia non redirixida</short>
+		<short xml:lang="hr">Odgovarajuće odpreusmjeravanje</short>
+		<short xml:lang="it">Corrispondenza unredirect</short>
+		<short xml:lang="ko">창 직접 그리기</short>
+		<short xml:lang="ms">Padanan Tidak Langsung</short>
+		<short xml:lang="nl">Overeenkomst niet omleiden</short>
+		<short xml:lang="oc">Correspondéncia indirècta</short>
+		<short xml:lang="pt">Acerto não redirecionado</short>
+		<short xml:lang="pt_BR">Correspondência não redirecionada</short>
+		<short xml:lang="ru">Неадресованное совпадение</short>
+		<short xml:lang="sl">Ujemanje preklica preusmerjanja</short>
+		<short xml:lang="sv">Ej omdirigerad träff</short>
+		<short xml:lang="ug">ماسلىقنى قايتا بەلگىلىمە</short>
+		<short xml:lang="uk">Неадресований збіг</short>
+		<short xml:lang="zh_CN">取消重定向匹配</short>
+		<long>Specifies which windows will be unredirected when they are fullscreen. You might want to exclude video players for example, to avoid tearing. But this will be at the expense of performance/frame rate. Note: "class=" matching requires the regex plugin to work.</long>
+		<long xml:lang="bs">Određuje koji će prozori biti ne-preusmjereni kada su preko punog ekrana. Možda želite isključiti video izvođača na primjer, kako bi se izbjeglo trzanje. No, to će biti na uštrb performansi / brzine kadrova. Napomena: "class =" podudaranje zahtijeva regex dodatak za rad.</long>
+		<long xml:lang="cs">Určuje, která okna budou nepřesměrovatelná v režimu celé obrazovky. Možná budete chtít například vyloučit video přehrávače, aby nedošlo k roztržení. Ale bude to na úkor výkonu/počtu snímků za sekundu. Poznámka: "class=" vyžaduje zapnutý plugin regulárních výrazů (regex).</long>
+		<long xml:lang="de">Legt fest, welche Fenster im Vollbildmodus nicht umgeleitet werden. Zum Beispiel möchten Sie vielleicht einige Filmwiedergaben ausschließen, um Risse zu vermeiden. Darunter leidet jedoch die Leistung/Bildfrequenz. Hinweis: »class=«-Übereinstimmungen erfordern eine funktionierende regex-Erweiterung.</long>
+		<long xml:lang="en_AU">Specifies which windows will be unredirected when they are fullscreen. You might want to exclude video players for example, to avoid tearing. But this will be at the expense of performance/frame rate. Note: "class=" matching requires the regex plugin to work.</long>
+		<long xml:lang="en_GB">Specifies which windows will be unredirected when they are fullscreen. You might want to exclude video players for example, to avoid tearing. But this will be at the expense of performance/frame rate. Note: "class=" matching requires the regex plug-in to work.</long>
+		<long xml:lang="es">Especifica qué ventanas no serán redirigidas cuando se encuentren a pantalla completa. Podría desear excluir los reproductores de vídeo, por ejemplo, para evitar artefactos. Esto se hará, sin embargo, a costa de rendimiento/tasa de refresco. Nota: el emparejamiento "class=" necesita del complemento regex para funcionar.</long>
+		<long xml:lang="fr">Spécifie les fenêtres qui ne seront pas redirigées quand elles sont en plein écran. Vous voudrez peut-être exclure les lecteurs vidéo par exemple, pour éviter les déchirures. Mais ce sera au détriment de la performance/taux de rafraichissement. Remarque : la correspondance « class = » nécessite le greffon regex pour fonctionner.</long>
+		<long xml:lang="gl">Especifica as xanelas que non serán redirixidas cando estean a pantalla completa. Pode querer excluír reprodutores de video, por exemplo, para evitar distorsións. Será ás expensas do rendemento/frecuencia dos fotogramas. Nota: As coincidencias «class=» requiren que o engadido de expresións regulares funcione.</long>
+		<long xml:lang="hr">Određuje koji će se prozori odpreusmjeriti kada su preko cijelog zaslona. Možda ćete željeti izuzeti video reproduktore na primjer, za izbjegavanje trzanja. Ali to će se odvijati na račun manjih performansa/broja sličica. Napomena: "class=" podudaranje zahtijeva regex priključak kako bi radilo.</long>
+		<long xml:lang="it">Indica a quali finestra applicare l'unredirect  quando sono portate a schermo intero. È consigliato escludere i riproduttori video per evitare tearing: questo potrebbe compromettere le prestazioni. Nota: la corrispondenza "match=" necessita del plugin per le espressioni regolari.</long>
+		<long xml:lang="ko">전체 화면을 쓸 때 전용하지 않아야 하는 창을 지정해주십시오. 동영상 재생 프로그램을 사용할 때는 제외하여 화면이 울렁이는 것을 막을 수 있지만 성능이 감소할 수 있습니다. 추즤: "class=" 명령으로 창을 식별하려면 정규 표현식 플러그인을 사용해야 합니다.</long>
+		<long xml:lang="ms">Nyatakan tetingkap yang manakah akan menjadi tidak langsung bila ia berskrin penuh. Anda mungkin mahu asingkan pemain video contohnya, untuk menghindari pengoyakan. tetapi akan menggugat prestasi/kadar bingkai. Perhatian: pemadanan "class=" memerlukan pemalam regex untuk berfungsi.</long>
+		<long xml:lang="nl">Specificeert welke vensters niet moeten worden omgeleid wanneer ze schermvullend zijn. U zou bijvoorbeeld videospelers kunnen uitsluiten om afscheuren te voorkomen. Maar dit gaat wel ten koste van de prestatie/beeldsnelheid. Opmerking: voor "class="-overeenkomsten is het noodzakelijk dat de plug-in regex werkt.</long>
+		<long xml:lang="pt">Especifica quais janelas serão re-redireccionadas quando estão em modo ecrã completo. Pode querer excluir reprodutores de vídeo, por exemplo, para evitar "tearing". Mas, isto será feito à custa de taxa de desempenho. Nota: "class =" a correspondência requer o plugin regex para trabalhar.</long>
+		<long xml:lang="pt_BR">Especifica quais janelas não serão redirecionadas quando ficarem em tela cheia. Você pode querer excluir reprodutores de vídeo, por exemplo, para evitar que elas se destaquem. Mas isso terá custo de performance/taxa de quadros. Nota: "class=" correspondentes precisam do plug-in de expressões regulares para funcionar.</long>
+		<long xml:lang="ru">Указывает, какие окна не будут переадресованы в полноэкранном режиме. Возможно, вы захотите исключить (для примера) видео-плееры во избежание задержек или обрывов воспроизведения. Но это приведёт к снижению производительности/частоты кадров. Примечание: совпадение вида "class=" требует regex-плагинов для работы.</long>
+		<long xml:lang="sl">Določi katera okna ne bodo preusmerjena, ko so v celozaslonskem načinu. Morda boste na primer želeli izključiti video predvajalnike in se izogniti trganju. Vendar bo posledica slabša zmogljivost/število sličic. Opomba: ujemanje "class=" za delovanje zahteva vstavek logičnih izrazov.</long>
+		<long xml:lang="uk">Вказує, які вікна не будуть переадресовані у повноекранному режимі. Можливо, ви забажаєте виключити (для прикладу) відеопрогравачі для запобігання затримок або обривів відтворення. Але це призведе до зниження продуктивности/частоти кадрів. Нотатка: відповідність "class=" вимагає regex-втулок для роботи.</long>
+		<long xml:lang="zh_CN">指定全屏时哪个窗口会被取消重定向。例如为了避免撕裂，您可能会排除视频播放器，但这会增大效率/帧速率的开销。注意：匹配“class=”需要正则表达式插件才能工作。</long>
+		<default>(any) &amp; !(class=Totem) &amp; !(class=MPlayer) &amp; !(class=vlc) &amp; !(class=Plugin-container) &amp; !(class=QtQmlViewer) &amp; !(class=Firefox) &amp; !(class=google-chrome) &amp; !(class=google-chrome-unstable) &amp; !(class=chromium-browser) &amp; !(class=Chromium-browser-chromium) &amp; !(class=Google-chrome) &amp; !(class=Kodi)</default>
+	    </option>
+	    <option type="bool" name="force_independent_output_painting">
+		<short>Force independent output painting.</short>
+		<short xml:lang="ast">Forzar el pintáu de salida independiente.</short>
+		<short xml:lang="bg">Насилване на независимо изходно рисуване.</short>
+		<short xml:lang="bs">Primoraj nezavisno slikanje izlaza.</short>
+		<short xml:lang="ca">Imposa el dibuix independent de sortida</short>
+		<short xml:lang="cs">Vynutit nezávislý výstupní obraz.</short>
+		<short xml:lang="de">Unabhängiges Zeichnen für jedes Ausgabegerät erzwingen</short>
+		<short xml:lang="el">Εξαναγκασμός ανεξάρτητης απεικόνισης.</short>
+		<short xml:lang="en_AU">Force independent output painting.</short>
+		<short xml:lang="en_GB">Force independent output painting.</short>
+		<short xml:lang="es">Forzar el pintado de salida independiente.</short>
+		<short xml:lang="eu">Behartu irteera independenteko margotzea.</short>
+		<short xml:lang="fi">Pakota ulostulojen itsenäinen piirto.</short>
+		<short xml:lang="fr">Forcer le rendu indépendant des sorties</short>
+		<short xml:lang="gl">Forzar debuxado na saída independente</short>
+		<short xml:lang="he">כפה צביעת פלט עצמאית.</short>
+		<short xml:lang="hr">Prisili nezavisno crtanje izlaza.</short>
+		<short xml:lang="hu">Független kimenethasználat erőltetése</short>
+		<short xml:lang="it">Forzare la colorazione indipendente dell'output</short>
+		<short xml:lang="ja">各出力別に独立した描画を強制</short>
+		<short xml:lang="ko">독립된 화면 그리기를 강제합니다.</short>
+		<short xml:lang="ms">Paksa pengecatan output bebas</short>
+		<short xml:lang="nl">Forceer onafhankelijke output weergave</short>
+		<short xml:lang="oc">Forçar lo rendament independent de coloracion</short>
+		<short xml:lang="pl">Wymuś niezależne wyświetlanie wyjścia</short>
+		<short xml:lang="pt">Forçar desenho independente dos dispositivos de saída.</short>
+		<short xml:lang="pt_BR">Forçar pintura de saída independente</short>
+		<short xml:lang="ro">Forțează desenarea independentă a ieșirii.</short>
+		<short xml:lang="ru">Принудительная независимая отрисовка вывода.</short>
+		<short xml:lang="sk">Vynútenie vykreslenia nezávislého výstupu</short>
+		<short xml:lang="sl">Vsili neodvisno izrisovanje izhoda.</short>
+		<short xml:lang="sr">Приморај независно сликање излаза.</short>
+		<short xml:lang="sv">Tvinga separat uppritning till utgångar.</short>
+		<short xml:lang="tr">Bağımsız çıkış boyamasına zorla</short>
+		<short xml:lang="uk">Примусове незалежне обмальовування виводу.</short>
+		<short xml:lang="vi">Bắt buộc vẽ đầu ra độc lập.</short>
+		<short xml:lang="zh_CN">强制独立输出绘图</short>
+		<short xml:lang="zh_HK">強制單獨描繪輸出</short>
+		<short xml:lang="zh_TW">強制單獨描繪輸出</short>
+		<long>Paint each output device independly, even if the output devices overlap</long>
+		<long xml:lang="ast">Pintar independientemente la salida de cada dispositivu, incluso si'l dispositivu de salida se sobrepón</long>
+		<long xml:lang="bg">Рисуване на всяко изходно устройство независимо, дори ако изходните устройства се припокриват</long>
+		<long xml:lang="bs">Pojedinačno oboji svaki izlazni uređaj, čak i ako se izlazni uređaji preklapaju</long>
+		<long xml:lang="ca">Dibuixa cada dispositiu de sortida independentment, fins i tot quan els dispositius de sortida es superposin</long>
+		<long xml:lang="cs">Vykreslit každé výstupní zařízení nezávisle, i když se budou jednotlivá zařízení překrývat.</long>
+		<long xml:lang="de">Jede Ausgabeeinheit unabhängig zeichnen, auch wenn sich diese Einheiten überlappen.</long>
+		<long xml:lang="el">Δούλεψε κάθε οθόνη ανεξάρτητα, ακόμα κ αν οι οθόνες επικαλύπτονται</long>
+		<long xml:lang="en_AU">Paint each output device independently, even if the output devices overlap</long>
+		<long xml:lang="en_GB">Paint each output device independently, even if the output devices overlap</long>
+		<long xml:lang="es">Pintar independientemente la salida de cada dispositivo, inclusive si el dispositivo de salida se solapa</long>
+		<long xml:lang="eu">Margotu gailu bakoitza independente, nahiz eta irteera gailuak gainjarri</long>
+		<long xml:lang="fi">Piirrä jokainen ulostulolaite itsenäisesti, vaikka ulostulolaitteet olisivat päällekkäin</long>
+		<long xml:lang="fr">Peindre chaque sortie de périphérique indépendamment, même si elles se chevauchent.</long>
+		<long xml:lang="gl">Debuxar cada dispositivo de saída de forma independente, aínda que o dispositivo de saída se sobrepoña</long>
+		<long xml:lang="he">צבע כל פלט כשלעצמו, אפילו אם התקני הפלט חופפים</long>
+		<long xml:lang="hr">Nacrtaj svaki izlazni uređaj nezavisno, čak i ako se izlazni uređaji preklapaju</long>
+		<long xml:lang="hu">Összes kimenet független használata, még akkor is, ha a kimenetek átfedik egymást</long>
+		<long xml:lang="it">Colora ogni dispositivo di ouptut indipendentemente, anche se i dispositivi si sovrappongono</long>
+		<long xml:lang="ja">出力デバイス同士に重なり部分がある場合でも、それぞれを別個に描画</long>
+		<long xml:lang="ko">모니터가 오버랩 되어있어도 각 모니터를 독립적으로 그립니다.</long>
+		<long xml:lang="ms">Cat setiap peranti output secara bebas, walaupun peranti output bertindan</long>
+		<long xml:lang="nl">Teken elk uitvoerapparaat onafhankelijk, zelfs als ze overlappen</long>
+		<long xml:lang="oc">Pintrar cada sortida de periferic independentament, quitament se se cavalcan.</long>
+		<long xml:lang="pl">Rysuj każde urządzenie wyjściowe niezaleźnie, nawet jeśli zachodzą one na siebie</long>
+		<long xml:lang="pt">Desenhar cada dispositivo de saída independentemente, mesmo que os dispositivos de saída se sobreponham</long>
+		<long xml:lang="pt_BR">Pintar cada dispositivo de saída independentemente, mesmo se os dispositivos de saída se sobrepuserem</long>
+		<long xml:lang="ro">Desenează independent fiecare dispozitiv de ieșire, chiar dacă dispozitivele de ieșire se suprapun</long>
+		<long xml:lang="ru">Отрисовывать каждое устройство вывода независимо, даже если устройства вывода перекрываются</long>
+		<long xml:lang="sk">Vykresli každý výstup zariadenia nezávisle aj keď sa výstupy zariadení prekrývajú</long>
+		<long xml:lang="sl">Vsako izhodno napravo izrisuj neodvisno, čeprav se med seboj prekrivajo</long>
+		<long xml:lang="sr">Обоји независно сваки излазни уређај, чак и ако се излазни уређаји преклапају</long>
+		<long xml:lang="sv">Rita upp varje utenhet separat, även om de överlappar.</long>
+		<long xml:lang="tr">Çıktı aygıtları birbiriyle örtüşse dahi her çıktı aygıtını bağımsız olarak boya</long>
+		<long xml:lang="uk">Перетворювати кожен пристрій виводу незалежно, навіть якщо пристрої виведення перекриваються</long>
+		<long xml:lang="vi">Vẽ các đầu ra một cách độc lập dù chúng gối lên nhau</long>
+		<long xml:lang="zh_CN">单独绘制每个输出设备，即便输出设备重复</long>
+		<long xml:lang="zh_HK">繪製每個獨立的輸出裝置，即使是輸出裝置有重複</long>
+		<long xml:lang="zh_TW">繪製每個獨立的輸出裝置，即使是輸出裝置有重複</long>
+		<default>false</default>
+	    </option>
+	</options>
+    </plugin>
+</compiz>

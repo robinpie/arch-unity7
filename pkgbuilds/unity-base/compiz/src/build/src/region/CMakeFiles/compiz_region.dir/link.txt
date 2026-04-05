@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_region.a CMakeFiles/compiz_region.dir/src/region.cpp.o
+/usr/bin/ranlib libcompiz_region.a

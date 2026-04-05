@@ -1,0 +1,1608 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.2"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:doc="http://www.gtk.org/introspection/doc/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="Dee" version="1.0"/>
+  <include name="GObject" version="2.0"/>
+  <package name="hud-client-2"/>
+  <c:include name="hud-client.h"/>
+  <doc:format name="unknown"/>
+  <namespace name="HudClient"
+             version="2"
+             shared-library="libhud-client.so.2"
+             c:identifier-prefixes="HudClient"
+             c:symbol-prefixes="hud_client">
+    <function-macro name="CONNECTION"
+                    c:identifier="HUD_CLIENT_CONNECTION"
+                    introspectable="0">
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+                       line="33"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CONNECTION_CLASS"
+                    c:identifier="HUD_CLIENT_CONNECTION_CLASS"
+                    introspectable="0">
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+                       line="34"/>
+      <parameters>
+        <parameter name="klass">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CONNECTION_GET_CLASS"
+                    c:identifier="HUD_CLIENT_CONNECTION_GET_CLASS"
+                    introspectable="0">
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+                       line="37"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <constant name="CONNECTION_SIGNAL_CONNECTION_STATUS"
+              value="connection-status"
+              c:type="HUD_CLIENT_CONNECTION_SIGNAL_CONNECTION_STATUS">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+           line="39">Signal to notify on a change in the connection status</doc>
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+                       line="44"/>
+      <type name="utf8" c:type="gchar*"/>
+    </constant>
+    <class name="Connection"
+           c:symbol-prefix="connection"
+           c:type="HudClientConnection"
+           parent="GObject.Object"
+           glib:type-name="HudClientConnection"
+           glib:get-type="hud_client_connection_get_type"
+           glib:type-struct="ConnectionClass">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+           line="82">Object to make a generic connection to a HUD service.  For the most
+part people should just create a #HudClientQuery and that'll use the
+default HUD service.  For most folks that should be enough.</doc>
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+                       line="80"/>
+      <constructor name="new" c:identifier="hud_client_connection_new">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+             line="290">Builds a HUD Connection object that can be used to connect to a
+custom HUD service.  For the most part, this should only be used
+in testing, though there might be other uses.  It is likely if you're
+using this function you'd also be interested in
+hud_client_query_new_for_connection()</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+                         line="96"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+               line="301">A new #HudClientConnection</doc>
+          <type name="Connection" c:type="HudClientConnection*"/>
+        </return-value>
+        <parameters>
+          <parameter name="dbus_address" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+                 line="292">Address on DBus for the HUD service</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="dbus_path" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+                 line="293">Path to the object to create stuff</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <function name="get_ref" c:identifier="hud_client_connection_get_ref">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+             line="268">Gets a reference to the default object that connects to the
+default HUD service.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+                         line="95"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+               line="274">Refence to a #HudClientConnection</doc>
+          <type name="Connection" c:type="HudClientConnection*"/>
+        </return-value>
+      </function>
+      <method name="connected" c:identifier="hud_client_connection_connected">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+             line="402">Accessor to get the connected status of the connection</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+                         line="103"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+               line="408">If we're connected or not</doc>
+          <type name="gboolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="connection" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+                 line="404">A #HudClientConnection</doc>
+            <type name="Connection" c:type="HudClientConnection*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_address"
+              c:identifier="hud_client_connection_get_address"
+              glib:get-property="address">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+             line="386">Accessor to get the address of the HUD service.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+                         line="102"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+               line="392">A DBus address</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="connection" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+                 line="388">A #HudClientConnection</doc>
+            <type name="Connection" c:type="HudClientConnection*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="new_query"
+              c:identifier="hud_client_connection_new_query"
+              introspectable="0">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+             line="359">Function to create a new query in the HUD service and pass back
+the information needed to create a #HudClientQuery object.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+                         line="98"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="connection" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+                 line="361">A #HudClientConnection</doc>
+            <type name="Connection" c:type="HudClientConnection*"/>
+          </instance-parameter>
+          <parameter name="query" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+                 line="362">The initial query string</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="cb" transfer-ownership="none" closure="2">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+                 line="363">Callback when we've got the query</doc>
+            <type name="ConnectionNewQueryCallback"
+                  c:type="HudClientConnectionNewQueryCallback"/>
+          </parameter>
+          <parameter name="user_data"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+                 line="364">Data to pass to the callback</doc>
+            <type name="gpointer" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="address"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none"
+                getter="get_address"
+                default-value="com.canonical.hud">
+        <type name="utf8" c:type="gchar*"/>
+      </property>
+      <property name="path"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none"
+                default-value="/com/canonical/hud">
+        <type name="utf8" c:type="gchar*"/>
+      </property>
+      <field name="parent">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="ConnectionPrivate" c:type="HudClientConnectionPrivate*"/>
+      </field>
+      <glib:signal name="connection-status" when="last">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/connection.c"
+             line="88">Called when the connection status changes in some way.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="gboolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <record name="ConnectionClass"
+            c:type="HudClientConnectionClass"
+            glib:is-gtype-struct-for="Connection">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+           line="72">Class information for #HudClientConnection</doc>
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+                       line="80"/>
+      <field name="parent_class">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+             line="74">#GObjectClass</doc>
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+    </record>
+    <callback name="ConnectionNewQueryCallback"
+              c:type="HudClientConnectionNewQueryCallback">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+           line="56">Callback for the async call to create a new query</doc>
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+                       line="66"/>
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="connection" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+               line="58">#HudClientConnection for the request</doc>
+          <type name="Connection" c:type="HudClientConnection*"/>
+        </parameter>
+        <parameter name="query_path" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+               line="59">Path to the query object on DBus</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </parameter>
+        <parameter name="results_name" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+               line="60">DBus name for the results</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </parameter>
+        <parameter name="appstack_name" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+               line="61">DBus name for the appstack</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </parameter>
+        <parameter name="user_data"
+                   transfer-ownership="none"
+                   nullable="1"
+                   allow-none="1"
+                   closure="4">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+               line="62">Passed in user data</doc>
+          <type name="gpointer" c:type="gpointer"/>
+        </parameter>
+      </parameters>
+    </callback>
+    <record name="ConnectionPrivate"
+            c:type="HudClientConnectionPrivate"
+            disguised="1"
+            opaque="1">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+           line="50">Private data for #HudClientConnection.</doc>
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+                       line="48"/>
+    </record>
+    <function-macro name="IS_CONNECTION"
+                    c:identifier="HUD_CLIENT_IS_CONNECTION"
+                    introspectable="0">
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+                       line="35"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_CONNECTION_CLASS"
+                    c:identifier="HUD_CLIENT_IS_CONNECTION_CLASS"
+                    introspectable="0">
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+                       line="36"/>
+      <parameters>
+        <parameter name="klass">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_PARAM"
+                    c:identifier="HUD_CLIENT_IS_PARAM"
+                    introspectable="0">
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+                       line="37"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_PARAM_CLASS"
+                    c:identifier="HUD_CLIENT_IS_PARAM_CLASS"
+                    introspectable="0">
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+                       line="38"/>
+      <parameters>
+        <parameter name="klass">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_QUERY"
+                    c:identifier="HUD_CLIENT_IS_QUERY"
+                    introspectable="0">
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                       line="39"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_QUERY_CLASS"
+                    c:identifier="HUD_CLIENT_IS_QUERY_CLASS"
+                    introspectable="0">
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                       line="40"/>
+      <parameters>
+        <parameter name="klass">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="PARAM"
+                    c:identifier="HUD_CLIENT_PARAM"
+                    introspectable="0">
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+                       line="35"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="PARAM_CLASS"
+                    c:identifier="HUD_CLIENT_PARAM_CLASS"
+                    introspectable="0">
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+                       line="36"/>
+      <parameters>
+        <parameter name="klass">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="PARAM_GET_CLASS"
+                    c:identifier="HUD_CLIENT_PARAM_GET_CLASS"
+                    introspectable="0">
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+                       line="39"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <constant name="PARAM_SIGNAL_MODEL_READY"
+              value="model-ready"
+              c:type="HUD_CLIENT_PARAM_SIGNAL_MODEL_READY">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+           line="41">Signal to indicate when the model is ready</doc>
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+                       line="46"/>
+      <type name="utf8" c:type="gchar*"/>
+    </constant>
+    <class name="Param"
+           c:symbol-prefix="param"
+           c:type="HudClientParam"
+           parent="GObject.Object"
+           glib:type-name="HudClientParam"
+           glib:get-type="hud_client_param_get_type"
+           glib:type-struct="ParamClass">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+           line="72">An object that tracks all the of the stuff needed to handle
+a parameterized dialog of actions.</doc>
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+                       line="70"/>
+      <constructor name="new" c:identifier="hud_client_param_new">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+             line="283">Create a new #HudClientParam object for adjusting a specified
+paramaterized dialog.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+                         line="85"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+               line="295">A new #HudClientParam dialog</doc>
+          <type name="Param" c:type="HudClientParam*"/>
+        </return-value>
+        <parameters>
+          <parameter name="dbus_address" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+                 line="285">The address on dbus to find the actions</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="prefix" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+                 line="286">The prefix the menu is using</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="base_action" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+                 line="287">The action to send events for the dialog on</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="action_path" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+                 line="288">DBus path to the action object</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="model_path" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+                 line="289">DBus path to the menu model object</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="model_section" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+                 line="290">Section of the model to use</doc>
+            <type name="gint" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_actions" c:identifier="hud_client_param_get_actions">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+             line="346">The object path to the actions</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+                         line="92"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+               line="352">A #GActionGroup that has the actions in it</doc>
+          <type name="Gio.ActionGroup" c:type="GActionGroup*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="param" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+                 line="348">The #HudClientParam to query</doc>
+            <type name="Param" c:type="HudClientParam*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_model" c:identifier="hud_client_param_get_model">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+             line="362">The object path to the model</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+                         line="93"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+               line="368">The menu model of the pane</doc>
+          <type name="Gio.MenuModel" c:type="GMenuModel*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="param" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+                 line="364">The #HudClientParam to query</doc>
+            <type name="Param" c:type="HudClientParam*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="send_cancel" c:identifier="hud_client_param_send_cancel">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+             line="394">Send the command to the application to cancel the values
+of the actions in the panel and expect it to close soon.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+                         line="96"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="param" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+                 line="396">The #HudClientParam to query</doc>
+            <type name="Param" c:type="HudClientParam*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="send_commit" c:identifier="hud_client_param_send_commit">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+             line="410">Tell the application that the user has requested the values
+be applied.  This doesn't mean that there isn't a dialog
+still open, when it closes "end" will be sent.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+                         line="97"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="param" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+                 line="412">The #HudClientParam to query</doc>
+            <type name="Param" c:type="HudClientParam*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="send_reset" c:identifier="hud_client_param_send_reset">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+             line="378">Send the command to the application to reset the values
+of the actions in the pane.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+                         line="95"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="param" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+                 line="380">The #HudClientParam to query</doc>
+            <type name="Param" c:type="HudClientParam*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <field name="parent">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="ParamPrivate" c:type="HudClientParamPrivate*"/>
+      </field>
+      <glib:signal name="model-ready" when="last">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/param.c"
+             line="87">Emitted when the model can be used.  It may also be updating, but
+the base item is there.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+    </class>
+    <record name="ParamClass"
+            c:type="HudClientParamClass"
+            glib:is-gtype-struct-for="Param">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+           line="58">Class information for #HudClientParam</doc>
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+                       line="70"/>
+      <field name="parent_class">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+             line="60">#GObjectClass</doc>
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+      <field name="model_ready">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+             line="61">Slot for the model-ready signal</doc>
+        <callback name="model_ready">
+          <source-position filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+                           line="69"/>
+          <return-value transfer-ownership="none">
+            <type name="none" c:type="void"/>
+          </return-value>
+          <parameters>
+            <parameter name="param" transfer-ownership="none">
+              <type name="ParamClass" c:type="HudClientParamClass*"/>
+            </parameter>
+            <parameter name="user_data"
+                       transfer-ownership="none"
+                       nullable="1"
+                       allow-none="1"
+                       closure="1">
+              <type name="gpointer" c:type="gpointer"/>
+            </parameter>
+          </parameters>
+        </callback>
+      </field>
+    </record>
+    <record name="ParamPrivate"
+            c:type="HudClientParamPrivate"
+            disguised="1"
+            opaque="1">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+           line="52">Private data for #HudClientParam.</doc>
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+                       line="50"/>
+    </record>
+    <function-macro name="QUERY"
+                    c:identifier="HUD_CLIENT_QUERY"
+                    introspectable="0">
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                       line="37"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="QUERY_CLASS"
+                    c:identifier="HUD_CLIENT_QUERY_CLASS"
+                    introspectable="0">
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                       line="38"/>
+      <parameters>
+        <parameter name="klass">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="QUERY_GET_CLASS"
+                    c:identifier="HUD_CLIENT_QUERY_GET_CLASS"
+                    introspectable="0">
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                       line="41"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <constant name="QUERY_SIGNAL_MODELS_CHANGED"
+              value="models-changed"
+              c:type="HUD_CLIENT_QUERY_SIGNAL_MODELS_CHANGED">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+           line="43">Signal to indicate when the models have changed</doc>
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                       line="48"/>
+      <type name="utf8" c:type="gchar*"/>
+    </constant>
+    <constant name="QUERY_SIGNAL_TOOLBAR_UPDATED"
+              value="toolbar-updated"
+              c:type="HUD_CLIENT_QUERY_SIGNAL_TOOLBAR_UPDATED">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+           line="49">Signal to indicate when the toolbar has been updated</doc>
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                       line="54"/>
+      <type name="utf8" c:type="gchar*"/>
+    </constant>
+    <class name="Query"
+           c:symbol-prefix="query"
+           c:type="HudClientQuery"
+           parent="GObject.Object"
+           glib:type-name="HudClientQuery"
+           glib:get-type="hud_client_query_get_type"
+           glib:type-struct="QueryClass">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+           line="76">Object to track a query and the models for that query.  Should
+be unref'd when a client is done using the query so that applications
+can be told that the HUD is no longer open.</doc>
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                       line="74"/>
+      <constructor name="new" c:identifier="hud_client_query_new">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="427">Startes a query with the HUD using a specific string.  This
+will block until the query is created.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="90"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="434">A new #HudClientQuery object</doc>
+          <type name="Query" c:type="HudClientQuery*"/>
+        </return-value>
+        <parameters>
+          <parameter name="query" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="429">String to build the initial set of results from</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_for_connection"
+                   c:identifier="hud_client_query_new_for_connection">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="445">Very similar to hud_client_query_new() except that it uses a
+custom connection.  This is mostly for testing, though it is
+available if you need it.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="91"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="454">A new #HudClientQuery object</doc>
+          <type name="Query" c:type="HudClientQuery*"/>
+        </return-value>
+        <parameters>
+          <parameter name="query" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="447">String to build the initial set of results from</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="connection" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="448">A custom #HudClientConnection to a non-default HUD service</doc>
+            <type name="Connection" c:type="HudClientConnection*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="appstack_get_app_icon"
+              c:identifier="hud_client_query_appstack_get_app_icon">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="766">Get the application icon for a given row in the appstack table.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="125"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="773">The application icon</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="768">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+          <parameter name="row" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="769">Which row in the table to grab the icon from</doc>
+            <type name="Dee.ModelIter" c:type="DeeModelIter*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="appstack_get_app_id"
+              c:identifier="hud_client_query_appstack_get_app_id">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="748">Get the application ID for a given row in the appstack table.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="123"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="755">The application ID</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="750">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+          <parameter name="row" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="751">Which row in the table to grab the ID from</doc>
+            <type name="Dee.ModelIter" c:type="DeeModelIter*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="execute_command"
+              c:identifier="hud_client_query_execute_command">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="658">Executes a particular entry from the results model.  The @command_key
+should be grabbed from the table and passed to this function to activate
+it.  This function will block until the command is activated.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="112"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="660">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+          <parameter name="command_key" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="661">The key from the results model for the entry to activate</doc>
+            <type name="GLib.Variant" c:type="GVariant*"/>
+          </parameter>
+          <parameter name="timestamp" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="662">Timestamp for the user event</doc>
+            <type name="guint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="execute_param_command"
+              c:identifier="hud_client_query_execute_param_command">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="684">Executes a command that results in a parameterized dialog
+which is controlled using the returned #HudClientParam object.
+When created this sends the "opened" event to the application.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="115"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="694">Object to control the parameterized dialog.</doc>
+          <type name="Param" c:type="HudClientParam*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="686">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+          <parameter name="command_key" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="687">The key from the results model for the entry to activate</doc>
+            <type name="GLib.Variant" c:type="GVariant*"/>
+          </parameter>
+          <parameter name="timestamp" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="688">Timestamp for the user event</doc>
+            <type name="guint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="execute_toolbar_item"
+              c:identifier="hud_client_query_execute_toolbar_item">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="729">Executes a particular item in the tool bar.  The item should
+be active before passing this.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="118"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="731">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+          <parameter name="item" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="732">Which toolbar item is being activated</doc>
+            <type name="QueryToolbarItems"
+                  c:type="HudClientQueryToolbarItems"/>
+          </parameter>
+          <parameter name="timestamp" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="733">Timestamp for the user event</doc>
+            <type name="guint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_active_toolbar"
+              c:identifier="hud_client_query_get_active_toolbar">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="618">Gets a list of all the active toolbar items as an array.  Array should be
+free'd after use.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="107"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="625">A
+list of the active toolbar items.</doc>
+          <array name="GLib.Array" c:type="GArray*">
+            <type name="QueryToolbarItems"/>
+          </array>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="620">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_appstack_model"
+              c:identifier="hud_client_query_get_appstack_model">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="575">Accessor for the current appstack model.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="103"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="581">Appstack Model</doc>
+          <type name="Dee.Model" c:type="DeeModel*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="577">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_query"
+              c:identifier="hud_client_query_get_query"
+              glib:get-property="query">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="494">Accessor for the current query string.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="97"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="500">Query string</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="496">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_results_model"
+              c:identifier="hud_client_query_get_results_model">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="559">Accessor for the current results model.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="102"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="565">Results Model</doc>
+          <type name="Dee.Model" c:type="DeeModel*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="561">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="results_get_command_highlights"
+              c:identifier="hud_client_query_results_get_command_highlights">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="820">Get the command highlights for a row in the table with start and
+stop characters in an array.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="133"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="828">The command highlights as a variant of type "a(ii)"</doc>
+          <type name="GLib.Variant" c:type="GVariant*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="822">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+          <parameter name="row" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="823">Which row in the table to grab the highlights from</doc>
+            <type name="Dee.ModelIter" c:type="DeeModelIter*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="results_get_command_id"
+              c:identifier="hud_client_query_results_get_command_id">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="784">Get the command ID for a given row in the results table.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="129"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="791">The command ID</doc>
+          <type name="GLib.Variant" c:type="GVariant*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="786">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+          <parameter name="row" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="787">Which row in the table to grab the ID from</doc>
+            <type name="Dee.ModelIter" c:type="DeeModelIter*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="results_get_command_name"
+              c:identifier="hud_client_query_results_get_command_name">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="802">Get the human readable command name for a given row in the results table.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="131"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="809">The command name</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="804">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+          <parameter name="row" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="805">Which row in the table to grab the name from</doc>
+            <type name="Dee.ModelIter" c:type="DeeModelIter*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="results_get_description"
+              c:identifier="hud_client_query_results_get_description">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="839">Get the human readable description for the command in the given row in the results table.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="135"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="846">The description</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="841">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+          <parameter name="row" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="842">Which row in the table to grab the description from</doc>
+            <type name="Dee.ModelIter" c:type="DeeModelIter*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="results_get_description_highlights"
+              c:identifier="hud_client_query_results_get_description_highlights">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="857">Get the description highlights for a row in the table with start and
+stop characters in an array.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="137"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="865">The description highlights as a variant of type "a(ii)"</doc>
+          <type name="GLib.Variant" c:type="GVariant*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="859">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+          <parameter name="row" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="860">Which row in the table to grab the highlights from</doc>
+            <type name="Dee.ModelIter" c:type="DeeModelIter*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="results_get_shortcut"
+              c:identifier="hud_client_query_results_get_shortcut">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="876">Get the human readable shortcut for the command in the given row in the results table.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="139"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="883">The shortcut</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="878">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+          <parameter name="row" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="879">Which row in the table to grab the shortcut from</doc>
+            <type name="Dee.ModelIter" c:type="DeeModelIter*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="results_is_parameterized"
+              c:identifier="hud_client_query_results_is_parameterized">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="894">Check to see if the given command is parameterized</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="141"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="901">Whether the command in the row is parameterized</doc>
+          <type name="gboolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="896">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+          <parameter name="row" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="897">Which row in the table to check if the command is parameterized</doc>
+            <type name="Dee.ModelIter" c:type="DeeModelIter*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_appstack_app"
+              c:identifier="hud_client_query_set_appstack_app">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="636">This revises the query application to be application_id.  Updates can
+be seen through the #DeeModel's.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="110"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="638">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+          <parameter name="application_id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="639">New application to get results from</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_query"
+              c:identifier="hud_client_query_set_query"
+              glib:set-property="query">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="466">This revises the query to be the new query string.  Updates can
+be seen through the #DeeModel's.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="95"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="468">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+          <parameter name="query" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="469">New query string</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="toolbar_item_active"
+              c:identifier="hud_client_query_toolbar_item_active">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="591">Checks to see if a particular toolbar item is implemented by the
+application and should be shown to the user as available for use.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="105"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+               line="599">Whether this @item is active.</doc>
+          <type name="gboolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="593">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+          <parameter name="item" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="594">Item to check for</doc>
+            <type name="QueryToolbarItems"
+                  c:type="HudClientQueryToolbarItems"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="voice_query" c:identifier="hud_client_query_voice_query">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="535">Execute a HUD query using voice recognition.
+
+Will cause a series of signals to be emitted indicating progress:
+- voice-query-loading - the voice recognition toolkit is loading.
+- voice-query-failed - the voice recognition toolkit has failed to initialize.
+- voice-query-listening - the voice recognition toolkit is listening to speech.
+- voice-query-heard-something - the voice recognition toolkit has heard a complete utterance.
+- voice-query-finished - the voice recognition toolkit has completed, and has a (possibly empty) result.</doc>
+        <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                         line="99"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="cquery" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+                 line="537">A #HudClientQuery</doc>
+            <type name="Query" c:type="HudClientQuery*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <property name="connection"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="Connection"/>
+      </property>
+      <property name="query"
+                writable="1"
+                construct="1"
+                transfer-ownership="none"
+                setter="set_query"
+                getter="get_query"
+                default-value="NULL">
+        <type name="utf8" c:type="gchar*"/>
+      </property>
+      <field name="parent">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="QueryPrivate" c:type="HudClientQueryPrivate*"/>
+      </field>
+      <glib:signal name="models-changed" when="last">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="158">Something has caused the models to be changed, you should probably
+figure out their state again.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="toolbar-updated" when="last">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="99">The active items in the toolbar changed.  Please requery.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="voice-query-failed" when="last">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="121">The voice recognition toolkit has failed to connect to the audio device.
+The specific cause is provided as an argument.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="voice-query-finished" when="last">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="149">The voice recognition toolkit has completed and has a (possibly empty) result.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="voice-query-heard-something" when="last">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="140">The voice recognition toolkit has heard an utterance.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="voice-query-listening" when="last">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="131">The voice recognition toolkit is active and listening for speech.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+      <glib:signal name="voice-query-loading" when="last">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.c"
+             line="112">The voice recognition toolkit is loading, and not ready for speech yet.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+      </glib:signal>
+    </class>
+    <record name="QueryClass"
+            c:type="HudClientQueryClass"
+            glib:is-gtype-struct-for="Query">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+           line="66">Class information for #HudClientQuery</doc>
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                       line="74"/>
+      <field name="parent_class">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+             line="68">#GObjectClass</doc>
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+    </record>
+    <record name="QueryPrivate"
+            c:type="HudClientQueryPrivate"
+            disguised="1"
+            opaque="1">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+           line="60">Private data for #HudClientQuery.</doc>
+      <source-position filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+                       line="58"/>
+    </record>
+    <enumeration name="QueryToolbarItems"
+                 glib:type-name="HudClientQueryToolbarItems"
+                 glib:get-type="hud_client_query_toolbar_items_get_type"
+                 c:type="HudClientQueryToolbarItems">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/toolbar-items.h"
+           line="22">The toolbar has a set of preconfigured items in it for the
+application.  This enum represents them.</doc>
+      <member name="invalid"
+              value="-1"
+              c:identifier="HUD_CLIENT_QUERY_TOOLBAR_INVALID"
+              glib:nick="invalid"
+              glib:name="HUD_CLIENT_QUERY_TOOLBAR_INVALID">
+      </member>
+      <member name="fullscreen"
+              value="0"
+              c:identifier="HUD_CLIENT_QUERY_TOOLBAR_FULLSCREEN"
+              glib:nick="fullscreen"
+              glib:name="HUD_CLIENT_QUERY_TOOLBAR_FULLSCREEN">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/toolbar-items.h"
+             line="24">Make the application fullscreen</doc>
+      </member>
+      <member name="help"
+              value="1"
+              c:identifier="HUD_CLIENT_QUERY_TOOLBAR_HELP"
+              glib:nick="help"
+              glib:name="HUD_CLIENT_QUERY_TOOLBAR_HELP">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/toolbar-items.h"
+             line="25">Help the user use the application</doc>
+      </member>
+      <member name="preferences"
+              value="2"
+              c:identifier="HUD_CLIENT_QUERY_TOOLBAR_PREFERENCES"
+              glib:nick="preferences"
+              glib:name="HUD_CLIENT_QUERY_TOOLBAR_PREFERENCES">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/toolbar-items.h"
+             line="26">Configure the application</doc>
+      </member>
+      <member name="undo"
+              value="3"
+              c:identifier="HUD_CLIENT_QUERY_TOOLBAR_UNDO"
+              glib:nick="undo"
+              glib:name="HUD_CLIENT_QUERY_TOOLBAR_UNDO">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/toolbar-items.h"
+             line="27">Revert the last user action</doc>
+      </member>
+      <member name="quit"
+              value="4"
+              c:identifier="HUD_CLIENT_QUERY_TOOLBAR_QUIT"
+              glib:nick="quit"
+              glib:name="HUD_CLIENT_QUERY_TOOLBAR_QUIT">
+        <doc xml:space="preserve"
+             filename="hud-14.10+17.10.20170619/libhud-client/toolbar-items.h"
+             line="28">Quit the application</doc>
+      </member>
+      <function name="get_nick"
+                c:identifier="hud_client_query_toolbar_items_get_nick">
+        <doc xml:space="preserve"
+             filename="build/libhud-client/enum-types.c"
+             line="52">Looks up in the enum table for the nick of @value.
+
+	Return value: The nick for the given value or #NULL on error</doc>
+        <source-position filename="build/libhud-client/enum-types.h"
+                         line="38"/>
+        <return-value transfer-ownership="none">
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <parameter name="value" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="build/libhud-client/enum-types.c"
+                 line="54">The value of HudClientQueryToolbarItems to get the nick of</doc>
+            <type name="QueryToolbarItems"
+                  c:type="HudClientQueryToolbarItems"/>
+          </parameter>
+        </parameters>
+      </function>
+      <function name="get_value_from_nick"
+                c:identifier="hud_client_query_toolbar_items_get_value_from_nick">
+        <doc xml:space="preserve"
+             filename="build/libhud-client/enum-types.c"
+             line="76">Looks up in the enum table for the value of @nick.
+
+	Return value: The value for the given @nick</doc>
+        <source-position filename="build/libhud-client/enum-types.h"
+                         line="39"/>
+        <return-value transfer-ownership="none">
+          <type name="QueryToolbarItems" c:type="HudClientQueryToolbarItems"/>
+        </return-value>
+        <parameters>
+          <parameter name="nick" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="build/libhud-client/enum-types.c"
+                 line="78">The enum nick to lookup</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </function>
+    </enumeration>
+    <docsection name="connection">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/connection.h"
+           line="105">The connection is an object to maintain a connection to the default
+	objects on the HUD service.  It provides access to the functionality
+	there and can be used to create queries.
+
+	Most users should not bother with a connection, it will be created
+	by the #HudClientQuery if one is not provided.  Most usage is for
+	testing and using custom HUD services.</doc>
+    </docsection>
+    <docsection name="param">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/param.h"
+           line="99">This makes it much easier to interact with the parameterized
+	pane of the HUD.  Provides the links to the menu model and the
+	actions that should be shown.  Also provides convienience functions
+	for resetting it and fun stuff like that.</doc>
+    </docsection>
+    <docsection name="query">
+      <doc xml:space="preserve"
+           filename="hud-14.10+17.10.20170619/libhud-client/query.h"
+           line="144">A query is an open query to the HUD service which provides
+	Dee models for the results.  The query can update without changing
+	the search string (the application changes the entires) or can
+	be udated by calling hud_client_query_set_query().
+
+	When the usage of the Query is complete it should be unreferenced
+	as that will communicate to the applications that the HUD is closed
+	and they should not update their items.</doc>
+    </docsection>
+    <function name="query_toolbar_items_get_nick"
+              c:identifier="hud_client_query_toolbar_items_get_nick"
+              moved-to="QueryToolbarItems.get_nick">
+      <doc xml:space="preserve"
+           filename="build/libhud-client/enum-types.c"
+           line="52">Looks up in the enum table for the nick of @value.
+
+	Return value: The nick for the given value or #NULL on error</doc>
+      <source-position filename="build/libhud-client/enum-types.h" line="38"/>
+      <return-value transfer-ownership="none">
+        <type name="utf8" c:type="const gchar*"/>
+      </return-value>
+      <parameters>
+        <parameter name="value" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="build/libhud-client/enum-types.c"
+               line="54">The value of HudClientQueryToolbarItems to get the nick of</doc>
+          <type name="QueryToolbarItems" c:type="HudClientQueryToolbarItems"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="query_toolbar_items_get_value_from_nick"
+              c:identifier="hud_client_query_toolbar_items_get_value_from_nick"
+              moved-to="QueryToolbarItems.get_value_from_nick">
+      <doc xml:space="preserve"
+           filename="build/libhud-client/enum-types.c"
+           line="76">Looks up in the enum table for the value of @nick.
+
+	Return value: The value for the given @nick</doc>
+      <source-position filename="build/libhud-client/enum-types.h" line="39"/>
+      <return-value transfer-ownership="none">
+        <type name="QueryToolbarItems" c:type="HudClientQueryToolbarItems"/>
+      </return-value>
+      <parameters>
+        <parameter name="nick" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="build/libhud-client/enum-types.c"
+               line="78">The enum nick to lookup</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </parameter>
+      </parameters>
+    </function>
+  </namespace>
+</repository>

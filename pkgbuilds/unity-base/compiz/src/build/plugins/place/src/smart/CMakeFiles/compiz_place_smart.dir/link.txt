@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_place_smart.a CMakeFiles/compiz_place_smart.dir/src/smart.cpp.o
+/usr/bin/ranlib libcompiz_place_smart.a

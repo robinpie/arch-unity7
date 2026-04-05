@@ -1,0 +1,8 @@
+examples/launcher.c
+extras/UnityExtras-7.0.gir
+extras/unity-extra-preview-player-client.c
+extras/unity-extra-utils.c
+extras/unity-extras-internal.h
+extras/unity-extras-internal.vapi
+extras/unity-extras.h
+extras/unity-extras.vapi

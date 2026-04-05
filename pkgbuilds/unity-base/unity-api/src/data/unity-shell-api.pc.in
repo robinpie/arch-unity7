@@ -1,0 +1,11 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+includedir=${prefix}/include
+plugindir_suffix=@PKGCONFIG_PLUGINDIR@
+plugindir=${prefix}/${plugindir_suffix}
+
+Name: @PKGCONFIG_NAME@
+Description: @PKGCONFIG_NAME@
+Version: @VERSION@
+
+Requires: @PKGCONFIG_REQUIRES@
+Cflags: -I${includedir}

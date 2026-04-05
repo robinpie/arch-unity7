@@ -1,0 +1,1720 @@
+2011-03-31  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Add initial python bindings.
+
+  * python/Makefile.am: new file
+  * python/_geis_bindings/_geis_bindings.c: new file
+  * python/geis/__init__.py: new file
+  * python/geis/geis_v2.py: new file
+  * python/pygeis: new script
+  * Makefile.am (SUBDIRS): added python
+  * configure.ac (AC_CONFIG_FILES): added new generated files
+
+2011-04-10  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Repaired a callback persistence problem (LP: #754135).
+
+  * testsuite/geis1/check_subscription.c: new test suite
+  * libgeis/geis_v1.c: saved a copy of the callback tables
+  * testsuite/geis1/Makefile.am: included new test suite
+  * testsuite/geis1/check_geis1_api.c: ran new test suite
+
+2011-04-12  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Made direct use of XI2.1 optional at build time (LP: #741404).
+
+  * m4/ax_enable_xi2.m4: new autoconf macro
+  * configure.ac: invoked the new macro
+  * libgeis/backend/xcb/geis_xcb_backend.c: optioned XI2.1 code
+
+2011-04-05  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed invalid pointer dereference on XI initialization failure in XCB back
+  end (LP: #730899).
+
+  * libgeis/backend/xcb/geis_xcb_backend.c
+    (geis_xcb_backend_new): cleared properly to indicate a failure.
+
+2011-03-28  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Changes the list of attrs received from grail for the Touch gesture.
+
+  * libgeis/backend/xcb/grail_gestures.c: change Touch attrs
+
+2011-03-25  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added new TOUCH gesture types (LP: #742555).
+
+  * include/geis/geis.h: added new TOUCH gesture types
+  * libgeis/backend/xcb/geis_xcb_backend.c: tweaked gesture mask size
+  * libgeis/backend/xcb/grail_gestures.c: added new TOUCH gesture types
+    added proper handling of a variable-size gesture mask
+  * libgeis/geis_v1.c: mapped new TOUCH gesture types to grail TOUCH
+    gesture types
+  * testsuite/geis1/check_gesture_types.c: new testsuite
+  * testsuite/geis1/Makefile.am: added new testsuite
+  * testsuite/geis1/check_geis1_api.c: invoked new testsuite
+  * testsuite/geistest/geistest.c: added new gesture types
+
+2011-03-24  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed a bad index when translating grail touches (LP: #742002).
+
+  * libgeis/backend/xcb/geis_xcb_backend.c (_dispatch_gesture):
+    fixed offset calculation for grail touch properties
+
+2011-03-22  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added a default back end (LP: #740311).
+
+  * examples/geis2.c (dump_gesture_event): dumped more info
+    (main): removed GEIS_INIT_XCB from geis_new call
+  * libgeis/geis.c (geis_new): added GEIS_INIT_XCB as default
+
+2011-03-22  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Passed the correct gesture_id to GEIS v1 callbacks (LP: #740284).
+
+  * libgeis/backend/xcb/geis_xcb_backend.c (_dispatch_gesture):
+    Used the grail gesture_id as the frame_id.
+  * testsuite/geistest/geistest.c (gesture_update): reported the gesture_id
+    (gesture_start): reported the gesture_id
+    (gesture_finish): reported the gesture_id
+
+2011-03-22  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Corrected the number of touches on a gesture event (LP: #737745).
+
+  * libgeis/backend/xcb/geis_xcb_backend.c (_dispatch_gesture):
+    replaced geis_xcb_backend_touch_count() call with a calculation based on
+    the number of touch properties passed from grail
+  * libgeis/backend/xcb/grail_gestures.c (geis_xcb_backend_touch_count):
+    removed
+  * libgeis/backend/xcb/grail_gestures.h (geis_xcb_backend_touch_count):
+    removed
+
+2011-03-17  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added definitions for GEIS v1 gesture primitive types (LP: #737230).
+
+  * include/geis/geis.h (GEIS_GESTURE_PRIMITIVE_DRAG): new symbol
+    (GEIS_GESTURE_PRIMITIVE_PINCH): new symbol
+    (GEIS_GESTURE_PRIMITIVE_ROTATE): new symbol
+    (GEIS_GESTURE_PRIMITIVE_TAP): new symbol
+  * libgeis/backend/xcb/grail_gestures.c (s_grail_class_map):
+    replaced grail symbolic constants with the new GEIS symbolic
+    constants
+
+2011-03-16  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Refined the API documentation and added an examples directory.
+
+  * doc/api.dox: new documentation file
+  * doc/logo_x64.png: new logo image
+  * doc/using_geis_v2.dox: new documentation file
+  * examples/Makefile.am: examples subdirectory Makefile
+  * examples/geis2.c: new example program
+  * Makefile.am: added examples subdirectory
+  * configure.ac: added examples subdirectory
+  * doc/Doxyfile: tweaked Doxygen settings
+  * include/geis/geis.h: complete API docs refinement
+
+2011-03-16  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Replaced device class with explicit attributes.
+
+  * include/geis/geis.h (GEIS_DEVICE_CLASS_*) removed
+    (GEIS_DEVICE_ATTRIBUTE_DIRECT_TOUCH): added 
+    (GEIS_DEVICE_ATTRIBUTE_INDEPENDENT_TOUCH): added 
+  * libgeis/backend/xcb/geis_xcb_backend.c:
+    (_map_xi2_mode_to_geis_device_attrs): replaced function
+    _map_xi2_mode_to_geis_device_class
+  * testsuite/geis2/check_device.c: added checks for new attributes
+
+2011-03-16  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Refinement of input device class handling.
+
+  * include/geis/geis.h (GEIS_DEVICE_CLASS_UNKNOWN): new device class
+    (GEIS_DEVICE_CLASS_TOUCH_MULTIFINGER): new device class
+  * libgeis/backend/xcb/geis_xcb_backend.c
+    (_map_xi2_mode_to_geis_device_class): new function
+    (_report_an_xcb_device): used it
+
+2011-03-13  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Initialized an uninitialized variable.
+
+  * libgeis/geis_v1.c (_v1_input_callback): initialized device_id 
+
+2011-03-12  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added spcifying devices to geistest.
+
+  * libgeis/backend/xcb/geis_xcb_backend.c: added -d swicth
+  * doc/geistest.1: documented its use
+
+2011-03-12  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added proper device ID filtering for GEIS v1.
+
+  * libgeis/geis_v1.c (_subscribe_device): Added filter for device ID.
+
+2011-03-11  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Implement device enumeration (LP: #733296)
+
+  * libgeis/backend/xcb/geis_xcb_backend.c (_report_an_xcb_device): new
+    (_report_xcb_devices): imlemented
+  * libgeis/geis_device.c (geis_device_new): made "id" an attr
+    (geis_device_id): same
+    (geis_device_add_attr): implemented missing function
+  * libgeis/geis_v1.c (_v1_input_callback): new function
+    (geis_input_devices): implemented
+  * testsuite/geis1/check_gesture_attrs.c: removed debug message
+  * testsuite/geistest/geistest.c (input_device_added): added a dump
+
+2011-03-11  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fix a lifetime issue with string attrs.
+
+  * libgeis/geis_attr.c (geis_attr_new): dup all strings
+    (geis_attr_delete): free strings
+
+2011-03-11  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added new device symbolic constants due to a change in the GEIS spec.
+
+  * include/geis/geis.h (GEIS_DEVICE_ATTRIBUTE_CLASS): new constant
+    (GEIS_DEVICE_ATTRIBUTE_TOUCHES): new constant
+    (GEIS_DEVICE_CLASS_TOUCH_DIRECT): new constant
+    (GEIS_DEVICE_CLASS_TOUCH_DEPENDENT): new constant
+    (GEIS_DEVICE_CLASS_TOUCH_INDEPENDENT): new constant
+    (GEIS_DEVICE_CLASS_TOUCH_PARTIAL): new constant
+  * testsuite/geis2/check_device.c: added tests for the above
+
+2011-03-11  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added a required symbolic constant for device events.
+
+  * include/geis/geis.h (GEIS_EVENT_ATTRIBUTE_DEVICE): new symbol
+    (GEIS_DEVICE_ATTRIBUTE_ID): new symbol
+  * libgeis/backend/test_fixture/geis_backend_test_fixture.c: used them
+  * libgeis/geis.c: used them
+  * testsuite/geis2/check_device.c (geis_device_types): checked them
+  * testsuite/geis2/check_subscription.c: used them
+
+2011-03-08  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Released geis v2.0.3.
+
+  * configure.ac (AC_INIT): bumped version to 2.0.3
+
+2011-03-08  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added fix for LP: #732104: re-order class event pump in v1 emulation.
+
+  * libgeis/geis_v1.c (_subscribe_device): added more diagnostic messages
+    (geis_subscribe): re-ordered event pump to prime the class table
+
+2011-03-08  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added a unit test and related infrastructure in the mock objects to reproduce
+  LP: #732104.
+
+  * libgeis/backend/test_fixture/geis_backend_test_fixture.c:
+    moved generation of gesture events to after subscription creation, added
+    support for TOUCH filters
+  * testsuite/geis1/check_gesture_attrs.c: added check for touch count,
+    changed subscription from GEIS_ALL_GESTURES to an explicit list
+  * testsuite/geis2/check_frame.c: activated subscription
+
+2011-03-07  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Released GEIS v2.0.2.
+
+  * configure.ac (AC_INIT): bumped version to 2.0.2
+
+2011-03-07  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Renamed test case for LP: #728606
+
+  * testsuite/geis1/check_gesture_attrs.c: renamed from
+    testsuite/geis1/check_lp728606.c
+  * testsuite/geis1/Makefile.am: renamed source file
+    added -Werror to CFLAGS
+  * testsuite/geis1/check_geis1_api.c: renamed test
+
+2011-03-07  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added regression test for LP: #728606
+
+  * testsuite/geis1/check_lp728606.c: new test suite
+  * libgeis/backend/test_fixture/geis_backend_test_fixture.c
+    (_create_gesture_events): add some basic gesture attrs to mock events
+  * libgeis/geis_v1.c (geis_init): tweaked mock object creation
+    (geis_finish): reset global Geis object
+    (geis_subscribe): relocated class event pump
+  * testsuite/geis1/Makefile.am: added new test suite source
+  * testsuite/geis1/check_geis1_api.c: ran new test suite
+
+2011-03-07  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Enabled GEIS v1 for basic API unit testing.
+
+  * testsuite/geis1/check_instance.c: new test suite
+  * libgeis/geis_v1.c  (_generate_subscription_name): handled NULL XCB info
+    (geis_init): handled request for mock back end
+  * testsuite/geis1/Makefile.am: added new source file
+  * testsuite/geis1/check_geis1_api.c: ran new test suite
+
+2011-03-07  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Re-added GEIS v1 API testing.
+
+  * testsuite/geis1/check_geis_internals.c: removed
+  * testsuite/geis1/check_instance_table.c: removed
+  * testsuite/geis1/check_geis1_api.c: new file
+  * configure.ac (AC_CONFIG_FILES): added testsuite.geis1/Makefile
+  * testsuite/Makefile.am (SUBDIRS): added geis1
+  * testsuite/geis1/Makefile.am: Removed old unit tests, added check_geis1_api
+
+2011-03-03  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed incorrect data conversion in GEIS v1 implementation (LP: #728606)
+
+  * libgeis/geis_v1 (_map_frame_to_attrs): put float value in the float
+    member of the attr union to avoid unwanted coercion.
+
+2011-02-28  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added a graceful exit to the geistest tool.
+
+  * testsuite/geistest/geistest.c (main): added watch on stdin for exit
+  * doc/geistest.1: mentioned how to exit gracefully
+
+2011-02-28  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed logic in a string-to-boolean conversion.
+
+  * libgeis/geis_attr.c (geis_attr_value_to_boolean): fixed logic
+
+2011-02-27  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed memory leaks in GEIS v2 subscriptions.
+
+  * libgeis/backend/xcb/geis_xcb_backend.c (_finalize): closed X display
+  * libgeis/geis.c (geis_new): reffed the new geis object
+    (geis_delete): invalidated all outstanding subscriptions
+  * libgeis/geis_backend.c: fixed debug message to avoid a bad dereference
+  * libgeis/geis_filter.c: only unref ther geis object on destruction
+  * libgeis/geis_filter_term.c: free the bag store on deletion
+  * libgeis/geis_subscription.h (geis_subscription_bag_invalidate): new
+    (geis_subscription_invalidate): new
+  * libgeis/geis_subscription.c: imlemented new functions
+    (_subscription_destroy): handled destruction in invalided state
+  * libgeis/geis_v1.c (geis_finish): deleted window filter
+
+2011-02-23  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed memory leaks in GEIS v2 group and touch sets.
+
+  * libgeis/geis_frame.c (geis_frameset_delete): fixed loop condition
+    (geis_frame_delete): freed touches
+  * libgeis/geis_group.c (geis_groupset_delete): fixed loop condition
+  * libgeis/geis_touch.c (geis_touchset_delete): fixed loop condition
+
+2011-02-23  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed a memory leak in GEIS v2 gesture events.
+
+  * libgeis/geis_attr.h (GeisAttrDestructor): new type
+    (geis_attr_set_destructor): new function
+  * libgeis/geis_attr.c (geis_attr_set_destructor): implemented it
+    (attr_value): named union for ISO C compatibility
+  * libgeis/backend/xcb/geis_xcb_backend.c (_dispatch_gesture): added
+    destructors to groupset and touchset attrs
+
+2011-02-22  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Released version 2.0.1.
+
+  * configure.ac (AC_INIT): bumped package version to 2.0.1
+
+2011-02-22  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Used standardized LGPL-v3 license text.
+
+  * COPYING: refreshed with standardized text.
+
+2011-02-22  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Restored missing GEIS v1 symbols and fixed a segfault in libgrip.
+
+  * libgeis/geis_v1.c (struct _GeisInstance): added window_filter field
+    (geis_init): initialized window_filter field
+    (_subscribe_device): used window_filter field from instance
+    (geis_configuration_set_value): added missing GEIS v1 function
+    (geis_unsubscribe): added missing GEIS v1 function
+
+2011-02-22  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Release version 2.0.0
+
+  * configure.ac (AC_INIT): bumped package version to 2.0.0
+  * libgeis/Makefile.am (libgeis_la_LDFLAGS): bumped version-info
+    to 3:0:2 (gives .so version 1.2.0) to reflect the addition of a new interface
+
+2011-02-21  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added support for setting the XCB sysflg through the GEIS v1 interface.
+
+  * include/geis/geis.h (GEIS_GESTURE_TYPE_SYSTEM): new gesture type
+  * libgeis/geis_subscription.h
+    (geis_subscription_set_flags): new function
+  * libgeis/geis_subscription.c: implemented it
+  * libgeis/geis_v1.c (geis_subscribe): used it
+
+2011-02-20  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Cranked up warning level on testsuite and fixed (most of) the consequent
+  warnings.
+
+  * testsuite/geis2/check_attr.c: fxied compile-time warnings
+  * testsuite/geis2/check_class.c: same
+  * testsuite/geis2/check_device.c: same
+  * testsuite/geis2/check_event.c: same
+  * testsuite/geis2/check_filter.c: ditto
+  * testsuite/geis2/check_frame.c: same
+  * testsuite/geis2/check_geis2_api.c: same
+  * testsuite/geis2/check_geis_new.c: same
+  * testsuite/geis2/check_general_types.c: same
+  * testsuite/geis2/check_region.c: same
+  * testsuite/libgeis/check_attr.c: same
+  * testsuite/libgeis/check_backend_multiplexor.c: same
+  * testsuite/libgeis/check_class.c: same
+  * testsuite/libgeis/check_device.c: idem
+  * testsuite/libgeis/check_error_reporting.c: same
+  * testsuite/libgeis/check_filter.c: yep
+  * testsuite/libgeis/check_geis2_internals.c: you guessed it
+  * testsuite/libgeis/check_geis_private.c: uh-huh
+
+2011-02-19  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed failed "make distcheck".
+
+  * libgeis/Makefile.am: added geis_atomic.h
+  * libgeis/server/Makefile.am: added geis_dbus.h
+
+2011-02-19  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Removed old crufty unused source code.
+
+  * libgeis-dbus: removed directory
+  * libgeis-xcb: removed directory
+
+2011-02-17  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added proper support for region filters in XCB.
+
+  * libgeis/backend/xcb/geis_xcb_backend.c
+    (XcbGestureSub): added windows and window_count fields
+    (_translate_device_term_to_xcb): eliminated duplicates
+    (_translate_region_term_to_xcb): new function
+    (_subscribe): used new fields/function
+  * libgeis/geis_v1.c (geis_init): added region filter for window
+
+2011-02-17  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added a check for the maximum number of device terms.
+
+  * libgeis/backend/xcb/geis_xcb_backend.c
+  (_translate_device_term_to_xcb): Added MAX_NUM_DEVICES and checked it.
+
+2011-02-17  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added proper support for continuations and system gestures.
+
+  * libgeis/backend/xcb/geis_xcb_backend.c
+    (_translate_class_term_to_xcb): fixed min/max logic
+    (_translate_filter_to_xcb): added subscription parameter,
+    called new functions,
+    ORed masks from different filters on same subscription
+    (_subscribe): removed special case for no class filters
+  * libgeis/backend/xcb/grail_gestures.h
+    (geis_xcb_backend_create_gesture_bitmask): removed and replaced with...
+    (geis_xcb_backend_gesture_bitmask_filter_class): new function
+    (geis_xcb_backend_gesture_bitmask_filter_touches): new function
+    (geis_xcb_backend_gesture_bitmask_init): new function
+  * libgeis/backend/xcb/grail_gestures.c: implemented the above new
+  * functions
+  * libgeis/geis_subscription.h (geis_subscription_flags): new function
+  * libgeis/geis_subscription.c: implemented it
+  * testsuite/geistest/geistest.c: switched from 'all' to a set of gestures
+
+2011-02-17  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added the ability to fetch a filter from a subscription and clone it.
+
+  * include/geis/geis.h (geis_filter_clone): new function
+    (geis_subscription_filter_by_name): new function
+  * libgeis/geis_filter.h (geis_filter_bag_filter_by_name): new function
+  * libgeis/geis_filter.c (geis_filter_bag_filter_by_name): implemented
+    (_filter_new_empty): new function
+    (geis_filter_new): used it
+    (geis_filter_clone): implemented it
+    (geis_filter_delete): unreffed geis
+  * libgeis/geis_filter_term.h (geis_filter_term_bag_clone): new function
+  * libgeis/geis_filter_term.c (geis_filter_term_bag_clone): implemented
+  * libgeis/geis_subscription.c (geis_subscription_filter_by_name): impl
+  * libgeis/geis_v1.c (_subscribe): used new functions
+  * libgeis/libgeis.ver (geis_filter_clone): new exported symbol
+    (geis_subscription_filter_by_name): new exported symbol
+  * testsuite/geis2/Makefile.am: added -Wall -Wextra CFLAGS
+  * testsuite/geis2/check_filter.c: new test case, silenced warnings
+  * testsuite/geis2/check_subscription.c: new test case, silenced warnings
+  * testsuite/libgeis/Makefile.am: added -Wall -Wextra CFLAGS
+
+2011-02-17  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Reference counting fixes:  added geis_atomic functions, added reference
+  counting semantics to Geis and GeisFilterTerm modules.
+
+  * libgeis/geis_atomic.h: new file
+  * libgeis/geis.c (_geis_destroy): new function
+    (geis_ref): new function
+    (geis_unref): new function
+    (geis_delete): used new functions
+  * libgeis/geis_class.c (geis_gesture_class_ref): used new atomics
+    (geis_gesture_class_unref): same
+  * libgeis/geis_device.c (geis_device_ref): used new atomics
+    (geis_device_unref): same
+  * libgeis/geis_filter.c (geis_filter_ref): used new atomics
+    (geis_filter_unref): same
+    (geis_filter_bag_insert): moved ref call to after all possible errors
+  * libgeis/geis_filter.h (geis_filter_ref): changed return type
+  * libgeis/geis_filter_term.c (struct _GeisFilterTerm): added refcount
+    (geis_filter_term_ref): new function
+    (geis_filter_term_unref): new function
+    (geis_filter_term_new): called geis_filter_term_ref
+    (geis_filter_term_delete): made static and renamed _filter_term_destroy
+  * libgeis/geis_filter_term.h: prototyped new functions
+  * libgeis/geis_private.h: prototyped new functions
+  * libgeis/geis_region.c: used new atomics
+  * libgeis/geis_subscription.c (_subscription_ref): new static function
+    (_subscription_unref): new static function
+    (geis_subscription_bag_empty): new function
+    (geis_subscription_bag_new): used new function
+    (geis_subscription_bag_delete): used new function
+    (geis_subscription_bag_remov): used new function
+  * libgeis/geis_subscription.h: prototyped new functions
+
+ 2011-02-11  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Implemented class and device filters properly.
+
+  * libgeis/backend/xcb/geis_xcb_backend.c (struct _XcbGestureSub):
+    added new fields
+    (_translate_class_filter_to_xcb): removed function
+    (_translate_device_term_to_xcb): new function
+    (_translate_class_term_to_xcb): new function
+    (_translate_filter_to_xcb): new function
+    (_subscribe): replaced old functions with new, restructired filter loop
+  * libgeis/backend/xcb/grail_gestures.c: silenced compiler warnings
+  * libgeis/geis_filter.c: replace by_facility functions
+  * libgeis/geis_filter.h: same
+  * libgeis/geis_filter_term.c: same
+  * libgeis/geis_filter_term.h: same
+  * libgeis/backend/test_fixture/geis_backend_test_fixture.c:
+    replaced filter by_facility calls.
+
+ 2011-02-09  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed a memory allocation problem during error reporting.
+
+  * libgeis/geis_error.c (geis_error_stack_push): fixed realloc size
+
+ 2011-02-05  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed a memory leak in the XCB back end.
+
+  * libgeis/backend/xcb/geis_xcb_backend.c (_xcb_dispatch): freed XCB
+   event
+
+ 2011-02-04  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Reimplement GEIS v1.0 on top of GEIS v2.0, Part III (touch attrs).
+
+  * include/geis/geis.h (GEIS_TOUCH_ATTRIBUTE_ID): new symbol
+    (GEIS_TOUCH_ATTRIBUTE_X): new symbol
+    (GEIS_TOUCH_ATTRIBUTE_Y): new symbol
+  * libgeis/backend/xcb/geis_xcb_backend.c (_dispatch_gesture):
+    added touch mapping
+  * libgeis/geis_v1.c (_map_frame_to_attrs): mapped touches into
+    gesture attrs
+
+ 2011-02-02  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Reimplement GEIS v1.0 on top of GEIS v2.0, Part II (gesture attrs).
+
+  * libgeis/backend/xcb/grail_gestures.h
+    (geis_xcb_backend_map_grail_attrs): new function
+  * libgeis/backend/xcb/grail_gestures.c: implemented it
+  * libgeis/backend/xcb/geis_xcb_backend.c (_dispatch_gesture):
+    called it
+  * libgeis/geis_attr.c: fixed a memory leak
+  * libgeis/geis_v1.c (_map_frame_to_attrs): new function
+    (_v1_event_callback): called it
+
+ 2011-01-31  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Reimplement GEIS v1.0 on top of GEIS v2.0, Part I (basic gesture events).
+
+  * libgeis/geis_v1.c: new file
+  * configure.ac: removed refs to libgeis-xcb and testsuite/geis1
+  * libgeis/Makefile.am: removed refs to libgeis-xcb
+  * libgeis/backend/xcb/geis_xcb_backend.c (_dispatch_gesture):
+    added basic group, frame, and touch attrs to gesture events
+  * testsuite/Makefile.am: removed refs to testsuite/geis1
+
+ 2011-01-28  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Implemented basic gesture subscriptions through the XCB back end.
+
+  * libgeis/backend/xcb/geis_xcb_backend.c (struct _XcbGestureSub): new
+    (_dispatch_gesture): new function
+    (_xcb_dispatch): called it
+    (_subscribe): initialized XcbGestureSub
+    (_unsubscribe): destroyed XcbGestureSub
+  * libgeis/backend/xcb/grail_gestures.h
+    (geis_xcb_backend_primitive_class): new function
+    (geis_xcb_backend_touch_count): implemented new functions
+  * libgeis/geis_subscription.h (geis_subscription_pdata): new function
+    (geis_subscription_set_pdata): new function
+  * libgeis/geis_subscription.c: implemented new functions
+
+ 2011-01-27  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added GEIS v2.0 gesture module, part V (refined frame-touch interaction)
+
+  * include/geis/geis.h (GeisTouchId) new type
+    (geis_touchset_touch_by_id(): new function
+    (geis_frame_touchid_count(): renamed from geis_frame_touch_count
+    (geis_frame_touchid): renamed from geis_frame_touch
+  * libgeis/backend/test_fixture/geis_backend_test_fixture.c
+    (_create_gesture_events): called geis_frame_add_touchid
+  * libgeis/geis_frame.c (struct _GeisFrame): added touch fields
+    (geis_frame_new): initialized touch fields
+    (geis_frame_delete): destroyed touch fields
+  * libgeis/geis_frame.h (geis_frame_add_touchid): new fucntion
+  * libgeis/geis_touch.c: implemented new function
+  * libgeis/geis_touch.h (geis_touch_new): changed parameter type
+  * libgeis/libgeis.ver: added/renamed symbols
+  * testsuite/geis2/check_frame.c: expanded test case to include frame-touch
+
+ 2011-01-27  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added GEIS v2.0 gesture module, part IV (frame implementation)
+
+  * libgeis/geis_frame.c: new file
+  * libgeis/geis_frame.h: new file
+  * libgeis/Makefile.am: added new files
+  * libgeis/backend/test_fixture/geis_backend_test_fixture.c
+    (_create_gesture_events): added frame to injected event
+  * libgeis/geis_group.c (struct _GeisGroup): added frameset field
+    (geis_groupset_delete): cleaned out container
+    (geis_group_new): initialized frameset member
+    (geis_group_delete): destroyed frameset member
+    (geis_group_insert_frame): added function implementation
+    (geis_group_frame_count): added function implementation
+    (geis_group_frame): added function implementation
+    (geis_group_reject): added function stub
+  * libgeis/geis_group.h (geis_group_insert_frame): new function
+  * libgeis/geis_touch.c (geis_touchset_delete): cleaned out container
+    (geis_touch_new): initialized attr_bag member
+    (geis_touch_delete): destroyed attr_bag member
+  * testsuite/geis2/check_frame.c: added new checks for frames
+
+ 2011-01-27  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added missing callback registration function.
+
+  * libgeis/geis.c (geis_register_device_callback): implemented function
+
+ 2011-01-27  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added GEIS v2.0 gesture module, part III (touch/touchset implementation)
+
+  * libgeis/geis_touch.c: new file
+  * libgeis/geis_touch.h: new file
+  * libgeis/Makefile.am: added new files
+  * libgeis/backend/test_fixture/geis_backend_test_fixture.c
+    (_create_gesture_events): added touch set to injected event
+  * testsuite/geis2/check_frame.c: added test case
+
+ 2011-01-26  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added GEIS v2.0 gesture module, part II (group/groupset implementation)
+
+  * libgeis/geis_group.c: new file
+  * libgeis/geis_group.h: new file
+  * libgeis/Makefile.am: added new files
+  * libgeis/backend/test_fixture/geis_backend_test_fixture.c
+    (_create_gesture_events): new function
+    (geis_backend_new_test_fixture): called it
+  * testsuite/geis2/check_class.c(receive_events): allowed for multiple events
+  * testsuite/geis2/check_device.c(receive_events): allowed for multiple events
+  * testsuite/geis2/check_frame.c (receive_events): new test case
+  * testsuite/geis2/check_subscription.c (receive_events): fixed leak
+
+ 2011-01-25  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added GEIS v2.0 gesture module, part I (public API).
+
+  * testsuite/geis2/check_frame.c: new test suite
+  * include/geis/geis.h (GeisGroup): new type
+    (GeisGroupSet): new type
+    (GeisTouch): new type
+    (GeisTouchSet): new type
+    (GeisFrame): new type
+    (GEIS_EVENT_ATTRIBUTE_GROUPSET): new symbol
+    (GEIS_EVENT_ATTRIBUTE_TOUCHSET): new symbol
+    (geis_groupset_group_count): new function
+    (geis_groupset_group): new function
+    (geis_group_id): new function
+    (geis_group_frame_count): new function
+    (geis_group_frame): new function
+    (geis_group_reject): new function
+    (geis_touchset_touch_count): new function
+    (geis_touchset_touch): new function
+    (geis_touch_id): new function
+    (geis_touch_attr_count): new function
+    (geis_touch_attr): new function
+    (geis_touch_attr_by_name): new function
+    (geis_frame_id): new function
+    (geis_frame_is_class): new function
+    (geis_frame_attr_count): new function
+    (geis_frame_attr): new function
+    (geis_frame_attr_by_name): new function
+    (geis_frame_matrix): new function
+    (geis_frame_touch_count): new function
+    (geis_frame_touch): new function
+    (geis_gesture_reject): new function
+  * libgeis/libgeis.ver: added new symbols
+  * testsuite/geis2/Makefile.am: added new test suite file
+  * testsuite/geis2/check_geis2_api.c: referenced new test suite
+
+ 2011-01-10  Stephen M. Webb  <stephen.webb@canonical.com>
+ 
+  Added gesture class events to XCB back end.
+
+  * libgeis/backend/xcb/grail_gestures.c: new file
+  * libgeis/backend/xcb/grail_gestures.h: new file
+  * libgeis/backend/xcb/Makefile.am: added new files
+  * libgeis/backend/xcb/geis_xcb_backend.c (_report_xcb_devices): new
+    (_report_grail_glasses): new 
+    (geis_xcb_backend_new: called new functions
+
+2011-01-07  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added XCB back end convenience library.
+
+  * libgeis/backend/xcb/geis_xcb_backend.c: new file
+  * libgeis/backend/xcb/geis_xcb_backend.h: new file
+  * libgeis/backend/xcb/Makefile.am: added rules for new library
+  * include/geis/geis.h (GEIS_INIT_XCB): new init arg symbol
+  * libgeis/geis.c: used it
+  * libgeis/Makefile.am: added XCB protocol library
+  * libgeis-xcb/Makefile.am: removed XCB protocol library
+  * testsuite/libgeis/Makefile.am: added XCB runtime libraries
+
+2011-01-07  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Refactored XCB protocol library into a separate convenience lib.
+
+  * libs/Makefile.am: new directory
+  * libs/xcb/Makefile.am: new subproject
+  * libs/xcb/c-client.xsl: renamed from libgeis-xcb/c-client.xsl
+  * libs/xcb/c_client.py: renamed from libgeis-xcb/c_client.py
+  * libs/xcb/xcb_gesture.xml.in: was libgeis-xcb/xcb_gesture.xml.in
+  * Makefile.am: added new subproject
+  * configure.ac: added new subproject
+  * libgeis-xcb/Makefile.am: moved XCB protocol to libs/xcb subproject
+
+2011-01-07  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added XCB back end subproject to libgeis.
+
+  * libgeis/backend/xcb: new subproject
+  * libgeis/backend/xcb/Makefile.am: new file.
+  * Makefile.am: updated copyright
+  * configure.ac: added new subproject
+  * libgeis/backend/Makefile.am: added new subproject
+
+2011-01-06  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added Geis v2.0 gesture class implementation (part 2, oif internals)
+
+  * testsuite/libgeis/check_class.c: new test suite
+  * include/geis/geis.h: fixed GEIS_FILTER_CLASS
+  * libgeis/backend/test_fixture/geis_backend_test_fixture.c
+    (_create_test_classes): new function
+  * libgeis/backend/test_fixture/geis_backend_test_fixture.h
+    (geis_backend_new_test_fixture): added track_classes parameter
+  * libgeis/geis.c (struct _Geis): added new fields
+    (_class_event_handler): implemented event handling
+    (geis_new_empty): initialized new fields
+    (_set_valist): handled GEIS_INIT_TRACK_GESTURE_CLASSES
+    (geis_get_class_attr_type): new function
+  * libgeis/geis_class.h (GeisGestureClassBag): new data structure
+    (geis_gesture_class_bag_new): new function
+    (geis_gesture_class_bag_delete): new function
+    (geis_gesture_class_bag_count): new function
+    (geis_gesture_class_bag_gesture_class): new function
+    (geis_gesture_class_bag_insert): new function
+    (geis_gesture_class_bag_remove): new function
+  * libgeis/geis_class.c: implemented above new functions
+  * libgeis/geis_filter.c (_facility_is_valid): fixed facility name
+  * libgeis/geis_private.h (geis_get_class_attr_type): new function
+  * testsuite/geis2/check_filter.c: fixed facility name
+  * testsuite/geis2/check_subscription.c: added check for class subscription
+  * testsuite/libgeis/Makefile.am: added new test suite file
+  * testsuite/libgeis/check_geis2_internals.c: called new test suite
+
+2011-01-06  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added Geis v2.0 gesture class implementation (part 1, basic API)
+
+  * libgeis/geis_class.c: new file
+  * libgeis/geis_class.h: new file
+  * libgeis/Makefile.am: added new source files
+  * libgeis/geis.c (struct _Geis): added new class callback fields
+    (_class_event_handler): new function
+    (_input_event_handler): added case for gesture class events
+    (geis_register_class_callback): implemented function
+  * include/geis/geis.h (geis_gesture_class_ref): adjusted return type
+    (geis_gesture_class_unref): same
+
+2011-01-06  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added GEIS v2.0 gesture class API
+
+  * testsuite/geis2/check_class.c: new test suite
+  * include/geis/geis.h (GEIS_INIT_TRACK_GESTURE_CLASSES): new init ath
+    (GEIS_EVENT_CLASS_AVAILABLE): new event type
+    (GEIS_EVENT_CLASS_CHANGED): new event type
+    (GEIS_EVENT_CLASS_UNAVAILABLE): new event type
+    (GeisGestureClass): new opaque type
+    (GEIS_CLASS_ATTRIBUTE_NAME): new attribute name
+    (GEIS_CLASS_ATTRIBUTE_ID): new attribute name
+    (GEIS_EVENT_ATTRIBUTE_CLASS): new attribute name
+    (geis_register_class_callback): new function
+    (geis_gesture_class_ref): new function
+    (geis_gesture_class_unref): new function
+    (geis_gesture_class_name): new function
+    (geis_gesture_class_id): new function
+    (geis_gesture_class_attr_count): new function
+    (geis_gesture_class_attr): new function
+  * libgeis/libgeis.ver: added new exported symbols
+  * testsuite/geis2/Makefile.am: build new test suite
+  * testsuite/geis2/check_event.c: changed event type names
+  * testsuite/geis2/check_geis2_api.c: used new test suite
+  * testsuite/geis2/check_geis_new.c: changed init constant names
+
+2011-01-05  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Minor tweaks.
+
+  * include/geis/geis.h: fixed typos in comments
+    (GEIS_DEVICE_ATTRIBUTE_NAME): new constant
+  * libgeis/geis_device.c: used new constant instead of hard-coded string
+  * testsuite/geis2/check_subscription.c: same
+
+2011-01-05  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added GEIS v2.0 filter implementation (part 4, device subscription)
+
+  * libgeis/backend/test_fixture/geis_backend_test_fixture.c
+    (_subscription): add debug output to the test fixture
+  * libgeis/geis_device.c: made name an attr for filtering on
+  * libgeis/geis_filter.h
+    (geis_filter_term_by_facility_count): new function
+    (geis_filter_term_by_facility): new function
+  * libgeis/geis_filter.c: implemented the above new functions
+  * libgeis/geis_subscription.h
+    (geis_subscription_filter_count): new function
+    (geis_subscription_filter): new function
+  * libgeis/geis_subscription.c: implemented the above new functions
+  * testsuite/geis2/check_subscription.c (device_filter): new test case
+ 
+2011-01-05  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added group test for back end device creation.
+
+  * libgeis/backend/test_fixture/geis_backend_test_fixture.c
+    (_create_test_devices): new function
+    (geis_backend_new_test_fixture): used it
+  * libgeis/backend/test_fixture/geis_backend_test_fixture.h
+    (geis_backend_new_test_fixture): added track_devices parameter
+  * libgeis/geis.c (_set_valist): refactored to propagate init args
+  * testsuite/geis2/check_device.c: new test case
+
+2011-01-05  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Marked missing geis_event_* symbols as exported.
+
+  * libgeis/libgeis.ver (geis_event_attr): exported
+    (geis_event_attr_by_name): exported
+    (geis_event_attr_count): exported
+    (geis_event_delete): exported
+    (geis_event_type): exported
+
+2011-01-05  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Moved back end test fixture into a subproject.
+
+  * libgeis/backend/test_fixture: new subproject
+  * libgeis/backend/test_fixture/Makefile.am: new file
+  * libgeis/backend/test_fixture/geis_backend_test_fixture.c: renamed
+    from libgeis/geis_backend_test_fixture.c
+  * libgeis/backend/test_fixture/geis_backend_test_fixture.h: renamed
+    from  libgeis/geis_backend_test_fixture.h 
+  * configure.ac (AC_OUTPUT): added libgeis/backend/test_fixture/Makefile
+  * libgeis/Makefile.am: linked in new subproject
+  * libgeis/backend/Makefile.am: added new subproject
+  * libgeis/geis.c: changed header qualification
+
+2011-01-05  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added device cacheing.
+
+  * libgeis/geis_private.h (geis_get_device_attr_type): new function
+  * libgeis/geis.c (struct _Geis): added devices field
+    (_device_event_handler): new function
+    (_input_event_handler): dispatched BE device events
+    (geis_new_empty): initialized devices field
+    (geis_new_delete): destroyed devices field
+  * libgeis/geis_filter.c (_get_attr_type_for_facility): implemented for
+    the device facility
+
+2011-01-05  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed failure-mode return value from geis_filter_term_bag_new
+
+  * libgeis/geis_filter_term.c (geis_filter_term_bag_new): returned
+    NULL on failure
+
+2011-01-05  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added missing geis_attr_value_to_pointer.
+
+  * libgeis/geis_attr.c (geis_attr_value_to_pointer): new function
+    (geis_attr_value_to_string): added case to handle GEIS_ATTR_TYPE_POINTER
+
+2011-01-03  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added GEIS v2.0 filter implementation (part 3, filter terms)
+
+  * libgeis/geis_filter_term.c: new file
+  * libgeis/geis_filter_term.h: new file
+  * include/geis/geis.h (GeisFilterOperation): fixed typo
+  * libgeis/Makefile.am: added new files
+  * libgeis/geis_filter.c (geis_filter_add_term): implemented function
+    (_facility_is_valid): new function
+    (_operation_is_valid): new function
+    (_get_attr_for_facility): new function
+
+2011-01-01  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added GEIS v2.0 filter implementation (part 2)
+
+  * libgeis/geis_filter.c: fixed refcounting on bag insertion
+  * libgeis/geis_subscription.c
+    (geis_subscription_add_filter): implemented stubbed-out function
+    (geis_subscription_remove_filter): implemented stubbed-out function
+  * testsuite/geis2/check_subscription.c: new test case
+
+2010-12-20  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added GEIS v2.0 filter implementation (part 1)
+
+  * testsuite/libgeis/check_filter.c: new test suite
+  * libgeis/geis_filter.h (GeisFilterBag): new data structure
+    (geis_filter_bag_new): new function
+    (geis_filter_bag_delete): new function
+    (geis_filter_bag_count): new function
+    (geis_filter_bag_filter): new function
+    (geis_filter_bag_insert): new function
+    (geis_filter_bag_remove): new function
+    (geis_filter_ref): new function
+    (geis_filter_unref): new function
+  * libgeis/geis_filter.c: implemented new functions
+  * testsuite/libgeis/Makefile.am: added new test suite
+  * testsuite/libgeis/check_geis2_internals.c: added new test suite
+
+2010-12-29  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added GEIS v2.0 filter API
+
+  * libgeis/geis_filter.c: new file
+  * libgeis/geis_filter.h: new file
+  * testsuite/geis2/check_filter.c: new test suite
+  * include/geis/geis.h (GeisFilter): new type
+    (GeisFilterFacility): new enumeration
+    (GeisFilterOperation): new enumeration
+    (gei_filter_new): new function
+    (geis_filter_delete): new function
+    (geis_filter_name): new function
+    (geis_filter_add_term): new function
+  * libgeis/Makefile.am: added new files
+  * libgeis/libgeis.ver: added new symbols
+  * testsuite/geis2/Makefile.am: added new test suite
+  * testsuite/geis2/check_geis2_api.c: added new test suite
+
+2010-12-29  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added backend subdirectory to libgeis.
+
+  * libgeis/backend/Makefile.am: new file
+  * configure.ac (AC_OUTPUT): added libgeis/backend/Makefile
+  * libgeis/Makefile.am (SUBDORS): added backend
+
+2010-12-29  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Moved geis/geisimpl.h into GEIS v2.0 sources.
+
+  * libgeis/geis/geisimple.h: renamed from libgeis-xcb/geis
+  * libgeis-xcb/Makefile.am: changed header search path
+  * libgeis/Makefile.am: changed header search path
+  * testsuite/geis1/Makefile.am: changed header search path
+  * testsuite/geis2/Makefile.am: changed header search path
+  * testsuite/geistest/Makefile.am: changed header search path
+  * testsuite/libgeis/Makefile.am: changed header search path
+
+2010-12-20  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added GEIS v2.0 input device implementation.
+
+  * libgeis/geis_device.h (GeisDeviceBag): new type
+    (geis_device_bag_new): new function
+    (geis_device_bag_delete): new function
+    (geis_device_bag_count): new function
+    (geis_device_bag_device): new function
+    (geis_device_bag_insert): new function
+    (geis_device_bag_remove): new function
+  * libgeis/geis_device.c: implemented new functions
+  * testsuite/libgeis/check_device.c: new test suite
+  * testsuite/libgeis/Makefile.am: added new test suite
+  * testsuite/libgeis/check_geis2_internals.c: added new test suite
+
+2010-12-20  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added GEIS v2.0 input device API
+
+  * libgeis/geis_device.c: new file
+  * libgeis/geis_device.h: new file
+  * testsuite/geis2/check_device.c: new test suite
+  * include/geis/geis.h (GeisDevice): new type
+    (geis_register_device_callback): new function
+    (geis_device_ref): new function
+    (geis_device_unref): new function
+    (geis_device_name): new function
+    (geis_device_id): new function
+    (geis_device_attr_count): new function
+    (geis_device_attr): new function
+  * libgeis/Makefile.am: added new files
+  * libgeis/libgeis.ver: added new API symbols
+  * testsuite/geis2/Makefile.am: added new test suite
+  * testsuite/geis2/check_geis2_api.c: added new test suite
+
+2010-12-20  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Updates to match new GEIS v2.0 spec release of 2010.12.20.
+  - added a pointer type to the GEIS attr module
+  - added additional required GEIS initialization arguments
+  - event type enumarant name changes
+
+  * testsuite/geis2/check_attr.c: new test suite
+  * testsuite/geis2/check_event.c: new test suite
+  * include/geis/geis.h (GEIS_INIT_TRACK_DEVICES): new init arg
+    (GEIS_INIT_TRACK_GESTURE_TYPES): new init arg
+    (GeisAttrType): added GEIS_ATTR_TYPE_POINTER enumerant
+    (geis_attr_value_to_pointer): new function
+    (GeisEventType): added new enumerants
+  * libgeis-xcb/geis/geisimpl.h: added GeisPointer type
+  * libgeis/Makefile.am: added libgeis-xcb to header search path
+  * libgeis/libgeis.ver (geis_attr_value_to_pointer): new symbol
+  * testsuite/geis2/Makefile.am: added new test suites
+  * testsuite/geis2/check_geis2_api.c: added new test suites
+  * testsuite/geis2/check_geis_new.c: added new test case for init args
+  * testsuite/geis2/check_general_types.c: added new test case fo GeisPointer
+  * testsuite/geistest/Makefile.am: added libgeis-xcb to header search path
+  * testsuite/libgeis/Makefile.am: same
+  * testsuite/libgeis/check_event_queue.c: changed name of event types
+  * testsuite/libgeis/check_geis_private.c: changed name of event types
+
+2010-12-15  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added GEIS v2.0 region module.
+
+  * libgeis/geis_region.c: new file
+  * libgeis/geis_region.h: new file
+  * testsuite/geis2/check_region.c: new test suite
+  * testsuite/libgeis/check_region.c: new test suite
+  * include/geis/geis.h (GeisRegion): new typedef
+    (GEIS_REGION_X11_ROOT): new region initialization constant
+    (GEIS_REGION_X11_WINDOWID): new region initialization constant
+    (geis_region_new): new function
+    (geis_region_delete): new function
+    (geis_region_name): new function
+  * libgeis/Makefile.am: added new files
+  * libgeis/libgeis.ver: added new symbols
+  * testsuite/geis2/Makefile.am: added new test suite files
+  * testsuite/geis2/check_geis2_api.c: added new test suite 
+  * testsuite/libgeis/Makefile.am: added new test suite files
+  * testsuite/libgeis/check_geis2_internals.c: added new test suite
+
+2010-12-12  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed some container expansion errors.
+
+  * libgeis/geis_attr.c (geis_attr_bag_insert): fixed realloc size
+  * libgeis/geis_subscription.c (geis_subscription_bag_insert):
+    fixed realloc size, cleared newly realloc'd memory
+  * testsuite/libgeis/check_attr.c (expansion): new check
+  * testsuite/libgeis/check_subscription.c (expansion): new check
+
+2010-12-12  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added GEIS v2.0 subscription activation calls.
+
+  * include/geis/geis.h (geis_subscription_activate): new function
+    (geis_subscription_deactivate): new function
+  * libgeis/geis_subscription.c: implemented above new functions
+  * libgeis/geis_backend.h (geis_backend_subscribe) new function
+    (geis_backend_unsubscribe): new function
+  * libgeis/geis_backend.c: implemented above new functions
+  * libgeis/geis_backend_protected.h (GeisBackendVtable): added new
+    subscribe and unsubscribe function pointers
+  * libgeis/geis_backend_test_fixture.c (_subscribe): new vfunction
+    (_unsubscribe): new vfunction
+  * libgeis/geis_private.h (geis_activate_subscription): new function
+    (geis_deactivate_subscription): new function
+  * libgeis/geis.c: implemented above new functions
+  * libgeis/geis_subscription.h: fixed a typo in a prototype
+  * libgeis/libgeis.ver: added new GEIS v2.0 symbols
+  * testsuite/geis2/check_subscription.c: new test cases
+
+2010-12-12  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added forwarding functions so back ends can multiplex file descriptors through
+  the API.
+
+  * libgeis/geis_private.h (geis_multiplex_fd): new function
+    (geis_demultiplex_fd): new function
+  * libgeis/geis.c: implemented above new functions
+  * testsuite/libgeis/check_geis_private.c:
+    renamed from check_backend_event_posting.c
+    (multiplex_fd): new test case
+  * testsuite/libgeis/Makefile.am: renamed above file
+  * testsuite/libgeis/check_backend_multiplexor.c: removed debug message
+    silenced build warnings
+
+2010-12-08  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Refactored event queue style.
+
+  * libgeis/geis_event_queue.h (geis_event_queue_enqueue): renamed from
+    geis_event_queue_push
+    (geis_event_queue_dequeue): renamed from geis_event_queue_pop
+    changed event output parameter to return value
+  * libgeis/geis_event_queue.c: refactored for above
+  * libgeis/geis.c: refactored for above
+  * testsuite/libgeis/check_event_queue.c: refactored for above
+
+
+2010-12-08  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added an event queue.
+
+  * libgeis/geis_event.c: new file
+  * libgeis/geis_event.h: new file
+  * libgeis/geis_event_queue.c: new file
+  * libgeis/geis_event_queue.h: new file
+  * testsuite/libgeis/check_backend_event_posting.c: new test case
+  * testsuite/libgeis/check_event_queue.c: new test case
+  * include/geis/geis.h (GeisEventType): new enum type
+    (geis_event_delete): new function
+    (geis_event_type): new function
+    (geis_event_attr_count): new function
+    (geis_event_attr): new function
+    (geis_event_attr_by_name): new function
+  * libgeis/Makefile.am: added new files
+  * libgeis/geis.c (struct _Geis): added input_event_queue,
+    output_event_queue, and input_signal_pipe members
+    (_default_output_event_callback): new function
+    (_input_event_handler): new function
+    (geis_new_empty): initialized new members
+    (geis_register_event_callback): used _default_output_event_callback
+    (geis_next_event): implemented stubbed-out function
+  * testsuite/libgeis/Makefile.am: added new test cases
+  * testsuite/libgeis/check_geis2_internals.c: added new test cases
+
+
+2010-12-02  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added GEIS v2.0 event control functions.
+
+  * include/geis/geis.h (GeisEvent): new type
+    (GeisEventCallback): new type
+    (GEIS_DEFAULT_EVENT_CALLBACK): new constant
+    (geis_register_event_callback): new function
+    (geis_dispatch_events): new function
+    (geis_next_event): new function
+  * libgeis/geis_private.h (geis_post_event): new function
+  * libgeis/geis.c: implemented new functions
+  * libgeis/libgeis.ver: added new symbols
+
+2010-12-02  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added a back end base and test fixture.
+
+  * libgeis/geis_backend.c: new file
+  * libgeis/geis_backend.h: new file
+  * libgeis/geis_backend_protected.h: new file
+  * libgeis/geis_backend_test_fixture.c: new file
+  * libgeis/geis_backend_test_fixture.h: new file
+  * include/geis/geis.h (GEIS_INIT_SERVICE_PROVIDER): changed constant value
+    (GEIS_INIT_MOCK_ENGINE): added new constant
+  * libgeis/Makefile.am: added new files
+  * libgeis/geis.c (struct _Geis): replaced is_test_fixture with backend
+    (geis_set_valist): created new test fixture backend
+    (geis_delete): destroyed backend
+  * testsuite/geis2/check_config.c: used new name for test fixture back end
+  * testsuite/geis2/check_geis_new.c: same
+  * testsuite/geis2/check_subscription.c: idem
+  * testsuite/libgeis/check_subscription.c: ditto
+
+2010-12-02  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added a back end multiplexor.
+
+  * libgeis/geis_backend_multiplexor.c: new file
+  * libgeis/geis_backend_multiplexor.h: new file
+  * testsuite/libgeis/check_backend_multiplexor.c: new testsuite
+  * include/geis/geis.h (GeisStatus): added new status codes
+    GEIS_STATUS_CONTINUE and GEIS_STATUS_EMPTY
+    (GEIS_CONFIG_MAX_EVENTS): new configuration item
+  * libgeis/Makefile.am: added new files
+  * libgeis/geis.c (struct _Geis): added backend_multiplexor field
+    (geis_new_empty): initialized it
+    (geis_delete): destroyed it
+    (geis_get_configuration): retrieved its file descriptor and config value
+    (geis_set_configuration): set its configuration value
+  * testsuite/geis2/check_error_codes.c: checked new status codes
+  * testsuite/libgeis/Makefile.am
+  * testsuite/libgeis/check_geis2_internals.c
+
+2010-11-29  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Refactored geis_private.h to provide improved data encapsulation.
+
+  * libgeis/geis_private.h (struct _Geis): moved to geis.c
+    (geis_error_stack): new function
+  * libgeis/geis.c: implemented new function
+  * libgeis/geis_error.c: used new function
+
+2010-11-29  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed a typo in the Doxygen comments in geis.h.
+
+  * include/geis/geis.h: fixed typo in documentation
+
+2010-11-28  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added Geis Subscription creation and accessors.
+
+  * libgeis/geis_subscription.c: new file
+  * libgeis/geis_subscription.h: new file
+  * testsuite/geis2/check_subscription.c: new API test suite
+  * testsuite/libgeis/check_subscription.c: new internals test suite
+  * include/geis/geis.h (GeisFilter): new type
+    (GeisSubscription): new type
+    (GeisSubscriptionFlags): new type
+    (geis_subscription_new): new function
+    (geis_subscription_delete): new function
+    (geis_subscription_name): new function
+    (geis_subscription_id): new function
+    (geis_subscription_add_filter): new function
+    (geis_subscription_remove_filter): new function
+  * libgeis/Makefile.am: added new files
+  * libgeis/geis_private.h (geis_subscription_bag): new function
+    (struct _Geis): added subscription_bag field
+  * libgeis/geis.c (geis_subscription_bag): implemented it
+    (geis_new_empty): created an empty subscription bag
+  * libgeis/libgeis.ver: added new geis_subscription_* symbols
+  * testsuite/geis2/Makefile.am: added new test suite source
+  * testsuite/geis2/check_geis2_api.c: added new test suite
+  * testsuite/libgeis/Makefile.am: added new test suite source
+  * testsuite/libgeis/check_geis2_internals.c: added new test suite
+
+
+2010-11-26  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added Geis Attr functions.
+
+  * libgeis/geis_attr.c: new file
+  * libgeis/geis_attr.h: new file
+  * testsuite/libgeis/check_attr.c: new unit test suite
+  * include/geis/geis.h (GeisAttr): new type
+    (geis_attr_name): new function
+    (geis_attr_type): new function
+    (geis_attr_value_to_boolean): new function
+    (geis_attr_value_to_float): new function
+    (geis_attr_value_to_integer): new function
+    (geis_attr_value_to_string): new function
+  * libgeis/Makefile.am: added new files
+  * libgeis/libgeis.ver: added new symbols
+  * testsuite/libgeis/Makefile.am: added new test suite
+  * testsuite/libgeis/check_error_reporting.c: renamed test suite
+  * testsuite/libgeis/check_geis2_internals.c: added new test suite
+
+2010-11-24  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added Geis configuration functions.
+
+  * include/geis/geis.h (geis_get_config): new function
+    (geis_set_config): new function
+  * libgeis/geis.c: added stubs for new functions
+  * libgeis/libgeis.ver: added symbols for new functions
+  * testsuite/geis2/check_config.c: new test suite for new functions
+  * testsuite/geis2/Makefile.am: added above new file
+
+2010-11-24  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added silent rules to build.
+
+  * configure.ac (AM_INIT_AUTOMAKE): required minimum version 1.11
+    (AM_SILENT_RULES): new macros to set silent build rules on by default
+
+2010-11-24  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed a "make distcheck" problem.
+
+  * testsuite/libgeis/Makefile.am (check_geis2_internals_CFLAGS): added
+    $(top_srcdir) to the header search path
+
+2010-11-24  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added unit testing for GEIS v2.0 internals.
+
+  * testsuite/libgeis: new subdirectory
+  * testsuite/libgeis/Makefile.am: new file
+  * testsuite/libgeis/check_error_reporting.c: new file
+  * testsuite/libgeis/check_geis2_internals.c: new file
+  * configure.ac (AC_OUTPUT): added new Makefile
+  * testsuite/Makefile.am (SUBDIRS): added new subdirectory
+  * testsuite/geis1/check_geis_internals.c: renamed test suite
+  * testsuite/geis2/check_geis2_api.c: renamed test suite
+
+2010-11-23  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added Error Reporting functions.
+
+  * libgeis/geis_error.c: new file
+  * libgeis/geis_error.h: new file
+  * libgeis/geis_private.h: new file
+  * include/geis/geis.h (geis_error_count): new function
+    (geis_error_code): new function
+    (geis_error_message): new function
+  * libgeis/Makefile.am: added new files
+  * libgeis/geis.c: used new functions
+  * libgeis/libgeis.ver: added new function symbols
+
+2010-11-23  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added diagnostics to geis_new().
+
+  * libgeis/geis.c (geis_error): reported calloc failure
+    (geis_set_valist): added debug diagnostics for init args
+
+2010-11-23  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Moved diagnostic logging from GEIS v1.0 to GEIS v2.0 libraries.
+
+  * libgeis/geis_logging.h: renamed from libgeis-xcb/geis_logging.h
+  * libgeis/geis_logging.c: renamed from libgeis-xcb/geis_logging.c
+  * libgeis-xcb/Makefile.am: removed above renamed files
+  * libgeis/Makefile.am: added above renamed files
+  * testsuite/geis1/Makefile.am: changed library path
+  * testsuite/geistest/Makefile.am: changed library path
+
+2010-11-23  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Merged GEIS v1.0 into GEIS v2.0 library for backwards compatibility.
+
+  * libgeis-xcb/libgeis-xcb.ver: removed
+  * libgeis-xcb/Makefile.am: converted to build a convenience lib
+  * libgeis/Makefile.am: added libgeis-xcb as a conveniemnce lib
+  * libgeis/libgeis.ver: Added GEIS v1.0 symbols
+  * testsuite/geis2/Makefile.am: fixed path to shared library in build tree
+
+2010-11-22  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Refactored API initialization to use variadic arguments a la spec change.
+
+  * include/geis/geis.h (geis_new): changed function prototype
+  * libgeis/geis.c (geis_new_empty): new function
+    (geis_set_valist): new function
+    (geis_new): changed parameters, used new functions
+  * testsuite/geis2/check_geis_new.c (geis_new_and_delete): changed geis_new()
+    arguments
+
+2010-11-22  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed visibility of new GEIS 2.0 symbols.
+
+  * include/geis/geis.h (geis_new): fixed visibility
+    (geis_delete): same
+
+2010-11-22  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Made geis2_geis_new test case pass.
+
+  * libgeis/geis.c (geis_hints_find_by_id): new static function
+    (geis_hints_append): new static function
+    (geis_new): used them, malloc'd struct _Geis
+    (geis_delete): free'd struct _Geis
+
+2010-11-22  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added test case for GEIS v2.0 geis_new() and geis_delete() functions, together
+  with a skeletal implementation of the libgeis v2.0 library.
+  
+  * libgeis: new source directory
+  * libgeis/Makefile.am: new build recipe for libgeis v2.0
+  * libgeis/geis.c: new source file
+  * libgeis/libgeis.ver: new library version map
+  * testsuite/geis2/check_geis_new.c: new test suite
+  * Makefile.am (SUBDIRS): added libgeis
+  * configure.ac (AC_OUTPUT): added libgeis/Makefile
+  * include/geis/geis.h (GeisHints): new data structure
+    (Geis): new opaque data structure
+    (geis_new): new function
+    (geis_delete): new function
+  * testsuite/geis2/Makefile.am (check_geis2_api_SOURCES): added check_geis_new
+  * testsuite/geis2/check_geis2_api.c (main): added geis_new_suite
+
+2010-11-21  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added test case for geis v2.0 error codes.
+
+  * include/geis/geis.h: added required v2.0 error codes
+  * testsuite/geis2/check_error_codes.c: new test case
+  * testsuite/geis2/Makefile.am: added new test case
+  * testsuite/geis2/check_geis2_api.c: same
+
+2010-11-20  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added test case for geis v2.0 basic types.
+
+  * testsuite/geis2/check_general_types.c: new file
+  * testsuite/geis2/Makefile.am: added above new file
+  * testsuite/geis2/check_geis2_api.c (geis2_general_types_suite_new): added new
+    unit test
+
+2010-11-19  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added geis v2.0 test hardness and version macro test.
+
+  * include/geis/geis.h (GEIS_VERSION_2_0): added macro
+  * testsuite/geis2/check_geis_api.c: new testsuite.
+  * testsuite/geis2/check_version_macro.c: added unit test for geis 2.0 version
+    macro
+  * testsuite/geis2/Makefile: new file
+  * configure.ac (AC_OUTPUT): added above enw file
+  * testsuite/Makefile: added new testsuite directory geis2
+
+2010-11-12  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Made existing unit test directory specific to geis v1.0.
+
+  * testsuite/geis1: renamed from testsuite/check
+  * configure.ac: renamed testsuite/check
+  * testsuite/Makefile.am: same
+  * testsuite/geis1/Makefile.am: same
+
+2010-10-20  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added unit tests for internal geis_instance_table.
+
+  * testsuite/check/check_instance_table.c: new file
+  * testsuite/check/Makefile.am (check_geis_internals_SOURCES): added it
+    (MOSTLYCLEANFILES): new target to clean up unit test logs
+  * testsuite/check/check_geis_internals.c (main): added unit test suite
+
+2010-10-20  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added unit test infrastructure based on 'check'.
+
+  * testsuite/check/Makefile.am: new file
+  * testsuite/check/check_geis_internals.c: new file
+  * testsuite/Makefile.am (SUBDIRS): added check target
+  * configure.ac: added new stanza for detecting check package
+    (AC_CONFIG_FILES): added testsuite/check/Makefile
+
+2010-10-18  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added configury check for xcb-proto package >= 1.6 (LP: #661946).
+
+  * configure.ac: added PKG_CHECK_MODULES for xcb-proto >= 1.6
+
+2010-10-14  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Release version 1.0.13.
+
+  * configure.ac (AC_INIT): bumped package version to 1.0.13
+
+2010-10-12  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Removed extra newlines from diagnostic messages
+
+  * libgeis-xcb/geis_xcb.c: removed newline from several diagnostic
+    messages.
+
+2010-10-07  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed LP: #656503 - event dispatch can hang under some circumstances
+
+  * libgeis-xcb/geis_xcb.c (geis_xcb_dispatch): changed loop condition
+  * libgeis-xcb/Makefile.am (libgeis_la_LDFLAGS): bumped library
+    revision
+
+2010-09-28  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Version bump to 1.0.12.
+
+  * configure.ac (AC_INIT): bumped package version to 1.0.12
+
+2010-09-28  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Made lib compatible with C++.
+
+  * geis/geis.h: forced C linkage
+
+2010-09-14  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Version bump tp 1.0.11
+
+  * configure.ac: bumped package version to 1.0.11
+  * libgeis-xcb/Makefile.am: bumped shlib version to reflect changes
+
+2010-09-01  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed typos in manpage.
+
+  * doc/geistest.1: fixed several typographical errors
+
+2010-09-01  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed a memory leak when logging messages.
+
+  * libgeis-xcb/geis_logging.c (_geis_message): fixed memory leak
+
+2010-08-31  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed prefix string used in diagnostics.
+
+  * libgeis-xcb/geis_logging.c (_geis_message): fixed which prefix string
+    gets used for which diagnostic level
+
+2010-08-31  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Removed input device enumeration handling until later.
+
+  * libgeis-xcb/geis.c (geis_input_devices): removed #if 0 block
+  * libgeis-xcb/geis_instance.h (geis_instance_input_devices): removed 
+  * libgeis-xcb/geis_instance.c (geis_instance_input_devices): removed 
+  * libgeis-xcb/geis_xcb.h (geis_xcb_input_devices):  added funcs and
+    cookie parameters
+  * libgeis-xcb/geis_xcb.c (_GeisXcb): added input_funcs and input_cookie
+    (geis_xcb_new): removed #if 0 blocks
+    (geis_xcb_input_devices): removed XInput handling until later
+
+2010-08-30  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Removed some debug code and fixed pasto.
+
+  * libgeis-xcb/geis_instance.c: fixed a pasto
+  * testsuite/geistest/geistest.c: removed debug code
+
+2010-08-30  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed so multiple windows will work.
+
+  Altered geistest to work with a single window or all windows, had to fix geis
+  implementation so this was possible.
+
+  * libgeis-xcb/geis_instance_table.c: new file
+  * libgeis-xcb/geis_instance_table.h: new file
+  * configure.ac: added package checks for x11-xcb and xi
+  * doc/geistest.1: documented new CLI switches
+  * geis/geis.h (geis_input_devices): fixed argument type
+  * libgeis-xcb/Makefile.am (libgeis_la_SOURCES): added new files
+    (libgeis_la_CFLAGS): aded X11XCB_CFLAGS and XI2_CFLAGS
+    (libgeis_la_LIBADD): aded X11XCB_LIBS and XI2LIBS_
+  * libgeis-xcb/geis.c (s_geis_xcb): new static global
+    (geis_init): used it
+  * libgeis-xcb/geis_instance.h (_GeisInstance): added window_id
+    (geis_instance_new): renamed from geis_instance_get
+    (geis_instance_input_devices): new function
+    (geis_instance_subscribe): added GeisXcb parameter
+    (geis_instance_get_window_id): new function
+    (geis_instance_fd): removed function
+    (geis_instance_event_dispatch): removed function
+  * libgeis-xcb/geis_instance.c: implemented new functions
+  * libgeis-xcb/geis_xcb.h (geis_xcb_new): renamed from geis_xcb_get
+    (geis_xcb_create_instance): new function
+    (geis_xcb_input_devices): new function
+    (geis_xcb_subscribe): added GeisInstance parameter
+    (geis_xcb_dispatch): changed parameter type to GeisXcb
+  * libgeis-xcb/geis_xcb.c: Implemeneted new functions
+  * testsuite/geistest/geistest.c (parse_opts): added -w switch
+    (subscribe_window): new function
+    (subscribe_windows_preorder): new function
+    (subscribe_all_windows): new function
+    (main): used the new functions
+
+2010-08-30  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added runtime diagnostic facility.
+
+  * libgeis-xcb/geis_debug.h: replaced with
+  * libgeis-xcb/geis_logging.h: mew file
+  * libgeis-xcb/geis_logging.c: new file
+  * libgeis-xcb/Makefile.am: replaced above files
+  * libgeis-xcb/geis_xcb.c: replaced geis_debug calls with
+    geis_warning or geis_error as appropriate
+
+2010-08-27  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed checking of gesture masks for multiple input devices.
+
+  * libgeis-xcb/geis_instance.c (geis_instance_subscribe):
+    added missing index increment
+  * libgeis-xcb/geis_xcb.c (geis_xcb_verify_event_selection):
+    added logic for iterating through multiple input devices
+
+2010-08-27  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Move gesture-type-added callback until later in the subscription  sequence.
+
+  * libgeis-xcb/geis_xcb.c (geis_xcb_subscribe): move call to
+    geis_xcb_dispatch_gesture_type until later in sequence
+
+2010-08-27  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Removed "Grab" gestire entirely from the list of known gestures.
+
+  * libgeis-xcb/geis_xcb.c (s_grail_type_map): removed GRAIL_TYPE_SYSFLAG1
+    (geis_xcb_dispatch_gesture_type): removed references to GRAIL_TYPE_SYSFLAG1
+
+2010-08-26  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Prevented "Grab" gesture from being propagated.
+
+  * libgeis-xcb/geis_xcb.c (geis_xcb_dispatch_gesture_type): skipped
+    notification of the availability of the "Grab" gesture type.
+
+2010-08-26  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Fixed an allocation size issue.
+
+  * libgeis-xcb/geis_instance.c (geis_instance_get): fixed allocation
+    size issue
+
+2010-08-26  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Minor style adjustments.  Adjusted whitespace for consistency.
+
+  * libgeis-xcb/geis_xcb.c (geis_xcb_verify_event_selection):
+    renamed function from geis_xcb_select_events
+    (geis_xcb_determine_primitive_type): renamed from
+    geis_xcb_determine_fundamental_gesture_type
+    (geis_xcb_get_gesture_type_primitive_name): renamed form
+    geis_xcb_get_gesture_type_fundamental_name
+
+2010-08-25  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Reverted version bump.
+
+  * configure,.ac (AC_INIT): reverted to version 1.0.10
+
+2010-08-23  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Implemented gesture and input device selection.
+
+  * geis/geis.h: new gesture definitions
+  * libgeis-xcb/geis_xcb.h (geis_xcb_subscribe):
+    added device_id parameter
+  * libgeis-xcb/geis_xcb.c (s_grail_type_map): new gesture definitions
+    (geis_xcb_map_gestures_to_mask): new function
+    (geis_xcb_select_events): new function
+    (geis_xcb_subscribe): used them
+    added device_id parameter
+    (geis_xcb_determine_gesture_type): renamed to
+    geis_xcb_determine_fundamental_gesture_type
+    (geis_xcb_get_gesture_type_fundamental_name): new function
+    (geis_xcb_dispatch_gesture_type): mapped public gesture definitions to
+    fundamental gesture types
+  * libgeis-xcb/geis_instance.c (geis_instance_subscribe):
+    handled input_list argument
+  * testsuite/geistest/geistest.c: included an example of selecting gestures
+
+2010-08-22  Chase Douglas <chase.douglas@canonical.com>
+
+  Bumped to version 1.0.10 for various fixes
+
+  * geisimple.h: Define the correct number of attributes for each gesture
+  * geis.h: Sync up with latest grail ABI for gesture attributes
+  * geis_xcb.c: Sync up with latest grail ABI for gesture attributes
+  * geisspec-1.0.asc: Sync up with latest grail ABI for gesture attributes
+  * geis_instance.h: Fix header include macro typo
+  * geisimple.h: Use int32_t instead of long for integer values
+  * geis.h: Make win_type unsigned to match usage in code
+  * geis_xcb.c: Fix missing initializer value issue
+  * geis_xcb.c: Fix unused variable warning
+
+2010-08-20  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Removed spec build from packaged files.
+
+  * doc/Makefile.am (doc-html): removed doc-html-asciidoc
+
+2010-08-16  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Conformed to GNU strictness for consistency.
+
+  * AUTHORS: New file.
+  * COPYING: new file renamed from COPYING.LGPL.
+  * INSTALL: New file.
+  * NEWS: New file.
+  * README: New file.
+  * Makefile.am: distributed the new files.
+  * configure.ac: Swicthed from foreign to gnu conformance level.
+  * libgeis-xcb/Makefile.am: Fixed relative paths.
+
+2010-08-16  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Bumped version to 1.0.9 to replect API change.
+
+  * configure.ac: bumped package version.
+
+2010-08-16  Stephen M. Webb  <stephen.webb@canonical.com>
+
+  Added standard fundamental gesture constants.
+
+  * doc/geisspec-1.0.asc: Added section on fundamental gestures.
+  * geis/geis.h: Added fundamental gestures and attributes.
+  * libgeis-xcb/geis_xcb.c: Used them.
+

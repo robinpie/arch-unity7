@@ -1,0 +1,105 @@
+<!-- ##### SECTION Title ##### -->
+ZeitgeistIndex
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT ZeitgeistIndex ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT ZeitgeistIndexClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION zeitgeist_index_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_index_search ##### -->
+<para>
+
+</para>
+
+@self: 
+@query: 
+@time_range: 
+@event_templates: 
+@offset: 
+@num_events: 
+@result_type: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION zeitgeist_index_search_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_index_search_with_relevancies ##### -->
+<para>
+
+</para>
+
+@self: 
+@query: 
+@time_range: 
+@event_templates: 
+@storage_state: 
+@offset: 
+@num_events: 
+@result_type: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION zeitgeist_index_search_with_relevancies_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@relevancies: 
+@relevancies_size: 
+@error: 
+@Returns: 
+
+

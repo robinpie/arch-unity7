@@ -1,0 +1,9 @@
+etc
+usr/lib/unity-settings-daemon*
+usr/share/icons
+usr/share/locale
+usr/share/unity-settings-daemon
+usr/share/polkit-1
+debian/source_unity-settings-daemon.py /usr/share/apport/package-hooks
+debian/user/unity-settings-daemon.service /usr/lib/systemd/user/
+debian/user/unity-settings-daemon.override /usr/share/upstart/systemd-session/upstart/

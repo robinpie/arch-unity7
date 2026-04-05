@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompizconfig_gsettings_wrapper.a CMakeFiles/compizconfig_gsettings_wrapper.dir/ccs_gsettings_interface_wrapper.c.o
+/usr/bin/ranlib libcompizconfig_gsettings_wrapper.a

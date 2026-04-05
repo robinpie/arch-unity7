@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib
+includedir=${prefix}/include
+
+Name: NuxCore
+Description: Core objects and utilities for Nux
+Version: 4.0.8
+Libs: -L${libdir} -lnux-core-4.0
+Cflags: -I${includedir}/Nux-4.0
+Requires: glib-2.0 sigc++-2.0

@@ -1,0 +1,11 @@
+prefix=/usr
+includedir=${prefix}/include
+plugindir_suffix=lib/unity8/qml
+plugindir=${prefix}/${plugindir_suffix}
+
+Name: unity-shell-api
+Description: unity-shell-api
+Version: 1.0
+
+Requires: 
+Cflags: -I${includedir}

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_expo_click_threshold.a "CMakeFiles/compiz_expo_click_threshold.dir/src/click-threshold.cpp.o"
+/usr/bin/ranlib libcompiz_expo_click_threshold.a

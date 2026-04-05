@@ -1,0 +1,21 @@
+/**
+ * @mainpage The GEIS API
+ *
+ * @section sec_intro Introduction
+ *
+ * The GEIS API provides a defined, stable, portable interface for receiving
+ * gestural input.
+ *
+ * GEIS actually provides two APIs:
+ * the @ref using_geis_v1 "simplified interface"
+ * and the @ref using_geis_v2 "advanced interface".
+ *
+ * @page  using_geis_v1 Using The Simplified Interface
+ *
+ * @section using_geis_v1_intro Introduction to the Simplified GEIS Interface
+ *
+ * The goal of the simplified GEIS interface is to minimize the work required to
+ * receive gestures from the gesture recognition engine.  It is designed around
+ * the idea of creating a set of callback functions and installing them to
+ * receive gesture events on a selected window.
+ */

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="notification">
+	<short>Notification</short>
+	<short xml:lang="ca">Notificació</short>
+	<short xml:lang="cs">Oznámení</short>
+	<short xml:lang="da">Underretning</short>
+	<short xml:lang="de">Benachrichtigung</short>
+	<short xml:lang="es">Notificación</short>
+	<short xml:lang="fi">Ilmoitus</short>
+	<short xml:lang="pl">Powiadomienie</short>
+	<short xml:lang="uk">Сповіщення</short>
+	<short xml:lang="zh_CN">通知</short>
+	<short xml:lang="zh_TW">通知</short>
+	<long>Use libnotify to graphically display error messages</long>
+	<category>Utility</category>
+	<deps>
+	    <relation type="after">
+		<plugin>composite</plugin>
+		<plugin>opengl</plugin>
+		<plugin>place</plugin>
+	    </relation>
+	</deps>
+	<options>
+	    <option type="int" name="timeout">
+		<short>Hide Timeout</short>
+		<long>Timeout (in seconds) before hiding the notification, set to -1 for system default and 0 for indefinite</long>
+		<min>-1</min>
+		<max>30</max>
+		<default>-1</default>
+	    </option>
+	    <option type="int" name="max_log_level">
+		<short>Maximum Log Level</short>
+		<long>The maximum log level to display</long>
+		<default>1</default>
+		<desc>
+		    <value>0</value>
+		    <name>Fatal</name>
+		    <name xml:lang="uk">Фатальна</name>
+		</desc>
+		<desc>
+		    <value>1</value>
+		    <name>Error</name>
+		    <name xml:lang="uk">Помилка</name>
+		</desc>
+		<desc>
+		    <value>2</value>
+		    <name>Warning</name>
+		    <name xml:lang="uk">Увага</name>
+		</desc>
+		<desc>
+		    <value>3</value>
+		    <name>Info</name>
+		    <name xml:lang="uk">Відомості</name>
+		</desc>
+		<desc>
+		    <value>4</value>
+		    <name>Debug</name>
+		    <name xml:lang="uk">Зневадження</name>
+		</desc>
+	    </option>
+	</options>
+    </plugin>
+</compiz>

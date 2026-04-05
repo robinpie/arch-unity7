@@ -1,0 +1,932 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.2"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:doc="http://www.gtk.org/introspection/doc/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="GObject" version="2.0"/>
+  <package name="hud-2"/>
+  <c:include name="hud.h"/>
+  <doc:format name="unknown"/>
+  <namespace name="Hud"
+             version="2"
+             shared-library="libhud.so.2"
+             c:identifier-prefixes="Hud"
+             c:symbol-prefixes="hud">
+    <function-macro name="ACTION_DESCRIPTION"
+                    c:identifier="HUD_ACTION_DESCRIPTION"
+                    introspectable="0">
+      <source-position filename="action-publisher.h" line="60"/>
+      <parameters>
+        <parameter name="inst">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="ACTION_PUBLISHER"
+                    c:identifier="HUD_ACTION_PUBLISHER"
+                    introspectable="0">
+      <source-position filename="action-publisher.h" line="39"/>
+      <parameters>
+        <parameter name="inst">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <constant name="ACTION_PUBLISHER_ALL_WINDOWS"
+              value="0"
+              c:type="HUD_ACTION_PUBLISHER_ALL_WINDOWS">
+      <doc xml:space="preserve"
+           filename="action-publisher.h"
+           line="72">Can be passed to hud_action_publisher_new() to request that these actions
+apply to all windows for the application.</doc>
+      <source-position filename="action-publisher.h" line="78"/>
+      <type name="gint" c:type="gint"/>
+    </constant>
+    <constant name="ACTION_PUBLISHER_SIGNAL_ACTION_GROUP_ADDED"
+              value="action-group-added"
+              c:type="HUD_ACTION_PUBLISHER_SIGNAL_ACTION_GROUP_ADDED">
+      <doc xml:space="preserve"
+           filename="action-publisher.h"
+           line="44">Define for the string to access the signal HudActionPublisher::action-group-added</doc>
+      <source-position filename="action-publisher.h" line="49"/>
+      <type name="utf8" c:type="gchar*"/>
+    </constant>
+    <constant name="ACTION_PUBLISHER_SIGNAL_ACTION_GROUP_REMOVED"
+              value="action-group-removed"
+              c:type="HUD_ACTION_PUBLISHER_SIGNAL_ACTION_GROUP_REMOVED">
+      <doc xml:space="preserve"
+           filename="action-publisher.h"
+           line="50">Define for the string to access the signal HudActionPublisher::action-group-removed</doc>
+      <source-position filename="action-publisher.h" line="55"/>
+      <type name="utf8" c:type="gchar*"/>
+    </constant>
+    <class name="ActionDescription"
+           c:symbol-prefix="action_description"
+           c:type="HudActionDescription"
+           parent="GObject.Object"
+           glib:type-name="HudActionDescription"
+           glib:get-type="hud_action_description_get_type">
+      <doc xml:space="preserve"
+           filename="action-publisher.c"
+           line="631">A description of an action that is accessible from the HUD.  This is
+an opaque structure type and all accesses must be made via the API.</doc>
+      <constructor name="new" c:identifier="hud_action_description_new">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="678">Creates a new #HudActionDescription.
+
+The situations in which you want to do this are limited to "dynamic"
+types of actions -- things like bookmarks or recent documents.
+
+Use hud_action_publisher_add_descriptions_from_file() to take care of
+the bulk of the actions in your application.</doc>
+        <source-position filename="action-publisher.h" line="127"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="action-publisher.c"
+               line="691">a new #HudActionDescription with no attributes</doc>
+          <type name="ActionDescription" c:type="HudActionDescription*"/>
+        </return-value>
+        <parameters>
+          <parameter name="action_name" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="680">a (namespaced) action name</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="action_target" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="681">an action target</doc>
+            <type name="GLib.Variant" c:type="GVariant*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="get_action_name"
+              c:identifier="hud_action_description_get_action_name">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="789">Gets the action name of @description.
+
+This, together with the action target, uniquely identify an action
+description.</doc>
+        <source-position filename="action-publisher.h" line="131"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="action-publisher.c"
+               line="798">the action name</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="description" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="791">a #HudActionDescription</doc>
+            <type name="ActionDescription" c:type="HudActionDescription*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_action_target"
+              c:identifier="hud_action_description_get_action_target">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="806">Gets the action target of @description (ie: the #GVariant that will
+be passed to invocations of the action).
+
+This may be %NULL.
+
+This, together with the action name, uniquely identify an action
+description.</doc>
+        <source-position filename="action-publisher.h" line="132"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="action-publisher.c"
+               line="818">the target value</doc>
+          <type name="GLib.Variant" c:type="GVariant*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="description" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="808">a #HudActionDescription</doc>
+            <type name="ActionDescription" c:type="HudActionDescription*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="ref" c:identifier="hud_action_description_ref">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="857">Increase the reference count to an action description</doc>
+        <source-position filename="action-publisher.h" line="129"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="action-publisher.c"
+               line="863">Value of @description</doc>
+          <type name="ActionDescription" c:type="HudActionDescription*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="description" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="859">A #HudActionDescription</doc>
+            <type name="ActionDescription" c:type="HudActionDescription*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="set_attribute"
+              c:identifier="hud_action_description_set_attribute"
+              introspectable="0">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="750">Sets or unsets an attribute on @description.
+
+You may not change the "action" or "target" attributes.
+
+If @format_string is non-%NULL then this call is equivalent to
+g_variant_new() and hud_action_description_set_attribute_value().
+
+If @format_string is %NULL then this call is equivalent to
+hud_action_description_set_attribute_value() with a %NULL value.</doc>
+        <source-position filename="action-publisher.h" line="136"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="description" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="752">a #HudActionDescription</doc>
+            <type name="ActionDescription" c:type="HudActionDescription*"/>
+          </instance-parameter>
+          <parameter name="attribute_name" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="753">an attribute name</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="format_string"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="754">a #GVariant format string</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="..." transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="755">arguments to @format_string</doc>
+            <varargs/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_attribute_value"
+              c:identifier="hud_action_description_set_attribute_value">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="715">Sets or unsets an attribute on @description.
+
+You may not change the "action" or "target" attributes.
+
+If @value is non-%NULL then it is the new value for attribute.  A
+%NULL @value unsets @attribute_name.
+
+@value is consumed if it is floating.</doc>
+        <source-position filename="action-publisher.h" line="133"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="description" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="717">a #HudActionDescription</doc>
+            <type name="ActionDescription" c:type="HudActionDescription*"/>
+          </instance-parameter>
+          <parameter name="attribute_name" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="718">an attribute name</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="value"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="719">the new value for the attribute</doc>
+            <type name="GLib.Variant" c:type="GVariant*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_parameterized"
+              c:identifier="hud_action_description_set_parameterized"
+              introspectable="0">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="826">A function to put one action description as a child for the first
+one.  This is used for parameterized actions where one can set up
+children that are displayed on the 'dialog' mode of the HUD.</doc>
+        <source-position filename="action-publisher.h" line="140"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="parent" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="828">a #HudActionDescription</doc>
+            <type name="ActionDescription" c:type="HudActionDescription*"/>
+          </instance-parameter>
+          <parameter name="child" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="829">The child #GMenuModel to add</doc>
+            <type c:type="GMenuModel*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="unref" c:identifier="hud_action_description_unref">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="873">Decrease the reference count to an action description</doc>
+        <source-position filename="action-publisher.h" line="130"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="description" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="875">A #HudActionDescription</doc>
+            <type name="ActionDescription" c:type="HudActionDescription*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <glib:signal name="changed" when="last" detailed="1">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="665">Emitted when a property of the action description gets
+changed.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <class name="ActionPublisher"
+           c:symbol-prefix="action_publisher"
+           c:type="HudActionPublisher"
+           parent="GObject.Object"
+           glib:type-name="HudActionPublisher"
+           glib:get-type="hud_action_publisher_get_type">
+      <doc xml:space="preserve"
+           filename="action-publisher.h"
+           line="84">An object representing the actions that are published for a
+particular context within the application.  Most often this is
+a window, but could also be used for tabs or other modal style
+user contexts in the application.</doc>
+      <constructor name="new" c:identifier="hud_action_publisher_new">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="307">Creates a new #HudActionPublisher based on the window ID passed
+in via @window_id and context ID from @context_id.
+
+Either one of them can be not used by passing in eithe of the
+defines #HUD_ACTION_PUBLISHER_ALL_WINDOWS or #HUD_ACTION_PUBLISHER_NO_CONTEXT
+for the appropriate parameter.</doc>
+        <source-position filename="action-publisher.h" line="107"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="action-publisher.c"
+               line="319">A new #HudActionPublisher object</doc>
+          <type name="ActionPublisher" c:type="HudActionPublisher*"/>
+        </return-value>
+        <parameters>
+          <parameter name="window_id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="309">A window ID</doc>
+            <type name="guint" c:type="guint"/>
+          </parameter>
+          <parameter name="context_id"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="310">A context ID</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_for_application"
+                   c:identifier="hud_action_publisher_new_for_application"
+                   introspectable="0">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="277">Creates a new #HudActionPublisher and automatically registers the
+default actions under the "app" prefix.</doc>
+        <source-position filename="action-publisher.h" line="110"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="action-publisher.c"
+               line="284">A new #HudActionPublisher object</doc>
+          <type name="ActionPublisher" c:type="HudActionPublisher*"/>
+        </return-value>
+        <parameters>
+          <parameter name="application" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="279">A #GApplication object</doc>
+            <type c:type="GApplication*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="add_action_group"
+              c:identifier="hud_action_publisher_add_action_group">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="506">Informs the HUD of the existance of an action group.
+
+The action group must be published on the shared session bus
+connection of this process at @object_path.
+
+The @prefix defines the type of action group.  Currently "app" and
+"win" are supported.  For example, if the exported action group
+contained a "quit" action and you wanted to refer to it as "app.quit"
+from action descriptions, then you would use the @prefix "app" here.
+
+@identifier is a piece of identifying information, depending on which
+@prefix is used.  Currently, this should be %NULL for the "app"
+@prefix and should be a uint32 specifying the window ID (eg: XID) for
+the "win" @prefix.
+
+You do not need to manually export your action groups if you are
+using #GApplication.</doc>
+        <source-position filename="action-publisher.h" line="115"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="publisher" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="508">a #HudActionPublisher</doc>
+            <type name="ActionPublisher" c:type="HudActionPublisher*"/>
+          </instance-parameter>
+          <parameter name="prefix" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="509">the action prefix for the group (like "app")</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="object_path" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="510">the object path of the exported group</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="add_description"
+              c:identifier="hud_action_publisher_add_description">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="394">Adds @description to the list of actions that the application exports
+to the HUD.
+
+If the application is already exporting an action with the same name
+and target value as @description then it will be replaced.
+
+You should only use this API for situations like recent documents and
+bookmarks.</doc>
+        <source-position filename="action-publisher.h" line="112"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="publisher" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="396">the #HudActionPublisher</doc>
+            <type name="ActionPublisher" c:type="HudActionPublisher*"/>
+          </instance-parameter>
+          <parameter name="description" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="397">an action description</doc>
+            <type name="ActionDescription" c:type="HudActionDescription*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_action_groups"
+              c:identifier="hud_action_publisher_get_action_groups"
+              introspectable="0">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="599">Grabs the action groups for this publisher</doc>
+        <source-position filename="action-publisher.h" line="123"/>
+        <return-value transfer-ownership="container">
+          <doc xml:space="preserve"
+               filename="action-publisher.c"
+               line="605">The groups in this publisher</doc>
+          <type name="GLib.List" c:type="GList*">
+            <type name="gpointer" c:type="gpointer"/>
+          </type>
+        </return-value>
+        <parameters>
+          <instance-parameter name="publisher" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="601">A #HudActionPublisher object</doc>
+            <type name="ActionPublisher" c:type="HudActionPublisher*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_context_id"
+              c:identifier="hud_action_publisher_get_context_id">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="583">Gets the context ID for this publisher</doc>
+        <source-position filename="action-publisher.h" line="122"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="action-publisher.c"
+               line="589">The context ID associtaed with this action publisher</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="publisher" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="585">A #HudActionPublisher object</doc>
+            <type name="ActionPublisher" c:type="HudActionPublisher*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_description_path"
+              c:identifier="hud_action_publisher_get_description_path">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="616">Grabs the object path of the description for this publisher</doc>
+        <source-position filename="action-publisher.h" line="124"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="action-publisher.c"
+               line="622">The object path of the descriptions</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="publisher" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="618">A #HudActionPublisher object</doc>
+            <type name="ActionPublisher" c:type="HudActionPublisher*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_window_id"
+              c:identifier="hud_action_publisher_get_window_id">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="568">Gets the window ID for this publisher</doc>
+        <source-position filename="action-publisher.h" line="121"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="action-publisher.c"
+               line="574">The Window ID associtaed with this action publisher</doc>
+          <type name="guint" c:type="guint"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="publisher" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="570">A #HudActionPublisher object</doc>
+            <type name="ActionPublisher" c:type="HudActionPublisher*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="remove_action_group"
+              c:identifier="hud_action_publisher_remove_action_group">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="549">Informs the HUD that an action group no longer exists.
+
+This reverses the effect of a previous call to
+hud_action_publisher_add_action_group() with the same parameters.</doc>
+        <source-position filename="action-publisher.h" line="118"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="publisher" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="551">a #HudActionPublisher</doc>
+            <type name="ActionPublisher" c:type="HudActionPublisher*"/>
+          </instance-parameter>
+          <parameter name="prefix" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="552">the action prefix for the group (like "app")</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="identifier"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="action-publisher.c"
+                 line="553">an identifier, or %NULL</doc>
+            <type name="GLib.Variant" c:type="GVariant*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <glib:signal name="action-group-added" when="last">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="253">Emitted when a new action group is added to the publisher</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="action-group-removed" when="last">
+        <doc xml:space="preserve"
+             filename="action-publisher.c"
+             line="264">Emitted when a new action group is removed from the publisher</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="object" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="p0" transfer-ownership="none">
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <record name="ActionPublisherActionGroupSet"
+            c:type="HudActionPublisherActionGroupSet">
+      <doc xml:space="preserve"
+           filename="action-publisher.h"
+           line="93">A set of properties of that describe the action group.</doc>
+      <source-position filename="action-publisher.h" line="103"/>
+      <field name="prefix" writable="1">
+        <doc xml:space="preserve"
+             filename="action-publisher.h"
+             line="95">Action prefix for the action group</doc>
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+      <field name="path" writable="1">
+        <doc xml:space="preserve"
+             filename="action-publisher.h"
+             line="96">Path that the action group is exported on DBus</doc>
+        <type name="utf8" c:type="gchar*"/>
+      </field>
+    </record>
+    <function-macro name="IS_ACTION_DESCRIPTION"
+                    c:identifier="HUD_IS_ACTION_DESCRIPTION"
+                    introspectable="0">
+      <source-position filename="action-publisher.h" line="62"/>
+      <parameters>
+        <parameter name="inst">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_ACTION_PUBLISHER"
+                    c:identifier="HUD_IS_ACTION_PUBLISHER"
+                    introspectable="0">
+      <source-position filename="action-publisher.h" line="41"/>
+      <parameters>
+        <parameter name="inst">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_MANAGER"
+                    c:identifier="HUD_IS_MANAGER"
+                    introspectable="0">
+      <source-position filename="manager.h" line="39"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_MANAGER_CLASS"
+                    c:identifier="HUD_IS_MANAGER_CLASS"
+                    introspectable="0">
+      <source-position filename="manager.h" line="40"/>
+      <parameters>
+        <parameter name="klass">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="MANAGER"
+                    c:identifier="HUD_MANAGER"
+                    introspectable="0">
+      <source-position filename="manager.h" line="37"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="MANAGER_CLASS"
+                    c:identifier="HUD_MANAGER_CLASS"
+                    introspectable="0">
+      <source-position filename="manager.h" line="38"/>
+      <parameters>
+        <parameter name="klass">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="MANAGER_GET_CLASS"
+                    c:identifier="HUD_MANAGER_GET_CLASS"
+                    introspectable="0">
+      <source-position filename="manager.h" line="41"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <constant name="MANAGER_PROP_APPLICATION"
+              value="application"
+              c:type="HUD_MANAGER_PROP_APPLICATION">
+      <doc xml:space="preserve"
+           filename="manager.h"
+           line="43">Define for the string to lookup HudManager:application.</doc>
+      <source-position filename="manager.h" line="48"/>
+      <type name="utf8" c:type="gchar*"/>
+    </constant>
+    <constant name="MANAGER_PROP_APP_ID"
+              value="app-id"
+              c:type="HUD_MANAGER_PROP_APP_ID">
+      <doc xml:space="preserve"
+           filename="manager.h"
+           line="49">Define for the string to lookup HudManager:app-id.</doc>
+      <source-position filename="manager.h" line="54"/>
+      <type name="utf8" c:type="gchar*"/>
+    </constant>
+    <class name="Manager"
+           c:symbol-prefix="manager"
+           c:type="HudManager"
+           parent="GObject.Object"
+           glib:type-name="HudManager"
+           glib:get-type="hud_manager_get_type"
+           glib:type-struct="ManagerClass">
+      <doc xml:space="preserve"
+           filename="manager.h"
+           line="70">Instance data for the HUD Manager object.  This object
+tracks the information exported to the HUD for a specific
+application.</doc>
+      <source-position filename="manager.h" line="68"/>
+      <constructor name="new" c:identifier="hud_manager_new">
+        <doc xml:space="preserve"
+             filename="manager.c"
+             line="518">Creates a new #HudManager object.</doc>
+        <source-position filename="manager.h" line="84"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="manager.c"
+               line="524">New #HudManager</doc>
+          <type name="Manager" c:type="HudManager*"/>
+        </return-value>
+        <parameters>
+          <parameter name="application_id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="manager.c"
+                 line="520">Unique identifier of the application, usually desktop file name</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <constructor name="new_for_application"
+                   c:identifier="hud_manager_new_for_application"
+                   introspectable="0">
+        <doc xml:space="preserve"
+             filename="manager.c"
+             line="536">Creates a new #HudManager object using the application ID in th
+@application object.  Also exports the default actions there in
+the "app" namespace.</doc>
+        <source-position filename="manager.h" line="86"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="manager.c"
+               line="544">New #HudManager</doc>
+          <type name="Manager" c:type="HudManager*"/>
+        </return-value>
+        <parameters>
+          <parameter name="application" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="manager.c"
+                 line="538">#GApplication that we can use to get the ID and some actions from</doc>
+            <type c:type="GApplication*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="add_actions" c:identifier="hud_manager_add_actions">
+        <doc xml:space="preserve"
+             filename="manager.c"
+             line="569">Sets up a set of actions and descriptions for a specific user
+context.  This could be a window or a tab, depending on how the
+application works.</doc>
+        <source-position filename="manager.h" line="88"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="manager" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="manager.c"
+                 line="571">A #HudManager object</doc>
+            <type name="Manager" c:type="HudManager*"/>
+          </instance-parameter>
+          <parameter name="pub" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="manager.c"
+                 line="572">Action publisher object tracking the descriptions and action groups</doc>
+            <type name="ActionPublisher" c:type="HudActionPublisher*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove_actions" c:identifier="hud_manager_remove_actions">
+        <doc xml:space="preserve"
+             filename="manager.c"
+             line="648">Removes actions for being watched by the HUD.  Should be done when the object
+is remove.  Does not require @pub to be a valid object so it can be used
+with weak pointer style destroy.</doc>
+        <source-position filename="manager.h" line="91"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="manager" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="manager.c"
+                 line="650">A #HudManager object</doc>
+            <type name="Manager" c:type="HudManager*"/>
+          </instance-parameter>
+          <parameter name="pub" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="manager.c"
+                 line="651">Action publisher object tracking the descriptions and action groups</doc>
+            <type name="ActionPublisher" c:type="HudActionPublisher*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="switch_window_context"
+              c:identifier="hud_manager_switch_window_context">
+        <doc xml:space="preserve"
+             filename="manager.c"
+             line="685">Tells the HUD service that a window should use a different context of
+actions with the current window.  This allows the application to export
+sets of actions and switch them easily with a single dbus message.</doc>
+        <source-position filename="manager.h" line="94"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="manager" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="manager.c"
+                 line="687">A #HudManager object</doc>
+            <type name="Manager" c:type="HudManager*"/>
+          </instance-parameter>
+          <parameter name="pub" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="manager.c"
+                 line="688">Action publisher object tracking the descriptions and action groups</doc>
+            <type name="ActionPublisher" c:type="HudActionPublisher*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="app-id"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none"
+                default-value="NULL">
+        <type name="utf8" c:type="gchar*"/>
+      </property>
+      <property name="application"
+                introspectable="0"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type/>
+      </property>
+      <field name="parent">
+        <type name="GObject.Object" c:type="GObject"/>
+      </field>
+      <field name="priv">
+        <type name="ManagerPrivate" c:type="HudManagerPrivate*"/>
+      </field>
+    </class>
+    <record name="ManagerClass"
+            c:type="HudManagerClass"
+            glib:is-gtype-struct-for="Manager">
+      <doc xml:space="preserve"
+           filename="manager.h"
+           line="60">Class data for #HudManager</doc>
+      <source-position filename="manager.h" line="68"/>
+      <field name="parent_class">
+        <doc xml:space="preserve"
+             filename="manager.h"
+             line="62">The #GObject class</doc>
+        <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+      </field>
+    </record>
+    <record name="ManagerPrivate"
+            c:type="HudManagerPrivate"
+            disguised="1"
+            opaque="1">
+      <source-position filename="manager.h" line="58"/>
+    </record>
+    <docsection name="action-publisher">
+      <doc xml:space="preserve"
+           filename="action-publisher.h"
+           line="143">Each context in the application should have a #HudActionPublisher
+object to represents the actions that are available to the user
+when that window and context are visible.  This acts as a set of
+actions that can be activated by either the window manager changing
+focus or the application changing contexts.
+
+On each action publisher there exits several action groups which can
+be separated by allowing different prefixes for those action groups.
+A particular prefix should only be used once per action publisher, but
+an action group can by used by several action publishers.
+
+The values describing the action, including the label and description that
+show up in the HUD are set via creating a #HudActionDescription for a
+action.  Each action can have more than one description if there
+is a reason to do so.  But, it is probably better to use the keywords
+attribute in the majority cases.</doc>
+    </docsection>
+    <docsection name="manager">
+      <doc xml:space="preserve"
+           filename="manager.h"
+           line="97">Applications that are exporting data to the HUD can export data
+for every window or context in the application.  This includes
+application internal structures like tabs or views on the various
+data inside the application.  The HUD manager allows for registering
+and managing all the actions that are exported to the HUD for the
+application.</doc>
+    </docsection>
+  </namespace>
+</repository>

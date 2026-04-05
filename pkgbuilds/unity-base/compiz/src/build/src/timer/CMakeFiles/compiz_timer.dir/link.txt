@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_timer.a CMakeFiles/compiz_timer.dir/src/timeouthandler.cpp.o CMakeFiles/compiz_timer.dir/src/timer.cpp.o
+/usr/bin/ranlib libcompiz_timer.a

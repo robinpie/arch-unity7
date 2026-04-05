@@ -1,0 +1,3 @@
+libnux_graphics_4.0_la-NuxGraphicsObject.lo: NuxGraphicsObject.cpp \
+ /usr/include/stdc-predef.h
+/usr/include/stdc-predef.h:

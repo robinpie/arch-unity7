@@ -1,0 +1,9 @@
+# ZeitgeistMonitor::events-inserted
+VOID:OBJECT,OBJECT
+
+# ZeitgeistMonitor::events-deleted
+VOID:OBJECT,BOXED
+
+# ZeitgeistDataSourceRegistry::source-enabled
+VOID:STRING,BOOLEAN
+

@@ -1,0 +1,104 @@
+<!-- ##### SECTION Title ##### -->
+ZeitgeistMonitor
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT ZeitgeistMonitor ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL ZeitgeistMonitor::events-deleted ##### -->
+<para>
+
+</para>
+
+@zeitgeistmonitor: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL ZeitgeistMonitor::events-inserted ##### -->
+<para>
+
+</para>
+
+@zeitgeistmonitor: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### ARG ZeitgeistMonitor:event-templates ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG ZeitgeistMonitor:time-range ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT ZeitgeistMonitorClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@events_inserted: 
+@events_deleted: 
+
+<!-- ##### FUNCTION zeitgeist_monitor_new ##### -->
+<para>
+
+</para>
+
+@time_range: 
+@event_templates: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_monitor_get_time_range ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_monitor_get_templates ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_monitor_get_path ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

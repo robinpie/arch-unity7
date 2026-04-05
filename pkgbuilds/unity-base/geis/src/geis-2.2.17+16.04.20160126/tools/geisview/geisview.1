@@ -1,0 +1,69 @@
+.TH geisview 1 "February 12, 2013" "" "geisview"
+
+.SH NAME
+geisview \- view operation of the GEIS API
+
+.SH SYNOPSIS
+.B geisview [ 
+.B \-V
+.B ]
+.B [ 
+.B \-w 
+.I windowid
+.B ]
+.B [ 
+.B \-b 
+.I backend
+.B ]
+.br
+
+.SH DESCRIPTION
+This manual page explains the
+.B geisview
+program. This program is a test driver for verifying the recognition and propagation of gestures through the GEIS API.
+
+.SH OPTIONS
+.IP \-V
+Prints the version number of the program and exits.
+
+.IP \-w
+Specifies the
+.I windowId
+of a specific window to associate with gestures.
+Particularly useful with touchscreens.
+If this argument is not set, the default action is to read gestures on the root
+window.
+
+The
+.I windowId
+can be determined using the program
+.BR xwininfo .
+
+.IP \-b
+Specifies the recognizer
+.I back end
+to use.
+
+The following are valid back end selections.
+.RS
+.sp
+.TP 7
+dbus
+Uses the DBus back end to connect to a running GEIS server (default).
+.TP
+grail
+Uses the dynamically loaded grail back end (default fallback).
+.TP
+mock
+Uses a mock back end for testing.
+.TP
+xcb
+Uses the pre-XI2 back end (may not be available).
+.RE
+
+.SH ENVIRONMENT
+.IP GEIS_DEBUG
+Enables GEIS library diagnostic messages on stderr.
+
+.SH "SEE ALSO"
+geistest(1)

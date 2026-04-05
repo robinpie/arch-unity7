@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_expo_wall_offset.a "CMakeFiles/compiz_expo_wall_offset.dir/src/wall-offset.cpp.o"
+/usr/bin/ranlib libcompiz_expo_wall_offset.a

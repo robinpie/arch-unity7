@@ -1,0 +1,42 @@
+file(REMOVE_RECURSE
+  "../../generated/glib-2.0/schemas/org.compiz.opengl.gschema.xml"
+  "../../generated/opengl.xml"
+  "../../generated/opengl_options.cpp"
+  "../../generated/opengl_options.h"
+  "CMakeFiles/opengl.dir/link.d"
+  "CMakeFiles/opengl.dir/__/__/generated/opengl_options.cpp.o"
+  "CMakeFiles/opengl.dir/__/__/generated/opengl_options.cpp.o.d"
+  "CMakeFiles/opengl.dir/src/framebufferobject.cpp.o"
+  "CMakeFiles/opengl.dir/src/framebufferobject.cpp.o.d"
+  "CMakeFiles/opengl.dir/src/matrix.cpp.o"
+  "CMakeFiles/opengl.dir/src/matrix.cpp.o.d"
+  "CMakeFiles/opengl.dir/src/opengl.cpp.o"
+  "CMakeFiles/opengl.dir/src/opengl.cpp.o.d"
+  "CMakeFiles/opengl.dir/src/paint.cpp.o"
+  "CMakeFiles/opengl.dir/src/paint.cpp.o.d"
+  "CMakeFiles/opengl.dir/src/program.cpp.o"
+  "CMakeFiles/opengl.dir/src/program.cpp.o.d"
+  "CMakeFiles/opengl.dir/src/programcache.cpp.o"
+  "CMakeFiles/opengl.dir/src/programcache.cpp.o.d"
+  "CMakeFiles/opengl.dir/src/screen.cpp.o"
+  "CMakeFiles/opengl.dir/src/screen.cpp.o.d"
+  "CMakeFiles/opengl.dir/src/shadercache.cpp.o"
+  "CMakeFiles/opengl.dir/src/shadercache.cpp.o.d"
+  "CMakeFiles/opengl.dir/src/texture.cpp.o"
+  "CMakeFiles/opengl.dir/src/texture.cpp.o.d"
+  "CMakeFiles/opengl.dir/src/vector.cpp.o"
+  "CMakeFiles/opengl.dir/src/vector.cpp.o.d"
+  "CMakeFiles/opengl.dir/src/vertexbuffer.cpp.o"
+  "CMakeFiles/opengl.dir/src/vertexbuffer.cpp.o.d"
+  "CMakeFiles/opengl.dir/src/window.cpp.o"
+  "CMakeFiles/opengl.dir/src/window.cpp.o.d"
+  "CMakeFiles/opengl.dir/src/xtoglsync.cpp.o"
+  "CMakeFiles/opengl.dir/src/xtoglsync.cpp.o.d"
+  "libopengl.pdb"
+  "libopengl.so"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/opengl.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

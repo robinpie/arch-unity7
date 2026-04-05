@@ -1,0 +1,111 @@
+//
+// DO NOT EDIT Version.h (this file)! It is generated from Version.h.in.
+//
+
+/*
+ * Copyright (C) 2013 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Authored by: Michi Henning <michi.henning@canonical.com>
+ */
+
+#include <unity/SymbolExport.h>
+
+#ifndef UNITY_API_VERSION_H
+#define UNITY_API_VERSION_H
+
+#define UNITY_API_VERSION_MAJOR @UNITY_API_MAJOR@
+#define UNITY_API_VERSION_MINOR @UNITY_API_MINOR@
+#define UNITY_API_VERSION_MICRO @UNITY_API_MICRO@
+
+#define UNITY_API_VERSION_STRING "@UNITY_API_VERSION@"
+
+/**
+\brief Top-level namespace for all things Unity-related.
+*/
+namespace unity
+{
+
+/**
+\brief Top-level namespace for public functionality of the Unity API.
+*/
+namespace api
+{
+
+/** @name Version information
+
+Version information is represented as
+<i>&lt;<code>major</code>&gt;</i>.<i>&lt;<code>minor</code>&gt;</i>.<i>&lt;<code>micro</code>&gt;</i>.
+
+Releases that differ in the major version number are binary incompatible.
+
+Releases that differ in the minor or micro version number are binary compatible with older releases,
+so client code does not need to be recompiled to use the newer library version.
+
+Changes in the micro version number indicate bug fixes.
+
+Changes in the minor version indicate feature additions that are binary compatible.
+*/
+
+/**
+\brief Returns the major version number of the Unity API library.
+
+The major version number is also available as the macro <code>UNITY_API_VERSION_MAJOR</code>.
+*/
+
+/// @cond
+UNITY_API
+/// @endcond
+int major_version();
+
+/**
+\brief Returns the minor version number of the Unity API library.
+
+The minor version number is also available as the macro <code>UNITY_API_VERSION_MINOR</code>.
+*/
+/// @cond
+UNITY_API
+/// @endcond
+int minor_version();
+
+/**
+\brief Returns the micro version number of the Unity API library.
+
+The micro version number is also available as the macro <code>UNITY_API_VERSION_MICRO</code>.
+*/
+/// @cond
+UNITY_API
+/// @endcond
+int micro_version();
+
+/**
+\brief Returns the Unity API version as a string in the format
+<i>&lt;<code>major</code>&gt;</i>.<i>&lt;<code>minor</code>&gt;</i>.<i>&lt;<code>micro</code>&gt;</i>.
+
+The version string is also available as the macro <code>UNITY_API_VERSION_STRING</code>.
+*/
+/// @cond
+UNITY_API
+/// @endcond
+const char* str();    // Returns "major.minor.micro"
+
+/// }@
+
+// TODO: Add methods to report compiler version and compiler flags
+
+} // namespace api
+
+} // namespace unity
+
+#endif

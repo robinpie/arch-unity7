@@ -1,0 +1,9 @@
+[GNOME Settings Plugin]
+Module=a11y-keyboard
+IAge=0
+Priority=7
+Name=Accessibility Keyboard
+Description=Accessibility keyboard plugin
+Authors=Jody Goldberg
+Copyright=Copyright © 2001 Ximian, Inc.
+Website=

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libhud-generated.a "CMakeFiles/hud-generated.dir/hud-generated_autogen/mocs_compilation.cpp.o" "CMakeFiles/hud-generated.dir/service-iface.c.o" "CMakeFiles/hud-generated.dir/app-iface.c.o" "CMakeFiles/hud-generated.dir/marshal.c.o"
+/usr/bin/ranlib libhud-generated.a

@@ -1,0 +1,4 @@
+hud-service-exec_autogen/timestamp: \
+	/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/hud-14.10+17.10.20170619/service/CMakeLists.txt \
+	/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/hud/src/hud-14.10+17.10.20170619/service/main.cpp \
+	/usr/bin/cmake

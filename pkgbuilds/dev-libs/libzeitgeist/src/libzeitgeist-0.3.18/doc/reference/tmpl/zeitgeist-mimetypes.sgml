@@ -1,0 +1,69 @@
+<!-- ##### SECTION Title ##### -->
+Mimetype mapping and URI comprehension
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION zeitgeist_register_mimetype ##### -->
+<para>
+
+</para>
+
+@mimetype: 
+@interpretation_uri: 
+
+
+<!-- ##### FUNCTION zeitgeist_register_mimetype_regex ##### -->
+<para>
+
+</para>
+
+@mimetype_regex: 
+@interpretation_uri: 
+
+
+<!-- ##### FUNCTION zeitgeist_interpretation_for_mimetype ##### -->
+<para>
+
+</para>
+
+@mimetype: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_register_uri_scheme ##### -->
+<para>
+
+</para>
+
+@uri_scheme: 
+@manifestation_type: 
+
+
+<!-- ##### FUNCTION zeitgeist_manifestation_for_uri ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+

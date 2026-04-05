@@ -1,0 +1,1448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="obs">
+	<short>Opacity, Brightness and Saturation</short>
+	<short xml:lang="ast">Opacidá: Brillu y saturación</short>
+	<short xml:lang="bg">Непрозрачност, Яркост и Наситеност</short>
+	<short xml:lang="bs">Neprovidnost, Osvijetljenost i Zasićenje</short>
+	<short xml:lang="cs">Průsvitnost, jas a sytost</short>
+	<short xml:lang="da">Opacitet, lysstyrke og farvemætning</short>
+	<short xml:lang="de">Deckkraft, Helligkeit und Sättigung</short>
+	<short xml:lang="el">Αδιαφάνεια, Φωτεινότητα και Κορεσμός</short>
+	<short xml:lang="en_AU">Opacity, Brightness and Saturation</short>
+	<short xml:lang="en_GB">Opacity, Brightness and Saturation</short>
+	<short xml:lang="es">Opacidad, brillo y saturación</short>
+	<short xml:lang="eu">Opakutasuna, distira eta saturazioa</short>
+	<short xml:lang="fi">Peittävyys, kirkkaus ja värikylläisyys</short>
+	<short xml:lang="fr">Opacité, luminosité et saturation</short>
+	<short xml:lang="gl">Opacidade, brillo e saturación</short>
+	<short xml:lang="he">אטימות, בהירות ורוויה</short>
+	<short xml:lang="hr">Prozirnost, svjetlina i zasićenje</short>
+	<short xml:lang="hu">Átlátszatlanság, fényerő, telítettség</short>
+	<short xml:lang="it">Opacità, luminosità e saturazione</short>
+	<short xml:lang="ja">不透明度・明度・彩度</short>
+	<short xml:lang="ko">투명, 밝기, 채도</short>
+	<short xml:lang="ms">Kelegapan, Kecerahan dan Ketepuan</short>
+	<short xml:lang="nl">Ondoorzichtigheid, helderheid en verzadiging</short>
+	<short xml:lang="oc">Opacitat, luminositat e saturacion</short>
+	<short xml:lang="pl">Przezroczystość, Jasność i Nasycenie</short>
+	<short xml:lang="pt">Opacidade, Brilho e Saturação</short>
+	<short xml:lang="pt_BR">Opacidade, brilho e saturação</short>
+	<short xml:lang="ro">Opacitate, luminozitate și saturație</short>
+	<short xml:lang="ru">Прозрачность, яркость и насыщенность</short>
+	<short xml:lang="sl">Prekrivnost, svetlost in nasičenost</short>
+	<short xml:lang="sr">Провидност, Осветљеност и Засићење</short>
+	<short xml:lang="sv">Opacitet, ljusstyrka, och färgmättnad</short>
+	<short xml:lang="tr">Işık Geçirmezlik, Parlaklık ve Doygunluk</short>
+	<short xml:lang="uk">Прозорість, яскравість і насиченість</short>
+	<short xml:lang="vi">Độ trong suốt, độ sáng và độ bão hòa</short>
+	<short xml:lang="zh_CN">不透明度、亮度与饱和度</short>
+	<short xml:lang="zh_HK">不透明、亮度與飽和度</short>
+	<short xml:lang="zh_TW">不透明、亮度與飽和度</short>
+	<long>Per window adjustments of opacity, brightness and saturation</long>
+	<long xml:lang="bs">Po prozorskom prilagođavanju neprozirnosti, svjetline i zasićenja</long>
+	<long xml:lang="cs">Podle úprav průhlednosti okna, jas a sytost barev</long>
+	<long xml:lang="de">Fenster-spezifische Anpassungen der Deckkraft, Helligkeit und Sättigung</long>
+	<long xml:lang="en_AU">Per window adjustments of opacity, brightness and saturation</long>
+	<long xml:lang="en_GB">Per window adjustments of opacity, brightness and saturation</long>
+	<long xml:lang="es">Ajustes de opacidad, brillo y saturación por ventana</long>
+	<long xml:lang="fr">Réglage par fenêtre de l'opacité, luminosité et saturation</long>
+	<long xml:lang="gl">Axuste da opacidade, brillo e saturación por xanela</long>
+	<long xml:lang="hr">Prilagodba prozirnosti, svjetline i zasićenja po prozoru</long>
+	<long xml:lang="ko">창 단위로 투명도와 밝기 그리고 채도를 조정합니다.</long>
+	<long xml:lang="ms">Pelarasan per tetingkap bagi kelegapan, kecerahan dan ketepuan</long>
+	<long xml:lang="pt">Por ajustes à janela de opacidade, brilho e saturação</long>
+	<long xml:lang="ru">Пооконная регулировка прозрачности, яркости и насыщенности</long>
+	<long xml:lang="sl">Prilagoditve ravni prekrivnosti, svetlosti in nasičenosti na posamezno okno</long>
+	<long xml:lang="sv">Fönsterspecifika justeringar av ogenomskinlighet, ljusstyrka och färgmättnad</long>
+	<long xml:lang="uk">У вікні налаштування непрозорости, яскравости та насичености</long>
+	<long xml:lang="zh_CN">针对每个窗口的透明、亮度和饱和度调整</long>
+	<category>Accessibility</category>
+	<deps>
+	    <requirement>
+		<plugin>opengl</plugin>
+	    </requirement>
+	    <relation type="after">
+		<plugin>blur</plugin>
+	    </relation>
+	</deps>
+	<options>
+	    <group>
+		<short>Opacity</short>
+		<short xml:lang="am">በውስጡ የማያሳልፍ</short>
+		<short xml:lang="ast">Opacidá</short>
+		<short xml:lang="be">Непразрыстасьць</short>
+		<short xml:lang="bg">Непрозрачност</short>
+		<short xml:lang="bn">অস্বচ্ছতা</short>
+		<short xml:lang="bn_IN">অস্বচ্ছতা</short>
+		<short xml:lang="bs">Providnost</short>
+		<short xml:lang="ca">Opacitat</short>
+		<short xml:lang="cs">Krytí</short>
+		<short xml:lang="da">Opacitet</short>
+		<short xml:lang="de">Deckkraft</short>
+		<short xml:lang="el">Αδιαφάνεια</short>
+		<short xml:lang="en_AU">Opacity</short>
+		<short xml:lang="en_GB">Opacity</short>
+		<short xml:lang="es">Opacidad</short>
+		<short xml:lang="eu">Opakutasuna</short>
+		<short xml:lang="fi">Läpinäkyvyys</short>
+		<short xml:lang="fr">Opacité</short>
+		<short xml:lang="gl">Opacidade</short>
+		<short xml:lang="gu">અપારદર્શકતા</short>
+		<short xml:lang="he">אטימות</short>
+		<short xml:lang="hr">Prozirnost</short>
+		<short xml:lang="hu">Átlátszatlanság</short>
+		<short xml:lang="it">Opacità</short>
+		<short xml:lang="ja">不透明度</short>
+		<short xml:lang="ko">투명</short>
+		<short xml:lang="ms">Kelegapan</short>
+		<short xml:lang="nb">Dekkevne</short>
+		<short xml:lang="nds">Deckstärk</short>
+		<short xml:lang="nl">Ondoorzichtigheid</short>
+		<short xml:lang="oc">Opacitat</short>
+		<short xml:lang="or">ଅସ୍ବଚ୍ଛତା</short>
+		<short xml:lang="pl">Nieprzezroczystość</short>
+		<short xml:lang="pt">Opacidade</short>
+		<short xml:lang="pt_BR">Opacidade</short>
+		<short xml:lang="ro">Opacitate</short>
+		<short xml:lang="ru">Прозрачность</short>
+		<short xml:lang="sk">Nepriehľadnosť</short>
+		<short xml:lang="sl">Prekrivnost</short>
+		<short xml:lang="sq">Transparenca</short>
+		<short xml:lang="sr">Провидност</short>
+		<short xml:lang="sv">Opacitet</short>
+		<short xml:lang="tr">Matlık</short>
+		<short xml:lang="ug">غۇۋالىقى</short>
+		<short xml:lang="uk">Прозорість</short>
+		<short xml:lang="vi">Độ trong suốt</short>
+		<short xml:lang="zh_CN">不透明度</short>
+		<short xml:lang="zh_HK">不透明度</short>
+		<short xml:lang="zh_TW">不透明度</short>
+		<option type="key" name="opacity_increase_key">
+		    <short>Increase Opacity Key</short>
+		    <short xml:lang="bs">Povećaj ključ neprozirnosti</short>
+		    <short xml:lang="cs">Nastavení snížení průhlednosti</short>
+		    <short xml:lang="de">Taste für Deckkraft-Erhöhung</short>
+		    <short xml:lang="en_AU">Increase Opacity Key</short>
+		    <short xml:lang="en_GB">Increase Opacity Key</short>
+		    <short xml:lang="es">Tecla de aumento de la opacidad</short>
+		    <short xml:lang="fr">Touche d'augmentation d'opacité</short>
+		    <short xml:lang="gl">Tecla de incremento da opacidade</short>
+		    <short xml:lang="hr">Tipka povećanja prozirnosti</short>
+		    <short xml:lang="it">Tasto incremento opacità</short>
+		    <short xml:lang="ko">투명도 높이기 키</short>
+		    <short xml:lang="ms">Tingkatkan Kunci Kelegapan</short>
+		    <short xml:lang="pt">Aumento da Tecla de Opacidade</short>
+		    <short xml:lang="ro">Tasta de mărire opacitate</short>
+		    <short xml:lang="ru">Клавиша уменьшения прозрачности</short>
+		    <short xml:lang="sl">Tipka za povečanje ravni prekrivnosti</short>
+		    <short xml:lang="ug">غۇۋالىقنى كېڭەيتىش ئاچقۇچى</short>
+		    <short xml:lang="uk">Клавіш зменшення прозорости</short>
+		    <short xml:lang="zh_CN">减少透明的快捷键</short>
+		    <long>Increase the opacity of the selected window.</long>
+		    <long xml:lang="bs">Povećaj neprozirnost odabranog prozora.</long>
+		    <long xml:lang="cs">Snižuje průhlednost zvoleného okna.</long>
+		    <long xml:lang="de">Deckkraft des ausgewählten Fensters erhöhen.</long>
+		    <long xml:lang="en_AU">Increase the opacity of the selected window.</long>
+		    <long xml:lang="en_GB">Increase the opacity of the selected window.</long>
+		    <long xml:lang="es">Aumenta la opacidad de la ventana seleccionada.</long>
+		    <long xml:lang="fr">Augmente l'opacité de la fenêtre sélectionnée.</long>
+		    <long xml:lang="gl">Incrementa a opacidade da xanela seleccionada.</long>
+		    <long xml:lang="hr">Povećajte prozirnost odabranog prozora.</long>
+		    <long xml:lang="it">Aumentare l'opacità della finestra selezionata.</long>
+		    <long xml:lang="ko">선택한 창의 투명도를 높입니다.</long>
+		    <long xml:lang="ms">Tingkatkan kelegapan bagi tetingkap terpilih.</long>
+		    <long xml:lang="pt">Aumentar a opacidade da janela seleccionada.</long>
+		    <long xml:lang="ro">Mărește opacitatea ferestrei selectate.</long>
+		    <long xml:lang="ru">Уменьшить прозрачность выбранного окна.</long>
+		    <long xml:lang="sl">Povečaj raven prekrivnosti izbranega okna.</long>
+		    <long xml:lang="sv">Öka ogenomskinligheten för markerat fönster.</long>
+		    <long xml:lang="tr">Seçilen pencerenin matlığını arttır.</long>
+		    <long xml:lang="ug">تاللىنىدىغان كۆزنەكنىڭ غۇۋالىقىنى ئاشۇر</long>
+		    <long xml:lang="uk">Зменшити прозорість обраного вікна.</long>
+		    <long xml:lang="zh_CN">减少选定窗口的透明度</long>
+		    <default/>
+		</option>
+		<option type="button" name="opacity_increase_button">
+		    <short>Increase Opacity Button</short>
+		    <short xml:lang="bs">Povećaj tipku za neprozirnost</short>
+		    <short xml:lang="cs">Zvýšit krytí tlačítka</short>
+		    <short xml:lang="de">Knopf für Deckkraft-Erhöhung</short>
+		    <short xml:lang="en_AU">Increase Opacity Button</short>
+		    <short xml:lang="en_GB">Increase Opacity Button</short>
+		    <short xml:lang="es">Botón de aumento de la opacidad</short>
+		    <short xml:lang="fr">Bouton d'augmentation de l'opacité</short>
+		    <short xml:lang="gl">Botón de incremento da opacidade</short>
+		    <short xml:lang="hr">Tipka miša za povećanje prozirnosti</short>
+		    <short xml:lang="it">Pulsante incremento opacità</short>
+		    <short xml:lang="ko">투명도 높이기 단추</short>
+		    <short xml:lang="ms">Tingkatkan Butang Kelegapan</short>
+		    <short xml:lang="pt">Aumentar Botão Opacidade</short>
+		    <short xml:lang="ro">Butonul de mărire opacitate.</short>
+		    <short xml:lang="ru">Кнопка уменьшения прозрачности</short>
+		    <short xml:lang="sl">Gumb  za povečanje ravni prekrivnosti</short>
+		    <short xml:lang="sv">Knapp för ökad ogenomskinlighet</short>
+		    <short xml:lang="ug">غۇۋالىقنى كېڭەيتىش كۇنۇپكىسى</short>
+		    <short xml:lang="uk">Кнопка зменшення прозорости</short>
+		    <short xml:lang="zh_CN">减少透明的按钮</short>
+		    <long>Increase the opacity of the window the pointer hovers.</long>
+		    <long xml:lang="bs">Povećaj neprozirnost prozora po kojem se kreće kursor.</long>
+		    <long xml:lang="cs">Snižuje průhlednost okna nad kterým se vznáší ukazatel.</long>
+		    <long xml:lang="de">Deckkraft des Fensters, auf dem der Mauszeiger ist, erhöhen.</long>
+		    <long xml:lang="en_AU">Increase the opacity of the window the pointer hovers.</long>
+		    <long xml:lang="en_GB">Increase the opacity of the window the pointer hovers.</long>
+		    <long xml:lang="es">Aumenta la opacidad de la ventana sobre la que está el puntero.</long>
+		    <long xml:lang="fr">Intensifier l'opacité de la fenêtre survolée par le curseur.</long>
+		    <long xml:lang="gl">Incrementa a opacidade da xanela sobre a que se pousa o punteiro.</long>
+		    <long xml:lang="hr">Povećajte prozirnost odabranog prozora pri lebdenju pokazivaća miša.</long>
+		    <long xml:lang="ko">커서를 가져다 대면 창의 투명도를 높입니다.</long>
+		    <long xml:lang="ms">Tingkatkan kelegapan apung penuding di atas tetingkap.</long>
+		    <long xml:lang="pt">Aumentar a opacidade da janela ao passar o ponteiro.</long>
+		    <long xml:lang="ru">Уменьшить прозрачность окна, на которое наведён курсор.</long>
+		    <long xml:lang="sl">Povečaj raven prekrivnosti okna, nad katerim je kazalec miške.</long>
+		    <long xml:lang="sv">Öka ogenomskinlighet för fönstret pekaren hovrar över.</long>
+		    <long xml:lang="ug">ئىسترېلكا</long>
+		    <long xml:lang="uk">Зменшити прозорість вікна, на яке наведено вказівник.</long>
+		    <long xml:lang="zh_CN">光标悬停时减少窗口的透明度。</long>
+		    <default>&lt;Alt&gt;Button4</default>
+		</option>
+		<option type="key" name="opacity_decrease_key">
+		    <short>Decrease Opacity Key</short>
+		    <short xml:lang="bs">Smanji ključ neprozirnosti</short>
+		    <short xml:lang="cs">Nastavení zvýšení průhlednosti</short>
+		    <short xml:lang="de">Taste für Deckkraft-Verringerung</short>
+		    <short xml:lang="en_AU">Decrease Opacity Key</short>
+		    <short xml:lang="en_GB">Decrease Opacity Key</short>
+		    <short xml:lang="es">Tecla de disminución de la opacidad</short>
+		    <short xml:lang="fr">Touche de réduction d'opacité</short>
+		    <short xml:lang="gl">Tecla de redución da opacidade</short>
+		    <short xml:lang="hr">Tipka smanjenja prozirnosti</short>
+		    <short xml:lang="it">Tasto diminuzione opacità</short>
+		    <short xml:lang="ko">투명도 줄이기 키</short>
+		    <short xml:lang="ms">Kurangkan Kunci Kelegapan</short>
+		    <short xml:lang="pt">Diminuir Tecla Opacidade</short>
+		    <short xml:lang="ro">Tasta de micșorare opacitate</short>
+		    <short xml:lang="ru">Клавиша увеличения прозрачности</short>
+		    <short xml:lang="sl">Tipka za zmanjšanje ravni prekrivnosti</short>
+		    <short xml:lang="ug">غۇۋالىقنى تارايتىش ئاچقۇچى</short>
+		    <short xml:lang="uk">Клавіш збільшення прозорости</short>
+		    <short xml:lang="zh_CN">增加透明的键</short>
+		    <long>Decrease the opacity of the selected window.</long>
+		    <long xml:lang="bs">Smanji neprozirnost odabranog prozora.</long>
+		    <long xml:lang="cs">Zvyšuje průhlednost zvoleného okna.</long>
+		    <long xml:lang="de">Deckkraft des ausgewählten Fensters verringern.</long>
+		    <long xml:lang="en_AU">Decrease the opacity of the selected window.</long>
+		    <long xml:lang="en_GB">Decrease the opacity of the selected window.</long>
+		    <long xml:lang="es">Disminuye la opacidad de la ventana seleccionada.</long>
+		    <long xml:lang="fr">Diminuer l'opacité de la fenêtre sélectionnée.</long>
+		    <long xml:lang="gl">Reduce a opacidade da xanela seleccionada.</long>
+		    <long xml:lang="hr">Smanjite prozirnost odabranog prozora.</long>
+		    <long xml:lang="it">Diminuire l'opacità della finestra selezionata.</long>
+		    <long xml:lang="ko">선택한 창의 투명도를 줄입니다.</long>
+		    <long xml:lang="ms">Kurangkan kelegapan tetingkap terpilih.</long>
+		    <long xml:lang="pt">Diminuir a opacidade da janela selecionada.</long>
+		    <long xml:lang="ro">Micșorează opacitatea ferestrei selectate.</long>
+		    <long xml:lang="ru">Увеличить прозрачность выбранного окна.</long>
+		    <long xml:lang="sl">Zmanjšaj raven prekrivnosti izbranega okna.</long>
+		    <long xml:lang="sv">Minska ogenomskinligheten för markerat fönster.</long>
+		    <long xml:lang="ug">تاللانغان كۆزنەڭنىڭ غۇۋالىقىنى تۆۋەنلەت</long>
+		    <long xml:lang="uk">Збільшити прозорість обраного вікна</long>
+		    <long xml:lang="zh_CN">增加选中窗口的透明度。</long>
+		    <default/>
+		</option>
+		<option type="button" name="opacity_decrease_button">
+		    <short>Decrease Opacity Button</short>
+		    <short xml:lang="bs">Smanji tipku za neprozirnost</short>
+		    <short xml:lang="cs">Snížit krytí tlačítka</short>
+		    <short xml:lang="de">Knopf für Deckkraft-Verringerung</short>
+		    <short xml:lang="en_AU">Decrease Opacity Button</short>
+		    <short xml:lang="en_GB">Decrease Opacity Button</short>
+		    <short xml:lang="es">Botón de disminución de la opacidad</short>
+		    <short xml:lang="fr">Bouton de réduction d'opacité</short>
+		    <short xml:lang="gl">Botón de redución da opacidade</short>
+		    <short xml:lang="hr">Tipka miša za smanjenje prozirnosti</short>
+		    <short xml:lang="it">Pulsante diminuzione opacità</short>
+		    <short xml:lang="ko">투명도 줄이기 단추</short>
+		    <short xml:lang="ms">Kurangkan Kelegapan Butang</short>
+		    <short xml:lang="pt">Diminuir Botão Opacidade</short>
+		    <short xml:lang="ro">Butonul de micșorare opacitate</short>
+		    <short xml:lang="ru">Кнопка увеличения прозрачности</short>
+		    <short xml:lang="sl">Gumb za zmanjšanje ravni prekrivnosti</short>
+		    <short xml:lang="sv">Knapp för minskad ogenomskinlighet</short>
+		    <short xml:lang="ug">غۇۋالىقنى تارايتىش كۇنۇپكىسى</short>
+		    <short xml:lang="uk">Кнопка збільшення прозорости</short>
+		    <short xml:lang="zh_CN">增加透明的按钮</short>
+		    <long>Decrease the opacity of the window the pointer hovers.</long>
+		    <long xml:lang="bs">Smanji neprozirnost prozora po kojem se kreće kursor.</long>
+		    <long xml:lang="cs">Zvyšuje průhlednost okna nad kterým se vznáší ukazatel.</long>
+		    <long xml:lang="de">Deckkraft des Fensters, auf dem der Mauszeiger ist, verringern.</long>
+		    <long xml:lang="en_AU">Decrease the opacity of the window the pointer hovers.</long>
+		    <long xml:lang="en_GB">Decrease the opacity of the window the pointer hovers.</long>
+		    <long xml:lang="es">Disminuye la opacidad de la ventana sobre la que está el puntero.</long>
+		    <long xml:lang="fr">Diminuer l'opacité de la fenêtre survolée par le curseur.</long>
+		    <long xml:lang="gl">Reduce a opacidade da xanela sobre a que se pousa o punteiro.</long>
+		    <long xml:lang="hr">Smanjite prozirnost odabranog prozora pri lebdenju pokazivaća miša.</long>
+		    <long xml:lang="ko">커서를 가져다 대면 창의 투명도를 낮춥니다.</long>
+		    <long xml:lang="ms">Kurangkan kelegapan bagi tetingkap bila penuding diatasnya.</long>
+		    <long xml:lang="pt">Diminuir a opacidade da janela ao passar o ponteiro.</long>
+		    <long xml:lang="ru">Увеличить прозрачность окна, на которое наведён указатель.</long>
+		    <long xml:lang="sl">Zmanjšaj raven prekrivnosti okna, nad katerim je kazalec miške.</long>
+		    <long xml:lang="sv">Minska ogenomskinligheten för fönstret pekaren hovrar över.</long>
+		    <long xml:lang="uk">Збільшити прозорість вікна, на яке наведено вказівник.</long>
+		    <long xml:lang="zh_CN">光标悬停时增加窗口的透明度。</long>
+		    <default>&lt;Alt&gt;Button5</default>
+		</option>
+		<option type="int" name="default_opacity_spawn_value">
+		    <short>New window default opacity value</short>
+		    <short xml:lang="bs">Zadana vrijednost prozirnosti novog prozora</short>
+		    <short xml:lang="en_GB">New window default opacity value</short>
+		    <short xml:lang="es">Valor predeterminado de opacidad para las nuevas ventanas</short>
+		    <short xml:lang="gl">Novo valor da opacidade predeterminada das xanelas</short>
+		    <short xml:lang="hr">Zadana vrijednost prozirnosti novog prozora</short>
+		    <short xml:lang="ko">새 창 기본 불투명도 값</short>
+		    <short xml:lang="sv">Nytt förvalt värde för fönsterogenomskinlighet</short>
+		    <short xml:lang="uk">Нове усталене значення прозорости вікна</short>
+		    <long>Default opacity when a new window is created (in percent).</long>
+		    <long xml:lang="bs">Zadana prozirnost kada je novi prozor stvoren (u postotku).</long>
+		    <long xml:lang="en_GB">Default opacity when a new window is created (in percent).</long>
+		    <long xml:lang="es">Valor predeterminado de opacidad cuando se crea una ventana nueva (en porcentaje).</long>
+		    <long xml:lang="gl">Opacidade predeterminada cando se crea unha xanela nova (en porcentaxe).</long>
+		    <long xml:lang="hr">Zadana prozirnost kada je novi prozor stvoren (u postotku).</long>
+		    <long xml:lang="ko">새 창을 만들 때 기본 불투명도 (백분율).</long>
+		    <long xml:lang="sv">Förvald ogenomskinlighet när ett nytt fönster skapas (i procent).</long>
+		    <long xml:lang="uk">Усталена прозорість при створенні нового вікна (у відсотках).</long>
+		    <min>1</min>
+		    <max>100</max>
+		    <default>100</default>
+		</option>
+		<option type="int" name="opacity_step">
+		    <short>Step Size</short>
+		    <short xml:lang="bs">Korak veličine</short>
+		    <short xml:lang="de">Schrittweite</short>
+		    <short xml:lang="en_AU">Step Size</short>
+		    <short xml:lang="en_GB">Step Size</short>
+		    <short xml:lang="es">Tamaño del paso</short>
+		    <short xml:lang="fr">Taille du pas</short>
+		    <short xml:lang="gl">Duración do paso</short>
+		    <short xml:lang="hr">Korak veličine</short>
+		    <short xml:lang="ko">단계 크기</short>
+		    <short xml:lang="ms">Saiz Langkah</short>
+		    <short xml:lang="nl">Stapgrootte</short>
+		    <short xml:lang="pt">Tamanho do Incremento</short>
+		    <short xml:lang="ro">Dimensiune pas</short>
+		    <short xml:lang="ru">Величина шага</short>
+		    <short xml:lang="sl">Velikost koraka</short>
+		    <short xml:lang="sv">Stegstorlek</short>
+		    <short xml:lang="ug">قەدەم چوڭلۇقى</short>
+		    <short xml:lang="uk">Розмір кроку</short>
+		    <short xml:lang="zh_CN">步长</short>
+		    <long>Opacity increment and decrement amount (in percent).</long>
+		    <long xml:lang="bs">Iznos povećanja i smanjenja neprozirnosti (u procentima).</long>
+		    <long xml:lang="cs">Výše přírůstku a úbytku krytí (v procentech).</long>
+		    <long xml:lang="de">Schrittweite für Deckkraft-Erhöhungen und -Verringerungen (in Prozent).</long>
+		    <long xml:lang="en_AU">Opacity increment and decrement amount (in percent).</long>
+		    <long xml:lang="en_GB">Opacity increment and decrement amount (in percent).</long>
+		    <long xml:lang="es">Cantidad de aumento y disminución de la opacidad (en porcentaje).</long>
+		    <long xml:lang="fr">Augmentation et diminution de l'opacité (en pourcentage).</long>
+		    <long xml:lang="gl">Nivel de incremento e redución da opacidade (en %).</long>
+		    <long xml:lang="hr">Količina povećanja i smanjenja prozirnosti (u postocima).</long>
+		    <long xml:lang="it">Incremento e decremento dell'opacità (in percentuale).</long>
+		    <long xml:lang="ko">투명도를 얼마나 높이고 낮출지 백분율 단위로 설정합니다.</long>
+		    <long xml:lang="ms">Jumlah tokokan dan pengurangan kelegpan (dalam peratus).</long>
+		    <long xml:lang="pt">Aumento de opacidade e quantidade decréscimo (em percentagem).</long>
+		    <long xml:lang="ru">Величина уменьшения и увеличения прозрачности (в процентах).</long>
+		    <long xml:lang="sl">Količina povečanja in zmanjšanja (v odstotkih) ravni prekrivnosti.</long>
+		    <long xml:lang="ug">غۇۋالىقنى ئاشۇرۇش تۆۋەنلىتىش مىقدارى(پىرسەنت)</long>
+		    <long xml:lang="uk">Величина зменшення та збільшення прозорости (у відсотках).</long>
+		    <long xml:lang="zh_CN">透明度增减的量(百分比)</long>
+		    <min>1</min>
+		    <max>10</max>
+		    <default>5</default>
+		</option>
+		<subgroup>
+		    <short>Window Specific Settings</short>
+		    <short xml:lang="bs">Specifične postavke prozora</short>
+		    <short xml:lang="cs">Specifická nastavení okna</short>
+		    <short xml:lang="de">Fenster-spezifische Einstellungen</short>
+		    <short xml:lang="en_AU">Window Specific Settings</short>
+		    <short xml:lang="en_GB">Window Specific Settings</short>
+		    <short xml:lang="es">Parámetros específicos de ventana</short>
+		    <short xml:lang="fr">Paramètres spécifiques à la fenêtre</short>
+		    <short xml:lang="gl">Opcións especificas para as xanelas</short>
+		    <short xml:lang="hr">Određene postavke prozora</short>
+		    <short xml:lang="it">Finestra Impostazioni Specifiche</short>
+		    <short xml:lang="ko">특정한 창 설정</short>
+		    <short xml:lang="ms">Tetapan Spesifik Tetingkap</short>
+		    <short xml:lang="nl">Vensterspecifieke instellingen</short>
+		    <short xml:lang="pt">Janela de Configurações Específicas</short>
+		    <short xml:lang="ru">Особые настройки окон</short>
+		    <short xml:lang="sl">Nastavitve za posamezna okna</short>
+		    <short xml:lang="sv">Fönsterspecifika inställningar</short>
+		    <short xml:lang="ug">كۆزنەك خاس تەڭشەكلىرى</short>
+		    <short xml:lang="uk">Особливі налаштування вікон</short>
+		    <short xml:lang="zh_CN">窗口个性设置</short>
+		    <option type="list" name="opacity_matches">
+			<short>Windows</short>
+			<short xml:lang="af">Vensters</short>
+			<short xml:lang="am">መስኮቶች</short>
+			<short xml:lang="ar">النوافذ</short>
+			<short xml:lang="ast">Ventanes</short>
+			<short xml:lang="be">Вокны</short>
+			<short xml:lang="bg">Прозорци</short>
+			<short xml:lang="bs">Prozori</short>
+			<short xml:lang="ca">Finestres</short>
+			<short xml:lang="cs">Okna</short>
+			<short xml:lang="da">Vinduer</short>
+			<short xml:lang="de">Fenster</short>
+			<short xml:lang="el">Παράθυρα</short>
+			<short xml:lang="en_AU">Windows</short>
+			<short xml:lang="en_GB">Windows</short>
+			<short xml:lang="es">Ventanas</short>
+			<short xml:lang="eu">Leihoak</short>
+			<short xml:lang="fi">Ikkunat</short>
+			<short xml:lang="fr">Fenêtres</short>
+			<short xml:lang="gl">Xanelas</short>
+			<short xml:lang="he">חלונות</short>
+			<short xml:lang="hr">Prozori</short>
+			<short xml:lang="hu">Ablakok</short>
+			<short xml:lang="it">Finestre</short>
+			<short xml:lang="ja">ウィンドウ</short>
+			<short xml:lang="km">វីនដូ</short>
+			<short xml:lang="ko">창</short>
+			<short xml:lang="lv">Logs</short>
+			<short xml:lang="ms">Tetingkap</short>
+			<short xml:lang="nb">Vinduer</short>
+			<short xml:lang="ne">सञ्झ्यालहरू</short>
+			<short xml:lang="nl">Vensters</short>
+			<short xml:lang="oc">Fenèstras</short>
+			<short xml:lang="pl">Okna</short>
+			<short xml:lang="pt">Janelas</short>
+			<short xml:lang="pt_BR">Janelas</short>
+			<short xml:lang="ro">Ferestre</short>
+			<short xml:lang="ru">Окна</short>
+			<short xml:lang="sl">Okna</short>
+			<short xml:lang="sq">Dritaret</short>
+			<short xml:lang="sr">Прозори</short>
+			<short xml:lang="sv">Fönster</short>
+			<short xml:lang="th">หน้าต่าง</short>
+			<short xml:lang="tr">Pencereler</short>
+			<short xml:lang="ug">كۆزنەكلەر</short>
+			<short xml:lang="uk">Вікна</short>
+			<short xml:lang="vi">Cửa sổ</short>
+			<short xml:lang="zh_CN">窗口</short>
+			<short xml:lang="zh_HK">何種視窗</short>
+			<short xml:lang="zh_TW">何種視窗</short>
+			<long>Windows that should have a specific default opacity.</long>
+			<long xml:lang="bs">Prozori koji bi trebali imati specifično zadanu neprozirnost.</long>
+			<long xml:lang="cs">Okna, která mají mít zvláštní výchozí průhlednost.</long>
+			<long xml:lang="de">Fenster, die eine bestimmte Standard-Deckkraft bekommen sollen.</long>
+			<long xml:lang="en_AU">Windows that should have a specific default opacity.</long>
+			<long xml:lang="en_GB">Windows that should have a specific default opacity.</long>
+			<long xml:lang="es">Ventanas que deberían tener una opacidad específica predeterminada.</long>
+			<long xml:lang="fr">Fenêtres devant avoir une opacité définie.</long>
+			<long xml:lang="gl">Xanelas que deberían ter unha opacidade predeterminada.</long>
+			<long xml:lang="hr">Prozori koji bi trebali imati određenu zadanu prozirnosti.</long>
+			<long xml:lang="it">Finestre che dovrebbero avere una determinata opacità predefinita.</long>
+			<long xml:lang="ko">특정한 기본 투명도를 가져야 하는 창입니다.</long>
+			<long xml:lang="ms">Tetingkap seharusnya mempunyai kelegapan lalai khusus.</long>
+			<long xml:lang="pt">As janelas que devem ter uma opacidade padrão específica.</long>
+			<long xml:lang="ro">Ferestrele ce trebuie să aibă o opacitate implicită specifică.</long>
+			<long xml:lang="ru">Окна с особыми настройками прозрачности по умолчанию.</long>
+			<long xml:lang="sl">Okna, ki morajo imeti posebno privzeto raven prekrivnosti.</long>
+			<long xml:lang="sv">Fönster som bör ha en specifik förvald ogenomskinlighet.</long>
+			<long xml:lang="ug">بەلگىلەنگەن كۆڭۈلدىكى كۆزنەكنىڭ غۇۋالىقى</long>
+			<long xml:lang="uk">Типові вікна з особливими налаштуваннями прозорости.</long>
+			<long xml:lang="zh_CN">有独立默认透明度的窗口。</long>
+			<type>match</type>
+			<default/>
+		    </option>
+		    <option type="list" name="opacity_values">
+			<short>Window values</short>
+			<short xml:lang="ast">Valores de la ventana</short>
+			<short xml:lang="bg">Стойности на прозорец</short>
+			<short xml:lang="bs">Vrijednosti prozora</short>
+			<short xml:lang="cs">Hodnoty okna</short>
+			<short xml:lang="de">Fensterwerte</short>
+			<short xml:lang="el">Τιμές παραθύρου</short>
+			<short xml:lang="en_AU">Window values</short>
+			<short xml:lang="en_GB">Window values</short>
+			<short xml:lang="es">Valores de las ventanas</short>
+			<short xml:lang="eu">Leihoaren balioak</short>
+			<short xml:lang="fi">Ikkunoiden arvot</short>
+			<short xml:lang="fr">Valeurs des fenêtres</short>
+			<short xml:lang="gl">Valores das xanelas</short>
+			<short xml:lang="he">ערכי חלונות</short>
+			<short xml:lang="hr">Vrijednosti prozora</short>
+			<short xml:lang="hu">Ablak tulajdonságok</short>
+			<short xml:lang="it">Valori finestra</short>
+			<short xml:lang="ja">ウィンドウの値</short>
+			<short xml:lang="ko">정도</short>
+			<short xml:lang="ms">Nilai tetingkap</short>
+			<short xml:lang="nl">Vensterwaarden</short>
+			<short xml:lang="oc">Valors de las fenèstras</short>
+			<short xml:lang="pl">Wartości dla okien</short>
+			<short xml:lang="pt">Valores para a janela</short>
+			<short xml:lang="pt_BR">Valores das janelas</short>
+			<short xml:lang="ro">Valori ferestre</short>
+			<short xml:lang="ru">Значения для окна</short>
+			<short xml:lang="sl">Vrednosti oken</short>
+			<short xml:lang="sr">Вредности прозора</short>
+			<short xml:lang="sv">Fönstervärden</short>
+			<short xml:lang="tr">Pencere değerleri</short>
+			<short xml:lang="ug">كۆزنەك قىممەتلىرى</short>
+			<short xml:lang="uk">Значення для вікна</short>
+			<short xml:lang="vi">Giá trị cửa sổ</short>
+			<short xml:lang="zh_CN">窗口值</short>
+			<short xml:lang="zh_HK">幅度數值</short>
+			<short xml:lang="zh_TW">幅度數值</short>
+			<long>Opacity value for the windows (in percent).</long>
+			<long xml:lang="bs">Vrijednost neprozirnosti za prozore (u procentima).</long>
+			<long xml:lang="cs">Hodnota průhlednosti pro okna (v procentech).</long>
+			<long xml:lang="de">Deckkraft für die Fenster (in Prozent).</long>
+			<long xml:lang="en_AU">Opacity value for the windows (in percent).</long>
+			<long xml:lang="en_GB">Opacity value for the windows (in percent).</long>
+			<long xml:lang="es">Valor de la opacidad para las ventanas (en porcentaje).</long>
+			<long xml:lang="fr">Valeur d'opacité de la fenêtre (en pourcentage)</long>
+			<long xml:lang="gl">Valor da opacidade das xanelas (en %).</long>
+			<long xml:lang="hr">Vrijednost prozirnosti za prozore (u postocima).</long>
+			<long xml:lang="it">Valore di opacità per le finestre (in percentuale).</long>
+			<long xml:lang="ko">창의 투명 값을 백분율 단위로 설정합니다.</long>
+			<long xml:lang="ms">Nilai kelegapan bagi tetingkap (dalam peratus).</long>
+			<long xml:lang="pt">Valor de opacidade para as janelas (em percentagem).</long>
+			<long xml:lang="ro">Valoarea opacității pentru ferestre (în procente).</long>
+			<long xml:lang="ru">Степень прозрачности окон (в процентах).</long>
+			<long xml:lang="sl">Vrednost ravni prekrivnosti za okna (v odstotkih).</long>
+			<long xml:lang="sv">Ogenomskinlighetsvärde för fönstren (i procent).</long>
+			<long xml:lang="tr">Pencereler için matlık değeri (yüzde olarak).</long>
+			<long xml:lang="ug">كۆزنەكنىڭ غۇۋالىق قىممىتى(پىرسەنت)</long>
+			<long xml:lang="uk">Ступінь прозорости вікон (у відсотках).</long>
+			<long xml:lang="zh_CN">窗口的不透明度(百分比)</long>
+			<type>int</type>
+			<default>
+			    <value>90</value>
+			</default>
+			<min>0</min>
+			<max>100</max>
+		    </option>
+		</subgroup>
+	    </group>
+	    <group>
+		<short>Brightness</short>
+		<short xml:lang="am">ብሩህነት</short>
+		<short xml:lang="ast">Claridá</short>
+		<short xml:lang="be">Яркасьць</short>
+		<short xml:lang="bg">Яркост</short>
+		<short xml:lang="bs">Svjetlina</short>
+		<short xml:lang="ca">Brillantor</short>
+		<short xml:lang="cs">Jas</short>
+		<short xml:lang="da">Lysstyrke</short>
+		<short xml:lang="de">Helligkeit</short>
+		<short xml:lang="el">Φωτεινότητα</short>
+		<short xml:lang="en_AU">Brightness</short>
+		<short xml:lang="en_GB">Brightness</short>
+		<short xml:lang="es">Brillo</short>
+		<short xml:lang="et">Heledus</short>
+		<short xml:lang="eu">Distira</short>
+		<short xml:lang="fi">Kirkkaus</short>
+		<short xml:lang="fr">Luminosité</short>
+		<short xml:lang="gl">Brillo</short>
+		<short xml:lang="gu">તેજસ્વીતા</short>
+		<short xml:lang="he">בהירות</short>
+		<short xml:lang="hr">Svjetlina</short>
+		<short xml:lang="hu">Fényerő</short>
+		<short xml:lang="it">Luminosità</short>
+		<short xml:lang="ja">明度</short>
+		<short xml:lang="ko">밝기</short>
+		<short xml:lang="ms">Kecerahan</short>
+		<short xml:lang="nb">Skarphet</short>
+		<short xml:lang="nl">Helderheid</short>
+		<short xml:lang="oc">Luminositat</short>
+		<short xml:lang="or">ଉଜ୍ବଳତା</short>
+		<short xml:lang="pl">Jasność</short>
+		<short xml:lang="pt">Brilho</short>
+		<short xml:lang="pt_BR">Brilho</short>
+		<short xml:lang="ro">Luminozitate</short>
+		<short xml:lang="ru">Яркость</short>
+		<short xml:lang="sk">Jas</short>
+		<short xml:lang="sl">Svetlost</short>
+		<short xml:lang="sq">Ndriçimi</short>
+		<short xml:lang="sr">Светлина</short>
+		<short xml:lang="sv">Ljusstyrka</short>
+		<short xml:lang="tr">Parlaklık</short>
+		<short xml:lang="ug">يورۇقلۇق</short>
+		<short xml:lang="uk">Яскравість</short>
+		<short xml:lang="vi">Độ sáng</short>
+		<short xml:lang="zh_CN">亮度</short>
+		<short xml:lang="zh_HK">亮度</short>
+		<short xml:lang="zh_TW">亮度</short>
+		<option type="key" name="brightness_increase_key">
+		    <short>Increase Brightness Key</short>
+		    <short xml:lang="bs">Povećaj ključ svjetlosti</short>
+		    <short xml:lang="cs">Nastavení zvýšení jasu</short>
+		    <short xml:lang="de">Taste für Helligkeits-Erhöhung</short>
+		    <short xml:lang="en_AU">Increase Brightness Key</short>
+		    <short xml:lang="en_GB">Increase Brightness Key</short>
+		    <short xml:lang="es">Tecla de aumento de brillo</short>
+		    <short xml:lang="fr">Touche d'augmentation de la luminosité</short>
+		    <short xml:lang="gl">Tecla de incremento do brillo</short>
+		    <short xml:lang="hr">Tipka povećanja svjetline</short>
+		    <short xml:lang="it">Tasto incremento luminosità</short>
+		    <short xml:lang="ko">밝기 높이기 키</short>
+		    <short xml:lang="ms">Tingkatkan Kecerahan Kekunci</short>
+		    <short xml:lang="nl">toets voor het verhogen van de helderheid</short>
+		    <short xml:lang="pt">Tela de Aumentar Brilho</short>
+		    <short xml:lang="ro">Tasta de mărire luminozitate</short>
+		    <short xml:lang="ru">Клавиша увеличения яркости</short>
+		    <short xml:lang="sl">Tipka za povečanje svetlosti</short>
+		    <short xml:lang="ug">تارايتىش سېلىشتۇرما دەرىجە ئاچقۇچى</short>
+		    <short xml:lang="uk">Клавіш збільшення яскравости</short>
+		    <short xml:lang="zh_CN">增加亮度的键</short>
+		    <long>Increase the brightness of the selected window.</long>
+		    <long xml:lang="bs">Povećaj svjetlinu odabranog prozora.</long>
+		    <long xml:lang="cs">Zvyšuje úroveň jasu zvoleného okna.</long>
+		    <long xml:lang="de">Helligkeit des ausgewählten Fensters erhöhen.</long>
+		    <long xml:lang="en_AU">Increase the brightness of the selected window.</long>
+		    <long xml:lang="en_GB">Increase the brightness of the selected window.</long>
+		    <long xml:lang="es">Aumenta el brillo de la ventana seleccionada.</long>
+		    <long xml:lang="fr">Augmenter la luminosité de la fenêtre sélectionnée.</long>
+		    <long xml:lang="gl">Incrementa o brillo da xanela seleccionada.</long>
+		    <long xml:lang="hr">Povećajte svjetlinu odabranog prozora.</long>
+		    <long xml:lang="it">Aumentare la luminosità della finestra selezionata.</long>
+		    <long xml:lang="ko">선택한 창의 밝기를 높입니다.</long>
+		    <long xml:lang="ms">Tingkatkan kecerahan bagi tetingkap terpilih.</long>
+		    <long xml:lang="nl">De helderheid van het geselecteerde venster verhogen.</long>
+		    <long xml:lang="pt">Aumenta o brilho da janela selecionada.</long>
+		    <long xml:lang="ro">Mărește luminozitatea ferestrei selectate.</long>
+		    <long xml:lang="ru">Увеличить яркость выбранного окна.</long>
+		    <long xml:lang="sl">Povečaj svetlost izbranega okna.</long>
+		    <long xml:lang="sv">Öka ljusstyrka för markerat fönster.</long>
+		    <long xml:lang="ug">تاللانغان كۆزنەڭنىڭ يورۇقلۇق دەرىجىسىنى ئاشۇر</long>
+		    <long xml:lang="uk">Збільшити яскравість обраного вікна.</long>
+		    <long xml:lang="zh_CN">增减选中窗口的亮度</long>
+		    <default/>
+		</option>
+		<option type="button" name="brightness_increase_button">
+		    <short>Increase Brightness Button</short>
+		    <short xml:lang="bs">Povećaj tipku za svjetlinu</short>
+		    <short xml:lang="cs">Zvýšit jas tlačítka</short>
+		    <short xml:lang="de">Knopf für Helligkeits-Erhöhung</short>
+		    <short xml:lang="en_AU">Increase Brightness Button</short>
+		    <short xml:lang="en_GB">Increase Brightness Button</short>
+		    <short xml:lang="es">Botón de aumento de brillo</short>
+		    <short xml:lang="fr">Bouton d'augmentation de la luminosité</short>
+		    <short xml:lang="gl">Botón de incremento do brillo</short>
+		    <short xml:lang="hr">Tipka miša za povećanje svjetline</short>
+		    <short xml:lang="it">Pulsante incremento luminosità</short>
+		    <short xml:lang="ko">밝기 높이기 단추</short>
+		    <short xml:lang="ms">Tingkatkan Kecerahan Butang</short>
+		    <short xml:lang="nl">Knop voor het verhogen van de helderheid</short>
+		    <short xml:lang="pt">Botão Aumento de Brilho</short>
+		    <short xml:lang="ro">Butonul de mărire luminozitate</short>
+		    <short xml:lang="ru">Кнопка увеличения яркости</short>
+		    <short xml:lang="sl">Gumb za povečanje svetlosti</short>
+		    <short xml:lang="sv">Knapp för ökad ljusstyrka</short>
+		    <short xml:lang="ug">كېڭەيتىش سېلىشتۇرما دەرىجە توپچىسى</short>
+		    <short xml:lang="uk">Кнопка збільшення яскравости</short>
+		    <short xml:lang="zh_CN">增加亮度的按钮</short>
+		    <long>Increase the brightness of the window the pointer hovers.</long>
+		    <long xml:lang="bs">Povećaj svjetlinu prozora kojim kruži kursor.</long>
+		    <long xml:lang="cs">Zvyšuje úroveň jasu okna nad kterým se vznáší ukazatel.</long>
+		    <long xml:lang="de">Helligkeit des Fensters, auf dem der Mauszeiger ist, erhöhen.</long>
+		    <long xml:lang="en_AU">Increase the brightness of the window the pointer hovers.</long>
+		    <long xml:lang="en_GB">Increase the brightness of the window the pointer hovers.</long>
+		    <long xml:lang="es">Aumenta el brillo de la ventana sobre la que está el puntero.</long>
+		    <long xml:lang="fr">Augmenter la luminosité de la fenêtre survolée.</long>
+		    <long xml:lang="gl">Incrementa o brillo da xanela sobre a que se pousa o punteiro.</long>
+		    <long xml:lang="hr">Povećajte svjetlinu prozora pri lebdenju pokazivača miša.</long>
+		    <long xml:lang="ko">커서를 가져다 대면 창의 밝기를 높입니다.</long>
+		    <long xml:lang="ms">Tingkatkan kecerahan tetingkap bila penuding diatasnya.</long>
+		    <long xml:lang="nl">Verhogen van de helderheid van het venster waar de aanwijzer boven hangt.</long>
+		    <long xml:lang="pt">Aumenta o brilho da janela pela qual o ponteiro passa.</long>
+		    <long xml:lang="ru">Увеличить яркость окна, на которое наведён курсор.</long>
+		    <long xml:lang="sl">Povečaj svetlost okna, nad katerim je kazalec miške.</long>
+		    <long xml:lang="sv">Öka ljusstyrkan för fönstret pekaren hovrar över.</long>
+		    <long xml:lang="uk">Збільшити яскравість вікна, на яке наведено вказівник.</long>
+		    <long xml:lang="zh_CN">光标悬停时增加窗口的亮度。</long>
+		    <default/>
+		</option>
+		<option type="key" name="brightness_decrease_key">
+		    <short>Decrease Brightness Key</short>
+		    <short xml:lang="bs">Smanji ključ svjetline</short>
+		    <short xml:lang="cs">Nastavení snížení jasu</short>
+		    <short xml:lang="de">Taste für Helligkeits-Verringerung</short>
+		    <short xml:lang="en_AU">Decrease Brightness Key</short>
+		    <short xml:lang="en_GB">Decrease Brightness Key</short>
+		    <short xml:lang="es">Tecla de disminución del brillo</short>
+		    <short xml:lang="fr">Touche de diminution de la luminosité</short>
+		    <short xml:lang="gl">Tecla de redución do brillo</short>
+		    <short xml:lang="hr">Tipka smanjenja svjetline</short>
+		    <short xml:lang="it">Tasto diminuzione luminosità</short>
+		    <short xml:lang="ko">밝기 줄이기 키</short>
+		    <short xml:lang="ms">Kurangkan Kecerahan Kekunci</short>
+		    <short xml:lang="nl">Toets voor het verlagen van de helderheid</short>
+		    <short xml:lang="pt">Tecla de Diminuir Brilho</short>
+		    <short xml:lang="ro">Tasta de micșorare luminozitate</short>
+		    <short xml:lang="ru">Клавиша уменьшения яркости</short>
+		    <short xml:lang="sl">Tipka za zamanjšanje svetlosti</short>
+		    <short xml:lang="ug">تارايتىش سېلىشتۇرما دەرىجە ئاچقۇچى</short>
+		    <short xml:lang="uk">Клавіш зменшення яскравости</short>
+		    <short xml:lang="zh_CN">减少亮度的键</short>
+		    <long>Decrease the brightness of the selected window.</long>
+		    <long xml:lang="bs">Smanji svjetlinu odabranog prozora.</long>
+		    <long xml:lang="cs">Snižuje úroveň jasu zvoleného okna.</long>
+		    <long xml:lang="de">Helligkeit des ausgewählten Fensters verringern.</long>
+		    <long xml:lang="en_AU">Decrease the brightness of the selected window.</long>
+		    <long xml:lang="en_GB">Decrease the brightness of the selected window.</long>
+		    <long xml:lang="es">Disminuye el brillo de la ventana seleccionada.</long>
+		    <long xml:lang="fr">Diminuer la luminosité de la fenêtre sélectionnée.</long>
+		    <long xml:lang="gl">Reduce o brillo da xanela seleccionada.</long>
+		    <long xml:lang="hr">Smanjite svjetlinu odabranog prozora.</long>
+		    <long xml:lang="it">Ridurre la luminosità della finestra selezionata.</long>
+		    <long xml:lang="ko">선택한 창의 밝기를 줄입니다.</long>
+		    <long xml:lang="ms">Kurangkan kecerahan tetingkap terpilih.</long>
+		    <long xml:lang="nl">De helderheid van het geselecteerde venster verlagen.</long>
+		    <long xml:lang="pt">Diminui o brilho da janela selecionada</long>
+		    <long xml:lang="ro">Micșorează luminozitatea ferestrei selectate.</long>
+		    <long xml:lang="ru">Уменьшить яркость выбранного окна.</long>
+		    <long xml:lang="sl">Zmanjšaj svetlost izbranego okna.</long>
+		    <long xml:lang="sv">Minska ljusstyrkan för markerat fönster.</long>
+		    <long xml:lang="tr">Seçilen pencerenin parlaklığını azalt.</long>
+		    <long xml:lang="ug">تاللانغان كۆزنەكنىڭ يورۇقلۇق دەرىجىسىنى كېمەيت</long>
+		    <long xml:lang="uk">Зменшити яскравість обраного вікна.</long>
+		    <long xml:lang="zh_CN">减少选定窗口的亮度</long>
+		    <default/>
+		</option>
+		<option type="button" name="brightness_decrease_button">
+		    <short>Decrease Brightness Button</short>
+		    <short xml:lang="bs">Smanji tipku za svjetlinu</short>
+		    <short xml:lang="cs">Snížit jas tlačítka</short>
+		    <short xml:lang="de">Knopf für Helligkeits-Verringerung</short>
+		    <short xml:lang="en_AU">Decrease Brightness Button</short>
+		    <short xml:lang="en_GB">Decrease Brightness Button</short>
+		    <short xml:lang="es">Botón de disminución del brillo</short>
+		    <short xml:lang="fr">Bouton de diminution de la luminosité</short>
+		    <short xml:lang="gl">Botón de redución do brillo</short>
+		    <short xml:lang="hr">Tipka miša za smanjenje svjetline</short>
+		    <short xml:lang="it">Pulsante diminuzione luminosità</short>
+		    <short xml:lang="ko">밝기 줄이기 단추</short>
+		    <short xml:lang="ms">Kurangkan Kecerahan Butang</short>
+		    <short xml:lang="pt">Botão Diminuir Brilho</short>
+		    <short xml:lang="ro">Butonul de micșorare luminozitate</short>
+		    <short xml:lang="ru">Кнопка уменьшения яркости</short>
+		    <short xml:lang="sl">Gumb za zmanjšanje svetlosti</short>
+		    <short xml:lang="sv">Knapp för minskad ljusstyrka</short>
+		    <short xml:lang="tr">Parlaklığı Azalt Düğmesi</short>
+		    <short xml:lang="ug">تارايتىش سېلىشتۇرما دەرىجە كۇنۇپكىسى</short>
+		    <short xml:lang="uk">Кнопка зменшення яскравости</short>
+		    <short xml:lang="zh_CN">减少亮度的按钮</short>
+		    <long>Decrease the brightness of the window the pointer hovers.</long>
+		    <long xml:lang="bs">Smanji svjetlinu prozora kojim kruži kursor.</long>
+		    <long xml:lang="cs">Snižuje úroveň jasu okna nad kterým se vznáší ukazatel.</long>
+		    <long xml:lang="de">Helligkeit des Fensters, auf dem der Mauszeiger ist, verringern.</long>
+		    <long xml:lang="en_AU">Decrease the brightness of the window the pointer hovers.</long>
+		    <long xml:lang="en_GB">Decrease the brightness of the window the pointer hovers.</long>
+		    <long xml:lang="es">Disminuye el brillo de la ventana sobre la que esté el puntero.</long>
+		    <long xml:lang="fr">Réduire la luminosité de la fenêtre survolée.</long>
+		    <long xml:lang="gl">Reduce o brillo da xanela sobre a que se pousa o punteiro.</long>
+		    <long xml:lang="hr">Smanjite svjetlinu prozora pri lebdenju pokazivača miša.</long>
+		    <long xml:lang="ko">커서를 가져다 대면 창의 밝기를 낮춥니다.</long>
+		    <long xml:lang="ms">Kurangkan kecerahan tetingkap bila penuding diatasnya.</long>
+		    <long xml:lang="pt">Diminui o brilho da janela pela qual o ponteiro passa.</long>
+		    <long xml:lang="ru">Уменьшить яркость окна, на которое наведён курсор.</long>
+		    <long xml:lang="sl">Povečaj svetlost okna, nad katerim je kazalec miške.</long>
+		    <long xml:lang="sv">Minska ljusstyrkan för fönstret pekaren hovrar över.</long>
+		    <long xml:lang="uk">Зменшити яскравість вікна, на яке наведено вказівник.</long>
+		    <long xml:lang="zh_CN">光标悬停时降低窗口的亮度。</long>
+		    <default/>
+		</option>
+		<option type="int" name="default_brightness_spawn_value">
+		    <short>New window default brightness value</short>
+		    <short xml:lang="bs">Zadana vrijednost svjetline novog prozora</short>
+		    <short xml:lang="en_GB">New window default brightness value</short>
+		    <short xml:lang="es">Valor predeterminado de brillo para las nuevas ventanas</short>
+		    <short xml:lang="gl">Valor do brillo na nova xanela predeterminada</short>
+		    <short xml:lang="hr">Zadana vrijednost svjetline novog prozora</short>
+		    <short xml:lang="ko">새 창 기본 밝기 값</short>
+		    <short xml:lang="sv">Förvalt värde för nya fönsters ljusstyrka</short>
+		    <short xml:lang="uk">Типове значення яскравости нового вікна</short>
+		    <long>Default brightness when a new window is created (in percent).</long>
+		    <long xml:lang="bs">Zadana svjetlina kada je novi prozor napravljen (u procentima).</long>
+		    <long xml:lang="en_GB">Default brightness when a new window is created (in percent).</long>
+		    <long xml:lang="es">Valor predeterminado de brillo cuando se crea una ventana nueva (en porcentaje).</long>
+		    <long xml:lang="gl">Brillo predeterminado cando se crea unha xanela nova (en porcentaxe).</long>
+		    <long xml:lang="hr">Zadana svjetlina kada je novi prozor stvoren (u postotku).</long>
+		    <long xml:lang="ko">새 창을 만들 때 기본 밝기 (백분율).</long>
+		    <long xml:lang="sv">Förvald ljusstyrka när ett nytt fönster skapas (i procent).</long>
+		    <long xml:lang="uk">Типова яскравість при створенні нового вікна (у відсотках).</long>
+		    <min>1</min>
+		    <max>100</max>
+		    <default>100</default>
+		</option>
+		<option type="int" name="brightness_step">
+		    <short>Step Size</short>
+		    <short xml:lang="bs">Korak veličine</short>
+		    <short xml:lang="de">Schrittweite</short>
+		    <short xml:lang="en_AU">Step Size</short>
+		    <short xml:lang="en_GB">Step Size</short>
+		    <short xml:lang="es">Tamaño del paso</short>
+		    <short xml:lang="fr">Taille du pas</short>
+		    <short xml:lang="gl">Duración do paso</short>
+		    <short xml:lang="hr">Korak veličine</short>
+		    <short xml:lang="ko">단계 크기</short>
+		    <short xml:lang="ms">Saiz Langkah</short>
+		    <short xml:lang="nl">Stapgrootte</short>
+		    <short xml:lang="pt">Tamanho do Incremento</short>
+		    <short xml:lang="ro">Dimensiune pas</short>
+		    <short xml:lang="ru">Величина шага</short>
+		    <short xml:lang="sl">Velikost koraka</short>
+		    <short xml:lang="sv">Stegstorlek</short>
+		    <short xml:lang="ug">قەدەم چوڭلۇقى</short>
+		    <short xml:lang="uk">Розмір кроку</short>
+		    <short xml:lang="zh_CN">步长</short>
+		    <long>Brightness increment and decrement amount (in percent).</long>
+		    <long xml:lang="bs">Iznos povećanja i smanjena svjetline (u procentima).</long>
+		    <long xml:lang="cs">Výše přírůstku a úbytku jasu (v procentech).</long>
+		    <long xml:lang="de">Schrittweite für Helligkeits-Erhöhungen und -Verringerungen (in Prozent).</long>
+		    <long xml:lang="en_AU">Brightness increment and decrement amount (in percent).</long>
+		    <long xml:lang="en_GB">Brightness increment and decrement amount (in percent).</long>
+		    <long xml:lang="es">Cantidad de aumento y disminución del brillo (en porcentaje).</long>
+		    <long xml:lang="fr">Augmentation ou diminution de la luminosité (en pourcentage).</long>
+		    <long xml:lang="gl">Nivel de incremento e redución do brillo (en %).</long>
+		    <long xml:lang="hr">Količina povećanja i smanjenja svjetline (u postocima).</long>
+		    <long xml:lang="it">Incremento e decremento della luminosità (in percentuale).</long>
+		    <long xml:lang="ko">밝기를 얼마나 높이고 낮출지 백분율 단위로 설정합니다.</long>
+		    <long xml:lang="ms">Jumlah tokokan dan pengurangan kecerahan (dalam peratus).</long>
+		    <long xml:lang="pt">Aumento e decréscimo da quantidade de brilho (em percentagem)</long>
+		    <long xml:lang="ru">Величина увеличения и уменьшения яркости (в процентах).</long>
+		    <long xml:lang="sl">Količina povečanja in zmanjšanja svetlosti (v odstotkih).</long>
+		    <long xml:lang="sv">Mängd att öka/minska ljusstyrka (i procent).</long>
+		    <long xml:lang="ug">يورۇقلۇق دەرىجىسىنى ئاشۇرۇش ۋە كېمەيتىش مىقدارى</long>
+		    <long xml:lang="uk">Величина збільшення та зменшення яскравости (у відсотках).</long>
+		    <long xml:lang="zh_CN">亮度增减值(百分比)</long>
+		    <min>1</min>
+		    <max>10</max>
+		    <default>5</default>
+		</option>
+		<subgroup>
+		    <short>Window Specific Settings</short>
+		    <short xml:lang="bs">Specifične postavke prozora</short>
+		    <short xml:lang="cs">Specifická nastavení okna</short>
+		    <short xml:lang="de">Fenster-spezifische Einstellungen</short>
+		    <short xml:lang="en_AU">Window Specific Settings</short>
+		    <short xml:lang="en_GB">Window Specific Settings</short>
+		    <short xml:lang="es">Parámetros específicos de ventana</short>
+		    <short xml:lang="fr">Paramètres spécifiques à la fenêtre</short>
+		    <short xml:lang="gl">Opcións especificas para as xanelas</short>
+		    <short xml:lang="hr">Određene postavke prozora</short>
+		    <short xml:lang="it">Finestra Impostazioni Specifiche</short>
+		    <short xml:lang="ko">특정한 창 설정</short>
+		    <short xml:lang="ms">Tetapan Spesifik Tetingkap</short>
+		    <short xml:lang="nl">Vensterspecifieke instellingen</short>
+		    <short xml:lang="pt">Janela de Configurações Específicas</short>
+		    <short xml:lang="ru">Особые настройки окон</short>
+		    <short xml:lang="sl">Nastavitve za posamezna okna</short>
+		    <short xml:lang="sv">Fönsterspecifika inställningar</short>
+		    <short xml:lang="ug">كۆزنەك خاس تەڭشەكلىرى</short>
+		    <short xml:lang="uk">Особливі налаштування вікон</short>
+		    <short xml:lang="zh_CN">窗口个性设置</short>
+		    <option type="list" name="brightness_matches">
+			<short>Windows</short>
+			<short xml:lang="af">Vensters</short>
+			<short xml:lang="am">መስኮቶች</short>
+			<short xml:lang="ar">النوافذ</short>
+			<short xml:lang="ast">Ventanes</short>
+			<short xml:lang="be">Вокны</short>
+			<short xml:lang="bg">Прозорци</short>
+			<short xml:lang="bs">Prozori</short>
+			<short xml:lang="ca">Finestres</short>
+			<short xml:lang="cs">Okna</short>
+			<short xml:lang="da">Vinduer</short>
+			<short xml:lang="de">Fenster</short>
+			<short xml:lang="el">Παράθυρα</short>
+			<short xml:lang="en_AU">Windows</short>
+			<short xml:lang="en_GB">Windows</short>
+			<short xml:lang="es">Ventanas</short>
+			<short xml:lang="eu">Leihoak</short>
+			<short xml:lang="fi">Ikkunat</short>
+			<short xml:lang="fr">Fenêtres</short>
+			<short xml:lang="gl">Xanelas</short>
+			<short xml:lang="he">חלונות</short>
+			<short xml:lang="hr">Prozori</short>
+			<short xml:lang="hu">Ablakok</short>
+			<short xml:lang="it">Finestre</short>
+			<short xml:lang="ja">ウィンドウ</short>
+			<short xml:lang="km">វីនដូ</short>
+			<short xml:lang="ko">창</short>
+			<short xml:lang="lv">Logs</short>
+			<short xml:lang="ms">Tetingkap</short>
+			<short xml:lang="nb">Vinduer</short>
+			<short xml:lang="ne">सञ्झ्यालहरू</short>
+			<short xml:lang="nl">Vensters</short>
+			<short xml:lang="oc">Fenèstras</short>
+			<short xml:lang="pl">Okna</short>
+			<short xml:lang="pt">Janelas</short>
+			<short xml:lang="pt_BR">Janelas</short>
+			<short xml:lang="ro">Ferestre</short>
+			<short xml:lang="ru">Окна</short>
+			<short xml:lang="sl">Okna</short>
+			<short xml:lang="sq">Dritaret</short>
+			<short xml:lang="sr">Прозори</short>
+			<short xml:lang="sv">Fönster</short>
+			<short xml:lang="th">หน้าต่าง</short>
+			<short xml:lang="tr">Pencereler</short>
+			<short xml:lang="ug">كۆزنەكلەر</short>
+			<short xml:lang="uk">Вікна</short>
+			<short xml:lang="vi">Cửa sổ</short>
+			<short xml:lang="zh_CN">窗口</short>
+			<short xml:lang="zh_HK">何種視窗</short>
+			<short xml:lang="zh_TW">何種視窗</short>
+			<long>Windows that should have a specific default brightness.</long>
+			<long xml:lang="bs">Prozori koji bi trebali imati specifično zadanu svjetlinu.</long>
+			<long xml:lang="cs">Okna, která mají mít zvláštní výchozí jas.</long>
+			<long xml:lang="de">Fenster, die eine bestimmte Standard-Helligkeit bekommen sollen.</long>
+			<long xml:lang="en_AU">Windows that should have a specific default brightness.</long>
+			<long xml:lang="en_GB">Windows that should have a specific default brightness.</long>
+			<long xml:lang="es">Ventanas que deberían un brillo específico predeterminado.</long>
+			<long xml:lang="fr">Fenêtres devant avoir une luminosité définie.</long>
+			<long xml:lang="gl">Xanelas que deberían ter un brillo predeterminado.</long>
+			<long xml:lang="hr">Prozori koji bi trebali imati određenu zadanu svjetlinu.</long>
+			<long xml:lang="it">Finestre che dovrebbero avere una determinata luminosità predefinita.</long>
+			<long xml:lang="ko">특정한 기본 밝기를 가져야 하는 창입니다.</long>
+			<long xml:lang="ms">Tetingkap seharusnya mempunyai kecerahan lalai khusus.</long>
+			<long xml:lang="pt">As janelas que devem ter um determinado brilho padrão específico.</long>
+			<long xml:lang="ro">Ferestrele ce trebuiesc să aibă o luminozitate implicită specifică.</long>
+			<long xml:lang="ru">Окна с особыми настройками яркости по умолчанию.</long>
+			<long xml:lang="sl">Okna, ki morajo imeti posebno privzeto svetlost.</long>
+			<long xml:lang="sv">Fönster som bör ha en specifik förvald ljusstyrka.</long>
+			<long xml:lang="ug">بەلگىلەنگەن كۆزنەكنىڭ يورۇقلۇق دەرىجىسى</long>
+			<long xml:lang="uk">Типові вікна з особливими налаштуваннями яскравости.</long>
+			<long xml:lang="zh_CN">有独立默认亮度设置的窗口。</long>
+			<type>match</type>
+			<default/>
+		    </option>
+		    <option type="list" name="brightness_values">
+			<short>Window values</short>
+			<short xml:lang="ast">Valores de la ventana</short>
+			<short xml:lang="bg">Стойности на прозорец</short>
+			<short xml:lang="bs">Vrijednosti prozora</short>
+			<short xml:lang="cs">Hodnoty okna</short>
+			<short xml:lang="de">Fensterwerte</short>
+			<short xml:lang="el">Τιμές παραθύρου</short>
+			<short xml:lang="en_AU">Window values</short>
+			<short xml:lang="en_GB">Window values</short>
+			<short xml:lang="es">Valores de las ventanas</short>
+			<short xml:lang="eu">Leihoaren balioak</short>
+			<short xml:lang="fi">Ikkunoiden arvot</short>
+			<short xml:lang="fr">Valeurs des fenêtres</short>
+			<short xml:lang="gl">Valores das xanelas</short>
+			<short xml:lang="he">ערכי חלונות</short>
+			<short xml:lang="hr">Vrijednosti prozora</short>
+			<short xml:lang="hu">Ablak tulajdonságok</short>
+			<short xml:lang="it">Valori finestra</short>
+			<short xml:lang="ja">ウィンドウの値</short>
+			<short xml:lang="ko">정도</short>
+			<short xml:lang="ms">Nilai tetingkap</short>
+			<short xml:lang="nl">Vensterwaarden</short>
+			<short xml:lang="oc">Valors de las fenèstras</short>
+			<short xml:lang="pl">Wartości dla okien</short>
+			<short xml:lang="pt">Valores para a janela</short>
+			<short xml:lang="pt_BR">Valores das janelas</short>
+			<short xml:lang="ro">Valori ferestre</short>
+			<short xml:lang="ru">Значения для окна</short>
+			<short xml:lang="sl">Vrednosti oken</short>
+			<short xml:lang="sr">Вредности прозора</short>
+			<short xml:lang="sv">Fönstervärden</short>
+			<short xml:lang="tr">Pencere değerleri</short>
+			<short xml:lang="ug">كۆزنەك قىممەتلىرى</short>
+			<short xml:lang="uk">Значення для вікна</short>
+			<short xml:lang="vi">Giá trị cửa sổ</short>
+			<short xml:lang="zh_CN">窗口值</short>
+			<short xml:lang="zh_HK">幅度數值</short>
+			<short xml:lang="zh_TW">幅度數值</short>
+			<long>Brightness value for windows (in percent).</long>
+			<long xml:lang="bs">Vrijednost svjetline za prozore (u procentima).</long>
+			<long xml:lang="cs">Hodnota jasu pro okna (v procentech).</long>
+			<long xml:lang="de">Helligkeitswert für Fenster (in Prozent).</long>
+			<long xml:lang="en_AU">Brightness value for windows (in percent).</long>
+			<long xml:lang="en_GB">Brightness value for windows (in percent).</long>
+			<long xml:lang="es">Valor del brillo para las ventanas (en porcentaje).</long>
+			<long xml:lang="fr">Valeur de luminosité pour les fenêtres (en pourcentage).</long>
+			<long xml:lang="gl">Valor do brillo para as xanelas (en %).</long>
+			<long xml:lang="hr">Vrijednost svjetline za prozore (u postocima).</long>
+			<long xml:lang="it">Valore della luminosità per le finestre (in percentuale).</long>
+			<long xml:lang="ko">창의 밝기 값을 백분율 단위로 설정합니다.</long>
+			<long xml:lang="ms">Nilai kecerahan untuk tetingkap (dalam peratus).</long>
+			<long xml:lang="pt">Valor de brilho para as janelas (em percentagem).</long>
+			<long xml:lang="ro">Valoarea luminozității pentru ferestre (în procente)</long>
+			<long xml:lang="ru">Значение яркости окон (в процентах).</long>
+			<long xml:lang="sl">Vrednost svetlosti za okna (v odstotkih).</long>
+			<long xml:lang="sv">Värde för ljusstyrka för fönster (i procent).</long>
+			<long xml:lang="tr">Pencerelerin parlaklık değeri (yüzde olarak).</long>
+			<long xml:lang="ug">كۆزنەكنىڭ يورۇقلۇق دەرىجىسى قىممىتى(پىرسەنت)</long>
+			<long xml:lang="uk">Значення яскравости вікон (у відсотках).</long>
+			<long xml:lang="zh_CN">窗口的亮度(百分比)。</long>
+			<type>int</type>
+			<default>
+			    <value>90</value>
+			</default>
+			<min>0</min>
+			<max>100</max>
+		    </option>
+		</subgroup>
+	    </group>
+	    <group>
+		<short>Saturation</short>
+		<short xml:lang="am">መሙያ</short>
+		<short xml:lang="ast">Saturación</short>
+		<short xml:lang="be">Насычанасьць</short>
+		<short xml:lang="bg">Наситеност</short>
+		<short xml:lang="bs">Zasićenje</short>
+		<short xml:lang="ca">Saturació</short>
+		<short xml:lang="cs">Sytost</short>
+		<short xml:lang="da">Farvemætning</short>
+		<short xml:lang="de">Sättigung</short>
+		<short xml:lang="el">Κορεσμός</short>
+		<short xml:lang="en_AU">Saturation</short>
+		<short xml:lang="en_GB">Saturation</short>
+		<short xml:lang="es">Saturación</short>
+		<short xml:lang="eu">Saturazioa</short>
+		<short xml:lang="fi">Kylläisyys</short>
+		<short xml:lang="fr">Saturation</short>
+		<short xml:lang="fy">Sêding</short>
+		<short xml:lang="gl">Saturacion</short>
+		<short xml:lang="he">רווייה</short>
+		<short xml:lang="hr">Zasićenje</short>
+		<short xml:lang="hu">Telítettség</short>
+		<short xml:lang="it">Saturazione</short>
+		<short xml:lang="ja">彩度</short>
+		<short xml:lang="ko">채도</short>
+		<short xml:lang="ms">Ketepuan</short>
+		<short xml:lang="nb">Metning</short>
+		<short xml:lang="nl">Verzadiging</short>
+		<short xml:lang="oc">Saturacion</short>
+		<short xml:lang="or">ସଂପୂର୍ଣ୍ଣ ମିଶ୍ରଣ</short>
+		<short xml:lang="pl">Nasycenie</short>
+		<short xml:lang="pt">Saturação</short>
+		<short xml:lang="pt_BR">Saturação</short>
+		<short xml:lang="ro">Saturație</short>
+		<short xml:lang="ru">Насыщенность</short>
+		<short xml:lang="sk">Sýtosť</short>
+		<short xml:lang="sl">Nasičenost</short>
+		<short xml:lang="sq">Ngopja</short>
+		<short xml:lang="sr">Засићење</short>
+		<short xml:lang="sv">Färgmättnad</short>
+		<short xml:lang="tr">Doygunluk</short>
+		<short xml:lang="ug">تويۇنۇش</short>
+		<short xml:lang="uk">Насиченість</short>
+		<short xml:lang="vi">Độ bão hòa</short>
+		<short xml:lang="zh_CN">饱和度</short>
+		<short xml:lang="zh_HK">飽和度</short>
+		<short xml:lang="zh_TW">飽和度</short>
+		<option type="key" name="saturation_increase_key">
+		    <short>Increase Saturation Key</short>
+		    <short xml:lang="bs">Povećaj ključ zasićenja</short>
+		    <short xml:lang="cs">Nastavení zvýšení sytosti barev</short>
+		    <short xml:lang="de">Taste für Sättigungs-Erhöhung</short>
+		    <short xml:lang="en_AU">Increase Saturation Key</short>
+		    <short xml:lang="en_GB">Increase Saturation Key</short>
+		    <short xml:lang="es">Tecla de aumento de la saturación</short>
+		    <short xml:lang="fr">Touche d'augmentation de la saturation</short>
+		    <short xml:lang="gl">Tecla de incremento da saturación</short>
+		    <short xml:lang="hr">Tipka povećanja zasićenja</short>
+		    <short xml:lang="ko">채도 높이기 키</short>
+		    <short xml:lang="ms">Tingkatkan Kekunci Ketepuan</short>
+		    <short xml:lang="pt">Tecla de Aumento da Saturação</short>
+		    <short xml:lang="ru">Клавиша увеличения насыщенности</short>
+		    <short xml:lang="sl">Tipka za povečanje nasičenosti</short>
+		    <short xml:lang="ug">كېڭەيتىش تويۇنۇش دەرىجىسى كۇنۇپكىسى</short>
+		    <short xml:lang="uk">Клавіш збільшення насичености</short>
+		    <short xml:lang="zh_CN">增强饱和度的键</short>
+		    <long>Increase the saturation of the selected window.</long>
+		    <long xml:lang="bs">Povećaj zasićenje odabranog prozora.</long>
+		    <long xml:lang="cs">Zvyšuje sytost barev zvoleného okna.</long>
+		    <long xml:lang="de">Sättigung des ausgewählten Fensters erhöhen.</long>
+		    <long xml:lang="en_AU">Increase the saturation of the selected window.</long>
+		    <long xml:lang="en_GB">Increase the saturation of the selected window.</long>
+		    <long xml:lang="es">Aumenta la saturación de la ventana seleccionada.</long>
+		    <long xml:lang="fr">Améliorer la saturation de la fenêtre sélectionnée.</long>
+		    <long xml:lang="gl">Incrementar a saturación da xanela seleccionada.</long>
+		    <long xml:lang="hr">Povećajte zasićenje za odabrani prozor.</long>
+		    <long xml:lang="it">Aumentare la saturazione della finestra selezionata.</long>
+		    <long xml:lang="ko">선택한 창의 채도를 높입니다.</long>
+		    <long xml:lang="ms">Tingkatkan ketepuan bagi tetingkap terpilih.</long>
+		    <long xml:lang="pt">Aumenta a saturação da janela selecionada.</long>
+		    <long xml:lang="ro">Tasta de mărire saturație</long>
+		    <long xml:lang="ru">Увеличить насыщенность выбранного окна.</long>
+		    <long xml:lang="sl">Povečaj nasičenost izbranega okna.</long>
+		    <long xml:lang="sv">Öka färgmättnad för markerat fönster.</long>
+		    <long xml:lang="ug">تاللانغان كۆزنەكنىڭ تويۇنۇش دەرىجىسىنى ئاشۇر</long>
+		    <long xml:lang="uk">Збільшити насиченість обраного вікна.</long>
+		    <long xml:lang="zh_CN">增强选中窗口的饱和度。</long>
+		    <default/>
+		</option>
+		<option type="button" name="saturation_increase_button">
+		    <short>Increase Saturation Button</short>
+		    <short xml:lang="bs">Povećaj tipku za zasićenje</short>
+		    <short xml:lang="cs">Zvýšit sytost tlačítka</short>
+		    <short xml:lang="de">Knopf für Sättigungs-Erhöhung</short>
+		    <short xml:lang="en_AU">Increase Saturation Button</short>
+		    <short xml:lang="en_GB">Increase Saturation Button</short>
+		    <short xml:lang="es">Botón de aumento de la saturación</short>
+		    <short xml:lang="fr">Bouton d'augmentation de la saturation</short>
+		    <short xml:lang="gl">Botón de incremento da saturación</short>
+		    <short xml:lang="hr">Tipka miša za povećanje zasićenja</short>
+		    <short xml:lang="ko">채도 높이기 단추</short>
+		    <short xml:lang="ms">Tingkatkan Butang Ketepuan</short>
+		    <short xml:lang="pt">Botão Aumento Saturação</short>
+		    <short xml:lang="ro">Butonul de mărire saturație</short>
+		    <short xml:lang="ru">Кнопка увеличения насыщенности</short>
+		    <short xml:lang="sl">Gumb za povečanje nasičenosti</short>
+		    <short xml:lang="sv">Knapp för ökad färgmättnad</short>
+		    <short xml:lang="ug">كېڭەيتىش تويۇنۇش دەرىجىسى توپچىسى</short>
+		    <short xml:lang="uk">Кнопка збільшення насичености</short>
+		    <short xml:lang="zh_CN">增强饱和度的按钮</short>
+		    <long>Increase the saturation of the window the pointer hovers.</long>
+		    <long xml:lang="bs">Povećaj zasićenje prozora kojim kruži kursor.</long>
+		    <long xml:lang="cs">Zvyšuje sytost barev okna nad kterým se vznáší ukazatel.</long>
+		    <long xml:lang="de">Sättigung des Fensters, auf dem der Mauszeiger ist, erhöhen.</long>
+		    <long xml:lang="en_AU">Increase the saturation of the window the pointer hovers.</long>
+		    <long xml:lang="en_GB">Increase the saturation of the window the pointer hovers.</long>
+		    <long xml:lang="es">Aumenta la saturación de la ventana sobre la que esta el puntero.</long>
+		    <long xml:lang="fr">Augmenter la saturation sur la fenêtre survolée.</long>
+		    <long xml:lang="gl">Incrementar a saturación da xanela sobre a que se pousa o punteiro.</long>
+		    <long xml:lang="hr">Povećajte zasićenje prozora pri lebdenju pokazivača miša.</long>
+		    <long xml:lang="ko">커서를 가져다 대면 창의 채도를 높입니다.</long>
+		    <long xml:lang="ms">Tingkatkan ketepuan tetigkap bila penuding diatasnya.</long>
+		    <long xml:lang="pt">Aumenta a saturação da janela quando o ponteiro passa.</long>
+		    <long xml:lang="ru">Увеличить насыщенность окна, на которое наведён курсор.</long>
+		    <long xml:lang="sl">Povečaj nasičenost okna, nad katerim je kazalec miške.</long>
+		    <long xml:lang="sv">Öka färgmättnad för fönstret pekaren hovrar över.</long>
+		    <long xml:lang="uk">Збільшити насиченість вікна, на яке наведено вказівник.</long>
+		    <long xml:lang="zh_CN">增强鼠标悬停窗口的饱和度。</long>
+		    <default/>
+		</option>
+		<option type="key" name="saturation_decrease_key">
+		    <short>Decrease Saturation Key</short>
+		    <short xml:lang="bs">Smanji ključ zasićenja</short>
+		    <short xml:lang="cs">Nastavení snížení sytosti barev</short>
+		    <short xml:lang="de">Taste für Sättigungs-Verringerung</short>
+		    <short xml:lang="en_AU">Decrease Saturation Key</short>
+		    <short xml:lang="en_GB">Decrease Saturation Key</short>
+		    <short xml:lang="es">Tecla de disminución de la saturación</short>
+		    <short xml:lang="fr">Touche de diminution de la saturation</short>
+		    <short xml:lang="gl">Tecla de redución da saturación</short>
+		    <short xml:lang="hr">Tipka smanjenja zasićenja</short>
+		    <short xml:lang="ko">채도 줄이기 키</short>
+		    <short xml:lang="ms">Kurangkan Kekunci Ketepuan</short>
+		    <short xml:lang="pt">Tecla de Diminuição de Saturação</short>
+		    <short xml:lang="ro">Tasta de micșorare saturație</short>
+		    <short xml:lang="ru">Клавиша уменьшения насыщенности</short>
+		    <short xml:lang="sl">Tipka za zmanjšanje nasičenosti</short>
+		    <short xml:lang="ug">تويۇنۇش دەرىجىسىنى كېمەيتىش كونۇپكىسى</short>
+		    <short xml:lang="uk">Клавіш зменшення насичености</short>
+		    <short xml:lang="zh_CN">减弱饱和度的键</short>
+		    <long>Decrease the saturation of the selected window.</long>
+		    <long xml:lang="bs">Smanji zasićenje odabranog prozora.</long>
+		    <long xml:lang="cs">Snižuje sytost barev zvoleného okna.</long>
+		    <long xml:lang="de">Sättigung des ausgewählten Fensters verringern.</long>
+		    <long xml:lang="en_AU">Decrease the saturation of the selected window.</long>
+		    <long xml:lang="en_GB">Decrease the saturation of the selected window.</long>
+		    <long xml:lang="es">Disminuye la saturación de la ventana seleccionada.</long>
+		    <long xml:lang="fr">Réduire la saturation de la fenêtre sélectionnée.</long>
+		    <long xml:lang="gl">Reduce a saturación da xanela seleccionada.</long>
+		    <long xml:lang="hr">Smanjite zasićenje za odabrani prozor.</long>
+		    <long xml:lang="it">Diminuire la saturazione della finestra selezionata.</long>
+		    <long xml:lang="ko">선택한 창의 채도를 줄입니다.</long>
+		    <long xml:lang="ms">Kurangkan ketepuan bagi tetingkap terpilih.</long>
+		    <long xml:lang="pt">Diminui a saturação da janela selecionada.</long>
+		    <long xml:lang="ro">Micșorează saturația ferestrei selectate.</long>
+		    <long xml:lang="ru">Уменьшить насыщенность выбранного окна.</long>
+		    <long xml:lang="sl">Zmanjšaj nasičenost izbranega okna.</long>
+		    <long xml:lang="sv">Minska färgmättnad för markerat fönster.</long>
+		    <long xml:lang="tr">Seçilen pencerenin doygunluğunu azalt.</long>
+		    <long xml:lang="ug">تاللانغان كۆزنەكنىڭ تويۇنۇش دەرىجىسىنى كېمەيت</long>
+		    <long xml:lang="uk">Зменшити насиченість обраного вікна.</long>
+		    <long xml:lang="zh_CN">减弱选中窗口的饱和度。</long>
+		    <default/>
+		</option>
+		<option type="button" name="saturation_decrease_button">
+		    <short>Decrease Saturation Button</short>
+		    <short xml:lang="bs">Smanji tipku za zasićenje</short>
+		    <short xml:lang="cs">Snížit sytost tlačítka</short>
+		    <short xml:lang="de">Knopf für Sättigungs-Verringerung</short>
+		    <short xml:lang="en_AU">Decrease Saturation Button</short>
+		    <short xml:lang="en_GB">Decrease Saturation Button</short>
+		    <short xml:lang="es">Botón de disminución de la saturación.</short>
+		    <short xml:lang="fr">Bouton de diminution de la saturation</short>
+		    <short xml:lang="gl">Botón de redución da saturación</short>
+		    <short xml:lang="hr">Tipka miša za smanjenje zasićenja</short>
+		    <short xml:lang="ko">채도 줄이기 단추</short>
+		    <short xml:lang="ms">Kurangkan Butang Ketepuan</short>
+		    <short xml:lang="pt">Botão Diminuir Saturação</short>
+		    <short xml:lang="ro">Butonul de micșorare saturație</short>
+		    <short xml:lang="ru">Кнопка уменьшения насыщенности</short>
+		    <short xml:lang="sl">Gumb za zmanjšanje nasičenosti</short>
+		    <short xml:lang="sv">Knapp för minskad färgmättnad</short>
+		    <short xml:lang="tr">Doygunluk Azaltma Düğmesi</short>
+		    <short xml:lang="ug">تويۇنۇش دەرىجىسىنى كېمەيتىش توپچىسى</short>
+		    <short xml:lang="uk">Кнопка зменшення насичености</short>
+		    <short xml:lang="zh_CN">减弱饱和度的按钮</short>
+		    <long>Decrease the saturation of the window the pointer hovers.</long>
+		    <long xml:lang="bs">Smanji zasićenje prozora kojim kruži kursor.</long>
+		    <long xml:lang="cs">Snižuje sytost barev okna nad kterým se vznáší ukazatel.</long>
+		    <long xml:lang="de">Sättigung des Fensters, auf dem der Mauszeiger ist, verringern.</long>
+		    <long xml:lang="en_AU">Decrease the saturation of the window the pointer hovers.</long>
+		    <long xml:lang="en_GB">Decrease the saturation of the window the pointer hovers.</long>
+		    <long xml:lang="es">Disminuye la saturación de la ventana sobre la que está el puntero.</long>
+		    <long xml:lang="fr">Diminuer la saturation de la fenêtre survolée.</long>
+		    <long xml:lang="gl">Reduce a saturación da xanela sobre a que se pousa o punteiro.</long>
+		    <long xml:lang="hr">Smanjite zasićenje prozora pri lebdenju pokazivača miša.</long>
+		    <long xml:lang="ko">커서를 가져다 대면 창의 채도를 낮춥니다.</long>
+		    <long xml:lang="ms">Kurangkan ketepuan tetingkap bila penuding diatasnya.</long>
+		    <long xml:lang="pt">Diminui a saturação da janela quando o ponteiro passa.</long>
+		    <long xml:lang="ru">Уменьшить насыщенность окна, на которое наведён курсор.</long>
+		    <long xml:lang="sl">Zmanjšaj nasičenost okna, nad katerim je kazalec miške.</long>
+		    <long xml:lang="sv">Minska färgmättnad för fönstret pekaren hovrar över.</long>
+		    <long xml:lang="uk">Зменшити насиченість вікна, на яке наведено вказівник.</long>
+		    <long xml:lang="zh_CN">减弱鼠标悬停窗口的饱和度。</long>
+		    <default/>
+		</option>
+		<option type="int" name="default_saturation_spawn_value">
+		    <short>New window default saturation value</short>
+		    <short xml:lang="bs">Zadana vrijednost zasićenja novog prozora</short>
+		    <short xml:lang="de">neuer Fenstervorgabewert für Farbsättigung</short>
+		    <short xml:lang="en_GB">New window default saturation value</short>
+		    <short xml:lang="es">Valor predeterminado de saturación para las nuevas ventanas</short>
+		    <short xml:lang="gl">Valor da saturación na nova xanela predeterminada</short>
+		    <short xml:lang="hr">Zadana vrijednost zasićenja novog prozora</short>
+		    <short xml:lang="ko">새 창 기본 채도 값</short>
+		    <short xml:lang="sv">Förvalt färgmättnadsvärde för nytt fönster</short>
+		    <short xml:lang="uk">Типове значення насичености нового вікна</short>
+		    <long>Default saturation when a new window is created (in percent).</long>
+		    <long xml:lang="bs">Zadana vrijednost zasićenja kada je novi prozor napravljen (u procentima).</long>
+		    <long xml:lang="de">Vorgegebene Farbsättigung (in %) für ein neues Fenster</long>
+		    <long xml:lang="en_GB">Default saturation when a new window is created (in percent).</long>
+		    <long xml:lang="es">Valor predeterminado de saturación cuando se crea una ventana nueva (en porcentaje).</long>
+		    <long xml:lang="gl">Saturación predeterminada cando se crea unha xanela nova (en porcentaxe).</long>
+		    <long xml:lang="hr">Zadano zasićenje kada je novi prozor stvoren (u postotku).</long>
+		    <long xml:lang="ko">새 창을 만들 때 기본 채도 (백분율).</long>
+		    <long xml:lang="sv">Förvald färgmättnad när ett nytt fönster skapas (i procent).</long>
+		    <long xml:lang="uk">Типова насиченість при створенні нового вікна (у відсотках).</long>
+		    <min>1</min>
+		    <max>100</max>
+		    <default>100</default>
+		</option>
+		<option type="int" name="saturation_step">
+		    <short>Step Size</short>
+		    <short xml:lang="bs">Korak veličine</short>
+		    <short xml:lang="de">Schrittweite</short>
+		    <short xml:lang="en_AU">Step Size</short>
+		    <short xml:lang="en_GB">Step Size</short>
+		    <short xml:lang="es">Tamaño del paso</short>
+		    <short xml:lang="fr">Taille du pas</short>
+		    <short xml:lang="gl">Duración do paso</short>
+		    <short xml:lang="hr">Korak veličine</short>
+		    <short xml:lang="ko">단계 크기</short>
+		    <short xml:lang="ms">Saiz Langkah</short>
+		    <short xml:lang="nl">Stapgrootte</short>
+		    <short xml:lang="pt">Tamanho do Incremento</short>
+		    <short xml:lang="ro">Dimensiune pas</short>
+		    <short xml:lang="ru">Величина шага</short>
+		    <short xml:lang="sl">Velikost koraka</short>
+		    <short xml:lang="sv">Stegstorlek</short>
+		    <short xml:lang="ug">قەدەم چوڭلۇقى</short>
+		    <short xml:lang="uk">Розмір кроку</short>
+		    <short xml:lang="zh_CN">步长</short>
+		    <long>Saturation increment and decrement amount (in percent).</long>
+		    <long xml:lang="bs">Iznos povećanja i smanjenja zasićenja (u procentima).</long>
+		    <long xml:lang="cs">Výše přírůstku a úbytku sytosti (v procentech).</long>
+		    <long xml:lang="de">Schrittweite für Sättigungs-Erhöhungen und -Verringerungen (in Prozent).</long>
+		    <long xml:lang="en_AU">Saturation increment and decrement amount (in percent).</long>
+		    <long xml:lang="en_GB">Saturation increment and decrement amount (in percent).</long>
+		    <long xml:lang="es">Cantidad de aumento y disminución de la saturación (en porcentaje).</long>
+		    <long xml:lang="fr">Augmentation et diminution de la saturation (en pourcentage).</long>
+		    <long xml:lang="gl">Incremento e redución do nivel de saturación (en %).</long>
+		    <long xml:lang="hr">Količina povećanja i smanjenja zasićenja (u postocima).</long>
+		    <long xml:lang="it">Incremento e decremento della saturazione (in percentuale).</long>
+		    <long xml:lang="ko">채도를 얼마나 높이고 낮출지 백분율 단위로 설정합니다.</long>
+		    <long xml:lang="ms">Jumlah tokokan dan pengurangan ketepuan (dalam peratus).</long>
+		    <long xml:lang="pt">Quantidade de aumento e diminuição da saturação (em percentagem).</long>
+		    <long xml:lang="ru">Величина увеличения и уменьшения насыщенности (в процентах).</long>
+		    <long xml:lang="sl">Vrednost nasičenosti za okna (v odstotkih).</long>
+		    <long xml:lang="ug">تويۇنۇش دەرىجىسىنى ئاشۇرۇش ۋە كېمەيتىش دەرىجىسى</long>
+		    <long xml:lang="uk">Величина збільшення та зменшення насичености (у відсотках).</long>
+		    <long xml:lang="zh_CN">饱和度增减的值(百分比)。</long>
+		    <min>1</min>
+		    <max>10</max>
+		    <default>5</default>
+		</option>
+		<subgroup>
+		    <short>Window Specific Settings</short>
+		    <short xml:lang="bs">Specifične postavke prozora</short>
+		    <short xml:lang="cs">Specifická nastavení okna</short>
+		    <short xml:lang="de">Fenster-spezifische Einstellungen</short>
+		    <short xml:lang="en_AU">Window Specific Settings</short>
+		    <short xml:lang="en_GB">Window Specific Settings</short>
+		    <short xml:lang="es">Parámetros específicos de ventana</short>
+		    <short xml:lang="fr">Paramètres spécifiques à la fenêtre</short>
+		    <short xml:lang="gl">Opcións especificas para as xanelas</short>
+		    <short xml:lang="hr">Određene postavke prozora</short>
+		    <short xml:lang="it">Finestra Impostazioni Specifiche</short>
+		    <short xml:lang="ko">특정한 창 설정</short>
+		    <short xml:lang="ms">Tetapan Spesifik Tetingkap</short>
+		    <short xml:lang="nl">Vensterspecifieke instellingen</short>
+		    <short xml:lang="pt">Janela de Configurações Específicas</short>
+		    <short xml:lang="ru">Особые настройки окон</short>
+		    <short xml:lang="sl">Nastavitve za posamezna okna</short>
+		    <short xml:lang="sv">Fönsterspecifika inställningar</short>
+		    <short xml:lang="ug">كۆزنەك خاس تەڭشەكلىرى</short>
+		    <short xml:lang="uk">Особливі налаштування вікон</short>
+		    <short xml:lang="zh_CN">窗口个性设置</short>
+		    <option type="list" name="saturation_matches">
+			<short>Windows</short>
+			<short xml:lang="af">Vensters</short>
+			<short xml:lang="am">መስኮቶች</short>
+			<short xml:lang="ar">النوافذ</short>
+			<short xml:lang="ast">Ventanes</short>
+			<short xml:lang="be">Вокны</short>
+			<short xml:lang="bg">Прозорци</short>
+			<short xml:lang="bs">Prozori</short>
+			<short xml:lang="ca">Finestres</short>
+			<short xml:lang="cs">Okna</short>
+			<short xml:lang="da">Vinduer</short>
+			<short xml:lang="de">Fenster</short>
+			<short xml:lang="el">Παράθυρα</short>
+			<short xml:lang="en_AU">Windows</short>
+			<short xml:lang="en_GB">Windows</short>
+			<short xml:lang="es">Ventanas</short>
+			<short xml:lang="eu">Leihoak</short>
+			<short xml:lang="fi">Ikkunat</short>
+			<short xml:lang="fr">Fenêtres</short>
+			<short xml:lang="gl">Xanelas</short>
+			<short xml:lang="he">חלונות</short>
+			<short xml:lang="hr">Prozori</short>
+			<short xml:lang="hu">Ablakok</short>
+			<short xml:lang="it">Finestre</short>
+			<short xml:lang="ja">ウィンドウ</short>
+			<short xml:lang="km">វីនដូ</short>
+			<short xml:lang="ko">창</short>
+			<short xml:lang="lv">Logs</short>
+			<short xml:lang="ms">Tetingkap</short>
+			<short xml:lang="nb">Vinduer</short>
+			<short xml:lang="ne">सञ्झ्यालहरू</short>
+			<short xml:lang="nl">Vensters</short>
+			<short xml:lang="oc">Fenèstras</short>
+			<short xml:lang="pl">Okna</short>
+			<short xml:lang="pt">Janelas</short>
+			<short xml:lang="pt_BR">Janelas</short>
+			<short xml:lang="ro">Ferestre</short>
+			<short xml:lang="ru">Окна</short>
+			<short xml:lang="sl">Okna</short>
+			<short xml:lang="sq">Dritaret</short>
+			<short xml:lang="sr">Прозори</short>
+			<short xml:lang="sv">Fönster</short>
+			<short xml:lang="th">หน้าต่าง</short>
+			<short xml:lang="tr">Pencereler</short>
+			<short xml:lang="ug">كۆزنەكلەر</short>
+			<short xml:lang="uk">Вікна</short>
+			<short xml:lang="vi">Cửa sổ</short>
+			<short xml:lang="zh_CN">窗口</short>
+			<short xml:lang="zh_HK">何種視窗</short>
+			<short xml:lang="zh_TW">何種視窗</short>
+			<long>Windows that should have a specific default saturation.</long>
+			<long xml:lang="bs">Prozori koji bi trebali imati specifično zadano zasićenje.</long>
+			<long xml:lang="cs">Okna, která mají mít zvláštní výchozí sytost.</long>
+			<long xml:lang="de">Fenster, die eine bestimmte Standard-Sättigung bekommen sollen.</long>
+			<long xml:lang="en_AU">Windows that should have a specific default saturation.</long>
+			<long xml:lang="en_GB">Windows that should have a specific default saturation.</long>
+			<long xml:lang="es">Ventanas que deberían tener un saturación específica predeterminada.</long>
+			<long xml:lang="fr">Fenêtres devant avoir une saturation spécifique.</long>
+			<long xml:lang="gl">Xanelas que deben ter unha saturación predeterminada.</long>
+			<long xml:lang="hr">Prozori koji bi trebali imati određeno zadano zasićenje.</long>
+			<long xml:lang="it">Finestre che dovrebbero avere una determinata saturazione predefinita.</long>
+			<long xml:lang="ko">특정한 기본 채도를 가져야 하는 창입니다.</long>
+			<long xml:lang="ms">Tetingkap seharusnya mempunyai ketepuan lalai khusus.</long>
+			<long xml:lang="pt">Janelas que devem ter uma saturação padrão específico.</long>
+			<long xml:lang="ro">Ferestrele ce trebuiesc să aibă o saturație implicită specifică.</long>
+			<long xml:lang="ru">Окна с особыми настройками насыщенности по умолчанию.</long>
+			<long xml:lang="sl">Okna, ki morajo imeti posebno privzeto nasičenost.</long>
+			<long xml:lang="sv">Fönster som bör ha en specifik förvald färgmättnad.</long>
+			<long xml:lang="ug">بەلگىلەنگەن كۆزنەكنىڭ كۆڭۈلدىكى تويۇنۇش دەرىجىسى</long>
+			<long xml:lang="uk">Типові вікна з особливими налаштуваннями насичености.</long>
+			<long xml:lang="zh_CN">有独立饱和度设置的窗口。</long>
+			<type>match</type>
+			<default/>
+		    </option>
+		    <option type="list" name="saturation_values">
+			<short>Window values</short>
+			<short xml:lang="ast">Valores de la ventana</short>
+			<short xml:lang="bg">Стойности на прозорец</short>
+			<short xml:lang="bs">Vrijednosti prozora</short>
+			<short xml:lang="cs">Hodnoty okna</short>
+			<short xml:lang="de">Fensterwerte</short>
+			<short xml:lang="el">Τιμές παραθύρου</short>
+			<short xml:lang="en_AU">Window values</short>
+			<short xml:lang="en_GB">Window values</short>
+			<short xml:lang="es">Valores de las ventanas</short>
+			<short xml:lang="eu">Leihoaren balioak</short>
+			<short xml:lang="fi">Ikkunoiden arvot</short>
+			<short xml:lang="fr">Valeurs des fenêtres</short>
+			<short xml:lang="gl">Valores das xanelas</short>
+			<short xml:lang="he">ערכי חלונות</short>
+			<short xml:lang="hr">Vrijednosti prozora</short>
+			<short xml:lang="hu">Ablak tulajdonságok</short>
+			<short xml:lang="it">Valori finestra</short>
+			<short xml:lang="ja">ウィンドウの値</short>
+			<short xml:lang="ko">정도</short>
+			<short xml:lang="ms">Nilai tetingkap</short>
+			<short xml:lang="nl">Vensterwaarden</short>
+			<short xml:lang="oc">Valors de las fenèstras</short>
+			<short xml:lang="pl">Wartości dla okien</short>
+			<short xml:lang="pt">Valores para a janela</short>
+			<short xml:lang="pt_BR">Valores das janelas</short>
+			<short xml:lang="ro">Valori ferestre</short>
+			<short xml:lang="ru">Значения для окна</short>
+			<short xml:lang="sl">Vrednosti oken</short>
+			<short xml:lang="sr">Вредности прозора</short>
+			<short xml:lang="sv">Fönstervärden</short>
+			<short xml:lang="tr">Pencere değerleri</short>
+			<short xml:lang="ug">كۆزنەك قىممەتلىرى</short>
+			<short xml:lang="uk">Значення для вікна</short>
+			<short xml:lang="vi">Giá trị cửa sổ</short>
+			<short xml:lang="zh_CN">窗口值</short>
+			<short xml:lang="zh_HK">幅度數值</short>
+			<short xml:lang="zh_TW">幅度數值</short>
+			<long>Saturation value for the windows (in percent).</long>
+			<long xml:lang="bs">Vrijednost zasićenja za prozore (u procentima).</long>
+			<long xml:lang="cs">Hodnota sytosti pro okna (v procentech).</long>
+			<long xml:lang="de">Sättigungswert für Fenster (in Prozent).</long>
+			<long xml:lang="en_AU">Saturation value for the windows (in percent).</long>
+			<long xml:lang="en_GB">Saturation value for the windows (in percent).</long>
+			<long xml:lang="es">Valor de la saturación para las ventanas (en porcentaje).</long>
+			<long xml:lang="fr">Valeur de la saturation pour les fenêtres (en pourcentage).</long>
+			<long xml:lang="gl">Valor da saturación das xanelas (en %).</long>
+			<long xml:lang="hr">Vrijednost zasićenja za prozore (u postocima).</long>
+			<long xml:lang="it">Valore di saturazione per le finestre (in percentuale).</long>
+			<long xml:lang="ko">창의 채도 값을 백분율 단위로 설정합니다.</long>
+			<long xml:lang="ms">Nilai ketepuan bagi tetingkap (dalam peratus).</long>
+			<long xml:lang="pt">Valor da saturação para as janelas (em percentagem).</long>
+			<long xml:lang="ro">Valoarea saturației pentru ferestre (în procente)</long>
+			<long xml:lang="ru">Значение насыщенности окон (в процентах).</long>
+			<long xml:lang="sl">Vrednost nasičenosti za okna (v odstotkih).</long>
+			<long xml:lang="sv">Färgmättnadsvärde för fönstren (i procent).</long>
+			<long xml:lang="tr">Pencerelerin doygunluk değeri (yüzde olarak).</long>
+			<long xml:lang="ug">كۆزنەڭنىڭ تويۇنۇش دەرىجىسى قىممىتى(پىرسەنت)</long>
+			<long xml:lang="uk">Значення насичености вікон (у відсотках).</long>
+			<long xml:lang="zh_CN">窗口的饱和度(百分比)</long>
+			<type>int</type>
+			<default>
+			    <value>90</value>
+			</default>
+			<min>0</min>
+			<max>100</max>
+		    </option>
+		</subgroup>
+	    </group>
+	</options>
+    </plugin>
+</compiz>

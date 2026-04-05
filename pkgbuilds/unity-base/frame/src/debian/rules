@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+export DPKG_GENSYMBOLS_CHECK_LEVEL=4
+
+%:
+	dh $@ --with autoreconf --parallel
+
+override_dh_install:
+	dh_install --fail-missing -X.la -X.a

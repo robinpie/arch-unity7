@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,-O1 -Wl,--as-needed
+export DPKG_GENSYMBOLS_CHECK_LEVEL = 4
+
+%:
+	dh $@ --with autoreconf
+
+override_dh_autoreconf:
+	NOCONFIGURE=1 dh_autoreconf ./autogen.sh
+
+override_dh_auto_configure:
+	dh_auto_configure -- --enable-gtk-doc
+
+override_dh_install:
+	find debian/tmp/usr/lib -name \*.la -exec rm {} \;
+	find debian/tmp/usr/lib -name \*.a -exec rm {} \;
+	dh_install --fail-missing

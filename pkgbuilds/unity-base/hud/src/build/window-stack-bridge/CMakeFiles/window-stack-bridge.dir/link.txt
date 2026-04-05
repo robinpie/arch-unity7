@@ -1,0 +1,2 @@
+/usr/bin/ar qc libwindow-stack-bridge.a "CMakeFiles/window-stack-bridge.dir/window-stack-bridge_autogen/mocs_compilation.cpp.o" "CMakeFiles/window-stack-bridge.dir/AbstractWindowStack.cpp.o" "CMakeFiles/window-stack-bridge.dir/BamfWindowStack.cpp.o" "CMakeFiles/window-stack-bridge.dir/BamfInterface.cpp.o" "CMakeFiles/window-stack-bridge.dir/BamfViewInterface.cpp.o" "CMakeFiles/window-stack-bridge.dir/WindowStackAdaptor.cpp.o"
+/usr/bin/ranlib libwindow-stack-bridge.a

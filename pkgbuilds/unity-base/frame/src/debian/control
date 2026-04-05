@@ -1,0 +1,60 @@
+Source: frame
+Section: libs
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: asciidoc,
+               debhelper (>= 9),
+               dh-autoreconf,
+               docbook-xsl,
+               libx11-dev,
+               libxi-dev (>= 2:1.5.99.2),
+               pkg-config,
+               xserver-xorg-dev,
+               xsltproc,
+Standards-Version: 3.9.3
+Homepage: https://launchpad.net/frame
+# If you aren't a member of ~oif-team but need to upload packaging changes,
+# just go ahead.  ~oif-team will notice and sync up the code again.
+Vcs-Bzr: https://code.launchpad.net/~oif-team/frame/trunk
+
+Package: libframe6
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: Touch Frame Library
+ This library handles the buildup and synchronization of a set of
+ simultaneous touches. The library is input agnostic, with bindings
+ for mtdev, frame and XI2.1.
+
+Package: libframe-dev
+Section: libdevel
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: libframe6 (= ${binary:Version}),
+         ${misc:Depends}
+Replaces: libutouch-frame-dev
+Conflicts: libutouch-frame-dev
+Description: Touch Frame Library - dev files
+ This library handles the buildup and synchronization of a set of
+ simultaneous touches. The library is input agnostic, with bindings
+ for mtdev, frame and XI2.1.
+ .
+ This package contains files that are needed to build applications.
+
+Package: frame-tools
+Section: libdevel
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: libframe6 (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends},
+Replaces: utouch-frame-tools
+Conflicts: utouch-frame-tools
+Description: Touch Frame Library - test tools
+ This library handles the buildup and synchronization of a set of
+ simultaneous touches. The library is input agnostic, with bindings
+ for mtdev, frame and XI2.1.
+ .
+ This package provides some test tools for the frame library.

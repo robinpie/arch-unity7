@@ -1,0 +1,71 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/unity-gtk-module
+# Builds both GTK2 and GTK3 modules
+
+pkgname=unity-gtk-module
+pkgver=0.0.0
+_uver=+18.04.20171202
+_urev=0ubuntu7
+pkgrel=1
+pkgdesc="GTK+ module for exporting menus as GMenuModels (global menu support)"
+arch=('x86_64')
+url="https://launchpad.net/unity-gtk-module"
+license=('GPL-3.0-or-later' 'LGPL-3.0-or-later')
+depends=('gtk2' 'gtk3' 'glib2' 'dconf' 'gdk-pixbuf2' 'libx11')
+makedepends=('pkgconf' 'autoconf' 'automake' 'libtool')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "fix-gcc-14-build.patch"
+    "81unity-gtk-module"
+)
+sha256sums=('SKIP' 'SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+
+    # Disable autopilot tests
+    sed -i 's/ tests//' Makefile.am
+
+    # Apply gcc 14 fix
+    patch -p1 -i fix-gcc-14-build.patch
+
+    autoreconf -fiv
+}
+
+build() {
+    local configure_args=(
+        --prefix=/usr
+        --libdir=/usr/lib
+        --sysconfdir=/etc
+        --disable-static
+        --disable-gtk-doc
+    )
+
+    # Build GTK3 module
+    mkdir -p build-gtk3
+    cd "$srcdir/build-gtk3"
+    "$srcdir/configure" "${configure_args[@]}"
+    make
+
+    # Build GTK2 module
+    mkdir -p "$srcdir/build-gtk2"
+    cd "$srcdir/build-gtk2"
+    "$srcdir/configure" "${configure_args[@]}" --with-gtk=2
+    make
+}
+
+package() {
+    # Install GTK3 module
+    cd "$srcdir/build-gtk3"
+    make DESTDIR="$pkgdir" install
+
+    # Install GTK2 module
+    cd "$srcdir/build-gtk2"
+    make DESTDIR="$pkgdir" install
+
+    # Install X11 session init script
+    install -Dm755 "$srcdir/81unity-gtk-module" \
+        "$pkgdir/etc/X11/xinit/xinitrc.d/81unity-gtk-module"
+
+    find "$pkgdir" -name '*.la' -delete
+}

@@ -1,0 +1,12 @@
+prefix=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/build/compizconfig/libcompizconfig/src/
+exec_prefix=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/build/compizconfig/libcompizconfig/src/
+libdir=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/build/compizconfig/libcompizconfig/src/
+includedir=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/compizconfig/libcompizconfig/include
+
+Name: libcompizconfig_internal
+Description: Compiz configuration system (internal)
+Version: 0.9.14.2
+
+Libs: -L/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/build/compizconfig/libcompizconfig/src/ -lcompizconfig
+Cflags: -I/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/compiz/src/compiz-0.9.14.2+25.10.20250930/compizconfig/libcompizconfig/include
+

@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr/bin
+libdir=/usr/lib/compiz
+includedir=/usr/include
+
+Name: compiz-cube
+Description: Cube plugin for compiz
+Version: 0.9.14.2
+
+Requires: compiz compiz-composite compiz-opengl
+Libs: -L${libdir} -lcube
+Cflags: -I/usr/include -I/usr/include/uuid -I/usr/include/libxml2 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glibmm-2.4 -I/usr/lib/glibmm-2.4/include -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/sigc++-2.0 -I/usr/lib/sigc++-2.0/include -I/usr/include/startup-notification-1.0  -I${includedir}/compiz

@@ -1,0 +1,326 @@
+<!-- ##### SECTION Title ##### -->
+ZeitgeistLog
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT ZeitgeistLog ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG ZeitgeistLog:connected ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT ZeitgeistLogClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION zeitgeist_log_delete_events ##### -->
+<para>
+
+</para>
+
+@self: 
+@event_ids: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_delete_events_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_delete_log ##### -->
+<para>
+
+</para>
+
+@self: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_delete_log_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_find_event_ids ##### -->
+<para>
+
+</para>
+
+@self: 
+@time_range: 
+@event_templates: 
+@storage_state: 
+@num_events: 
+@result_type: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_find_event_ids_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_find_events ##### -->
+<para>
+
+</para>
+
+@self: 
+@time_range: 
+@event_templates: 
+@storage_state: 
+@num_events: 
+@result_type: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_find_events_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_find_related_uris ##### -->
+<para>
+
+</para>
+
+@self: 
+@time_range: 
+@event_templates: 
+@result_event_templates: 
+@storage_state: 
+@num_events: 
+@result_type: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_find_related_uris_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_get_default ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_get_events ##### -->
+<para>
+
+</para>
+
+@self: 
+@event_ids: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_get_events_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_get_version ##### -->
+<para>
+
+</para>
+
+@self: 
+@major: 
+@minor: 
+@micro: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_insert_events ##### -->
+<para>
+
+</para>
+
+@self: 
+@cancellable: 
+@callback: 
+@user_data: 
+@...: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_insert_events_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_insert_events_from_ptrarray ##### -->
+<para>
+
+</para>
+
+@self: 
+@events: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_insert_events_no_reply ##### -->
+<para>
+
+</para>
+
+@self: 
+@...: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_insert_events_valist ##### -->
+<para>
+
+</para>
+
+@self: 
+@cancellable: 
+@callback: 
+@user_data: 
+@events: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_install_monitor ##### -->
+<para>
+
+</para>
+
+@self: 
+@monitor: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_is_connected ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_quit ##### -->
+<para>
+
+</para>
+
+@self: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_quit_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_log_remove_monitor ##### -->
+<para>
+
+</para>
+
+@self: 
+@monitor: 
+
+

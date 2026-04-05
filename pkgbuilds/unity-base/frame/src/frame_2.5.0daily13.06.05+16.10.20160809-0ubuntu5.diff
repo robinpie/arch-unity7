@@ -1,0 +1,379 @@
+--- frame-2.5.0daily13.06.05+16.10.20160809.orig/debian/changelog
++++ frame-2.5.0daily13.06.05+16.10.20160809/debian/changelog
+@@ -0,0 +1,130 @@
++frame (2.5.0daily13.06.05+16.10.20160809-0ubuntu5) resolute; urgency=medium
++
++  * No-change mass rebuild for Ubuntu 26.04 (LP: #2132257)
++
++ -- Graham Inggs <ginggs@ubuntu.com>  Thu, 11 Dec 2025 21:01:32 +0000
++
++frame (2.5.0daily13.06.05+16.10.20160809-0ubuntu4) noble; urgency=high
++
++  * No change rebuild for frame pointers (and time_t).
++
++ -- Julian Andres Klode <juliank@ubuntu.com>  Thu, 18 Apr 2024 19:53:56 +0200
++
++frame (2.5.0daily13.06.05+16.10.20160809-0ubuntu3) hirsute; urgency=medium
++
++  * src/device.cpp: Include cstdio to fix FTBFS.
++
++ -- Logan Rosen <logan@ubuntu.com>  Wed, 06 Jan 2021 18:22:26 -0500
++
++frame (2.5.0daily13.06.05+16.10.20160809-0ubuntu2) focal; urgency=medium
++
++  * No-change rebuild for libgcc-s1 package name change.
++
++ -- Matthias Klose <doko@ubuntu.com>  Sun, 22 Mar 2020 16:40:50 +0100
++
++frame (2.5.0daily13.06.05+16.10.20160809-0ubuntu1) yakkety; urgency=medium
++
++  * device: don't use asserts to get properties on failures, to avoid
++    crashes (LP: #1350523)
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Tue, 09 Aug 2016 15:53:31 +0000
++
++frame (2.5.0daily13.06.05-0ubuntu1) saucy; urgency=low
++
++  * Automatic snapshot from revision 121
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 02:02:10 +0000
++
++frame (2.5.0daily13.05.17ubuntu.unity.next-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 120 (ubuntu-unity/next)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 17 May 2013 02:01:23 +0000
++
++frame (2.5.0daily13.03.12-0ubuntu1) raring; urgency=low
++
++  [ Stephen M. Webb ]
++  * frame FTBFS out of source tree (LP: #1152741)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 119
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 12 Mar 2013 06:52:59 +0000
++
++frame (2.5.0daily12.12.13-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 117
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Thu, 13 Dec 2012 02:01:19 +0000
++
++frame (2.5.0daily12.12.07.1-0ubuntu1) raring; urgency=low
++
++  [ Daniel d'Andrada ]
++  * Relicense under (L)GPL version 3 *only* (no +)
++  * new: frame_accept_touch() and frame_reject_touch()
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 115
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Fri, 07 Dec 2012 06:37:44 +0000
++
++frame (2.4.4daily12.12.04-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 110
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Tue, 04 Dec 2012 02:00:43 +0000
++
++frame (2.4.4daily12.12.03-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 108
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Mon, 03 Dec 2012 02:01:32 +0000
++
++frame (2.4.4daily12.11.29.1-0ubuntu1) raring; urgency=low
++
++  [ Robert Bruce Park ]
++  * Inline packaging metadata.
++
++  [ Didier Roche ]
++  * Automatic snapshot from revision 101 (bootstrap)
++
++  [ Daniel d'Andrada ]
++  * It should be possible to build frame without x11 (LP: #1080819)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 106
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Thu, 29 Nov 2012 07:53:42 +0000
++
++frame (2.4.3-0ubuntu1) raring; urgency=low
++
++  [ Chase Douglas ]
++  * Remove patches, both have been merged upstream
++  * Replace wrong "Multi-arch" with correct "Multi-Arch" in debian/control
++
++  [ Daniel d'Andrada ]
++  * New upstream release.
++  * Updated libframe6.symbols with the new symbols from version 2.4
++
++ -- Daniel d'Andrada <daniel.dandrada@canonical.com>  Thu, 08 Nov 2012 14:14:13 -0200
++
++frame (2.2.4-0ubuntu1) quantal; urgency=low
++
++  [ Chase Douglas ]
++  * Always run autoreconf
++  * Enable building with parallel processes
++  * Fail on installed but not packaged files
++    - Regressed in 2.2.2-0ubuntu1
++  * Removed frame v1 symbols
++    - Renamed libutouch-frame1 package to libutouch-frame6 due to SONAME bump
++
++  [ Francis Ginther ]
++  * Update debian/watch file for project rename
++  * New upstream release.
++    - Accept/reject owned touches that have already ended (lp: #1025297)
++    - Rename project to "Frame"
++  * Rename package and update packaging (lp: #1029482)
++    - Added Conflicts and Replaces clauses for libframe-dev and frame-tools
++  * Remove dependencies on mtdev and evemu
++
++ -- Francis Ginther <francis.ginther@canonical.com>  Fri, 27 Jul 2012 10:36:59 -0500
+--- frame-2.5.0daily13.06.05+16.10.20160809.orig/debian/compat
++++ frame-2.5.0daily13.06.05+16.10.20160809/debian/compat
+@@ -0,0 +1 @@
++9
+--- frame-2.5.0daily13.06.05+16.10.20160809.orig/debian/control
++++ frame-2.5.0daily13.06.05+16.10.20160809/debian/control
+@@ -0,0 +1,60 @@
++Source: frame
++Section: libs
++Priority: optional
++Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
++Build-Depends: asciidoc,
++               debhelper (>= 9),
++               dh-autoreconf,
++               docbook-xsl,
++               libx11-dev,
++               libxi-dev (>= 2:1.5.99.2),
++               pkg-config,
++               xserver-xorg-dev,
++               xsltproc,
++Standards-Version: 3.9.3
++Homepage: https://launchpad.net/frame
++# If you aren't a member of ~oif-team but need to upload packaging changes,
++# just go ahead.  ~oif-team will notice and sync up the code again.
++Vcs-Bzr: https://code.launchpad.net/~oif-team/frame/trunk
++
++Package: libframe6
++Architecture: any
++Multi-Arch: same
++Pre-Depends: ${misc:Pre-Depends}
++Depends: ${misc:Depends},
++         ${shlibs:Depends},
++Description: Touch Frame Library
++ This library handles the buildup and synchronization of a set of
++ simultaneous touches. The library is input agnostic, with bindings
++ for mtdev, frame and XI2.1.
++
++Package: libframe-dev
++Section: libdevel
++Architecture: any
++Pre-Depends: ${misc:Pre-Depends}
++Depends: libframe6 (= ${binary:Version}),
++         ${misc:Depends}
++Replaces: libutouch-frame-dev
++Conflicts: libutouch-frame-dev
++Description: Touch Frame Library - dev files
++ This library handles the buildup and synchronization of a set of
++ simultaneous touches. The library is input agnostic, with bindings
++ for mtdev, frame and XI2.1.
++ .
++ This package contains files that are needed to build applications.
++
++Package: frame-tools
++Section: libdevel
++Architecture: any
++Pre-Depends: ${misc:Pre-Depends}
++Depends: libframe6 (= ${binary:Version}),
++         ${misc:Depends},
++         ${shlibs:Depends},
++Replaces: utouch-frame-tools
++Conflicts: utouch-frame-tools
++Description: Touch Frame Library - test tools
++ This library handles the buildup and synchronization of a set of
++ simultaneous touches. The library is input agnostic, with bindings
++ for mtdev, frame and XI2.1.
++ .
++ This package provides some test tools for the frame library.
+--- frame-2.5.0daily13.06.05+16.10.20160809.orig/debian/copyright
++++ frame-2.5.0daily13.06.05+16.10.20160809/debian/copyright
+@@ -0,0 +1,38 @@
++Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0
++Upstream-Name: frame
++Upstream-Contact: Ubuntu Multi-touch Development Team <multi-touch-dev@lists.launchpad.net>
++Source: http://launchpad.net/frame
++
++Files: *
++Copyright: 2010-2012, Canonical Ltd.
++           2010, Henrik Rydberg <rydberg@euromail.se>
++License: LGPL-3
++ This library is free software: you can redistribute it and/or modify
++ it under the terms of version 3 of the GNU Lesser General Public License
++ as published by the Free Software Foundation.
++ .
++ This program is distributed in the hope that it will be useful,
++ but WITHOUT ANY WARRANTY; without even the implied warranty of
++ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ GNU General Public License for more details.
++ .
++ On Debian systems, the full text of the GNU Lesser General Public
++ License version 3 can be found in the file
++ `/usr/share/common-licenses/LGPL-3'.
++
++Files: test/* tools/*
++Copyright: 2010-2012, Canonical Ltd.
++           2010, Henrik Rydberg <rydberg@euromail.se>
++License: GPL-3
++ This program is free software: you can redistribute it and/or modify
++ it under the terms of the GNU General Public License version 3 as
++ published by the Free Software Foundation.
++ .
++ This program is distributed in the hope that it will be useful,
++ but WITHOUT ANY WARRANTY; without even the implied warranty of
++ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ GNU General Public License for more details.
++ .
++ On Debian systems, the full text of the GNU General Public
++ License version 3 can be found in the file
++ `/usr/share/common-licenses/GPL-3'.
+--- frame-2.5.0daily13.06.05+16.10.20160809.orig/debian/frame-tools.install
++++ frame-2.5.0daily13.06.05+16.10.20160809/debian/frame-tools.install
+@@ -0,0 +1,2 @@
++usr/bin/*
++usr/share/man/*
+--- frame-2.5.0daily13.06.05+16.10.20160809.orig/debian/libframe-dev.install
++++ frame-2.5.0daily13.06.05+16.10.20160809/debian/libframe-dev.install
+@@ -0,0 +1,3 @@
++usr/include
++usr/lib/*/libframe.so
++usr/lib/*/pkgconfig
+--- frame-2.5.0daily13.06.05+16.10.20160809.orig/debian/libframe6.install
++++ frame-2.5.0daily13.06.05+16.10.20160809/debian/libframe6.install
+@@ -0,0 +1 @@
++usr/lib/*/libframe.so.6*
+--- frame-2.5.0daily13.06.05+16.10.20160809.orig/debian/libframe6.symbols
++++ frame-2.5.0daily13.06.05+16.10.20160809/debian/libframe6.symbols
+@@ -0,0 +1,98 @@
++libframe.so.6 libframe6 #MINVER#
++ FRAME_2.2@FRAME_2.2 2.2.0
++ FRAME_2.4@FRAME_2.4 2.4.3
++ FRAME_2.5@FRAME_2.5 2.5.0
++ frame_accept_touch@FRAME_2.5 2.5.0
++ frame_reject_touch@FRAME_2.5 2.5.0
++ frame_axis_get_maximum@FRAME_2.2 2.2.4
++ frame_axis_get_minimum@FRAME_2.2 2.2.4
++ frame_axis_get_resolution@FRAME_2.2 2.2.4
++ frame_axis_get_type@FRAME_2.2 2.2.4
++ frame_backend_device_add_axis@FRAME_2.4 2.4.3
++ frame_backend_device_delete@FRAME_2.4 2.4.3
++ frame_backend_device_get_device@FRAME_2.4 2.4.3
++ frame_backend_device_new@FRAME_2.4 2.4.3
++ frame_backend_device_set_direct@FRAME_2.4 2.4.3
++ frame_backend_device_set_independent@FRAME_2.4 2.4.3
++ frame_backend_device_set_max_touches@FRAME_2.4 2.4.3
++ frame_backend_device_set_name@FRAME_2.4 2.4.3
++ frame_backend_device_set_semi_mt@FRAME_2.4 2.4.3
++ frame_backend_device_set_window_resolution@FRAME_2.4 2.4.3
++ frame_backend_frame_borrow_touch_by_id@FRAME_2.4 2.4.3
++ frame_backend_frame_create_next@FRAME_2.4 2.4.3
++ frame_backend_frame_delete@FRAME_2.4 2.4.3
++ frame_backend_frame_get_frame@FRAME_2.4 2.4.3
++ frame_backend_frame_give_touch@FRAME_2.4 2.4.3
++ frame_backend_frame_new@FRAME_2.4 2.4.3
++ frame_backend_frame_set_active_touches@FRAME_2.4 2.4.3
++ frame_backend_frame_set_device@FRAME_2.4 2.4.3
++ frame_backend_frame_set_window_id@FRAME_2.4 2.4.3
++ frame_backend_touch_get_touch@FRAME_2.4 2.4.3
++ frame_backend_touch_new@FRAME_2.4 2.4.3
++ frame_backend_touch_set_ended@FRAME_2.4 2.4.3
++ frame_backend_touch_set_id@FRAME_2.4 2.4.3
++ frame_backend_touch_set_owned@FRAME_2.4 2.4.3
++ frame_backend_touch_set_pending_end@FRAME_2.4 2.4.3
++ frame_backend_touch_set_start_time@FRAME_2.4 2.4.3
++ frame_backend_touch_set_time@FRAME_2.4 2.4.3
++ frame_backend_touch_set_value@FRAME_2.4 2.4.3
++ frame_backend_touch_set_window_pos@FRAME_2.4 2.4.3
++ frame_device_get_axis_by_index@FRAME_2.2 2.2.4
++ frame_device_get_axis_by_type@FRAME_2.2 2.2.4
++ frame_device_get_num_axes@FRAME_2.2 2.2.4
++ frame_device_get_property@FRAME_2.2 2.2.4
++ frame_device_get_property_int_@FRAME_2.2 2.2.4
++ frame_device_get_property_string_@FRAME_2.2 2.2.4
++ frame_device_get_property_unsigned_int_@FRAME_2.2 2.2.4
++ frame_device_get_window_resolution_x@FRAME_2.2 2.2.0
++ frame_device_get_window_resolution_y@FRAME_2.2 2.2.0
++ frame_event_get_property@FRAME_2.2 2.2.4
++ frame_event_get_property_device_@FRAME_2.2 2.2.4
++ frame_event_get_property_frame_@FRAME_2.2 2.2.4
++ frame_event_get_property_type_@FRAME_2.2 2.2.4
++ frame_event_get_property_uint64_@FRAME_2.2 2.2.4
++ frame_event_get_time@FRAME_2.2 2.2.4
++ frame_event_get_type@FRAME_2.2 2.2.4
++ frame_event_new@FRAME_2.4 2.4.3
++ frame_event_ref@FRAME_2.2 2.2.4
++ frame_event_set_device@FRAME_2.4 2.4.3
++ frame_event_set_frame@FRAME_2.4 2.4.3
++ frame_event_set_time@FRAME_2.4 2.4.3
++ frame_event_set_type@FRAME_2.4 2.4.3
++ frame_event_unref@FRAME_2.2 2.2.4
++ frame_frame_get_device@FRAME_2.2 2.2.4
++ frame_frame_get_num_touches@FRAME_2.2 2.2.4
++ frame_frame_get_previous_touch_property@FRAME_2.2 2.2.4
++ frame_frame_get_previous_touch_value@FRAME_2.2 2.2.4
++ frame_frame_get_property@FRAME_2.2 2.2.4
++ frame_frame_get_property_device_@FRAME_2.2 2.2.4
++ frame_frame_get_property_uint64_@FRAME_2.2 2.2.4
++ frame_frame_get_property_unsigned_int_@FRAME_2.2 2.2.4
++ frame_frame_get_touch_by_id@FRAME_2.2 2.2.4
++ frame_frame_get_touch_by_index@FRAME_2.2 2.2.4
++ frame_frame_get_window_id@FRAME_2.2 2.2.4
++ frame_get_event@FRAME_2.2 2.2.4
++ frame_get_fd@FRAME_2.2 2.2.4
++ frame_touch_get_device_x@FRAME_2.2 2.2.4
++ frame_touch_get_device_y@FRAME_2.2 2.2.4
++ frame_touch_get_id@FRAME_2.2 2.2.4
++ frame_touch_get_property@FRAME_2.2 2.2.4
++ frame_touch_get_property_float_@FRAME_2.2 2.2.4
++ frame_touch_get_property_int_@FRAME_2.2 2.2.4
++ frame_touch_get_property_state_@FRAME_2.2 2.2.4
++ frame_touch_get_property_uint64_@FRAME_2.2 2.2.4
++ frame_touch_get_start_time@FRAME_2.2 2.2.4
++ frame_touch_get_state@FRAME_2.2 2.2.4
++ frame_touch_get_time@FRAME_2.2 2.2.4
++ frame_touch_get_value@FRAME_2.2 2.2.4
++ frame_touch_get_window_x@FRAME_2.2 2.2.4
++ frame_touch_get_window_y@FRAME_2.2 2.2.4
++ frame_x11_accept_touch@FRAME_2.2 2.2.4
++ frame_x11_create_touch_id@FRAME_2.2 2.2.4
++ frame_x11_create_window_id@FRAME_2.2 2.2.4
++ frame_x11_delete@FRAME_2.2 2.2.4
++ frame_x11_get_touch_id@FRAME_2.2 2.2.4
++ frame_x11_get_window_id@FRAME_2.2 2.2.4
++ frame_x11_new@FRAME_2.2 2.2.4
++ frame_x11_process_event@FRAME_2.2 2.2.4
++ frame_x11_reject_touch@FRAME_2.2 2.2.4
+--- frame-2.5.0daily13.06.05+16.10.20160809.orig/debian/rules
++++ frame-2.5.0daily13.06.05+16.10.20160809/debian/rules
+@@ -0,0 +1,8 @@
++#!/usr/bin/make -f
++export DPKG_GENSYMBOLS_CHECK_LEVEL=4
++
++%:
++	dh $@ --with autoreconf --parallel
++
++override_dh_install:
++	dh_install --fail-missing -X.la -X.a
+--- frame-2.5.0daily13.06.05+16.10.20160809.orig/src/device.cpp
++++ frame-2.5.0daily13.06.05+16.10.20160809/src/device.cpp
+@@ -24,6 +24,8 @@
+ 
+ #include <oif/frame_backend.h>
+ 
++#include <cstdio>
++
+ namespace oif {
+ namespace frame {
+ 

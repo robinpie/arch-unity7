@@ -1,0 +1,2 @@
+/usr/bin/ar qc libhud-client-generated.a "CMakeFiles/hud-client-generated.dir/hud-client-generated_autogen/mocs_compilation.cpp.o" "CMakeFiles/hud-client-generated.dir/service-iface.c.o" "CMakeFiles/hud-client-generated.dir/query-iface.c.o"
+/usr/bin/ranlib libhud-client-generated.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libccs_settings_upgrade_internal.a CMakeFiles/ccs_settings_upgrade_internal.dir/ccs_settings_upgrade_internal.c.o
+/usr/bin/ranlib libccs_settings_upgrade_internal.a

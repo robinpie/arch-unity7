@@ -1,0 +1,107 @@
+<!-- ##### SECTION Title ##### -->
+ZeitgeistResultSet
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT ZeitgeistResultSetIface ##### -->
+<para>
+
+</para>
+
+@g_iface: 
+@size: 
+@estimated_matches: 
+@next: 
+@has_next: 
+@peek: 
+@seek: 
+@tell: 
+
+<!-- ##### STRUCT ZeitgeistResultSet ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION zeitgeist_result_set_size ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_result_set_estimated_matches ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_result_set_next ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_result_set_has_next ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_result_set_peek ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_result_set_seek ##### -->
+<para>
+
+</para>
+
+@self: 
+@pos: 
+
+
+<!-- ##### FUNCTION zeitgeist_result_set_tell ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

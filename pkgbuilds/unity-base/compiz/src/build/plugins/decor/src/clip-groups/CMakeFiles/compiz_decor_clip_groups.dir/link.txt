@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_decor_clip_groups.a "CMakeFiles/compiz_decor_clip_groups.dir/src/clip-groups.cpp.o"
+/usr/bin/ranlib libcompiz_decor_clip_groups.a

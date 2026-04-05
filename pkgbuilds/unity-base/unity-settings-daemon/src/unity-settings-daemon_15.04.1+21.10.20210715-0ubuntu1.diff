@@ -1,0 +1,1446 @@
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/changelog
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/changelog
+@@ -0,0 +1,825 @@
++unity-settings-daemon (15.04.1+21.10.20210715-0ubuntu1) impish; urgency=medium
++
++  [ Khurshid Alam ]
++  * Touchpad scroll-method was migrated before from u-s-d to gesetting-
++    desktop-schemas. Now that gsettings-desktop-schemas removed that
++    schema, port it back under unity-settings-daemon schemas (LP:
++    #1933646)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 15 Jul 2021 08:25:34 +0000
++
++unity-settings-daemon (15.04.1+20.04.20200325-0ubuntu2) hirsute; urgency=medium
++
++  * com.canonical.unity.settings-daemon.plugins.power.gschema.xml.in.in:
++    Set default power button action to interactive.
++    This got changed during migration from gnome-settings-daemon schemas.
++
++ -- Khurshid Alam <khurshid.alam@linuxmail.org>  Thu, 15 Apr 2021 10:43:37 +0200
++
++unity-settings-daemon (15.04.1+20.04.20200325-0ubuntu1) focal; urgency=medium
++
++  [ iain.lane@canonical.com ]
++  * Stop shipping a GNOME schema (LP: #1869022)
++
++ -- iain@orangesquash.org.uk <iain@orangesquash.org.uk>  Wed, 25 Mar 2020 17:16:20 +0000
++
++unity-settings-daemon (15.04.1+20.04.20200311-0ubuntu1) focal; urgency=medium
++
++  [ Khurshid Alam ]
++  * Port rest of the schemas gnome-settings-daemon-common to
++    com.canonical.unity.settings-daemon. LP: #1842324 (LP: #1842324)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 11 Mar 2020 16:32:29 +0000
++
++unity-settings-daemon (15.04.1+19.10.20190921-0ubuntu3) focal; urgency=medium
++
++  [ Khurshid Alam ]
++  * Fix gnome-update-wallpaper-cache build
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 26 Feb 2020 23:42:39 +0100
++
++unity-settings-daemon (15.04.1+19.10.20190921-0ubuntu2) focal; urgency=medium
++
++  [ Khurshid Alam ]
++  * Copy background drawing code from libgnome-desktop
++    (LP: #1863584)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 25 Feb 2020 21:18:10 +0100
++
++unity-settings-daemon (15.04.1+19.10.20190921-0ubuntu1) eoan; urgency=medium
++
++  [ Khurshid Alam ]
++  * Port media keys to use com.canonical.unity.settings-daemon (LP:
++    #1842324)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Sat, 21 Sep 2019 10:59:14 +0000
++
++unity-settings-daemon (15.04.1+19.04.20190209-0ubuntu3.2) eoan; urgency=medium
++
++  * power: Remove 'on AC' check from warning-levels
++    UPower already does this for us, to avoid warning levels being set
++    when the batteries didn't notice the AC yet.
++
++ -- Khurshid Alam <khurshid.alam@linuxmail.org>  Tue, 25 Jun 2019 13:46:17 +0200
++
++unity-settings-daemon (15.04.1+19.04.20190209-0ubuntu3.1) eoan; urgency=medium
++
++  * Fix airplane mode switch not appearing
++
++ -- Khurshid Alam <khurshid.alam@linuxmail.org>  Fri, 21 Jun 2019 10:30:34 +0200
++
++unity-settings-daemon (15.04.1+19.04.20190209-0ubuntu3) eoan; urgency=medium
++
++  * Unity-control-center has been ported away from libnm-glib to libnm 1.2.
++
++ -- Khurshid Alam <khurshid.alam@linuxmail.org>  Fri, 17 May 2019 09:28:07 +0200
++
++unity-settings-daemon (15.04.1+19.04.20190209-0ubuntu2) disco; urgency=medium
++
++  [ Khurshid Alam ]
++  * Unity uses legacy key-grabber code. But since artful unity isn't the 
++    default session anymore and DESKTOP_SESSION changed from ubuntu to unity. 
++    Fixes LP: #1755106 LP: #1188569 LP: #1727842
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 01 Mar 2019 17:53:16 +0100
++
++unity-settings-daemon (15.04.1+19.04.20190209-0ubuntu1) disco; urgency=medium
++
++  [ Khurshid Alam ]
++  * Transition from gnome-settings-daemon-schemas to gnome-settings-
++    daemon-common. Fixes LP: #1811118 (LP: #1811118)
++
++ -- Jeremy Bicha <jbicha@ubuntu.com>  Sat, 09 Feb 2019 02:33:41 +0000
++
++unity-settings-daemon (15.04.1+19.04.20181122-0ubuntu1) disco; urgency=medium
++
++  [ Khurshid Alam ]
++  * Add sharing plugin (LP: #1741027)
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Thu, 22 Nov 2018 00:21:48 +0000
++
++unity-settings-daemon (15.04.1+18.04.20180413-0ubuntu4) disco; urgency=medium
++
++  [ Dariusz Gadomski ]
++  * gnome-settings-daemon/display-name.c:
++    - some vendors record the screen ratio (e.g 16/9) in the EDID instead
++      of including the screen size, detect those cases and display
++      the product name instead of the screen diagonal. (lp: #1755490)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 20 Nov 2018 16:07:31 +0100
++
++unity-settings-daemon (15.04.1+18.04.20180413-0ubuntu2) cosmic; urgency=medium
++
++  [ Kai-Heng Feng ] 
++  * power: Choose correct backlight device on laptops with hybrid graphics
++    (LP: #1683445)
++    Backported from gnome-settings-daemon commit ed7c2744
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 03 Jul 2018 11:27:01 +0200
++
++unity-settings-daemon (15.04.1+18.04.20180413-0ubuntu1) bionic; urgency=medium
++
++  [ Marco Trevisan (Treviño) ]
++  * gsd-rr-config: rename monitor config files to unity-monitors.xml*
++    (LP: #1763806)
++  * debian:
++    - build-depends on dh-migrations and run dh_migrations on post-install
++    - add debian/unity-settings-daemon.migrations to install migration files
++  * scripts/01-usd-migration-monitors-xml.sh:
++    - Move monitors.xml to unity-monitors.xml if migration is needed
++      (LP: #1763806)
++
++  [ Robert Ancell ]
++  * Support new AccountsService method of setting background file.
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Fri, 13 Apr 2018 21:33:54 +0000
++
++unity-settings-daemon (15.04.1+18.04.20180216-0ubuntu1) bionic; urgency=medium
++
++  * No-change rebuild against latest gnome-desktop3
++
++ -- Jeremy Bicha <jbicha@ubuntu.com>  Fri, 16 Feb 2018 01:57:58 +0000
++
++unity-settings-daemon (15.04.1+18.04.20180214.1-0ubuntu1) bionic; urgency=medium
++
++  [ Khurshid Alam ]
++  * gtk_icon_info_free has been deprecated since gtk-3.8. Replace it
++    with g_object_unref (LP: #1747154)
++
++  [ Robert Ancell ]
++  * Remove obsolete --enable-systemd compile flag
++
++ -- Jeremy Bicha <jbicha@ubuntu.com>  Wed, 14 Feb 2018 12:41:27 +0000
++
++unity-settings-daemon (15.04.1+17.10.20171003-0ubuntu1) artful; urgency=medium
++
++  * XSettings: under unity use com.ubuntu.user-interface.desktop keys
++    for scaling settings
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Tue, 03 Oct 2017 06:05:23 +0000
++
++unity-settings-daemon (15.04.1+17.04.20170619-0ubuntu3) artful; urgency=medium
++
++  * debian/control: use 'X-Ubuntu-Use-Langpack: yes' since the indicator
++    is now in universe, this way the translations are still available on
++    launchpad and exported to the langpacks
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 06 Sep 2017 16:47:19 +0200
++
++unity-settings-daemon (15.04.1+17.04.20170619-0ubuntu2) artful; urgency=medium
++
++  * remove debian/unity-settings-daemon.gsettings-override: the key combination
++    is already upstream's default.
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 07 Aug 2017 15:11:27 +0200
++
++unity-settings-daemon (15.04.1+17.04.20170619-0ubuntu1) artful; urgency=medium
++
++  * Rename ubuntu-session systemd target to unity-session to inline with
++    new session name:
++    - ship unity-settings-daemon service symlink in the new systemd target.
++    - Breaks against older version of ubuntu-session, now that unity-session
++      provides that new systemd target name.
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 19 Jun 2017 11:04:53 +0200
++
++unity-settings-daemon (15.04.1+17.04.20170418-0ubuntu1) zesty; urgency=medium
++
++  * Fix calculator keyboard key by adapting to gnome-calculator 3.24
++    .desktop rename (LP: #1676431)
++
++ -- Jeremy Bicha <jbicha@ubuntu.com>  Tue, 18 Apr 2017 11:58:34 +0000
++
++unity-settings-daemon (15.04.1+17.04.20170328-0ubuntu1) zesty; urgency=medium
++
++  [ Chris Coulson ]
++  * Filter out outputs that don't have any corresponding CRTCs or modes.
++    (LP: #1542699)
++
++ -- Łukasz Zemczak <lukasz.zemczak@canonical.com>  Tue, 28 Mar 2017 08:18:02 +0000
++
++unity-settings-daemon (15.04.1+17.04.20170322-0ubuntu1.1) zesty; urgency=medium
++
++  * Revert drop updates plugin (LP: #1675612)
++
++ -- Robert Ancell <robert.ancell@canonical.com>  Fri, 24 Mar 2017 16:40:30 +1300
++
++unity-settings-daemon (15.04.1+17.04.20170322-0ubuntu1) zesty; urgency=medium
++
++  * Drop updates plugin (handled by GNOME Software, dropped by gnome-
++    settings-daemon now, and long-disabled in Ubuntu)
++  * Drop dependency on gnome-common to fix FTBFS (backported from gnome-
++    settings-daemon)
++
++ -- Jeremy Bicha <jbicha@ubuntu.com>  Wed, 22 Mar 2017 20:00:38 +0000
++
++unity-settings-daemon (15.04.1+16.10.20161003-0ubuntu1) yakkety; urgency=medium
++
++  [ Dmitry Shachnev ]
++  * Upstart: Split XDG_CURRENT_DESKTOP properly and start only on Unity
++    sessions
++
++  [ Iain Lane ]
++  * Check XDG_CURRENT_DESKTOP properly in the keyboard plugin (LP:
++    #1554878)
++
++ -- iain@orangesquash.org.uk <iain@orangesquash.org.uk>  Mon, 03 Oct 2016 10:15:27 +0000
++
++unity-settings-daemon (15.04.1+16.10.20160819-0ubuntu2) yakkety; urgency=medium
++
++  * Add systemd user unit.
++  * Install u-s-d.service into ubuntu-session.target.wants and keep u-s-d.conf
++    as a stub until unity7 gets a systemd service.
++
++ -- Martin Pitt <martin.pitt@ubuntu.com>  Mon, 22 Aug 2016 15:07:09 +0200
++
++unity-settings-daemon (15.04.1+16.10.20160819-0ubuntu1) yakkety; urgency=medium
++
++  [ Alberts Muktupāvels ]
++  * Use automatic scaling in GNOME Flashback session.
++
++ -- Dmitry Shachnev <mitya57@ubuntu.com>  Fri, 19 Aug 2016 17:47:36 +0000
++
++unity-settings-daemon (15.04.1+16.10.20160615-0ubuntu1) yakkety; urgency=medium
++
++  [ Kai-Heng Feng ]
++  * SettingsManager: Queue up signals before getting D-Bus connection.
++    (LP: #1571640)
++
++  [ Marco Trevisan (Treviño) ]
++  * GsdPowerManager: use proper return value for upower_kbd_toggle
++    wherever we use it (LP: #1592816)
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Wed, 15 Jun 2016 15:55:39 +0000
++
++unity-settings-daemon (15.04.1+16.10.20160613-0ubuntu1) yakkety; urgency=medium
++
++  [ Marco Trevisan (Treviño) ]
++  * PowerManager: connect to keyboard BrightnessChanged signal to update
++    the cached current value properly (LP: #1510344)
++  * GsdPowerManager: don't cache kbd backlight current value (LP:
++    #1583861)
++  * common: backport g-s-d commits for having single shared dbus proxies
++  * ScreensaverProxy: redirect supported calls to gnome screensaver APIs
++    (LP: #1415265, #1584161)
++
++  [ Robert Ancell ]
++  * Correctly check value of XDG_CURRENT_DESKTOP.
++  * Remove code for disabling plugin under GNOME Shell - they don't use
++    u-s-d.
++  * Drop print notifications - not used under Unity.
++
++  [ Sebastien Bacher ]
++  * power: '0' keyboard backlight is a valid value (LP: #1510344)
++  * Don't hit an xerror when a device is removed while being configured
++    (LP: #1503758)
++  * wacom: don't segfault when a device is removed while being
++    configured. (LP: #1439427)
++  * power: fix crasher when the plugin is unloaded (LP: #1567116)
++  * power: Add sound notification on power plug/unplug
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Mon, 13 Jun 2016 11:31:26 +0000
++
++unity-settings-daemon (15.04.1+16.04.20160209-0ubuntu1) xenial; urgency=medium
++
++  * Restore the scaling on the greeter, the menu placement is correct
++    now (LP: #1286878)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 09 Feb 2016 10:03:45 +0000
++
++unity-settings-daemon (15.04.1+16.04.20160201-0ubuntu1) xenial; urgency=medium
++
++  [ CI Train Bot ]
++  * No-change rebuild.
++
++ -- Łukasz Zemczak <ci-train-bot@canonical.com>  Mon, 01 Feb 2016 12:39:42 +0000
++
++unity-settings-daemon (15.04.1+16.04.20160121-0ubuntu2) xenial; urgency=medium
++
++  * Multiarchify the library packages.
++
++ -- Matthias Klose <doko@ubuntu.com>  Thu, 28 Jan 2016 18:08:04 +0100
++
++unity-settings-daemon (15.04.1+16.04.20160121-0ubuntu1) xenial; urgency=medium
++
++  * Revert part of the previous upload, since it broke keyboard
++    shortcuts in some applications.
++
++ -- Iain Lane <iain@orangesquash.org.uk>  Thu, 21 Jan 2016 11:03:46 +0000
++
++unity-settings-daemon (15.04.1+16.04.20160119-0ubuntu1) xenial; urgency=medium
++
++  [ William Hua ]
++  * plugins/keyboard/gsd-keyboard-manager.c:
++    - Fix shortcuts for non-latin keyboard layouts in certain programs,
++      but only when the user's layout switching shortcuts are not
++      Shift_L, Shift_R, <Shift>Shift_L, or <Shift>Shift_R (LP: #1226962)
++
++  [ Rui Matos ]
++  * power: Fix a crash when reading invalid backlight values
++
++  [ Sebastien Bacher ]
++  * keyboard: Avoid warning when bell-custom-file changes
++
++ -- Iain Lane <iain@orangesquash.org.uk>  Tue, 19 Jan 2016 17:08:48 +0000
++
++unity-settings-daemon (15.04.1+16.04.20151214-0ubuntu1) xenial; urgency=medium
++
++  [ David Henningsson ]
++  * Update PulseAudio port names to fix LP: #1521664 (LP: #1521664)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 14 Dec 2015 10:02:41 +0000
++
++unity-settings-daemon (15.04.1+16.04.20151118.1-0ubuntu2) xenial; urgency=high
++
++  * Fix build-dependencies to use new libystemd-dev package.name.
++
++ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 07 Dec 2015 10:54:09 +0000
++
++unity-settings-daemon (15.04.1+16.04.20151118.1-0ubuntu1) xenial; urgency=medium
++
++  [ Shih-Yuan Lee (FourDollars) ]
++  * power: On raw backlight types, clamp the value to a minumum (LP:
++    #1381625) gsd-rr: Apply the similar method from power plugin to fix
++    the lowest brightness issue. (LP: #1381625) (LP: #1381625)
++
++ -- Shih-Yuan Lee <ci-train-bot@canonical.com>  Wed, 18 Nov 2015 09:36:58 +0000
++
++unity-settings-daemon (15.04.1+16.04.20151106-0ubuntu1) xenial; urgency=medium
++
++  [ CI Train Bot ]
++  * New rebuild forced.
++
++  [ Lars Uebernickel ]
++  * power: disconnect signals from rr_screen (LP: #1508327)
++
++  [ Mitsuya Shibata ]
++  * unity-settings-daemon should initialize org.gnome.desktop.input-
++    sources for fcitx as same as ibus when sources property is empty.
++    (LP: #1465535)
++
++  [ Sebastien Bacher ]
++  * remove g_warning debug leftover
++  * wacom: backport upstream change to use correct device types
++  * xsettings: disconnect signal from plugin_settings
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 06 Nov 2015 14:40:42 +0000
++
++unity-settings-daemon (15.04.1+15.10.20151021-0ubuntu1) wily; urgency=medium
++
++  [ Lars Uebernickel ]
++  * power: disconnect from device's "notify" signals (LP: #1436861)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 21 Oct 2015 11:05:04 +0000
++
++unity-settings-daemon (15.04.1+15.10.20151012-0ubuntu1) wily; urgency=medium
++
++  [ "Jan Alexander Steffens (heftig)" ]
++  * xsettings: Export cursor theme on X RESOURCE_MANAGER and notify X on
++    changes (LP: #1505161)
++
++  [ Marco Trevisan (Treviño) ]
++  * xsettings: Export cursor theme on X RESOURCE_MANAGER and notify X on
++    changes (LP: #1505161)
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Mon, 12 Oct 2015 14:39:35 +0000
++
++unity-settings-daemon (15.04.1+15.10.20151008-0ubuntu1) wily; urgency=medium
++
++  [ Bastien Nocera ]
++  * housekeeping: Don't follow symlinks to subdirectories, that can lead
++    to data being deleted that shouldn't
++  * media-keys: Postpone initialisation of libcanberra
++
++  [ Carlos Garnacho ]
++  * [xsettings] backport some small fixes from upstream, should fix
++    issues where settings changes are delayed
++
++  [ Cosimo Cecchi ]
++  * housekeeping: Don't follow symlinks to subdirectories, that can lead
++    to data being deleted that shouldn't
++
++  [ Florian Müllner ]
++  * [xsettings] backport some small fixes from upstream, should fix
++    issues where settings changes are delayed
++
++  [ Jan Alexander Steffens (heftig) ]
++  * [xsettings] backport some small fixes from upstream, should fix
++    issues where settings changes are delayed
++
++  [ Kalev Lember ]
++  * [xsettings] backport some small fixes from upstream, should fix
++    issues where settings changes are delayed
++
++  [ Matthias Clasen ]
++  * [xsettings] backport some small fixes from upstream, should fix
++    issues where settings changes are delayed
++
++  [ Peter Hutterer ]
++  * Backport changes from upstream git and
++    https://bugzilla.gnome.org/show_bug.cgi?id=724789 to better handle
++    XError
++
++  [ Ryan Lortie ]
++  * [xsettings] backport some small fixes from upstream, should fix
++    issues where settings changes are delayed
++
++  [ Sebastien Bacher ]
++  * [orientation] tweaked version of upstream fix for settings updates
++  * [xrandr] slightly updated version of an upstream bugfix for a
++    segfault issue (LP: #1298024)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 08 Oct 2015 16:15:07 +0000
++
++unity-settings-daemon (15.04.1+15.10.20151001-0ubuntu1) wily; urgency=medium
++
++  [ Robert Ancell ]
++  * Fix shell watch callback not being destroyed. (LP: #1501576)
++
++  [ William Hua ]
++  * Don't call fcitx_input_method_activate (). It breaks fcitx' "extra
++    key for trigger input method" shortcut. (LP: #1494331)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 01 Oct 2015 09:45:25 +0000
++
++unity-settings-daemon (15.04.1+15.10.20150930-0ubuntu1) wily; urgency=medium
++
++  [ Rui Matos ]
++  * Backport upstream commit (LP: #1496656)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 30 Sep 2015 15:47:07 +0000
++
++unity-settings-daemon (15.04.1+15.10.20150917-0ubuntu1) wily; urgency=medium
++
++  [ Michael Terry ]
++  * Notice when unplugging a closed laptop and apply the correct policy.
++    (LP: #1456745)
++
++ -- Iain Lane <iain@orangesquash.org.uk>  Thu, 17 Sep 2015 09:49:32 +0000
++
++unity-settings-daemon (15.04.1+15.10.20150825-0ubuntu1) wily; urgency=medium
++
++  [ Alberto Milone ]
++  * Make touchscreen mapping non-blocking, and kill it if it takes more
++    than 3 seconds; finally, in case of failure, try again after a few
++    seconds. This helps on resume from S3 (LP: #1471708). (LP: #1471708)
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Tue, 25 Aug 2015 09:09:33 +0000
++
++unity-settings-daemon (15.04.1+15.10.20150818-0ubuntu1) wily; urgency=medium
++
++  [ Carlos Garnacho ]
++  * Cherry-pick upstream changes for relocated peripheral settings (LP:
++    #1475949)
++
++  [ Tim Lunn ]
++  * Cherry-pick upstream changes for relocated peripheral settings (LP:
++    #1475949)
++
++  [ darkxst ]
++  * Cherry-pick upstream changes for relocated peripheral settings (LP:
++    #1475949)
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Tue, 18 Aug 2015 12:11:23 +0000
++
++unity-settings-daemon (15.04.1+15.10.20150720-0ubuntu1) wily; urgency=medium
++
++  [ Lars Uebernickel ]
++  * mouse: allow force-disabling touchpad (LP: #1454950)
++  * xsettings: include needed libs for test program
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Mon, 20 Jul 2015 15:39:14 +0000
++
++unity-settings-daemon (15.04.1+15.10.20150630.1-0ubuntu1) wily; urgency=medium
++
++  [ CI Train Bot ]
++  * New rebuild forced.
++
++  [ Dmitry Shachnev ]
++  * xsettings: fix some settings not being updated with the latest glib
++
++  [ Marco Trevisan (Treviño) ]
++  * AutoMount: also try to connect to Unity Session and delay automounts
++    when locked (LP: #1438870)
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Tue, 30 Jun 2015 15:48:02 +0000
++
++unity-settings-daemon (15.04.1+15.04.20150408-0ubuntu1) vivid; urgency=medium
++
++  [ Sebastien Bacher ]
++  * Don't scale under unity-greeter, it creates issues. That can be
++    revisited once bug #1286878 and #1434094 are resolved but that's not
++    going to be for this cycle (LP: #1434094, #1286878)
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Wed, 08 Apr 2015 14:46:48 +0000
++
++unity-settings-daemon (15.04.1+15.04.20150401-0ubuntu1) vivid; urgency=medium
++
++  [ Ryan Tandy ]
++  * gsd_idle_monitor_get_idletime() has to return a value. Use the
++    correct macro for that. Fixes r4073. (LP: #1416081)
++
++  [ Sebastien Bacher ]
++  * let the label wrap as they should in the mount dialog
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Wed, 01 Apr 2015 10:40:40 +0000
++
++unity-settings-daemon (15.04.1+15.04.20150324.1-0ubuntu1) vivid; urgency=medium
++
++  [ CI Train Bot ]
++  * New rebuild forced.
++
++  [ Sebastien Bacher ]
++  * use timestamp provided by compiz to run keybinding commands so focus
++    works (LP: #1433648)
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Tue, 24 Mar 2015 16:09:44 +0000
++
++unity-settings-daemon (15.04.1+15.04.20150318-0ubuntu1) vivid; urgency=medium
++
++  [ Ryan Tandy ]
++  * Don't call XSyncQueryCounter with a null counter. Avoids a crash
++    under FreeNX/X2Go which don't support the IDLETIME counter. (LP:
++    #1416081)
++
++  [ Sebastien Bacher ]
++  * Open the battery info dialog when using the corresponding hotkey.
++    The current code was trying to display a notification with the info
++    but we don't have design on how that should look like with notify-
++    osd so go back to what we were doing before (LP: #1432976)
++  * Restore code that set the scaling factor according the screen dpi,
++    but only when not under and Unity session. That was desactived in
++    r4020 because Unity is handling those values, but this is not the
++    case under ubiquity or unity-greeter. (LP: #1286878)
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Wed, 18 Mar 2015 12:07:44 +0000
++
++unity-settings-daemon (15.04.1+15.04.20150313-0ubuntu1) vivid; urgency=medium
++
++  [ William Hua ]
++  * Remove fcitx-data from Recommends and check if the required file,
++    config.desc, is available at runtime. Trying to dist-upgrade
++    currently pulls in the fcitx-bin which is higher priority than ibus.
++    (LP: #1430971)
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Fri, 13 Mar 2015 12:54:01 +0000
++
++unity-settings-daemon (15.04.1+15.04.20150310-0ubuntu1) vivid; urgency=medium
++
++  [ William Hua ]
++  * Basic Fcitx support. (LP: #1363150)
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Tue, 10 Mar 2015 17:22:52 +0000
++
++unity-settings-daemon (15.04.1+15.04.20150205-0ubuntu1) vivid; urgency=medium
++
++  [ Sebastien Bacher ]
++  * housekeeping: set labels width, so they wrap instead of stretching
++    the dialog
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 05 Feb 2015 11:19:40 +0000
++
++unity-settings-daemon (15.04.1+15.04.20150107-0ubuntu1) vivid; urgency=low
++
++  [ Hui Wang ]
++  * show correct microphone mute icon (LP: #1381856, #1389099)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 07 Jan 2015 16:55:42 +0000
++
++unity-settings-daemon (15.04.1+15.04.20141128-0ubuntu1) vivid; urgency=low
++
++  [ Bastien Nocera ]
++  * Remove recall check, upower doesn't support this any more and it was
++    causing a crash. (LP: #1397135)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 28 Nov 2014 09:48:43 +0000
++
++unity-settings-daemon (15.04.1+15.04.20141127-0ubuntu1) vivid; urgency=medium
++
++  [ Iain Lane ]
++  * Add patch from Tim Lunn to support upower 0.99 properly. (LP: #1394063)
++
++  [ Dmitry Shachnev ]
++  * Add Gtk/DecorationLayout XSettings export (based on
++    org.gnome.desktop.wm.preferences button-layout GSettings key).
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 27 Nov 2014 11:42:11 +0000
++
++unity-settings-daemon (15.04.0+15.10.20141030-0ubuntu1) vivid; urgency=medium
++
++  [ Tim Lunn ]
++  * Query logind instead of upower for "can suspend/hibernate", and rebuild
++    against upower 0.99. (LP: #1330037)
++
++  [ Martin Pitt ]
++  * Add missing Vcs-Bzr: control field.
++
++ -- Martin Pitt <martin.pitt@ubuntu.com>  Thu, 30 Oct 2014 17:29:53 +0100
++
++unity-settings-daemon (14.04.0+14.10.20141014-0ubuntu1) utopic; urgency=low
++
++  [ Lars Uebernickel ]
++  * Idle monitor: fix ref counting bugs (LP: #1380278)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 14 Oct 2014 15:25:59 +0000
++
++unity-settings-daemon (14.04.0+14.10.20141010-0ubuntu1) utopic; urgency=low
++
++  [ Tim Lunn ]
++  * Copy in Idle Monitor from 3.10 and hook up dbus interface (LP:
++    #1377847)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 10 Oct 2014 08:06:04 +0000
++
++unity-settings-daemon (14.04.0+14.10.20140922-0ubuntu3) utopic; urgency=medium
++
++  * Rebuild for gnome-desktop 3.12 (LP: #1372346)
++  * debian/control: Drop depends gnome-settings-daemon-schemas (<< 3.10),
++    gnome-settings-daemon 3.12 reverts all removed keys 
++  * Fix merge of git patch for  xkb get/free info_vars
++
++ -- Tim Lunn <tim@feathertop.org>  Mon, 29 Sep 2014 20:05:27 +1000
++
++unity-settings-daemon (14.04.0+14.10.20140922-0ubuntu2) utopic; urgency=medium
++
++  * debian/control:
++    - Move -dev dependencies from libunity-settings-daemon1 to
++      libunity-settings-daemon-dev and add it to the correct section
++      (LP: #1372728)
++
++ -- Robert Ancell <robert.ancell@canonical.com>  Wed, 24 Sep 2014 15:38:13 +1200
++
++unity-settings-daemon (14.04.0+14.10.20140922-0ubuntu1) utopic; urgency=low
++
++  [ Robert Ancell ]
++  * Move libgnome-desktop RandR code into u-s-d since newer versions
++    remove this unstable API (LP: #1372240)
++
++  [ Rui Matos ]
++  * Apply git patch that pulls in code removed from gnome-desktop3 3.12
++
++  [ Bastien Nocera ]
++  * common: Check the exit status of hotplug scripts correctly
++
++  [ Tim Lunn ]
++  * Apply git patch that pulls in code removed from gnome-desktop3 3.12
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 22 Sep 2014 11:29:11 +0000
++
++unity-settings-daemon (14.04.0+14.10.20140605-0ubuntu2) utopic; urgency=medium
++
++  * No-change rebuild against new colord
++
++ -- Iain Lane <iain@orangesquash.org.uk>  Tue, 10 Jun 2014 11:36:54 +0100
++
++unity-settings-daemon (14.04.0+14.10.20140605-0ubuntu1) utopic; urgency=low
++
++  [ Alberto Milone ]
++  * gsd-xrandr-manager.c: do not try to map an invalid touch device on
++    initialisation Fixes LP: #1326636 (LP: #1326636)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 05 Jun 2014 10:21:46 +0000
++
++unity-settings-daemon (14.04.0+14.10.20140604-0ubuntu1) utopic; urgency=medium
++
++  [ Alberto Milone ]
++  * gsd-xrandr-manager.c:
++    - Add support for mapping the main touchscreen onto the laptop
++      display (LP: #1287341).
++      This makes sure that the input device knows exactly the area
++      that represents the display when the screen configuration
++      changes. Note: this doesn't cover the tablet use case.
++    - Add support for matching displays with touch input devices
++      according to the reported size. This is particularly
++      useful on systems that don't use embedded display connectors
++      i.e. all-in-one systems such as the Dell Optiplex 9030 AIO.
++    - This work is a partial backport of the upstream work on
++      touchscreens. When we finally sync with the upstream code
++      we can drop this.
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 04 Jun 2014 15:42:47 +0000
++
++unity-settings-daemon (14.04.0+14.04.20140414-0ubuntu1) trusty; urgency=low
++
++  [ Dmitry Shachnev ]
++  * Backport g-s-d patch to fix consecutive xkb grp: options not being
++    stripped, thanks Роман Донченко.
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 14 Apr 2014 10:13:11 +0000
++
++unity-settings-daemon (14.04.0+14.04.20140407-0ubuntu1) trusty; urgency=low
++
++  [ William Hua ]
++  * Revert regression caused by commit 4033. (LP: #1302353)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 07 Apr 2014 14:55:36 +0000
++
++unity-settings-daemon (14.04.0+14.04.20140404-0ubuntu1) trusty; urgency=low
++
++  [ William Hua ]
++  * Add a private DBus method that allows us to change the current input
++    source without saving it in GSettings. This is needed for indicator-
++    keyboard to temporarily switch input sources on the lock screen
++    without affecting the user's session input source.
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 04 Apr 2014 16:20:28 +0000
++
++unity-settings-daemon (14.04.0+14.04.20140402-0ubuntu1) trusty; urgency=low
++
++  [ Jackson Doak ]
++  * define XF86AudioMicMute as a mic mute key
++
++  [ William Hua ]
++  * Treat IBus engines with 'default' layouts as 'us'. (LP: #1298740)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 02 Apr 2014 11:06:42 +0000
++
++unity-settings-daemon (14.04.0+14.04.20140310-0ubuntu2) trusty; urgency=medium
++
++  * unity-settings-demon.user-session.upstart: Use XDG_CURRENT_DESKTOP
++    as the instance specifier for gnome-session upstart jobs, since
++    other sessions apart from ubuntu will need to use u-s-d (LP: #1224217) 
++
++ -- Tim Lunn <tim@feathertop.org>  Wed, 12 Mar 2014 16:45:51 +1100
++
++unity-settings-daemon (14.04.0+14.04.20140310-0ubuntu1) trusty; urgency=low
++
++  [ David Henningsson ]
++  * Fix what-did-you-plug-in dialog showing up behind other windows.
++    Simplify launching of "unity-control-center sound". (LP: #1287584)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 10 Mar 2014 17:25:56 +0000
++
++unity-settings-daemon (14.04.0+14.04.20140228-0ubuntu1) trusty; urgency=low
++
++  [ Sebastien Bacher ]
++  * Backport some small upstream bugfixes
++  * Enforce schemas from the same serie, some ppa are shipping newer
++    versions of gnome-settings-daemon which drop keys and that's leading
++    to reports against unity-settings-daemon. That way users are warned
++    and get to choose what option they want.
++
++  [ Luke Yelavich ]
++  * Look for gtk-modules related files in the correct location.
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 28 Feb 2014 17:08:18 +0000
++
++unity-settings-daemon (14.04.0+14.04.20140225-0ubuntu1) trusty; urgency=low
++
++  [ Lars Uebernickel ]
++  * media-keys: add support for allow-amplified-volume When that key is
++    set, the maximum volume is PA_VOLUME_UI_MAX instead of
++    PA_VOLUME_NORM. This makes it consistent with the sound indicator
++    and system settings.
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 25 Feb 2014 09:33:38 +0000
++
++unity-settings-daemon (14.04.0+14.04.20140221.1-0ubuntu1) trusty; urgency=low
++
++  [ Iain Lane ]
++  * Instead of autodetecting the scaling factor, default to 1 if the key
++    is set to '0'. unity-control-center should be calculating the value
++    and setting this key accordingly, otherwise the Unity and gtk values
++    can get out of sync.
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 21 Feb 2014 18:45:23 +0000
++
++unity-settings-daemon (14.04.0+14.04.20140221-0ubuntu1) trusty; urgency=low
++
++  [ Iain Lane ]
++  * Always use gnome-screenshot directly, not the gnome-shell screenshot
++    interface. We aren't using the legacy keygrabber under Unity, but
++    neither can we use gnome-shell's interface since Unity doesn't
++    implement it. (LP: #1282649)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 21 Feb 2014 13:48:58 +0000
++
++unity-settings-daemon (14.04.0+14.04.20140219-0ubuntu1) trusty; urgency=low
++
++  [ David Henningsson ]
++  * Handle unknown audio jack devices.
++
++  [ William Hua ]
++  * Revert the legacy key grabber. (LP: #1226962)
++
++  [ Sebastien Bacher ]
++  * backport upstream change to support hi-dpi screens/scaling. You can
++    change the scaling value by writting the
++    "org.gnome.desktop.interface scaling-factor" gsettings key
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 19 Feb 2014 10:44:06 +0000
++
++unity-settings-daemon (14.04.0-0ubuntu2) trusty; urgency=medium
++
++  * Change power notifications from popups (expire never), to notify-osd
++    bubbles (default timeout).
++  * Start on gnome-session (ubuntu instance) only (for now).
++
++ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 17 Feb 2014 11:35:35 +0000
++
++unity-settings-daemon (14.04.0-0ubuntu1) trusty; urgency=low
++
++  * Fork gnome-settings-daemon so we can maintain it for Unity 7 until it is
++    replaced by the Unity 8 equivalent.
++
++ -- Robert Ancell <robert.ancell@canonical.com>  Fri, 07 Feb 2014 11:44:36 +0000
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/compat
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/compat
+@@ -0,0 +1 @@
++9
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/control
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/control
+@@ -0,0 +1,139 @@
++Source: unity-settings-daemon
++Section: gnome
++Priority: optional
++Maintainer: Ubuntu Desktop Team <ubuntu-desktop@lists.ubuntu.com>
++Build-Depends: cdbs,
++               debhelper (>= 9),
++               gnome-pkg-tools,
++               gtk-doc-tools,
++               dh-autoreconf,
++               dh-migrations,
++               autotools-dev,
++               intltool (>= 0.37.1),
++               libdbus-glib-1-dev (>= 0.74),
++               libglib2.0-dev (>= 2.35.3),
++               libgtk-3-dev (>= 3.7.8),
++               libgdk-pixbuf2.0-dev (>= 2.23.0),
++               libnm-dev (>= 1.0) [linux-any],
++               libnotify-dev (>= 0.7.0),
++               libxt-dev,
++               libxi-dev,
++               libfontconfig1-dev,
++               libxext-dev,
++               libx11-dev,
++               libxtst-dev,
++               gsettings-desktop-schemas-dev (>= 3.15.4),
++               gsettings-unity-schemas-dev (>= 0.0.7+21.10.20210712-0ubuntu1),
++               libgnome-desktop-3-dev (>= 3.7.90),
++               libpulse-dev (>= 1:2.0),
++               libasound2-dev,
++               librsvg2-dev (>= 2.36.2),
++               libcanberra-gtk3-dev,
++               libpolkit-gobject-1-dev,
++               libaccountsservice-dev (>= 0.6.34),
++               libappindicator3-dev (>= 0.4.90),
++               hwdata,
++               libupower-glib-dev (>= 0.99.1),
++               libcolord-dev (>= 0.1.12),
++               liblcms2-dev,
++               libnss3-dev,
++               libgudev-1.0-dev,
++               libwacom-dev (>= 0.7),
++               xserver-xorg-input-wacom,
++               libgnomekbd-dev (>= 3.5.1),
++               libxklavier-dev,
++               libsystemd-dev (>= 183),
++               libibus-1.0-dev (>= 1.5.0),
++               fcitx-libs-dev,
++               gperf,
++               libgl1-mesa-dev,
++               libxkbfile-dev,
++               xkb-data,
++Standards-Version: 3.9.3
++Vcs-Bzr: https://code.launchpad.net/~unity-settings-daemon-team/unity-settings-daemon/trunk
++X-Ubuntu-Use-Langpack: yes
++
++Package: unity-settings-daemon
++Architecture: any
++Depends: ${shlibs:Depends},
++         ${misc:Depends},
++         accountsservice (>= 0.6.34),
++         gsettings-desktop-schemas (>= 3.15.4),
++         gsettings-ubuntu-schemas (>= 0.0.7+21.10.20210712-0ubuntu1),
++         nautilus-data (>= 2.91.3-1),
++         unity-settings-daemon-schemas (>= ${source:Version}),
++Recommends: ibus (>= 1.5.0),
++            pulseaudio,
++            systemd-services
++Pre-Depends: ${misc:Pre-Depends}
++Breaks: rhythmbox (<< 0.11.5),
++        banshee (<< 0.13.2+dfsg-7),
++        totem (<< 2.22.0),
++        gnome-control-center (<< 1:3.6.3-0ubuntu35),
++        gnome-session (<< 3.9.90-0ubuntu6),
++        gnome-screensaver (<< 2.28.0),
++        gnome-color-manager (<< 3.0),
++        unity (<< 7.3.2),
++        unity-greeter (<< 0.2.1-0ubuntu1),
++        indicator-datetime (<< 12.10.3daily13.03.26),
++        ubuntu-session (<< 3.24.1-0ubuntu3~),
++Suggests: x11-xserver-utils,
++          gnome-screensaver,
++          metacity | x-window-manager
++Description: daemon handling the Unity session settings
++ This package contains the daemon which is responsible for setting the
++ various parameters of a Unity session and the applications that run
++ under it. It handles the following kinds of settings:
++ .
++  * Keyboard: layout, accessibility options, shortcuts, media keys
++  * Clipboard management
++  * Theming: background, icons, GTK+ applications
++  * Cleanup of unused files
++  * Mouse: cursors, speed, accessibility options
++  * Startup of other daemons: screensaver, sound daemon
++  * Typing break
++ .
++ It also sets various application settings through X resources and
++ freedesktop.org XSETTINGS.
++
++Package: unity-settings-daemon-dev
++Architecture: any
++Depends: ${shlibs:Depends},
++         ${misc:Depends},
++         libdbus-glib-1-dev (>= 0.74),
++         libglib2.0-dev (>= 2.35.3)
++Description: Headers for building applications communicating with unity-settings-daemon
++ This package contains header files required to build applications that
++ communicate with the Unity settings daemon over D-Bus.
++ 
++Package: unity-settings-daemon-schemas
++Architecture: all
++Depends: ${misc:Depends}
++Replaces: gnome-settings-daemon (<< 3.20.1-2ubuntu1~)
++Breaks: gnome-settings-daemon (<< 3.20.1-2ubuntu1~)
++Description: Shared schemas for gnome-settings-daemon
++ This package contains the gsettings schemas used by
++ unity-settings-daemon.
++
++Package: libunity-settings-daemon1
++Architecture: any
++Multi-Arch: same
++Pre-Depends: ${misc:Pre-Depends}
++Depends: ${shlibs:Depends},
++         ${misc:Depends}
++Description: Helper library for accessing settings
++ This package contains a helper library for unity-control-center
++
++Package: libunity-settings-daemon-dev
++Section: libdevel
++Architecture: any
++Multi-Arch: same
++Depends: ${shlibs:Depends},
++         ${misc:Depends},
++         libunity-settings-daemon1 (= ${binary:Version}),
++         libglib2.0-dev,
++         libgtk-3-dev,
++         libgdk-pixbuf2.0-dev,
++         libgnome-desktop-3-dev
++Description: Helper library for accessing settings (development files)
++ This package contains a headers for using libunity-settings-daemon
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/copyright
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/copyright
+@@ -0,0 +1,72 @@
++This package was debianized by Sebastien Bacher <seb128@canonical.com> on
++Wed, 16 Jan 2008 11:12:19 +0100.
++
++It was downloaded from http://ftp.acc.umu.se/pub/GNOME/sources/gnome-settings-daemon
++
++Upstream Authors: 
++
++    Jonathan Blandford <jrb@redhat.com>
++    William Jon McCann <mccann@jhu.edu>
++
++Copyright: 
++
++    Copyright © 2001 Ximian, Inc.
++    Copyright (C) 2007 William Jon McCann <mccann@jhu.edu>
++    Copyright (C) 2000 Helix Code, Inc
++    Copyright © 2007 Matthias Clasen
++    Copyright (C) 2007 Rodrigo Moya
++    Copyright (C) 2007 Anders Carlsson
++    Copyright © 2004 Red Hat, Inc.
++    Copyright 2002 Sun Microsystems, Inc.
++    Copyright © 2005,2006 Novell, Inc.
++    Copyright © 2007 The GNOME Foundation
++    Copyright (C) 2002-2005 - Paolo Maggi
++    Copyright (C) 2002  Red Hat, Inc.
++    Copyright 1998, 2001 Tim Janik
++    Copyright � 2001 Udaltsoft
++    Copyright (C) 2001, 2002, 2003 Bastien Nocera
++    Copyright (C) 2003 Ross Burton <ross@burtonini.com>
++    Copyright © 2001 Jonathan Blandford <jrb@gnome.org>
++
++License:
++
++    This package is free software; you can redistribute it and/or modify
++    it under the terms of the GNU General Public License as published by
++    the Free Software Foundation; either version 2 of the License, or
++    (at your option) any later version.
++ 
++    This package is distributed in the hope that it will be useful,
++    but WITHOUT ANY WARRANTY; without even the implied warranty of
++    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++    GNU General Public License for more details.
++ 
++    You should have received a copy of the GNU General Public License
++    along with this package; if not, write to the Free Software
++    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
++
++On Debian systems, the complete text of the GNU General
++Public License can be found in `/usr/share/common-licenses/GPL'.
++
++eggaccelerators.h, eggaccelerators.c
++
++License:
++
++    This package is free software; you can redistribute it and/or
++    modify it under the terms of the GNU Lesser General Public
++    License as published by the Free Software Foundation; either
++    version 2 of the License, or (at your option) any later version.
++
++    This package is distributed in the hope that it will be useful,
++    but WITHOUT ANY WARRANTY; without even the implied warranty of
++    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++    Lesser General Public License for more details.
++
++    You should have received a copy of the GNU Lesser General Public
++    License along with this package; if not, write to the Free Software
++    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
++
++On Debian systems, the complete text of the GNU Lesser General
++Public License can be found in `/usr/share/common-licenses/LGPL'.
++
++The Debian packaging is (C) 2008, Sebastien Bacher <seb128@canonical.com> and
++is licensed under the GPL, see above.
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/gnome-update-wallpaper-cache.c
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/gnome-update-wallpaper-cache.c
+@@ -0,0 +1,70 @@
++/*
++ * Copyright (C) 2010 Canonical, Ltd.
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 3 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License version 3.0 for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program. If not, see <http://www.gnu.org/licenses/>.
++ *
++ * Authored by Didier Roche <didrocks@ubuntu.com>
++ * 
++ * Bug: https://bugs.launchpad.net/bugs/530024
++ */
++
++#include <glib.h>
++#include <gdk/gdk.h>
++#define GNOME_DESKTOP_USE_UNSTABLE_API
++#include <libgnome-desktop/gnome-bg.h>
++
++static GOptionEntry entries[] =
++{
++  { NULL }
++};
++
++main (int argc, char *argv[])
++{
++    GOptionContext *context = NULL;
++    GError         *error = NULL;
++
++    GdkScreen *screen;
++    GdkRectangle rect;
++    GnomeBG *bg;
++    GSettings *settings;
++    GdkPixbuf *pixbuf;
++
++    gdk_init (&argc, &argv);
++
++    context = g_option_context_new ("- refresh wallpaper cache");
++    g_option_context_add_main_entries (context, entries, NULL);
++    if (!g_option_context_parse (context, &argc, &argv, &error)) {
++        g_printerr ("option parsing failed: %s\n", error->message);
++        g_option_context_free(context);
++        g_error_free (error);
++        return (1);
++    }
++    if (context)
++        g_option_context_free (context);
++
++    /* cache only the first monitor */
++    screen = gdk_screen_get_default ();
++    gdk_screen_get_monitor_geometry (screen, 0, &rect);
++
++    bg = gnome_bg_new ();
++    settings = g_settings_new ("org.gnome.desktop.background");
++    gnome_bg_load_from_preferences (bg, settings);
++
++    pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, rect.width, rect.height);
++    gnome_bg_draw (bg, pixbuf, screen, FALSE);
++
++    g_object_unref (settings);
++
++    return (0);
++}
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/libunity-settings-daemon1.install
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/libunity-settings-daemon1.install
+@@ -0,0 +1 @@
++usr/lib/*/libunity-settings-daemon.so.*
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/libunity-settings-daemon1.symbols
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/libunity-settings-daemon1.symbols
+@@ -0,0 +1,147 @@
++libunity-settings-daemon.so.1 libunity-settings-daemon1 #MINVER#
++ gsd_idle_monitor_add_idle_watch@Base 14.04.0
++ gsd_idle_monitor_add_user_active_watch@Base 14.04.0
++ gsd_idle_monitor_get_core@Base 14.10
++ gsd_idle_monitor_get_for_device@Base 14.10
++ gsd_idle_monitor_get_idletime@Base 14.04.0
++ gsd_idle_monitor_get_type@Base 14.04.0
++ gsd_idle_monitor_handle_xevent_all@Base 14.10
++ gsd_idle_monitor_init_dbus@Base 14.10
++ gsd_idle_monitor_remove_watch@Base 14.04.0
++ gsd_pnp_ids_get_pnp_id@Base 14.04.0
++ gsd_pnp_ids_get_type@Base 14.04.0
++ gsd_pnp_ids_new@Base 14.04.0
++ gsd_rr_config_applicable@Base 14.04.0
++ gsd_rr_config_apply_from_filename_with_time@Base 14.04.0
++ gsd_rr_config_apply_with_time@Base 14.04.0
++ gsd_rr_config_ensure_primary@Base 14.04.0
++ gsd_rr_config_equal@Base 14.04.0
++ gsd_rr_config_get_backup_filename@Base 14.04.0
++ gsd_rr_config_get_clone@Base 14.04.0
++ gsd_rr_config_get_intended_filename@Base 14.04.0
++ gsd_rr_config_get_outputs@Base 14.04.0
++ gsd_rr_config_get_type@Base 14.04.0
++ gsd_rr_config_load_current@Base 14.04.0
++ gsd_rr_config_load_filename@Base 14.04.0
++ gsd_rr_config_match@Base 14.04.0
++ gsd_rr_config_new_current@Base 14.04.0
++ gsd_rr_config_new_stored@Base 14.04.0
++ gsd_rr_config_sanitize@Base 14.04.0
++ gsd_rr_config_save@Base 14.04.0
++ gsd_rr_config_set_clone@Base 14.04.0
++ gsd_rr_crtc_can_drive_output@Base 14.04.0
++ gsd_rr_crtc_get_current_mode@Base 14.04.0
++ gsd_rr_crtc_get_current_rotation@Base 14.04.0
++ gsd_rr_crtc_get_gamma@Base 14.04.0
++ gsd_rr_crtc_get_id@Base 14.04.0
++ gsd_rr_crtc_get_position@Base 14.04.0
++ gsd_rr_crtc_get_rotations@Base 14.04.0
++ gsd_rr_crtc_get_type@Base 14.04.0
++ gsd_rr_crtc_set_config_with_time@Base 14.04.0
++ gsd_rr_crtc_set_gamma@Base 14.04.0
++ gsd_rr_crtc_supports_rotation@Base 14.04.0
++ gsd_rr_error_quark@Base 14.04.0
++ gsd_rr_mode_get_freq@Base 14.04.0
++ gsd_rr_mode_get_height@Base 14.04.0
++ gsd_rr_mode_get_id@Base 14.04.0
++ gsd_rr_mode_get_type@Base 14.04.0
++ gsd_rr_mode_get_width@Base 14.04.0
++ gsd_rr_output_can_clone@Base 14.04.0
++ gsd_rr_output_get_backlight@Base 14.04.0
++ gsd_rr_output_get_backlight_max@Base 14.04.0
++ gsd_rr_output_get_backlight_min@Base 14.04.0
++ gsd_rr_output_get_connector_type@Base 14.04.0
++ gsd_rr_output_get_crtc@Base 14.04.0
++ gsd_rr_output_get_current_mode@Base 14.04.0
++ gsd_rr_output_get_display_name@Base 14.04.0
++ gsd_rr_output_get_edid_data@Base 14.04.0
++ gsd_rr_output_get_height_mm@Base 14.04.0
++ gsd_rr_output_get_id@Base 14.04.0
++ gsd_rr_output_get_ids_from_edid@Base 14.04.0
++ gsd_rr_output_get_is_primary@Base 14.04.0
++ gsd_rr_output_get_name@Base 14.04.0
++ gsd_rr_output_get_position@Base 14.04.0
++ gsd_rr_output_get_preferred_mode@Base 14.04.0
++ gsd_rr_output_get_type@Base 14.04.0
++ gsd_rr_output_get_width_mm@Base 14.04.0
++ gsd_rr_output_info_get_aspect_ratio@Base 14.04.0
++ gsd_rr_output_info_get_display_name@Base 14.04.0
++ gsd_rr_output_info_get_geometry@Base 14.04.0
++ gsd_rr_output_info_get_name@Base 14.04.0
++ gsd_rr_output_info_get_preferred_height@Base 14.04.0
++ gsd_rr_output_info_get_preferred_width@Base 14.04.0
++ gsd_rr_output_info_get_primary@Base 14.04.0
++ gsd_rr_output_info_get_product@Base 14.04.0
++ gsd_rr_output_info_get_refresh_rate@Base 14.04.0
++ gsd_rr_output_info_get_rotation@Base 14.04.0
++ gsd_rr_output_info_get_serial@Base 14.04.0
++ gsd_rr_output_info_get_type@Base 14.04.0
++ gsd_rr_output_info_get_vendor@Base 14.04.0
++ gsd_rr_output_info_is_active@Base 14.04.0
++ gsd_rr_output_info_is_connected@Base 14.04.0
++ gsd_rr_output_info_set_active@Base 14.04.0
++ gsd_rr_output_info_set_geometry@Base 14.04.0
++ gsd_rr_output_info_set_primary@Base 14.04.0
++ gsd_rr_output_info_set_refresh_rate@Base 14.04.0
++ gsd_rr_output_info_set_rotation@Base 14.04.0
++ gsd_rr_output_is_connected@Base 14.04.0
++ gsd_rr_output_is_laptop@Base 14.04.0
++ gsd_rr_output_list_modes@Base 14.04.0
++ gsd_rr_output_set_backlight@Base 14.04.0
++ gsd_rr_output_supports_mode@Base 14.04.0
++ gsd_rr_screen_get_crtc_by_id@Base 14.04.0
++ gsd_rr_screen_get_dpms_mode@Base 14.04.0
++ gsd_rr_screen_get_output_by_id@Base 14.04.0
++ gsd_rr_screen_get_output_by_name@Base 14.04.0
++ gsd_rr_screen_get_ranges@Base 14.04.0
++ gsd_rr_screen_get_timestamps@Base 14.04.0
++ gsd_rr_screen_get_type@Base 14.04.0
++ gsd_rr_screen_list_clone_modes@Base 14.04.0
++ gsd_rr_screen_list_crtcs@Base 14.04.0
++ gsd_rr_screen_list_modes@Base 14.04.0
++ gsd_rr_screen_list_outputs@Base 14.04.0
++ gsd_rr_screen_new@Base 14.04.0
++ gsd_rr_screen_refresh@Base 14.04.0
++ gsd_rr_screen_set_dpms_mode@Base 14.04.0
++ gsd_rr_screen_set_primary_output@Base 14.04.0
++ gsd_rr_screen_set_size@Base 14.04.0
++ gsd_bg_get_type@Base 14.04.0
++ gsd_bg_new@Base 14.04.0
++ gsd_bg_load_from_preferences@Base 14.04.0
++ gsd_bg_save_to_preferences@Base 14.04.0
++ gsd_bg_set_filename@Base 14.04.0
++ gsd_bg_set_placement@Base 14.04.0
++ gsd_bg_set_rgba@Base 14.04.0
++ gsd_bg_set_draw_background@Base 14.04.0
++ gsd_bg_get_placement@Base 14.04.0
++ gsd_bg_get_draw_background@Base 14.04.0
++ gsd_bg_get_rgba@Base 14.04.0
++ gsd_bg_get_filename@Base 14.04.0
++ gsd_bg_draw@Base 14.04.0
++ gsd_bg_create_surface@Base 14.04.0
++ gsd_bg_get_image_size@Base 14.04.0
++ gsd_bg_create_thumbnail@Base 14.04.0
++ gsd_bg_is_dark@Base 14.04.0
++ gsd_bg_has_multiple_sizes@Base 14.04.0
++ gsd_bg_changes_with_time@Base 14.04.0
++ gsd_bg_create_frame_thumbnail@Base 14.04.0
++ gsd_bg_set_surface_as_root@Base 14.04.0
++ gsd_bg_set_surface_as_root_with_crossfade@Base 14.04.0
++ gsd_bg_get_surface_from_root@Base 14.04.0
++ gsd_bg_crossfade_get_type@Base 14.04.0
++ gsd_bg_crossfade_new@Base 14.04.0
++ gsd_bg_crossfade_set_start_surface@Base 14.04.0
++ gsd_bg_crossfade_set_end_surface@Base 14.04.0
++ gsd_bg_crossfade_start@Base 14.04.0
++ gsd_bg_crossfade_is_started@Base 14.04.0
++ gsd_bg_crossfade_stop@Base 14.04.0
++ gsd_bg_slide_show_get_type@Base 14.04.0
++ gsd_bg_slide_show_new@Base 14.04.0
++ gsd_bg_slide_show_load@Base 14.04.0
++ gsd_bg_slide_show_load_async@Base 14.04.0
++ gsd_bg_slide_show_get_slide@Base 14.04.0
++ gsd_bg_slide_show_get_current_slide@Base 14.04.0
++ gsd_bg_slide_show_get_start_time@Base 14.04.0
++ gsd_bg_slide_show_get_total_duration@Base 14.04.0
++ gsd_bg_slide_show_get_has_multiple_sizes@Base 14.04.0
++ gsd_bg_slide_show_get_num_slides@Base 14.04.0
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/rules
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/rules
+@@ -0,0 +1,33 @@
++#!/usr/bin/make -f
++
++include /usr/share/cdbs/1/rules/debhelper.mk
++include /usr/share/cdbs/1/rules/utils.mk
++include /usr/share/cdbs/1/class/gnome.mk
++
++LDFLAGS += -Wl,-O1 -Wl,-z,defs -Wl,--warn-unresolved-symbols -Wl,--as-needed
++
++DEB_DH_MAKESHLIBS_ARGS_ALL += -X/usr/lib/unity-settings-daemon-1.0
++DEB_CONFIGURE_SCRIPT := ./autogen.sh
++DEB_CONFIGURE_EXTRA_FLAGS = --disable-packagekit --enable-ibus --enable-fcitx --enable-network-manager
++
++
++# don't configure with --libdir, but move the files manually, because
++# other files in /usr/lib/ should not change
++common-install-impl::
++	mkdir -p debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)
++	mv debian/tmp/usr/lib/lib*.so* debian/tmp/usr/lib/pkgconfig \
++		debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)
++
++install/unity-settings-daemon::
++	install -m 644 -D debian/unity-settings-daemon.user-session.upstart debian/unity-settings-daemon/usr/share/upstart/sessions/unity-settings-daemon.conf
++	install -m 644 -D debian/unity-settings-daemon.user-session.desktop debian/unity-settings-daemon/usr/share/upstart/xdg/autostart/unity-settings-daemon.desktop
++
++binary-install/unity-settings-daemon::
++	find debian -name '*.a' -delete
++	find debian -name '*.la' -delete
++
++binary-post-install/unity-settings-daemon::
++	dh_migrations
++
++common-binary-post-install-arch:: list-missing
++
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/source/format
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/source/format
+@@ -0,0 +1 @@
++1.0
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/source_unity-settings-daemon.py
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/source_unity-settings-daemon.py
+@@ -0,0 +1,16 @@
++import os, apport.packaging, re
++from apport.hookutils import *
++
++def add_info(report):
++	# the issue is not in the unity-settings-daemon code so reassign
++	if "Stacktrace" in report and "/usr/libg/nome-settings-daemon-3.0" in report["Stacktrace"]:
++		for words in report["Stacktrace"].split():
++			if words.startswith("/usr/lib/unity-settings-daemon-3.0"):
++			    if apport.packaging.get_file_package(words) != 'unity-settings-daemon':
++    				report.add_package_info(apport.packaging.get_file_package(words))
++    				return    			
++    		    # update the title to reflect the component and tab	
++			    component = re.compile("lib(\w*).so").search(words).groups(1)[0]
++			    report['Title'] = '[%s]: %s' % (component, report.get('Title', report.standard_title()))
++			    report['Tags'] = '%s %s' % (report.get('Tags', ""), component)
++			    break # Stop on the first .so that's the interesting one
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/unity-settings-daemon-dev.install
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/unity-settings-daemon-dev.install
+@@ -0,0 +1,3 @@
++usr/include
++usr/lib/*/pkgconfig
++usr/lib/*/libunity-settings-daemon.so
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/unity-settings-daemon-schemas.install
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/unity-settings-daemon-schemas.install
+@@ -0,0 +1 @@
++debian/*/usr/share/glib-*/schemas/*
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/unity-settings-daemon.install
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/unity-settings-daemon.install
+@@ -0,0 +1,9 @@
++etc
++usr/lib/unity-settings-daemon*
++usr/share/icons
++usr/share/locale
++usr/share/unity-settings-daemon
++usr/share/polkit-1
++debian/source_unity-settings-daemon.py /usr/share/apport/package-hooks
++debian/user/unity-settings-daemon.service /usr/lib/systemd/user/
++debian/user/unity-settings-daemon.override /usr/share/upstart/systemd-session/upstart/
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/unity-settings-daemon.links
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/unity-settings-daemon.links
+@@ -0,0 +1,3 @@
++usr/lib/unity-settings-daemon/unity-settings-daemon usr/bin/unity-settings-daemon
++# needed until unity7 gets a systemd unit with Requires=u-s-d
++/usr/lib/systemd/user/unity-settings-daemon.service /usr/lib/systemd/user/unity-session.target.wants/unity-settings-daemon.service
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/unity-settings-daemon.maintscript
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/unity-settings-daemon.maintscript
+@@ -0,0 +1,7 @@
++rm_conffile /etc/gnome/config/Editres.ad 3.6.3-0ubuntu3~
++rm_conffile /etc/gnome/config/Emacs.ad 3.6.3-0ubuntu3~
++rm_conffile /etc/gnome/config/General.ad 3.6.3-0ubuntu3~
++rm_conffile /etc/gnome/config/Motif.ad 3.6.3-0ubuntu3~
++rm_conffile /etc/gnome/config/Tk.ad 3.6.3-0ubuntu3~
++rm_conffile /etc/gnome/config/Xaw.ad 3.6.3-0ubuntu3~
++rm_conffile /etc/dbus-1/system.d/org.gnome.SettingsDaemon.DateTimeMechanism.conf 3.6.4-0ubuntu7~ 
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/unity-settings-daemon.migrations
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/unity-settings-daemon.migrations
+@@ -0,0 +1 @@
++scripts/*-usd-migration-*
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/unity-settings-daemon.postinst
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/unity-settings-daemon.postinst
+@@ -0,0 +1,21 @@
++#! /bin/sh
++set -e
++
++#DEBHELPER#
++
++# Remove obsolete conffiles
++
++case "$1" in
++configure)
++    if dpkg --compare-versions "$2" lt-nl "2.24.1"; then
++        rm -rf /etc/gnome/config/xrdb
++    fi
++    if dpkg --compare-versions "$2" lt-nl "2.26.1"; then
++        rm -f /etc/xdg/autostart/gnome-settings-daemon.desktop
++    fi
++    if dpkg --compare-versions "$2" lt-nl "3.6.3-0ubuntu3"; then
++        if [ -d /etc/gnome/config ]; then
++            rmdir --ignore-fail-on-non-empty /etc/gnome/config
++        fi
++    fi
++esac
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/unity-settings-daemon.user-session.desktop
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/unity-settings-daemon.user-session.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Unity Settings Daemon
++Exec=/usr/lib/unity-settings-daemon/unity-settings-daemon
++Hidden=true
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/unity-settings-daemon.user-session.upstart
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/unity-settings-daemon.user-session.upstart
+@@ -0,0 +1,18 @@
++description "The Unity Settings Daemon"
++author "Dimitri John Ledkov <xnox@ubuntu.com>"
++
++start on started dbus and starting gnome-session
++stop on stopping gnome-session
++
++pre-start script
++    for DESKTOP in $(echo "$XDG_CURRENT_DESKTOP" | sed 's/:/ /g')
++    do
++      if [ "x$DESKTOP" = "xUnity" ]; then
++        exit 0
++      fi
++    done
++    stop
++end script
++
++respawn
++exec /usr/lib/unity-settings-daemon/unity-settings-daemon
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/user/unity-settings-daemon.override
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/user/unity-settings-daemon.override
+@@ -0,0 +1,3 @@
++# FIXME: can be moved to "manual" once unity7 gets a systemd service file
++# manual
++exec true
+--- unity-settings-daemon-15.04.1+21.10.20210715.orig/debian/user/unity-settings-daemon.service
++++ unity-settings-daemon-15.04.1+21.10.20210715/debian/user/unity-settings-daemon.service
+@@ -0,0 +1,7 @@
++[Unit]
++Description=Unity Settings Daemon
++PartOf=graphical-session.target
++
++[Service]
++ExecStart=/usr/lib/unity-settings-daemon/unity-settings-daemon
++Restart=on-failure

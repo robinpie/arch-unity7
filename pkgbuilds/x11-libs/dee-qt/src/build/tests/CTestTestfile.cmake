@@ -1,0 +1,12 @@
+# CMake generated Testfile for 
+# Source directory: /run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/dee-qt-3.3+14.04.20140317/tests
+# Build directory: /run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/build/tests
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test(conversiontest "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/build/tests/conversiontest" "-o" "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/build/tests/conversiontest-xunit.xml,xunitxml" "-o" "-,txt")
+set_tests_properties(conversiontest PROPERTIES  ENVIRONMENT "LD_LIBRARY_PATH=." _BACKTRACE_TRIPLES "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/dee-qt-3.3+14.04.20140317/tests/CMakeLists.txt;18;add_test;/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/dee-qt-3.3+14.04.20140317/tests/CMakeLists.txt;0;")
+add_test(signaltest "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/build/tests/signaltest" "-o" "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/build/tests/signaltest-xunit.xml,xunitxml" "-o" "-,txt")
+set_tests_properties(signaltest PROPERTIES  ENVIRONMENT "LD_LIBRARY_PATH=." _BACKTRACE_TRIPLES "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/dee-qt-3.3+14.04.20140317/tests/CMakeLists.txt;26;add_test;/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/dee-qt-3.3+14.04.20140317/tests/CMakeLists.txt;0;")
+add_test(deelistmodeltest "dbus-test-runner" "--task" "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/build/tests/test-helper" "--task" "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/build/tests/deelistmodeltest" "-p" "-xunitxml" "-p" "-o" "-p" "deelistmodeltest-xunit.xml")
+set_tests_properties(deelistmodeltest PROPERTIES  ENVIRONMENT "LD_LIBRARY_PATH=." _BACKTRACE_TRIPLES "/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/dee-qt-3.3+14.04.20140317/tests/CMakeLists.txt;37;add_test;/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/dee-qt-3.3+14.04.20140317/tests/CMakeLists.txt;0;")

@@ -1,0 +1,230 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'ApplicationAdaptor.h'
+**
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.15.18)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include <memory>
+#include "ApplicationAdaptor.h"
+#include <QtCore/qbytearray.h>
+#include <QtCore/qmetatype.h>
+#include <QtCore/QList>
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'ApplicationAdaptor.h' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 67
+#error "This file was generated using the moc from 5.15.18. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_DEPRECATED
+struct qt_meta_stringdata_ApplicationAdaptor_t {
+    QByteArrayData data[20];
+    char stringdata0[1473];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_ApplicationAdaptor_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_ApplicationAdaptor_t qt_meta_stringdata_ApplicationAdaptor = {
+    {
+QT_MOC_LITERAL(0, 0, 18), // "ApplicationAdaptor"
+QT_MOC_LITERAL(1, 19, 15), // "D-Bus Interface"
+QT_MOC_LITERAL(2, 35, 29), // "com.canonical.hud.Application"
+QT_MOC_LITERAL(3, 65, 19), // "D-Bus Introspection"
+QT_MOC_LITERAL(4, 85, 1160), // "  <interface name=\"com.canon..."
+QT_MOC_LITERAL(5, 1156, 10), // "AddSources"
+QT_MOC_LITERAL(6, 1167, 0), // ""
+QT_MOC_LITERAL(7, 1168, 26), // "QList<hud::common::Action>"
+QT_MOC_LITERAL(8, 1195, 7), // "actions"
+QT_MOC_LITERAL(9, 1203, 31), // "QList<hud::common::Description>"
+QT_MOC_LITERAL(10, 1235, 12), // "descriptions"
+QT_MOC_LITERAL(11, 1248, 16), // "SetWindowContext"
+QT_MOC_LITERAL(12, 1265, 6), // "window"
+QT_MOC_LITERAL(13, 1272, 7), // "context"
+QT_MOC_LITERAL(14, 1280, 12), // "ActionGroups"
+QT_MOC_LITERAL(15, 1293, 31), // "QList<hud::common::ActionGroup>"
+QT_MOC_LITERAL(16, 1325, 11), // "DesktopPath"
+QT_MOC_LITERAL(17, 1337, 4), // "Icon"
+QT_MOC_LITERAL(18, 1342, 10), // "MenuModels"
+QT_MOC_LITERAL(19, 1353, 29) // "QList<hud::common::MenuModel>"
+
+    },
+    "ApplicationAdaptor\0D-Bus Interface\0"
+    "com.canonical.hud.Application\0"
+    "D-Bus Introspection\0"
+    "  <interface name=\"com.canonical.hud.Application\">\n    <property ac"
+    "cess=\"read\" type=\"a(vso)\" name=\"ActionGroups\">\n      <annotatio"
+    "n value=\"QList&lt;hud::common::ActionGroup&gt;\" name=\"org.qtproject"
+    ".QtDBus.QtTypeName\"/>\n    </property>\n    <property access=\"read\""
+    " type=\"a(vo)\" name=\"MenuModels\">\n      <annotation value=\"QList&"
+    "lt;hud::common::MenuModel&gt;\" name=\"org.qtproject.QtDBus.QtTypeName"
+    "\"/>\n    </property>\n    <property access=\"read\" type=\"s\" name=\""
+    "DesktopPath\"/>\n    <property access=\"read\" type=\"s\" name=\"Icon\""
+    "/>\n    <method name=\"AddSources\">\n      <annotation value=\"QList&"
+    "lt;hud::common::Action&gt;\" name=\"org.qtproject.QtDBus.QtTypeName.In"
+    "0\"/>\n      <arg direction=\"in\" type=\"a(usso)\" name=\"actions\"/>"
+    "\n      <annotation value=\"QList&lt;hud::common::Description&gt;\" na"
+    "me=\"org.qtproject.QtDBus.QtTypeName.In1\"/>\n      <arg direction=\"i"
+    "n\" type=\"a(uso)\" name=\"descriptions\"/>\n    </method>\n    <metho"
+    "d name=\"SetWindowContext\">\n      <arg direction=\"in\" type=\"u\" n"
+    "ame=\"window\"/>\n      <arg direction=\"in\" type=\"s\" name=\"contex"
+    "t\"/>\n    </method>\n  </interface>\n\0"
+    "AddSources\0\0QList<hud::common::Action>\0"
+    "actions\0QList<hud::common::Description>\0"
+    "descriptions\0SetWindowContext\0window\0"
+    "context\0ActionGroups\0"
+    "QList<hud::common::ActionGroup>\0"
+    "DesktopPath\0Icon\0MenuModels\0"
+    "QList<hud::common::MenuModel>"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_ApplicationAdaptor[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       2,   14, // classinfo
+       2,   18, // methods
+       4,   38, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+ // classinfo: key, value
+       1,    2,
+       3,    4,
+
+ // slots: name, argc, parameters, tag, flags
+       5,    2,   28,    6, 0x0a /* Public */,
+      11,    2,   33,    6, 0x0a /* Public */,
+
+ // slots: parameters
+    QMetaType::Void, 0x80000000 | 7, 0x80000000 | 9,    8,   10,
+    QMetaType::Void, QMetaType::UInt, QMetaType::QString,   12,   13,
+
+ // properties: name, type, flags
+      14, 0x80000000 | 15, 0x00095009,
+      16, QMetaType::QString, 0x00095001,
+      17, QMetaType::QString, 0x00095001,
+      18, 0x80000000 | 19, 0x00095009,
+
+       0        // eod
+};
+
+void ApplicationAdaptor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<ApplicationAdaptor *>(_o);
+        (void)_t;
+        switch (_id) {
+        case 0: _t->AddSources((*reinterpret_cast< const QList<hud::common::Action>(*)>(_a[1])),(*reinterpret_cast< const QList<hud::common::Description>(*)>(_a[2]))); break;
+        case 1: _t->SetWindowContext((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
+        default: ;
+        }
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+        case 0:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QList<hud::common::Action> >(); break;
+            case 1:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QList<hud::common::Description> >(); break;
+            }
+            break;
+        }
+    } else if (_c == QMetaObject::RegisterPropertyMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+        case 0:
+            *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QList<hud::common::ActionGroup> >(); break;
+        case 3:
+            *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QList<hud::common::MenuModel> >(); break;
+        }
+    }
+
+#ifndef QT_NO_PROPERTIES
+    else if (_c == QMetaObject::ReadProperty) {
+        auto *_t = static_cast<ApplicationAdaptor *>(_o);
+        (void)_t;
+        void *_v = _a[0];
+        switch (_id) {
+        case 0: *reinterpret_cast< QList<hud::common::ActionGroup>*>(_v) = _t->actionGroups(); break;
+        case 1: *reinterpret_cast< QString*>(_v) = _t->desktopPath(); break;
+        case 2: *reinterpret_cast< QString*>(_v) = _t->icon(); break;
+        case 3: *reinterpret_cast< QList<hud::common::MenuModel>*>(_v) = _t->menuModels(); break;
+        default: break;
+        }
+    } else if (_c == QMetaObject::WriteProperty) {
+    } else if (_c == QMetaObject::ResetProperty) {
+    }
+#endif // QT_NO_PROPERTIES
+}
+
+QT_INIT_METAOBJECT const QMetaObject ApplicationAdaptor::staticMetaObject = { {
+    QMetaObject::SuperData::link<QDBusAbstractAdaptor::staticMetaObject>(),
+    qt_meta_stringdata_ApplicationAdaptor.data,
+    qt_meta_data_ApplicationAdaptor,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *ApplicationAdaptor::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *ApplicationAdaptor::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_ApplicationAdaptor.stringdata0))
+        return static_cast<void*>(this);
+    return QDBusAbstractAdaptor::qt_metacast(_clname);
+}
+
+int ApplicationAdaptor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QDBusAbstractAdaptor::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 2)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 2;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 2)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 2;
+    }
+#ifndef QT_NO_PROPERTIES
+    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
+            || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
+        qt_static_metacall(this, _c, _id, _a);
+        _id -= 4;
+    } else if (_c == QMetaObject::QueryPropertyDesignable) {
+        _id -= 4;
+    } else if (_c == QMetaObject::QueryPropertyScriptable) {
+        _id -= 4;
+    } else if (_c == QMetaObject::QueryPropertyStored) {
+        _id -= 4;
+    } else if (_c == QMetaObject::QueryPropertyEditable) {
+        _id -= 4;
+    } else if (_c == QMetaObject::QueryPropertyUser) {
+        _id -= 4;
+    }
+#endif // QT_NO_PROPERTIES
+    return _id;
+}
+QT_WARNING_POP
+QT_END_MOC_NAMESPACE

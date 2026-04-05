@@ -1,0 +1,103 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/hud
+
+pkgname=hud
+pkgver=14.10
+_uver=+17.10.20170619
+_urev=0ubuntu6
+pkgrel=1
+pkgdesc="Backend for the Unity HUD"
+arch=('x86_64')
+url="https://launchpad.net/hud"
+license=('GPL-3.0-or-later')
+depends=(
+    'dee'
+    'glib2'
+    'libcolumbus'
+    'libdbusmenu-qt5'
+    'qt5-base'
+    'sqlite'
+    'gtk3'
+    'gsettings-qt'
+    'python'
+    'python-lxml'
+)
+makedepends=(
+    'cmake'
+    'pkgconf'
+    'vala'
+    'intltool'
+    'systemd'
+    'gnome-common'
+    'python-setuptools'
+    'bamf'
+    'cmake-extras'
+)
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+)
+sha256sums=('SKIP' 'SKIP')
+
+prepare() {
+    cd "${pkgname}-${pkgver}${_uver}"
+
+    # Apply Ubuntu diff
+    patch -p1 --batch --forward -i "../${pkgname}_${pkgver}${_uver}-${_urev}.diff" || true
+
+    # Apply debian patch series (skip if quilt already applied)
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+
+    # Fix CMake minimum version for CMake 4
+    sed -i "/cmake_minimum_required/{s/2\.8\.9/3.10/}" CMakeLists.txt
+
+    # Don't try to find test deps
+    sed -i \
+        -e '/QTDBUSTEST/d' \
+        -e '/QTDBUSMOCK/d' \
+        CMakeLists.txt
+
+    # Stop cmake doing the job of distutils (python hudkeywords built separately)
+    sed -i '/add_subdirectory(hudkeywords)/d' tools/CMakeLists.txt
+
+    # Fix Python 3 except syntax
+    sed -i '/except /{s/,/ as/}' tools/hudkeywords/hudkeywords/cli.py || true
+
+    # Remove invalid attribute from UI file
+    sed -i 's/ visible="0"//' tools-vala/hud-gtk.ui || true
+}
+
+build() {
+    # gsettings-qt.pc has wrong includedir (points to qt5/QGSettings, not qt5/)
+    # causing #include <QGSettings/qgsettings.h> to fail; add the parent dir
+    cmake -B build -S "${pkgname}-${pkgver}${_uver}" \
+        -DCMAKE_CXX_FLAGS="-I/usr/include/qt5" \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.10 \
+        -DBUILD_SHARED_LIBS=OFF \
+        -DCMAKE_INSTALL_DATADIR=/usr/share \
+        -DENABLE_BAMF=ON \
+        -DENABLE_DOCUMENTATION=OFF \
+        -DENABLE_TESTS=OFF \
+        -Wno-dev
+    cmake --build build
+
+    # Build hudkeywords python tool
+    cd "${pkgname}-${pkgver}${_uver}/tools/hudkeywords"
+    python setup.py build 2>/dev/null || true
+}
+
+package() {
+    DESTDIR="$pkgdir" cmake --install build
+
+    # Install hudkeywords python tool
+    cd "${pkgname}-${pkgver}${_uver}/tools/hudkeywords"
+    python setup.py install --root="$pkgdir" --optimize=1 2>/dev/null || true
+}

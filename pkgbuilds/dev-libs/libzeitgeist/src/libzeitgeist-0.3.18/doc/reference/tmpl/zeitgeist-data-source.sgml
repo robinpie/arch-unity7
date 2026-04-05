@@ -1,0 +1,229 @@
+<!-- ##### SECTION Title ##### -->
+ZeitgeistDataSource
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT ZeitgeistDataSource ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT ZeitgeistDataSourceClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION zeitgeist_data_source_get_description ##### -->
+<para>
+
+</para>
+
+@src: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_get_event_templates ##### -->
+<para>
+
+</para>
+
+@src: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_get_name ##### -->
+<para>
+
+</para>
+
+@src: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_get_timestamp ##### -->
+<para>
+
+</para>
+
+@src: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_get_unique_id ##### -->
+<para>
+
+</para>
+
+@src: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_is_enabled ##### -->
+<para>
+
+</para>
+
+@src: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_is_running ##### -->
+<para>
+
+</para>
+
+@src: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_new_from_variant ##### -->
+<para>
+
+</para>
+
+@src: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_new_full ##### -->
+<para>
+
+</para>
+
+@id: 
+@name: 
+@desc: 
+@event_templates: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_set_description ##### -->
+<para>
+
+</para>
+
+@src: 
+@description: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_set_enabled ##### -->
+<para>
+
+</para>
+
+@src: 
+@enabled: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_set_event_templates ##### -->
+<para>
+
+</para>
+
+@src: 
+@event_templates: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_set_name ##### -->
+<para>
+
+</para>
+
+@src: 
+@name: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_set_running ##### -->
+<para>
+
+</para>
+
+@src: 
+@running: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_set_timestamp ##### -->
+<para>
+
+</para>
+
+@src: 
+@timestamp: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_set_unique_id ##### -->
+<para>
+
+</para>
+
+@src: 
+@unique_id: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_to_variant ##### -->
+<para>
+
+</para>
+
+@src: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_to_variant_full ##### -->
+<para>
+
+</para>
+
+@src: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_sources_from_variant ##### -->
+<para>
+
+</para>
+
+@sources: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_sources_to_variant ##### -->
+<para>
+
+</para>
+
+@sources: 
+@Returns: 
+
+

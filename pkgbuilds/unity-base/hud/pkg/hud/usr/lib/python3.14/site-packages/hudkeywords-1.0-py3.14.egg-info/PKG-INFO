@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: hudkeywords
+Version: 1.0
+Summary: HUD keywords tool
+Home-page: http://launchpad.net/hud
+Author: Pete Woods
+Author-email: pete.woods@canonical.com
+License: GNU GPL v2
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: home-page
+Dynamic: license
+Dynamic: summary
+
+A tool for creating translation (po) and XML keyword files associated with HUD.

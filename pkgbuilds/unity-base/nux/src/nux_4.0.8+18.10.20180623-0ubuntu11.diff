@@ -1,0 +1,2391 @@
+--- nux-4.0.8+18.10.20180623.orig/debian/50_check_unity_support
++++ nux-4.0.8+18.10.20180623/debian/50_check_unity_support
+@@ -0,0 +1,19 @@
++# This file is sourced by Xsession(5), not executed.
++# If the hardware does not pass unity_support_test, fall back to LLVMpipe
++# which does.
++
++if [ "x$DESKTOP_SESSION" = "xubuntu" ] && [ -x "/usr/lib/nux/unity_support_test" ]; then
++    (
++        IFS=':'
++        for d in $XDG_CURRENT_DESKTOP; do
++            if [ "x$d" = "xUnity" ] || [ "x$d" = "xUnity7" ]; then
++                return 0
++            fi
++        done
++        return 1
++    )
++
++    if [ $? = 0 ]; then
++        /usr/lib/nux/unity_support_test || export LIBGL_ALWAYS_SOFTWARE=1
++    fi
++fi
+--- nux-4.0.8+18.10.20180623.orig/debian/changelog
++++ nux-4.0.8+18.10.20180623/debian/changelog
+@@ -0,0 +1,1567 @@
++nux (4.0.8+18.10.20180623-0ubuntu11) questing; urgency=medium
++
++  * d/control: use the non deprecated libgdk-pixbuf-2.0-dev (lp: #2118581)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 24 Jul 2025 23:05:33 +0200
++
++nux (4.0.8+18.10.20180623-0ubuntu10) noble; urgency=medium
++
++  * No-change rebuild for CVE-2024-3094
++
++ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 31 Mar 2024 02:41:16 +0000
++
++nux (4.0.8+18.10.20180623-0ubuntu9) noble; urgency=medium
++
++  * No-change rebuild against libglib2.0-0t64
++
++ -- Steve Langasek <steve.langasek@ubuntu.com>  Mon, 11 Mar 2024 23:19:02 +0000
++
++nux (4.0.8+18.10.20180623-0ubuntu8) noble; urgency=medium
++
++  * No-change rebuild against libglib2.0-0t64
++
++ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 08 Mar 2024 05:52:15 +0000
++
++nux (4.0.8+18.10.20180623-0ubuntu7) noble; urgency=medium
++
++  * Don't run the tests on armhf, now segfaulting.
++    See LP #2054351.
++
++ -- Matthias Klose <doko@ubuntu.com>  Tue, 20 Feb 2024 00:03:43 +0100
++
++nux (4.0.8+18.10.20180623-0ubuntu6) noble; urgency=medium
++
++  * Disable the failing TestLoggingWriter.TestWriteMessage test.
++    See LP #2054350.
++
++ -- Matthias Klose <doko@ubuntu.com>  Mon, 19 Feb 2024 23:36:40 +0100
++
++nux (4.0.8+18.10.20180623-0ubuntu5) mantic; urgency=medium
++
++  * Drop std=c++0x to fix FTBFS things require C++14 now, and C++17 is the
++    default.
++
++ -- Dimitri John Ledkov <dimitri.ledkov@canonical.com>  Fri, 22 Sep 2023 22:27:39 +0100
++
++nux (4.0.8+18.10.20180623-0ubuntu4) jammy; urgency=medium
++
++  * No-change rebuild against latest gdk-pixbuf
++
++ -- Jeremy Bicha <jeremy.bicha@canonical.com>  Thu, 10 Mar 2022 07:00:45 -0500
++
++nux (4.0.8+18.10.20180623-0ubuntu3) groovy; urgency=medium
++
++  * Fix ftbfs: do not build with -Werror, include boost/shared_ptr.hpp before
++    trying to use boost::shared_ptr
++
++ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Tue, 09 Jun 2020 12:34:03 +1200
++
++nux (4.0.8+18.10.20180623-0ubuntu2) focal; urgency=medium
++
++  * No-change rebuild for libgcc-s1 package name change.
++
++ -- Matthias Klose <doko@ubuntu.com>  Tue, 24 Mar 2020 15:08:28 +0100
++
++nux (4.0.8+18.10.20180623-0ubuntu1) cosmic; urgency=medium
++
++  * debian/control: update Vcs
++  * debian/nux-tools.preinst:
++    - Restore backup config files before installing nux-tools, so that they
++      will be updaded with the fixed versions (LP: #1768610)
++  * debian/rules:
++    - build tests using LIBGL_ALWAYS_SOFTWARE env var to fix build crash
++      on launchpad builders (there are memory errors in the hw drivers).
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Sat, 23 Jun 2018 07:30:26 +0000
++
++nux (4.0.8+18.10.20180613.3-0ubuntu1) cosmic; urgency=medium
++
++  * debian/50_check_unity_support:
++    - various changes to fix (LP: #1768610):
++      + export LIBGL_ALWAYS_SOFTWARE=1 only on command failure
++      + run only when called inside an unity session
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Wed, 13 Jun 2018 12:20:53 +0000
++
++nux (4.0.8+17.10.20170922-0ubuntu1) artful; urgency=medium
++
++  * Nux: mark explicit fallthrough jumps (to please gcc7)
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Fri, 22 Sep 2017 13:12:53 +0000
++
++nux (4.0.8+17.04.20170213-0ubuntu1) zesty; urgency=medium
++
++  * TextEntry: Make sure Ctr+{C,V,X,A} work with caps-lock on (LP:
++    #1664205)
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Mon, 13 Feb 2017 13:22:38 +0000
++
++nux (4.0.8+17.04.20170110.1-0ubuntu1) zesty; urgency=medium
++
++  [ Eleni Maria Stea ]
++  * replaced std::shared_ptr with boost::shared_ptr to fix compile
++    errors
++
++  [ Marco Trevisan (Treviño) ]
++  * debian/control: add libgtest-dev to build-dependency
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Tue, 10 Jan 2017 14:29:53 +0000
++
++nux (4.0.8+17.04.20161107-0ubuntu1) zesty; urgency=medium
++
++  * Don't build-depend on libglew-dev. It should be sufficient to build
++    against libglewmx-dev (LP: #1639622)
++
++ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 07 Nov 2016 01:33:29 +0000
++
++nux (4.0.8+16.10.20160714-0ubuntu1) yakkety; urgency=medium
++
++  [ Eleni Maria Stea ]
++  * unity_support_test: set back 2 return value on --help
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Thu, 14 Jul 2016 10:03:44 +0000
++
++nux (4.0.8+16.10.20160705.1-0ubuntu1) yakkety; urgency=medium
++
++  * unity_support_test: add llvmpipe as software-rendererd (LP:
++    #1598770)
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Tue, 05 Jul 2016 01:11:01 +0000
++
++nux (4.0.8+16.04.20160209-0ubuntu4) yakkety; urgency=medium
++
++  * (Build-)depend on libpng-dev.
++
++ -- Matthias Klose <doko@ubuntu.com>  Tue, 26 Apr 2016 12:18:33 +0200
++
++nux (4.0.8+16.04.20160209-0ubuntu3) yakkety; urgency=medium
++
++  * No-change rebuild for libpng soname change.
++
++ -- Matthias Klose <doko@ubuntu.com>  Tue, 26 Apr 2016 10:11:32 +0000
++
++nux (4.0.8+16.04.20160209-0ubuntu2) xenial; urgency=medium
++
++  * Build without optimization on s390x for a first build. LP: #1570894.
++
++ -- Matthias Klose <doko@ubuntu.com>  Sun, 17 Apr 2016 21:26:20 +0200
++
++nux (4.0.8+16.04.20160209-0ubuntu1) xenial; urgency=medium
++
++  [ Eleni Maria Stea ]
++  * added missing header file
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Tue, 09 Feb 2016 01:16:39 +0000
++
++nux (4.0.8+16.04.20151210-0ubuntu1) xenial; urgency=medium
++
++  [ Andrea Azzarone ]
++  * Fix Dash scrollbar so that it does not displace Dash background
++    texture (LP: #1050959)
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Thu, 10 Dec 2015 15:51:27 +0000
++
++nux (4.0.8+16.04.20151028-0ubuntu1) xenial; urgency=medium
++
++  [ Andrea Azzarone ]
++  * Remove coverflow code.
++
++  [ Andrea Azzarone andrea.azzarone@canonical.com ]
++  * Remove coverflow code.
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Wed, 28 Oct 2015 09:53:50 +0000
++
++nux (4.0.8+15.10.20150921.1-0ubuntu1) wily; urgency=medium
++
++  [ Stephen M. Webb ]
++  * new upstream release 4.0.8
++  * debian/control (Standards-Version): bump to 3.9.6 (no changes)
++
++  [ Marco Trevisan (Treviño) ]
++  * debian/control:
++    - add xserver-xorg-video-dummy as build dependency
++    - set libnux-4.0-common arch to all
++    - depend on source:Version of libnux-4.0-common
++
++  [ Andrea Azzarone andrea.azzarone@canonical.com ]
++  * Remove alternative select mainloop. (LP: #1111216)
++
++  [ Marco Trevisan (Treviño) ]
++  * WindowCompositor: emit mouse_leave signal when releasing mouse over
++    a new area (LP: #1496140)
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Mon, 21 Sep 2015 17:41:54 +0000
++
++nux (4.0.7+15.10.20150802-0ubuntu1) wily; urgency=medium
++
++  [ CI Train Bot ]
++  * New rebuild forced.
++
++  [ Simon Arlott ]
++  * fix the size of timeout values on 64-bit platforms (thanks Simon
++    Arlott) (LP: #1379960)
++
++  [ Stephen M. Webb ]
++  * fixed a FTBFS when using GCC-5
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Sun, 02 Aug 2015 14:35:23 +0000
++
++nux (4.0.7+15.10.20150522-0ubuntu1) wily; urgency=medium
++
++  [ Andrea Azzarone ]
++  * Make sure nux can be built using clang. (LP: #1422427)
++
++  [ Brandon Schaefer ]
++  * Need to unref the bus, and need to free the keybindings when we are
++    done.
++
++  [ CI Train Bot ]
++  * New rebuild forced.
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Fri, 22 May 2015 13:18:44 +0000
++
++nux (4.0.7+15.04.20150410.1-0ubuntu1) vivid; urgency=medium
++
++  [ CI Train Bot ]
++  * New rebuild forced.
++
++  [ Eleni Maria Stea ]
++  * glFrustrum should be performed in projection mode, otherwise the
++    modelview matrix has projection elements and the lighting and 3d
++    clipping planes of unity and other compiz plugins that load this
++    modelview matrix are buggy.
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Fri, 10 Apr 2015 21:56:51 +0000
++
++nux (4.0.7+14.10.20141007-0ubuntu1) utopic; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * WindowCompositor: don't try to use an null dnd_area pointer (LP:
++    #1363959)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 07 Oct 2014 14:14:14 +0000
++
++nux (4.0.7+14.10.20140924-0ubuntu1) utopic; urgency=low
++
++  [ Erkin Bahceci ]
++  * Area: always make sure we remove an object from layout queue
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 24 Sep 2014 21:21:34 +0000
++
++nux (4.0.7+14.10.20140904-0ubuntu1) utopic; urgency=low
++
++  [ Eleni Maria Stea ]
++  * Minor change that fixes compile errors in the debug build.
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 04 Sep 2014 22:18:49 +0000
++
++nux (4.0.7+14.10.20140731-0ubuntu1) utopic; urgency=medium
++
++  [ Stephen M. Webb ]
++  * bumped to package version 4.0.7
++
++  [ Christopher Townsend ]
++  * Need to add version 1.11 of lcov to the supported versions so the
++    Debian package build can succeed. (LP: #1342896)
++
++  [ Brandon Schaefer ]
++  * Fixes FTBFS. Remove unused functions. This seems to be brought up
++    only in gcc/g++ 4.9. (LP: #1350101)
++
++  [ Marco Trevisan (Treviño) ]
++  * ScrollView: correctly handle vertical and horizontal scrolling (LP:
++    #1228093)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 31 Jul 2014 14:58:52 +0000
++
++nux (4.0.6+14.04.20140409-0ubuntu1) trusty; urgency=low
++
++  [ Trung Ngo ]
++  * Do not advertise IBUS_CAP_SURROUNDING_TEXT when nux does not support
++    it. (LP: #1290900)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 09 Apr 2014 22:25:08 +0000
++
++nux (4.0.6+14.04.20140311.1-0ubuntu1) trusty; urgency=low
++
++  [ Stephen M. Webb ]
++  * ABI bump 20140307.0
++
++  [ Andrea Azzarone ]
++  * Emit nux::Layout::ViewAdded when a layout is added too. In future
++    would be nice to rename the signal name in AreaAdded. We need for
++    a11y reasons.
++
++  [ Marco Trevisan (Treviño) ]
++  * TextEntry: add setter/getter to make the cursor visible only on key
++    focus When the toggle is false, the text entry cursor is shown only
++    if the area is key-focused.
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 11 Mar 2014 18:22:02 +0000
++
++nux (4.0.5+14.04.20140226-0ubuntu1) trusty; urgency=low
++
++  [ Chris Townsend ]
++  * Fix race condition in the Animation destructor which was exposed in
++    a recent Unity change that causes an intermittent crash. (LP:
++    #1282884)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 26 Feb 2014 16:47:38 +0000
++
++nux (4.0.5+14.04.20140214-0ubuntu1) trusty; urgency=low
++
++  [ Brandon Schaefer ]
++  * Add XIM preedit support
++  * Bump version to 4.0.5
++  * We need to check if the XIC client is synced up with the xevents
++    coming in. If someone changes the focus window and our XIC hasn't
++    been updated, we need to make sure we stay synced. Otherwise XIM
++    fails to work. (LP: #1175669)
++
++  [ CI bot ]
++  * Flush trunk to Ubuntu
++
++  [ Chris Townsend ]
++  * Need to add version 1.10 of lcov to the supported versions so the
++    Debian package build can succeed.
++
++  [ Eleni Maria Stea ]
++  * added virtual destructors where missing (fixing static analysis
++    errors).
++  * small fixes based on clang errors and warnings.
++  * fixed syntax error in macro.
++  * minor fixes (static analyzer errors and warnings).
++
++  [ Albert Astals ]
++  * Kill declared but not implemented functions.
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 14 Feb 2014 23:11:31 +0000
++
++nux (4.0.4-0ubuntu1) UNRELEASED; urgency=low
++
++  [ Sam Spilsbury ]
++  * Bump version to 4.0.4.
++
++ -- Chris Townsend <christopher.townsend@canonical.com>  Tue, 29 Oct 2013 18:12:16 -0400
++
++nux (4.0.3+13.10.20131011-0ubuntu2) trusty; urgency=medium
++
++  * No change rebuild against glew 1.10.
++
++ -- Dimitri John Ledkov <xnox@ubuntu.com>  Thu, 02 Jan 2014 13:28:28 +0000
++
++nux (4.0.3+13.10.20131011-0ubuntu1) saucy; urgency=low
++
++  [ Stephen M. Webb ]
++  * New upstream version 4.0.3.
++
++  [ Marco Trevisan (Treviño) ]
++  * GraphicsDisplayX11: set the event timestamp when available Like in
++    motion, enter/leave and dnd-drop events.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 824
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 11 Oct 2013 06:15:47 +0000
++
++nux (4.0.2+13.10.20131004-0ubuntu1) saucy; urgency=low
++
++  [ Stephen M. Webb ]
++  * precomputed tap invariants for bilinear Gaussian blur shaders (lp:
++    #1222602). (LP: #1222602)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 821
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 04 Oct 2013 05:22:28 +0000
++
++nux (4.0.2+13.10.20130927.1-0ubuntu1) saucy; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * InputMethodIBus: use GCancellable to ignore callback events after
++    destruction Also use nux logger and add some code cleanup. (LP:
++    #1231504)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 819
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 27 Sep 2013 11:08:24 +0000
++
++nux (4.0.2+13.10.20130920-0ubuntu1) saucy; urgency=low
++
++  [ Brandon Schaefer ]
++  * Always use a dynamic char* when dealing with text events. We were
++    using a static text, then allocating dtext causing ibus to get
++    confused on what to use. (LP: #1219330)
++  * Greek does not play nice with XmbLookupString and gives us a size 0
++    for the event string size. So if we run into the status
++    XLookupKeySym, look it up using XLookupString. This way pinyin will
++    still work as it did before the greek fix went in last week. (LP:
++    #1219432)
++  * Gracefully handle ibus_bus_get_config returning NULL. (LP: #1047944)
++
++  [ Stephen M. Webb ]
++  * initialize all fields of the test results structure to avoid
++    segfaults when Unity support is not available (lp: #1226737). (LP:
++    #1226737)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 817
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 20 Sep 2013 11:16:31 +0000
++
++nux (4.0.2+13.10.20130829.1-0ubuntu1) saucy; urgency=low
++
++  [ Brandon Schaefer ]
++  * Use a temp buf to poke for the size of string vs passing nullptr.
++    For some reason this was working for most cases, but not greek.
++    Using a temp buf allows us to poke the greeks chars and others that
++    werent working. (LP: #1205713)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 812
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 29 Aug 2013 06:42:50 +0000
++
++nux (4.0.2+13.10.20130816.2-0ubuntu1) saucy; urgency=low
++
++  [ Stephen M. Webb ]
++  * Apdated gmock detection after gmock was updated.
++
++  [ Łukasz 'sil2100' Zemczak ]
++  * Add 50_check_unity_support to Xsession.d that will run the unity
++    support test app to determine if we should use the fallback mode or
++    not, since we'll be dropping the test from compiz.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 810
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 16 Aug 2013 10:34:41 +0000
++
++nux (4.0.2+13.10.20130802-0ubuntu1) saucy; urgency=low
++
++  [ Brandon Schaefer ]
++  * Change general hotkey/tiggers to general/hotkey triggers.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 807
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 02 Aug 2013 04:02:36 +0000
++
++nux (4.0.2+13.10.20130729-0ubuntu1) saucy; urgency=low
++
++  [ Kevin DuBois ]
++  * Fix examples/cairo.cpp includes.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 805
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 29 Jul 2013 04:02:59 +0000
++
++nux (4.0.2+13.10.20130723-0ubuntu1) saucy; urgency=low
++
++  [ Stephen M. Webb ]
++  * moved to newer upstream google-mock release (lp: #1185265). (LP:
++    #1185265)
++
++  [ Marco Trevisan (Treviño) ]
++  * TimerProc: use std::shared_ptr to ref TimerObject in TimerHandle and
++    a std::deque in TimerHandler This fix several memory leaks that we
++    are getting when the timer runs and makes the code more
++    maintainable. Also various memory errors leaks.
++  * GraphicsDisplayX11: cache the atom values, calling the slow
++    XInternAtom just once per each.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 803
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 23 Jul 2013 06:12:20 +0000
++
++nux (4.0.2+13.10.20130705-0ubuntu1) saucy; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * GLTextureResourceManager: always return an empty (but non-NULL)
++    texture if env var is set Specifically, if NUX_FALLBACK_TEXTURE env
++    variable is set, then we always try to generate a valid texture.
++    This is nice for testing purposes. (LP: #1197561)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 799
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 05 Jul 2013 04:02:36 +0000
++
++nux (4.0.2daily13.06.19-0ubuntu1) saucy; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * configure.ac: fix autoreconf by including the missing doxygen m4
++    macros. (LP: #1191810)
++  * XinputWindow: cache the X Atoms we use for all the nux windows This
++    reduces the time to create a window, as we call XInternAtom just
++    once.
++  * XInputWindow: define _NET_WM_PID and WM_CLIENT_MACHINE for nux
++    windows This makes them to be matched properly.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 797
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 19 Jun 2013 04:28:40 +0000
++
++nux (4.0.2daily13.06.05-0ubuntu1) saucy; urgency=low
++
++  [ Stephen M. Webb ]
++  * fix failures in 'make distcheck' (lp: #1170358). (LP: #1170358)
++  * debian/copyright: updated and corrected (lp: #753361). (LP: #753361)
++  * Add build instructions to the sources (lp: #1011395). (LP: #1011395)
++  * Bump Nux version to 4.0.1.
++
++  [ Nick Dedekind ]
++  * Changed global navigation focus area/activate signals to public.
++  * Do not send second click event when double-clicking mouse.
++  * Emit global focus change signal when setting to NULL.
++  * Double click on non double-click enabled views were not getting the
++    second click.
++
++  [ Marco Trevisan (Treviño) ]
++  * RenderingPipe: always use the depth buffer texture when getting the
++    CopyTexture. (LP: #1087534)
++  * IOpenGLFrameBufferObject: correctly use all the FBO attachments.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 793
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 06:09:14 +0000
++
++nux (4.0.2daily13.05.31ubuntu.unity.next-0ubuntu1) raring; urgency=low
++
++  [ Brandon Schaefer ]
++  * Fixes XIM event text buffer overflow. 
++
++  [ Łukasz 'sil2100' Zemczak ]
++  * Bump the upstream micro version to 4.0.2 as we have changed the ABI
++
++  [ Stephen M. Webb ]
++  * Add build instructions to the sources (lp: #1011395). (LP: #1011395)
++  * Bump Nux version to 4.0.1.
++
++  [ Nick Dedekind ]
++  * Double click on non double-click enabled views were not getting the
++    second click.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 792 (ubuntu-unity/next)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 31 May 2013 04:03:20 +0000
++
++nux (4.0.1daily13.05.08ubuntu.unity.next-0ubuntu1) raring; urgency=low
++
++  [ Stephen M. Webb ]
++  * debian/copyright does not mention Public Domain for tinyxml/Unicode
++    functions included (LP: #753361)
++  * 'make distcheck' fails (LP: #1170358)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 786 (ubuntu-unity/next)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 08 May 2013 04:57:11 +0000
++
++nux (4.0.1daily13.05.01.1ubuntu.unity.next-0ubuntu1) raring; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * [regression] Corrupted blurred overlays (LP: #1087534)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 781 (ubuntu-unity/next)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 01 May 2013 21:58:21 +0000
++
++nux (4.0.1daily13.04.17~13.04-0ubuntu1) raring; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * CairoGraphics leaks memory when using CAIRO_FORMAT_A1 surfaces (LP:
++    #1169157)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 775
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 17 Apr 2013 04:04:30 +0000
++
++nux (4.0.1daily13.04.15-0ubuntu1) raring; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * Buming version to 4.0.1 as per recent ABI changes
++  * Nux is doing a lot of unneeded nux::Geometry copies (LP: #1166268)
++  * Unity makes unneeded copies of Nux DrawList (LP: #1167605)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 773
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 15 Apr 2013 04:14:18 +0000
++
++nux (4.0.0daily13.03.25-0ubuntu1) raring; urgency=low
++
++  [ Brandon Schaefer ]
++  * [regression] Quickly opening then closing dash causes loss of focus.
++    (LP: #1157879)
++  * [regression] Text disappears when restoring/maximizing the Dash (LP:
++    #1157329)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 768
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 25 Mar 2013 04:02:25 +0000
++
++nux (4.0.0daily13.03.13.1-0ubuntu1) raring; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * Event timestamp is not updated on ButtonPress (LP: #1154101)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 764
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 13 Mar 2013 09:22:06 +0000
++
++nux (4.0.0daily13.02.26-0ubuntu1) raring; urgency=low
++
++  [ Sam Spilsbury ]
++  * segmentation fault when running nux tests (LP: #1097281)
++  * xtest-text-entry-deadkeys SIGABRTs with BadValue XError (LP:
++    #1112321)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 762
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Tue, 26 Feb 2013 04:01:53 +0000
++
++nux (4.0.0daily13.02.19-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 759
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Tue, 19 Feb 2013 08:45:32 +0000
++
++nux (4.0.0daily13.02.04-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 756
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Mon, 04 Feb 2013 04:01:16 +0000
++
++nux (4.0.0daily13.01.25-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 752
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Fri, 25 Jan 2013 04:03:19 +0000
++
++nux (4.0.0daily13.01.18-0ubuntu1) raring; urgency=low
++
++  [ Andrea Azzarone ]
++  * Nux fails to build on raring: g_type_init is deprecated. (LP:
++    #1100927)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 749
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Fri, 18 Jan 2013 04:01:15 +0000
++
++nux (4.0.0daily13.01.17-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 747
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Thu, 17 Jan 2013 07:03:16 +0000
++
++nux (4.0.0daily13.01.11-0ubuntu1) raring; urgency=low
++
++  [ Didier Roche ]
++  * debian/control:
++    - put the -common package to any as ppa are regularly failing for other
++      archs than i386 to install the -dev package pulling the lib pulling
++      -common because of version mismatch
++
++  [ Nick Dedekind ]
++  * Previews loading more than 454 lines of description text crash Unity
++    (LP: #1066788)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 745
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Fri, 11 Jan 2013 04:02:07 +0000
++
++nux (4.0.0daily12.12.05-0ubuntu1) raring; urgency=low
++
++  [ Michael Terry ]
++  * debian/control:
++    - Update Vcs-Bzr
++    - Build-Depend on dh-autoreconf and gnome-common
++  * debian/rules:
++    - Use dh_autoreconf
++    - Enable headless tests during build
++  * Switch to dh9 and multiarch
++  * Automatic snapshot from revision 700 (bootstrap)
++    - Fix crash when lift clicking after right clicking (LP: #1057809)
++    - Fix crash on amd64 from an invalid cast (LP: #1052765)
++    - Fix a couple crashes in example code (LP: #1064918)
++    - Fix dash and launcher being all black (LP: #1067860)
++    - Fix launcher dragging the wrong way (LP: #1057995)
++    - Only load textures once they are needed (LP: #816692)
++    - Add pointer checks for invalid cached textures (LP: #1066788)
++    - Fix some FTBFS's on armhf (LP: #1065293, LP: #1067081)
++    - Fix a bunch of compile warnings (LP: #1056633)
++    - Removed some unused code (LP: #937583)
++
++  [ Didier Roche ]
++  * Transition packaging to Nux 4.0
++  * Add split mode for daily build
++
++  [ Ricardo Salveti de Araujo ]
++  * Doesn't need to depend on gcc 4.6 anymore (LP: #1044836)
++  * make check-headless should respect DEB_BUILD_OPTIONS=nocheck
++  * Does not need to be built with gcc 4.6 anymore (LP: #1044836)
++
++  [ Ying-Chun Liu (PaulLiu) ]
++  * Unable to use H.I.M.E. input method in the Unity search bar( & HUD
++    also) in Ubuntu 12.04LTS | 無法於Ubuntu 12.04LTS的Unity
++    searchbar（以及HUD）使用H.I.M.E.輸入法 (LP: #973808)
++  * Support input methods beside ibus (LP: #983254)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 727
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Wed, 05 Dec 2012 09:27:01 +0000
++
++nux (3.10.0-0ubuntu1) quantal-proposed; urgency=low
++
++  * New upstream release.
++    - Remove a massive bottleneck, where almost all the CPU time was spent
++      loading a black image on texture creation. (LP: #1064834)
++
++ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Fri, 12 Oct 2012 15:24:59 +0300
++
++nux (3.8.0-0ubuntu1) quantal-proposed; urgency=low
++
++  * New upstream release.
++    - Add na::Controller::HasRunningAnimations (LP: #1054088) (LP: #1054074)
++
++ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Mon, 01 Oct 2012 15:46:00 +0300
++
++nux (3.6.0-0ubuntu1) quantal-proposed; urgency=low
++
++  * New upstream release.
++    - Partial fix to compiler warnings (LP: #1032313)
++    - InputArea: remove the pending grabs on destroy (it could cause crash 
++      otherwise)
++    - WindowCompostior: use ObjectWeakPtr to handle focus and mouse areas
++      (LP: #1045059)
++    - Introduced "Redirected Views" in Nux. Redirected views allows a view 
++      to be rendered inside its own texture and that texture is latter 
++      composited inside the main rendering. (LP: #1049593)
++    - Added a method to WindowCompositor RestoreMainFramebuffer which 
++      either restores the reference framebuffer or binds us to the backbuffer 
++      depending on what is available (LP: #1036521) (LP: #1036572)
++
++ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Wed, 19 Sep 2012 14:46:51 +0300
++
++nux (3.4.0-0ubuntu3) quantal-proposed; urgency=low
++
++  * fix armel/armhf build dependencies
++
++ -- Oliver Grawert <ogra@ubuntu.com>  Sun, 02 Sep 2012 12:15:51 +0200
++
++nux (3.4.0-0ubuntu2) quantal-proposed; urgency=low
++
++  * debian/rules: "foo" really isnt a valid architecture, set
++    gles2_architectures to "armel armhf" so that GLES support gets actually
++    enabled on arm builds (LP: #1044709)
++
++ -- Oliver Grawert <ogra@ubuntu.com>  Sun, 02 Sep 2012 11:30:35 +0200
++
++nux (3.4.0-0ubuntu1) quantal-proposed; urgency=low
++
++  * New upstream release.
++    - introduced NuxCore animation framework
++    - nux::ScrollView::FindAreaUnderMouse takes scroll-bars into account when
++      they are disabled. (LP: #1039480)
++
++ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Fri, 31 Aug 2012 23:30:24 +0200
++
++nux (3.2.0-0ubuntu3) quantal; urgency=low
++
++  * debian/nux-tools.maintscript:
++    - remove the conffile
++
++ -- Didier Roche <didrocks@ubuntu.com>  Wed, 15 Aug 2012 14:42:58 +0200
++
++nux (3.2.0-0ubuntu2) quantal; urgency=low
++
++  * debian/50_check_unity_support,
++    debian/nux-tools.install:
++    - remove unity-2d check while logging, which was the second attempt to
++      fallback to it if the first didn't catch it (autologin mode). Now that
++      unity-2d is deprecated because of the gsettings transition (LP: #1035261)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Wed, 15 Aug 2012 08:30:11 +0200
++
++nux (3.2.0-0ubuntu1) quantal-proposed; urgency=low
++
++  [ Łukasz 'sil2100' Zemczak ]
++  * New upstream release.
++    - REGRESSION: can't type characters with accent (dead keys) (LP: #961741)
++    - still some accent issues with unity/nux (LP: #950740)
++    - nux source bundles tinyxml (LP: #789303)
++    - Support for automation (LP: #685199)
++    - add alpha function on a NuxBaseWindow (LP: #718827)
++    - Timestamp field on the event structure is always 0 (LP: #735645)
++
++  [ Adam Conrad ]
++  * Removed debian/patches/02_libgeis_rename.patch
++
++  [ Didier Roche ]
++  * debian/control:
++    - build-dep on a recent geis
++
++ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Fri, 10 Aug 2012 11:47:53 +0200
++
++nux (3.0.0-0ubuntu2) quantal; urgency=low
++
++  * Update build-dep to libgeis-dev for the great renaming transition.
++  * debian/patches/02_libgeis_rename.patch:
++    - Update the upstream source for the libgeis renaming as well.
++
++ -- Adam Conrad <adconrad@ubuntu.com>  Mon, 30 Jul 2012 16:04:41 -0600
++
++nux (3.0.0-0ubuntu1) quantal-proposed; urgency=low
++
++  [ Łukasz 'sil2100' Zemczak ]
++  * New upstream release.
++    - Conditional jump or move depends on uninitialised value(s) 
++      nux::GraphicsDisplay::ProcessXEvent(_XEvent, bool) (LP: #983321)
++    - Coverity PW.PARAMETER_HIDDEN - CID 10653 (LP: #937588)
++    - Coverity SECURE_CODING - CID 10659 (LP: #937564)
++    - Coverity PW.PARAMETER_HIDDEN - CID 10651 (LP: #937576)
++    - Coverity PW.PARAMETER_HIDDEN - CID 10652 (LP: #937586)
++    - QueueDraw is very expensive (LP: #994884)
++    - Unity is slow and pausing occasionally (when its DrawList size spikes, 
++      to almost 6000!) (LP: #1014610)
++    - IBus hotkey using Release modifier doesn't work in unity (LP: #1016665)
++    - Nothing should be written into the dash/hud searchbar when holding super,
++      ctrl or Alt (LP: #1013751)
++    - IBus can't be activated on dash or HUD since r2428 (LP: #1016354)
++  * debian/control, debian/libnux-3.0-0.install,
++    debian/libnux-3.0-common.install, debian/libnux-3.0-dev.install:
++    - switch to nux-3.0
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 10 Jul 2012 08:53:00 +0200
++
++nux (2.12.0-0ubuntu2) quantal-proposed; urgency=low
++
++  * debian/control:
++    - build and dep on unversionned version of boost (transition to 1.49
++      in quantal) (LP: #1008219)
++    - build-dep and add dep for -dev on glew 1.7
++    - build with gcc 4.6
++    - Vcs-Bzr: move to canonical branch
++    - remove old transitional cruft
++  * debian/rules:
++    - build in parallel
++    - force 4.6 build for now
++  * Note that right now, armhf/armel are building with opengl as opengles is
++    not yet backed into upstream and opengles drivers are broken in quantal
++    kernel
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 31 May 2012 10:22:35 +0200
++
++nux (2.12.0-0ubuntu1) precise-proposed; urgency=low
++
++  * New upstream release.
++    - [regression] Dash - Arrow keys not working in the search bar on second
++      use (LP: #987294)
++    - dash doesn't ever respond to <enter> when the previous search is
++      recalled (LP: #980184)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 27 Apr 2012 07:57:55 +0200
++
++nux (2.10.0-0ubuntu1) precise-proposed; urgency=low
++
++  * New upstream release.
++    - compiz crashed with SIGSEGV in g_datalist_id_set_data_full() from ...
++      from unity::PanelTray::~PanelTray() from ... from
++      unity::panel::Controller::Impl::OnScreenChanged (LP: #921316)
++    - Far left character in panel (and launcher popups) distorted
++      (LP: #927441)
++    - [dash] Dash does not render "panel line" (LP: #926344)
++    - [multi-monitor] DND doesn't work for the launchers in other monitors
++      (LP: #965025)
++    - Unity dash can't select items using keyboard when ibus is active
++      (LP: #973344)
++  * debian/rules:
++    - remove disable-tests are now tests are only build if the right build-dep
++      are here.
++  * debian/control:
++    - add libxtst-dev as nux Makefile rules are broken and still try to include
++      the .h files even if the pc file check failed.
++    - bump Standards-Version to latest
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 12 Apr 2012 15:14:45 +0200
++
++nux (2.8.0-0ubuntu2) precise; urgency=low
++
++  * Enabling build with OpenGL ES2.0 support for ARM (LP: #979438)
++
++ -- Ricardo Salveti de Araujo <ricardo.salveti@linaro.org>  Wed, 11 Apr 2012 19:03:56 -0300
++
++nux (2.8.0-0ubuntu1) precise-proposed; urgency=low
++
++  * New upstream release.
++    - No glow: remove internal glow/shadow from Alt-tab switcher border and
++      <Super> shortcut window (LP: #940493)
++    - As soon as you start to drag a dash icon, the icon is drawn for a moment
++      at (100, 100) (LP: #947362)
++    - Unity launches selected application on commit pre-edit texts with ibus
++      (LP: #954901)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 23 Mar 2012 14:47:36 +0100
++
++nux (2.6.0-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++    - Restore OpenGL default line width and point size (LP: #937444)
++    - [unity-5.6] can't enter accents (^o->) in the dash since recent updates
++      (LP: #944674)
++    - SetEnableView / ViewEnable / ViewDisable give inverted results
++      (LP: #938823)
++  * debian/control:
++    - build-dep on libibus-1.0-dev for ibus support
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 12 Mar 2012 11:45:31 +0100
++
++nux (2.4.0-0ubuntu2) precise; urgency=low
++
++  * debian/patches/01_blacklist_llvmpipe.patch:
++    - Blacklist llvmpipe (LP: #926859)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 27 Feb 2012 12:00:10 +0100
++
++nux (2.4.0-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++    - Dash - Behaviour of the 'All' button in the Dash filters broken in
++      several ways   (LP: #841864)
++    - Launcher, Spread - Clicking on a Launcher app icon a second time to
++      close a spread is broken (LP: #893670)
++    - launcher not hiding in one design-specified case (LP: #919162)
++    - compiz crashed with SIGSEGV in
++      nux::GridHLayout::KeyNavIterationRowOrder() (LP: #916088)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 17 Feb 2012 13:31:49 +0100
++
++nux (2.2.0-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++    - Dash - Behaviour of the 'All' button in the Dash filters broken in
++      several ways   (LP: #841864)
++    - Launcher, Spread - Clicking on a Launcher app icon a second time to
++      close a spread is broken (LP: #893670)
++    - launcher not hiding in one design-specified case (LP: #919162)
++    - compiz crashed with SIGSEGV in
++      nux::GridHLayout::KeyNavIterationRowOrder() (LP: #916088)
++  * Cherry-pick an additional fix for boot time
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 03 Feb 2012 11:35:48 +0100
++
++nux (2.0.0-0ubuntu2) precise; urgency=low
++
++  * Build with glew1.6, the issue it was creating on intel previous cycles
++    seem to be sorted so there is no reason to stay on an old version
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 19 Jan 2012 17:24:19 +0100
++
++nux (2.0.0-0ubuntu1) precise; urgency=low
++
++  [ Aurélien Gâteau ]
++  * New upstream release:
++    - compiz crashed with SIGSEGV in nux::ROProperty<std::string>::operator
++      std::string() (LP: #881106)
++    - compiz crashed with SIGSEGV in
++      nux::WindowCompositor::FindKeyFocusAreaFrom() (LP: #860852)
++    - compiz crashed with SIGSEGV in nux::Area::FindKeyFocusArea()
++      (LP: #848952)
++    - compiz crashed with SIGILL in typeinfo for std::ostream() (LP: #849881)
++    - compiz crashed with SIGSEGV in nux::WindowThread::IsInsideLayoutCycle()
++      (LP: #864686)
++    - Select quicklist items with just one right click (LP: #688830)
++    - OnMouseDoubleClick in InputArea isn't working (LP: #708020)
++    - Menubar - horizontal scroll over a menu opens it (LP: #775872)
++    - Clicking on a dash category header should not give it keyboard focus
++      (LP: #905921)
++    - Horizontal scroll on maximize/restore window control restores window.
++      (LP: #809717)
++    - Horizontally scrolling while highlighting an item in the dash or on an
++      indicator will open the item. (LP: #837004)
++    - compiz crashed with SIGSEGV in free() (LP: #864446)
++    - Mouse wheel doesn't works if the mouse pointer is inside dash scrollbar.
++      (LP: #888819)
++  * debian/rules, debian/control:
++    - add nuxabiversion capability as upstream is breaking a lot the ABI
++      wasn't bumping the soname. Create a virtual package similar to what
++      we already do in compiz to ensure we dep on the right version.
++      Remove the makeshlibs override then as not needed anymore.
++    - bump to nux 2.0 with new libnux-2.0-0, libnux-2.0-common, libnux-2.0-dev
++      packages. Make the necessary changes in .install files as well
++    - don't ship anymore the -doc package.
++  * debian/nux-tools.install:
++    - move the apport file there instead of the -common package to enable
++      co-instability
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 13 Jan 2012 09:04:48 +0100
++
++nux (1.16.0-0ubuntu2) precise; urgency=low
++
++  * Don't build anymore the documentation and don't gputests files
++  * debian/control:
++    - add build-dep on libutouch-geis-dev
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 22 Nov 2011 18:55:04 +0100
++
++nux (1.16.0-0ubuntu1) oneiric-proposed; urgency=low
++
++  * New upstream release.
++    - Regression: shift+click on a launcher icon to open a new application
++      instance gone (part 1) (LP: #754565)
++    - Fix misc rendering issues and double ref
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 17 Oct 2011 09:10:05 +0200
++
++nux (1.14.0-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++    - compiz crashed with SIGSEGV in nux::WindowCompositor::FindKeyFocusArea()
++      (LP: #845873)
++    - compiz crashed with SIGSEGV in sigc::signal_base::impl() (LP: #831769)
++    - can't maximize windows on second monitor and Qt windows displayed in
++      wrong place (LP: #861341)
++    - Dash - Dash should support drag and drop to external applications
++      (LP: #857431)
++    - Dash - When the Dash is re-opened and statefully displaying a previous
++      query, it should be possible to add to the query by pressing the 'right
++      arrow cursor key' (LP: #841828)
++    - blacklist old geforce fx cards for unity-3d (LP: #769402)
++  * debian/control:
++    - build-dep on libxinerama-dev
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 29 Sep 2011 18:46:45 +0200
++
++nux (1.12.0-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++    - valgrind: Mismatched free in libnux (LP: #785118)
++    - other misc rendering optimizations
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 26 Sep 2011 12:31:59 +0200
++
++nux (1.10.0-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++    - compiz crashed with SIGSEGV in nux::GpuDevice::GetGpuInfo()
++      (LP: #765375)
++    - compiz crashed with SIGSEGV in nux::WindowCompositor::SetKeyFocusArea()
++      (LP: #846059)
++    - unity_support_test crashed with SIGSEGV in fclose() (LP: #843369)
++    - compiz crashed with SIGSEGV in nux::Area::FindKeyFocusArea()
++      (LP: #815114)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 15 Sep 2011 18:42:58 +0200
++
++nux (1.8.0-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++    - Unity crashes if you open a quicklist and then the corresponding
++      launcher icon closes (LP: #801413)
++  * debian/control:
++    - bump shlib
++    - remove shlibs restriction (no more ABI breakage until finale)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 08 Sep 2011 20:06:12 +0200
++
++nux (1.6.0-0ubuntu2) oneiric; urgency=low
++
++  * tools/unity_support_test.c:
++    - enables caching startup result
++  * debian/50_check_unity_support, debian/nux-tools.install:
++    - install new helper to check for unity support before logging into
++      session (LP: #842656)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 06 Sep 2011 17:53:03 +0200
++
++nux (1.6.0-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release
++  * debian/rules:
++    - updated shlibs
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 01 Sep 2011 17:32:57 +0200
++
++nux (1.4.0-0ubuntu3) oneiric; urgency=low
++
++  * Backport a small api tweak from trunk, it's a small abi break but required
++    to fix an unity issue and better now than latter
++  * debian/control: break on current unity, it will need a rebuild
++  * debian/rules: updated shlibs
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 25 Aug 2011 23:03:03 +0200
++
++nux (1.4.0-0ubuntu2) oneiric; urgency=low
++
++  * Backport upstream revision to fix the opening effect of the unity dash
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 25 Aug 2011 18:53:09 +0200
++
++nux (1.4.0-0ubuntu1) oneiric; urgency=low
++
++  * New upstream version:
++    - "scrolling down in a lens brings it back to the top automatically" 
++      (lp: #821534)
++  * debian/rules: updated shlib
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 25 Aug 2011 13:42:45 +0200
++
++nux (1.2.2-0ubuntu2) oneiric; urgency=low
++
++  * The package claims to be compliant to C++0x, but happily uses
++    old macros. Fix it.
++
++ -- Matthias Klose <doko@ubuntu.com>  Fri, 19 Aug 2011 19:08:29 +0200
++
++nux (1.2.2-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++  * debian/rules: updated shlib
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 18 Aug 2011 17:57:09 +0200
++
++nux (1.2.0-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++  * debian/rules:
++    - bump shlib
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 11 Aug 2011 18:29:22 +0200
++
++nux (1.0.8-0ubuntu3) oneiric; urgency=low
++
++  * debian/control:
++    - transition to boost 1.46
++
++ -- Didier Roche <didrocks@ubuntu.com>  Wed, 10 Aug 2011 11:33:35 +0200
++
++nux (1.0.8-0ubuntu2) oneiric; urgency=low
++
++  * Cherry-pick upstream:
++    - compiz crashed with SIGSEGV in nux::IOpenGLVertexShader
++      ::IOpenGLVertexShader() (LP: #819739)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 02 Aug 2011 16:51:02 +0200
++
++nux (1.0.8-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++  *  debian/rules:
++    - bump shlib
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 01 Aug 2011 19:52:12 +0200
++
++nux (1.0.6-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++  * debian/control:
++    - dep on libglu1-mesa-dev
++  * debian/rules:
++    - bump shlib
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 21 Jul 2011 18:41:46 +0200
++
++nux (1.0.4-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++  * debian/rules:
++    - bump shlib
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 04 Jul 2011 18:34:48 +0200
++
++nux (1.0.2-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++  * Cherry-pick a fix for FTBFS with -fpermissive
++  * debian/control:
++    - add new libxdamage-dev and libxcomposite-dev build-dep
++    - add new libboost1.42-dev dep as well, should be transitionned to 1.46 once
++      compiz is transitionned as well
++  * remove debian/patches/01_build_with_gcc46.patch as included upstream
++  * debian/rules:
++    - disable google code tests while building
++  * debian/control, debian/rules, debian/libnux-1.0-common.install,
++    debian/libnux-1.0-dev.install, debian/libnux-1.0-doc.install,
++    debian/libnux-1.0-0.install:
++    - change, prepare next ABI breakage and remove no more needed Breaks: with
++      new soname bump
++  * libnux-1.0-common now replaces: libnux-0.9-common for the apport hook
++
++ -- Didier Roche <didrocks@ubuntu.com>  Wed, 22 Jun 2011 17:16:16 +0200
++
++nux (0.9.48-0ubuntu4) oneiric; urgency=low
++
++  * Cherry-pick more fixes:
++    - input characters become invisible on switching dash to fullscreen mode
++      (LP: #758248)
++    - Fixed memory leak. Related to bug (LP: #758248)
++    - Fix compiz crashed with SIGSEGV in nux::NThreadSafeCounter::Decrement()
++      (LP: #763225)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 26 May 2011 17:01:57 +0200
++
++nux (0.9.48-0ubuntu3) oneiric; urgency=low
++
++  * Cherry-pick fix for launcher sometimes doesn't hide when there are
++    windows beneath it (LP: #772185)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 26 May 2011 15:11:53 +0200
++
++nux (0.9.48-0ubuntu2) oneiric; urgency=low
++
++  * debian/patches/01_build_with_gcc46.patch:
++    - Fix Fails to compile with GCC 4.6 (thanks Adam Williamson) (LP: #745392)
++  * debian/control, rules, patches/series:
++    - add quilt infrastructure
++
++ -- Didier Roche <didrocks@ubuntu.com>  Wed, 18 May 2011 13:13:49 +0200
++
++nux (0.9.48-0ubuntu1) natty-proposed; urgency=low
++
++  * New upstream release.
++    - fix compiz crashed with SIGSEGV in nux::IOpenGLShaderProgram::Begin()
++      (LP: #768178)
++    - launcher loses focus (LP: #763883)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Wed, 27 Apr 2011 09:32:26 +0200
++
++nux (0.9.46-0ubuntu4) natty; urgency=low
++
++  * Cherry-pick one fix to avoid wrong MouseMove event triggering false
++    wrong Launcher intellhide behavior (LP: #767250)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Wed, 20 Apr 2011 20:07:01 +0200
++
++nux (0.9.46-0ubuntu3) natty; urgency=low
++
++  * Cherry-pick blacklisting additional driver + UNITY_FORCE_START env variable
++    to bypass unity/compiz testing:
++    - Partial screen corruption and poor performance on GeForce 6150
++      (LP: #764379)
++    - [nvidia, 7300, 7400] display freeze when using unity desktop
++      (LP: #728745)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Wed, 20 Apr 2011 18:08:40 +0200
++
++nux (0.9.46-0ubuntu2) natty; urgency=low
++
++  * Cherry-pick:
++    - fix for "does not display icons until hovered" on old ATI hardware
++      (LP: #726033)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Wed, 20 Apr 2011 10:06:03 +0200
++
++nux (0.9.46-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - ensure text entry size is updated with different font size
++    - fix some missing nux events sent (LP: #763275, #750122)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 19 Apr 2011 19:26:25 +0200
++
++nux (0.9.44-0ubuntu2) natty; urgency=low
++
++  * Cherry-pick a fix for black text is on a black background when item is
++    selected in dash search filter combobox (LP: #761201)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 15 Apr 2011 12:46:01 +0200
++
++nux (0.9.44-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - compiz crashed with SIGSEGV in nux::WindowCompositor::RenderTopViews()
++      (LP: #754461)
++    - compiz crashed with SIGSEGV in nux::Area::InitiateResizeLayout()
++      (LP: #757709)
++    - Add ATI Radeon Mobility 7500 to compiz blacklist (LP: #760687)
++    - Letters cut off at the end in the applications window  (LP: #753083)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 14 Apr 2011 22:02:48 +0200
++
++nux (0.9.42-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - compiz crashed with SIGSEGV in nux::XInputWindow::NativeHandleList()
++      (LP: #753110)
++    - compiz crashed with SIGSEGV in nux::WindowCompositor::ProcessEvent()
++      (LP: #753005)
++    - compiz crashed with SIGSEGV in nux::WindowCompositor::RenderTopViews()
++      (LP: #754461)
++  * Breaks on current unity:
++    - debian/control: update breaks statement
++    - debian/rules: bump the shlib
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 11 Apr 2011 12:41:58 +0200
++
++nux (0.9.40-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - [fglrx] compiz crashed with SIGSEGV in nux::IOpenGLSurface::UnlockRect()
++      (LP: #685682)
++    - compiz crashed with SIGSEGV in
++      nux::WindowCompositor::ViewWindowPreEventCycle() (LP: #741952)
++    - Missing icons in app launcher (LP: #728393)
++    - compiz crashed with SIGSEGV in malloc_consolidate() (LP: #743738)
++    - compiz crashed with SIGSEGV in nux::BaseWindow::IsModal() (LP: #749675)
++    - compiz crashed with SIGSEGV in
++      nux::GpuRenderStates::SubmitChangeStates() (LP: #722391)
++    - compiz crashed with SIGSEGV in nux::InputArea::StartDragAsSource()
++      (LP: #737519)
++    - unity_support_test crashed with SIGSEGV in
++      nux::IOpenGLAsmVertexShader::IOpenGLAsmVertexShader() (LP: #734519)
++    - compiz crashed with SIGSEGV in nux::WindowCompositor::RenderTopViews()
++      (LP: #747486)
++  * debian/copyright:
++    - licence is now LGPL2.1+
++  * ABI break, add Breaks: unity (<< 3.8.4)
++  * debian/rules:
++    - bump the shlib
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 07 Apr 2011 18:26:13 +0200
++
++nux (0.9.38-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - compiz crashed with SIGSEGV in std::_List_node_base::_M_hook()
++      (LP: #711916)
++    - compiz crashed with SIGSEGV in nux::View::PostProcessEvent2()
++      (LP: #712498)
++    - compiz crashed with SIGSEGV in sigc::internal::signal_emit0<void,
++      sigc::nil>::emit() (LP: #729715)
++    - compiz crashed with SIGSEGV in brw_validate_state() (LP: #730707)
++    - Finish Nux detection tool support (LP: #722089)
++    - compiz crashed with SIGABRT in raise() (LP: #741942)
++    - compiz crashed with SIGSEGV in PanelMenuView::ProcessEvent()
++      (LP: #742139)
++    - compiz crashed with SIGSEGV in operator->() (LP: #741961)
++    - Graphics hardware capability detection (LP: #685208)
++    - compiz crashed with SIGSEGV in nux::GraphicsDisplay::GrabPointer()
++      (LP: #740784)
++    - compiz crashed with SIGSEGV in nux::Area::InitiateResizeLayout()
++      (LP: #741977)
++    - compiz crashed with SIGSEGV in nux::GraphicsDisplay::GrabKeyboard()
++      (LP: #742233)
++    - Missing child addition signals on nux::Layout and nux::View
++      (LP: #734803)
++    - compiz crashed with SIGSEGV in
++      nux::GpuRenderStates::SubmitChangeStates() (LP: #735908)
++    - unity_support_test crashed with SIGSEGV (LP: #743848)
++  * debian/control:
++    - adding libpci-dev build-dep for the new lighter unity_support_tool
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 01 Apr 2011 11:15:39 +0200
++
++nux (0.9.36-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - compiz crashed with SIGSEGV in nux::BaseTexture::GetDeviceTexture()
++      (LP: #692823)
++    - compiz crashed with SIGSEGV in nux::Focusable::SetFocused()
++      (LP: #737716)
++    - compiz crashed with SIGSEGV in nux::Memcpy() (LP: #738225)
++  * debian/rules:
++    - bump shlibs
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 24 Mar 2011 04:54:54 +0100
++
++nux (0.9.34-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - compiz crashed with SIGSEGV in nux::WindowCompositor::ResetDnDArea()
++      (LP: #728785)
++    - unity_support_test crashed with SIGSEGV in
++      nux::GpuDevice::GetOpenGLMajorVersion() (LP: #709222)
++  * debian/source_nux.py, debian/libnux-0.9-common.install:
++    - install an apport hook (mainly for the unity_support_test tool) reporting
++      xorg info
++  * debian/rules:
++    - bump shlibs
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 17 Mar 2011 17:55:17 +0100
++
++nux (0.9.32-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - compiz crashed with SIGSEGV in std::basic_string<char,
++      std::char_traits<char>, std::allocator<char> >::assign() (LP: #729412)
++    - Unity interface not resized properly when external monitor is used
++      (LP: #691772)
++    - unity_support_test crashed with SIGSEGV in
++      nux::IOpenGLAsmVertexShader::IOpenGLAsmVertexShader() (LP: #709649)
++    - compiz crashed with SIGSEGV in
++      nux::GpuRenderStates::SubmitChangeStates() (LP: #719156)
++    - compiz crashed with SIGSEGV in
++      nux::GpuRenderStates::SubmitChangeStates() (LP: #724903)
++    - unity_support_test crashed with SIGSEGV in
++      nux::IOpenGLAsmVertexShader::IOpenGLAsmVertexShader() (LP: #723531)
++    - unity_support_test crashed with SIGSEGV in
++      nux::IOpenGLAsmVertexShader::IOpenGLAsmVertexShader() (LP: #723158)
++    - unity_support_test crashed with SIGSEGV in
++      nux::IOpenGLAsmVertexShader::IOpenGLAsmVertexShader() (LP: #727895)
++  * debian/rules:
++    - bump shlib
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 10 Mar 2011 19:51:23 +0100
++
++nux (0.9.30-0ubuntu1) natty; urgency=low
++
++  * New upstream release:
++    - compiz crashed with SIGSEGV in g_signal_connect_data@plt() (LP: #725827)
++    - compiz crashed with SIGSEGV in nux::View::PostProcessEvent2()
++      (LP: #726253)
++    - Unity FTBFS on armel due to Nux (LP: #721118)
++  * debian/rules:
++    - bump shlib
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 01 Mar 2011 14:20:24 +0100
++
++nux (0.9.28-0ubuntu1) natty; urgency=low
++
++  * New upstream release:
++    - BaseWindow should notify change on the visible state (LP: #702702)
++  * Cherry-picked:
++    - Unity FTBFS on armel due to Nux (LP: #721118)
++  * debian/rules:
++    - bump shlib
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 24 Feb 2011 20:16:04 +0100
++
++nux (0.9.26-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - unity_support_test crashed with SIGSEGV in
++      nux::IOpenGLAsmVertexShader::IOpenGLAsmVertexShader() (LP: #711021)
++    - cherry-pick additional upstream commit to fix build issues
++  * debian/rules:
++    - bump shlib
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 17 Feb 2011 20:37:21 +0100
++
++nux (0.9.22-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++  * debian/rules:
++    - bump shlib
++  * debian/libnux-0.9-doc.install:
++    - don't install examples, they are not shipped anymore
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 10 Feb 2011 20:45:14 +0100
++
++nux (0.9.18-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++  * debian/rules:
++    - bump shlib
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 27 Jan 2011 14:31:24 +0100
++
++nux (0.9.16-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++  * debian/rules:
++    - bump shlib
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 20 Jan 2011 19:02:56 +0100
++
++nux (0.9.14-0ubuntu2) natty; urgency=low
++
++  * debian/control:
++    - make the -dev package depends on libpcre3-dev as well
++  * fix in trunk to add it to the .pc file and merge to the packaging branch
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 14 Jan 2011 21:28:40 +0100
++
++nux (0.9.14-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++  * debian/control:
++    - add libpcre3-dev
++  * debian/rules:
++    - bump shlib
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 14 Jan 2011 20:45:57 +0100
++
++nux (0.9.12-0ubuntu1) natty; urgency=low
++
++  * New upstream release:
++    - "compiz crashed with SIGSEGV in nux::IOpenGLSurface::UnlockRect()"
++      is fixed (lp: #686698)
++  * debian/rules:
++    - updated the shlibs
++  * debian/libnux-0.9-doc.install:
++    - install the gputests examples there
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 17 Dec 2010 13:59:57 +0100
++
++nux (0.9.10-0ubuntu2) natty; urgency=low
++
++  * debian/control:
++    - force -common to be in sync with nux
++    - add Vcs-Bzr
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 13 Dec 2010 12:39:21 +0100
++
++nux (0.9.10-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++   - Fix SEGSEGV in nux::ResourceData::GetResourceIndex() const ()
++     (LP: #682345)
++   - Add detection test software
++  * debian/rules:
++    - bump shlibs for new release
++  * debian/nux-tools.install, debian/control:
++    - add nux-tools to ship the detection test software
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 09 Dec 2010 19:56:53 +0100
++
++nux (0.9.8-0ubuntu1) natty; urgency=low
++
++  * New upstream release + cherry pick latest commit:
++    - don't ship .bmp files but rather .png (LP: #678460)
++    - Clicks outside of Quicklist don't close it (LP: #683079)
++  * debian/rules:
++    - bump shlibs for new release
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 30 Nov 2010 17:32:33 +0100
++
++nux (0.9.6-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - nux::Timeline + tests (LP: #676059)
++  * debian/copyright:
++    - updated to be parsable
++  * debian/libnux-dev.install:
++    - leftover, removed
++  * debian/rules:
++    - tests doesn't pass this week, will be fixed next.
++    - bump shlibs
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 25 Nov 2010 19:46:27 +0100
++
++nux (0.9.4-0ubuntu2) natty; urgency=low
++
++  * removing debian/libnux-0.9-0.symbols and use a shlibs as there is no
++    ABI/API stability + nux doesn't export the same symbols on every arch.
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 19 Nov 2010 10:40:41 +0100
++
++nux (0.9.4-0ubuntu1) natty; urgency=low
++
++  * Initial packaging
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 18 Nov 2010 19:17:32 +0100
+--- nux-4.0.8+18.10.20180623.orig/debian/compat
++++ nux-4.0.8+18.10.20180623/debian/compat
+@@ -0,0 +1 @@
++9
+--- nux-4.0.8+18.10.20180623.orig/debian/control
++++ nux-4.0.8+18.10.20180623/debian/control
+@@ -0,0 +1,110 @@
++Source: nux
++Priority: optional
++Maintainer: Didier Roche <didrocks@ubuntu.com>
++Build-Depends: debhelper (>= 9),
++               dh-autoreconf,
++               gnome-common,
++               autotools-dev,
++               quilt,
++               doxygen,
++               libglib2.0-dev (>= 2.25.14),
++               libgdk-pixbuf-2.0-dev,
++               libboost-dev,
++               libboost-filesystem-dev,
++               libboost-system-dev,
++               google-mock (>= 1.6.0+svn437),
++               libgtest-dev,
++               libcairo2-dev (>= 1.9.14),
++               libpng-dev,
++               libglewmx-dev [!armel !armhf],
++               libxxf86vm-dev,
++               libgl1-mesa-dev (>= 7.9~git20100924-0ubuntu3) [!armhf !armel],
++               libglu1-mesa-dev [!armel !armhf],
++               libegl1-mesa-dev [armel armhf],
++               libgles2-mesa-dev [armel armhf],
++               libxdamage-dev,
++               libxcomposite-dev,
++               libsigc++-2.0-dev,
++               libpango1.0-dev,
++               libx11-dev,
++               libpcre3-dev,
++               libpci-dev,
++               libxinerama-dev,
++               libgeis-dev (>= 2.2.10),
++               libibus-1.0-dev,
++               libxtst-dev,
++               xserver-xorg-video-dummy,
++Standards-Version: 3.9.6
++Section: libs
++Homepage: http://launchpad.net/nux
++# If you aren't a member of ~unity-team but need to upload packaging changes,
++# just go ahead.  ~unity-team will notice and sync up the code again.
++Vcs-Browser: https://git.launchpad.net/~unity-team/nux
++Vcs-Git: https://git.launchpad.net/~unity-team/nux
++
++Package: libnux-4.0-0
++Section: libs
++Architecture: any
++Pre-Depends: ${misc:Pre-Depends},
++Depends: libnux-4.0-common (= ${source:Version}),
++         ${shlibs:Depends},
++         ${misc:Depends}
++Provides: libnux-abiversion-${nuxabiversion}
++Description: Visual rendering toolkit for real-time applications - shared lib
++ Nux is a graphical user interface toolkit for applications that mixes opengl
++ hardware acceleration with high quality visual rendering.
++ .
++ This package contains shared libraries to be used by applications.
++
++Package: nux-tools
++Section: x11
++Architecture: any
++Multi-Arch: foreign
++Pre-Depends: ${misc:Pre-Depends},
++Depends: ${shlibs:Depends},
++         ${misc:Depends}
++Description: Visual rendering toolkit for real-time applications - tools
++ Nux is a graphical user interface toolkit for applications that mixes opengl
++ hardware acceleration with high quality visual rendering.
++ .
++ This package contains various tools for nux
++
++Package: libnux-4.0-dev
++Section: libdevel
++Architecture: any
++Depends: libnux-4.0-0 (= ${binary:Version}),
++         libglib2.0-dev (>= 2.25.14),
++         libgdk-pixbuf-2.0-dev,
++         libboost-dev,
++         libcairo2-dev (>= 1.9.14),
++         libpng-dev,
++         libglewmx-dev [!armel !armhf],
++         libgl1-mesa-dev [!armel !armhf],
++         libglu1-mesa-dev [!armel !armhf],
++         libegl1-mesa-dev [armel armhf],
++         libgles2-mesa-dev [armel armhf],
++         libgeis-dev (>= 2.2.10),
++         libsigc++-2.0-dev,
++         libpcre3-dev,
++         libx11-dev,
++         libxext-dev,
++         libxinerama-dev,
++         libxxf86vm-dev,
++         ${misc:Depends}
++Description: Visual rendering toolkit for real-time applications - dev files
++ Nux is a graphical user interface toolkit for applications that mixes opengl
++ hardware acceleration with high quality visual rendering.
++ .
++ This package contains files that are needed to build applications.
++
++Package: libnux-4.0-common
++Section: libs
++Architecture: all
++Multi-Arch: foreign
++Depends: ${misc:Depends}
++Description: Visual rendering toolkit for real-time applications - common files
++ Nux is a graphical user interface toolkit for applications that mixes opengl
++ hardware acceleration with high quality visual rendering.
++ .
++ This package contains common architecture files used by the library.
++
+--- nux-4.0.8+18.10.20180623.orig/debian/copyright
++++ nux-4.0.8+18.10.20180623/debian/copyright
+@@ -0,0 +1,70 @@
++Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
++Upstream-Name: nux
++Upstream-Contact: Nux Developer Team <unity-dev@lists.laucnhpad.net>
++Source: http://launchpad.net/nux
++
++Files: *
++Copyright: 2010-2013 Canonical, Ltd.
++           2010 Inalogic Inc
++License: LGPL-2.1+
++
++Files: Nux/TextEntry.cpp
++Copyright: 2011-2013 Canonical Ltd.
++           2010 Inalogic Inc.
++           2008 Google Inc.
++License: LGPL-2.1+ and Apache-2.0
++
++Files: examples/*
++Copyright: 2012 Canonical. Ltd.
++           2010 Inalogic Inc
++License: GPL-3
++
++Files: debian/*
++Copyright: 2013 Canonical Ltd.
++           2010 Didier Roche <didrocks@ubuntu.com>
++License: LGPL-2.1+
++
++License: GPL-3
++ This program is free software: you can redistribute it and/or modify it
++ under the terms of the GNU General Public License version 3, as published
++ by the Free Software Foundation.
++ .
++ This program is distributed in the hope that it will be useful, but
++ WITHOUT ANY WARRANTY; without even the implied warranties of
++ MERCHANTABILITY, SATISFACTORY QUALITY or FITNESS FOR A PARTICULAR
++ PURPOSE.  See the GNU General Public License for more details.
++ .
++ On Debian systems, the complete text of the GNU General Public License
++ can be found in `/usr/share/common-licenses/GPL-3'
++
++License: LGPL-2.1+
++ This program is free software: you can redistribute it and/or modify it
++ under the terms of the GNU Lesser General Public License, as
++ published by the  Free Software Foundation; either version 2.1 or 3.0
++ of the License.
++ .
++ This program is distributed in the hope that it will be useful, but
++ WITHOUT ANY WARRANTY; without even the implied warranties of
++ MERCHANTABILITY, SATISFACTORY QUALITY or FITNESS FOR A PARTICULAR
++ PURPOSE.  See the applicable version of the GNU Lesser General Public
++ License for more details.
++ .
++ On Debian systems, the complete text of the GNU Lesser General Public
++ License can be found in `/usr/share/common-licenses/LGPL-2.1'
++
++License: Apache-2.0
++ Licensed under the Apache License, Version 2.0(the "License");
++ you may not use this file except in compliance with the License.
++ You may obtain a copy of the License at
++ .
++  http://www.apache.org/licenses/LICENSE-2.0
++ .
++ Unless required by applicable law or agreed to in writing, software
++ distributed under the License is distributed on an "AS IS" BASIS,
++ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ See the License for the specific language governing permissions and
++ limitations under the License.
++ .
++ On Debian systems, the complete text of the Apache 2.0 License can be found
++ in `/usr/share/common-licenses/Apache-2.0'
++
+--- nux-4.0.8+18.10.20180623.orig/debian/libnux-4.0-0.install
++++ nux-4.0.8+18.10.20180623/debian/libnux-4.0-0.install
+@@ -0,0 +1 @@
++usr/lib/*/lib*.so.*
+--- nux-4.0.8+18.10.20180623.orig/debian/libnux-4.0-common.install
++++ nux-4.0.8+18.10.20180623/debian/libnux-4.0-common.install
+@@ -0,0 +1 @@
++usr/share/nux/4.0
+--- nux-4.0.8+18.10.20180623.orig/debian/libnux-4.0-dev.install
++++ nux-4.0.8+18.10.20180623/debian/libnux-4.0-dev.install
+@@ -0,0 +1,3 @@
++debian/tmp/usr/include/Nux-4.0
++debian/tmp/usr/lib/*/pkgconfig
++debian/tmp/usr/lib/*/lib*.so
+--- nux-4.0.8+18.10.20180623.orig/debian/nux-tools.install
++++ nux-4.0.8+18.10.20180623/debian/nux-tools.install
+@@ -0,0 +1,3 @@
++usr/lib/*/nux/unity_support_test usr/lib/nux
++debian/50_check_unity_support etc/X11/Xsession.d
++debian/source_nux.py usr/share/apport/package-hooks
+--- nux-4.0.8+18.10.20180623.orig/debian/nux-tools.preinst
++++ nux-4.0.8+18.10.20180623/debian/nux-tools.preinst
+@@ -0,0 +1,28 @@
++#!/bin/sh
++
++set -e
++
++restore_backup_conffiles() {
++    PKGNAME="$1"
++    PREVERSION="$2"
++    MAXVERSION="$3"
++
++    if dpkg --compare-versions "$PREVERSION" lt-nl "$MAXVERSION"; then
++        conffiles="$(dpkg-query --show -f='${Conffiles}' "$PKGNAME")"
++        filepaths="$(echo "$conffiles" | cut -f-2 -d' ')"
++
++        for cfile in $filepaths; do
++          if [ -e "$cfile".x11-back ]; then
++            echo "Moving conffile $cfile back in place..."
++            mv -f "$cfile".x11-back "$cfile"
++          fi
++        done
++    fi
++}
++
++case "$1" in
++install)
++    restore_backup_conffiles nux-tools "$2" 4.0.8+18.10.20180613.3-0ubuntu1;;
++esac
++
++#DEBHELPER#
+--- nux-4.0.8+18.10.20180623.orig/debian/patches/add-shared_ptr-include.patch
++++ nux-4.0.8+18.10.20180623/debian/patches/add-shared_ptr-include.patch
+@@ -0,0 +1,10 @@
++--- a/tests/gtest-nux-windowcompositor.cpp
+++++ b/tests/gtest-nux-windowcompositor.cpp
++@@ -4,6 +4,7 @@
++ #include <iostream>
++ #include <gmock/gmock.h>
++ #include <boost/filesystem.hpp>
+++#include <boost/shared_ptr.hpp>
++ #include <glib.h>
++ #include <list>
++ 
+--- nux-4.0.8+18.10.20180623.orig/debian/patches/disable-TestLoggingWriter-test.diff
++++ nux-4.0.8+18.10.20180623/debian/patches/disable-TestLoggingWriter-test.diff
+@@ -0,0 +1,25 @@
++--- a/tests/gtest-nuxcore-logger.cpp
+++++ b/tests/gtest-nuxcore-logger.cpp
++@@ -155,22 +155,6 @@ private:
++   std::string old_tz_;
++ };
++ 
++-TEST(TestLoggingWriter, TestWriteMessage) {
++-
++-  nt::CaptureLogOutput log_output;
++-
++-  // set a known timezone
++-  UseTimezone timezone(":Antarctica/Vostok");
++-  // This time is known to be: 2010-09-10 12:34:45 (UTC+12)
++-  std::time_t when = 1284078885;
++-  Writer::Instance().WriteMessage(Level::Error, "test.module", "testfile.cpp",
++-                                  1234, when, "my message");
++-
++-  std::string result = log_output.GetOutput();
++-  // Vostok is UTC+6
++-  EXPECT_THAT(result, Eq("ERROR 2010-09-10 06:34:45 test.module testfile.cpp:1234 my message\n"));
++-}
++-
++ TEST(TestLogStream, TestSimpleConstruction) {
++   // First test is to make sure a LogStream can be constructed and destructed.
++   LogStream test(Level::Debug, "module", "filename", 42);
+--- nux-4.0.8+18.10.20180623.orig/debian/patches/drop-std.patch
++++ nux-4.0.8+18.10.20180623/debian/patches/drop-std.patch
+@@ -0,0 +1,36 @@
++Index: nux-4.0.8+18.10.20180623/configure.ac
++===================================================================
++--- nux-4.0.8+18.10.20180623.orig/configure.ac
+++++ nux-4.0.8+18.10.20180623/configure.ac
++@@ -93,7 +93,7 @@ AC_CONFIG_MACRO_DIR([m4])
++ dnl ===========================================================================
++ 
++ # Checks for programs
++-AM_CXXFLAGS-"$CXXFLAGS -std=c++0x"
+++AM_CXXFLAGS="$CXXFLAGS"
++ AC_PROG_CC_C99
++ AC_PROG_CXX
++ AM_PROG_CC_C_O
++@@ -382,11 +382,11 @@ AM_CONDITIONAL(BUILD_DOCUMENTATION, [tes
++ dnl ==========================================================================
++ 
++ if test "x$GCC" = "xyes"; then
++-  GCC_FLAGS="-g -Wall -Wextra -Wno-unused-parameter -std=c++0x"
+++  GCC_FLAGS="-g -Wall -Wextra -Wno-unused-parameter"
++ fi
++ 
++ # gcc flags for building the tests.
++-GCC_TESTS_FLAGS="-g -O0 -Wall -Wextra -std=c++0x"
+++GCC_TESTS_FLAGS="-g -O0 -Wall -Wextra"
++ 
++ # use strict compiler flags only on development releases
++ AC_ARG_ENABLE([maintainer-mode],
++@@ -411,7 +411,7 @@ AC_ARG_ENABLE([debug],
++ AS_IF([test "x$enable_debug" = "xyes"],
++       [
++         MAINTAINER_CFLAGS+=" -DNUX_DEBUG"
++-        GCC_FLAGS="-g -O0 -Wall -Wextra -Wno-unused-parameter -std=c++0x"
+++        GCC_FLAGS="-g -O0 -Wall -Wextra -Wno-unused-parameter"
++       ]
++ )
++ 
+--- nux-4.0.8+18.10.20180623.orig/debian/patches/no-Werror.patch
++++ nux-4.0.8+18.10.20180623/debian/patches/no-Werror.patch
+@@ -0,0 +1,20 @@
++--- a/configure.ac
+++++ b/configure.ac
++@@ -382,7 +382,7 @@
++ dnl ==========================================================================
++ 
++ if test "x$GCC" = "xyes"; then
++-  GCC_FLAGS="-g -Werror -Wall -Wextra -Wno-unused-parameter -std=c++0x"
+++  GCC_FLAGS="-g -Wall -Wextra -Wno-unused-parameter -std=c++0x"
++ fi
++ 
++ # gcc flags for building the tests.
++@@ -397,7 +397,7 @@
++ 
++ AS_IF([test "x$enable_maintainer_mode" = "xyes" && test "x$GCC" = "xyes"],
++       [
++-         MAINTAINER_CFLAGS+="-Werror -Wall -Wextra -Wcast-align -Wno-uninitialized -Wempty-body -Wformat-security -Winit-self -Wno-unused-parameter"
+++         MAINTAINER_CFLAGS+="-Wall -Wextra -Wcast-align -Wno-uninitialized -Wempty-body -Wformat-security -Winit-self -Wno-unused-parameter"
++       ]
++ )
++ 
+--- nux-4.0.8+18.10.20180623.orig/debian/patches/series
++++ nux-4.0.8+18.10.20180623/debian/patches/series
+@@ -0,0 +1,4 @@
++no-Werror.patch
++add-shared_ptr-include.patch
++drop-std.patch
++disable-TestLoggingWriter-test.diff
+--- nux-4.0.8+18.10.20180623.orig/debian/rules
++++ nux-4.0.8+18.10.20180623/debian/rules
+@@ -0,0 +1,43 @@
++#!/usr/bin/make -f
++# -*- makefile -*-
++
++# Uncomment this to turn on verbose mode.
++#export DH_VERBOSE=1
++DEB_HOST_ARCH := $(shell dpkg-architecture -qDEB_HOST_ARCH)
++gles2_architectures := armel armhf
++
++ifneq (,$(filter $(DEB_HOST_ARCH),armhf))
++  DEB_BUILD_OPTIONS := $(DEB_BUILD_OPTIONS) nocheck
++endif
++ifneq (,$(filter $(DEB_HOST_ARCH),s390x))
++  DEB_BUILD_OPTIONS := $(DEB_BUILD_OPTIONS) noopt nocheck
++endif
++export DEB_BUILD_OPTIONS
++
++%:
++	dh $@ --with quilt,autoreconf --parallel
++
++override_dh_autoreconf:
++	NOCONFIGURE=1 dh_autoreconf ./autogen.sh
++
++# build documentation as I didn't find a proper way to avoid make clean to not
++# remove doc/
++override_dh_auto_configure:
++ifeq ($(DEB_HOST_ARCH),$(findstring $(DEB_HOST_ARCH), $(gles2_architectures)))
++	dh_auto_configure -- --enable-documentation=no --enable-opengles-20
++else
++	dh_auto_configure -- --enable-documentation=no
++endif
++NUX_ABIVERSION := $(shell sed -rn 's/^\#define[[:space:]]+NUX_ABIVERSION[[:space:]]+//p' Nux/ABI.h )
++
++override_dh_install:
++	rm -rf debian/tmp/usr/share/nux/gputests/
++	dh_install --fail-missing -X.la
++
++override_dh_auto_test:
++ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
++	env LIBGL_ALWAYS_SOFTWARE=1 make check-headless
++endif
++
++override_dh_gencontrol:
++	dh_gencontrol -- -Vnuxabiversion=$(NUX_ABIVERSION)
+--- nux-4.0.8+18.10.20180623.orig/debian/source_nux.py
++++ nux-4.0.8+18.10.20180623/debian/source_nux.py
+@@ -0,0 +1,6 @@
++import apport.packaging
++
++def add_info(report, ui):
++    # add all relevant info like xorg ones
++    report.add_hooks_info(ui, srcpackage='xorg')
++    
+--- nux-4.0.8+18.10.20180623.orig/debian/upstream/signing-key.asc
++++ nux-4.0.8+18.10.20180623/debian/upstream/signing-key.asc
+@@ -0,0 +1,199 @@
++-----BEGIN PGP PUBLIC KEY BLOCK-----
++Version: GnuPG v1
++
++mQINBE57SAgBEADvDZbwpDG5dr3L1kLA4w7faU2oSMHvVe4uKqXUAjekdZObRQxB
++KenGj5BiQVXhy8ocwVkPros7YO2pQTcSt+zpUHx82Lp43faVOCnfanRxF/qAaMYR
++6Jv874ckkPCghGoPn8upaN3ofbQaoiN7pjmszzkH14NrZdbQBiYasotEdU7+E1qa
++QBbSOxIstZEh4E2b4o5bNK/FKSOV45LZ13+/ZL2+kPx8hKGmUfxaYiEqaydLYilD
++BXcbRrMdclb20mHGSOkxyf6nBCBE0Jdea4+PGHj4evbmExk3fjADHX6eTekjPirx
++ZfOu8yNgneJ6RH8fxrgINbftgChLpXh7htHBEZL3zxJL1z55O5LWMPBLiKqijT05
++bTV/u8ZomCFYKpOwse4TM8J5azNC5s2X7p7ObUlo5sytOTwNaK/1hYQGQeWuPEWa
++8xzC9XFBFXpk74qRVkNaBJnnvblUrBMpvCmK8P+aaKIwbvShSSB9XMEjmMvWrLPD
++NbZia6qceS22duGrq0v7/3iIys5eRs2ohuKkiwSznrie7W48cMQ++1YDIe+sBN5+
++RAmNhVZM5wHzSdfSgOBS6M7ijcmMnE4JFPLYUZNLdJzSJo7pn6POhSH/PqIiUZH2
++5lCuJZjydMpKlTolFqLrFDGZANzDKY1EveDhf8aGvI4i03WqH5hZg8wymwARAQAB
++tCxTdGVwaGVuIE0uIFdlYmIgPHN0ZXBoZW4ud2ViYkBicmVnbWFzb2Z0LmNhPokC
++OgQTAQgAJAIbAwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgAUCTntJDAIZAQAKCRAK
++D/hFt9s0J3ccD/9DnTOjv0Evc81izaZ9siOV5HoyS9caK0Cq822EFLg7YiR1omuP
++1MDu5/t6swkT8yfVUPQcckwbrKV6xyhOQUX/Jhdhe/X/IGXQ+j8D9j1/Hu/odIb9
++FnFb3aDR8jXOiZQ3wIG6jvcmuRMnbdrj1k73CiOo6U5Fy5Ydo4DaWTNy1ZTNCbNE
++shUIr5r7H2QZScKisXi/P3BGrNEfNo0pV60LqeRNeGEpnEYfReHP94EvnRXaJXGS
++RTcQV4TAXvcfYAPhyu/31B7QzjOITkxyWplrEpcSpuMV6/ps6T8w397jVpkj1nQl
++SWB6C7ItRfZOsdImAkiJvwPQiXa1+kKB1TD/M76z7DuqeReBuQ5oBORtfY0JmSbi
++nGuITFbd3aW96hcAiGUFsUiUe5nJpdRFBT4XWVtdbk0+sTw7WDo3sU4MDd6Yuvte
++j8+rWdgAMigJ2fss5bVTl7BkhQD4l+k74F3d117CN44kvD/Mlr3CYPa9zZUTXWpD
++cqtvCSalmEJrVvxJJ6xvP18BEtBXFZ4YD9BcuCDAf4ofywMIjCHiDWn0ZagsoA4q
++B6O6HuDii3KVKiphA6aFOeos7ceR4GD+SPZXVKD3o7U4sqh9R2D1+pKAfCgDbatT
++KaoRCWTlhcfOwRrMJwi44CcVgiEMrovIxPMpq83l/VNnfLomkgujx+l2PbQkU3Rl
++cGhlbiBNLiBXZWJiIDxzdGVwaGVuQHVidW50dS5jb20+iQI3BBMBCAAhAhsDBQsJ
++CAcDBRUKCQgLBRYCAwEAAh4BAheABQJOe0kJAAoJEAoP+EW32zQn17EP/3cBTkTO
++68snU3E5a9y7HrZziSc5rdIw0XjqHR+1qNSi6fxluz6OW80PWmJKlTl2P8GV9dqt
++RASKoULPZna+iiWtwb5xCHmE4BwOlzH82OZQkwMGk/QEov6zOBnAgwsiiKca54r+
++Do7UZE12OwWRYeACE8WSacn1XLKadyNmmcqON73JeoVHXuH8oLDGEhmLzAx+bUVh
++jYmUsto90/Acj8utb5ztLFXvHvsrtbV2R4KWXqJKIyA0+JaV1FCEILzGNu1jQbbm
++d0nuaPdUDwOrcunAXBfUmhN44NMevEUrGUBwq0X+CS0rrpGMKy0H60abRjxZa1nI
++J/AKkF4F1NGSd2bwU46o1FbEHST5eejRZWUcfXeiG/SkigTFJnf0RJyKl0hTWc8y
++8rnoJWm0itmnSEiTfe8ptcrf/4LivAiTcM/TY2ReZIW8LP5wzBd6psOmA2qQGqq+
++lWLc8PE/g8GRk4rH3w32ll6kRkZLpd/02xZjdVqRCq18xUj6h3sa2AWX3pmnx/bK
++dlBr9wtpdTjLo9F5X2uBgh3qAHZGNmxzyKcj7XQTRwHW0Zdeo2obQXkx/Ia0CSwt
++bM1zwmOStWCRXkDaU5ItU22H407iKpfmgJEI0Z/i4OfhxN8NRY6n8lxWTppc4Vpk
++wCS/7TATclDjaM3Gt8Qfiw1juSfNXOJRKghGtCxTdGVwaGVuIE0uIFdlYmIgPHN0
++ZXBoZW4ud2ViYkBjYW5vbmljYWwuY29tPokCNwQTAQgAIQUCTpJZ6AIbAwULCQgH
++AwUVCgkICwUWAgMBAAIeAQIXgAAKCRAKD/hFt9s0J1LxEACt4qLkvrzl6KXtZrpY
++7kWvNN+tOKoMZau+rZSjKLMhIlq4JH/wbkzsTilQvz7McHNjsrdOP4MTEJzZGk+K
++AoYTV3c0VxFPa4TtBywaR/NmjzEmjR/SehsC4w/rXKrtftG1OUsWOyyQE2EGrVbM
++U07Y7yKVo6jKHVXbO+0UfQl+GzQI9sLBp5a9zmcqu1X5WqDHdXOz7S1XRdfjItGZ
++MRyWrSCg3mm0VIE0XVIsKdBv6BSDtY87AAWuKvhw8Es9bhNYjG+c2KNNWxj1v/KU
++Bi3mkonweFDQElXdaaf6PdrHG+pztBF6iP3P02MQjW4Sv523q7G6t93HF76y61LI
++Dt0nv6xXyaLhr1gKFLDLrBpPrg0E8XaaOiR1yU7y2qVPQpJ6r7eEzvhheOwl9Kp3
++m7msW2nJGzJxn8/PxmCqyha04UWKFb3BYp5WoQMZULUq/IYDuRKTOB8biNm+MwP+
++sC4kYf71mASfKALvlzgyPa39LoM2L1qT+MCZ/nEllIl0HF+UMl38RcG7ezw9sNd/
++ZGasUPgnfHUcC2abW8dZ+XZz0khL4os4RZEYF43HSQZ3M+0o6SittFKio6lAo820
++mH1XMMKK7InOL2CZQN/+9gxtwTqEvY1fuS/YJgi3UcS81uSXZNBb5UcvVHS8BSoI
++2+J6rauq01JUoBmW3wJea3vLn9HNrc2rARAAAQEAAAAAAAAAAAAAAAD/2P/gABBK
++RklGAAEBAAABAAEAAP/bAEMACAYGBwYFCAcHBwkJCAoMFA0MCwsMGRITDxQdGh8e
++HRocHCAkLicgIiwjHBwoNyksMDE0NDQfJzk9ODI8LjM0Mv/bAEMBCQkJDAsMGA0N
++GDIhHCEyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy
++MjIyMjIyMv/AABEIAJYAgAMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAA
++AQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEH
++InEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJ
++SlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaan
++qKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4
+++fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAME
++BwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ0
++4SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4
++eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS
++09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/APGvOOeA4+jU
++4XEw6SyD/gVMC0bayNrEovblf+Wz/wDfVSpqdyvWVvzqqBTguTxQOxp2t/PO5jdy
++QRkcVdC1j2qmO8jz0JxW8sfr19AM0iJIai57VOsZqxbxRD5nyQPu4Gc1YaI9FG0/
++w8YoDlKgjxUqJxTXliiYK5ZW78VdhiV49wOe4HtQS0RKtSqlCrUoFAhFSpVWhRUq
++igBAlSBKcBUgWgR4+Z36DGKBM/8AdFOEQ6bf1p625PYfnV2RV33GCVj/AAinrMwI
++IUVILQt6D8avWdkPM+ZQx7DtSHfzCyhmlcPtAHUZroFtZnPlwRmWVj26Co7WEGTP
++JUfeYV6h4O063mkYNGpfAHTsO9RJ2NqceZ2Zg6D4C1PUFV7gqiE8MSR+QrtYfhtZ
++/ZxHLcSvIP4yf6V3FnBHDGAoAAq0zIBU76mrai7JHms/w/EcEqiUuT0IUZribzRt
++Q0m5aO6jzE3RxXvTlCpPH51zut2Ed7CyFM8cGpcnErkU1seONFtJAHT17+9IBTdU
++M9nftayEB42xkDGRniiOTeK0vc4pxsyZalWolqVaZBKKkAqNakFIDydRUyLTEWrC
++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
++=TJFo
++-----END PGP PUBLIC KEY BLOCK-----
+--- nux-4.0.8+18.10.20180623.orig/debian/watch
++++ nux-4.0.8+18.10.20180623/debian/watch
+@@ -0,0 +1,3 @@
++version=3
++opts="pgpsigurlmangle=s/$/.asc/" \
++ https://launchpad.net/nux/+download .*/nux-([0-9.]+)\.tar\.gz
+--- nux-4.0.8+18.10.20180623.orig/tests/test-nux-core-results.xml
++++ nux-4.0.8+18.10.20180623/tests/test-nux-core-results.xml
+@@ -0,0 +1,182 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<testsuites tests="131" failures="1" disabled="0" errors="0" time="0.006" timestamp="2024-02-19T23:26:19.990" name="AllTests">
++  <testsuite name="TestAnimationController" tests="8" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.990">
++    <testcase name="NoInstance" file="gtest-nuxcore-animation.cpp" line="32" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationController" />
++    <testcase name="CreatingControllerSetsInstance" file="gtest-nuxcore-animation.cpp" line="43" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationController" />
++    <testcase name="DestroyingControllerUnsetsInstance" file="gtest-nuxcore-animation.cpp" line="49" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationController" />
++    <testcase name="CreatingSecondControllerEmitsWarning" file="gtest-nuxcore-animation.cpp" line="57" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationController" />
++    <testcase name="TicksOnSourceAreListenedTo" file="gtest-nuxcore-animation.cpp" line="94" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationController" />
++    <testcase name="TicksAfterControllerDtorIgnored" file="gtest-nuxcore-animation.cpp" line="109" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationController" />
++    <testcase name="HasRunningAnimations" file="gtest-nuxcore-animation.cpp" line="137" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationController" />
++    <testcase name="RemoveValueInTick" file="gtest-nuxcore-animation.cpp" line="160" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationController" />
++  </testsuite>
++  <testsuite name="TestAnimation" tests="10" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.990">
++    <testcase name="TestInitialState" file="gtest-nuxcore-animation.cpp" line="188" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
++    <testcase name="TestStarting" file="gtest-nuxcore-animation.cpp" line="194" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
++    <testcase name="TestStoppingEmitsFinished" file="gtest-nuxcore-animation.cpp" line="201" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
++    <testcase name="TestDestructorStops" file="gtest-nuxcore-animation.cpp" line="212" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
++    <testcase name="TestStoppingStoppedDoesntEmitsFinished" file="gtest-nuxcore-animation.cpp" line="227" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
++    <testcase name="TestCantPauseStopped" file="gtest-nuxcore-animation.cpp" line="237" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
++    <testcase name="TestPause" file="gtest-nuxcore-animation.cpp" line="244" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
++    <testcase name="TestResume" file="gtest-nuxcore-animation.cpp" line="252" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
++    <testcase name="TestResumeStarted" file="gtest-nuxcore-animation.cpp" line="261" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
++    <testcase name="TestResumeStopped" file="gtest-nuxcore-animation.cpp" line="269" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimation" />
++  </testsuite>
++  <testsuite name="TestEasingCurve" tests="4" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.990">
++    <testcase name="TestLinear" file="gtest-nuxcore-animation.cpp" line="281" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestEasingCurve" />
++    <testcase name="TestInQuad" file="gtest-nuxcore-animation.cpp" line="299" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestEasingCurve" />
++    <testcase name="TestOutQuad" file="gtest-nuxcore-animation.cpp" line="317" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestEasingCurve" />
++    <testcase name="TestInOutQuad" file="gtest-nuxcore-animation.cpp" line="335" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestEasingCurve" />
++  </testsuite>
++  <testsuite name="TestAnimateValue" tests="12" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.990">
++    <testcase name="TestConstruction" file="gtest-nuxcore-animation.cpp" line="358" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
++    <testcase name="TestStartEmitsInitialValue" file="gtest-nuxcore-animation.cpp" line="385" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
++    <testcase name="TestAdvance" file="gtest-nuxcore-animation.cpp" line="396" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
++    <testcase name="TestAdvanceOnlyRunning" file="gtest-nuxcore-animation.cpp" line="427" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
++    <testcase name="TestUsesEasingFunction" file="gtest-nuxcore-animation.cpp" line="451" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
++    <testcase name="TestAnimateIntReverseStopped" file="gtest-nuxcore-animation.cpp" line="472" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
++    <testcase name="TestAnimateIntReverse" file="gtest-nuxcore-animation.cpp" line="481" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
++    <testcase name="TestAnimateIntReversePaused" file="gtest-nuxcore-animation.cpp" line="510" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
++    <testcase name="TestAnimateIntReverseMultipleTimes" file="gtest-nuxcore-animation.cpp" line="542" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
++    <testcase name="TestAnimatePoint" file="gtest-nuxcore-animation.cpp" line="598" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
++    <testcase name="TestAnimateRect" file="gtest-nuxcore-animation.cpp" line="620" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
++    <testcase name="TestAnimateColor" file="gtest-nuxcore-animation.cpp" line="642" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimateValue" />
++  </testsuite>
++  <testsuite name="TestAnimationHookup" tests="3" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.990">
++    <testcase name="TestSingleAnimation" file="gtest-nuxcore-animation.cpp" line="706" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationHookup" />
++    <testcase name="TestTwoAnimation" file="gtest-nuxcore-animation.cpp" line="742" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationHookup" />
++    <testcase name="TestIntProperty" file="gtest-nuxcore-animation.cpp" line="785" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAnimationHookup" />
++  </testsuite>
++  <testsuite name="TestAsyncfileWriter" tests="3" failures="0" disabled="0" skipped="0" errors="0" time="0.003" timestamp="2024-02-19T23:26:19.990">
++    <testcase name="TestConstructor" file="gtest-nuxcore-async-file-writer.cpp" line="65" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.990" classname="TestAsyncfileWriter" />
++    <testcase name="TestWrites" file="gtest-nuxcore-async-file-writer.cpp" line="76" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.991" classname="TestAsyncfileWriter" />
++    <testcase name="TestWriteLots" file="gtest-nuxcore-async-file-writer.cpp" line="89" status="run" result="completed" time="0.002" timestamp="2024-02-19T23:26:19.991" classname="TestAsyncfileWriter" />
++  </testsuite>
++  <testsuite name="TestColor" tests="22" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.993">
++    <testcase name="TestColorConstructor0" file="gtest-nuxcore-color.cpp" line="32" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorConstructor1" file="gtest-nuxcore-color.cpp" line="43" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorConstructor2" file="gtest-nuxcore-color.cpp" line="70" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorConstructor3" file="gtest-nuxcore-color.cpp" line="87" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorConstructorHex" file="gtest-nuxcore-color.cpp" line="106" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorConstructorHexInvalid" file="gtest-nuxcore-color.cpp" line="145" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorPremultiplied0" file="gtest-nuxcore-color.cpp" line="163" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorRGBToHSV0" file="gtest-nuxcore-color.cpp" line="181" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorHSVToRGB0" file="gtest-nuxcore-color.cpp" line="191" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorRGBToHSV1" file="gtest-nuxcore-color.cpp" line="201" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorHSVToRGB1" file="gtest-nuxcore-color.cpp" line="211" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorRGBToHSV2" file="gtest-nuxcore-color.cpp" line="221" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorHSVToRGB2" file="gtest-nuxcore-color.cpp" line="232" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorRGBToHLS0" file="gtest-nuxcore-color.cpp" line="242" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorHLSToRGB0" file="gtest-nuxcore-color.cpp" line="252" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorRGBToHLS1" file="gtest-nuxcore-color.cpp" line="262" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorHLSToRGB1" file="gtest-nuxcore-color.cpp" line="272" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorRGBToHLS2" file="gtest-nuxcore-color.cpp" line="282" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorHLSToRGB2" file="gtest-nuxcore-color.cpp" line="292" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestSubtraction" file="gtest-nuxcore-color.cpp" line="303" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestColorToRGB" file="gtest-nuxcore-color.cpp" line="315" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++    <testcase name="TestRandomColor" file="gtest-nuxcore-color.cpp" line="325" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColor" />
++  </testsuite>
++  <testsuite name="TestColorPrivate" tests="3" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.993">
++    <testcase name="TestIsValidHex" file="gtest-nuxcore-colorprivate.cpp" line="31" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColorPrivate" />
++    <testcase name="TestHexToInt" file="gtest-nuxcore-colorprivate.cpp" line="48" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColorPrivate" />
++    <testcase name="TestHexToRGBA" file="gtest-nuxcore-colorprivate.cpp" line="56" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestColorPrivate" />
++  </testsuite>
++  <testsuite name="TestLogger" tests="6" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.993">
++    <testcase name="TestSimpleConstruction" file="gtest-nuxcore-logger.cpp" line="20" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestLogger" />
++    <testcase name="TestModuleName" file="gtest-nuxcore-logger.cpp" line="29" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestLogger" />
++    <testcase name="TestSetLevel" file="gtest-nuxcore-logger.cpp" line="34" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestLogger" />
++    <testcase name="TestLevelsSharedForSameModule" file="gtest-nuxcore-logger.cpp" line="75" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestLogger" />
++    <testcase name="TestModuleLowered" file="gtest-nuxcore-logger.cpp" line="84" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestLogger" />
++    <testcase name="TestLevelsInherited" file="gtest-nuxcore-logger.cpp" line="92" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.993" classname="TestLogger" />
++  </testsuite>
++  <testsuite name="TestLoggingWriter" tests="1" failures="1" disabled="0" skipped="0" errors="0" time="0.001" timestamp="2024-02-19T23:26:19.993">
++    <testcase name="TestWriteMessage" file="gtest-nuxcore-logger.cpp" line="158" status="run" result="completed" time="0.001" timestamp="2024-02-19T23:26:19.993" classname="TestLoggingWriter">
++      <failure message="gtest-nuxcore-logger.cpp:171&#x0A;Value of: result&#x0A;Expected: is equal to 0x55e9e9828b60 pointing to &quot;ERROR 2010-09-10 06:34:45 test.module testfile.cpp:1234 my message\n&quot;&#x0A;  Actual: &quot;ERROR 2010-09-10 07:34:45 test.module testfile.cpp:1234 my message\n&quot;&#x0A;" type=""><![CDATA[gtest-nuxcore-logger.cpp:171
++Value of: result
++Expected: is equal to 0x55e9e9828b60 pointing to "ERROR 2010-09-10 06:34:45 test.module testfile.cpp:1234 my message\n"
++  Actual: "ERROR 2010-09-10 07:34:45 test.module testfile.cpp:1234 my message\n"
++]]></failure>
++    </testcase>
++  </testsuite>
++  <testsuite name="TestLogStream" tests="6" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.994">
++    <testcase name="TestSimpleConstruction" file="gtest-nuxcore-logger.cpp" line="174" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogStream" />
++    <testcase name="TestOutput" file="gtest-nuxcore-logger.cpp" line="179" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogStream" />
++    <testcase name="TestShortenedFilename" file="gtest-nuxcore-logger.cpp" line="193" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogStream" />
++    <testcase name="TestTemporary" file="gtest-nuxcore-logger.cpp" line="205" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogStream" />
++    <testcase name="TestDebugMacro" file="gtest-nuxcore-logger.cpp" line="218" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogStream" />
++    <testcase name="TestBlockTracer" file="gtest-nuxcore-logger.cpp" line="240" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogStream" />
++  </testsuite>
++  <testsuite name="TestLogHelpers" tests="7" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.994">
++    <testcase name="TestGetLoggingLevel" file="gtest-nuxcore-logger.cpp" line="256" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogHelpers" />
++    <testcase name="TestResetLogging" file="gtest-nuxcore-logger.cpp" line="276" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogHelpers" />
++    <testcase name="TestHasModule" file="gtest-nuxcore-logger.cpp" line="289" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogHelpers" />
++    <testcase name="TestConfigureLoggingNull" file="gtest-nuxcore-logger.cpp" line="356" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogHelpers" />
++    <testcase name="TestConfigureLoggingRoot" file="gtest-nuxcore-logger.cpp" line="369" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.994" classname="TestLogHelpers" />
++    <testcase name="TestConfigureLoggingSingleModule" file="gtest-nuxcore-logger.cpp" line="376" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestLogHelpers" />
++    <testcase name="TestConfigureLoggingMultipleModules" file="gtest-nuxcore-logger.cpp" line="384" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestLogHelpers" />
++  </testsuite>
++  <testsuite name="TestStaticFileFunction" tests="1" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.995">
++    <testcase name="TestLoggerConstruction" file="gtest-nuxcore-logger.cpp" line="299" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestStaticFileFunction" />
++  </testsuite>
++  <testsuite name="TestLoggerMacros" tests="2" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.995">
++    <testcase name="TestPassingObject" file="gtest-nuxcore-logger.cpp" line="308" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestLoggerMacros" />
++    <testcase name="TestPassingFunction" file="gtest-nuxcore-logger.cpp" line="332" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestLoggerMacros" />
++  </testsuite>
++  <testsuite name="TestObject" tests="10" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.995">
++    <testcase name="TestObject" file="gtest-nuxcore-object.cpp" line="87" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
++    <testcase name="TestObjectReference" file="gtest-nuxcore-object.cpp" line="102" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
++    <testcase name="TestObjectPtr" file="gtest-nuxcore-object.cpp" line="128" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
++    <testcase name="TestObjectPtrAdopt" file="gtest-nuxcore-object.cpp" line="141" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
++    <testcase name="TestObjectPtrGetPointer" file="gtest-nuxcore-object.cpp" line="152" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
++    <testcase name="TestObjectPtr1" file="gtest-nuxcore-object.cpp" line="164" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
++    <testcase name="TestObjectPtr2" file="gtest-nuxcore-object.cpp" line="185" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
++    <testcase name="TestObjectSignal" file="gtest-nuxcore-object.cpp" line="212" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
++    <testcase name="TestObjectAdoptUnOwned" file="gtest-nuxcore-object.cpp" line="221" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
++    <testcase name="TestObjectAdoptOwned" file="gtest-nuxcore-object.cpp" line="232" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestObject" />
++  </testsuite>
++  <testsuite name="TestTypeTraits" tests="3" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.995">
++    <testcase name="TestSerialization" file="gtest-nuxcore-properties.cpp" line="42" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestTypeTraits" />
++    <testcase name="TestDeserialization" file="gtest-nuxcore-properties.cpp" line="53" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.995" classname="TestTypeTraits" />
++    <testcase name="TestConversionHolds" file="gtest-nuxcore-properties.cpp" line="100" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestTypeTraits" />
++  </testsuite>
++  <testsuite name="TestProperty" tests="10" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.996">
++    <testcase name="TestDefaultConstructor" file="gtest-nuxcore-properties.cpp" line="108" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
++    <testcase name="TestValueExplicitConstructor" file="gtest-nuxcore-properties.cpp" line="118" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
++    <testcase name="TestAssignment" file="gtest-nuxcore-properties.cpp" line="128" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
++    <testcase name="TestChanged" file="gtest-nuxcore-properties.cpp" line="151" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
++    <testcase name="TestEnableAndDisableNotifications" file="gtest-nuxcore-properties.cpp" line="164" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
++    <testcase name="TestSetterConstructor" file="gtest-nuxcore-properties.cpp" line="195" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
++    <testcase name="TestCustomSetterFunction" file="gtest-nuxcore-properties.cpp" line="229" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
++    <testcase name="TestCustomSetterFunctionLambda" file="gtest-nuxcore-properties.cpp" line="254" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
++    <testcase name="TestIntOperators" file="gtest-nuxcore-properties.cpp" line="281" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
++    <testcase name="TestStringOperators" file="gtest-nuxcore-properties.cpp" line="321" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestProperty" />
++  </testsuite>
++  <testsuite name="TestROProperty" tests="7" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.996">
++    <testcase name="TestDefaultConstructor" file="gtest-nuxcore-properties.cpp" line="364" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestROProperty" />
++    <testcase name="TestGetterConstructor" file="gtest-nuxcore-properties.cpp" line="383" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestROProperty" />
++    <testcase name="TestSetGetter" file="gtest-nuxcore-properties.cpp" line="400" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestROProperty" />
++    <testcase name="TestSetGetterLambda" file="gtest-nuxcore-properties.cpp" line="412" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestROProperty" />
++    <testcase name="TestChangedEvent" file="gtest-nuxcore-properties.cpp" line="423" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestROProperty" />
++    <testcase name="TestIntOperators" file="gtest-nuxcore-properties.cpp" line="452" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestROProperty" />
++    <testcase name="TestStringOperators" file="gtest-nuxcore-properties.cpp" line="492" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestROProperty" />
++  </testsuite>
++  <testsuite name="TestRWProperty" tests="5" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.996">
++    <testcase name="TestDefaultConstructor" file="gtest-nuxcore-properties.cpp" line="536" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRWProperty" />
++    <testcase name="TestFunctionConstructor" file="gtest-nuxcore-properties.cpp" line="555" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRWProperty" />
++    <testcase name="TestPimplClassExample" file="gtest-nuxcore-properties.cpp" line="621" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRWProperty" />
++    <testcase name="TestIntOperators" file="gtest-nuxcore-properties.cpp" line="660" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRWProperty" />
++    <testcase name="TestStringOperators" file="gtest-nuxcore-properties.cpp" line="700" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRWProperty" />
++  </testsuite>
++  <testsuite name="TestIntrospectableProperty" tests="2" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.996">
++    <testcase name="TestSimplePropertyAccess" file="gtest-nuxcore-properties.cpp" line="754" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestIntrospectableProperty" />
++    <testcase name="TestPropertyAccessByName" file="gtest-nuxcore-properties.cpp" line="774" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestIntrospectableProperty" />
++  </testsuite>
++  <testsuite name="TestRollingFileAppender" tests="6" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-02-19T23:26:19.996">
++    <testcase name="NoTestRoot" file="gtest-nuxcore-rolling-file-appender.cpp" line="64" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRollingFileAppender" />
++    <testcase name="TestLogFileRollsAtFlush" file="gtest-nuxcore-rolling-file-appender.cpp" line="69" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRollingFileAppender" />
++    <testcase name="TestExistingLogFileMoved" file="gtest-nuxcore-rolling-file-appender.cpp" line="89" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRollingFileAppender" />
++    <testcase name="TestDeletingOld" file="gtest-nuxcore-rolling-file-appender.cpp" line="105" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRollingFileAppender" />
++    <testcase name="TestFullPathNeeded" file="gtest-nuxcore-rolling-file-appender.cpp" line="128" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRollingFileAppender" />
++    <testcase name="TestFileNeeded" file="gtest-nuxcore-rolling-file-appender.cpp" line="133" status="run" result="completed" time="0." timestamp="2024-02-19T23:26:19.996" classname="TestRollingFileAppender" />
++  </testsuite>
++</testsuites>

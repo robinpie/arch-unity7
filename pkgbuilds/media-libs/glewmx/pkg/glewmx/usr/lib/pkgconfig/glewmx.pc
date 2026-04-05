@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include/glewmx
+
+Name: glewmx
+Description: The OpenGL Extension Wrangler library (MX multi-context variant)
+Version: 1.13.0
+Cflags: -I${includedir} -DGLEW_MX
+Libs: -L${libdir} -lGLEWmx
+Requires: glu

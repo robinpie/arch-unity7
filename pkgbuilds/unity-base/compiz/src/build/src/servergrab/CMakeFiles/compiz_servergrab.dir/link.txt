@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_servergrab.a CMakeFiles/compiz_servergrab.dir/src/servergrab.cpp.o
+/usr/bin/ranlib libcompiz_servergrab.a

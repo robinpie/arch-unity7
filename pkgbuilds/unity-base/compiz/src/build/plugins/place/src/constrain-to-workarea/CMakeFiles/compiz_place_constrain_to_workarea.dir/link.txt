@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_place_constrain_to_workarea.a "CMakeFiles/compiz_place_constrain_to_workarea.dir/src/constrain-to-workarea.cpp.o" CMakeFiles/compiz_place_constrain_to_workarea.dir/__/__/__/__/src/size.cpp.o
+/usr/bin/ranlib libcompiz_place_constrain_to_workarea.a

@@ -1,0 +1,297 @@
+geis (2.2.17+16.04.20160126-0ubuntu14) resolute; urgency=medium
+
+  * No-change rebuild with Python 3.14 as default
+
+ -- Graham Inggs <ginggs@ubuntu.com>  Thu, 22 Jan 2026 20:41:42 +0000
+
+geis (2.2.17+16.04.20160126-0ubuntu13) resolute; urgency=medium
+
+  * No-change mass rebuild for Ubuntu 26.04 (LP: #2132257)
+
+ -- Graham Inggs <ginggs@ubuntu.com>  Tue, 20 Jan 2026 20:33:08 +0000
+
+geis (2.2.17+16.04.20160126-0ubuntu12) plucky; urgency=medium
+
+  * Don't build with -O3 on amd64 and ppc64el, ftbfs.
+
+ -- Matthias Klose <doko@ubuntu.com>  Tue, 07 Jan 2025 16:03:06 +0100
+
+geis (2.2.17+16.04.20160126-0ubuntu11) plucky; urgency=medium
+
+  * No-change rebuild for Python 3.13 as the default.
+
+ -- Matthias Klose <doko@ubuntu.com>  Fri, 03 Jan 2025 12:04:16 +0100
+
+geis (2.2.17+16.04.20160126-0ubuntu10) noble; urgency=medium
+
+  * No-change rebuild with Python 3.12 as default
+
+ -- Graham Inggs <ginggs@ubuntu.com>  Fri, 19 Jan 2024 19:22:00 +0000
+
+geis (2.2.17+16.04.20160126-0ubuntu9) lunar; urgency=medium
+
+  * No-change rebuild with Python 3.11 as default
+
+ -- Graham Inggs <ginggs@ubuntu.com>  Sun, 25 Dec 2022 19:46:31 +0000
+
+geis (2.2.17+16.04.20160126-0ubuntu8) jammy; urgency=medium
+
+  * No-change rebuild with Python 3.10 as default version
+
+ -- Graham Inggs <ginggs@ubuntu.com>  Thu, 13 Jan 2022 19:16:03 +0000
+
+geis (2.2.17+16.04.20160126-0ubuntu7) hirsute; urgency=medium
+
+  * No-change rebuild to build with python3.9 as default.
+
+ -- Matthias Klose <doko@ubuntu.com>  Thu, 19 Nov 2020 18:31:45 +0100
+
+geis (2.2.17+16.04.20160126-0ubuntu6) focal; urgency=medium
+
+  * Add explicit build dependency on dh-python.
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Mon, 27 Jan 2020 12:24:27 +1300
+
+geis (2.2.17+16.04.20160126-0ubuntu5) focal; urgency=medium
+
+  * No-change rebuild to build with python3.8.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 25 Jan 2020 04:31:17 +0000
+
+geis (2.2.17+16.04.20160126-0ubuntu4) disco; urgency=medium
+
+  * Build with -Wno-error=pointer-compare.
+
+ -- Matthias Klose <doko@ubuntu.com>  Thu, 01 Nov 2018 09:38:44 +0100
+
+geis (2.2.17+16.04.20160126-0ubuntu3) disco; urgency=medium
+
+  * No-change rebuild to build for python3.7 as the default.
+
+ -- Matthias Klose <doko@ubuntu.com>  Wed, 31 Oct 2018 12:34:36 +0000
+
+geis (2.2.17+16.04.20160126-0ubuntu2) artful; urgency=medium
+
+  * No-change rebuild to build with python3.6.
+
+ -- Matthias Klose <doko@ubuntu.com>  Mon, 24 Jul 2017 13:50:54 +0000
+
+geis (2.2.17+16.04.20160126-0ubuntu1) xenial; urgency=medium
+
+  * fix error revealed by GCC-6
+
+ -- Stephen M. Webb <stephen.webb@canonical.com>  Tue, 26 Jan 2016 16:31:39 +0000
+
+geis (2.2.17+15.10.20150728-0ubuntu2) xenial; urgency=medium
+
+  * No-change rebuild for python3 defaults change.
+
+ -- Matthias Klose <doko@ubuntu.com>  Fri, 23 Oct 2015 10:42:11 +0000
+
+geis (2.2.17+15.10.20150728-0ubuntu1) wily; urgency=medium
+
+  [ Stephen M. Webb ]
+  * Upstream release 2.2.17.
+  * fix a pasto in the grail slice update code (LP: #1477243)
+
+ -- CI Train Bot <ci-train-bot@canonical.com>  Tue, 28 Jul 2015 21:11:00 +0000
+
+geis (2.2.16+15.10.20150609-0ubuntu1) wily; urgency=medium
+
+  [ Stephen M. Webb ]
+  * Avoid setting the timestamp in Doxygen-generated documentation so
+    the builds on Debian will be reproduceable. (LP: #1462829)
+  * fix errors reported when build with clang (LP: #1463013)
+
+ -- CI Train Bot <ci-train-bot@canonical.com>  Tue, 09 Jun 2015 10:29:27 +0000
+
+geis (2.2.16+15.04.20150304-0ubuntu1) vivid; urgency=medium
+
+  [ Ken VanDine ]
+  * Fix build error with GCC 5, patch thanks to Matthias Klose (LP:
+    #1428314)
+
+ -- CI Train Bot <ci-train-bot@canonical.com>  Wed, 04 Mar 2015 21:44:03 +0000
+
+geis (2.2.16+14.04.20140303-0ubuntu1) trusty; urgency=low
+
+  [ Stephen M. Webb ]
+  * debian/control: renamed python-geis package to python3-geis (lp:
+    #1244446). (LP: #1244446)
+  * update autoconfigury for automake 1.14.
+  * update to Standards-Version 3.9.5 (no changes required).
+  * don't install the (experimental, unsupported) geis server binary.
+  * updated the geisview.desktop file.
+  * fixed errors in "make check".
+  * fix a synch problem when a subscription is activated in a callback
+    on receipt of INIT_COMPLETE (lp: #1252447). (LP: #1252447)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 03 Mar 2014 20:10:36 +0000
+
+geis (2.2.16+13.10.20130919.4-0ubuntu2) trusty; urgency=medium
+
+  * Rename python-geis to python3-geis.
+
+ -- Matthias Klose <doko@ubuntu.com>  Wed, 19 Feb 2014 11:49:45 +0100
+
+geis (2.2.16+13.10.20130919.4-0ubuntu1) saucy; urgency=low
+
+  [ Stephen M. Webb ]
+  * Fix error message(s) in "help" dialog (lp: #964469). (LP: #964469)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 317
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 19 Sep 2013 22:07:37 +0000
+
+geis (2.2.16daily13.06.05-0ubuntu1) saucy; urgency=low
+
+  * Automatic snapshot from revision 315
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 02:02:22 +0000
+
+geis (2.2.16daily13.05.29ubuntu.unity.next-0ubuntu1) raring; urgency=low
+
+  [ Stephen M. Webb ]
+  * upstream release v2.2.16
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 314 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 29 May 2013 02:02:09 +0000
+
+geis (2.2.15daily13.05.17ubuntu.unity.next-0ubuntu1) raring; urgency=low
+
+  * Automatic snapshot from revision 312 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 17 May 2013 02:01:27 +0000
+
+geis (2.2.15daily13.05.13-0ubuntu1) raring; urgency=low
+
+  [ Stephen M. Webb ]
+  * geisview report garbage values and reports no gestures (LP:
+    #1169249)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 311
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 13 May 2013 02:01:10 +0000
+
+geis (2.2.15daily13.04.03-0ubuntu1) raring; urgency=low
+
+  * Automatic snapshot from revision 309
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 03 Apr 2013 02:07:32 +0000
+
+geis (2.2.15daily13.04.02-0ubuntu1) raring; urgency=low
+
+  * Automatic snapshot from revision 308
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 02 Apr 2013 02:01:53 +0000
+
+geis (2.2.15daily13.04.01-0ubuntu1) raring; urgency=low
+
+  [ Stephen M. Webb ]
+  * evince crashed with SIGSEGV in geis_filter_delete() (LP: #1152411)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 307
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 01 Apr 2013 02:01:56 +0000
+
+geis (2.2.15daily13.02.14-0ubuntu1) raring; urgency=low
+
+  * Automatic snapshot from revision 305
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Thu, 14 Feb 2013 02:01:59 +0000
+
+geis (2.2.15daily13.02.13-0ubuntu1) raring; urgency=low
+
+  * Automatic snapshot from revision 302
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Wed, 13 Feb 2013 02:01:46 +0000
+
+geis (2.2.15daily12.12.10-0ubuntu1) raring; urgency=low
+
+  [ Daniel d'Andrada ]
+  *  Don't crash if a null filter is passed to geis_filter_delete() (LP: #1080386)
+
+  [ Automatic PS uploader ]
+  * Automatic snapshot from revision 300
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Mon, 10 Dec 2012 07:44:42 +0000
+
+geis (2.2.15daily12.12.05-0ubuntu1) raring; urgency=low
+
+  [ Stephen M. Webb ]
+  * python-fix-print-syntax.patch: removed (fixed upstream)
+  * converted to python3
+
+  [ Mathieu Trudel-Lapierre ]
+  * debian/control:
+    - Update style; use trailing commas at the end of dependency lists.
+    - Update Vcs-Bzr, Vcs-Browser and add a notice to uploaders.
+  * debian/rules:
+    - Clean up rules file from unnecessary comments and daily build code.
+    - Add and export DPKG_GENSYMBOLS_CHECK_LEVEL.
+    - Override dh_autoreconf to call autogen.sh and not run configure.
+  * debian/source/format: migrate back to source format 1.0.
+
+  [ Didier Roche ]
+  * Automatic snapshot from revision 295 (bootstrap)
+
+  [ Daniel d'Andrada ]
+  * Relicense under (L)GPL version 3 *only* (no +)
+
+  [ Automatic PS uploader ]
+  * Automatic snapshot from revision 297
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Wed, 05 Dec 2012 02:01:14 +0000
+
+geis (2.2.14-0ubuntu2) raring; urgency=low
+
+  * Fix python print syntax. (LP: #1077419)
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Wed, 14 Nov 2012 14:52:22 +1100
+
+geis (2.2.14-0ubuntu1) raring; urgency=low
+
+  * debian/patches: removed all patches (merged upstream).
+  * New upstream release.
+
+ -- Stephen M. Webb <stephen.webb@canonical.com>  Tue, 13 Nov 2012 09:44:12 -0500
+
+geis (2.2.13-0ubuntu1) raring; urgency=low
+
+  * New upstream release.
+  * debian/control: bumped libgrail-dev build dependency to 3.0.8
+  * debian/patches: removed all patches (merged upstream)
+  * debian/patches: patched test case for missing symbols
+
+ -- Stephen M. Webb <stephen.webb@canonical.com>  Fri, 09 Nov 2012 13:57:29 -0500
+
+geis (2.2.12-0ubuntu2) quantal; urgency=low
+
+  * Fix Geisv1 gesture class IDs (LP: #1047596)
+    - added 001-fix-geisv1-class-ids.patch 
+
+ -- Francis Ginther <francis.ginther@canonical.com>  Fri, 07 Sep 2012 16:28:39 -0500
+
+geis (2.2.12-0ubuntu1) quantal; urgency=low
+
+  * New upstream release.
+    - Fully fix initialization timeout for remote sessions (LP: #997630)
+
+ -- Chase Douglas <chase.douglas@ubuntu.com>  Wed, 15 Aug 2012 08:10:42 -0700
+
+geis (2.2.11-0ubuntu1) quantal; urgency=low
+
+  * Update debian/watch file for new project name
+  * New upstream release.
+    - Fix crash when accepting a gesture (LP: #1015775)
+    - Detect added devices properly (LP: #1009270)
+    - Fix result value of geis_subscription_deactivate() (LP: #1021448)
+    - Upstream project rename to just 'geis'
+  * Update packaging for project rename (LP: #1030937)
+
+ -- Chase Douglas <chase.douglas@ubuntu.com>  Mon, 30 Jul 2012 08:51:42 -0700

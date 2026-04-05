@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Just issues the commands to create the vapi file
+# Would be nice to get autotools to make this at some point, but it sort
+# of requires the package to be installed (and called from pkg-config) first
+# so its a little messy
+
+cd $(dirname $0)
+vala-gen-introspect zeitgeist-1.0 .
+vapigen --pkg gobject-2.0 --pkg glib-2.0 --pkg gio-2.0 --library zeitgeist-1.0 zeitgeist-1.0.gi zeitgeist-1.0-custom.vala
+# nasty hack to force usage of PtrArray in recent versions of vapigen
+sed -i 's/GenericArray/PtrArray/g' zeitgeist-1.0.vapi

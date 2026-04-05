@@ -1,0 +1,64 @@
+geis NEWS -- a history of user-visible changes
+
+Copyright 2010, 2011 Canonical Ltd.
+
+* Changes in v2.0.0
+
+** Introduction of the GEIS v2.0 API
+
+2012-03-14  Stephen M. Webb  <stephen.webb@canonical.com>
+
+	Fix FTBFS in the daily PPA due to a bug in libdbus.
+
+2012-03-13  Stephen M. Webb  <stephen.webb@canonical.com>
+
+	Added working gesture reject and accept (lp: #934207).
+
+2012-03-07  Stephen M. Webb  <stephen.webb@canonical.com>
+
+	Propagate window grab errors up the stack (lp: #937021).
+
+2012-03-06  Stephen M. Webb  <stephen.webb@canonical.com>
+
+	fixed FTBFS dues to missing CPPFLAGS in testsuite
+
+2012-03-06  Jussi Pakkanen  <jussi.pakkanen@canonical.com>
+
+	Merged compile+link tests.
+
+2012-03-05  Stephen M. Webb  <stephen.webb@canonical.com>
+
+	Added gtest infrastructure and test.
+
+2012-02-28  Daniel d'Andrada  <daniel.dandrada@canonical.com>
+
+	Some small documentation improvements.
+
+2012-02-24  Daniel d'Andrada  <daniel.dandrada@canonical.com>
+
+	grail_backend: Properly activate a subscription that has no filters.
+	
+	It should get all gesture events.
+
+2012-02-23  Stephen M. Webb  <stephen.webb@canonical.com>
+
+	Adds blocking mode for geis_new() (lp: #921633).
+	- Added GEIS_INIT_SYNCHRONOUS_START initializer
+	- modified geistest and pygeis tools to use it
+
+2012-02-22  Daniel d'Andrada  <daniel.dandrada@canonical.com>
+
+	Some small improvements to geis.h documentation here and there.
+
+2012-02-22  Stephen M. Webb  <stephen.webb@canonical.com>
+
+	Restore previous search path for API documentation (lp: #934160).
+
+2012-02-21  Stephen M. Webb  <stephen.webb@canonical.com>
+
+	Restore previous search path for API documentation (lp: #934160).
+
+2012-02-16  Stephen M. Webb  <stephen.webb@canonical.com>
+
+	bumped version to 2.2.5
+

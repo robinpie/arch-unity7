@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib
+includedir=${prefix}/include
+
+Name: unity-gtk2-parser
+Description: GtkMenuShell to GMenuModel parser
+Version: 0.0.0
+Requires: gtk+-2.0
+Cflags: -I${includedir}/unity-gtk-parser
+Libs: -L${libdir} -lunity-gtk2-parser

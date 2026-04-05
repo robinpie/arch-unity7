@@ -1,0 +1,43 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+DEB_HOST_ARCH := $(shell dpkg-architecture -qDEB_HOST_ARCH)
+gles2_architectures := armel armhf
+
+ifneq (,$(filter $(DEB_HOST_ARCH),armhf))
+  DEB_BUILD_OPTIONS := $(DEB_BUILD_OPTIONS) nocheck
+endif
+ifneq (,$(filter $(DEB_HOST_ARCH),s390x))
+  DEB_BUILD_OPTIONS := $(DEB_BUILD_OPTIONS) noopt nocheck
+endif
+export DEB_BUILD_OPTIONS
+
+%:
+	dh $@ --with quilt,autoreconf --parallel
+
+override_dh_autoreconf:
+	NOCONFIGURE=1 dh_autoreconf ./autogen.sh
+
+# build documentation as I didn't find a proper way to avoid make clean to not
+# remove doc/
+override_dh_auto_configure:
+ifeq ($(DEB_HOST_ARCH),$(findstring $(DEB_HOST_ARCH), $(gles2_architectures)))
+	dh_auto_configure -- --enable-documentation=no --enable-opengles-20
+else
+	dh_auto_configure -- --enable-documentation=no
+endif
+NUX_ABIVERSION := $(shell sed -rn 's/^\#define[[:space:]]+NUX_ABIVERSION[[:space:]]+//p' Nux/ABI.h )
+
+override_dh_install:
+	rm -rf debian/tmp/usr/share/nux/gputests/
+	dh_install --fail-missing -X.la
+
+override_dh_auto_test:
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+	env LIBGL_ALWAYS_SOFTWARE=1 make check-headless
+endif
+
+override_dh_gencontrol:
+	dh_gencontrol -- -Vnuxabiversion=$(NUX_ABIVERSION)

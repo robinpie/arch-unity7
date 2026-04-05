@@ -1,0 +1,57 @@
+Source: unity-api
+Priority: optional
+Section: libs
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: cmake,
+               debhelper (>= 9),
+               devscripts,
+               lsb-release,
+               doxygen,
+# To allow cross-compiling to work, we append :native
+# to g++-4.9 so we don't try to run armhf g++
+# on an x86 CPU for example, when cross-compiling.
+               g++:native,
+               graphviz,
+               libglib2.0-dev,
+#               libgtest-dev,
+               libqtdbustest1-dev,
+               pkg-config,
+               python3:any,
+               qtbase5-dev (>= 5.5),
+               qtdeclarative5-dev,
+               qtdeclarative5-dev-tools,
+               qml-module-qtquick2,
+               qml-module-qttest,
+Standards-Version: 3.9.4
+Homepage: https://launchpad.net/unity-api
+# If you aren't a member of ~unity-team but need to upload
+# packaging changes, just go ahead. ~unity-team will notice
+# and sync up the code again.
+Vcs-Bzr: lp:unity-api
+Vcs-Browser: https://code.launchpad.net/unity-api
+
+Package: libunity-api0
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: API for Unity shell integration
+ Library to integrate with the Unity shell
+
+Package: libunity-api-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libunity-api0 (= ${binary:Version}),
+         ${misc:Depends},
+Description: Header files for Unity API
+ Library to integrate with the Unity shell (dev files)
+
+Package: libunity-api-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends},
+Description: Documentation for Unity API
+ Library to integrate with the Unity shell (documentation)

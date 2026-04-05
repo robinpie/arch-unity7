@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+export DPKG_GENSYMBOLS_CHECK_LEVEL=4
+
+export CC=$(DEB_HOST_GNU_TYPE)-gcc
+export CXX=$(DEB_HOST_GNU_TYPE)-g++
+
+# http://ccache.samba.org/manual.html#_precompiled_headers
+export CCACHE_SLOPPINESS=time_macros
+
+%:
+	dh $@ --parallel --fail-missing
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DNO_TESTS=ON
+
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+ifeq ($(DEB_HOST_ARCH),powerpc)
+# Qt 5.6.1 crashes on powerpc (LP: #1606927)
+override_dh_auto_test:
+endif

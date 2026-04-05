@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib
+includedir=${prefix}/include
+
+Name: NuxGraphics
+Description: Core OpenGL graphics functions for Nux
+Version: 4.0.8
+Libs: -L${libdir} -lnux-graphics-4.0
+Cflags: -I${includedir}/Nux-4.0
+
+Requires: glib-2.0 cairo libpng gdk-pixbuf-2.0 nux-core-4.0 gl glu glewmx xext x11 xxf86vm xinerama libgeis

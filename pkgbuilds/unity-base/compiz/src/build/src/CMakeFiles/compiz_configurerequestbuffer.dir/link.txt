@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_configurerequestbuffer.a CMakeFiles/compiz_configurerequestbuffer.dir/configurerequestbuffer.cpp.o
+/usr/bin/ranlib libcompiz_configurerequestbuffer.a

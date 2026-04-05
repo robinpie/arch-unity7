@@ -1,0 +1,158 @@
+<!-- ##### SECTION Title ##### -->
+Timestamp handling
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### MACRO ZEITGEIST_TIMESTAMP_SECOND ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_TIMESTAMP_MINUTE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_TIMESTAMP_HOUR ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_TIMESTAMP_DAY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_TIMESTAMP_WEEK ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO ZEITGEIST_TIMESTAMP_YEAR ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION zeitgeist_timestamp_for_now ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_timestamp_from_date ##### -->
+<para>
+
+</para>
+
+@date: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_timestamp_from_dmy ##### -->
+<para>
+
+</para>
+
+@day: 
+@month: 
+@year: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_timestamp_from_iso8601 ##### -->
+<para>
+
+</para>
+
+@datetime: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_timestamp_from_timeval ##### -->
+<para>
+
+</para>
+
+@tv: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_timestamp_next_midnight ##### -->
+<para>
+
+</para>
+
+@timestamp: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_timestamp_prev_midnight ##### -->
+<para>
+
+</para>
+
+@timestamp: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_timestamp_to_date ##### -->
+<para>
+
+</para>
+
+@timestamp: 
+@date: 
+
+
+<!-- ##### FUNCTION zeitgeist_timestamp_to_iso8601 ##### -->
+<para>
+
+</para>
+
+@timestamp: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_timestamp_to_timeval ##### -->
+<para>
+
+</para>
+
+@timestamp: 
+@tv: 
+
+

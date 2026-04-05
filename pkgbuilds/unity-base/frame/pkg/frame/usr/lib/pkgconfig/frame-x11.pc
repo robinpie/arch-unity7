@@ -1,0 +1,9 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib
+includedir=${prefix}/include
+
+Name: frame-x11
+Description: Touch Frame Library - X11 support
+Version: 2.5.0
+Requires: frame = 2.5.0

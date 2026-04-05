@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/build/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/build/modules/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/build/modules/Dee/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/x11-libs/dee-qt/src/build/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_opengl_glx_tfp_bind.a "CMakeFiles/compiz_opengl_glx_tfp_bind.dir/src/glx-tfp-bind.cpp.o"
+/usr/bin/ranlib libcompiz_opengl_glx_tfp_bind.a

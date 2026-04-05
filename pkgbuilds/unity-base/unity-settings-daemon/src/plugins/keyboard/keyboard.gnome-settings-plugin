@@ -1,0 +1,9 @@
+[GNOME Settings Plugin]
+Module=keyboard
+IAge=0
+Priority=6
+Name=Keyboard
+Description=Keyboard plugin
+Authors=
+Copyright=Copyright © 2007
+Website=

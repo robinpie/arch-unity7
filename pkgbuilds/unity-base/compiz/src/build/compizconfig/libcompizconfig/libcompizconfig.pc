@@ -1,0 +1,15 @@
+prefix=/usr
+exec_prefix=/usr/bin
+libdir=/usr/lib
+includedir=/usr/include/compizconfig
+
+configdir=/etc/compizconfig
+upgradesdir=/usr/share/compizconfig/upgrades
+
+Name: libcompizconfig
+Description: Compiz configuration system
+Version: 0.9.14.2
+
+Requires: compiz
+Libs: -L/usr/lib -lcompizconfig
+Cflags: -I/usr/include/compizconfig

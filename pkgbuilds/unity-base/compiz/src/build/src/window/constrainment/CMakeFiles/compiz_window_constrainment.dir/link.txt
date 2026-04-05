@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_window_constrainment.a CMakeFiles/compiz_window_constrainment.dir/src/windowconstrainment.cpp.o
+/usr/bin/ranlib libcompiz_window_constrainment.a

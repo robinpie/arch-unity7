@@ -1,0 +1,1560 @@
+2010-06-17  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-timestamp.c:
+	* src/zeitgeist-timestamp.h:
+	* tests/test-timestamp.c:
+	* bindings/zeitgeist-1.0-custom.vala:
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.metadata:
+	* bindings/zeitgeist-1.0.namespace:
+	* bindings/zeitgeist-1.0.vapi:
+	* doc/reference/zeitgeist-1.0-docs.sgml:
+	* doc/reference/zeitgeist-1.0-sections.txt:
+	* src/Makefile.am:
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-timerange.c:
+	* src/zeitgeist-timerange.h:
+	* src/zeitgeist.h:
+	* tests/Makefile.am:
+
+	Merge lp:~libzeitgeist-developers/libzeitgeist/timestamps. WARNING: This causes an API break.
+	
+	Add a new namespace Zeitgeist.TimeStamp/zeitgeist_timestamp with convenience functions and constants for dealing with timestamps.
+	
+	The following macros have been changed:
+	
+	- ZEITGEIST_TIMESTAMP_TO_GTIMEVAL is now zeitgeist_timestamp_to_timeval
+	- ZEITGEIST_GTIMEVAL_TO_TIMESTAMP is now zeitgeist_timestamp_from_timeval
+
+2010-06-17  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings/zeitgeist-1.0-custom.vala:
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.metadata:
+	* bindings/zeitgeist-1.0.namespace:
+	* bindings/zeitgeist-1.0.vapi:
+
+	Vala: The Zeitgeist.Timestamp namespace should still include zeitgeist.h not zeitgeist-1.0-custom.h
+
+2010-06-17  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings/zeitgeist-1.0-custom.vala:
+	* bindings/zeitgeist-1.0.vapi:
+
+	Update VAPI with new Zeitgeist.Timestamp bindings and remove timestamp_to_timeval() and timeval_to_timestamp()
+
+2010-06-17  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings/zeitgeist-1.0-custom.vala:
+	* bindings/zeitgeist-1.0.vapi:
+	* src/zeitgeist-result-set.h:
+
+	Sync with trunk
+
+2010-06-17  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* tests/test-timestamp.c:
+	* doc/reference/zeitgeist-1.0-sections.txt:
+	* src/zeitgeist-timestamp.c:
+	* src/zeitgeist-timestamp.h:
+	* tests/Makefile.am:
+
+	Add some tests for timestamp handling
+	
+	Fix rounding errors where gint64 conversions where used
+	
+	Add the methods zeitgeist_timestamp_to_date, zeitgeist_timestamp_from_dmy, and zeitgeist_timestamp_from_date
+
+2010-06-17  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* doc/reference/zeitgeist-1.0-docs.sgml:
+	* doc/reference/zeitgeist-1.0-sections.txt:
+	* src/zeitgeist-timestamp.c:
+
+	Hook up gtk-docs for the new zeitgeist-timestamp APIs
+
+2010-06-17  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-timerange.c:
+	* src/zeitgeist-timerange.h:
+	* src/zeitgeist-timestamp.c:
+	* src/zeitgeist-timestamp.h:
+
+	API BREAK: Implement initial stab add convenience functions for dealing with timestamps
+	
+	The following macros have been changed:
+	
+	- ZEITGEIST_TIMESTAMP_TO_GTIMEVAL is now zeitgeist_timestamp_to_timeval
+	- ZEITGEIST_GTIMEVAL_TO_TIMESTAMP is now zeitgeist_timestamp_from_timeval
+
+2010-06-16  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-timestamp.c:
+	* src/zeitgeist-timestamp.h:
+	* src/Makefile.am:
+	* src/zeitgeist.h:
+
+	Import stub source files to hold the timestamp code and wire it up in the build system
+
+2010-06-17  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings/zeitgeist-1.0-custom.vala:
+	* bindings/zeitgeist-1.0.vapi:
+	* src/zeitgeist-result-set.h:
+
+	Vala: Patch from Michal Hruby to not ref the Events when iterating over a ResultSet with foreach
+
+2010-06-16  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings/zeitgeist-1.0.metadata:
+
+	Mark the Cancellable argument for Zeitgeist.Index.search() as nullable in the VAPI metadata
+
+2010-06-16  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-timerange.h:
+
+	Doc typo
+
+2010-06-15  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* configure.ac:
+
+	Bump version to 0.1.2
+
+2010-06-15  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/find-events-alt.vala:
+	* bindings/zeitgeist-1.0-custom.vala:
+	* bindings/zeitgeist-1.0.vapi:
+	* src/zeitgeist-result-set.h:
+
+	Vala: Make Zeitgeist.ResultSet work with the foreach() iterator protocol - so you can do 'foreach (var event in result_set) { bleh; }'
+
+2010-06-14  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings/zeitgeist-1.0.vapi:
+
+	Make the GCancellable argument to Zeitgeist.Index.search() nullable in the ZG VAPI
+
+2010-06-10  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* NEWS:
+	* configure.ac:
+
+	Release libzeitgeist-0.1.1
+
+2010-06-10  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* NEWS:
+
+	Release 0.1.0
+
+2010-06-10  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/search-events.c:
+	* src/zeitgeist-index.c:
+	* src/zeitgeist-index.h:
+	* src/zeitgeist-result-set.c:
+	* src/zeitgeist-result-set.h:
+	* src/zeitgeist-simple-result-set.c:
+	* src/zeitgeist-simple-result-set.h:
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.metadata:
+	* bindings/zeitgeist-1.0.vapi:
+	* configure.ac:
+	* doc/reference/zeitgeist-1.0-docs.sgml:
+	* doc/reference/zeitgeist-1.0-sections.txt:
+	* doc/reference/zeitgeist-1.0.types:
+	* examples/Makefile.am:
+	* examples/find-events.c:
+	* examples/monitor-events.c:
+	* src/Makefile.am:
+	* src/marshal.list:
+	* src/org.gnome.zeitgeist.Log.xml:
+	* src/zeitgeist-enums.h:
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+	* src/zeitgeist-monitor.c:
+	* src/zeitgeist.h:
+	* tests/Makefile.am:
+	* tests/test-event.c:
+	* tests/test-log.c:
+
+	Merge lp:~libzeitgeist-developers/libzeitgeist/fts-api
+	
+	* Brings in new API to talk to Zeitgeist's FTS extension
+	* New interface ZeitgeistResultSet
+	* API+ABI BREAK: zeitgeist_log_find_events(), zeitgeist_log_get_events(), and the signal ZeitgeistMonitor::events-inserted have changed to pass a ZeitgeistResultSet where they passed a GPtrArray of events before
+
+2010-06-10  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/monitor-events.c:
+
+	Remove unsused var
+
+2010-06-10  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings/zeitgeist-1.0.vapi:
+
+	Fix from Michal Hruby to the Zeitgeist VAPI
+
+2010-06-10  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* configure.ac:
+	* tests/Makefile.am:
+	* tests/test-event.c:
+
+	Patch from Michal Hruby to include and link against gio-unix-2.0 in the test-event.c test suite (since it uses GDesktopAppInfos)
+
+2010-06-10  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.metadata:
+	* bindings/zeitgeist-1.0.vapi:
+	* src/zeitgeist-event.c:
+
+	Update VAPI to reflect API changes with regards to ZeitgeistResultSet and add support for ZeitgeistIndex
+
+2010-06-10  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-index.c:
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-monitor.c:
+
+	Fix compile time warning because of missing include of "zeitgeist-simple-result-set.h"
+
+2010-06-10  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/monitor-events.c:
+	* src/marshal.list:
+	* src/zeitgeist-monitor.c:
+
+	API CHANGE: Make the signal ZeitgeistMonitor::events-inserted use a ZeitgeistResultSet in stead of a GPtrArray
+
+2010-06-10  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/search-events.c:
+	* examples/Makefile.am:
+	* examples/find-events.c:
+	* examples/monitor-events.c:
+	* src/zeitgeist-index.c:
+	* src/zeitgeist-index.h:
+	* src/zeitgeist-result-set.c:
+
+	API CHANGE: zeitgeist_index_search_finish() now returns a ZeitgeistResultSet instead of a GPtrArray
+	
+	Add new example using the ZeitgeistIndex API to do full text searches
+
+2010-06-10  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* tests/test-log.c:
+
+	Tighten the tests in test-log.c for the new ZeitgeistResultSet class
+
+2010-06-10  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/find-events.c:
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+	* src/zeitgeist-simple-result-set.c:
+	* tests/test-log.c:
+
+	API CHANGE: zeitgeist_log_get_events_finish() and zeitgeist_log_find_events_finish() now return a ZeitgeistResultSet.
+	
+	Ported unit tests and examples accordingly.
+
+2010-06-10  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* doc/reference/zeitgeist-1.0-sections.txt:
+	* src/zeitgeist-result-set.c:
+	* src/zeitgeist-simple-result-set.c:
+
+	Add doc strings to undocumented methods on ZeitgeistResultSet.
+
+2010-06-10  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-result-set.c:
+	* src/zeitgeist-result-set.h:
+	* src/zeitgeist-simple-result-set.c:
+
+	Add methods ZeitgeistResultSet.tell() and peek()
+
+2010-06-09  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-simple-result-set.c:
+	* src/zeitgeist-simple-result-set.h:
+	* src/Makefile.am:
+
+	Add ZeitgeistSimpleResultSet into the build
+
+2010-06-09  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-result-set.c:
+	* src/zeitgeist-result-set.h:
+	* doc/reference/zeitgeist-1.0-docs.sgml:
+	* doc/reference/zeitgeist-1.0-sections.txt:
+	* src/Makefile.am:
+	* src/zeitgeist.h:
+
+	Add interface for result sets. We are going to need that for zeitgeist_index_search() and we might as well use it for zeitgeist_log_find_events() and zeitgeist_log_get_events()
+
+2010-06-09  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-enums.h:
+	* src/zeitgeist-index.c:
+
+	Add doc strings for new ZeitgeistIndex API and describe the query language
+
+2010-06-09  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* doc/reference/zeitgeist-1.0-docs.sgml:
+	* doc/reference/zeitgeist-1.0-sections.txt:
+	* doc/reference/zeitgeist-1.0.types:
+	* src/zeitgeist-index.c:
+	* src/zeitgeist-index.h:
+
+	Stub API docs for ZeitgeistIndex
+
+2010-06-09  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-index.c:
+	* src/zeitgeist-index.h:
+	* src/Makefile.am:
+	* src/zeitgeist.h:
+
+	Initial UNTESTED impl of ZeitgeistIndex for accessing the Zeitgeist FTS extension
+
+2010-06-09  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/Makefile.am:
+	* src/org.gnome.zeitgeist.Log.xml:
+
+	Add EggDBus and automake hooks to generate interfaces for the Zeitgeist FTS extension org.gnome.zeitgeist.Index
+
+2010-06-01  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-mimetypes.c:
+
+	Map the text/html mimetype to ZEITGEIST_NFO_HTML_DOCUMENT instead of ZEITGEIST_NFO_SOURCE_CODE
+
+2010-06-01  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-mimetypes.c:
+
+	Add https URI scheme for pre-loaded manifestations
+
+2010-05-28  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-log.c:
+
+	Make ZeitgeistLog observe when/if the Zeitgeist daemon leave/enters the bus. When it enters the bus all active monitors are reinstated. This fixes bug #578743: "ZeitgeistMonitor stops working on ZG restart".
+
+2010-05-28  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* tests/Makefile.am:
+
+	In check-headless also launch a fake X server because dbus-launch requires that (we're using Xvfb)
+
+2010-05-28  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* Makefile.am:
+
+	Let the 'check-headless' target be available from the top level dir
+
+2010-05-28  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* tests/Makefile.am:
+
+	Add a new target 'check-headless' that sets up a private bus and a Zeitgeist instance that only uses a memory backedd DB
+
+2010-05-09  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings/zeitgeist-1.0.metadata:
+	* src/zeitgeist-eggdbusconversions.c:
+
+	Merge Michal Hruby's branch, lp:~mhr3/libzeitgeist/various-fixes, fixing a memleak in  _zeitgeist_event_to_egg_zeitgeist_event
+
+2010-05-09  Michal Hruby  <michal.mhr@gmail.com>
+
+	* bindings/zeitgeist-1.0.metadata:
+	* src/zeitgeist-eggdbusconversions.c:
+
+	Fix leak in ZeitgeistEvent -> EggZeitgeistEvent conversion
+
+2010-05-04  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-eggdbusconversions.c:
+	* tests/test-eggdbusconversions.c:
+
+	Merge Michal Hruby's branch lp:~mhr3/libzeitgeist/various-fixes which fixes dbus marshalling of events with empty subjects.
+	
+	Added a unit test that catches this case.
+
+2010-04-30  Michal Hruby  <michal.mhr@gmail.com>
+
+	* src/zeitgeist-eggdbusconversions.c:
+
+	Fix subject marshalling
+
+2010-04-30  Michal Hruby  <michal.mhr@gmail.com>
+
+	* src/zeitgeist-monitor.c:
+
+	Merged trunk
+
+2010-04-29  Michal Hruby  <michal.mhr@gmail.com>
+
+	* doc/reference/zeitgeist-1.0.types:
+	* doc/reference/zeitgeist-1.0-sections.txt:
+	* src/zeitgeist-monitor.c:
+
+	Merge trunk
+
+2010-04-29  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-monitor.c:
+
+	Doh... Props needs to be readwrite AND construct only...
+
+2010-04-29  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-monitor.c:
+
+	Improve docs for ZeitgeistMonitor and make the event-templates and time-range properties read-only.
+
+2010-04-29  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings/zeitgeist-1.0-custom.vala:
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.metadata:
+	* bindings/zeitgeist-1.0.vapi:
+	* configure.ac:
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+	* src/zeitgeist-monitor.c:
+	* src/zeitgeist-monitor.h:
+
+	Merge Michal Hruby's branch lp:~mhr3/libzeitgeist/various-fixes into trunk. This fixes ZeitgeistMonitor's Vala API and makes the method signature of zeitgeist_log_insert_events_from_ptrarray() be in line with those of GIO async methods.
+	
+	Also lower EggDBus requirements to 0.5 (from 0.6)
+
+2010-04-29  Michal Hruby  <michal.mhr@gmail.com>
+
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.vapi:
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+
+	insert_events_from_ptrarray: cancellable should be 3rd param
+	Regenerate vapi
+
+2010-04-28  Michal Hruby  <michal.mhr@gmail.com>
+
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.vapi:
+	* src/zeitgeist-monitor.c:
+
+	Specialize Monitor signal definition
+
+2010-04-28  Michal Hruby  <michal.mhr@gmail.com>
+
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+
+	Swap parameter order for insert_events_from_ptrarray
+
+2010-04-28  Michal Hruby  <michal.mhr@gmail.com>
+
+	* bindings/zeitgeist-1.0.metadata:
+	* bindings/zeitgeist-1.0.vapi:
+
+	More fixes to the bindings
+
+2010-04-27  Michal Hruby  <michal.mhr@gmail.com>
+
+	* bindings/zeitgeist-1.0.metadata:
+	* bindings/zeitgeist-1.0.vapi:
+
+	Fix find_related_uris binding
+
+2010-04-27  Michal Hruby  <michal.mhr@gmail.com>
+
+	* src/zeitgeist-mimetypes.c:
+	* src/zeitgeist-mimetypes.h:
+	* tests/test-mimetypes.c:
+	* doc/reference/zeitgeist-1.0-docs.sgml:
+	* doc/reference/zeitgeist-1.0-sections.txt:
+	* src/Makefile.am:
+	* src/zeitgeist.h:
+	* tests/Makefile.am:
+
+	Merge trunk
+
+2010-04-27  Michal Hruby  <michal.mhr@gmail.com>
+
+	* bindings/zeitgeist-1.0.metadata:
+
+	Fix typo
+
+2010-04-27  Michal Hruby  <michal.mhr@gmail.com>
+
+	* bindings/zeitgeist-1.0.metadata:
+	* bindings/zeitgeist-1.0.vapi:
+	* src/zeitgeist-monitor.c:
+
+	Fix Vala binding of ZeitgeistMonitor
+
+2010-04-23  Michal Hruby  <michal.mhr@gmail.com>
+
+	* bindings/zeitgeist-1.0-custom.vala:
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.vapi:
+	* src/zeitgeist-monitor.h:
+
+	Add missing get_type for Monitor class - fixes generated bindings
+
+2010-04-23  Michal Hruby  <michal.mhr@gmail.com>
+
+	* tests/test.desktop:
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.vapi:
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-event.h:
+	* tests/Makefile.am:
+	* tests/test-event.c:
+
+	Merge trunk
+
+2010-04-23  Michal Hruby  <michal.mhr@gmail.com>
+
+	* AUTHORS:
+	* bindings/zeitgeist-1.0-custom.vala:
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.metadata:
+	* bindings/zeitgeist-1.0.vapi:
+	* configure.ac:
+	* examples/find-events.c:
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+	* tests/test-log.c:
+
+	Merge trunk
+
+2010-04-29  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* doc/reference/zeitgeist-1.0-sections.txt:
+
+	Fix ref to egg_zeitgeist_storage_state_get_type in docs. Should be zeitgeist_storage_state_get_type
+
+2010-04-29  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* doc/reference/zeitgeist-1.0.types:
+
+	Add zeitgeist-1.0.types to doc generation. This makes gtk-doc include properties and signals for the classes
+
+2010-04-23  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* doc/reference/zeitgeist-1.0-docs.sgml:
+	* doc/reference/zeitgeist-1.0-sections.txt:
+	* src/Makefile.am:
+	* src/zeitgeist-mimetypes.c:
+	* src/zeitgeist-mimetypes.h:
+	* src/zeitgeist.h:
+	* tests/test-mimetypes.c:
+
+	Complete impl of mimetype and URI scheme mapping. Document it and add it to the public headers since it's quite nifty.
+
+2010-04-23  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-mimetypes.c:
+
+	Add some image types
+
+2010-04-23  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-mimetypes.c:
+	* tests/test-mimetypes.c:
+
+	Start adding a tonne of mimetype mappings and add some more tests for these
+
+2010-04-23  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* tests/test-mimetypes.c:
+
+	Add a few more tests for the mime/uri scheme mapping
+
+2010-04-23  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-mimetypes.c:
+	* src/zeitgeist-mimetypes.h:
+	* tests/test-mimetypes.c:
+	* src/Makefile.am:
+	* tests/Makefile.am:
+
+	Start adding convenience functions to guess interpretation types from mimetypes and manifestations types from URI schemes. Unfinished.
+
+2010-04-23  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.vapi:
+
+	Add new method to VAPI Event.set_actor_from_app_info()
+
+2010-04-23  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* tests/test.desktop:
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-event.h:
+	* tests/Makefile.am:
+	* tests/test-event.c:
+
+	Add new method zeitgeist_event_set_actor_from_app_info(), and add unit tests for this
+
+2010-04-23  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* AUTHORS:
+
+	Add Michal in AUTHORS
+
+2010-04-23  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.metadata:
+	* bindings/zeitgeist-1.0.vapi:
+
+	Update Vala bindings to new _finish() API, where we return the actual return value from the _finish() functions, but no longer as an our-arg
+
+2010-04-23  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/find-events.c:
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+	* tests/test-log.c:
+
+	Convert all zeitgeist_log_*_finish() functions to the standard GIO signature (ZeitgeistLog *self, GAsyncResult *res, GError **error) and return the method result in the return value instead of an out-arg. This should also improve Vala async integration.
+
+2010-04-23  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings/zeitgeist-1.0-custom.vala:
+	* bindings/zeitgeist-1.0.defines:
+	* bindings/zeitgeist-1.0.excludes:
+	* bindings/Makefile.am:
+	* bindings/generate_vapi:
+	* bindings/zeitgeist-1.0.deps:
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.metadata:
+	* bindings/zeitgeist-1.0.vapi:
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+	* src/zeitgeist-timerange.c:
+	* src/zeitgeist-timerange.h:
+	* tests/test-log.c:
+
+	Merge Michal Hruby's branch lp:~mhr3/libzeitgeist/various-fixes containing a set of improvements for Vala support. Please see https://code.launchpad.net/~mhr3/libzeitgeist/various-fixes/+merge/23927 for review comments.
+
+2010-04-22  Michal Hruby  <michal.mhr@gmail.com>
+
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.metadata:
+	* bindings/zeitgeist-1.0.vapi:
+
+	Few more Vala ownership fixes
+
+2010-04-22  Michal Hruby  <michal.mhr@gmail.com>
+
+	* bindings/zeitgeist-1.0.metadata:
+	* bindings/zeitgeist-1.0.vapi:
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+	* tests/test-log.c:
+
+	Tag the Vala bindings as async to make our lives easier.
+	Vala requires the AsyncResult parameter to be always second, to let's not fight it.
+
+2010-04-22  Michal Hruby  <michal.mhr@gmail.com>
+
+	* bindings/Makefile.am:
+
+	Add new files to Makefile
+
+2010-04-22  Michal Hruby  <michal.mhr@gmail.com>
+
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.vapi:
+
+	Regenerate Vala bindings
+
+2010-04-22  Michal Hruby  <michal.mhr@gmail.com>
+
+	* bindings/zeitgeist-1.0-custom.vala:
+	* bindings/zeitgeist-1.0.defines:
+	* bindings/zeitgeist-1.0.excludes:
+	* bindings/Makefile.am:
+	* bindings/generate_vapi:
+	* bindings/zeitgeist-1.0.deps:
+
+	Fix Vala binding generation
+
+2010-04-22  Michal Hruby  <michal.mhr@gmail.com>
+
+	* src/zeitgeist-timerange.c:
+	* src/zeitgeist-timerange.h:
+
+	Use pointers in timestamp macros
+
+2010-04-21  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-ontology-manifestations.h:
+
+	Add missing file zeitgeist-ontology-manifestations.h
+
+2010-04-21  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* COPYING.GPL:
+	* Makefile.am:
+	* README:
+	* examples/find-events.c:
+	* examples/insert-event.vala:
+	* examples/monitor-events.c:
+
+	Add missing GPL licensing headers to examples. Include a copy of the GPL3
+
+2010-04-21  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/org.gnome.zeitgeist.Log.xml:
+	* src/zeitgeist-enums.h:
+
+	Add the new ResultTypes introduced in Zeitgeist 0.3.3.
+
+2010-04-20  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/Makefile.am:
+	* src/zeitgeist-monitor.c:
+
+	Rename the prefix for our closure marshallers to have a _ prefix. Eg _zeitgeist_cclosure_marshal. This way we can strip these symbols out of the final .so with our export-symbols-regex
+
+2010-04-20  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/Makefile.am:
+	* src/zeitgeist-enums.h:
+	* src/zeitgeist-enumtypes.h.template:
+	* src/zeitgeist-event.h:
+	* src/zeitgeist-log.h:
+	* src/zeitgeist-monitor.h:
+	* src/zeitgeist-ontology-interpretations.h:
+	* src/zeitgeist-subject.h:
+	* src/zeitgeist-timerange.h:
+	* src/zeitgeist.h:
+	* tests/Makefile.am:
+
+	Enforce single header includes. Programs can only include zeitgeist.h now, not any of the zeitgeist-*.h files
+
+2010-04-20  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* configure.ac:
+
+	Add silent rules to build
+
+2010-04-20  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings/zeitgeist-1.0.metadata:
+
+	Vala: Transfer ownership of ptrarray in zeitgeist_log_insert_events_from_ptrarray
+
+2010-04-19  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.metadata:
+	* bindings/zeitgeist-1.0.vapi:
+	* examples/insert-event.vala:
+
+	Nudge about trying to get the Vala bindings to work
+
+2010-04-19  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* doc/reference/zeitgeist-1.0-sections.txt:
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+
+	Implement zeitgeist_log_insert_events_no_reply()
+
+2010-04-19  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/insert-event.vala:
+
+	Include preliminary Vala example... Still can't compile, but I should be something like: valac --pkg glib-2.0 --pkg gio-2.0 --pkg zeitgeist-1.0 --vapidir=/opt/share/vala/vapi insert-event.vala
+
+2010-04-19  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.vapi:
+
+	Update VAPI with new API for Log.insert_events()
+
+2010-04-19  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* Makefile.am:
+	* doc/reference/zeitgeist-1.0-sections.txt:
+	* src/zeitgeist-eggdbusconversions.c:
+	* src/zeitgeist-eggdbusconversions.h:
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+	* tests/test-log.c:
+
+	Make zeitgeist_log_insert_events() a varargs function and introduce to new variants of it _valist() and _from_ptrarray()
+
+2010-04-19  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* bindings:
+	* bindings/Makefile.am:
+	* bindings/generate_vapi:
+	* bindings/zeitgeist-1.0.deps:
+	* bindings/zeitgeist-1.0.files:
+	* bindings/zeitgeist-1.0.gi:
+	* bindings/zeitgeist-1.0.metadata:
+	* bindings/zeitgeist-1.0.namespace:
+	* bindings/zeitgeist-1.0.vapi:
+	* Makefile.am:
+	* configure.ac:
+
+	Import Vala VAPI
+
+2010-04-19  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/Makefile.am:
+
+	Include the ontology headers in the installed development headers
+
+2010-04-18  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/monitor-events.c:
+	* src/zeitgeist-monitor.c:
+
+	Fix emission of events-deleted signal from ZeitgeistMonitor. We did a premature free of some memory we needed.
+	
+	Make monitor-events.c example monitor events for any timestamp
+
+2010-04-16  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* tests/test-event.c:
+	* src/zeitgeist-subject.c:
+	* tests/Makefile.am:
+
+	Add unit tests for ZeitgeistEvent (and subject) constructors
+
+2010-04-16  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* doc/reference/zeitgeist-1.0-sections.txt:
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-event.h:
+	* src/zeitgeist-subject.c:
+	* src/zeitgeist-subject.h:
+
+	Add some convenience constructors to ZeitgeistEvent and ZeitgeistSubject
+
+2010-04-16  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* doc/reference/zeitgeist-1.0-docs.sgml:
+	* doc/reference/zeitgeist-1.0-sections.txt:
+	* src/Makefile.am:
+	* src/zeitgeist.h:
+	* tools/onto2c.py:
+	* src/zeitgeist-ontology.h:
+	* src/zeitgeist-ontology-interpretations.h:
+
+	Split up ontology in an 'interpretations' and 'manifestations' part
+
+2010-04-16  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-ontology.h:
+	* tools/onto2c.py:
+
+	w00t. External links to Nepomuk ontolgies work inside the gtk-doc now
+	
+	Also list the children of each symbol of the ontology in the gtk-doc
+
+2010-04-16  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* doc/reference/zeitgeist-1.0-docs.sgml:
+	* doc/reference/zeitgeist-1.0-sections.txt:
+
+	Include the ontology macros in the generated API docs
+
+2010-04-16  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-ontology.h:
+	* src/Makefile.am:
+	* src/zeitgeist.h:
+
+	Include autogenerated ontology macros generated via a magic script using the lp:~zeitgeist/zeitgeist/ontology_definition branch of Zeitgeist
+
+2010-04-16  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* tools:
+	* tools/onto2c.py:
+
+	Import tool to transcode the Zeitgeist ontology into a set of C macros
+
+2010-04-15  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/Makefile.am:
+
+	w00t. distcheck works again
+
+2010-04-15  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* Makefile.am:
+
+	Desperately try and fix distcheck now that I added gtk-doc
+
+2010-04-15  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-event.h:
+
+	Complete docs for ZeitgeistEvent
+
+2010-04-15  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* doc/reference/zeitgeist-1.0-docs.sgml:
+	* doc/reference/zeitgeist-1.0-sections.txt:
+	* src/zeitgeist-enums.h:
+	* src/zeitgeist-event.c:
+
+	More doc-work
+
+2010-04-15  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* doc/reference/zeitgeist-1.0-docs.sgml:
+	* doc/reference/zeitgeist-1.0-sections.txt:
+	* Makefile.am:
+	* configure.ac:
+	* doc/reference/Makefile.am:
+
+	The docs are not completely wacked now... :-)
+
+2010-04-15  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* doc:
+	* doc/Makefile.am:
+	* doc/reference:
+	* doc/reference/Makefile.am:
+
+	Start adding gtk-doc
+
+2010-04-15  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/Makefile.am:
+
+	Makefile.am shuffling to fix distcheck
+
+2010-04-15  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-timerange.c:
+	* src/zeitgeist-timerange.h:
+
+	Rename ZEITGEIST_GTIMEVAL_TO_SYSTEM_TIME -> ZEITGEIST_GTIMEVAL_TO_TIMESTAMP
+
+2010-04-15  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-eggdbusconversions.c:
+	* tests/test-eggdbusconversions.c:
+
+	Fix nasty rounding/casting error clipping timestamps when passed over the wire
+
+2010-04-15  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/Makefile.am:
+	* src/Makefile.am:
+	* src/zeitgeist.h:
+	* tests/Makefile.am:
+	* zeitgeist-1.0.pc.in:
+
+	Rename libs and pkg package name to zeitgeist-1.0 (so we can have parallel installs if we ever need to break API/ABI)
+	
+	Install development headers on make install
+
+2010-04-14  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/find-events.c:
+	* examples/monitor-events.c:
+
+	Clean up includes in the examples
+
+2010-04-14  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-monitor.c:
+
+	Doc twiddling... 
+
+2010-04-14  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/monitor-events.c:
+	* src/marshal.list:
+	* src/zeitgeist-monitor.c:
+
+	Fix crasher: ZeitgeistMonitor::events-inserted is not VOID__OBJECT_OBJECT, but VOID__OBJECT_BOXED. Signal emiisions from ZeitgeistMonitor works in example/monitor-events now
+
+2010-04-14  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* tests/test-eggdbusconversions.c:
+	* tests/test-log.c:
+	* tests/test-monitor.c:
+	* tests/test-timerange.c:
+
+	Fix test headers to correctly ref me as the author
+
+2010-04-14  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/marshal.list:
+	* configure.ac:
+	* src/Makefile.am:
+	* src/zeitgeist-monitor.c:
+	* src/zeitgeist-monitor.h:
+
+	Implement signal emissions on ZeitgeistMonitor
+	
+	Add needed glib-genmarshal magic for signal emissions
+
+2010-04-13  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-monitor.c:
+
+	Clarify a FIXME about missing signals for the monitors
+
+2010-04-13  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/monitor-events.c:
+	* examples/Makefile.am:
+	* src/zeitgeist-eggdbusconversions.c:
+	* src/zeitgeist-monitor.c:
+	* tests/test-eggdbusconversions.c:
+
+	Add small example program that listens for events via a ZeitgeistMonitor
+	
+	Fix how we convert 0 timestamps and event ids to wire format. Hint: They are empty strings not "0". This fixes event matching for the match-all-monitor
+
+2010-04-13  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+	* src/zeitgeist-monitor.c:
+	* src/zeitgeist-monitor.h:
+
+	All methods in ZeitgeistLog API implemented (but many of them untested). This round implements the install/remove_monitor() calls
+	
+	Make ZeitgeistMonitor no longer subclass GInitiallyUnowned - that was inconvenient when they export a service
+	
+	Start hooking up the ZeitgeistMonitor class as an eggdbus service. Mostly done. Primarily missing is emitting some nice GObject signals when events are received
+
+2010-04-13  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+
+	Implement ZeitgeistLog.find_related_uris()
+
+2010-04-13  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/Makefile.am:
+
+	Fix distcheck
+
+2010-04-13  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-eggdbusconversions.c:
+	* src/zeitgeist-timerange.h:
+	* tests/Makefile.am:
+
+	Now that we strip the main lib from stray symbols we need to add some helper files to our test cases
+
+2010-04-13  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/Makefile.am:
+
+	Add -export-symbols-regex '^zeitgeist_.*' to LDFLAGS to limit the symbols exported
+
+2010-04-13  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-log.h:
+
+	Outcomment un-implemented parts of the zeitgeist-log.h
+
+2010-04-13  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/Makefile.am:
+	* src/org.gnome.zeitgeist.Log.xml:
+
+	Add EggZeitgeist magic to generate the org.gnome.zeitgeist.{Blacklist,Monitor} interfaces
+
+2010-04-13  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-monitor.c:
+	* src/zeitgeist-monitor.h:
+
+	Implement path allocation and some convenience getters for ZeitgeistMonitor
+
+2010-04-13  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-log.c:
+
+	Implement delete_log() and quit() methods on ZeitgeistLog
+
+2010-04-13  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+
+	Refactor some of the internal dbus dispatching so that we can reduce some code duplication internally... Also implement find_event_ids()
+
+2010-04-13  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* tests/test-log.c:
+	* src/zeitgeist-eggdbusconversions.c:
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-event.h:
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+	* src/zeitgeist-subject.c:
+	* src/zeitgeist-subject.h:
+	* tests/Makefile.am:
+
+	zeitgeist_log_{insert,get,delete}_events() now work and is unit tested
+	
+	Fix slight API-oddity in ZeitgeistEvent where get/set_timestamp() worked with glong and not gint64
+	
+	Removed some debug statements
+
+2010-04-13  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-log.c:
+
+	Plug some leaks in zeitgeist_log_find_events() and add stub impl of zeitgeist_log_insert_events
+
+2010-04-13  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/find-events.c:
+	* src/zeitgeist-eggdbusconversions.c:
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-event.h:
+	* src/zeitgeist-log.c:
+	* tests/test-eggdbusconversions.c:
+
+	Don't expose the subjects of an event as a GPtrArray. This is unhandy for the caller and not flexible for the implementation
+
+2010-04-13  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/find-events.c:
+
+	Print out subject URIs of looked up recent events
+
+2010-04-09  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/find-events.c:
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+	* src/zeitgeist-timerange.c:
+	* src/zeitgeist-timerange.h:
+
+	Fixes a range of important issues:
+	
+	* Premature finalization of ZeitgeistLog objects in case you passed them to a method without holding a ref yourself. This was caused by ZeitgeistLog being a GInitiallyUnowned. That is no longer the case. It is now a normal GObject
+	
+	* The timestamps for ZeitgeistTimeRange where truncated to 32 bits since I assumed that glong was 8 bits - it's only 4... Now we use gint64 everywhere and everything is dandy
+	
+	* Added some formatting methods and convenience macros to ZeitgeistTimeRange
+
+2010-04-08  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples/find-events.c:
+	* src/zeitgeist-eggdbusconversions.c:
+
+	Fix _egg_zeitgeist_events_to_zeitgeist_events() which didn't fill in the GPtrArray of Events
+
+2010-04-08  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* examples:
+	* examples/Makefile.am:
+	* examples/find-events.c:
+	* src/zeitgeist.h:
+	* Makefile.am:
+	* configure.ac:
+	* src/zeitgeist-eggdbusconversions.c:
+	* src/zeitgeist-eggdbusconversions.h:
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+
+	Add global header file zeitgeist.h
+	
+	Add example program querying for some events (it crashes currently)
+
+2010-04-08  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* tests/test-eggdbusconversions.c:
+
+	EggDBus <-> Zeitgeist conversion funcs pretty well tested by now
+
+2010-04-08  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-event.h:
+	* src/zeitgeist-subject.h:
+	* tests/test-eggdbusconversions.c:
+
+	Export *_get_type() functions for ZeitgeistEvent and ZeitgeistSubject
+	
+	Add some more tests to test-eggdbusconversions
+
+2010-04-08  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-eggdbusconversions.c:
+	* src/zeitgeist-eggdbusconversions.h:
+	* tests/test-eggdbusconversions.c:
+	* src/Makefile.am:
+	* src/zeitgeist-enums.h:
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-event.h:
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-subject.c:
+	* src/zeitgeist-subject.h:
+	* tests/Makefile.am:
+
+	Start implementing conversion functions eggzeitgeist <-> proper zeitgeist GObjects.
+	
+	Add a first (and passing) test case for said functionality
+
+2010-04-07  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/Makefile.am:
+
+	Add some more of the eggdbus generated docbook files to the autofoo knowledge pool
+
+2010-04-07  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-enums.h:
+	* src/zeitgeist-enumtypes.c.template:
+	* src/zeitgeist-enumtypes.h.template:
+	* src/Makefile.am:
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-event.h:
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+	* src/zeitgeist-subject.c:
+	* tests/test-monitor.c:
+	* tests/test-timerange.c:
+
+	Include all needed source files in the build and fix any compile time errors they had
+	
+	Generate enum types for ZeitgeistStorageState and ZeitgeistResultType
+	
+	Impl start of what is to be ZeitgeistLog. It can look up the right EggDBus interface at least now. Now we just have to write the proxy calls and marshallers to hide the EggDBus types
+
+2010-04-07  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* tests/test-monitor.c:
+	* src/Makefile.am:
+	* src/zeitgeist-monitor.c:
+	* src/zeitgeist-monitor.h:
+	* tests/Makefile.am:
+
+	Impl of ZeitgeistMonitor mostly working. Added a test suite for said class
+
+2010-04-06  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-monitor.c:
+	* src/zeitgeist-monitor.h:
+
+	Start implementing ZeitgeistMonitor
+
+2010-04-06  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* tests/test-timerange.c:
+
+	Implement an actually meaningful test of timerange construction
+
+2010-04-06  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* Makefile.decl:
+	* tests:
+	* tests/Makefile.am:
+	* tests/test-timerange.c:
+	* Makefile.am:
+	* configure.ac:
+
+	Import stub for test harness
+
+2010-04-06  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-log.h:
+
+	Add GObject boilerplate to ZeitgeistLog
+
+2010-04-06  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-event.h:
+	* src/zeitgeist-subject.c:
+	* src/zeitgeist-subject.h:
+
+	Nudge about with the decl of the private structures for Zeitgest{Event,Subject}
+
+2010-04-06  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/Makefile.am:
+	* src/zeitgeist-timerange.c:
+	* src/zeitgeist-timerange.h:
+
+	Implement ZeitgeistTimeRange
+
+2010-04-06  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-log.c:
+	* src/zeitgeist-log.h:
+	* src/zeitgeist-monitor.c:
+	* src/zeitgeist-monitor.h:
+	* src/zeitgeist-timerange.c:
+	* src/zeitgeist-timerange.h:
+	* src/zeitgeist-proxy.c:
+	* src/zeitgeist-proxy.h:
+	* src/zeitgeist-subject.c:
+
+	Write the core ZeigeistLog API (abstracting out DBus and thus EggDBus entirely)
+	
+	Include stub files for the objects we need to write
+	
+	Remove obsolete class ZeitgeistProxy
+
+2010-04-06  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/org.gnome.zeitgeist.Log.xml:
+
+	Shuffle about the declaration of RemoveMonitor to make generated EggDBus code more sane
+
+2010-04-06  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-event.h:
+
+	Don't expose "private parts" in public
+
+2010-04-06  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-event.h:
+	* src/zeitgeist-subject.c:
+
+	Introduce enums that define the offsets of the individual fields of the zeitgeist events' and subjects' wire format
+	
+	Rename event.application -> event.actor
+	
+	Clean up Event finalizer
+
+2010-04-06  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-subject.c:
+	* src/zeitgeist-subject.h:
+
+	Make ZeitgeistSubject subclass of GInitiallyUnowned
+	
+	Prettify zeitgeist-subject.h
+
+2010-04-06  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* Makefile.am:
+
+	Fix leftover from gtx copy-paste of Makefile.am
+
+2010-03-26  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/Makefile.am:
+
+	Huzzah! Make distcheck passes!
+
+2010-03-25  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-event.h:
+
+	Make ZeitgeistEvent a subclass of GInitiallyUnowned
+
+2010-03-25  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/Makefile.am:
+	* src/org.gnome.zeitgeist.Log.xml:
+
+	Generate enumerations for the data offsets of event- and subject arrays
+
+2010-03-25  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/org.gnome.zeitgeist.Log.xml:
+
+	Add a name to the out arg of InsertEvents. That makes the generated EggDBus sources nicer
+
+2010-03-24  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* AUTHORS:
+	* MAINTAINERS:
+
+	Shamelessly promote myself to maintainer
+
+2010-03-24  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* MAINTAINERS:
+	* configure.ac:
+	* src/Makefile.am:
+
+	Autotools build is working! Party time!
+
+2010-03-24  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* AUTHORS:
+	* COPYING:
+	* ChangeLog:
+	* NEWS:
+	* README:
+	* configure.ac:
+	* src/Makefile.am:
+
+	Autofoo almost working
+
+2010-03-24  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* Makefile.am:
+	* autogen.sh:
+	* configure.ac:
+	* src/Makefile.am:
+	* zeitgeist-1.0.pc.in:
+	* src/zeitgeist-template.c:
+	* src/zeitgeist-template.h:
+	* src/org.gnome.zeitgeist.Log.xml:
+
+	Start integrating eggdbus <-> autotools. The generated EggDBus bindings for Zeitgeist looks mighty nice
+
+2010-03-24  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/zeitgeist-gen.xml:
+	* src/org.gnome.zeitgeist.Log.xml:
+
+	Fill in all of the DBus introspection data and write all EggDBus Enums and Struct types into the introspection as well
+
+2009-12-07  Jason Smith  <jason@t500>
+
+	* src/zeitgeist-proxy.c:
+
+	Remove stray line
+
+2009-12-07  Jason Smith  <jason@t500>
+
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-gen.xml:
+	* src/zeitgeist-proxy.c:
+	* src/zeitgeist-proxy.h:
+	* src/zeitgeist-subject.c:
+	* src/zeitgeist-template.c:
+
+	modified:
+	src/zeitgeist-event.c : typo
+	src/zeitgeist-gen.xml : Update to match ZG API
+	src/zeitgeist-proxy.c : Actually pass a folder in where needed
+	Ensure we use gint64 for timestamps
+	src/zeitgeist-proxy.h 
+	src/zeitgeist-subject.c : typo
+	src/zeitgeist-template.c : typo
+
+2009-12-07  Jason Smith  <jason@t500>
+
+	* src/zeitgeist-gen.xml:
+	* src/zeitgeist-proxy.c:
+
+	Add xml file with which bindings can be generated with dbus-glib-tool
+	Add some more work to proxy
+
+2009-12-07  Jason Smith  <jason@t500>
+
+	* src/zeitgeist-proxy.c:
+	* src/zeitgeist-proxy.h:
+
+	Further progress on proxy class
+
+2009-12-07  Jason Smith  <jason@t500>
+
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-proxy.c:
+	* src/zeitgeist-subject.c:
+	* src/zeitgeist-template.c:
+
+	Add blank proxy class
+
+2009-12-06  Jason Smith  <jason@t500>
+
+	* src/zeitgeist-event.h:
+	* src/zeitgeist-proxy.h:
+	* src/zeitgeist-subject.h:
+	* src/zeitgeist-template.h:
+
+	More copy and paste showing
+
+2009-12-04  Jason Smith  <jason@t500>
+
+	* src/zeitgeist-event.c:
+
+	modified:
+	src/zeitgeist-event.c : change variable names
+
+2009-12-04  Jason Smith  <jason@t500>
+
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-subject.c:
+	* src/zeitgeist-template.c:
+
+	modified: Oops my copy and paste was showing
+	src/zeitgeist-event.c
+	src/zeitgeist-subject.c
+	src/zeitgeist-template.c
+
+2009-12-04  Jason Smith  <jason@t500>
+
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-subject.c:
+	* src/zeitgeist-subject.h:
+
+	modified:
+	src/zeitgeist-event.c : Minor changes
+	src/zeitgeist-subject.c : Initial implementation
+	src/zeitgeist-subject.h : Minor changes
+
+2009-12-04  Jason Smith  <jason@t500>
+
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-event.h:
+	* src/zeitgeist-template.c:
+	* src/zeitgeist-template.h:
+
+	Some minor changes to template (use const, use strdup)
+	Initial implementation of event, should look a LOT like template...
+
+2009-12-04  Jason Smith  <jason@t500>
+
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-template.c:
+
+	modified:
+	src/zeitgeist-event.c : Start implementation
+	src/zeitgeist-template.c : Finish initial implementation
+
+2009-12-03  Jason Smith  <jason@t500>
+
+	* src:
+	* src/zeitgeist-event.c:
+	* src/zeitgeist-event.h:
+	* src/zeitgeist-proxy.c:
+	* src/zeitgeist-proxy.h:
+	* src/zeitgeist-subject.c:
+	* src/zeitgeist-subject.h:
+	* src/zeitgeist-template.c:
+	* src/zeitgeist-template.h:
+
+	Initial import, includes headers as defined by initial API documentation. *nothing* works yet.
+

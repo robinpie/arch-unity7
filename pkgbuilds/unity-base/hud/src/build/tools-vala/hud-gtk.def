@@ -1,0 +1,4 @@
+hud_gtk_cell_renderer_variant_get_type
+hud_gtk_cell_renderer_variant_new
+hud_gtk_cell_renderer_variant_construct
+hud_gtk_cell_renderer_variant_set_value

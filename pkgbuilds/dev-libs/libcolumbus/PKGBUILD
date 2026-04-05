@@ -1,0 +1,55 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/libcolumbus
+
+pkgname=libcolumbus
+pkgver=1.1.0
+_uver=+15.10.20150806
+_urev=0ubuntu39
+pkgrel=1
+pkgdesc="Error tolerant matching engine for the Unity7 dash"
+arch=('x86_64')
+url="https://launchpad.net/libcolumbus"
+license=('LGPL-3.0-or-later')
+depends=('icu' 'boost-libs' 'python3')
+makedepends=('cmake' 'pkgconf' 'boost' 'python3' 'sparsehash')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+)
+sha256sums=('SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+    if [ -f "${pkgname}_${pkgver}${_uver}-${_urev}.diff" ]; then
+        # Apply the diff; it adds debian/ and may also apply source patches (quilt state)
+        patch -d "${pkgname}-${pkgver}${_uver}" -p1 \
+            -i "../${pkgname}_${pkgver}${_uver}-${_urev}.diff"
+    fi
+
+    cd "${pkgname}-${pkgver}${_uver}"
+
+    # Apply debian patches only if not already applied by the diff (quilt state check)
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p"
+        done < debian/patches/series
+    fi
+}
+
+build() {
+    cmake -B build -S "${pkgname}-${pkgver}${_uver}" \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DENABLE_TESTING=OFF \
+        -DENABLE_COVERAGE=OFF \
+        -Duse_pch=OFF \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+    cmake --build build
+}
+
+package() {
+    DESTDIR="$pkgdir" cmake --install build
+    find "$pkgdir" -name '*.la' -delete
+}

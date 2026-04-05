@@ -1,0 +1,40 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/gsettings-ubuntu-touch-schemas
+
+pkgname=gsettings-ubuntu-touch-schemas
+pkgver=0.0.7
+_uver=+21.10.20210712
+_urev=0ubuntu4
+pkgrel=1
+pkgdesc="GSettings desktop-wide schemas for Unity7"
+arch=('x86_64')
+url="https://launchpad.net/gsettings-ubuntu-touch-schemas"
+license=('LGPL-2.1-or-later')
+depends=('dconf' 'accountsservice')
+makedepends=('pkgconf' 'autoconf' 'automake' 'libtool' 'gnome-common'
+             'glib2' 'intltool')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+)
+sha256sums=('SKIP')
+
+prepare() {
+    cd "$srcdir"
+    # Apply debian patches if present (no debian archive for this package)
+    autoreconf -fiv
+}
+
+build() {
+    cd "$srcdir"
+    ./configure \
+        --prefix=/usr \
+        --localstatedir=/var
+    make
+}
+
+package() {
+    cd "$srcdir"
+    make DESTDIR="$pkgdir" install
+    # Fix PolicyKit file ownership (install sets root:polkitd)
+    find "$pkgdir" -name "*.pkla" -exec chmod 644 {} \;
+}

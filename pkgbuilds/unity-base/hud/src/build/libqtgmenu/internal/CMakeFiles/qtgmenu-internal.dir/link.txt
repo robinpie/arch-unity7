@@ -1,0 +1,2 @@
+/usr/bin/ar qc libqtgmenu-internal.a "CMakeFiles/qtgmenu-internal.dir/qtgmenu-internal_autogen/mocs_compilation.cpp.o" "CMakeFiles/qtgmenu-internal.dir/QtGActionGroup.cpp.o" "CMakeFiles/qtgmenu-internal.dir/QtGMenuImporterPrivate.cpp.o" "CMakeFiles/qtgmenu-internal.dir/QtGMenuUtils.cpp.o" "CMakeFiles/qtgmenu-internal.dir/QtGMenuModel.cpp.o"
+/usr/bin/ranlib libqtgmenu-internal.a

@@ -1,0 +1,4 @@
+no-Werror.patch
+add-shared_ptr-include.patch
+drop-std.patch
+disable-TestLoggingWriter-test.diff

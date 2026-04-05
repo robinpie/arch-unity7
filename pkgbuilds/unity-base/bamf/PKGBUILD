@@ -1,0 +1,74 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/bamf
+# Note: orig.tar.gz extracts flat (S="${WORKDIR}" in ebuild)
+
+pkgname=bamf
+pkgver=0.5.6
+_uver=+22.04.20220217
+_urev=0ubuntu6
+pkgrel=1
+pkgdesc="Application Matching Framework"
+arch=('x86_64')
+url="https://launchpad.net/bamf"
+license=('GPL-3.0-or-later' 'LGPL-2.1-or-later' 'LGPL-3.0-or-later')
+depends=('glib2' 'libdbusmenu-gtk3' 'libgtop' 'libwnck3' 'gtk3'
+         'gdk-pixbuf2' 'libx11' 'startup-notification')
+makedepends=('pkgconf' 'autoconf' 'automake' 'libtool' 'gnome-common'
+             'gobject-introspection' 'vala' 'dbus' 'hicolor-icon-theme')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+)
+sha256sums=('SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+
+    # Remove GNOME_COMMON_INIT (macro not found with modern gnome-common)
+    sed -i '/GNOME_COMMON_INIT/d' configure.ac
+
+    # Apply Ubuntu diff
+    patch -p1 --batch --forward -i "${pkgname}_${pkgver}${_uver}-${_urev}.diff" || true
+
+    # Apply debian patches (skip if already applied via quilt state)
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p"
+        done < debian/patches/series
+    fi
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "$srcdir"
+    ./configure \
+        --prefix=/usr \
+        --libdir=/usr/lib \
+        --disable-static \
+        --enable-compile-warnings=maximum \
+        --enable-export-actions-menu=yes \
+        --disable-gtk-doc \
+        --enable-headless-tests=no \
+        --enable-introspection=yes
+    make
+}
+
+package() {
+    cd "$srcdir"
+    make DESTDIR="$pkgdir" install
+
+    # Install DBus interface definitions
+    install -dm755 "$pkgdir/usr/share/dbus-1/interfaces"
+    install -m644 lib/libbamf-private/org.ayatana.bamf.*.xml \
+        "$pkgdir/usr/share/dbus-1/interfaces/" 2>/dev/null || true
+
+    # Install bamf-index-create script (from debian postinst)
+    if [ -f debian/bamfdaemon.postinst ]; then
+        sed -i 's/Rebuilding/>>> Rebuilding/' debian/bamfdaemon.postinst
+        install -Dm755 debian/bamfdaemon.postinst "$pkgdir/usr/bin/bamf-index-create"
+    fi
+
+    find "$pkgdir" -name '*.la' -delete
+}

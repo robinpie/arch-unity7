@@ -1,0 +1,11 @@
+prefix=/usr
+includedir=${prefix}/include
+plugindir_suffix=
+plugindir=${prefix}/${plugindir_suffix}
+
+Name: unity-shell-scopes
+Description: unity-shell-scopes
+Version: 12
+
+Requires: Qt5Core
+Cflags: -I${includedir}

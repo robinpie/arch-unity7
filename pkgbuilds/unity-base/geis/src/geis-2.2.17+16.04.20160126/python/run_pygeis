@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# Runs the pygeis program from inside the build tree.
+#
+tool_path=$(dirname $0)
+
+LD_LIBRARY_PATH=$tool_path/../libgeis/.libs
+PYTHONPATH=$tool_path/.libs
+
+export LD_LIBRARY_PATH PYTHONPATH
+$tool_path/pygeis "$@"

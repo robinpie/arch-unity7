@@ -1,0 +1,205 @@
+<!-- ##### SECTION Title ##### -->
+ZeitgeistSubject
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT ZeitgeistSubject ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT ZeitgeistSubjectClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION zeitgeist_subject_get_current_uri ##### -->
+<para>
+
+</para>
+
+@subject: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_get_interpretation ##### -->
+<para>
+
+</para>
+
+@subject: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_get_manifestation ##### -->
+<para>
+
+</para>
+
+@subject: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_get_mimetype ##### -->
+<para>
+
+</para>
+
+@subject: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_get_origin ##### -->
+<para>
+
+</para>
+
+@subject: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_get_storage ##### -->
+<para>
+
+</para>
+
+@subject: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_get_text ##### -->
+<para>
+
+</para>
+
+@subject: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_get_uri ##### -->
+<para>
+
+</para>
+
+@subject: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_new_full ##### -->
+<para>
+
+</para>
+
+@uri: 
+@interpretation: 
+@manifestation: 
+@mimetype: 
+@origin: 
+@text: 
+@storage: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_set_current_uri ##### -->
+<para>
+
+</para>
+
+@subject: 
+@current_uri: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_set_interpretation ##### -->
+<para>
+
+</para>
+
+@subject: 
+@interpretation: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_set_manifestation ##### -->
+<para>
+
+</para>
+
+@subject: 
+@manifestation: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_set_mimetype ##### -->
+<para>
+
+</para>
+
+@subject: 
+@mimetype: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_set_origin ##### -->
+<para>
+
+</para>
+
+@subject: 
+@origin: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_set_storage ##### -->
+<para>
+
+</para>
+
+@subject: 
+@storage: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_set_text ##### -->
+<para>
+
+</para>
+
+@subject: 
+@text: 
+
+
+<!-- ##### FUNCTION zeitgeist_subject_set_uri ##### -->
+<para>
+
+</para>
+
+@subject: 
+@uri: 
+
+

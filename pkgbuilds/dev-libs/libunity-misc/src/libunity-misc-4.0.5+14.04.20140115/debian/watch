@@ -1,0 +1,2 @@
+version=3
+https://launchpad.net/libunity-misc/+download .*/libunity-misc-([0-9.]+)\.tar\.gz

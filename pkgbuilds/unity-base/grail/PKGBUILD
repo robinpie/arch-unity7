@@ -1,0 +1,38 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/grail
+
+pkgname=grail
+pkgver=3.1.1
+_urev=4build2
+pkgrel=1
+pkgdesc="Gesture Recognition And Instantiation Library"
+arch=('x86_64')
+url="https://launchpad.net/grail"
+license=('GPL-3.0-or-later' 'LGPL-3.0-or-later')
+depends=('frame' 'libx11' 'libxext' 'libxi')
+makedepends=('pkgconf' 'autoconf' 'automake' 'libtool' 'xorgproto')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}.orig.tar.bz2"
+)
+sha256sums=('SKIP')
+
+prepare() {
+    cd "${pkgname}-${pkgver}"
+    autoreconf -fiv
+}
+
+build() {
+    cd "${pkgname}-${pkgver}"
+    ./configure \
+        --prefix=/usr \
+        --libdir=/usr/lib \
+        --disable-static \
+        --enable-integration-tests=no
+    make
+}
+
+package() {
+    cd "${pkgname}-${pkgver}"
+    make DESTDIR="$pkgdir" install
+    find "$pkgdir" -name '*.la' -delete
+}

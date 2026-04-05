@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib
+includedir=${prefix}/include
+libexecdir=/usr/libexec
+
+Name: libunity-settings-daemon
+Description: Helper library for accessing settings
+Requires: glib-2.0 gdk-3.0
+Version: 1.0
+Libs: -L${libdir} -lunity-settings-daemon
+Cflags: -I${includedir}/unity-settings-daemon-1.0

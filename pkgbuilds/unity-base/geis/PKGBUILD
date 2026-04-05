@@ -1,0 +1,59 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/geis
+
+pkgname=geis
+pkgver=2.2.17
+_uver=+16.04.20160126
+_urev=0ubuntu14
+pkgrel=1
+pkgdesc="Gesture Engine Interface and Support library"
+arch=('x86_64')
+url="https://launchpad.net/geis"
+license=('GPL-3.0-or-later' 'LGPL-3.0-or-later')
+depends=('dbus' 'frame' 'grail' 'libx11' 'libxcb' 'libxi' 'libxext' 'python3')
+makedepends=('pkgconf' 'autoconf' 'automake' 'libtool' 'libxslt'
+             'xorg-server' 'xcb-proto' 'xorgproto' 'python-gobject')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+)
+sha256sums=('SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+    # Apply the monolithic diff (adds debian/ and patches source)
+    if [ -f "${pkgname}_${pkgver}${_uver}-${_urev}.diff" ]; then
+        patch -d "${pkgname}-${pkgver}${_uver}" -p1 \
+            -i "../${pkgname}_${pkgver}${_uver}-${_urev}.diff"
+    fi
+
+    cd "${pkgname}-${pkgver}${_uver}"
+
+    # Skip doc generation (requires doxygen)
+    sed -i ':api/html:,+1 d' doc/Makefile.am 2>/dev/null || true
+
+    # Apply debian patch series if present
+    if [ -f debian/patches/series ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            patch -p1 -i "debian/patches/$p"
+        done < debian/patches/series
+    fi
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "${pkgname}-${pkgver}${_uver}"
+    ./configure \
+        --prefix=/usr \
+        --libdir=/usr/lib \
+        --disable-static
+    make
+}
+
+package() {
+    cd "${pkgname}-${pkgver}${_uver}"
+    make DESTDIR="$pkgdir" install
+    find "$pkgdir" -name '*.la' -delete
+}

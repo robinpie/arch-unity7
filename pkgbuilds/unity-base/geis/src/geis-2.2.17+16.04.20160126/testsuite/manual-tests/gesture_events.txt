@@ -1,0 +1,17 @@
+Gesture Events
+==============
+
+This test shows that gesture evnts are received.
+
+Touchscreen 2-drag
+------------------
+
+#. run ``sudo evemu-device testsuite/manual-tests/touchscreen.desc &`` and
+   record the name of the device created
+#. run ``tools/geisview/geisview --backend grail``
+#. run ``sudo evemu-play /dev/input/eventNN <testsuite/manual-tests
+         <touchscreen-2drag.event``
+
+Outcome
+  Gesture begine/update/end events should appear in the geisview window.
+

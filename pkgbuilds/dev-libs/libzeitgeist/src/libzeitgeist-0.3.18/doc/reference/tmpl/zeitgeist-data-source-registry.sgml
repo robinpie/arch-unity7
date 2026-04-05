@@ -1,0 +1,143 @@
+<!-- ##### SECTION Title ##### -->
+ZeitgeistDataSourceRegistry
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT ZeitgeistDataSourceRegistry ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL ZeitgeistDataSourceRegistry::source-disconnected ##### -->
+<para>
+
+</para>
+
+@zeitgeistdatasourceregistry: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL ZeitgeistDataSourceRegistry::source-enabled ##### -->
+<para>
+
+</para>
+
+@zeitgeistdatasourceregistry: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL ZeitgeistDataSourceRegistry::source-registered ##### -->
+<para>
+
+</para>
+
+@zeitgeistdatasourceregistry: the object which received the signal.
+@arg1: 
+
+<!-- ##### STRUCT ZeitgeistDataSourceRegistryClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@source_registered: 
+@source_disconnected: 
+@source_enabled: 
+
+<!-- ##### FUNCTION zeitgeist_data_source_registry_get_data_sources ##### -->
+<para>
+
+</para>
+
+@self: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_registry_get_data_sources_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_registry_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_registry_register_data_source ##### -->
+<para>
+
+</para>
+
+@self: 
+@source: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_registry_register_data_source_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_registry_set_data_source_enabled ##### -->
+<para>
+
+</para>
+
+@self: 
+@unique_id: 
+@enabled: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION zeitgeist_data_source_registry_set_data_source_enabled_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

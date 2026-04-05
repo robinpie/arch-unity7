@@ -1,0 +1,77 @@
+/**
+
+@page using_geis_v2 Using The Advanced Interface
+ 
+@section using_geis_v2_intro Introduction to the Advanced GEIS Interface
+
+The advanced GEIS interface is designed around the idea that you can create
+<em>filters</em> to limit the kinds of gestures received and combine those
+filters into <em>subscriptions</em> that interact  with the gesture
+recognizer to deliver <em>gesture events</em>.
+
+The normal flow for using the advanced interface is as follows.
+  -# create a Geis object
+  -# create a GeisSubscription object on the Geis object
+  -# create and add one or more GeisFilter to the GeisSubscription
+  -# activate the GeisSubscription
+  -# wait for and process a series of GeisEvent
+
+@subsection using_geis_v2_example An example of advanced API usage
+This is an example of using the advanced (GEIS v2) API.  The full source code
+for this example (including details missing here) is included in the source
+distribution of geis.
+
+Please note that these examples omit all of the error checking for expository
+purposes only.  
+
+@dontinclude geis2.c
+
+First, a function to create the filters for a subscription.  the filters can not
+be created until the gesture recognition engine initialization is complete,
+since otherwise the expected types of the gesture attributes on which to filter
+are not known by the interface.
+
+An empty filter is created.  An empty filter means <em>all</em> input devices,
+<em>all</em> gestures, <em>all</em> regions.
+For the purpose of this example, we want just 2-touch gestures, so we need to
+add a term to the filter specifying only those gestures with two touches.
+@skip target_subscription
+@until }
+@line }
+
+In the main fucntion, the API instance is created.
+We tell it to report input devices and gesture classes.
+@skip geis_new
+@until NULL
+
+
+For the event loop processing, we're going to need the event fd (this is
+assuming a Unix implementation of GEIS, other platforms may have a different
+event indicator).
+@line geis_get_configuration
+
+A subscription object is created.  We want gesture continuations.
+@line geis_subscription_new
+
+The application's main event loop is run until a read is indicated as available
+on the event fd, at which point the GEIS event loop is pumped.
+@skip geis_dispatch_events
+@until geis_next_event
+The events are handled and the event loop pumped until it's empty.
+@until geis_next_event
+
+Finally, the API objects are cleaned up.
+@skip geis_subscription_delete
+@until geis_delete
+
+@subsection using_geis_v2_examining_devices Examining Devices
+
+@dontinclude geis2.c
+
+@skip dump_device_event
+@until }
+@line }
+
+@example geis2.c
+
+*/

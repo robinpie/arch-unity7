@@ -1,0 +1,147 @@
+libunity-misc (4.0.5+14.04.20140115-0ubuntu6) resolute; urgency=medium
+
+  * No-change mass rebuild for Ubuntu 26.04 (LP: #2132257)
+
+ -- Sebastien Bacher <seb128@debian.org>  Mon, 08 Dec 2025 22:08:18 +0100
+
+libunity-misc (4.0.5+14.04.20140115-0ubuntu5) noble; urgency=medium
+
+  * No-change rebuild for CVE-2024-3094
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 31 Mar 2024 02:19:14 +0000
+
+libunity-misc (4.0.5+14.04.20140115-0ubuntu4) noble; urgency=medium
+
+  * No-change rebuild against libglib2.0-0t64
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 08 Mar 2024 05:31:04 +0000
+
+libunity-misc (4.0.5+14.04.20140115-0ubuntu3) eoan; urgency=medium
+
+  * Don't build with -Werror.
+
+ -- Matthias Klose <doko@ubuntu.com>  Tue, 03 Sep 2019 18:25:41 +0200
+
+libunity-misc (4.0.5+14.04.20140115-0ubuntu2) eoan; urgency=medium
+
+  * No-change rebuild to drop multiarch-support dependency.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sun, 01 Sep 2019 03:41:39 +0000
+
+libunity-misc (4.0.5+14.04.20140115-0ubuntu1) trusty; urgency=low
+
+  [ Sebastien Bacher ]
+  * Build with -Wno-error=deprecated-declarations.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 39
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 15 Jan 2014 12:04:47 +0000
+
+libunity-misc (4.0.5daily13.06.05-0ubuntu1) saucy; urgency=low
+
+  * Automatic snapshot from revision 37
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 06:20:14 +0000
+
+libunity-misc (4.0.5daily13.05.01.1ubuntu.unity.next-0ubuntu1) raring; urgency=low
+
+  * Automatic snapshot from revision 36 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 01 May 2013 21:58:05 +0000
+
+libunity-misc (4.0.5daily13.02.26-0ubuntu1) raring; urgency=low
+
+  [ Michael Terry ]
+  * Convert to dh9
+  * Bump standards to 3.9.4
+  * Update copyright to dep5 format
+  * Automatic snapshot from revision 34 (bootstrap)
+
+  [ Automatic PS uploader ]
+  * Automatic snapshot from revision 35
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Tue, 26 Feb 2013 04:01:32 +0000
+
+libunity-misc (4.0.4-0ubuntu2) oneiric; urgency=low
+
+  * Cherry-pick from upstream:
+    - update-notifier systray icons showed and the wrong place and size
+      (LP: #856125)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 29 Sep 2011 17:03:57 +0200
+
+libunity-misc (4.0.4-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+  * debian/libunity-misc4.symbols:
+    - add the new symbols
+  * debian/control:
+    - build-dep on libx11-dev
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 01 Aug 2011 17:35:56 +0200
+
+libunity-misc (4.0.2-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - build-dep now on libgtk-3-dev
+  * debian/libunity-misc4.install, debian/libunity-misc4.symbols,
+    debian/control:
+    - bump and adapt new symbols to new soname for gtk3
+
+ -- Didier Roche <didrocks@ubuntu.com>  Tue, 21 Jun 2011 19:43:58 +0200
+
+libunity-misc (0.2.1-0ubuntu2) natty; urgency=low
+
+  * cherry-pick:
+    - the .pc file shouldn't depend on clutter anymore
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 17 Feb 2011 19:55:25 +0100
+
+libunity-misc (0.2.1-0ubuntu1) natty; urgency=low
+
+  * New upstream release:
+    - readd systray support to unity (LP: #596879)
+  * debian/control:
+    - don't build with clutter anymore
+    - remove -dbg package
+    - don't dep on gtk-doc
+    - add libgtk2.0-dev build-dep
+  * debian/rules:
+    - don't build the documentation
+    - remove uneeded DEB_DH_MAKESHLIBS_ARGS
+  * debian/libunity-misc0.symbols:
+    - updated
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 17 Feb 2011 19:04:43 +0100
+
+libunity-misc (0.1.1-0ubuntu3) natty; urgency=low
+
+  * debian/control:
+    - change the description 
+  * debian/libunity-misc0.symbols:
+    - add symbol file (LP: #591158)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Tue, 03 Aug 2010 13:07:44 +0200
+
+libunity-misc (0.1.1-0ubuntu1) maverick; urgency=low
+
+  * New upstream release
+  * Fix debian/copyright
+  * debian/rules:
+    - fix rm *{,l}a files
+    - fix LDFLAGS syntax
+  * debian/control:
+    - bump Standards-Version
+    - fix homepage
+    - remove uneeded build-dep
+  * added debian/watch
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 03 Jun 2010 19:19:11 +0200
+
+libunity-misc (0.1.0-0ubuntu1~ppa1) lucid; urgency=low
+
+  * Initial release  
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 28 Jan 2010 22:04:01 +0100

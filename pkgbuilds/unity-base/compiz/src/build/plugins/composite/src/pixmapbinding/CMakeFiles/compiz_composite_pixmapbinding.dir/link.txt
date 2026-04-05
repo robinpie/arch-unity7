@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_composite_pixmapbinding.a CMakeFiles/compiz_composite_pixmapbinding.dir/src/pixmapbinding.cpp.o CMakeFiles/compiz_composite_pixmapbinding.dir/__/__/__/__/src/size.cpp.o
+/usr/bin/ranlib libcompiz_composite_pixmapbinding.a

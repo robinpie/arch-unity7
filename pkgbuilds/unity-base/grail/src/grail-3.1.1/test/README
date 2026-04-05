@@ -1,0 +1,11 @@
+Directory structure
+===================
+
+- integration
+    Here goes all integration tests.
+    Those tests take time to run and rely on or interact with other processes
+    beyond the test program itself.
+
+- regular
+    Here goes tests that are fast to run and don't rely on the run-time
+    environment (such as other processes, files, etc).

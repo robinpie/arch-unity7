@@ -1,0 +1,18 @@
+Gesture Classes
+===============
+
+This test verifies a back end reports filterable gesture classes correctly.
+
+This manual test is targetted at the grail back end but should equally apply any
+other back end.
+
+
+Report Classes
+--------------
+
+#. Start tools/geisview/geisview --backend grail
+
+Outcome
+  geisview should report (at least) 5 classes: Drag, Pinch, Rotate, Tap amd
+  Touch.
+

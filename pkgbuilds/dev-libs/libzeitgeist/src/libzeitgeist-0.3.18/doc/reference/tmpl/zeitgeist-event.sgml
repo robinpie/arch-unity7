@@ -1,0 +1,278 @@
+<!-- ##### SECTION Title ##### -->
+ZeitgeistEvent
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT ZeitgeistEvent ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT ZeitgeistEventClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION zeitgeist_event_add_subject ##### -->
+<para>
+
+</para>
+
+@event: 
+@subject: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_get_actor ##### -->
+<para>
+
+</para>
+
+@event: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_get_id ##### -->
+<para>
+
+</para>
+
+@event: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_get_interpretation ##### -->
+<para>
+
+</para>
+
+@event: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_get_manifestation ##### -->
+<para>
+
+</para>
+
+@event: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_get_origin ##### -->
+<para>
+
+</para>
+
+@event: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_get_payload ##### -->
+<para>
+
+</para>
+
+@event: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_get_subject ##### -->
+<para>
+
+</para>
+
+@event: 
+@index: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_get_timestamp ##### -->
+<para>
+
+</para>
+
+@event: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_new_from_variant ##### -->
+<para>
+
+</para>
+
+@event: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_new_full ##### -->
+<para>
+
+</para>
+
+@interpretation: 
+@manifestation: 
+@actor: 
+@...: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_new_full_valist ##### -->
+<para>
+
+</para>
+
+@interpretation: 
+@manifestation: 
+@actor: 
+@args: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_num_subjects ##### -->
+<para>
+
+</para>
+
+@event: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_set_actor ##### -->
+<para>
+
+</para>
+
+@event: 
+@actor: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_set_actor_from_app_info ##### -->
+<para>
+
+</para>
+
+@event: 
+@appinfo: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_set_id ##### -->
+<para>
+
+</para>
+
+@event: 
+@id: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_set_interpretation ##### -->
+<para>
+
+</para>
+
+@event: 
+@interpretation: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_set_manifestation ##### -->
+<para>
+
+</para>
+
+@event: 
+@manifestation: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_set_origin ##### -->
+<para>
+
+</para>
+
+@event: 
+@origin: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_set_payload ##### -->
+<para>
+
+</para>
+
+@event: 
+@payload: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_set_timestamp ##### -->
+<para>
+
+</para>
+
+@event: 
+@timestamp: 
+
+
+<!-- ##### FUNCTION zeitgeist_event_to_variant ##### -->
+<para>
+
+</para>
+
+@event: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_events_from_valist ##### -->
+<para>
+
+</para>
+
+@events: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_events_from_variant ##### -->
+<para>
+
+</para>
+
+@events: 
+@Returns: 
+
+
+<!-- ##### FUNCTION zeitgeist_events_to_variant ##### -->
+<para>
+
+</para>
+
+@events: 
+@Returns: 
+
+

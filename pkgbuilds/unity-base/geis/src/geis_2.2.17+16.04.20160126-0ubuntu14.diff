@@ -1,0 +1,775 @@
+--- geis-2.2.17+16.04.20160126.orig/configure.ac
++++ geis-2.2.17+16.04.20160126/configure.ac
+@@ -65,7 +65,7 @@
+ AC_DEFINE([GEIS_UNUSED],[__attribute__((unused))],[symbol is unused])
+ 
+ AC_SUBST(AM_CFLAGS,
+-         "-Wall -Wextra -Werror -pedantic -std=iso9899:1999 -D_GNU_SOURCE=1")
++         "-Wall -Wextra -Werror -Wno-error=pointer-compare -pedantic -std=iso9899:1999 -D_GNU_SOURCE=1")
+ 
+ # Check for TDD tools
+ PKG_CHECK_MODULES([CHECK], [check >= 0.9.8],
+--- geis-2.2.17+16.04.20160126.orig/debian/changelog
++++ geis-2.2.17+16.04.20160126/debian/changelog
+@@ -0,0 +1,297 @@
++geis (2.2.17+16.04.20160126-0ubuntu14) resolute; urgency=medium
++
++  * No-change rebuild with Python 3.14 as default
++
++ -- Graham Inggs <ginggs@ubuntu.com>  Thu, 22 Jan 2026 20:41:42 +0000
++
++geis (2.2.17+16.04.20160126-0ubuntu13) resolute; urgency=medium
++
++  * No-change mass rebuild for Ubuntu 26.04 (LP: #2132257)
++
++ -- Graham Inggs <ginggs@ubuntu.com>  Tue, 20 Jan 2026 20:33:08 +0000
++
++geis (2.2.17+16.04.20160126-0ubuntu12) plucky; urgency=medium
++
++  * Don't build with -O3 on amd64 and ppc64el, ftbfs.
++
++ -- Matthias Klose <doko@ubuntu.com>  Tue, 07 Jan 2025 16:03:06 +0100
++
++geis (2.2.17+16.04.20160126-0ubuntu11) plucky; urgency=medium
++
++  * No-change rebuild for Python 3.13 as the default.
++
++ -- Matthias Klose <doko@ubuntu.com>  Fri, 03 Jan 2025 12:04:16 +0100
++
++geis (2.2.17+16.04.20160126-0ubuntu10) noble; urgency=medium
++
++  * No-change rebuild with Python 3.12 as default
++
++ -- Graham Inggs <ginggs@ubuntu.com>  Fri, 19 Jan 2024 19:22:00 +0000
++
++geis (2.2.17+16.04.20160126-0ubuntu9) lunar; urgency=medium
++
++  * No-change rebuild with Python 3.11 as default
++
++ -- Graham Inggs <ginggs@ubuntu.com>  Sun, 25 Dec 2022 19:46:31 +0000
++
++geis (2.2.17+16.04.20160126-0ubuntu8) jammy; urgency=medium
++
++  * No-change rebuild with Python 3.10 as default version
++
++ -- Graham Inggs <ginggs@ubuntu.com>  Thu, 13 Jan 2022 19:16:03 +0000
++
++geis (2.2.17+16.04.20160126-0ubuntu7) hirsute; urgency=medium
++
++  * No-change rebuild to build with python3.9 as default.
++
++ -- Matthias Klose <doko@ubuntu.com>  Thu, 19 Nov 2020 18:31:45 +0100
++
++geis (2.2.17+16.04.20160126-0ubuntu6) focal; urgency=medium
++
++  * Add explicit build dependency on dh-python.
++
++ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Mon, 27 Jan 2020 12:24:27 +1300
++
++geis (2.2.17+16.04.20160126-0ubuntu5) focal; urgency=medium
++
++  * No-change rebuild to build with python3.8.
++
++ -- Matthias Klose <doko@ubuntu.com>  Sat, 25 Jan 2020 04:31:17 +0000
++
++geis (2.2.17+16.04.20160126-0ubuntu4) disco; urgency=medium
++
++  * Build with -Wno-error=pointer-compare.
++
++ -- Matthias Klose <doko@ubuntu.com>  Thu, 01 Nov 2018 09:38:44 +0100
++
++geis (2.2.17+16.04.20160126-0ubuntu3) disco; urgency=medium
++
++  * No-change rebuild to build for python3.7 as the default.
++
++ -- Matthias Klose <doko@ubuntu.com>  Wed, 31 Oct 2018 12:34:36 +0000
++
++geis (2.2.17+16.04.20160126-0ubuntu2) artful; urgency=medium
++
++  * No-change rebuild to build with python3.6.
++
++ -- Matthias Klose <doko@ubuntu.com>  Mon, 24 Jul 2017 13:50:54 +0000
++
++geis (2.2.17+16.04.20160126-0ubuntu1) xenial; urgency=medium
++
++  * fix error revealed by GCC-6
++
++ -- Stephen M. Webb <stephen.webb@canonical.com>  Tue, 26 Jan 2016 16:31:39 +0000
++
++geis (2.2.17+15.10.20150728-0ubuntu2) xenial; urgency=medium
++
++  * No-change rebuild for python3 defaults change.
++
++ -- Matthias Klose <doko@ubuntu.com>  Fri, 23 Oct 2015 10:42:11 +0000
++
++geis (2.2.17+15.10.20150728-0ubuntu1) wily; urgency=medium
++
++  [ Stephen M. Webb ]
++  * Upstream release 2.2.17.
++  * fix a pasto in the grail slice update code (LP: #1477243)
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Tue, 28 Jul 2015 21:11:00 +0000
++
++geis (2.2.16+15.10.20150609-0ubuntu1) wily; urgency=medium
++
++  [ Stephen M. Webb ]
++  * Avoid setting the timestamp in Doxygen-generated documentation so
++    the builds on Debian will be reproduceable. (LP: #1462829)
++  * fix errors reported when build with clang (LP: #1463013)
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Tue, 09 Jun 2015 10:29:27 +0000
++
++geis (2.2.16+15.04.20150304-0ubuntu1) vivid; urgency=medium
++
++  [ Ken VanDine ]
++  * Fix build error with GCC 5, patch thanks to Matthias Klose (LP:
++    #1428314)
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Wed, 04 Mar 2015 21:44:03 +0000
++
++geis (2.2.16+14.04.20140303-0ubuntu1) trusty; urgency=low
++
++  [ Stephen M. Webb ]
++  * debian/control: renamed python-geis package to python3-geis (lp:
++    #1244446). (LP: #1244446)
++  * update autoconfigury for automake 1.14.
++  * update to Standards-Version 3.9.5 (no changes required).
++  * don't install the (experimental, unsupported) geis server binary.
++  * updated the geisview.desktop file.
++  * fixed errors in "make check".
++  * fix a synch problem when a subscription is activated in a callback
++    on receipt of INIT_COMPLETE (lp: #1252447). (LP: #1252447)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 03 Mar 2014 20:10:36 +0000
++
++geis (2.2.16+13.10.20130919.4-0ubuntu2) trusty; urgency=medium
++
++  * Rename python-geis to python3-geis.
++
++ -- Matthias Klose <doko@ubuntu.com>  Wed, 19 Feb 2014 11:49:45 +0100
++
++geis (2.2.16+13.10.20130919.4-0ubuntu1) saucy; urgency=low
++
++  [ Stephen M. Webb ]
++  * Fix error message(s) in "help" dialog (lp: #964469). (LP: #964469)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 317
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 19 Sep 2013 22:07:37 +0000
++
++geis (2.2.16daily13.06.05-0ubuntu1) saucy; urgency=low
++
++  * Automatic snapshot from revision 315
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 02:02:22 +0000
++
++geis (2.2.16daily13.05.29ubuntu.unity.next-0ubuntu1) raring; urgency=low
++
++  [ Stephen M. Webb ]
++  * upstream release v2.2.16
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 314 (ubuntu-unity/next)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 29 May 2013 02:02:09 +0000
++
++geis (2.2.15daily13.05.17ubuntu.unity.next-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 312 (ubuntu-unity/next)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 17 May 2013 02:01:27 +0000
++
++geis (2.2.15daily13.05.13-0ubuntu1) raring; urgency=low
++
++  [ Stephen M. Webb ]
++  * geisview report garbage values and reports no gestures (LP:
++    #1169249)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 311
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 13 May 2013 02:01:10 +0000
++
++geis (2.2.15daily13.04.03-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 309
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 03 Apr 2013 02:07:32 +0000
++
++geis (2.2.15daily13.04.02-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 308
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 02 Apr 2013 02:01:53 +0000
++
++geis (2.2.15daily13.04.01-0ubuntu1) raring; urgency=low
++
++  [ Stephen M. Webb ]
++  * evince crashed with SIGSEGV in geis_filter_delete() (LP: #1152411)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 307
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 01 Apr 2013 02:01:56 +0000
++
++geis (2.2.15daily13.02.14-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 305
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Thu, 14 Feb 2013 02:01:59 +0000
++
++geis (2.2.15daily13.02.13-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 302
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Wed, 13 Feb 2013 02:01:46 +0000
++
++geis (2.2.15daily12.12.10-0ubuntu1) raring; urgency=low
++
++  [ Daniel d'Andrada ]
++  *  Don't crash if a null filter is passed to geis_filter_delete() (LP: #1080386)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 300
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Mon, 10 Dec 2012 07:44:42 +0000
++
++geis (2.2.15daily12.12.05-0ubuntu1) raring; urgency=low
++
++  [ Stephen M. Webb ]
++  * python-fix-print-syntax.patch: removed (fixed upstream)
++  * converted to python3
++
++  [ Mathieu Trudel-Lapierre ]
++  * debian/control:
++    - Update style; use trailing commas at the end of dependency lists.
++    - Update Vcs-Bzr, Vcs-Browser and add a notice to uploaders.
++  * debian/rules:
++    - Clean up rules file from unnecessary comments and daily build code.
++    - Add and export DPKG_GENSYMBOLS_CHECK_LEVEL.
++    - Override dh_autoreconf to call autogen.sh and not run configure.
++  * debian/source/format: migrate back to source format 1.0.
++
++  [ Didier Roche ]
++  * Automatic snapshot from revision 295 (bootstrap)
++
++  [ Daniel d'Andrada ]
++  * Relicense under (L)GPL version 3 *only* (no +)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 297
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Wed, 05 Dec 2012 02:01:14 +0000
++
++geis (2.2.14-0ubuntu2) raring; urgency=low
++
++  * Fix python print syntax. (LP: #1077419)
++
++ -- Luke Yelavich <themuso@ubuntu.com>  Wed, 14 Nov 2012 14:52:22 +1100
++
++geis (2.2.14-0ubuntu1) raring; urgency=low
++
++  * debian/patches: removed all patches (merged upstream).
++  * New upstream release.
++
++ -- Stephen M. Webb <stephen.webb@canonical.com>  Tue, 13 Nov 2012 09:44:12 -0500
++
++geis (2.2.13-0ubuntu1) raring; urgency=low
++
++  * New upstream release.
++  * debian/control: bumped libgrail-dev build dependency to 3.0.8
++  * debian/patches: removed all patches (merged upstream)
++  * debian/patches: patched test case for missing symbols
++
++ -- Stephen M. Webb <stephen.webb@canonical.com>  Fri, 09 Nov 2012 13:57:29 -0500
++
++geis (2.2.12-0ubuntu2) quantal; urgency=low
++
++  * Fix Geisv1 gesture class IDs (LP: #1047596)
++    - added 001-fix-geisv1-class-ids.patch 
++
++ -- Francis Ginther <francis.ginther@canonical.com>  Fri, 07 Sep 2012 16:28:39 -0500
++
++geis (2.2.12-0ubuntu1) quantal; urgency=low
++
++  * New upstream release.
++    - Fully fix initialization timeout for remote sessions (LP: #997630)
++
++ -- Chase Douglas <chase.douglas@ubuntu.com>  Wed, 15 Aug 2012 08:10:42 -0700
++
++geis (2.2.11-0ubuntu1) quantal; urgency=low
++
++  * Update debian/watch file for new project name
++  * New upstream release.
++    - Fix crash when accepting a gesture (LP: #1015775)
++    - Detect added devices properly (LP: #1009270)
++    - Fix result value of geis_subscription_deactivate() (LP: #1021448)
++    - Upstream project rename to just 'geis'
++  * Update packaging for project rename (LP: #1030937)
++
++ -- Chase Douglas <chase.douglas@ubuntu.com>  Mon, 30 Jul 2012 08:51:42 -0700
+--- geis-2.2.17+16.04.20160126.orig/debian/compat
++++ geis-2.2.17+16.04.20160126/debian/compat
+@@ -0,0 +1 @@
++9
+--- geis-2.2.17+16.04.20160126.orig/debian/control
++++ geis-2.2.17+16.04.20160126/debian/control
+@@ -0,0 +1,101 @@
++Source: geis
++Section: libs
++Priority: extra
++Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
++Build-Depends: debhelper (>= 9),
++               dh-autoreconf,
++               dh-python,
++               doxygen,
++               libdbus-1-dev,
++               libgrail-dev (>= 3.0.8),
++               libx11-xcb-dev,
++               libxcb1-dev,
++               libxi-dev,
++               pkg-config,
++               python3-dev,
++               xcb-proto (<< 2.0),
++               xcb-proto (>= 1.6),
++               xserver-xorg-dev (>= 2:1.10.1),
++               xsltproc (>= 1.1.19),
++Standards-Version: 3.9.5
++Homepage: https://launchpad.net/geis
++# If you aren't a member of ~oif-team but need to upload
++# packaging changes, just go ahead.  ~oif-team will notice
++# and sync up the code again.
++Vcs-Bzr: https://code.launchpad.net/~oif-team/geis/trunk
++Vcs-Browser: https://bazaar.launchpad.net/~oif-team/geis/trunk/files
++X-Python-Version: >= 2.7
++
++Package: libgeis1
++Architecture: any
++Multi-Arch: same
++Pre-Depends: ${misc:Pre-Depends},
++Depends: ${misc:Depends},
++         ${shlibs:Depends},
++Description: Gesture engine interface support
++ A common API for clients of a systemwide gesture recognition and propagation
++ engine.
++ .
++ This package provides just the runtime required for applications making use of
++ the GEIS API.
++
++Package: libgeis-dev
++Section: libdevel
++Architecture: any
++Multi-Arch: same
++Pre-Depends: ${misc:Pre-Depends},
++Depends: libgeis1 (= ${binary:Version}),
++         ${misc:Depends},
++Conflicts: libutouch-geis-dev,
++Replaces: libutouch-geis-dev,
++Description: Gesture engine interface support - dev files
++ A common API for clients of a systemwide gesture recognition and propagation
++ engine.
++ .
++ Headers and static link libraries for developing against the common gesture
++ API.
++
++Package: python3-geis
++Section: python
++Architecture: any
++Depends: ${misc:Depends},
++         ${python3:Depends},
++         ${shlibs:Depends},
++Conflicts: python-utouch-geis, python-geis
++Replaces: python-utouch-geis, python-geis
++Description: python bindings for libgeis
++ A common API for clients of a systemwide gesture recognition and propagation
++ engine.
++ .
++ This package provides native bindings so that you can use GEIS from
++ a Python program.
++
++Package: libgeis-doc
++Section: doc
++Architecture: all
++Multi-Arch: foreign
++Depends: ${misc:Depends},
++Conflicts: libutouch-geis-doc,
++Replaces: libutouch-geis-doc,
++Description: Gesture engine interface support - documentation
++ A common API for clients of a systemwide gesture recognition and propagation
++ engine.
++ .
++ API and specification documentation for developing with libgeis.
++
++Package: geis-tools
++Section: libdevel
++Architecture: any
++Pre-Depends: ${misc:Pre-Depends},
++Depends: libgeis1 (= ${binary:Version}),
++         python3-geis (= ${binary:Version}),
++         ${misc:Depends},
++         ${python3:Depends},
++         ${shlibs:Depends},
++Conflicts: libutouch-geis-tools,
++Replaces: libutouch-geis-tools,
++Description: Gesture engine interface support - test tools
++ A common API for clients of a systemwide gesture recognition and propagation
++ engine.
++ .
++ Tools that can be used to verify gesture API behaviour.
+--- geis-2.2.17+16.04.20160126.orig/debian/copyright
++++ geis-2.2.17+16.04.20160126/debian/copyright
+@@ -0,0 +1,35 @@
++Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0
++Upstream-Name: geis
++Upstream-Contact: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
++Source: http://launchpad.net/geis
++
++Files: * (unless otherwise listed below)
++Copyright: 2010 - 2012, Canonical Ltd.
++License: LGPL-3
++ This program is free software: you can redistribute it and/or modify
++ it under the terms of version 3 of the GNU Lesser General Public
++ License as published by  the Free Software Foundation.
++ .
++ This program is distributed in the hope that it will be useful,
++ but WITHOUT ANY WARRANTY; without even the implied warranty of
++ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ GNU General Public License for more details.
++ .
++ On Debian systems, the full text of the GNU Lesser General Public
++ License version 3 can be found in the file
++ `/usr/share/common-licenses/LGPL-3'.
++
++Files: testsuite/* tools/*
++Copyright: 2010 - 2012, Canonical Ltd.
++License: GPL-3
++ This program is free software: you can redistribute it and/or modify
++ it under the terms of version 3 of the GNU General Public License as.
++ .
++ This program is distributed in the hope that it will be useful,
++ but WITHOUT ANY WARRANTY; without even the implied warranty of
++ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ GNU General Public License for more details.
++ .
++ On Debian systems, the full text of the GNU General Public
++ License version 3 can be found in the file
++ `/usr/share/common-licenses/GPL-3'.
+--- geis-2.2.17+16.04.20160126.orig/debian/geis-tools.install
++++ geis-2.2.17+16.04.20160126/debian/geis-tools.install
+@@ -0,0 +1,6 @@
++usr/bin
++usr/lib/python*/*/geisview
++usr/share/applications
++usr/share/geisview
++usr/share/man/man1
++usr/share/pixmaps
+--- geis-2.2.17+16.04.20160126.orig/debian/libgeis-dev.install
++++ geis-2.2.17+16.04.20160126/debian/libgeis-dev.install
+@@ -0,0 +1,3 @@
++usr/include/*
++usr/lib/*/lib*.so
++usr/lib/*/pkgconfig/*
+--- geis-2.2.17+16.04.20160126.orig/debian/libgeis-doc.doc-base
++++ geis-2.2.17+16.04.20160126/debian/libgeis-doc.doc-base
+@@ -0,0 +1,10 @@
++Document: libgeis
++Title: libgeis
++Author: Stephen M. Webb
++Abstract: This manual describes the GEIS gesture API.
++Section: Programming
++
++Format: HTML
++Index: /usr/share/doc/geis/html/index.html
++Files: /usr/share/doc/geis/html/*.html
++
+--- geis-2.2.17+16.04.20160126.orig/debian/libgeis-doc.install
++++ geis-2.2.17+16.04.20160126/debian/libgeis-doc.install
+@@ -0,0 +1 @@
++usr/share/doc/geis
+--- geis-2.2.17+16.04.20160126.orig/debian/libgeis1.install
++++ geis-2.2.17+16.04.20160126/debian/libgeis1.install
+@@ -0,0 +1,2 @@
++debian/source_geis.py /usr/share/apport/package-hooks/
++usr/lib/*/lib*.so.*
+--- geis-2.2.17+16.04.20160126.orig/debian/libgeis1.symbols
++++ geis-2.2.17+16.04.20160126/debian/libgeis1.symbols
+@@ -0,0 +1,93 @@
++libgeis.so.1 libgeis1 #MINVER#
++ (symver)GEIS_1.0 1.0.8
++ (symver)GEIS_2.0 2.0.1
++ (symver)GEIS_2.2 2.2.2
++ (symver)GEIS_2.3 2.2.10
++ geis_attr_name@GEIS_2.0 2.0.1
++ geis_attr_type@GEIS_2.0 2.0.1
++ geis_attr_value_to_boolean@GEIS_2.0 2.0.1
++ geis_attr_value_to_float@GEIS_2.0 2.0.1
++ geis_attr_value_to_integer@GEIS_2.0 2.0.1
++ geis_attr_value_to_pointer@GEIS_2.0 2.0.1
++ geis_attr_value_to_string@GEIS_2.0 2.0.1
++ geis_configuration_get_value@GEIS_1.0 1.0.8
++ geis_configuration_set_value@GEIS_1.0 1.0.8
++ geis_configuration_supported@GEIS_1.0 1.0.8
++ geis_delete@GEIS_2.0 2.0.1
++ geis_device_attr@GEIS_2.0 2.0.1
++ geis_device_attr_by_name@GEIS_2.2 2.2.2
++ geis_device_attr_count@GEIS_2.0 2.0.1
++ geis_device_id@GEIS_2.0 2.0.1
++ geis_device_name@GEIS_2.0 2.0.1
++ geis_device_ref@GEIS_2.0 2.0.1
++ geis_device_unref@GEIS_2.0 2.0.1
++ geis_dispatch_events@GEIS_2.0 2.0.1
++ geis_error_code@GEIS_2.0 2.0.1
++ geis_error_count@GEIS_2.0 2.0.1
++ geis_error_message@GEIS_2.0 2.0.1
++ geis_event_attr_by_name@GEIS_2.0 2.0.1
++ geis_event_attr_count@GEIS_2.0 2.0.1
++ geis_event_attr@GEIS_2.0 2.0.1
++ geis_event_delete@GEIS_2.0 2.0.1
++ geis_event_dispatch@GEIS_1.0 1.0.8
++ geis_event_type@GEIS_2.0 2.0.1
++ geis_filter_add_term@GEIS_2.0 2.0.1
++ geis_filter_clone@GEIS_2.0 2.0.1
++ geis_filter_delete@GEIS_2.0 2.0.1
++ geis_filter_name@GEIS_2.0 2.0.1
++ geis_filter_new@GEIS_2.0 2.0.1
++ geis_finish@GEIS_1.0 1.0.8
++ geis_frame_attr_by_name@GEIS_2.0 2.0.1
++ geis_frame_attr_count@GEIS_2.0 2.0.1
++ geis_frame_attr@GEIS_2.0 2.0.1
++ geis_frame_id@GEIS_2.0 2.0.1
++ geis_frame_is_class@GEIS_2.0 2.0.1
++ geis_frame_matrix@GEIS_2.0 2.0.1
++ geis_frame_touchid_count@GEIS_2.0 2.0.1
++ geis_frame_touchid@GEIS_2.0 2.0.1
++ geis_gesture_class_attr_count@GEIS_2.0 2.0.1
++ geis_gesture_class_attr@GEIS_2.0 2.0.1
++ geis_gesture_class_id@GEIS_2.0 2.0.1
++ geis_gesture_class_name@GEIS_2.0 2.0.1
++ geis_gesture_class_ref@GEIS_2.0 2.0.1
++ geis_gesture_class_unref@GEIS_2.0 2.0.1
++ geis_gesture_reject@GEIS_2.0 2.0.1
++ geis_get_configuration@GEIS_2.0 2.0.1
++ geis_get_device@GEIS_2.2 2.2.2
++ geis_group_frame_count@GEIS_2.0 2.0.1
++ geis_group_frame@GEIS_2.0 2.0.1
++ geis_group_id@GEIS_2.0 2.0.1
++ geis_group_reject@GEIS_2.0 2.0.1
++ geis_groupset_group_count@GEIS_2.0 2.0.1
++ geis_groupset_group@GEIS_2.0 2.0.1
++ geis_init@GEIS_1.0 1.0.8
++ geis_input_devices@GEIS_1.0 1.0.8
++ geis_new@GEIS_2.0 2.0.1
++ geis_next_event@GEIS_2.0 2.0.1
++ geis_region_delete@GEIS_2.0 2.0.1
++ geis_region_name@GEIS_2.0 2.0.1
++ geis_region_new@GEIS_2.0 2.0.1
++ geis_register_class_callback@GEIS_2.0 2.0.1
++ geis_register_device_callback@GEIS_2.0 2.0.1
++ geis_register_event_callback@GEIS_2.0 2.0.1
++ geis_set_configuration@GEIS_2.0 2.0.1
++ geis_subscribe@GEIS_1.0 1.0.8
++ geis_subscription_activate@GEIS_2.0 2.0.1
++ geis_subscription_add_filter@GEIS_2.0 2.0.1
++ geis_subscription_deactivate@GEIS_2.0 2.0.1
++ geis_subscription_delete@GEIS_2.0 2.0.1
++ geis_subscription_filter_by_name@GEIS_2.0 2.0.1
++ geis_subscription_get_configuration@GEIS_2.3 2.2.10
++ geis_subscription_id@GEIS_2.0 2.0.1
++ geis_subscription_name@GEIS_2.0 2.0.1
++ geis_subscription_new@GEIS_2.0 2.0.1
++ geis_subscription_remove_filter@GEIS_2.0 2.0.1
++ geis_subscription_set_configuration@GEIS_2.3 2.2.10
++ geis_touch_attr_by_name@GEIS_2.0 2.0.1
++ geis_touch_attr_count@GEIS_2.0 2.0.1
++ geis_touch_attr@GEIS_2.0 2.0.1
++ geis_touch_id@GEIS_2.0 2.0.1
++ geis_touchset_touch_by_id@GEIS_2.0 2.0.1
++ geis_touchset_touch_count@GEIS_2.0 2.0.1
++ geis_touchset_touch@GEIS_2.0 2.0.1
++ geis_unsubscribe@GEIS_1.0 1.0.8
+--- geis-2.2.17+16.04.20160126.orig/debian/python3-geis.install
++++ geis-2.2.17+16.04.20160126/debian/python3-geis.install
+@@ -0,0 +1,2 @@
++usr/lib/python*/*/*.so
++usr/lib/python*/*/geis
+--- geis-2.2.17+16.04.20160126.orig/debian/rules
++++ geis-2.2.17+16.04.20160126/debian/rules
+@@ -0,0 +1,28 @@
++#!/usr/bin/make -f
++
++export DPKG_GENSYMBOLS_CHECK_LEVEL = 4
++
++ifneq (,$(filter $(DEB_HOST_ARCH), amd64 ppc64el))
++  export DEB_CFLAGS_MAINT_STRIP = -O3
++  export DEB_CXXFLAGS_MAINT_STRIP = -O3
++  export DEB_CFLAGS_MAINT_APPEND = -O2
++  export DEB_CXXFLAGS_MAINT_APPEND = -O2
++endif
++
++%:
++	dh $@ --with python3,autoreconf --parallel
++
++override_dh_autoreconf:
++	NO_CONFIGURE=1 dh_autoreconf ./autogen.sh
++
++override_dh_auto_build-indep:
++	dh_auto_build -- doc-html
++
++override_dh_auto_test-indep:
++
++override_dh_auto_install-indep:
++	dh_auto_install -- -C doc install
++
++override_dh_install:
++	dh_install --fail-missing -X.la -X.a -X.pyo -X.pyc -Xjquery.js
++
+--- geis-2.2.17+16.04.20160126.orig/debian/source/format
++++ geis-2.2.17+16.04.20160126/debian/source/format
+@@ -0,0 +1 @@
++1.0
+--- geis-2.2.17+16.04.20160126.orig/debian/source_geis.py
++++ geis-2.2.17+16.04.20160126/debian/source_geis.py
+@@ -0,0 +1,137 @@
++# Multitouch device related problems
++# Author: Ara Pulido <ara@ubuntu.com>
++# (C) 2010 Canonical Ltd.
++# License: GPL v2 or later.
++
++from glob import glob
++from subprocess import Popen, PIPE
++import sys
++import apport.hookutils
++import time
++import os
++
++# See linux/input.h
++ABS_MT_POSITION_X = 0x35
++
++# scan-for-mt-devices written by Marc Tardif, 
++# based on a script by Henrik Rydberg
++class Input(object):
++
++    def __init__(self, path):
++        self.path = path
++
++    @property
++    def device(self):
++        base = os.path.basename(self.path)
++        return os.path.join("/dev", "input", base)
++
++    @property
++    def name(self):
++        path = os.path.join(self.path, "device", "name")
++        return read_line(path)
++
++    def get_capabilities(self):
++        path = os.path.join(self.path, "device", "capabilities", "abs")
++        line = read_line(path)
++        capabilities = []
++        long_bit = getconf("LONG_BIT")
++        for i, word in enumerate(line.split(" ")):
++            word = int(word, 16)
++            subcapabilities = [bool(word & 1<<i) for i in range(long_bit)]
++            capabilities[:0] = subcapabilities
++
++        return capabilities
++
++    def has_capability(self, capability):
++        capabilities = self.get_capabilities()
++        return len(capabilities) > capability and capabilities[capability]
++
++
++def getconf(var):
++    output = Popen(["getconf", var], stdout=PIPE).communicate()[0]
++    return int(output)
++
++def get_inputs(path):
++    event_glob = os.path.join(path, "event*")
++    for event_path in glob(event_glob):
++        yield Input(event_path)
++
++def read_line(path):
++    f = open(path)
++    try:
++        return f.readline().strip()
++    finally:
++        f.close()
++
++def scan_for_mt_devices(report):
++
++    capability = ABS_MT_POSITION_X
++    input = "/sys/class/input"
++
++    inputs = get_inputs(input)
++    inputs = [i for i in inputs if i.has_capability(capability)]
++
++    report['MtDevices'] = ''
++
++    if inputs:
++        for input in inputs:
++            report['MtDevices'] += "%s: %s\n" % (input.name, input.device)
++
++        return 0
++    else:
++        report['MtDevices'] += "No capable devices found..."
++        return 1
++
++##################################
++
++description = 'Multitouch device problem'
++RELATED_PACKAGES = ['xserver-xorg', 'xserver-xorg-video-intel', 'xserver-xorg-video-ati', 'libmtdev1', 'libgrail1', 'libgeis1']
++
++
++def add_info(report, ui):
++
++    report.setdefault('Tags', '')
++    report['Tags'] += ' hci touch'
++
++    # Capture hardware
++    apport.hookutils.attach_hardware(report)
++    report['PciDisplay'] = apport.hookutils.pci_devices(apport.hookutils.PCI_DISPLAY)
++    
++    # Attach the results of scan mt devices
++    scan_for_mt_devices(report)
++
++    # Only collect the following data if X11 is available
++    if os.environ.get('DISPLAY'):
++        # For resolution/multi-head bugs
++        report['Xrandr'] = apport.hookutils.command_output(['xrandr', '--verbose'])
++        apport.hookutils.attach_file_if_exists(report,
++                              os.path.expanduser('~/.config/monitors.xml'),
++                              'monitors.xml')
++
++    # Attach the Xorg logs and config    
++    apport.hookutils.attach_file_if_exists(report, '/etc/X11/xorg.conf', 'XorgConf')
++    apport.hookutils.attach_file(report, '/var/log/Xorg.0.log', 'XorgLog')
++    apport.hookutils.attach_file_if_exists(report, '/var/log/Xorg.0.log.old', 'XorgLogOld')
++    apport.hookutils.attach_file_if_exists(report, '/var/log/gdm/:0.log', 'GdmLog')
++    apport.hookutils.attach_file_if_exists(report, '/var/log/gdm/:0.log.1', 'GdmLogOld')
++
++
++    # Attach the output of xinput
++    report['XInput'] = apport.hookutils.command_output(['xinput', 'input'])
++
++    # Attach the output of lsinput
++    report['LsInput'] = apport.hookutils.root_command_output(["lsinput"])
++
++    # Attach descriptors
++    attach_descriptors(report)
++
++    apport.hookutils.attach_related_packages(report, RELATED_PACKAGES)
++
++def attach_descriptors(report):
++    path = '/sys/kernel/debug/hid/*/rdesc'
++    for desc in glob(path):
++        name = desc.split('/')[5]
++        name = name.replace(":", "").replace(".", "")
++        report[name] = apport.hookutils.root_command_output(["cat", desc])
++
++
+--- geis-2.2.17+16.04.20160126.orig/debian/watch
++++ geis-2.2.17+16.04.20160126/debian/watch
+@@ -0,0 +1,2 @@
++version=3
++https://launchpad.net/geis/+download .*/geis-([0-9.]+)\.tar\.(?:xz|gz)

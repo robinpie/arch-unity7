@@ -1,0 +1,42 @@
+file(REMOVE_RECURSE
+  "../../generated/animationaddon.xml"
+  "../../generated/animationaddon_options.cpp"
+  "../../generated/animationaddon_options.h"
+  "../../generated/glib-2.0/schemas/org.compiz.animationaddon.gschema.xml"
+  "CMakeFiles/animationaddon.dir/link.d"
+  "CMakeFiles/animationaddon.dir/__/__/generated/animationaddon_options.cpp.o"
+  "CMakeFiles/animationaddon.dir/__/__/generated/animationaddon_options.cpp.o.d"
+  "CMakeFiles/animationaddon.dir/src/airplane.cpp.o"
+  "CMakeFiles/animationaddon.dir/src/airplane.cpp.o.d"
+  "CMakeFiles/animationaddon.dir/src/animationaddon.cpp.o"
+  "CMakeFiles/animationaddon.dir/src/animationaddon.cpp.o.d"
+  "CMakeFiles/animationaddon.dir/src/beamup.cpp.o"
+  "CMakeFiles/animationaddon.dir/src/beamup.cpp.o.d"
+  "CMakeFiles/animationaddon.dir/src/burn.cpp.o"
+  "CMakeFiles/animationaddon.dir/src/burn.cpp.o.d"
+  "CMakeFiles/animationaddon.dir/src/dissolve.cpp.o"
+  "CMakeFiles/animationaddon.dir/src/dissolve.cpp.o.d"
+  "CMakeFiles/animationaddon.dir/src/domino.cpp.o"
+  "CMakeFiles/animationaddon.dir/src/domino.cpp.o.d"
+  "CMakeFiles/animationaddon.dir/src/explode.cpp.o"
+  "CMakeFiles/animationaddon.dir/src/explode.cpp.o.d"
+  "CMakeFiles/animationaddon.dir/src/fold.cpp.o"
+  "CMakeFiles/animationaddon.dir/src/fold.cpp.o.d"
+  "CMakeFiles/animationaddon.dir/src/glide3.cpp.o"
+  "CMakeFiles/animationaddon.dir/src/glide3.cpp.o.d"
+  "CMakeFiles/animationaddon.dir/src/leafspread.cpp.o"
+  "CMakeFiles/animationaddon.dir/src/leafspread.cpp.o.d"
+  "CMakeFiles/animationaddon.dir/src/particle.cpp.o"
+  "CMakeFiles/animationaddon.dir/src/particle.cpp.o.d"
+  "CMakeFiles/animationaddon.dir/src/polygon.cpp.o"
+  "CMakeFiles/animationaddon.dir/src/polygon.cpp.o.d"
+  "CMakeFiles/animationaddon.dir/src/skewer.cpp.o"
+  "CMakeFiles/animationaddon.dir/src/skewer.cpp.o.d"
+  "libanimationaddon.pdb"
+  "libanimationaddon.so"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/animationaddon.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

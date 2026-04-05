@@ -1,0 +1,1835 @@
+--- bamf-0.5.6+22.04.20220217.orig/debian/bamfdaemon.install
++++ bamf-0.5.6+22.04.20220217/debian/bamfdaemon.install
+@@ -0,0 +1,4 @@
++debian/tmp/usr/lib/*/bamf
++debian/tmp/usr/share/dbus-1/services/
++debian/tmp/usr/share/upstart/sessions/
++debian/tmp/usr/lib/systemd/user
+--- bamf-0.5.6+22.04.20220217.orig/debian/bamfdaemon.postinst
++++ bamf-0.5.6+22.04.20220217/debian/bamfdaemon.postinst
+@@ -0,0 +1,86 @@
++#! /bin/sh
++set -e
++
++BAMF_INDEX_NAME="bamf-2.index"
++
++if [ "$1" = "configure" ] || [ "$1" = "triggered" ]; then
++    if [ -d /usr/share/applications ]; then
++        # rebuild index
++        I=/usr/share/applications/$BAMF_INDEX_NAME
++        echo "Rebuilding $I..."
++        rm -f $I
++        perl -e '
++use File::Find;
++my $dir_name;
++
++sub strip_exec
++{
++    my $f = $_;
++    return unless $f =~ /\.desktop$/;
++    return unless ("$File::Find::dir" eq "$dir_name");
++    my @lines;
++    open F, $f;
++    @lines = <F>;
++    close F;
++    my $in_desktop_entry = 0;
++    my $exec = "";
++    my $class = "";
++    my $no_display = "false";
++    my $only_show_in = "";
++
++    foreach (@lines)
++    {
++        if (/^\[\s*(.+)\s*\]/)
++        {
++            $was_in_desktop = $in_desktop_entry;
++            $in_desktop_entry = ($1 eq "Desktop Entry");
++
++            if ($was_in_desktop and !$in_desktop_entry)
++            {
++                last;
++            }
++        }
++
++        if ($in_desktop_entry)
++        {
++            if (/^Exec=(.+)$/)
++            {
++                $exec = $1;
++                $exec =~ s/^\s+|\s+$//g;
++            }
++
++            if (/^NoDisplay=(.+)$/)
++            {
++                $no_display = $1;
++                $no_display =~ s/^\s+|\s+$//g;
++            }
++
++            if (/^OnlyShowIn=(.+)$/)
++            {
++                $only_show_in = $1;
++                $only_show_in =~ s/^\s+|\s+$//g;
++            }
++
++            if (/^StartupWMClass=(.+)$/)
++            {
++                $class = $1;
++                $class =~ s/^\s+|\s+$//g;
++            }
++        }
++    }
++
++    if ($exec ne "")
++    {
++        print "$f\t$exec\t$class\t$only_show_in\t$no_display\n";
++    }
++};
++
++$dir_name = $ARGV[-1];
++$dir_name = $1 if($dir_name=~/(.*)\/$/);
++find(\&strip_exec, $dir_name);' /usr/share/applications > $I.new || rm -f $I.new
++
++        [ -e $I.new ] && mv $I.new $I || true
++    fi
++fi
++
++#DEBHELPER#
+--- bamf-0.5.6+22.04.20220217.orig/debian/bamfdaemon.postrm
++++ bamf-0.5.6+22.04.20220217/debian/bamfdaemon.postrm
+@@ -0,0 +1,8 @@
++#! /bin/sh
++set -e
++
++if [ "$1" = "remove" ] || [ "$1" = "purge" ]; then
++    rm -f /usr/share/applications/bamf.index
++fi
++
++#DEBHELPER#
+--- bamf-0.5.6+22.04.20220217.orig/debian/bamfdaemon.triggers
++++ bamf-0.5.6+22.04.20220217/debian/bamfdaemon.triggers
+@@ -0,0 +1,2 @@
++interest-noawait /usr/share/applications
++interest-noawait gmenucache
+--- bamf-0.5.6+22.04.20220217.orig/debian/changelog
++++ bamf-0.5.6+22.04.20220217/debian/changelog
+@@ -0,0 +1,1402 @@
++bamf (0.5.6+22.04.20220217-0ubuntu6) resolute; urgency=medium
++
++  * No-change mass rebuild for Ubuntu 26.04 (LP: #2132257)
++
++ -- Graham Inggs <ginggs@ubuntu.com>  Tue, 09 Dec 2025 22:26:56 +0000
++
++bamf (0.5.6+22.04.20220217-0ubuntu5) noble; urgency=medium
++
++  * No-change rebuild for CVE-2024-3094
++
++ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 31 Mar 2024 00:22:02 +0000
++
++bamf (0.5.6+22.04.20220217-0ubuntu4) noble; urgency=medium
++
++  * Rename libraries for 64-bit time_t transition
++
++ -- Shengjing Zhu <shengjing.zhu@canonical.com>  Tue, 19 Mar 2024 19:03:54 +0800
++
++bamf (0.5.6+22.04.20220217-0ubuntu3) noble; urgency=medium
++
++  * No-change rebuild against libglib2.0-0t64
++
++ -- Steve Langasek <steve.langasek@ubuntu.com>  Mon, 11 Mar 2024 22:03:35 +0000
++
++bamf (0.5.6+22.04.20220217-0ubuntu2) noble; urgency=medium
++
++  * No-change rebuild against libglib2.0-0t64
++
++ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 08 Mar 2024 03:54:28 +0000
++
++bamf (0.5.6+22.04.20220217-0ubuntu1) jammy; urgency=medium
++
++  [ David GUGLIELMI ]
++  * configure.ac: bump glib requirement to >= 2.38
++  * port gobject privates methods using non-deprecated macros
++
++  [ Marco Trevisan (Treviño) ]
++  * bamf-view: Fix deprecation warning with proper replacement
++  * libbamf: Use more modern macros to define classes
++  * configure: Ensure we compile using all the required gobject packages
++  * daemon/bamf-application: Support ShowIn in generated desktop with new format
++  * tests/bamfdaemon: Remove window-added/removed tests
++  * bamfdaemon, tests: Export and destroy windows and applications
++  * New upstream release: 0.5.6
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Thu, 17 Feb 2022 18:34:14 +0000
++
++bamf (0.5.5+21.10.20210710-0ubuntu1) impish; urgency=medium
++
++  [ Marco Trevisan (Treviño) ]
++  * New upstream release: 0.5.5
++  * debian/control:
++    - update default vcs to git
++    - Drop B-D on dbus-x11, rather versioned build-depend on dbus (>= 1.8)
++    - Bump Standards-Version: to 4.1.5. No changes needed
++  * debian/gbp.conf: added default settings
++  * bamf-tab: Fix spelling
++
++  [ Corentin Noël ]
++  * bamf-view: avoid overriding the `timeout` variables after setting them
++
++  [ Mike Gabriel ]
++  * Remove remnants of long-removed mono stuff.
++  * Run gtester2xunit.py with Python3, port libxml2/libxslt to lxml module..
++  * debian/control: Update B-D python-libxslt1 -> python3-lxml. (Closes: #942913).
++
++  [ Didier Roche ]
++  * _add-compile-warning-flags
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Sat, 10 Jul 2021 15:59:03 +0000
++
++bamf (0.5.3+18.04.20180207.2-0ubuntu2) focal; urgency=medium
++
++  * Cherry-pick from Debian, to fix FTBFS without python-lxml:
++    - Update B-D python-libxslt1 -> python3-lxml. (Closes: #942913)
++    - Add 1004_py2to3_gtester2xunit.patch. Use python3 for gtester2xunit.py.
++      Port libxml2/libxslt module usage to lxml module usage.
++  * Remove -Werror, bamf is hitting glib deprecations.
++
++ -- Stefano Rivera <stefanor@ubuntu.com>  Tue, 14 Apr 2020 09:24:15 -0700
++
++bamf (0.5.3+18.04.20180207.2-0ubuntu1) bionic; urgency=medium
++
++  * bamf-window: read snap and flatpak IDs and use it to guess desktop-
++    id (LP: #1747802)
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Wed, 07 Feb 2018 14:10:54 +0000
++
++bamf (0.5.3+17.10.20170810-0ubuntu1) artful; urgency=medium
++
++  * No-change rebuild against latest libgtop2
++
++ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 10 Aug 2017 02:49:19 +0000
++
++bamf (0.5.3+17.04.20170406-0ubuntu1) zesty; urgency=medium
++
++  [ Łukasz 'sil2100' Zemczak ]
++  * Add the gnome-common build-dependency to satisfy the gnome-
++    autogen.sh requirement. (LP: #1680104)
++  * As agreed with upstream, do not error out on deprecated
++    declarations. (LP: #1680104)
++
++ -- Łukasz Zemczak <lukasz.zemczak@canonical.com>  Thu, 06 Apr 2017 13:10:47 +0000
++
++bamf (0.5.3+16.10.20160929-0ubuntu1) yakkety; urgency=medium
++
++  [ Marco Trevisan (Treviño) ]
++  * Releasing upstream BAMF 0.5.3
++
++  [ Iain Lane ]
++  * Adjust for XDG_CURRENT_DESKTOP containing multiple colon-separated
++    values
++
++ -- iain@orangesquash.org.uk <iain@orangesquash.org.uk>  Thu, 29 Sep 2016 16:12:35 +0000
++
++bamf (0.5.3~bzr0+16.10.20160726.1-0ubuntu1) yakkety; urgency=medium
++
++  [ Andrea Azzarone ]
++  * Unscale x/y coordinates returned by top_window_action_menu. (LP:
++    #1606234)
++
++  [ Martin Pitt ]
++  * Add support for starting bamf through user systemd units
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Tue, 26 Jul 2016 09:08:41 +0000
++
++bamf (0.5.3~bzr0+16.10.20160705-0ubuntu1) yakkety; urgency=medium
++
++  * debian/bamfdaemon.triggers: use interest-noawait (LP: #1589097)
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Tue, 05 Jul 2016 01:10:52 +0000
++
++bamf (0.5.3~bzr0+16.10.20160628-0ubuntu1) yakkety; urgency=medium
++
++  [ Andrea Azzarone ]
++  * Daemon: manually set to complete the startup notification on view
++    state change (LP: #1582430)
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Tue, 28 Jun 2016 16:55:22 +0000
++
++bamf (0.5.3~bzr0+16.10.20160602-0ubuntu1) yakkety; urgency=medium
++
++  * BamfMatcher: allow overriding desktop with the environment var
++    BAMF_DESKTOP_FILE_HINT
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Thu, 02 Jun 2016 01:01:02 +0000
++
++bamf (0.5.3~bzr0+16.10.20160516-0ubuntu1) yakkety; urgency=medium
++
++  * bamfdaemon-dbus-runner: don't try to start again if already running
++    (LP: #1581896, #1532226)
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Mon, 16 May 2016 10:44:43 +0000
++
++bamf (0.5.3~bzr0+16.04.20160415-0ubuntu1) xenial; urgency=medium
++
++  [ Andrea Azzarone ]
++  * BamfWindow: Export window actions menu using dbusmenu (LP: #1570812)
++
++  [ Marco Trevisan (Treviño) ]
++  * BamfApplication: correctly set a main child when handling windows
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Fri, 15 Apr 2016 11:57:31 +0000
++
++bamf (0.5.3~bzr0+16.04.20160331-0ubuntu1) xenial; urgency=medium
++
++  [ Marco Trevisan (Treviño), Rico Tzschichholz ]
++  * BamfApplication: bind window-{added,removed} signals to child-
++    {added,removed} ones
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Thu, 31 Mar 2016 22:53:39 +0000
++
++bamf (0.5.3~bzr0+16.04.20160322.1-0ubuntu1) xenial; urgency=medium
++
++  [ Marco Trevisan (Treviño) ]
++  * BamfMatcher: avoid to register apps with invalid (empty or not
++    existing) destkop files (LP: #1560490)
++
++  [ Rico Tzschichholz ]
++  * BamfView: Fix ABI break caused by r625 (LP: #1560486)
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Tue, 22 Mar 2016 15:35:03 +0000
++
++bamf (0.5.3~bzr0+16.04.20160321-0ubuntu1) xenial; urgency=medium
++
++  [ CI Train Bot ]
++  * debian/libbamf3-2.symbols: update to released version.
++  * No-change rebuild.
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Mon, 21 Mar 2016 15:35:41 +0000
++
++bamf (0.5.3~bzr0+16.04.20160229-0ubuntu1) xenial; urgency=medium
++
++  * Use startup notifications to set a "starting" property (LP: #676457)
++
++ -- Andrea <andrea.azzarone@canonical.com>  Mon, 29 Feb 2016 16:02:03 +0100
++
++bamf (0.5.2~bzr0+16.04.20151217-0ubuntu1) xenial; urgency=medium
++
++  * BamfMatcher: don't assign no-display desktop files to windows by
++    default when launched (LP: #1519376)
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Thu, 17 Dec 2015 18:01:39 +0000
++
++bamf (0.5.2~bzr0+16.04.20151210-0ubuntu1) xenial; urgency=medium
++
++  [ CI Train Bot ]
++  * debian/changelog: update to released version.
++
++  [ Marco Trevisan (Treviño) ]
++  * BamfDaemon: add upstart session support
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Thu, 10 Dec 2015 15:48:25 +0000
++
++bamf (0.5.2~bzr0+16.04.20151104-0ubuntu1) xenial; urgency=medium
++
++  [ CI Train Bot ]
++  * debian/libbamf3-2.symbols: update to released version.
++  * New rebuild forced.
++
++  [ Marco Trevisan (Treviño) ]
++  * BamfMatcher: update special g-c-c code to unity-control-center (LP:
++    #1511481)
++  * debian/libbamf3-2.symbols: use 0.5.2~bzr0+16.04.20151210 trick to get proper
++    symbols
++  * libBAMF: cache active{window,application} and be smarter in reusing
++    known resources
++
++ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Wed, 04 Nov 2015 16:24:11 +0000
++
++bamf (0.5.2~bzr0+15.10.20150627.1-0ubuntu1) wily; urgency=medium
++
++  [ CI Train Bot ]
++  * New rebuild forced.
++
++  [ Iain Lane ]
++  * Bump gobject-introspection build-dep to the version which installed
++    typelib files in the multiarch libdir
++
++  [ Marco Trevisan (Treviño) ]
++  * configure.ac: development version bump to 0.5.2
++
++  [ Stephen M. Webb ]
++  * fixed Ubuntu packaging for multi-arch (LP: #1415052)
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Sat, 27 Jun 2015 04:40:30 +0000
++
++bamf (0.5.1+15.04.20150202-0ubuntu1) vivid; urgency=medium
++
++  [ Marco Trevisan (Treviño) ]
++  * BamfMatcher: rename set our atom to _BAMF_DESKTOP_FILE
++
++  [ Marco Trevisan ]
++  * Matcher: use desktop file path when matching on _GTK_APPLICATION_ID
++
++  [ Lars Uebernickel ]
++  * Matcher: use desktop file path when matching on _GTK_APPLICATION_ID
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 02 Feb 2015 10:25:02 +0000
++
++bamf (0.5.1+15.04.20150128-0ubuntu1) vivid; urgency=low
++
++  [ Andrea Azzarone ]
++  * Replace gtk_icon_theme_has_icon with gtk_icon_theme_lookup_icon.
++    (LP: #1407192)
++
++  [ Lars Uebernickel ]
++  * Matcher: honor the _GTK_APPLICATION_ID xprop
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 28 Jan 2015 19:25:54 +0000
++
++bamf (0.5.1+14.10.20140925-0ubuntu2) vivid; urgency=medium
++
++  * Install typelib files into MA libdir
++
++ -- Iain Lane <iain@orangesquash.org.uk>  Tue, 28 Oct 2014 11:12:55 +0000
++
++bamf (0.5.1+14.10.20140925-0ubuntu1) utopic; urgency=low
++
++  [ Ubuntu daily release ]
++  * New rebuild forced
++
++  [ Andrea Azzarone ]
++  * BamfLegacyScreen: Do not show the actions menu for desktop type
++    window. (LP: #1342609)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 25 Sep 2014 14:56:56 +0000
++
++bamf (0.5.1+14.04.20140409-0ubuntu3) utopic; urgency=medium
++
++  * Actually do a no change rebuild against new libgtop
++
++ -- Robert Ancell <robert.ancell@canonical.com>  Wed, 20 Aug 2014 15:27:04 +1200
++
++bamf (0.5.1+14.04.20140409-0ubuntu2) utopic; urgency=medium
++
++  * No change rebuild against new libgtop
++
++ -- Robert Ancell <robert.ancell@canonical.com>  Tue, 19 Aug 2014 14:02:20 +1200
++
++bamf (0.5.1+14.04.20140409-0ubuntu1) trusty; urgency=low
++
++  [ Iain Lane ]
++  * BamfMatcher: fix prefix regex for pythonX support Fix preifx regex
++    (used for converting /usr/bin/python[stuff] foo into foo) to work
++    with pythonX as well as python and pythonX.Y
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 09 Apr 2014 17:27:39 +0000
++
++bamf (0.5.1+14.04.20140408-0ubuntu1) trusty; urgency=low
++
++  [ CI bot ]
++  * Resync trunk
++
++  [ Alexandre Abreu ]
++  * Rip out vestigial webapps code (LP: #1280337) (LP: #1280337)
++
++  [ Ubuntu daily release ]
++  * New rebuild forced
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 08 Apr 2014 16:43:41 +0000
++
++bamf (0.5.1+14.04.20140310-0ubuntu1) trusty; urgency=low
++
++  [ Alexandre Abreu ]
++  * Remove old webapp related code since now we dont use browser tab
++    matching anymore. (LP: #1289498)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 10 Mar 2014 22:29:08 +0000
++
++bamf (0.5.1+14.04.20140214.1-0ubuntu1) trusty; urgency=low
++
++  [ Michel Alexandre Salim ]
++  * [Merge] Fix return value of try_create_local_desktop_data. (LP:
++    #1280110)
++
++  [ CI bot ]
++  * Release trunk to Ubuntu
++
++  [ Marco Trevisan (Treviño) ]
++  * BamfLegacyScreen: When in Unity monitor for compiz ClientMessage's
++    to show action menu If we get a _COMPIZ_TOOLKIT_ACTION client
++    message with the internal value _COMPIZ_TOOLKIT_ACTION_WINDOW_MENU,
++    then we are requested by compiz to show the window action menu, and
++    thus let's ask the proper BamfLegacyWindow to do that, thanks to
++    libwnck. (LP: #1280042)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 14 Feb 2014 22:58:48 +0000
++
++bamf (0.5.1+14.04.20131125-0ubuntu2) trusty; urgency=medium
++
++  * bamf-legacy-window-test.c: Don't use 'return' with a value, in function
++    returning void.
++
++ -- Matthias Klose <doko@ubuntu.com>  Mon, 30 Dec 2013 07:55:21 +0100
++
++bamf (0.5.1+14.04.20131125-0ubuntu1) trusty; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * BamfXutils: trap the X errors when doing async X calls. (LP:
++    #1193714)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 588
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 25 Nov 2013 03:55:07 +0000
++
++bamf (0.5.1+13.10.20131011-0ubuntu1) saucy; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * BamfView: reload the view children everytime it changes dbus path
++    Without doing it we could have children-less views in case we have
++    just re-matched a view with a different dbus path (this happens in
++    general for desktop-less applications), because the proxy won't be
++    fast enough to catch the signal to update the inner children list.
++    (LP: #1238064)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 586
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 11 Oct 2013 04:26:42 +0000
++
++bamf (0.5.1+13.10.20130830-0ubuntu1) saucy; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * Bump version to 0.5.1
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 584
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 30 Aug 2013 18:06:50 +0000
++
++bamf (0.5.0+13.10.20130822.5-0ubuntu1) saucy; urgency=low
++
++  * Automatic snapshot from revision 582
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 22 Aug 2013 20:29:07 +0000
++
++bamf (0.5.0+13.10.20130812.1-0ubuntu1) saucy; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * Remove deprecated and never used BamfTabSource
++  * Bump SONAME
++  * Update the package version to libbamf3-2
++  * debian/control: depend on libwnck-3 3.4.7
++
++  [ Stephen M. Webb ]
++  * directly include bamf-tab.h in libbamf.h.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 580
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 12 Aug 2013 06:06:22 +0000
++
++bamf (0.5.0+13.10.20130809-0ubuntu1) saucy; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * BamfApplication: include Path in .desktop file if its working dir is
++    not the default one. (LP: #765466)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 577
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 09 Aug 2013 02:02:21 +0000
++
++bamf (0.5.0+13.10.20130807.1-0ubuntu1) saucy; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * BamfDaemon: Use nicer and more compliant dbus object paths for
++    views.
++  * BamfMatcher: ignore known invalid window class values when matching
++    windows And generate better .desktop files for local apps. This will
++    make us life easier with Java.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 575
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 07 Aug 2013 16:56:51 +0000
++
++bamf (0.5.0+13.10.20130807-0ubuntu1) saucy; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * BamfControl: add an API to allow generation of local .desktop file
++    for a BamfApplication. Add a bamf_control dbus method that requests
++    to generate a new local .desktop file for the provided application
++    path. In case the application has alredy a desktop file, the request
++    is ignored. Otherwise we use some euristic to generate an hopefully
++    valid file saved in $XDG_DATA_HOME dir. Also added a new
++    DesktopUpdated signal to the BamfApplication DBus interface that is
++    emitted when the .desktop file for an application is set (for now).
++    (LP: #753305)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 572
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 07 Aug 2013 02:02:05 +0000
++
++bamf (0.5.0+13.10.20130725-0ubuntu1) saucy; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * BamfMatcher: correctly match QML applications launched with qmlscene
++    or qmlviewer. (LP: #1180402)
++  * BamfLegacyWindow: cache the window Exec string We might use this
++    value multiple times during the BAMF execution, and we don't need to
++    recompute it everytime. Caching looks a good compromise.
++  * BamfMatcher: add support for the "--desktop_file_hint" exec
++    parameter to override matching This is needed mostly by new Qml
++    applications, but it allows to every app to override its matching by
++    calling it with --desktop_file_hint file-to-use.desktop. (LP:
++    #1180402)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 570
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 25 Jul 2013 02:03:06 +0000
++
++bamf (0.5.0+13.10.20130724-0ubuntu1) saucy; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * "BamfPrivate, no need to define depreaction macro, GLib includes
++    one.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 566
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 24 Jul 2013 02:02:33 +0000
++
++bamf (0.5.0+13.10.20130717-0ubuntu1) saucy; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * BamfApplication: keep track of the application main-window and
++    update name and icon accordingly Applications without a .desktop
++    file should update their name and icon based on their children. So
++    now we try to compute the main window children, and we update name
++    and icon based on it. (LP: #751909)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 564
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 17 Jul 2013 02:01:42 +0000
++
++bamf (0.5.0+13.10.20130716-0ubuntu1) saucy; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * BamfApplication: if the .desktop file contains the full-path of an
++    icon we should use it If the parsed icon is a file, then we just use
++    it without asking gtk if it's valid for theme. . (LP: #1201408)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 562
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 16 Jul 2013 02:01:55 +0000
++
++bamf (0.5.0+13.10.20130628-0ubuntu1) saucy; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * BamfDaemon, LibBamf: Make the BamfView's name a property, deprecated
++    method+signal.
++  * BamfDaemon, LibBamf: add icon property to store the BamfView icon
++    and notify about its changes. New tests added.
++  * BamfMatcher: ignore registered .desktop files that are in an
++    autostart-folder. (LP: #1193502)
++  * BamfApplication: try to use a window icon if the computed icon
++    belongs to a "generic" app Added a bunch of new BamfApplication
++    tests for icon. (LP: #768931, #1007383)
++  * BamfFactory: remove the local_views list, we don't need that anymore
++    Having them tracked on allocated_views list is enough, and fixes an
++    issue as explained on bug #1193559. (LP: #1193449, #1193559)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 560
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 28 Jun 2013 02:02:32 +0000
++
++bamf (0.5.0daily13.06.19-0ubuntu1) saucy; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * New upstream release, bumping debian version to 0.5.0
++  * LibBamfPrivate: add new private library to share code between client
++    and daemon.
++  * libbamf, BamfView: Use dbus-properties (both values and signals) It
++    allows to have correct values and signals when they get updated.
++    Deprecating related dbus methods/signals.
++  * debian/control:
++    - don't build-depend anymore on libdbus-glib-1-dev
++
++  [ Jeremy Bicha ]
++  * debian/control:
++    - Have libbamf3-dev depend on gir1.2-bamf-3
++    - Drop explicit build-depends on gir1.2-glib-2.0
++
++  [ Ted Gould ]
++  * Have bamfdaemon depend on the library instead of vice versa.
++
++  [ Marco Trevisan (Treviño) ]
++  * Makefile.am.gtests: kill the launched dbus-daemon after running the
++    tests. (LP: #1088696, #1186915)
++  * BamfDaemon, LibBamf: Fix compilation errors out from ubuntu. (LP:
++    #1186915, #1176524)
++  * BamfView: use statically allocated pspec to notify property changes
++    BamfFactory: some initial cleanup, remove views that have changed
++    their path and use cached children.
++  * BamfView: use incremental children caching, delete them only when
++    daemon stops Each view used to cleanup the cached children every
++    time a new one was added or removed. This was needed at the dbus-
++    glib times to handle the case of bamfdaemon restart, but now we can
++    handle this nicely, clening the children up only when this happens.
++  * BamfView: disconnect proper callback if a bamf-tab is closed I guess
++    it was a typo, we need to disconnect to the callback we've been
++    connected to before.
++  * BamfView: don't try to reload the children if they're empty but we
++    already tried once This finally mutes the "Unable to fetch children"
++    warning... \o/. (LP: #943083)
++  * Bamf: use generic marshallers when creating signals, remove legacy
++    bamf-marshal Improvements to the build system, fixed "make
++    distcheck" (it was still referencing the old bamf.h file) and
++    generation of files when using parallel builds (make -jX).
++  * BamfMatcher: If a Window has changed its class, then we try to
++    rematch it This is mostly the case of LibreOffice, but if a window
++    has changed its class, then we should try to re-match, checking if
++    now it can be matched by a new application. If this is the case,
++    then we remove the window from the previous application (that may
++    eventually be closed) and we add it to the new one. Thanks to this
++    we can finally remove a lot of libreoffice-only related code.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 554
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 19 Jun 2013 02:01:25 +0000
++
++bamf (0.4.0daily13.06.07-0ubuntu1) saucy; urgency=low
++
++  [ Mathieu Trudel-Lapierre ]
++  * Fix test-libbamf to properly call gtester2xunit.
++
++  [ Marco Trevisan (Treviño) ]
++  * libbamf: BamfApplication: cache MimeTypes and ApplicationType on
++    favorite and sticky apps. (LP: #1183978, #1183871)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 540
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 07 Jun 2013 07:37:23 +0000
++
++bamf (0.4.0daily13.05.02-0ubuntu1) saucy; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * debian/control:
++    - Update the libwnck-3-dev dependency to 3.4.5
++
++  [ Marco Trevisan (Treviño) <mail@3v1n0.net>, Alexandre Abreu ]
++  * Webapps launchers have incorrect window matching (pips) (LP:
++    #1059475)
++
++  [ Marco Trevisan (Treviño) ]
++  * Coverity SECURE_TEMP - CID 10450 (LP: #1100551)
++  * Matcher leaks memory when rematching a new desktop file (LP:
++    #1169990)
++  * Coverity DEADCODE - CID 10447 (LP: #1100554)
++  * Coverity REVERSE_INULL - CID 12653 (LP: #1100553)
++  * Webapps launchers have incorrect window matching (pips) (LP:
++    #1059475)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 533
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 02 May 2013 22:59:03 +0000
++
++bamf (0.4.0daily13.04.03-0ubuntu1) raring; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * debian/bamfdaemon.postinst:
++    - write it in multiline and add support for StartupWMClass
++      and other properties such as NoDisplay and OnlyShowIn (LP: #1161430).
++  * TestBamfMatcher: fix crashes caused by missing exec in .desktop files
++  * libbamf: use scanner-flags for introspection, fixes a compilation error.
++  * DesktopFiles with NoDisplay=true are used as primary .desktop to
++    match applications (LP: #1161531)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 528
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 03 Apr 2013 02:01:51 +0000
++
++bamf (0.4.0daily13.03.07-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 523
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Thu, 07 Mar 2013 02:01:47 +0000
++
++bamf (0.4.0daily13.02.06-0ubuntu1) raring; urgency=low
++
++  [ Alex Launi ]
++  * is-foreground-tab FALSE for single tab (LP: #1109198)
++
++  [ Marco Trevisan (Treviño) ]
++  * Alt+` is sometimes ignored when quickly switching windows (LP:
++    #1115827)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 521
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Wed, 06 Feb 2013 02:00:52 +0000
++
++bamf (0.4.0daily13.02.01-0ubuntu1) raring; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * Unity inappropriately groups separate Java webstart app windows (LP:
++    #979752)
++  * Java Web Start windows launched from browser are still grouped even
++    if different (LP: #1108380)
++  * Unity groups separate Java webstart app windows (LP: #1098186)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 518
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Fri, 01 Feb 2013 02:00:54 +0000
++
++bamf (0.4.0daily13.01.11-0ubuntu1) raring; urgency=low
++
++  [ Francis Ginther ]
++  * bamf autolanding builds sometime fail with "kill: (nnnn) - No such
++    process" (LP: #1079329)
++
++  [ Marco Trevisan (Treviño) ]
++  * Unity inappropriately groups separate Java webstart app windows (LP:
++    #979752)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 516
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Fri, 11 Jan 2013 02:01:54 +0000
++
++bamf (0.4.0daily12.12.05-0ubuntu2) raring; urgency=low
++
++  [ Didier Roche ]
++  * Remove wrong build-dep from -dbg on libbamf0
++
++  [ Marco Trevisan (Treviño) ]
++  * Remove the unneeded libbamf0.symbols and libbamf0.install
++  * Update libbamf3.symbols removing the indicator functions
++  * Remove the unneeded library dependencies on libwnck
++  * Bump the SONAME
++  * Update the package version to libbamf3-1
++  * Enable the gir1.2-bamf-3 package building
++  * Add valac as build-depend
++
++ -- Didier Roche <didrocks@ubuntu.com>  Wed, 05 Dec 2012 17:34:41 +0100
++
++bamf (0.4.0daily12.12.05-0ubuntu1) raring; urgency=low
++
++  [ Michael Terry ]
++  * New upstream release
++  * debian/control:
++    - Update Bzr-Vcs
++    - Build-Depend on dh-autoreconf
++    - Bump needed debhelper to 9 and add some Build-Depends for tests
++  * debian/rules:
++    - Call dh_autoreconf
++    - Switch to dh9, thereby enabling tests
++
++  [ Marco Trevisan (Treviño) ]
++  * Bumping version to 0.4.0
++  * debian/control:
++    - Removed the gtk2 dependencies and packages
++    - Dependency on libglib2.0-dev updated to match the configure.ac value
++  * debian/rules:
++    - Removed the unneded dh overrides
++
++  [ Didier Roche ]
++  * Automatic snapshot from revision 494 (bootstrap)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 502
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Wed, 05 Dec 2012 09:26:30 +0000
++
++bamf (0.3.4-0ubuntu1) quantal-proposed; urgency=low
++
++  [ Timo Jyrinki ]
++  * New upstream release.
++    - Autoconf: Make libunity-webapps an optional dependency (on by default)
++    - Libbamf: Some signal, type and annotation fixes
++    - libbamf: gir-annotion fixes and make gi-scanner verbose
++    - Autoconf: Exclude generated sources from tarball and fix "make
++      distcheck".
++    - BamfMatcher: add support for libreoffice Base, and libreoffice matching
++      tests (LP: #1063862)
++
++  [ Didier Roche ]
++  * debian/bamfdaemon.postinst:
++    - Fix bamf.index perl script generation to fix UOA g-c-c panel associated
++      with empathy. (LP: #1045223)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Wed, 17 Oct 2012 07:49:01 +0200
++
++bamf (0.3.2-0ubuntu1) quantal-proposed; urgency=low
++
++  [ Łukasz 'sil2100' Zemczak ]
++  * New upstream release.
++    - bamfdaemon crashes in bamf_application_get_supported_mime_types
++      (LP: #1058260)
++    - Webapps close prematurely (LP: #1051042)
++    - Broken UI and no window management (LP: #1053288)
++
++  [ Timo Jyrinki ]
++  * Cherry-pick LibreOffice fix (LP: #1026426)
++
++ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Mon, 01 Oct 2012 16:05:32 +0200
++
++bamf (0.3.0-0ubuntu2) quantal-proposed; urgency=low
++
++  * rebuild against libunity-webapps 2.3.3
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Wed, 19 Sep 2012 12:32:09 -0400
++
++bamf (0.3.0-0ubuntu1) quantal-proposed; urgency=low
++
++  * Note that while technically that update breaks compatibility by
++    dropping some public functions the corresponding code never worked and
++    it has been verified those were not used by any rdepends.
++  * debian/control:
++    - Build-Depends on libunity-webapps-dev to prepare the landing of the
++      branch using it
++  * debian/libbamf3-0.symbols:
++    - updated as well
++
++  [ Łukasz 'sil2100' Zemczak ]
++  * New upstream release.
++    - added webapps support
++  * debian/libbamf0.symbols:
++    - updated symbol file, removed some broken methods
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 31 Aug 2012 21:59:04 +0200
++
++bamf (0.2.122-0ubuntu1) quantal-proposed; urgency=low
++
++  * New upstream release.
++    - Type mismatch in libbamf bamf_control_register_application_for_pid()
++      and dbus interface (LP: #1021143)
++    - running applications without an icon use a blank icon (LP: #886778)
++
++ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Fri, 10 Aug 2012 12:18:02 +0200
++
++bamf (0.2.120-0ubuntu1) quantal; urgency=low
++
++  [ Łukasz 'sil2100' Zemczak ]
++  * New upstream release.
++    - Started applications pinned to the launcher are not set as running
++      (LP: #976642)
++    - sometimes icons get dropped from the launcher when they should not
++      (LP: #925421)
++  * debian/libbamf0.symbols, debian/libbamf3-0.symbols:
++    - removed symbols that were wrongly exported upstream before (private
++      symbols)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 10 Jul 2012 08:41:32 +0200
++
++bamf (0.2.118-1ubuntu1) quantal; urgency=low
++
++  * Sync from debian. No more difference.
++  * Cherry-pick from upstream:
++    - Started applications pinned to the launcher are not set as running
++      (LP: #976642)
++    - sometimes icons get dropped from the launcher when they should not
++      (LP: #925421)
++  * debian/*symbols:
++    - add new private symbol (will not be exported after next release)
++  * debian/control:
++    - change packaging location to canonical branch (lp:ubuntu/bamf)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 25 Jun 2012 11:01:57 +0200
++
++bamf (0.2.118-1) unstable; urgency=low
++
++  * Backport latest release to debian
++  * debian/control:
++    - bump Standards-Version to latest
++    - remove build-dep only used for unit tests
++    - replace the gtk2 variant of the wnck introspection gir package with
++      gtk3 one
++    - ensure the gtk2/gtk3 version doesn't have the same description
++  * debian/*.symbols:
++    - adding some PRIVATE symbols to make lintian happy. We saw that bamf
++      is exporting by error some of its private symbols. This will be fixed
++      in next released (and so the symbols will be removed from the .symbols
++      files)
++  * debian/rules:
++    - add hardening flags (thanks Andrea)
++  * debian/sources/format:
++    - added to specify we use format 1.0
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 01 Jun 2012 11:51:11 +0200
++
++bamf (0.2.118-0ubuntu1) quantal; urgency=low
++
++  [ Didier Roche ]
++  * New upstream release. (0.2.116)
++    - multiple instances or double icons of application detected on bamfdaemon
++      respawn (LP: #928912)
++    - unity confused with chrome/chromium web apps (LP: #692462)
++    - BamfView's dispose() method doesn't invoke the superclass' dispose()
++      (LP: #986888)
++  * debian/control:
++    - remove Multi-Arch: same for the -dbg package
++      (Closes: #669980, #658057)
++
++  [ Alan Pope ]
++  * New upstream release.
++    - Unity crashed in bamf_application_on_window_removed (LP: #1000577)
++    - Locked smuxi launcher icon does not indicate smuxi running status
++      (LP: #999820)
++    - No launcher icon or Alt+Tab entry for Gimp windows (LP: #995916)
++    - the RunningApplicationsChanged signal is no longer emitted when an
++      application is closed since r460 (LP: #989551)
++
++ -- Alan Pope <popey@ubuntu.com>  Wed, 23 May 2012 09:10:08 +0100
++
++bamf (0.2.118-0ubuntu0.1) precise-proposed; urgency=low
++
++  [ Didier Roche ]
++  * New upstream release. (0.2.116)
++    - multiple instances or double icons of application detected on bamfdaemon
++      respawn (LP: #928912)
++    - unity confused with chrome/chromium web apps (LP: #692462)
++    - BamfView's dispose() method doesn't invoke the superclass' dispose()
++      (LP: #986888)
++  * debian/control:
++    - remove Multi-Arch: same for the -dbg package
++      (Closes: #669980, #658057)
++
++  [ Alan Pope ]
++  * New upstream release.
++    - Unity crashed in bamf_application_on_window_removed (LP: #1000577)
++    - Locked smuxi launcher icon does not indicate smuxi running status
++      (LP: #999820)
++    - No launcher icon or Alt+Tab entry for Gimp windows (LP: #995916)
++    - the RunningApplicationsChanged signal is no longer emitted when an
++      application is closed since r460 (LP: #989551)
++
++ -- Alan Pope <popey@ubuntu.com>  Wed, 23 May 2012 09:10:08 +0100
++
++bamf (0.2.114-0ubuntu1) precise-proposed; urgency=low
++
++  * New upstream release.
++    - invalid valgrind read errors (LP: #929468)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 23 Mar 2012 14:16:41 +0100
++
++bamf (0.2.112-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++    - bamf matcher messes up refcounting on views (LP: #942070)
++    - Chromium is running, but not showing in launcher or alt-tab.
++      (LP: #918474)
++    - libbamf leaks memory on view dispose (LP: #942148)
++    - Coverity PW.PARAMETER_HIDDEN - CID 10449 (LP: #937398)
++    - Coverity UNINIT - CID 10451 (LP: #937402)
++  * debian/libbamf0.symbols, debian/libbamf3-0.symbols:
++    - update symbols for new API
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 12 Mar 2012 11:47:33 +0100
++
++bamf (0.2.110-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++    - BAMF does not pass make check (LP: #897148)
++    - BAMF requires a headless testing target (LP: #897150)
++    - Clicking Nautilus launcher icon fails to open a Nautilus file explorer
++      window when  copying a file and all other Nautilus windows are closed /
++      bamf should skip the taskbar (LP: #784804)
++  * debian/libbamf0.symbols,
++    debian/libbamf3-0.symbols:
++    - updated symbols
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 17 Feb 2012 13:36:25 +0100
++
++bamf (0.2.108-0ubuntu2) precise; urgency=low
++
++  * remove -Werror for now as there is just new glib deprecation making it
++    FTBFS.
++  * debian/source/
++    - remove, doesn't play well with merge-upstream workflow
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 03 Feb 2012 14:04:28 +0100
++
++bamf (0.2.108-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++    - BAMF does not pass make check (LP: #897148)
++    - BAMF requires a headless testing target (LP: #897150)
++    - Clicking Nautilus launcher icon fails to open a Nautilus file explorer
++      window when  copying a file and all other Nautilus windows are closed /
++      bamf should skip the taskbar (LP: #784804)
++  * debian/libbamf0.symbols, debian/libbamf3-0.symbols:
++    - updated symbols
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 03 Feb 2012 11:36:48 +0100
++
++bamf (0.2.106-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++    - Unity acts not as a dock for LibreOffice but as a launcher (LP: #741995)
++    - Libreoffice Calc icon does not appear when opened via Writer
++      (LP: #861355)
++    - Bamf Ignores some local .desktop files with OnlyShowIn flag
++      (LP: #863290)
++    - Libreoffice and unity integration broken. (LP: #842566)
++  * debian/control, debian/rules:
++    - enable headless tests build
++  * debian/control:
++    - bump libglib2.0-dev to 2.28
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 12 Jan 2012 17:01:43 +0100
++
++bamf (0.2.104-1) unstable; urgency=low
++
++   [ Didier Roche ]
++   * Initial upload to Debian. Package grabbed from Ubuntu,
++     we'll keep this package in sync within the two
++     distributions.
++   * debian/control:
++     - removed gir's package for now, still not building
++       correctly.
++
++   [ Andrea Veri ]
++   * debian/control:
++     - changed Maintainer accordingly.
++     - added myself into uploaders.
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 21 Nov 2011 10:56:21 +0100
++
++bamf (0.2.104-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++    - Hopefully really fix unity confused with chrome (not chromium) web apps
++      (LP: #692462)
++    - Fix to build with gtk2 version
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 26 Sep 2011 13:51:22 +0200
++
++bamf (0.2.100-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++    - Fix unity confused with chrome web apps (LP: #692462)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 22 Sep 2011 15:15:28 +0200
++
++bamf (0.2.98-0ubuntu2) oneiric; urgency=low
++
++  * Cherry-pick a crasher fix:
++    - bamfdaemon crashed with SIGSEGV in sn_xcb_display_new()
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 15 Sep 2011 15:54:20 +0200
++
++bamf (0.2.98-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++    - Bamf doesn't recognize just installed applications (LP: #676593)
++  * debian/control:
++    - update Standards-Version
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 08 Sep 2011 20:09:28 +0200
++
++bamf (0.2.96-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 25 Aug 2011 17:44:16 +0200
++
++bamf (0.2.94-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release:
++    - no more dependency on the gio ubuntu patch, use the upstream system now
++      (LP: #687683)
++  * debian/rules:
++    - the new tests depends on a X server, desactivate them when building on
++      buildd
++  * debian/bamfdaemon.install:
++    - do not install the gio module as it's not built anymore
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 04 Aug 2011 14:56:07 +0200
++
++bamf (0.2.92-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++  * debian/control, debian/rules:
++    - Add libbamf3-0 and libbamf3-dev packages for GTK+ 3
++
++ -- Michael Terry <mterry@ubuntu.com>  Fri, 17 Jun 2011 12:19:14 -0400
++
++bamf (0.2.90-0ubuntu3) natty-proposed; urgency=low
++
++  * Cherry-pick from upstream:
++    - System Testing and Printers don't display proper menus when launched by
++      command line (LP: #717134)
++    - Unity Min,Max,Close buttons not available in Libreoffice when opened by
++      double-clicking a file (LP: #728927)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Wed, 27 Apr 2011 17:07:18 +0200
++
++bamf (0.2.90-0ubuntu2) natty; urgency=low
++
++  * Cherry-pick from upstream:
++    - Thunderbird won't stay in launcher and no quicklist (LP: #765736)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Wed, 20 Apr 2011 18:07:49 +0200
++
++bamf (0.2.90-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - compiz assert failure: *** glibc detected *** compiz: double free or
++      corruption (out): 0x0a1c5a38 *** (LP: #761372)
++    - "Authenticate" window shows in launcher as "Polkit-gnome-authentication-
++      agent-1" (LP: #740844)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 19 Apr 2011 19:09:34 +0200
++
++bamf (0.2.86-0ubuntu3) natty; urgency=low
++
++  * Cherry-pick a crash fix in unity with double free corruption (LP: #761372)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 15 Apr 2011 12:49:24 +0200
++
++bamf (0.2.86-0ubuntu2) natty; urgency=low
++
++  * Trunk commit r358, really fixes the crash bug listed before (lp: #754225)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 12 Apr 2011 22:19:24 +0200
++
++bamf (0.2.86-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - bamfdaemon crashed with SIGABRT in dbus_g_connection_register_g_object()
++      (LP: #752137)
++    - bamfdaemon crashed with SIGABRT in dbus_g_connection_register_g_object()
++      (LP: #754225)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 11 Apr 2011 12:41:48 +0200
++
++bamf (0.2.84-0ubuntu2) natty; urgency=low
++
++  * Move the giomodule DSO back to /usr/lib/gio/modules, because something
++    we haven't identified yet refuses to see it when it's installed to the
++    multiarch path.  LP: #751025
++
++ -- Steve Langasek <steve.langasek@ubuntu.com>  Thu, 07 Apr 2011 23:54:53 +0000
++
++bamf (0.2.84-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - unity-panel-service crashed with SIGSEGV in bamf_factory_view_for_path()
++      (LP: #717684)
++    - bamfdaemon crashed with SIGABRT in dbus_g_connection_register_g_object()
++      (LP: #739218)
++    - compiz crashed with SIGSEGV in g_utf8_validate() (LP: #736792)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 07 Apr 2011 17:17:54 +0200
++
++bamf (0.2.82-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - bamfdaemon crashed with SIGSEGV in XInternAtom() (LP: #743407)
++    - catch more cases for 'Keep in Launcher' by recognizing StatupWMClass
++      from .desktop file (LP: #693231)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 01 Apr 2011 11:17:17 +0200
++
++bamf (0.2.80-0ubuntu2) natty; urgency=low
++
++  * Fix a FTBFS with current libglib2.0 due to the giomodules path changing
++    for multiarch.
++  * As long as we're in here, multiarch the whole package; bamf has no
++    reverse-depends, so there's no risk of causing other build failures, and
++    moving the giomodules takes us halfway there anyway.
++
++ -- Steve Langasek <steve.langasek@ubuntu.com>  Tue, 29 Mar 2011 19:50:12 +0000
++
++bamf (0.2.80-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - 'Keep in launcher' item missing for some applications (LP: #657771)
++    - can't pin KTouch to the launcher (LP: #693755)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 17 Mar 2011 17:51:00 +0100
++
++bamf (0.2.78-0ubuntu1) natty; urgency=low
++
++  * New upstream release:
++    - adapt bamf to LibreOffice (LP: #705461)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 10 Feb 2011 17:59:34 +0100
++
++bamf (0.2.76-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - add a new signal to detect tab changes (LP: #691651)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 27 Jan 2011 13:50:42 +0100
++
++bamf (0.2.74-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++    - Set the default application icon when the application desktop file has no icon=
++      key. It was appearing fully black. (LP: #703521)
++  * debian/control:
++    - remove vala build-dep, not needed anymore
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 20 Jan 2011 17:45:45 +0100
++
++bamf (0.2.72-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 14 Jan 2011 19:02:24 +0100
++
++bamf (0.2.70-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++  * debian/control:
++    bamf dbus protocol changed. Breaks: on old unity
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 14 Jan 2011 17:30:12 +0100
++
++bamf (0.2.68-0ubuntu1) natty; urgency=low
++
++  [ Didier Roche ]
++  * debian/control:
++    - add Vcs-Bzr tag
++
++  [ Sebastien Bacher ]
++  * New upstream release.
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 17 Dec 2010 13:36:08 +0100
++
++bamf (0.2.66-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++   - Fix the Ubuntu Starter Edition bug (LP: #683623)
++   - check that desktop file is currently supported before creating the
++     favorite (LP: #682345)
++   - unity-panel-service crashed with SIGSEGV in free() (LP: #677580)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 09 Dec 2010 19:37:54 +0100
++
++bamf (0.2.64-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 30 Nov 2010 16:52:19 +0100
++
++bamf (0.2.62-0ubuntu1) natty; urgency=low
++
++  * New upstream release.
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 18 Nov 2010 18:28:10 +0100
++
++bamf (0.2.60-0ubuntu1) natty; urgency=low
++
++  * new upstream release
++  * debian/libbamf0.symbols:
++    - add the new symbols
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 11 Nov 2010 18:37:42 +0100
++
++bamf (0.2.58-0ubuntu2) maverick; urgency=low
++
++  * Fix tons of accuracy matching issues using the gio module
++    (LP: #645849, #630066)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 30 Sep 2010 17:14:27 +0200
++
++bamf (0.2.58-0ubuntu1) maverick; urgency=low
++
++  * New upstream release:
++    - Fix Nautilus' "File Operation" dialog gets stuck and prevents opening new
++      Nautilus windows (LP: #647979)
++    - Fix bamfdaemon crashed with SIGSEGV in g_str_hash() (LP: #638705)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 27 Sep 2010 22:28:40 +0200
++
++bamf (0.2.54-0ubuntu1) maverick; urgency=low
++
++  * New upstream release.
++  * cherry pick some patches from upstream too for more fixes in special
++    launchers (LP: #622146)
++  * debian/libbamf0.symbols:
++    - update to latest version
++
++ -- Didier Roche <didrocks@ubuntu.com>  Wed, 22 Sep 2010 19:21:45 +0200
++
++bamf (0.2.52-0ubuntu1) maverick; urgency=low
++
++  * New upstream release:
++    - Take previous distro inline patch with next release (LP: #641229)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 17 Sep 2010 13:52:17 +0200
++
++bamf (0.2.50-0ubuntu1) maverick; urgency=low
++
++  * New upstream release.
++    - Caching fixes
++    - Ensure we ship proper strings to open office windows
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Wed, 15 Sep 2010 17:23:41 -0400
++
++bamf (0.2.48-0ubuntu1) maverick; urgency=low
++
++  * New upstream release:
++    - Dropbox 0.8.90 build shows in the launcher (LP: #610226)
++  * update debian/libbamf0.symbols
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 14 Sep 2010 19:13:51 +0200
++
++bamf (0.2.46-0ubuntu1) maverick; urgency=low
++
++  * New upstream release.
++    - Handle non system launchers (LP: #622146)
++  * Add new symbols to debian/libbamf0.symbols
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 09 Sep 2010 19:15:45 +0200
++
++bamf (0.2.44-0ubuntu1) maverick; urgency=low
++
++  * New upstream release:
++    - Fix potential NULL deref when XDG_DATA_DIRS is not set
++      (lp: #602519)
++  * debian/control:
++    - updated for the new vala versioning
++  * debian/libbamf0.symbols:
++    - new version update
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 19 Aug 2010 19:16:15 +0200
++
++bamf (0.2.42-0ubuntu2) maverick; urgency=low
++
++  * Update by Mikkel Kamstrup Erlandsen to match gio changes (lp: #616737)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 18 Aug 2010 22:31:44 +0200
++
++bamf (0.2.42-0ubuntu1) maverick; urgency=low
++
++  * New upstream release.
++  * debian/rules:
++    - enjoying and running testsuite during build (LP: #586340)
++  * debian/control:
++    - bumping Standards-Version to latest
++    - remove gir-repository-dev from build-dep
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 13 Aug 2010 12:44:39 +0200
++
++bamf (0.2.40-0ubuntu1) maverick; urgency=low
++
++  * New upstream release.
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 02 Aug 2010 15:54:41 +0200
++
++bamf (0.2.38-0ubuntu1) maverick; urgency=low
++
++  * New upstream release.
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 22 Jul 2010 19:07:31 +0200
++
++bamf (0.2.36-0ubuntu1) maverick; urgency=low
++
++  * New upstream release.
++  * debian/libbamf0.symbols:
++    - update to latest
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 16 Jul 2010 14:44:16 +0200
++
++bamf (0.2.34-0ubuntu1) maverick; urgency=low
++
++  * New upstream release.
++    - Hangs when nautilus device detected dialog are displayed (LP: #601017)
++    - Netbeans does not show in Unity when open (LP: #598083)
++    - The launcher doesn't list some running softwares (LP: #601082)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 12 Jul 2010 15:49:36 +0200
++
++bamf (0.2.32-0ubuntu1) maverick; urgency=low
++
++  * New upstream release.
++    - fix bad matchin on OOo (LP: #595583)
++    - fix crash in bamf_matcher_possible_applications_for_window (LP: #597986)
++    - fix exaile icon not showing in launcher (LP: #593470)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 24 Jun 2010 16:21:22 +0200
++
++bamf (0.2.30-0ubuntu1) maverick; urgency=low
++
++  * New upstream release:
++    - fix KDE applications not showing up in the Unity Launcher
++      (LP: #592502)
++  * debian/libbamf0.symbols:
++    - adding new symbols
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 17 Jun 2010 18:07:38 +0200
++
++bamf (0.2.28-0ubuntu1) maverick; urgency=low
++
++  * New upstream release.
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 10 Jun 2010 17:16:17 +0200
++
++bamf (0.2.26-0ubuntu2) maverick; urgency=low
++
++  * debian/libbamf-dev.install:
++    - don't try to install a vapi file right now
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 07 Jun 2010 17:36:38 +0200
++
++bamf (0.2.26-0ubuntu1) maverick; urgency=low
++
++  * debian/control, debian/libbamf-doc.install:
++    - add libbamf-doc package
++  * debian/libbamf0.symbols:
++    - updated
++  * debian/control, debian/rules:
++    - build the doc by default
++  * debian/libbamf-dev.install:
++    - install vapi files
++  * debian/rules:
++    - fix rm *{,l}a files
++  * debian/watch:
++    - use https
++  * New upstream release.
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 07 Jun 2010 10:45:49 +0200
++
++bamf (0.2.24-0ubuntu1) maverick; urgency=low
++
++  * New upstream release.
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 27 May 2010 18:35:29 +0200
++
++bamf (0.2.22-0ubuntu1) maverick; urgency=low
++
++  * Initial Packaging (LP: #583880)
++  * temporary disabling gir building due to bug:
++    https://bugzilla.gnome.org/show_bug.cgi?id=619703
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 25 May 2010 10:32:24 +0200
+--- bamf-0.5.6+22.04.20220217.orig/debian/compat
++++ bamf-0.5.6+22.04.20220217/debian/compat
+@@ -0,0 +1 @@
++9
+--- bamf-0.5.6+22.04.20220217.orig/debian/control
++++ bamf-0.5.6+22.04.20220217/debian/control
+@@ -0,0 +1,111 @@
++Source: bamf
++Section: libs
++Priority: optional
++Maintainer: Didier Roche <didrocks@ubuntu.com>
++Uploaders: Andrea Veri <and@debian.org>
++Build-Depends: dbus (>= 1.8),
++               debhelper (>= 9),
++               dh-autoreconf,
++               dpkg-dev (>= 1.22.5),
++               gnome-common,
++               gobject-introspection (>= 1.41.4-1~),
++               gtk-doc-tools,
++               hicolor-icon-theme,
++               libdbusmenu-gtk3-dev,
++               libglib2.0-dev (>= 2.32.0),
++               libgtop2-dev,
++               libgtk-3-dev (>= 3.0.0),
++               libwnck-3-dev (>= 3.4.7),
++               libgirepository1.0-dev,
++               python3-lxml,
++               valac,
++               xvfb,
++Standards-Version: 4.1.5
++Homepage: https://launchpad.net/bamf
++# If you aren't a member of ~unity-team but need to upload packaging changes,
++# just go ahead.  ~unity-team will notice and sync up the code again.
++Vcs-Browser: https://git.launchpad.net/~unity-team/bamf
++Vcs-Git: https://git.launchpad.net/~unity-team/bamf
++
++Package: bamfdaemon
++Architecture: any
++Depends: ${shlibs:Depends},
++         ${misc:Depends},
++         libbamf3-2t64 (= ${binary:Version}),
++Multi-Arch: foreign
++Description: Window matching library - daemon
++ bamf matches application windows to desktop files
++ .
++ This package contains the daemon used by the library and a gio
++ module that facilitates the matching of applications started
++ through GDesktopAppInfo
++
++Package: libbamf3-2t64
++Provides: ${t64:Provides}
++Replaces: libbamf3-2
++Architecture: any
++Depends: ${shlibs:Depends},
++         ${misc:Depends},
++Breaks: libbamf3-2 (<< ${source:Version}), unity (<< 3.2.12)
++Pre-Depends: ${misc:Pre-Depends}
++Multi-Arch: same
++Description: Window matching library - shared library
++ bamf matches application windows to desktop files
++ .
++ This package contains shared libraries to be used by applications.
++
++Package: libbamf3-dev
++Section: libdevel
++Architecture: any
++Depends: ${misc:Depends},
++         gir1.2-bamf-3 (= ${binary:Version}),
++         libbamf3-2t64 (= ${binary:Version}),
++         libglib2.0-dev (>= 2.30.0),
++Suggests: libbamf-doc
++Description: Window matching library - development files
++ bamf matches application windows to desktop files
++ .
++ This package contains files that are needed to build applications.
++
++Package: libbamf-doc
++Section: doc
++Architecture: all
++Depends: ${misc:Depends}
++Suggests: devhelp
++Description: Window matching library - documentation
++ bamf matches application windows to desktop files
++ .
++ This package contains the daemon used by the library and a gio
++ module that facilitates the matching of applications started
++ through GDesktopAppInfo
++ .
++ This package contains the documentation
++
++Package: bamf-dbg
++Section: debug
++Architecture: any
++Priority: extra
++Depends: ${shlibs:Depends},
++         ${misc:Depends},
++         libbamf3-2t64 (= ${binary:Version}),
++Description: Window matching library - debugging symbols
++ bamf matches application windows to desktop files
++ .
++ This package contains the daemon used by the library and a gio
++ module that facilitates the matching of applications started
++ through GDesktopAppInfo
++ .
++ This package contains debugging symbols for the daemon and library.
++
++Package: gir1.2-bamf-3
++Section: introspection
++Architecture: any
++Multi-Arch: same
++Depends: ${gir:Depends},
++         ${misc:Depends},
++Description: GObject introspection data for the Bamf library
++ This package contains introspection data for the Bamf library.
++ .
++ It can be used by packages using the GIRepository format to generate
++ dynamic bindings.
++
+--- bamf-0.5.6+22.04.20220217.orig/debian/copyright
++++ bamf-0.5.6+22.04.20220217/debian/copyright
+@@ -0,0 +1,50 @@
++This package was debianized by Didier Roche <didrocks@ubuntu.com> on
++Tue, 25 May 2010 10:31:02 -0000.
++
++It was downloaded from <http://launchpad.net/bamf/>
++
++Upstream Author:
++
++    Jason Smith <jason.smith@canonical.com>
++
++Copyright:
++
++    Copyright (C) 2009-2010 Canonical Ltd.
++
++License:
++
++    When not otherwise specified, the following license applies:
++      .
++      This library is free software; you can redistribute it and/or
++      modify it under the terms of the GNU Lesser General Public
++      License Version 3.0 as published by the Free Software Foundation.
++      .
++      This library is distributed in the hope that it will be useful,
++      but WITHOUT ANY WARRANTY; without even the implied warranty of
++      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++      Lesser General Public License for more details.
++
++On Debian systems, the complete text of the GNU Lesser General Public License
++can be found in `/usr/share/common-licenses/LGPL-3'
++
++
++    * src/*,test/*:
++
++      This program is free software: you can redistribute it and/or modify it
++      under the terms of the the GNU General Public License version 3, as
++      published by the Free Software Foundation.
++      .
++      This program is distributed in the hope that it will be useful, but
++      WITHOUT ANY WARRANTY; without even the implied warranties of
++      MERCHANTABILITY, SATISFACTORY QUALITY or FITNESS FOR A PARTICULAR
++      PURPOSE.  See the applicable version of the GNU Lesser General Public
++      License for more details.
++
++On Debian systems, the complete text of the GNU General Public License
++can be found in `/usr/share/common-licenses/GPL-3'
++
++The Debian packaging is:
++
++    Copyright (C) 2010 Canonical Ltd.
++
++and is licensed under the GPL version 3, see `/usr/share/common-licenses/GPL-3'.
+--- bamf-0.5.6+22.04.20220217.orig/debian/gbp.conf
++++ bamf-0.5.6+22.04.20220217/debian/gbp.conf
+@@ -0,0 +1,3 @@
++[DEFAULT]
++debian-tag=%(version)s
++upstream-branch=master
+--- bamf-0.5.6+22.04.20220217.orig/debian/gir1.2-bamf-3.install
++++ bamf-0.5.6+22.04.20220217/debian/gir1.2-bamf-3.install
+@@ -0,0 +1 @@
++usr/lib/*/girepository-1.0/Bamf-*.typelib
+--- bamf-0.5.6+22.04.20220217.orig/debian/libbamf-doc.install
++++ bamf-0.5.6+22.04.20220217/debian/libbamf-doc.install
+@@ -0,0 +1 @@
++debian/tmp/usr/share/gtk-doc/
+--- bamf-0.5.6+22.04.20220217.orig/debian/libbamf3-2t64.install
++++ bamf-0.5.6+22.04.20220217/debian/libbamf3-2t64.install
+@@ -0,0 +1 @@
++debian/tmp/usr/lib/*/libbamf3.so.*
+--- bamf-0.5.6+22.04.20220217.orig/debian/libbamf3-2t64.symbols
++++ bamf-0.5.6+22.04.20220217/debian/libbamf3-2t64.symbols
+@@ -0,0 +1,71 @@
++libbamf3.so.2 libbamf3-2t64 #MINVER#
++ bamf_application_get_application_menu@Base 0.3.0
++ bamf_application_get_application_type@Base 0.2.20
++ bamf_application_get_desktop_file@Base 0.2.20
++ bamf_application_get_focusable_child@Base 0.3.0
++ bamf_application_get_show_menu_stubs@Base 0.2.48
++ bamf_application_get_supported_mime_types@Base 0.3.0
++ bamf_application_get_type@Base 0.2.20
++ bamf_application_get_windows@Base 0.2.20
++ bamf_application_get_window_for_xid@Base 0.5.2~bzr0+16.04.20151104
++ bamf_application_get_xids@Base 0.2.20
++ bamf_application_new@Base 0.2.20
++ bamf_application_new_favorite@Base 0.2.60
++ bamf_control_create_local_desktop_file@Base 0.5.0
++ bamf_control_get_default@Base 0.2.20
++ bamf_control_get_type@Base 0.2.20
++ bamf_control_insert_desktop_file@Base 0.2.20
++ bamf_control_register_application_for_pid@Base 0.2.20
++ bamf_factory_get_type@Base 0.2.20
++ bamf_matcher_application_is_running@Base 0.2.20
++ bamf_matcher_get_active_application@Base 0.2.20
++ bamf_matcher_get_active_window@Base 0.2.20
++ bamf_matcher_get_application_for_desktop_file@Base 0.2.60
++ bamf_matcher_get_application_for_window@Base 0.2.48
++ bamf_matcher_get_application_for_xid@Base 0.2.20
++ bamf_matcher_get_applications@Base 0.2.20
++ bamf_matcher_get_default@Base 0.2.20
++ bamf_matcher_get_running_applications@Base 0.2.20
++ bamf_matcher_get_tabs@Base 0.2.20
++ bamf_matcher_get_type@Base 0.2.20
++ bamf_matcher_get_window_for_xid@Base 0.5.2~bzr0+16.04.20151104
++ bamf_matcher_get_window_stack_for_monitor@Base 0.2.108
++ bamf_matcher_get_windows@Base 0.2.46
++ bamf_matcher_get_xids_for_application@Base 0.2.20
++ bamf_matcher_register_favorites@Base 0.2.46
++ bamf_tab_close@Base 0.3.0
++ bamf_tab_get_desktop_name@Base 0.3.0
++ bamf_tab_get_is_foreground_tab@Base 0.3.0
++ bamf_tab_get_location@Base 0.3.0
++ bamf_tab_get_type@Base 0.2.28
++ bamf_tab_get_xid@Base 0.3.0
++ bamf_tab_new@Base 0.2.28
++ bamf_tab_raise@Base 0.3.0
++ bamf_tab_request_preview@Base 0.3.0
++ bamf_view_get_children@Base 0.2.20
++ bamf_view_get_click_suggestion@Base 0.2.60
++ bamf_view_get_icon@Base 0.2.20
++ bamf_view_get_name@Base 0.2.20
++ bamf_view_get_type@Base 0.2.20
++ bamf_view_get_view_type@Base 0.2.20
++ bamf_view_is_active@Base 0.2.20
++ bamf_view_has_child@Base 0.5.2~bzr0+16.04.20151104
++ bamf_view_is_closed@Base 0.2.54
++ bamf_view_is_running@Base 0.2.20
++ bamf_view_is_starting@Base 0.5.3~bzr0+16.04.20160321
++ bamf_view_is_sticky@Base 0.2.60
++ bamf_view_is_urgent@Base 0.2.20
++ bamf_view_is_user_visible@Base 0.4.0
++ bamf_view_set_sticky@Base 0.2.60
++ bamf_view_peek_children@Base 0.5.2~bzr0+16.04.20151104
++ bamf_view_user_visible@Base 0.2.20
++ bamf_window_get_monitor@Base 0.2.108
++ bamf_window_get_pid@Base 0.2.112
++ bamf_window_get_transient@Base 0.2.28
++ bamf_window_get_type@Base 0.2.20
++ bamf_window_get_utf8_prop@Base 0.2.110
++ bamf_window_get_window_type@Base 0.2.46
++ bamf_window_get_xid@Base 0.2.20
++ bamf_window_last_active@Base 0.2.30
++ bamf_window_maximized@Base 0.2.108
++ bamf_window_new@Base 0.2.20
+--- bamf-0.5.6+22.04.20220217.orig/debian/libbamf3-dev.install
++++ bamf-0.5.6+22.04.20220217/debian/libbamf3-dev.install
+@@ -0,0 +1,5 @@
++usr/include/libbamf3/libbamf/
++usr/lib/*/pkgconfig/libbamf3.pc
++usr/lib/*/libbamf3.so
++usr/share/vala/vapi/
++usr/share/gir-1.0/
+--- bamf-0.5.6+22.04.20220217.orig/debian/rules
++++ bamf-0.5.6+22.04.20220217/debian/rules
+@@ -0,0 +1,35 @@
++#!/usr/bin/make -f
++# -*- Mode: Makefile; indent-tabs-mode: t -*-
++
++export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
++export DPKG_GENSYMBOLS_CHECK_LEVEL = 4
++
++%:
++	dh $@ --with autoreconf,gir
++
++override_dh_autoreconf:
++	NOCONFIGURE=1 dh_autoreconf ./autogen.sh
++
++override_dh_auto_configure:
++	dh_auto_configure -- --enable-introspection=yes \
++	                     --enable-gtk-doc \
++	                     --enable-headless-tests \
++	                     --disable-silent-rules \
++	                     --enable-export-actions-menu=yes
++
++override_dh_auto_install:
++	dh_auto_install
++	find debian/tmp/usr/lib -name \*.la -exec rm {} \;
++	find debian/tmp/usr/lib -name \*.a -exec rm {} \;
++
++override_dh_install:
++	dh_install --fail-missing
++	# disable upstart session job when using systemd session service
++	mkdir -p debian/bamfdaemon/usr/share/upstart/systemd-session/upstart
++	echo manual > debian/bamfdaemon/usr/share/upstart/systemd-session/upstart/bamfdaemon.override
++
++override_dh_strip:
++	dh_strip --dbg-package=bamf-dbg
++
++override_dh_girepository:
++	dh_girepository -pgir1.2-bamf-0.2
+--- bamf-0.5.6+22.04.20220217.orig/debian/sources/format
++++ bamf-0.5.6+22.04.20220217/debian/sources/format
+@@ -0,0 +1 @@
++1.0
+--- bamf-0.5.6+22.04.20220217.orig/debian/watch
++++ bamf-0.5.6+22.04.20220217/debian/watch
+@@ -0,0 +1,2 @@
++version=3
++https://launchpad.net/bamf/+download .*/bamf-([0-9.]+)\.tar\.gz

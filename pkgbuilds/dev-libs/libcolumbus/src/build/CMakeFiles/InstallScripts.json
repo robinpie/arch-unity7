@@ -1,0 +1,13 @@
+{
+	"InstallScripts" : 
+	[
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/libcolumbus/src/build/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/libcolumbus/src/build/include/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/libcolumbus/src/build/src/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/libcolumbus/src/build/tools/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/libcolumbus/src/build/share/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/libcolumbus/src/build/python/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/libcolumbus/src/build/test/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

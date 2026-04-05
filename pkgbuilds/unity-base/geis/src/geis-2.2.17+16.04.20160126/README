@@ -1,0 +1,16 @@
+This is the source for the GEIS (Gesture Engine Implementation Support) library
+built on top of the XCB bindings to the GRAIL gesture recognition and
+instantiation library.
+
+Please see the file INSTALL for instructoins on building and installing this
+software.  Better yet, pull the binaries from your operating system
+distribution.
+
+To prepare the sources for building on a fresh VCS checkout, you will need to
+run the shell script autogen.sh.  This requires that the following packages be
+installed first so that autoconf macros are available.  In addition, the full
+autotools suite (autoconf, automake, libtool, etc) must be available.
+
+  libxorg-gtest-dev  0.2.0
+  pkg-config         0.26
+

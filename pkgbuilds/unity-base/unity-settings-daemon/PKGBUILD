@@ -1,0 +1,153 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/unity-settings-daemon
+
+pkgname=unity-settings-daemon
+pkgver=15.04.1
+_uver=+21.10.20210715
+_urev=0ubuntu1
+pkgrel=1
+pkgdesc="Unity Settings Daemon"
+arch=('x86_64')
+url="https://launchpad.net/unity-settings-daemon"
+license=('GPL-2.0-or-later' 'LGPL-2.1-or-later')
+depends=(
+    'dbus-glib'
+    'glib2'
+    'gnome-desktop'
+    'gsettings-desktop-schemas'
+    'alsa-lib'
+    'fontconfig'
+    'lcms2'
+    'libcanberra'
+    'libpulse'
+    'networkmanager'
+    'accountsservice'
+    'upower'
+    'gsettings-ubuntu-touch-schemas'
+    'gdk-pixbuf2'
+    'gtk3'
+    'libnotify'
+    'libx11'
+    'libxext'
+    'libxi'
+    'libxkbfile'
+    'libxtst'
+    'libgudev'
+    'colord'
+    'ibus'
+)
+makedepends=(
+    'pkgconf'
+    'autoconf'
+    'automake'
+    'libtool'
+    'intltool'
+    'gperf'
+    'libgnomekbd'
+    'systemd'
+    'polkit'
+    'libxklavier'
+    'libxt'
+    'xkeyboard-config'
+    'hwdata'
+    'libappindicator-gtk3'
+    'python'
+)
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+    "optional-colord-and-wacom.patch"
+    "remove-nautilus-support.patch"
+    "shortcut-alt-app.patch"
+    "add-gerror.patch"
+    "fix-gcc-14-build.patch"
+)
+sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+
+    # Apply Ubuntu diff
+    patch -p1 --batch --forward -i "${pkgname}_${pkgver}${_uver}-${_urev}.diff" || true
+
+    # Apply debian patch series (skip if quilt already applied)
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+
+    # Apply our patches
+    patch -p1 -i optional-colord-and-wacom.patch
+    patch -p1 -i remove-nautilus-support.patch
+    patch -p1 -i shortcut-alt-app.patch
+    patch -p1 -i add-gerror.patch
+    patch -p1 -i fix-gcc-14-build.patch
+
+    # Ensure libunity-settings-daemon.so.1 gets linked to libudev.so
+    sed -i 's:-lm :-lm -ludev :g' gnome-settings-daemon/Makefile.am || true
+
+    # Clear linguas to avoid incomplete translations
+    > po/LINGUAS || true
+
+    # Fix path to unity-settings-daemon executable in systemd files
+    sed -i \
+        -e 's:/usr/lib/unity-settings-daemon:/usr/libexec:g' \
+        debian/unity-settings-daemon.user-session.desktop \
+        debian/unity-settings-daemon.user-session.upstart \
+        debian/user/unity-settings-daemon.service 2>/dev/null || true
+
+    # usd-test-* binaries don't link libunity-settings-daemon but call its symbols;
+    # remove them from libexec_PROGRAMS to avoid linker errors
+    find . -name "Makefile.am" -exec sed -i \
+        's/^libexec_PROGRAMS = usd-test-[^ ]*/libexec_PROGRAMS =/' {} \; || true
+
+    # act_user_set_input_sources is a Ubuntu-specific accountsservice extension
+    # not present in upstream accountsservice — stub it out
+    sed -i 's/act_user_set_input_sources (user, sources)/\/* act_user_set_input_sources (user, sources) *\//' \
+        plugins/keyboard/gsd-keyboard-manager.c || true
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "$srcdir"
+    ./configure \
+        --prefix=/usr \
+        --libdir=/usr/lib \
+        --libexecdir=/usr/libexec \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        --disable-static \
+        --enable-man \
+        --disable-fcitx \
+        --disable-packagekit \
+        --enable-color \
+        --disable-debug \
+        --enable-ibus \
+        --enable-nls \
+        --enable-rfkill \
+        --disable-smartcard-support \
+        --enable-gudev \
+        --disable-wacom
+    make
+}
+
+package() {
+    cd "$srcdir"
+    make DESTDIR="$pkgdir" install
+
+    # Install systemd user service
+    install -Dm644 debian/user/unity-settings-daemon.service \
+        "$pkgdir/usr/lib/systemd/user/unity-settings-daemon.service"
+    install -Dm644 debian/user/unity-settings-daemon.override \
+        "$pkgdir/usr/share/upstart/systemd-session/upstart/unity-settings-daemon.override" 2>/dev/null || true
+
+    # Install rfkill udev rules
+    install -Dm644 plugins/rfkill/61-gnome-settings-daemon-rfkill.rules \
+        "$pkgdir/usr/lib/udev/rules.d/61-unity-settings-daemon-rfkill.rules" 2>/dev/null || true
+    rm -f "$pkgdir/usr/lib/udev/rules.d/61-gnome-settings-daemon-rfkill.rules"
+
+    find "$pkgdir" -name '*.la' -delete
+}

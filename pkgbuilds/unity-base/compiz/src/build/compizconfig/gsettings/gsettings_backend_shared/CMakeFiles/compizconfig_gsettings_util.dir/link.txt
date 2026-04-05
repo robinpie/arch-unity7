@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompizconfig_gsettings_util.a CMakeFiles/compizconfig_gsettings_util.dir/gsettings_constants.c.o CMakeFiles/compizconfig_gsettings_util.dir/gsettings_util.c.o
+/usr/bin/ranlib libcompizconfig_gsettings_util.a

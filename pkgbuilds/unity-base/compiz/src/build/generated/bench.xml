@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="bench">
+	<short>Benchmark</short>
+	<short xml:lang="da">Benchmark</short>
+	<short xml:lang="uk">Тестування</short>
+	<long>A simple benchmark plugin</long>
+	<long xml:lang="uk">Простий модуль визначення продуктивности</long>
+	<category>Extras</category>
+	<deps>
+	  <requirement>
+	      <plugin>opengl</plugin>
+	  </requirement>
+	  <relation type="after">
+	      <plugin>composite</plugin>
+	      <plugin>opengl</plugin>
+	  </relation>
+	</deps>
+	<options>
+	    <group>
+		<short>Main</short>
+		<short xml:lang="uk">Головне</short>
+		<option type="key" name="initiate_key">
+		    <short>Initiate</short>
+		    <short xml:lang="ast">Entamar</short>
+		    <short xml:lang="be">Ініцыяваць</short>
+		    <short xml:lang="bg">Започни</short>
+		    <short xml:lang="bn">শুরু</short>
+		    <short xml:lang="bn_IN">শুরু</short>
+		    <short xml:lang="bs">Započni</short>
+		    <short xml:lang="ca">Inicia</short>
+		    <short xml:lang="cs">Iniciovat</short>
+		    <short xml:lang="da">Start</short>
+		    <short xml:lang="de">Initiieren</short>
+		    <short xml:lang="el">Εκκίνηση</short>
+		    <short xml:lang="en_AU">Initiate</short>
+		    <short xml:lang="en_GB">Initiate</short>
+		    <short xml:lang="es">Iniciar</short>
+		    <short xml:lang="eu">Hasi</short>
+		    <short xml:lang="fi">Aktivoi</short>
+		    <short xml:lang="fr">Lancer</short>
+		    <short xml:lang="gl">Iniciar</short>
+		    <short xml:lang="he">התחל</short>
+		    <short xml:lang="hr">Pokreni</short>
+		    <short xml:lang="hu">Indítás</short>
+		    <short xml:lang="id">Mengawali</short>
+		    <short xml:lang="it">Avvia</short>
+		    <short xml:lang="ja">開始</short>
+		    <short xml:lang="ko">시작</short>
+		    <short xml:lang="mn">Эхлэл</short>
+		    <short xml:lang="ms">Awalkan</short>
+		    <short xml:lang="nb">Begynn</short>
+		    <short xml:lang="nds">Losgahn</short>
+		    <short xml:lang="nl">Starten</short>
+		    <short xml:lang="oc">Aviar</short>
+		    <short xml:lang="or">ପ୍ରାରମ୍ଭ କର</short>
+		    <short xml:lang="pl">Inicjuj</short>
+		    <short xml:lang="pt">Iniciar</short>
+		    <short xml:lang="pt_BR">Iniciar</short>
+		    <short xml:lang="ro">Inițiere</short>
+		    <short xml:lang="ru">Инициировать</short>
+		    <short xml:lang="si">අරම්භ කරන්න</short>
+		    <short xml:lang="sk">Začať</short>
+		    <short xml:lang="sl">Inicializiraj</short>
+		    <short xml:lang="sq">Nise</short>
+		    <short xml:lang="sr">Започни</short>
+		    <short xml:lang="sv">Initiera</short>
+		    <short xml:lang="tr">Başla</short>
+		    <short xml:lang="ug">دەسلەپكى</short>
+		    <short xml:lang="uk">Ініціювати</short>
+		    <short xml:lang="vi">Bắt đầu</short>
+		    <short xml:lang="zh_CN">启动</short>
+		    <short xml:lang="zh_HK">開始畫按鍵</short>
+		    <short xml:lang="zh_TW">開始畫按鍵</short>
+		    <long>Start benchmark</long>
+		    <long xml:lang="uk">Почати визначення продуктивности</long>
+		    <default>&lt;Super&gt;F12</default>
+		</option>
+                <option type="int" name="fps_limiter_mode">
+                    <short>FPS Limiter Mode</short>
+                    <short xml:lang="uk">Обмежений режим FPS</short>
+                    <long>Integrated Compiz FPS limiter mode</long>
+                    <long xml:lang="uk">Вбудований режим обмежувача Compiz FPS</long>
+                    <default>0</default>
+                    <min>0</min>
+                    <max>2</max>
+                    <desc>
+                        <value>0</value>
+                        <name>Limiter disabled</name>
+                        <name xml:lang="uk">Обмежувач вимкнено</name>
+                    </desc>
+                    <desc>
+                        <value>1</value>
+                        <name>Default limiter</name>
+                        <name xml:lang="uk">Типовий обмежувач</name>
+                    </desc>
+                    <desc>
+                        <value>2</value>
+                        <name>V-Sync-like limiter</name>
+                    </desc>
+                </option>
+		<subgroup>
+		    <short>Screen Output</short>
+		    <short xml:lang="uk">Вивід на екран</short>
+		    <option type="bool" name="output_screen">
+			<short>Enable</short>
+			<short xml:lang="uk">Увімк.</short>
+			<long>Display FPS on screen</long>
+			<long xml:lang="uk">Показувати швидкість кадрів (FPS) на екрані</long>
+			<default>true</default>
+		    </option>
+		    <option type="int" name="position_x">
+			<short>X position</short>
+			<short xml:lang="uk">Розташування за X</short>
+			<long>X Position of benchmark window</long>
+			<long xml:lang="uk">Розташування за X вікна продуктивности</long>
+			<default>100</default>
+			<min>0</min>
+			<max>4096</max>
+		    </option>
+		    <option type="int" name="position_y">
+			<short>Y position</short>
+			<short xml:lang="uk">Розташування за Y</short>
+			<long>Y Position of benchmark window</long>
+			<long xml:lang="uk">Розташування за Y вікна продуктивности</long>
+			<default>50</default>
+			<min>0</min>
+			<max>4096</max>
+		    </option>
+		</subgroup>
+		<subgroup>
+		    <short>Console Output</short>
+		    <short xml:lang="uk">Консольний вивід</short>
+		    <option type="bool" name="output_console">
+			<short>Enable</short>
+			<short xml:lang="uk">Увімк.</short>
+			<long>Print FPS to console</long>
+			<long xml:lang="uk">Вивести швидкість кадрів (FPS) на консоль</long>
+			<default>false</default>
+		    </option>
+		    <option type="int" name="console_update_time">
+			<short>Update time</short>
+			<short xml:lang="uk">Час оновлення</short>
+			<long>Console output update time</long>
+			<long xml:lang="uk">Час оновлення консольного виводу</long>
+			<default>5</default>
+			<min>1</min>
+			<max>60</max>
+		    </option>
+		</subgroup>
+	    </group>
+	</options>
+    </plugin>
+</compiz>

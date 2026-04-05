@@ -1,0 +1,60 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/unity-api
+
+pkgname=unity-api
+pkgver=8.7
+_uver=+17.04.20170404
+_urev=0ubuntu10
+pkgrel=1
+pkgdesc="API for Unity shell integration"
+arch=('x86_64')
+url="https://launchpad.net/unity-api"
+license=('LGPL-3.0-or-later')
+depends=('glib2' 'qt5-declarative')
+makedepends=('cmake' 'pkgconf' 'qt5-declarative')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+)
+sha256sums=('SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+
+    # Apply Ubuntu diff
+    patch -p1 --batch --forward -i "${pkgname}_${pkgver}${_uver}-${_urev}.diff" || true
+
+    # Apply debian patches (skip if quilt already applied)
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p"
+        done < debian/patches/series
+    fi
+
+    # Fix CMake minimum version for CMake 4
+    sed -i 's/cmake_minimum_required(VERSION 2\.8\.10/cmake_minimum_required(VERSION 3.10/' CMakeLists.txt
+
+    # Remove doxygen docs (we don't have it)
+    sed -i '/Doxygen/,+15 d' CMakeLists.txt 2>/dev/null || true
+
+    # Fix libdir
+    sed -i 's:lib/${CMAKE_LIBRARY_ARCHITECTURE}:${CMAKE_INSTALL_LIBDIR}:' CMakeLists.txt
+
+    # Fix missing cstdint include (gcc 14+)
+    sed -i '/#include <vector>/a #include <cstdint>' include/unity/util/FileIO.h 2>/dev/null || true
+}
+
+build() {
+    cmake -B build -S "$srcdir" \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DNO_TESTS=ON \
+        -Duse_pch=OFF
+    cmake --build build
+}
+
+package() {
+    DESTDIR="$pkgdir" cmake --install build
+}

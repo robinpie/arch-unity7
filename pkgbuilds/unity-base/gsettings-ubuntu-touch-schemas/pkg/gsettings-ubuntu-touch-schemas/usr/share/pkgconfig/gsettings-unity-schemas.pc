@@ -1,0 +1,6 @@
+prefix=/usr
+
+Name: gsettings-unity-schemas
+Description: Shared GSettings schemas for the desktop, including helper headers
+Version: 0.0.1
+Cflags: -I${prefix}/include/gsettings-unity-schemas

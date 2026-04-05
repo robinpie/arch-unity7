@@ -1,0 +1,18 @@
+FRAME-TEST-X11(1)
+=================
+
+NAME
+----
+
+  frame-test-x11 - Report touch frame events from X.org input devices
+
+SYNOPSIS
+--------
+
+  frame-test-x11
+
+DESCRIPTION
+-----------
+
+A test tool used to analyse the capabilities and act as a test driver for the
+frame library.

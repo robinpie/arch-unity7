@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcompiz_rect.a CMakeFiles/compiz_rect.dir/src/rect.cpp.o
+/usr/bin/ranlib libcompiz_rect.a
