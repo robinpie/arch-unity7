@@ -1,0 +1,10 @@
+description "Backing Service for the Unity Panel"
+author "Andrea Azzarone <andrea.azzarone@canonical.com>"
+
+start on desktop-lock
+stop on desktop-unlock
+
+pre-start exec @UNITY_LIBDIR@/upstart-prestart-check
+
+respawn
+exec @UNITY_LIBDIR@/unity-panel-service --lockscreen-mode

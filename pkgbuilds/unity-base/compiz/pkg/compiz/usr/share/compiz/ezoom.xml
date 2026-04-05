@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="ezoom">
+	<deps>
+	    <relation type="after">
+		<plugin>opengl</plugin>
+		<plugin>expo</plugin>
+		<plugin>decor</plugin>
+		<plugin>mousepoll</plugin>
+	    </relation>
+	    <relation type="before">
+		<plugin>staticswitcher</plugin>
+		<plugin>switcher</plugin>
+	    </relation>
+	    <requirement>
+		<plugin>opengl</plugin>
+		<plugin>mousepoll</plugin>
+	    </requirement>
+	</deps>
+	<short>Enhanced Zoom Desktop</short>
+	<short xml:lang="da">Forbedret zoom skrivebord</short>
+	<short xml:lang="tr">Geliştirilmiş Masaüstü Yakınlaştırması</short>
+	<short xml:lang="uk">Збільшувач масштабу стільниці</short>
+	<long>Enhanced zoom functions for the visually impaired and other users</long>
+	<long xml:lang="uk">Розширені функції масштабування для користувачів з порушеннями зору й инших користувачів</long>
+	<category>Accessibility</category>
+	<options>
+	    <group>
+		<short>Zoom In/Out</short>
+		<short xml:lang="uk">Наблизити/віддалити</short>
+		<option type="action" name="set_zoom_area">
+		</option>
+		<option type="action" name="ensure_visibility">
+		</option>
+		<option type="button" name="zoom_in_button">
+		    <short>Zoom In Button</short>
+		    <short xml:lang="uk">Кнопка збільшення</short>
+		    <long>Mouse button shortcut to invoke zooming in.</long>
+		    <long xml:lang="uk">Сполучення клавішів миші для збільшення масштабу.</long>
+		    <default/>
+		</option>
+		<option type="key" name="zoom_in_key">
+		    <short>Zoom In Key</short>
+		    <long>Key shortcut to invoke zooming in.</long>
+		    <long xml:lang="uk">Сполучення клавішів для збільшення масштабу.</long>
+		</option>
+		<option type="button" name="zoom_out_button">
+		    <short>Zoom Out Button</short>
+		    <short xml:lang="uk">Кнопка зменшення</short>
+		    <long>Mouse button shortcut to invoke zooming out.</long>
+		    <default/>
+		</option>
+		<option type="key" name="zoom_out_key">
+		    <short>Zoom Out Key</short>
+		    <long>Key shortcut to invoke zooming in.</long>
+		    <long xml:lang="uk">Сполучення клавішів для збільшення масштабу.</long>
+		</option>
+		<option type="button" name="zoom_box_button">
+		    <short>Invoke Zoom Box Button</short>
+		    <long>Define a rectangle area and zoom into it.</long>
+		    <default/>
+		</option>
+		<option type="color" name="zoom_box_outline_color">
+			<short>Zoom Box Outline Color</short>
+			<long>Color and opacity of the zoom box outline.</long>
+			<default>
+			    <red>0x2fff</red>
+			    <green>0x2fff</green>
+			    <blue>0x4fff</blue>
+			    <alpha>0x9fff</alpha>
+			</default>
+		</option>
+		<option type="color" name="zoom_box_fill_color">
+			<short>Zoom Box Fill Color</short>
+			<long>Fill color and opacity of the zoom box.</long>
+			<default>
+			    <red>0x2fff</red>
+			    <green>0x2fff</green>
+			    <blue>0x2fff</blue>
+			    <alpha>0x4fff</alpha>
+			</default>
+		</option>
+		<option type="int" name="zoom_smoothing">
+			<short>Zoom Smoothing Algorithm</short>
+			<long>Select algorithm for smoothing the zoom rendering</long>
+			<min>0</min>
+			<max>1</max>
+			<default>1</default>
+			<desc>
+			    <value>0</value>
+			    <name>None</name>
+			    <name xml:lang="ace">Hana</name>
+			    <name xml:lang="am">ምንም</name>
+			    <name xml:lang="ar">بدون</name>
+			    <name xml:lang="ast">Dengún</name>
+			    <name xml:lang="be">Нічога</name>
+			    <name xml:lang="bg">Без избор</name>
+			    <name xml:lang="bn">কিছু না</name>
+			    <name xml:lang="bn_IN">কিছু না</name>
+			    <name xml:lang="br">Netra</name>
+			    <name xml:lang="bs">Nijedno</name>
+			    <name xml:lang="ca">Cap</name>
+			    <name xml:lang="cs">Nic</name>
+			    <name xml:lang="da">Ingen</name>
+			    <name xml:lang="de">Keine</name>
+			    <name xml:lang="el">Κανένα</name>
+			    <name xml:lang="en_AU">None</name>
+			    <name xml:lang="en_GB">None</name>
+			    <name xml:lang="eo">Nenio</name>
+			    <name xml:lang="es">Ninguno</name>
+			    <name xml:lang="et">Puudub</name>
+			    <name xml:lang="eu">Bat ere ez</name>
+			    <name xml:lang="fi">Ei mitään</name>
+			    <name xml:lang="fr">Aucune</name>
+			    <name xml:lang="fy">Gjin</name>
+			    <name xml:lang="gl">Ningunha</name>
+			    <name xml:lang="gu">કંઈ નહિં</name>
+			    <name xml:lang="he">ללא</name>
+			    <name xml:lang="hi">कुछ नहीं</name>
+			    <name xml:lang="hr">Nijedna</name>
+			    <name xml:lang="hu">Egyik sem</name>
+			    <name xml:lang="it">Niente</name>
+			    <name xml:lang="ja">なし</name>
+			    <name xml:lang="kab">Ulac</name>
+			    <name xml:lang="km">គ្មាន</name>
+			    <name xml:lang="kn">ಯಾವುದೂ ಇಲ್ಲ</name>
+			    <name xml:lang="ko">없음</name>
+			    <name xml:lang="ku">Ne yek</name>
+			    <name xml:lang="lt">Nieko</name>
+			    <name xml:lang="ml">ഒന്നുമില്ല</name>
+			    <name xml:lang="ms">Tiada</name>
+			    <name xml:lang="nb">Ingen</name>
+			    <name xml:lang="nds">Keen</name>
+			    <name xml:lang="nl">Geen</name>
+			    <name xml:lang="oc">Pas cap</name>
+			    <name xml:lang="or">କିଛିନାହିଁ</name>
+			    <name xml:lang="pa">ਕੋਈ ਨਹੀਂ</name>
+			    <name xml:lang="pl">Brak</name>
+			    <name xml:lang="pt">Nenhum</name>
+			    <name xml:lang="pt_BR">Nenhum</name>
+			    <name xml:lang="ro">Nespecificat</name>
+			    <name xml:lang="ru">Никакой</name>
+			    <name xml:lang="si">කිසිවෙක් නැත</name>
+			    <name xml:lang="sk">Žiadna</name>
+			    <name xml:lang="sl">brez izbire</name>
+			    <name xml:lang="sq">Asnjë</name>
+			    <name xml:lang="sr">Nema</name>
+			    <name xml:lang="sv">Ingen</name>
+			    <name xml:lang="te">ఏదీకాదు</name>
+			    <name xml:lang="th">ไม่มี</name>
+			    <name xml:lang="tr">Hiçbiri</name>
+			    <name xml:lang="ug">يوق</name>
+			    <name xml:lang="uk">Ніякий</name>
+			    <name xml:lang="vi">Không chọn</name>
+			    <name xml:lang="zh_CN">无</name>
+			    <name xml:lang="zh_HK">無</name>
+			    <name xml:lang="zh_TW">無</name>
+			</desc>
+			<desc>
+			    <value>1</value>
+			    <name>Bilinear</name>
+			    <name xml:lang="uk">Білінійно</name>
+			</desc>
+		</option>
+	    </group>
+	    <group>
+		<short>Mouse Behaviour</short>
+		<short xml:lang="uk">Поведінка миші</short>
+		<option type="key" name="center_mouse_key">
+		    <short>Center the mouse</short>
+		    <short xml:lang="uk">Розташувати вказівник у центрі</short>
+		    <long>Puts the mouse in the middle of the screen (Regardless of zoom level)</long>
+		    <long xml:lang="uk">Спрямовувати вказівник у центр екрану (незважаючи на ступінь збільшення)</long>
+		    <default/>
+		</option>
+	    </group>
+	    <group>
+		<short>Specific Zoom</short>
+		<short xml:lang="uk">Специфічне масштабування</short>
+		<option type="bool" name="spec_target_focus">
+		    <short>Target Focused Window on Specific Zoom</short>
+		    <long>Check this to target the focused window when jumping to a specific zoom level. Uncheck this to target the mouse.</long>
+		    <default>false</default>
+		</option>
+		<option type="float" name="zoom_specific_1">
+		    <short>Specific Zoom 1</short>
+		    <long>Zoom level to go to when triggering hotkey 1</long>
+		    <long xml:lang="uk">Рівень масштабування під час перемикання гарячого клавіша 1</long>
+		    <default>1.0</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="key" name="zoom_specific_1_key">
+		    <short>Zoom to Specific Zoom 1</short>
+		    <long>Zoom to the specific zoom level 1</long>
+		    <long xml:lang="uk">Масштабування до специфічного рівню збільшення 1</long>
+		    <default/>
+		</option>
+		<option type="float" name="zoom_specific_2">
+		    <short>Specific Zoom 2</short>
+		    <long>Zoom level to go to when triggering hotkey 2</long>
+		    <long xml:lang="uk">Рівень масштабування під час перемикання гарячого клавіша 2</long>
+		    <default>1.0</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="key" name="zoom_specific_2_key">
+		    <short>Zoom to Specific Zoom 2</short>
+		    <long>Zoom to the specific zoom level 2</long>
+		    <long xml:lang="uk">Масштабування до специфічного рівню збільшення 2</long>
+		    <default/>
+		</option>
+		<option type="float" name="zoom_specific_3">
+		    <short>Specific Zoom 3</short>
+		    <long>Zoom level to go to when triggering hotkey 3</long>
+		    <long xml:lang="uk">Рівень масштабування під час перемикання гарячого клавіша 3</long>
+		    <default>1.0</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="key" name="zoom_specific_3_key">
+		    <short>Zoom to Specific Zoom 3</short>
+		    <long>Zoom to the specific zoom level 3</long>
+		    <long xml:lang="uk">Масштабування до специфічного рівню збільшення 3</long>
+		    <default/>
+		</option>
+		<option type="float" name="zoom_specific_4">
+		    <short>Specific Zoom 4</short>
+		    <long>Zoom level to go to when triggering hotkey 4</long>
+		    <default>1.0</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="key" name="zoom_specific_4_key">
+		    <short>Zoom to Specific Zoom 4</short>
+		    <long>Zoom to the specific zoom level 4</long>
+		    <default/>
+		</option>
+		<option type="float" name="zoom_specific_5">
+		    <short>Specific Zoom 5</short>
+		    <long>Zoom level to go to when triggering hotkey 5</long>
+		    <default>1.0</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="key" name="zoom_specific_5_key">
+		    <short>Zoom to Specific Zoom 5</short>
+		    <long>Zoom to the specific zoom level 5</long>
+		    <default/>
+		</option>
+		<option type="float" name="zoom_specific_6">
+		    <short>Specific Zoom 6</short>
+		    <long>Zoom level to go to when triggering hotkey 6</long>
+		    <default>1.0</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="key" name="zoom_specific_6_key">
+		    <short>Zoom to Specific Zoom 6</short>
+		    <long>Zoom to the specific zoom level 6</long>
+		    <default/>
+		</option>
+		<option type="float" name="zoom_specific_7">
+		    <short>Specific Zoom 7</short>
+		    <long>Zoom level to go to when triggering hotkey 7</long>
+		    <default>1.0</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="key" name="zoom_specific_7_key">
+		    <short>Zoom to Specific Zoom 7</short>
+		    <long>Zoom to the specific zoom level 7</long>
+		    <default/>
+		</option>
+		<option type="float" name="zoom_specific_8">
+		    <short>Specific Zoom 8</short>
+		    <long>Zoom level to go to when triggering hotkey 8</long>
+		    <default>1.0</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="key" name="zoom_specific_8_key">
+		    <short>Zoom to Specific Zoom 8</short>
+		    <long>Zoom to the specific zoom level 8</long>
+		    <default/>
+		</option>
+		<option type="float" name="zoom_specific_9">
+		    <short>Specific Zoom 9</short>
+		    <long>Zoom level to go to when triggering hotkey 9</long>
+		    <default>1.0</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="key" name="zoom_specific_9_key">
+		    <short>Zoom to Specific Zoom 9</short>
+		    <long>Zoom to the specific zoom level 9</long>
+		    <default/>
+		</option>
+		<option type="float" name="zoom_specific_10">
+		    <short>Specific Zoom 10</short>
+		    <long>Zoom level to go to when triggering hotkey 10</long>
+		    <default>1.0</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="key" name="zoom_specific_10_key">
+		    <short>Zoom to Specific Zoom 10</short>
+		    <long>Zoom to the specific zoom level 10</long>
+		    <default/>
+		</option>
+		<option type="float" name="zoom_specific_11">
+		    <short>Specific Zoom 11</short>
+		    <long>Zoom level to go to when triggering hotkey 11</long>
+		    <default>1.0</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="key" name="zoom_specific_11_key">
+		    <short>Zoom to Specific Zoom 11</short>
+		    <long>Zoom to the specific zoom level 11</long>
+		    <default/>
+		</option>
+		<option type="float" name="zoom_specific_12">
+		    <short>Specific Zoom 12</short>
+		    <long>Zoom level to go to when triggering hotkey 12</long>
+		    <default>1.0</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="key" name="zoom_specific_12_key">
+		    <short>Zoom to Specific Zoom 12</short>
+		    <long>Zoom to the specific zoom level 12</long>
+		    <default/>
+		</option>
+		<option type="float" name="zoom_specific_13">
+		    <short>Specific Zoom 13</short>
+		    <long>Zoom level to go to when triggering hotkey 13</long>
+		    <default>1.0</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="key" name="zoom_specific_13_key">
+		    <short>Zoom to Specific Zoom 13</short>
+		    <long>Zoom to the specific zoom level 13</long>
+		    <default/>
+		</option>
+		<option type="float" name="zoom_specific_14">
+		    <short>Specific Zoom 14</short>
+		    <long>Zoom level to go to when triggering hotkey 14</long>
+		    <default>1.0</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="key" name="zoom_specific_14_key">
+		    <short>Zoom to Specific Zoom 14</short>
+		    <long>Zoom to the specific zoom level 14</long>
+		    <default/>
+		</option>
+		<option type="float" name="zoom_specific_15">
+		    <short>Specific Zoom 15</short>
+		    <long>Zoom level to go to when triggering hotkey 15</long>
+		    <default>1.0</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		    </option>
+		    <option type="key" name="zoom_specific_15_key">
+		    <short>Zoom to Specific Zoom 15</short>
+		    <long>Zoom to the specific zoom level 15</long>
+		    <default/>
+		</option>
+		<option type="float" name="zoom_specific_16">
+		    <short>Specific Zoom 16</short>
+		    <long>Zoom level to go to when triggering hotkey 16</long>
+		    <default>1.0</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="key" name="zoom_specific_16_key">
+		    <short>Zoom to Specific Zoom 16</short>
+		    <long>Zoom to the specific zoom level 16</long>
+		    <default/>
+		</option>
+	    </group>
+	    <group>
+		<short>Zoom Area Movement</short>
+		<short xml:lang="uk">Переміщення области збільшення</short>
+		<option type="key" name="lock_zoom_key">
+		    <short>Toggle zoom area lock</short>
+		    <short xml:lang="uk">Увімкнути блокування области збільшення</short>
+		    <long>Toggles a lock on the zoom area so it doesn't change on various events</long>
+		    <long xml:lang="uk">Перемикає блокування области збільшення, щоб вона не змінювалася під час різних подій</long>
+		    <default/>
+		</option>
+		<subgroup>
+		    <short>Panning</short>
+		    <short xml:lang="uk">Панорамування</short>
+		    <option type="key" name="pan_left_key">
+			<short>Pan Zoom Left</short>
+			<short xml:lang="uk">Рухати область збільшення ліворуч</short>
+			<long>Pan (move) the zoom area left</long>
+			<long xml:lang="uk">Рухати область збільшення ліворуч</long>
+		    </option>
+		    <option type="key" name="pan_right_key">
+			<short>Pan Zoom Right</short>
+			<short xml:lang="uk">Рухати область збільшення праворуч</short>
+			<long>Pan (move) the zoom area right</long>
+			<long xml:lang="uk">Рухати область збільшення праворуч</long>
+		    </option>
+		    <option type="key" name="pan_up_key">
+			<short>Pan Zoom Up</short>
+			<short xml:lang="uk">Рухати область збільшення вгору</short>
+			<long>Pan (move) the zoom area up</long>
+			<long xml:lang="uk">Рухати область збільшення вгору</long>
+		    </option>
+		    <option type="key" name="pan_down_key">
+			<short>Pan Zoom Down</short>
+			<short xml:lang="uk">Рухати область збільшення вниз</short>
+			<long>Pan (move) the zoom area down</long>
+			<long xml:lang="uk">Рухати область збільшення вниз</long>
+		    </option>
+		</subgroup>
+		<subgroup>
+		    <short>Fitting</short>
+		    <short xml:lang="uk">Припасування</short>
+		    <option type="key" name="fit_to_zoom_key">
+			<short>Fit the window to the zoom level</short>
+			<short xml:lang="uk">Припасовувати вікно до рівню масштабу</short>
+			<long>Resize the window so it matches the current zoom level.</long>
+			<long xml:lang="uk">Змінити розмір вікна відповідно рівню збільшення.</long>
+			<default/>
+		    </option>
+		    <option type="key" name="fit_to_window_key">
+			<short>Fit zoomed area to window</short>
+			<short xml:lang="uk">Припасовувати область збільшення до вікна</short>
+			<long>Zooms in/out so the focused window is zoomed to the maximum while still being fully visible.</long>
+			<long xml:lang="uk">Наближення/віддалення сфокусованого вікна до найбільшого, при якому воно залишатиметься повністю видимим.</long>
+			<default/>
+		    </option>
+		</subgroup>
+	    </group>
+	    <group>
+		<short>Zoom In/Out</short>
+		<short xml:lang="uk">Наблизити/віддалити</short>
+		<option type="float" name="zoom_factor">
+		    <short>Zoom factor</short>
+		    <short xml:lang="af">Zoem faktor</short>
+		    <short xml:lang="be">জুম ফ্যাক্টর</short>
+		    <short xml:lang="bn">জুম ফ্যাক্টর</short>
+		    <short xml:lang="bn_IN">জুম ফ্যাক্টর</short>
+		    <short xml:lang="ca">Factor del zoom</short>
+		    <short xml:lang="cs">Násobek přiblížení</short>
+		    <short xml:lang="da">Zoomfaktor</short>
+		    <short xml:lang="de">Zoomfaktor</short>
+		    <short xml:lang="el">Παράγοντας ζουμ</short>
+		    <short xml:lang="es">Factor de zoom</short>
+		    <short xml:lang="eu">Zoom faktorea</short>
+		    <short xml:lang="fi">Suurennuskerroin</short>
+		    <short xml:lang="fr">Facteur de zoom</short>
+		    <short xml:lang="gl">Factor de zoom</short>
+		    <short xml:lang="gu">નાનામોટાપણાનો અવયવ</short>
+		    <short xml:lang="he">מקדם תקריב</short>
+		    <short xml:lang="hu">Nagyítási arány</short>
+		    <short xml:lang="it">Fattore ingrandimento</short>
+		    <short xml:lang="ja">ズーム係数</short>
+		    <short xml:lang="ko">확대율</short>
+		    <short xml:lang="nb">Forstørrelsesfaktor</short>
+		    <short xml:lang="nl">Zoom factor</short>
+		    <short xml:lang="or">ଜୁମ କାରଣ</short>
+		    <short xml:lang="pl">Współczynnik przybliżania</short>
+		    <short xml:lang="pt">Fator de magnificação</short>
+		    <short xml:lang="pt_BR">Fator de zoom</short>
+		    <short xml:lang="ro">Coeficient lupă</short>
+		    <short xml:lang="ru">Коэффициент масштабирования</short>
+		    <short xml:lang="sk">Pomer zväčšenia</short>
+		    <short xml:lang="sv">Zoomfaktor</short>
+		    <short xml:lang="tr">Büyütme aralığı</short>
+		    <short xml:lang="uk">Коефіцієнт збільшення</short>
+		    <short xml:lang="zh_CN">缩放比例</short>
+		    <short xml:lang="zh_TW">縮放倍率</short>
+		    <long>Zoom in/out by this factor. Higher value means quicker zooming.</long>
+		    <long xml:lang="uk">Наблизити/віддалити за цим коефіцієнтом. Вище значення означає швидше масштабування.</long>
+		    <default>1.150</default>
+		    <min>1.01</min>
+		    <max>3</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="float" name="minimum_zoom">
+		    <short>Minimum zoom factor</short>
+		    <short xml:lang="uk">Щонайменший коефіцієнт масштабування</short>
+		    <long>The minimum allowed zoom factor. A value of 0.5 equals 2x zoom, a value of 0.25 equals 4x zoom.</long>
+		    <long xml:lang="uk">Щонайменше дозволений чинник збільшення. Число 0,5 дорівнює двократному збільшенню, а 0,25 дорівнює чотирикратному.</long>
+		    <default>0.125</default>
+		    <min>0.000001</min>
+		    <max>0.999999</max>
+		    <precision>0.0001</precision>
+		</option>
+	    </group>
+	    <group>
+		<short>Mouse Behaviour</short>
+		<short xml:lang="uk">Поведінка миші</short>
+		<option type="int" name="zoom_mode">
+		    <short>Zoom Mode</short>
+		    <short xml:lang="uk">Режим масштабування</short>
+		    <long>How the cursor should be tracked when zooming</long>
+		    <min>0</min>
+		    <max>1</max>
+		    <default>0</default>
+		    <desc>
+			<value>0</value>
+			<name>Sync Mouse</name>
+			<name xml:lang="uk">Синхронізація миші</name>
+		    </desc>
+		    <desc>
+			<value>1</value>
+			<name>Pan Area</name>
+		    </desc>
+		</option>
+		<option type="bool" name="scale_mouse">
+		    <short>Scale the mouse pointer</short>
+		    <short xml:lang="uk">Масштабувати вказівник миші</short>
+		    <long>Enable this to get a gradually larger mouse pointer as you zoom in</long>
+		    <long xml:lang="uk">Увімкніть це, щоб отримати поступово збільшуваний вказівник миші під час масштабування</long>
+		    <default>true</default>
+		</option>
+		<option type="bool" name="scale_mouse_dynamic">
+		    <short>Dynamic mouse pointer scale</short>
+		    <short xml:lang="uk">Динамічне масштабування вказівника</short>
+		    <long>When scaling the mouse pointer, this option makes the scale adjust according to the current level of zoom.</long>
+		    <long xml:lang="uk">Якщо увімкнене масштабування вказівника, цей параметр задає масштаб вказівника миші у відповідності з чинним рівнем збільшення.</long>
+		    <default>true</default>
+		</option>
+		<option type="float" name="scale_mouse_static">
+		    <short>Static mouse pointer scale</short>
+		    <short xml:lang="uk">Статичний масштаб вказівника миші</short>
+		    <long>When not using a dynamic mouse pointer scale, this is the scale factor for the mouse pointer.</long>
+		    <long xml:lang="uk">Масштаб вказівника миші, якщо не використовується динамічне масштабування вказівника.</long>
+		    <default>0.2</default>
+		    <min>0.1</min>
+		    <max>1.0</max>
+		    <precision>0.01</precision>
+		</option>
+		<option type="bool" name="hide_original_mouse">
+		    <short>Hide original mouse pointer</short>
+		    <short xml:lang="uk">Приховати початковий вказівник миші</short>
+		    <long>Hides the original mouse pointer when zoomed in and scaling the mouse</long>
+		    <long xml:lang="uk">Приховує початковий вказівник миші під час збільшення та масштабування миші</long>
+		    <default>true</default>
+		</option>
+		<option type="bool" name="restrain_mouse">
+		    <short>Restrain the mouse to the zoom area</short>
+		    <short xml:lang="uk">Утримувати вказівник в області збільшення</short>
+		    <long>Attempt to keep the zoomed mouse visible by warping it when it is moved outside the zoom area.</long>
+		    <long xml:lang="uk">Намагатись зберегти збільшений вказівник миші видимим, якщо він вийшов за межі области масштабування.</long>
+		    <default>false</default>
+		</option>
+		<option type="int" name="restrain_margin">
+		    <short>Mouse Restrain Margin</short>
+		    <short xml:lang="uk">Поле обмеження миші</short>
+		    <long>The size of the margin to add when attempting to restrain the mouse.</long>
+		    <long xml:lang="uk">Розмір межі робочого режиму під час спроби стримати вказівник.</long>
+		    <default>5</default>
+		    <min>0</min>
+		    <max>50</max>
+		</option>
+	    </group>
+	    <group>
+		<short>Zoom Area Movement</short>
+		<short xml:lang="uk">Переміщення области збільшення</short>
+		<subgroup>
+		    <short>Panning</short>
+		    <short xml:lang="uk">Панорамування</short>
+		    <option type="float" name="pan_factor">
+			<short>Pan Factor</short>
+			<short xml:lang="uk">Коефіцієнт панорамування</short>
+			<long>Move the zoomed area this much whenever you pan the zoomed area with keys.</long>
+			<long xml:lang="uk">Переміщати область збільшення щораз, якщо вона панорамується з набірниці.</long>
+			<default>0.1</default>
+			<min>0.001</min>
+			<max>1.0</max>
+			<precision>0.001</precision>
+		    </option>
+		</subgroup>
+	    </group>
+	    <group>
+		<short>Focus Tracking</short>
+		<short xml:lang="uk">Стеження за фокусом</short>
+		<option type="bool" name="follow_focus">
+		    <short>Enable focus tracking</short>
+		    <short xml:lang="uk">Увімкнути відстежування за фокусом</short>
+		    <long>Move the zoom area when focus changes.</long>
+		    <long xml:lang="uk">Переміщати область збільшення, якщо фокус змінюється.</long>
+		    <default>true</default>
+		</option>
+		<option type="bool" name="focus_fit_window">
+		    <short>Fit zoom level to window on focus change</short>
+		    <short xml:lang="uk">Припасовувати рівень збільшення до вікна під час зміни фокусу</short>
+		    <long>Fit the zoomed area to the window when the zoomed area moves as a result of focus tracking.</long>
+		    <long xml:lang="uk">Припасовувати область збільшення до вікна, якщо ця область рухається в наслідок відстежування фокусу.</long>
+		    <default>false</default>
+		</option>
+		<option type="float" name="autoscale_min">
+		    <short>Autoscale threshold</short>
+		    <short xml:lang="uk">Поріг автомасштабування</short>
+		    <long>Only change zoom level (scale) on focus change if the target value is higher than this. Prevents zooming too far in on small popups etc.</long>
+		    <long xml:lang="uk">Змінювати наближення (масштаб) при зміні фокусу лише, якщо цільове значення вище заданого. Дає змогу уникнути непотрібного збільшення невеликих контекстних вікон.</long>
+		    <default>0.25</default>
+		    <min>0.000001</min>
+		    <max>0.999999</max>
+		    <precision>0.0001</precision>
+		</option>
+		<option type="bool" name="always_focus_fit_window">
+		    <short>Always fit to window on focus track</short>
+		    <short xml:lang="uk">Завжди вкладаються у вікно під час стеження за фокусом</short>
+		    <long>Fit the zoomed area to the window when the zoomed area moves as a result of focus tracking. Even when not initially zoomed in.</long>
+		    <long xml:lang="uk">Припасовувати область збільшення до вікна, якщо ця область рухається в наслідок відстежування фокусу. Навіть якщо спочатку не була збільшеною.</long>
+		    <default>false</default>
+		</option>
+		<option type="int" name="follow_focus_delay">
+		    <short>Follow Focus Delay</short>
+		    <short xml:lang="uk">Затримка слідування за фокусом</short>
+		    <long>Only attempt to center newly focused windows if the mouse hasn't moved in this amount of seconds. Use this to avoid jumping when using sloppy focus.</long>
+		    <long xml:lang="uk">Лише під час спроби відцентрувати нове сфокусоване вікно, якщо миша не перемістилась на це число секунд. Використовуйте це, щоб уникнути стрибків під час використання розмитого фокусу.</long>
+		    <default>0</default>
+		    <min>0</min>
+		    <max>15</max>
+		</option>
+	    </group>
+	    <group>
+		<short>Animation</short>
+		<short xml:lang="uk">Анімація</short>
+		<option type="float" name="speed">
+		    <short>Speed</short>
+		    <short xml:lang="am">ፍጥነት</short>
+		    <short xml:lang="ast">Velocidá</short>
+		    <short xml:lang="be">Хуткасьць</short>
+		    <short xml:lang="bg">Скорост</short>
+		    <short xml:lang="bs">Brzina</short>
+		    <short xml:lang="ca">Velocitat</short>
+		    <short xml:lang="cs">Rychlost</short>
+		    <short xml:lang="da">Hastighed</short>
+		    <short xml:lang="de">Geschwindigkeit</short>
+		    <short xml:lang="el">Ταχύτητα</short>
+		    <short xml:lang="en_AU">Speed</short>
+		    <short xml:lang="en_GB">Speed</short>
+		    <short xml:lang="es">Velocidad</short>
+		    <short xml:lang="eu">Abiadura</short>
+		    <short xml:lang="fi">Nopeus</short>
+		    <short xml:lang="fr">Vitesse</short>
+		    <short xml:lang="gl">Velocidade</short>
+		    <short xml:lang="gu">ઝડપ</short>
+		    <short xml:lang="he">מהירות</short>
+		    <short xml:lang="hr">Brzina</short>
+		    <short xml:lang="hu">Sebesség</short>
+		    <short xml:lang="id">Kecepatan</short>
+		    <short xml:lang="it">Velocità</short>
+		    <short xml:lang="ja">速度</short>
+		    <short xml:lang="ko">속도</short>
+		    <short xml:lang="ku">Lez</short>
+		    <short xml:lang="ms">Kelajuan</short>
+		    <short xml:lang="my">အလျင်</short>
+		    <short xml:lang="nb">Hastighet</short>
+		    <short xml:lang="nds">Gauheit</short>
+		    <short xml:lang="nl">Snelheid</short>
+		    <short xml:lang="oc">Velocitat</short>
+		    <short xml:lang="or">ଗତି</short>
+		    <short xml:lang="pl">Szybkość</short>
+		    <short xml:lang="pt">Velocidade</short>
+		    <short xml:lang="pt_BR">Velocidade</short>
+		    <short xml:lang="ro">Viteză</short>
+		    <short xml:lang="ru">Скорость</short>
+		    <short xml:lang="sk">Rýchlosť</short>
+		    <short xml:lang="sl">Hitrost</short>
+		    <short xml:lang="sq">Shpejtësia</short>
+		    <short xml:lang="sr">Брзина</short>
+		    <short xml:lang="sv">Hastighet</short>
+		    <short xml:lang="tr">Hız</short>
+		    <short xml:lang="ug">سۈرئىتى</short>
+		    <short xml:lang="uk">Швидкість</short>
+		    <short xml:lang="vi">Tốc độ</short>
+		    <short xml:lang="zh_CN">速度</short>
+		    <short xml:lang="zh_HK">速度</short>
+		    <short xml:lang="zh_TW">速度</short>
+		    <long>Zoom Change Speed</long>
+		    <default>25</default>
+		    <min>0.1</min>
+		    <max>100</max>
+		    <precision>0.1</precision>
+		</option>
+		<option type="float" name="timestep">
+		    <short>Timestep</short>
+		    <short xml:lang="ast">Pasu</short>
+		    <short xml:lang="be">সময়ধাপ</short>
+		    <short xml:lang="bg">Времева стъпка</short>
+		    <short xml:lang="bs">Korak vremena</short>
+		    <short xml:lang="ca">Etapa</short>
+		    <short xml:lang="cs">Časový krok</short>
+		    <short xml:lang="da">Tidstrin</short>
+		    <short xml:lang="de">Zeitintervall</short>
+		    <short xml:lang="el">Χρονικό Βήμα</short>
+		    <short xml:lang="en_AU">Timestep</short>
+		    <short xml:lang="en_GB">Timestep</short>
+		    <short xml:lang="es">Paso</short>
+		    <short xml:lang="eu">denbora-pausoa</short>
+		    <short xml:lang="fi">Aikaviive</short>
+		    <short xml:lang="fr">Intervalle</short>
+		    <short xml:lang="gl">Intervalo de tempo</short>
+		    <short xml:lang="gu">સમયપગલું</short>
+		    <short xml:lang="he">יחידת זמן</short>
+		    <short xml:lang="hr">Vremenski korak</short>
+		    <short xml:lang="hu">Időköz</short>
+		    <short xml:lang="it">Intervallo</short>
+		    <short xml:lang="ja">描画の時間刻み</short>
+		    <short xml:lang="ko">시간 간격</short>
+		    <short xml:lang="ms">Langkah Masa</short>
+		    <short xml:lang="nb">Tidsskritt</short>
+		    <short xml:lang="nl">Tijdstempel</short>
+		    <short xml:lang="oc">Interval</short>
+		    <short xml:lang="or">ସମଯସୋପାନ</short>
+		    <short xml:lang="pl">Opóźnienie</short>
+		    <short xml:lang="pt">Espaço de tempo</short>
+		    <short xml:lang="pt_BR">Intervalo de tempo</short>
+		    <short xml:lang="ro">Pas de timp</short>
+		    <short xml:lang="ru">Шаг времени</short>
+		    <short xml:lang="sk">Krok</short>
+		    <short xml:lang="sl">Časovni interval</short>
+		    <short xml:lang="sr">Корак времена</short>
+		    <short xml:lang="sv">Tidsintervall</short>
+		    <short xml:lang="tr">Süre aralığı</short>
+		    <short xml:lang="ug">ۋاقىت قەدەم ئۇزۇنلۇقى</short>
+		    <short xml:lang="uk">Крок часу</short>
+		    <short xml:lang="vi">Bước</short>
+		    <short xml:lang="zh_CN">时间步长</short>
+		    <short xml:lang="zh_HK">時間間隔</short>
+		    <short xml:lang="zh_TW">時間間隔</short>
+		    <long>Zoom Change Timestep</long>
+		    <default>1.2</default>
+		    <min>0.1</min>
+		    <max>50</max>
+		    <precision>0.1</precision>
+		</option>
+	    </group>
+	</options>
+    </plugin>
+</compiz>

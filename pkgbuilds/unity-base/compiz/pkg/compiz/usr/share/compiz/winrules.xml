@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+	
+	<plugin useBcop="true" name="winrules">
+		<short>Window Rules</short>
+		<short xml:lang="da">Vinduesregler</short>
+		<short xml:lang="uk">Правила вікон</short>
+		<long>Set windows rules</long>
+		<long xml:lang="uk">Встановити правила поведінки вікон</long>
+		<category>Window Management</category>
+		<deps>
+			<relation type="after">
+			    <plugin>opengl</plugin>
+			    <plugin>composite</plugin>
+			    <plugin>decor</plugin>
+			</relation>
+			<requirement>
+			    <plugin>regex</plugin>
+			</requirement>
+		</deps>
+		<options>
+			<group>
+				<short>Matches</short>
+				<option type="match" name="skiptaskbar_match">
+					<short>Skip taskbar</short>
+					<short xml:lang="uk">Нехтувати панель завдань</short>
+					<long>Don't show application in taskbar</long>
+					<long xml:lang="uk">Не показувати програму в панелі завдань</long>
+					<default/>
+				</option>
+				<option type="match" name="skippager_match">
+					<short>Skip pager</short>
+					<short xml:lang="uk">Нехтувати перемикач робочих просторів</short>
+					<long>Don't show application in pager</long>
+					<long xml:lang="uk">Не показувати програму в перемикачі робочих просторів</long>
+					<default/>
+				</option>
+				<option type="match" name="above_match">
+				<short>Above</short>
+				<short xml:lang="uk">Вище</short>
+					<long>Above others windows</long>
+					<long xml:lang="uk">Над иншими вікнами</long>
+					<default/>
+				</option>
+				<option type="match" name="below_match">
+					<short>Below</short>
+					<short xml:lang="uk">Під</short>
+					<long>Below others windows</long>
+					<long xml:lang="uk">Під иншими вікнами</long>
+					<default/>
+				</option>
+				<option type="match" name="sticky_match">
+					<short>Sticky</short>
+					<short xml:lang="uk">Липкі</short>
+					<long>Sticky windows</long>
+					<long xml:lang="uk">Липкі вікна</long>
+					<default/>
+				</option>
+				<option type="match" name="fullscreen_match">
+					<short>Fullscreen</short>
+					<short xml:lang="ca">Pantalla completa</short>
+					<short xml:lang="cs">Celá obrazovka</short>
+					<short xml:lang="da">Fuldskærm</short>
+					<short xml:lang="de">Vollbild</short>
+					<short xml:lang="es">Pantalla completa</short>
+					<short xml:lang="fi">Kokoruutu</short>
+					<short xml:lang="pl">Pełny ekran</short>
+					<short xml:lang="uk">На весь екран</short>
+					<short xml:lang="zh_CN">全屏</short>
+					<short xml:lang="zh_TW">全螢幕</short>
+					<long>Fullscreen windows</long>
+					<long xml:lang="uk">Повноекранні вікна</long>
+					<default/>
+				    </option>
+				<option type="match" name="maximize_match">
+					<short>Maximized</short>
+					<short xml:lang="uk">Розгорнуте</short>
+					<long>Maximized windows</long>
+					<long xml:lang="uk">Розгорнуті вікна</long>
+				    <default/>
+				</option>
+				<option type="match" name="no_argb_match">
+					<short>No ARGB visuals</short>
+					<short xml:lang="uk">Без підтримки ARGB visuals</short>
+					<long>Windows that should be treated as not supporting transparency</long>
+					<long xml:lang="de">Fenster welche behandelt werden sollen, als würden sie keine Durchsichtigkeit unterstützen</long>
+					<long xml:lang="uk">Вікна, які мають сприйматися як такі, що не підтримують прозорість</long>
+					<default/>
+				</option>
+				<option type="match" name="no_move_match">
+					<short>Non movable windows</short>
+					<short xml:lang="uk">Не рухомі вікна</short>
+					<long>Set window as non movable</long>
+					<long xml:lang="uk">Встановити вікна не рухомими</long>
+					<default/>
+				</option>
+				<option type="match" name="no_resize_match">
+					<short>Non resizable windows</short>
+					<short xml:lang="uk">Вікна, які не змінюють розмір</short>
+					<long>Set window as non resizable</long>
+					<long xml:lang="uk">Встановити вікно не змінного розміру</long>
+					<default/>
+				</option>
+				<option type="match" name="no_minimize_match">
+					<short>Non minimizable windows</short>
+					<short xml:lang="uk">Вікна, які не мінімізуються</short>
+					<long>Set window as non minimizable</long>
+					<long xml:lang="uk">Встановити вікна такими, що не унайменшуються</long>
+					<default/>
+				</option>
+				<option type="match" name="no_maximize_match">
+					<short>Non maximizable windows</short>
+					<short xml:lang="uk">Вікна, які не унайбільшуються</short>
+					<long>Set window as non maximizable</long>
+					<long xml:lang="uk">Встановити вікна такими, що не унайбільшуються</long>
+					<default/>
+				</option>
+				<option type="match" name="no_close_match">
+					<short>Non closable windows</short>
+					<short xml:lang="uk">Вікна, які не закриваються</short>
+					<long>Set window as non closable</long>
+					<long xml:lang="uk">Встановити вікна такими, що не закриваються</long>
+					<default/>
+				</option>
+				<option type="match" name="no_focus_match">
+					<short>No focus</short>
+					<short xml:lang="uk">Без фокусу</short>
+					<long>Windows will not have focus</long>
+					<long xml:lang="uk">Вікна, які не матимуть фокусу</long>
+					<default/>
+				</option>
+			</group>
+			<group>
+				<short>Size rules</short>
+				<short xml:lang="uk">Правила розмірів</short>
+				<subgroup>
+					<short>Fixed Size Windows</short>
+					<short xml:lang="uk">Вікна фіксованого розміру</short>
+					<option type="list" name="size_matches">
+						<short>Sized Windows</short>
+						<short xml:lang="uk">Розмір вікон</short>
+						<long>Windows that should be resized by default</long>
+						<long xml:lang="uk">Усталені вікна зі змінним розміром</long>
+						<type>match</type>
+					</option>
+					<option type="list" name="size_width_values">
+						<short>Width</short>
+						<short xml:lang="uk">Ширина</short>
+						<long>Width values</long>
+						<long xml:lang="uk">Значення ширини</long>
+						<type>int</type>
+						<min>0</min>
+						<max>65536</max>
+						<default>500</default>
+					</option>
+					<option type="list" name="size_height_values">
+						<short>Height</short>
+						<short xml:lang="uk">Висота</short>
+						<long>Height values</long>
+						<long xml:lang="uk">Значення висоти</long>
+						<type>int</type>
+						<min>0</min>
+						<max>65536</max>
+						<default>500</default>
+					</option>
+				</subgroup>
+			</group>
+		</options>
+	</plugin>
+</compiz>

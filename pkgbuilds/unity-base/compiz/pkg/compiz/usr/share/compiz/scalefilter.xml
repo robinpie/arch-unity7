@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="scalefilter">
+	<short>Scale Window Title Filter</short>
+	<short xml:lang="da">Filter til skalering af vinduestitel</short>
+	<long>Window title filter facility for the scale plugin</long>
+	<category>Utility</category>
+	<deps>
+	    <relation type="after">
+		<plugin>composite</plugin>
+		<plugin>opengl</plugin>
+		<plugin>scale</plugin>
+		<plugin>text</plugin>
+	    </relation>
+	    <requirement>
+		<plugin>opengl</plugin>
+		<plugin>scale</plugin>
+		<plugin>regex</plugin>
+	    </requirement>
+	</deps>
+	<options>
+	    <group>
+		<short>Behaviour</short>
+		<short xml:lang="am">ባህሪው</short>
+		<short xml:lang="ast">Comportamientu</short>
+		<short xml:lang="be">Паводзіны</short>
+		<short xml:lang="bg">Поведение</short>
+		<short xml:lang="bs">Ponašanje</short>
+		<short xml:lang="cs">Chování</short>
+		<short xml:lang="de">Verhalten</short>
+		<short xml:lang="el">Συμπεριφορά</short>
+		<short xml:lang="en_AU">Behaviour</short>
+		<short xml:lang="en_GB">Behaviour</short>
+		<short xml:lang="es">Comportamiento</short>
+		<short xml:lang="eu">Portaera</short>
+		<short xml:lang="fi">Käyttäytyminen</short>
+		<short xml:lang="fr">Comportement</short>
+		<short xml:lang="gl">Comportamento</short>
+		<short xml:lang="he">אופן</short>
+		<short xml:lang="hr">Ponašanje</short>
+		<short xml:lang="hu">Viselkedés</short>
+		<short xml:lang="it">Comportamento</short>
+		<short xml:lang="ja">動作</short>
+		<short xml:lang="ko">동작</short>
+		<short xml:lang="ms">Kelakuan</short>
+		<short xml:lang="nb">Oppførsel</short>
+		<short xml:lang="nds">Verhollen</short>
+		<short xml:lang="nl">Gedrag</short>
+		<short xml:lang="oc">Compòrtament</short>
+		<short xml:lang="pl">Zachowanie</short>
+		<short xml:lang="pt">Comportamento</short>
+		<short xml:lang="pt_BR">Comportamento</short>
+		<short xml:lang="ro">Comportament</short>
+		<short xml:lang="ru">Поведение</short>
+		<short xml:lang="sl">Obnašanje</short>
+		<short xml:lang="sq">Sjellja</short>
+		<short xml:lang="sr">Понашање</short>
+		<short xml:lang="sv">Beteende</short>
+		<short xml:lang="te">ప్రవర్తన</short>
+		<short xml:lang="tr">Davranış</short>
+		<short xml:lang="ug">قىلمىش</short>
+		<short xml:lang="uk">Поведінка</short>
+		<short xml:lang="vi">Hành vi</short>
+		<short xml:lang="zh_CN">特性</short>
+		<short xml:lang="zh_HK">特性</short>
+		<short xml:lang="zh_TW">特性</short>
+		<option type="int" name="timeout">
+		    <short>Filter Type Timeout</short>
+		    <long>Time (in ms) after which the filter typing is automatically ended</long>
+		    <min>0</min>
+		    <max>10000</max>
+		    <default>0</default>
+		</option>
+		<option type="bool" name="filter_case_insensitive">
+		    <short>Filter Case Insensitive</short>
+		    <long>Use case insensitive string matching when filtering.</long>
+		    <default>true</default>
+		</option>
+		<option type="bool" name="filter_display">
+		    <short>Show Filter Text</short>
+		    <short xml:lang="uk">Показати текст фільтру</short>
+		    <long>Show filter text.</long>
+		    <long xml:lang="uk">Показати текст фільтру.</long>
+		    <default>true</default>
+		</option>
+	    </group>
+	    <group>
+		<short>Appearance</short>
+		<short xml:lang="am">አቀራረብ</short>
+		<short xml:lang="ast">Aspeutu</short>
+		<short xml:lang="be">Вонкавы выгляд</short>
+		<short xml:lang="bg">Външен вид</short>
+		<short xml:lang="bs">Izgled</short>
+		<short xml:lang="cs">Vzhled</short>
+		<short xml:lang="da">Udseende</short>
+		<short xml:lang="de">Erscheinung</short>
+		<short xml:lang="el">Εμφάνιση</short>
+		<short xml:lang="en_AU">Appearance</short>
+		<short xml:lang="en_GB">Appearance</short>
+		<short xml:lang="es">Apariencia</short>
+		<short xml:lang="eu">Itxura</short>
+		<short xml:lang="fi">Ulkoasu</short>
+		<short xml:lang="fr">Apparence</short>
+		<short xml:lang="fy">Foarkommen</short>
+		<short xml:lang="gl">Aparencia</short>
+		<short xml:lang="he">מראה</short>
+		<short xml:lang="hr">Izgled</short>
+		<short xml:lang="hu">Megjelenés</short>
+		<short xml:lang="it">Aspetto</short>
+		<short xml:lang="ja">外観</short>
+		<short xml:lang="ko">모양</short>
+		<short xml:lang="ms">Penampilan</short>
+		<short xml:lang="my">ပုံပန်းသဏ္ဍာန်</short>
+		<short xml:lang="nb">Utseende</short>
+		<short xml:lang="nds">Utsehn</short>
+		<short xml:lang="nl">Uiterlijk</short>
+		<short xml:lang="oc">Aparéncia</short>
+		<short xml:lang="pl">Wygląd</short>
+		<short xml:lang="pt">Aparência</short>
+		<short xml:lang="pt_BR">Aparência</short>
+		<short xml:lang="ro">Aspect</short>
+		<short xml:lang="ru">Внешний вид</short>
+		<short xml:lang="sl">Videz</short>
+		<short xml:lang="sq">Pamja</short>
+		<short xml:lang="sr">Изглед</short>
+		<short xml:lang="sv">Utseende</short>
+		<short xml:lang="tr">Görünüm</short>
+		<short xml:lang="ug">كۆرۈنۈشى</short>
+		<short xml:lang="uk">Зовнішній вигляд</short>
+		<short xml:lang="vi">Diện mạo</short>
+		<short xml:lang="zh_CN">外观</short>
+		<short xml:lang="zh_HK">外觀</short>
+		<short xml:lang="zh_TW">外觀</short>
+		<option type="bool" name="font_bold">
+		    <short>Bold Font</short>
+		    <short xml:lang="uk">Жирний шрифт</short>
+		    <long>Use bold font for window title display</long>
+		    <long xml:lang="uk">Використовувати жирний шрифт у назві вікна</long>
+		    <default>true</default>
+		</option>
+		<option type="int" name="font_size">
+		    <short>Font Size</short>
+		    <short xml:lang="uk">Розмір шрифту</short>
+		    <long>Font size for window title display</long>
+		    <long xml:lang="uk">Розмір шрифту для заголовку вікна</long>
+		    <min>6</min>
+		    <max>48</max>
+		    <default>24</default>
+		</option>
+		<option type="int" name="border_size">
+		    <short>Title Border Size</short>
+		    <short xml:lang="uk">Розмір рамки заголовку</short>
+		    <long>Size of the border around the window title</long>
+		    <long xml:lang="uk">Розмір обрамлення заголовку вікна</long>
+		    <min>1</min>
+		    <max>20</max>
+		    <default>5</default>
+		</option>
+		<option type="color" name="font_color">
+		    <short>Font Color</short>
+		    <short xml:lang="uk">Колір шрифту</short>
+		    <long>Font color of the window title</long>
+		    <long xml:lang="uk">Колір шрифту в назві вікна</long>
+		    <default>
+			<red>0xffff</red>
+			<green>0xffff</green>
+			<blue>0xffff</blue>
+			<alpha>0xffff</alpha>
+		    </default>
+		</option>
+		<option type="color" name="back_color">
+		    <short>Background Color</short>
+		    <short xml:lang="bs">Boja pozadine</short>
+		    <short xml:lang="ca">Color del fons</short>
+		    <short xml:lang="de">Hintergrundfarbe</short>
+		    <short xml:lang="en_AU">Background Colour</short>
+		    <short xml:lang="en_GB">Background Colour</short>
+		    <short xml:lang="es">Color de fondo</short>
+		    <short xml:lang="fr">Couleur d’arrière-plan</short>
+		    <short xml:lang="gl">Cor do fondo</short>
+		    <short xml:lang="hr">Boja pozadine</short>
+		    <short xml:lang="ko">배경 색</short>
+		    <short xml:lang="ms">Warna Latar Belakang</short>
+		    <short xml:lang="pl">Kolor tła</short>
+		    <short xml:lang="pt">Cor de Fundo</short>
+		    <short xml:lang="ru">Цвет фона</short>
+		    <short xml:lang="sl">Barva ozadja</short>
+		    <short xml:lang="sv">Bakgrundsfärg</short>
+		    <short xml:lang="uk">Колір тла</short>
+		    <short xml:lang="zh_CN">背景色</short>
+		    <long>Background color of the window title</long>
+		    <long xml:lang="uk">Колір тла заголовку вікна</long>
+		    <default>
+			<red>0x0000</red>
+			<green>0x0000</green>
+			<blue>0x0000</blue>
+			<alpha>0x9999</alpha>
+		    </default>
+		</option>
+	    </group>
+	</options>
+    </plugin>
+</compiz>

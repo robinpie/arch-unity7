@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: compizconfig-python
+Version: 0.9.14.2
+Summary: CompizConfig Python
+Home-page: https://launchpad.net/compiz
+Maintainer: Guillaume Seguin
+Maintainer-email: guillaume@segu.in
+License: GPL
+Dynamic: home-page
+Dynamic: license
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: summary

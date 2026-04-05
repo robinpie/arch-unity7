@@ -1,0 +1,42 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/xpathselect
+
+pkgname=xpathselect
+pkgver=1.4
+_uver=+15.10.20150824.1
+_urev=0ubuntu2
+pkgrel=1
+pkgdesc="Select objects in an object tree using XPath queries"
+arch=('x86_64')
+url="https://launchpad.net/xpathselect"
+license=('GPL-3.0-or-later')
+depends=('gcc-libs' 'glibc')
+makedepends=('cmake' 'pkgconf' 'boost')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+)
+sha256sums=('SKIP')
+
+prepare() {
+    cd "${pkgname}-${pkgver}${_uver}"
+
+    # Disable tests
+    sed -i '/add_subdirectory.*test/d' CMakeLists.txt || true
+
+    # Fix CMake minimum version for CMake 4
+    sed -i 's/cmake_minimum_required(VERSION [0-9.]*/cmake_minimum_required(VERSION 3.10/' CMakeLists.txt || true
+}
+
+build() {
+    cmake -B build -S "${pkgname}-${pkgver}${_uver}" \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+        -Wno-dev
+    cmake --build build
+}
+
+package() {
+    DESTDIR="$pkgdir" cmake --install build
+}

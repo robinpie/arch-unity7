@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+	<plugin useBcop="true" name="td">
+		<short>3D Windows</short>
+		<short xml:lang="da">3D-vinduer</short>
+		<short xml:lang="tr">3B Pencereler</short>
+		<short xml:lang="uk">3D Вікна</short>
+		<long>Elevates windows while rotating the cube</long>
+		<category>Effects</category>
+		<deps>
+			<requirement>
+				<plugin>opengl</plugin>
+				<plugin>cube</plugin>
+			</requirement>
+			<relation type="after">
+				<plugin>composite</plugin>
+				<plugin>opengl</plugin>
+				<plugin>cube</plugin>
+				<plugin>decor</plugin>
+			</relation>
+		</deps>
+		<options>
+			<group>
+				<short>Misc. Options</short>
+				<short xml:lang="bg">Други опции</short>
+				<short xml:lang="da">Diverse valgmuligheder</short>
+				<short xml:lang="es">Opciones varias</short>
+				<short xml:lang="tr">Diğer Seçenekler</short>
+				<short xml:lang="uk">Різне</short>
+				<option type="match" name="window_match">
+					<short>Window Match</short>
+					<short xml:lang="es">Coincidencia de ventanas</short>
+					<short xml:lang="tr">Pencere Eşleşmesi</short>
+					<long>Windows that should be handled by 3D</long>
+					<default>Toolbar | Utility | Dialog | Normal | Unknown</default>
+				</option>
+				<option type="int" name="min_cube_size">
+					<short>Minimum Cube Size</short>
+					<short xml:lang="uk">Щонайменший розмір куба</short>
+					<long>Minimum cube size (in percent).</long>
+					<long xml:lang="uk">Щонайменший розмір куба (у відсотках).</long>
+					<default>60</default>
+					<min>10</min>
+					<max>100</max>
+				</option>
+				<option type="int" name="max_window_space">
+					<short>Window Space</short>
+					<short xml:lang="uk">Віконний простір</short>
+					<long>Change the amount of space between the windows (in percent of the cube size).</long>
+					<default>10</default>
+					<min>0</min>
+					<max>50</max>
+				</option>
+				<option type="bool" name="manual_only">
+					<short>3D Only On Mouse Rotate</short>
+					<long>Initiates the 3D display only if rotate is mouse driven. (Ex. You rotate the cube via the mouse)</long>
+					<default>true</default>
+				</option>
+			</group>
+			<group>
+				<short>Window Depth</short>
+				<short xml:lang="da">Vinduesdybde</short>
+				<option type="float" name="width">
+					<short>Window Depth</short>
+					<short xml:lang="da">Vinduesdybde</short>
+					<long>Window depth</long>
+					<long xml:lang="da">Vinduesdybde</long>
+					<default>0.3</default>
+					<min>0.0</min>
+					<max>1.0</max>
+					<precision>0.001</precision>
+				</option>
+				<option type="int" name="bevel">
+					<short>Bevel Corners</short>
+					<long>Roundoff corners for consistency with rounded decorations</long>
+					<default>0</default>
+					<min>0</min>
+					<max>20</max>
+				</option>
+				<option type="color" name="width_color">
+	    				<short>Window Color (Active)</short>
+	    				<short xml:lang="uk">Колір вікна (Активного)</short>
+	    				<long>Color of the active window's depth</long>
+	    				<default>
+	      					<red>0x3333</red>
+	      					<green>0x3333</green>
+	      					<blue>0x3333</blue>
+	      					<alpha>0xffff</alpha>
+	    				</default>
+	  			</option>
+	  			<option type="color" name="width_color_inactive">
+	  				<short>Window Color (Inactive)</short>
+	  				<short xml:lang="uk">Колір вікна (Неактивного)</short>
+	  				<long>Color of an inactive window's depth</long>
+	  				<default>
+	      					<red>0x3333</red>
+	      					<green>0x3333</green>
+	      					<blue>0x3333</blue>
+	      					<alpha>0xffff</alpha>
+	    				</default>
+	  			</option>
+				<subgroup>
+					<short>Bevel Corners</short>
+					<option type="bool" name="bevel_topleft">
+						<short>Bevel Top Left</short>
+						<long>Bevel top left corner</long>
+						<default>true</default>
+					</option>
+					<option type="bool" name="bevel_topright">
+						<short>Bevel Top Right</short>
+						<long>Bevel top right corner</long>
+						<default>true</default>
+					</option>
+					<option type="bool" name="bevel_bottomleft">
+						<short>Bevel Bottom Left</short>
+						<long>Bevel bottom left corner</long>
+						<default>false</default>
+					</option>
+					<option type="bool" name="bevel_bottomright">
+						<short>Bevel Bottom Right</short>
+						<long>Bevel bottom right corner</long>
+						<default>false</default>
+					</option>
+				</subgroup>
+			</group>
+		</options>
+	</plugin>
+</compiz>

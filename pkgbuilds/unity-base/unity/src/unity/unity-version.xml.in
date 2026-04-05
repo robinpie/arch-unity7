@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<unity-version>
+  <platform>@UNITY_MAJOR@</platform>
+  <minor>@UNITY_MINOR@</minor>
+  <micro>@UNITY_MICRO@</micro>
+  <release>@UNITY_RELEASE@</release>
+  @UNITY_DATE_COMMENT_START@<date>@UNITY_DATE@</date>@UNITY_DATE_COMMENT_END@
+</unity-version>

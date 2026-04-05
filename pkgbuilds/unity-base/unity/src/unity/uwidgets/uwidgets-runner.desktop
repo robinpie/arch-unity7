@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=UWidgets Runner
+Comment=Start UWidgets at login
+Exec=uwidgets-runner
+OnlyShowIn=Unity
+X-GNOME-AutoRestart=true
+X-GNOME-Autostart-Delay=2
+NoDisplay=false

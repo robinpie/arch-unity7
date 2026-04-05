@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr/bin
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: compiz
+Description: OpenGL compositing manager
+Version: 0.9.14.2
+
+Requires: x11 xext xdamage xcomposite xcursor x11-xcb xrandr xinerama xi ice sm libxml-2.0 libxslt glib-2.0 gio-2.0 glibmm-2.4 libstartup-notification-1.0 >= 0.7 
+Libs: -L${libdir}
+Cflags: -I/usr/include -I/usr/include/uuid -I/usr/include/libxml2 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glibmm-2.4 -I/usr/lib/glibmm-2.4/include -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/sigc++-2.0 -I/usr/lib/sigc++-2.0/include -I/usr/include/startup-notification-1.0  -I${includedir}/compiz

@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+
+import os
+import configparser
+
+widgets=[]
+widgets_dir=os.path.expanduser('~/.local/share/unity/widgets')
+
+if os.path.exists(widgets_dir):
+    for widget in [f.path for f in os.scandir(widgets_dir) if f.is_dir() and os.path.exists(os.path.join(f, 'widget.ini'))]:
+        try:
+            os.chdir(widget)
+            config = configparser.ConfigParser()
+            config.read(os.path.join(widget, 'widget.ini'))
+            if config.get('widget', 'enabled') == 'true':
+                os.popen(config.get('widget', 'exec'))
+            widgets.append(os.path.basename(widget))
+        except (KeyError, configparser.NoSectionError, configparser.NoOptionError) as e:
+            print(f'uwidget-runner: error occurred when attempting to run {widget}:\n    {e}')
+
+if len(widgets) == 0:
+    print("No widgets found.")
+else:
+    print("Loaded:", ' '.join(widgets))

@@ -1,0 +1,252 @@
+Source: unity
+Section: gnome
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: cmake (>= 3.17.0),
+               compiz-dev (>= 1:0.9.13.1+18.04.20180221),
+               debhelper-compat (= 13),
+               dbus-test-runner,
+               dbus-x11,
+               dh-translations (>= 94),
+               dh-python,
+               google-mock (>= 1.6.0+svn437),
+               gir1.2-gtk-3.0,
+               gir1.2-glib-2.0,
+               gsettings-desktop-schemas-dev,
+               gsettings-ubuntu-schemas (>= 0.0.7+17.10.20170922),
+               intltool (>= 0.35.0),
+               libappstream-glib-dev,
+               libatk1.0-dev,
+               libbamf3-dev (>= 0.5.3~bzr0),
+               libboost-dev,
+               libcairo2-dev,
+               libcompizconfig0-dev (>= 1:0.9.13.1+19.04.20190208-0ubuntu1),
+               libdbus-1-dev,
+               libdbusmenu-glib-dev (>= 0.3.91),
+               libdee-dev (>= 1.2.6),
+               libgeis-dev (>= 2.0.10),
+               libgl1-mesa-dri,
+               libglib2.0-dev (>= 2.39.1),
+               libgnome-desktop-3-dev,
+               libunity-settings-daemon-dev,
+               unity-settings-daemon-dev (>= 15.04.1+19.10.20190921-0ubuntu3),
+               libgtest-dev,
+               libgtk-3-dev (>= 3.1),
+               libido3-0.1-dev (>= 13.10.0),
+               libindicator-dev (>= 0.12.2),
+               libindicator3-dev (>= 0.12.2),
+               libjson-glib-dev,
+               libjson-perl,
+               libnotify-dev,
+               libnux-4.0-dev (>= 4.0.6),
+               libpam0g-dev,
+               libpango1.0-dev,
+               libsigc++-2.0-dev (>= 2.4.0),
+               libstartup-notification0-dev,
+               libunity-dev (>= 7.1.0),
+               libunity-misc-dev (>= 4.0.4),
+               libxcb-icccm4-dev,
+               libxfixes-dev (>= 1:5.0.1),
+               libxi-dev (>= 2:1.7.1.901),
+               libxinerama-dev,
+               libxpathselect-dev (>=1.4),
+               libxtst-dev,
+               libzeitgeist-2.0-dev,
+               pkg-config,
+               python3-all (>= 3.4),
+               python3-dev,
+               python3-gi,
+               python3-setuptools,
+               quilt,
+               systemd,
+               xorg,
+               xserver-xorg-video-dummy,
+               xsltproc,
+               yaru-theme-icon
+Standards-Version: 3.9.5
+Homepage: https://launchpad.net/unity
+# If you aren't a member of ~unity-team but need to upload packaging changes,
+# just go ahead.  ~unity-team will notice and sync up the code again.
+Vcs-Bzr: https://code.launchpad.net/~unity-team/unity/trunk
+X-Ubuntu-Use-Langpack: yes
+
+Package: unity
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         ${python3:Depends},
+         libunity-core-6.0-9 (= ${binary:Version}),
+         compiz,
+         compiz-core, compiz-core-abiversion-${coreabiversion},
+         libnux-abiversion-${nuxabiversion},
+         compiz-plugins-default,
+         gsettings-ubuntu-schemas (>= 0.0.7+17.10.20170922),
+         unity-settings-daemon-schemas (>= 15.04.1+19.10.20190921-0ubuntu3),
+         libglib2.0-bin,
+         nux-tools,
+         python3-gi,
+         dconf-cli,
+         unity-asset-pool (>= 0.8.18),
+         unity-greeter,
+         bamfdaemon,
+         libxfixes3 (>= 1:5.0.1-1),
+         libxi6 (>= 2:1.7.1.901),
+	 unity-scope-home,
+Recommends: unity-control-center,
+            ${unity-default-masterscopes}
+            nemo,
+            gnome-disk-utility,
+            hud,
+            session-shortcuts,
+            unity-session,
+            unity-uwidgets
+Breaks: unity-lens-applications (<< 5.12.0-0ubuntu2),
+        unity-lens-files (<< 5.10.0-0ubuntu2),
+        unity-lens-music (<< 6.0.0),
+        unity-lens-video (<< 0.3.6-0ubuntu2),
+        ubuntu-session (<< 3.24.1-0ubuntu3~),
+        compiz-gnome (<< 1:0.9.13.1+19.04.20190208-0ubuntu1~),
+Replaces: compiz-gnome (<< 1:0.9.13.1+19.04.20190208-0ubuntu1~),
+Description: Interface designed for efficiency of space and interaction.
+ Unity is a desktop experience that sings. Designed by Canonical and the Ayatana
+ community, Unity is all about the combination of familiarity and the future. We
+ bring together visual design, analysis of user experience testing, modern
+ graphics technologies and a deep understanding of the free software landscape
+ to produce what we hope will be the lightest, most elegant and most delightful
+ way to use your PC.
+
+Package: unity-services
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         indicator-common,
+Provides: indicator-renderer
+Recommends: indicator-appmenu (>= 15.02.0),
+            indicator-application,
+            indicator-sound,
+            indicator-bluetooth,
+            indicator-datetime,
+            indicator-keyboard,
+            indicator-notifications,
+            indicator-printers,
+            indicator-power,
+            indicator-session,
+Description: Services for the Unity interface
+ Unity is a desktop experience that sings. Designed by Canonical and the Ayatana
+ community, Unity is all about the combination of familiarity and the future. We
+ bring together visual design, analysis of user experience testing, modern
+ graphics technologies and a deep understanding of the free software landscape
+ to produce what we hope will be the lightest, most elegant and most delightful
+ way to use your PC.
+ .
+ This package contains the D-Bus service used for unity.
+
+Package: unity-schemas
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends},
+Replaces: libunity-core-6.0-9 (<< 7.3.0),
+Breaks: libunity-core-6.0-9 (<< 7.3.0),
+Description: Interface designed for efficiency of space and interaction.
+ Unity is a desktop experience that sings. Designed by Canonical and the Ayatana
+ community, Unity is all about the combination of familiarity and the future. We
+ bring together visual design, analysis of user experience testing, modern
+ graphics technologies and a deep understanding of the free software landscape
+ to produce what we hope will be the lightest, most elegant and most delightful
+ way to use your PC.
+ .
+ This package contains the configuration schemas used by unity.
+
+Package: libunity-core-6.0-9
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         unity-services (= ${binary:Version}),
+         unity-schemas (= ${binary:Version}),
+Conflicts: unity-common, libunity-core-6.0-6, libunity-core-6.0-7, libunity-core-6.0-8
+Replaces: unity-common, libunity-core-6.0-6, libunity-core-6.0-7, libunity-core-6.0-8
+Provides: unity-common, unity-common-7.0
+Description: core library for the Unity interface
+ Unity is a desktop experience that sings. Designed by Canonical and the Ayatana
+ community, Unity is all about the combination of familiarity and the future. We
+ bring together visual design, analysis of user experience testing, modern
+ graphics technologies and a deep understanding of the free software landscape
+ to produce what we hope will be the lightest, most elegant and most delightful
+ way to use your PC.
+ .
+ This package contains shared libraries to be used by unity-3d.
+
+Package: libunity-core-6.0-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         libunity-core-6.0-9 (= ${binary:Version}),
+         libglib2.0-dev,
+         libsigc++-2.0-dev,
+         libnux-4.0-dev (>= 4.0.5),
+         libunity-dev (>= 7.1.0~),
+         libdee-dev,
+Description: Core library for the Unity interface - development files
+ Unity is a desktop experience that sings. Designed by Canonical and the Ayatana
+ community, Unity is all about the combination of familiarity and the future. We
+ bring together visual design, analysis of user experience testing, modern
+ graphics technologies and a deep understanding of the free software landscape
+ to produce what we hope will be the lightest, most elegant and most delightful
+ way to use your PC.
+ .
+ This package contains development files for libraries to be used by unity.
+
+Package: unity-autopilot
+Section: python
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends},
+         autopilot-desktop,
+         gir1.2-appindicator3-0.1,
+         gir1.2-dee-1.0,
+         gir1.2-glib-2.0,
+         gir1.2-ibus-1.0,
+         gir1.2-unity-5.0,
+         python3-compizconfig,
+         python3-dbus,
+         python3-testtools,
+         python3-xdg,
+         python3-xlib,
+         libxpathselect1.4v5 (>= 1.4),
+         mesa-utils,
+Description: Autopiloted tests for Unity
+ Unity is tested automatically through autopilot, a framework which enables
+ keyboard and mouse events to be triggered on the fly as well as object
+ introspection.  This package contains the specific unity introspection
+ bindings to be able to write tests in python as well as the full test suite
+ for Unity.
+
+Package: unity-uwidgets
+Section: python
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends},
+         python3,
+         xorg,
+         libxinerama-dev,
+         libcairo2-dev,
+         python3-gi,
+         python3-pil,
+         python3-pydbus,
+         python3-psutil,
+         gir1.2-gtk-3.0,
+         gir1.2-glib-2.0,
+Description: Widgets for Unity
+ Unity is a desktop experience that sings. Designed by Canonical and the Ayatana
+ community, Unity is all about the combination of familiarity and the future. We
+ bring together visual design, analysis of user experience testing, modern
+ graphics technologies and a deep understanding of the free software landscape
+ to produce what we hope will be the lightest, most elegant and most delightful
+ way to use your PC.
+ .
+ This package contains support for widgets for Unity, based on Blighty.
+

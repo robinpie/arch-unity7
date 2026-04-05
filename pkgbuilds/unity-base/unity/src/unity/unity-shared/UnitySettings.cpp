@@ -1,0 +1,596 @@
+// -*- Mode: C++; indent-tabs-mode: nil; tab-width: 2 -*-
+/*
+* Copyright (C) 2010, 2011, 2012 Canonical Ltd
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License version 3 as
+* published by the Free Software Foundation.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*
+* Authored by: Neil Jagdish Patel <neil.patel@canonical.com>
+*              Andrea Azzarone <andrea.azzarone@canonical.com>
+*/
+
+#include "config.h"
+
+#include <glib.h>
+#include <NuxCore/Logger.h>
+#include <UnityCore/GLibSource.h>
+#include <UnityCore/Variant.h>
+
+#include "DecorationStyle.h"
+#include "MultiMonitor.h"
+#include "UnitySettings.h"
+#include "UScreen.h"
+
+namespace unity
+{
+DECLARE_LOGGER(logger, "unity.settings");
+namespace
+{
+Settings* settings_instance = nullptr;
+
+const std::string SETTINGS_NAME = "com.canonical.Unity";
+const std::string FORM_FACTOR = "form-factor";
+const std::string DOUBLE_CLICK_ACTIVATE = "double-click-activate";
+const std::string DESKTOP_TYPE = "desktop-type";
+const std::string PAM_CHECK_ACCOUNT_TYPE = "pam-check-account-type";
+const std::string LOWGFX = "lowgfx";
+
+const std::string LAUNCHER_SETTINGS = "com.canonical.Unity.Launcher";
+const std::string LAUNCHER_POSITION = "launcher-position";
+
+const std::string LIM_SETTINGS = "com.canonical.Unity.IntegratedMenus";
+const std::string CLICK_MOVEMENT_THRESHOLD = "click-movement-threshold";
+const std::string DOUBLE_CLICK_WAIT = "double-click-wait";
+const std::string UNFOCUSED_MENU_POPUP = "unfocused-windows-popup";
+
+const std::string UI_SETTINGS = "com.canonical.Unity.Interface";
+const std::string TEXT_SCALE_FACTOR = "text-scale-factor";
+const std::string CURSOR_SCALE_FACTOR = "cursor-scale-factor";
+const std::string APP_SCALE_MONITOR = "app-scale-factor-monitor";
+const std::string APP_USE_MAX_SCALE = "app-fallback-to-maximum-scale-factor";
+
+const std::string COMPIZ_SETTINGS = "org.compiz";
+const std::string COMPIZ_PROFILE = "current-profile";
+
+const std::string UBUNTU_UI_SETTINGS = "com.ubuntu.user-interface";
+const std::string UBUNTU_DESKTOP_UI_SETTINGS = "com.ubuntu.user-interface.desktop";
+const std::string SCALE_FACTOR = "scale-factor";
+
+const std::string DESKTOP_CURSOR_SIZE = "cursor-size";
+const std::string DESKTOP_SCALE_FACTOR = "scaling-factor";
+const std::string DESKTOP_TEXT_SCALE_FACTOR = "text-scaling-factor";
+
+const std::string REMOTE_CONTENT_SETTINGS = "com.canonical.Unity.Lenses";
+const std::string REMOTE_CONTENT_KEY = "remote-content-search";
+
+const std::string GESTURES_SETTINGS = "com.canonical.Unity.Gestures";
+const std::string LAUNCHER_DRAG = "launcher-drag";
+const std::string DASH_TAP = "dash-tap";
+const std::string WINDOWS_DRAG_PINCH = "windows-drag-pinch";
+
+const std::string CCS_PROFILE_CHANGER_TOOL = "compiz-config-profile-setter";
+const std::string CCS_PROFILE_DEFAULT = "unity";
+const std::string CCS_PROFILE_LOWGFX = CCS_PROFILE_DEFAULT + "-lowgfx";
+
+const int DEFAULT_LAUNCHER_SIZE = 64;
+const int MINIMUM_DESKTOP_HEIGHT = 800;
+const int DESKTOP_SETTINGS_CHANGED_WAIT_SECONDS = 1;
+const double DEFAULT_DPI = 96.0f;
+const double DPI_SCALING_LIMIT = 140.0f;
+const int DPI_SCALING_STEP = 8;
+}
+
+//
+// Start private implementation
+//
+class Settings::Impl : public sigc::trackable
+{
+public:
+  Impl(Settings* owner)
+    : parent_(owner)
+    , usettings_(g_settings_new(SETTINGS_NAME.c_str()))
+    , compiz_settings_(g_settings_new(COMPIZ_SETTINGS.c_str()))
+    , launcher_settings_(g_settings_new(LAUNCHER_SETTINGS.c_str()))
+    , lim_settings_(g_settings_new(LIM_SETTINGS.c_str()))
+    , gestures_settings_(g_settings_new(GESTURES_SETTINGS.c_str()))
+    , ui_settings_(g_settings_new(UI_SETTINGS.c_str()))
+    , ubuntu_ui_settings_(g_settings_new(UBUNTU_UI_SETTINGS.c_str()))
+    , desktop_ui_settings_(g_settings_new(UBUNTU_DESKTOP_UI_SETTINGS.c_str()))
+    , remote_content_settings_(g_settings_new(REMOTE_CONTENT_SETTINGS.c_str()))
+    , launcher_sizes_(monitors::MAX, DEFAULT_LAUNCHER_SIZE)
+    , cached_launcher_position_(LauncherPosition::LEFT)
+    , cached_form_factor_(FormFactor::DESKTOP)
+    , cursor_scale_(1.0)
+    , cached_double_click_activate_(true)
+    , remote_content_enabled_(true)
+  {
+    InitializeLowGfx();
+
+    parent_->form_factor.SetGetterFunction(sigc::mem_fun(this, &Impl::GetFormFactor));
+    parent_->form_factor.SetSetterFunction(sigc::mem_fun(this, &Impl::SetFormFactor));
+    parent_->double_click_activate.SetGetterFunction(sigc::mem_fun(this, &Impl::GetDoubleClickActivate));
+    parent_->remote_content.SetGetterFunction(sigc::mem_fun(this, &Impl::GetRemoteContentEnabled));
+    parent_->launcher_position.SetGetterFunction(sigc::mem_fun(this, &Impl::GetLauncherPosition));
+    parent_->launcher_position.SetSetterFunction(sigc::mem_fun(this, &Impl::SetLauncherPosition));
+    parent_->desktop_type.SetGetterFunction(sigc::mem_fun(this, &Impl::GetDesktopType));
+    parent_->pam_check_account_type.SetGetterFunction(sigc::mem_fun(this, &Impl::GetPamCheckAccountType));
+    parent_->supports_3d.changed.connect(sigc::mem_fun(this, &Impl::OnSupports3DChanged));
+    parent_->low_gfx.changed.connect(sigc::mem_fun(this, &Impl::UpdateCompizProfile));
+
+    for (unsigned i = 0; i < monitors::MAX; ++i)
+      em_converters_.emplace_back(std::make_shared<EMConverter>());
+
+    signals_.Add<void, GSettings*, const gchar*>(compiz_settings_, "changed::" + COMPIZ_PROFILE, [this] (GSettings*, const gchar *) {
+      parent_->low_gfx = (GetCurrentCompizProfile() == CCS_PROFILE_LOWGFX);
+    });
+
+    signals_.Add<void, GSettings*, const gchar*>(usettings_, "changed::" + LOWGFX, [this] (GSettings*, const gchar *) {
+      UpdateCompizProfile(GetLowGfxSetting());
+    });
+
+    signals_.Add<void, GSettings*, const gchar*>(usettings_, "changed::" + FORM_FACTOR, [this] (GSettings*, const gchar*) {
+      CacheFormFactor();
+    });
+
+    signals_.Add<void, GSettings*, const gchar*>(usettings_, "changed::" + DOUBLE_CLICK_ACTIVATE, [this] (GSettings*, const gchar*) {
+      CacheDoubleClickActivate();
+      parent_->double_click_activate.changed.emit(cached_double_click_activate_);
+    });
+
+    signals_.Add<void, GSettings*, const gchar*>(launcher_settings_, "changed::" + LAUNCHER_POSITION, [this] (GSettings*, const gchar*) {
+      CacheLauncherPosition();
+      parent_->launcher_position.changed.emit(cached_launcher_position_);
+    });
+
+    signals_.Add<void, GSettings*, const gchar*>(ubuntu_ui_settings_, "changed::" + SCALE_FACTOR, [this] (GSettings*, const gchar* t) {
+      UpdateDPI();
+    });
+
+    signals_.Add<void, GSettings*, const gchar*>(ui_settings_, "changed::" + TEXT_SCALE_FACTOR, [this] (GSettings*, const gchar* t) {
+      UpdateTextScaleFactor();
+      UpdateDPI();
+    });
+
+    signals_.Add<void, GSettings*, const gchar*>(ui_settings_, "changed::" + CURSOR_SCALE_FACTOR, [this] (GSettings*, const gchar* t) {
+      UpdateCursorScaleFactor();
+      UpdateDPI();
+    });
+
+    signals_.Add<void, GSettings*, const gchar*>(ui_settings_, "changed::" + APP_SCALE_MONITOR, [this] (GSettings*, const gchar* t) {
+      UpdateDPI();
+    });
+
+    signals_.Add<void, GSettings*, const gchar*>(ui_settings_, "changed::" + APP_USE_MAX_SCALE, [this] (GSettings*, const gchar* t) {
+      UpdateDPI();
+    });
+
+    signals_.Add<void, GSettings*, const gchar*>(desktop_ui_settings_, "changed::" + DESKTOP_TEXT_SCALE_FACTOR, [this] (GSettings*, const gchar* t) {
+      double new_scale_factor = g_settings_get_double(desktop_ui_settings_, DESKTOP_TEXT_SCALE_FACTOR.c_str());
+      g_settings_set_double(ui_settings_, TEXT_SCALE_FACTOR.c_str(), new_scale_factor);
+    });
+
+    signals_.Add<void, GSettings*, const gchar*>(lim_settings_, "changed", [this] (GSettings*, const gchar*) {
+      UpdateLimSetting();
+    });
+
+    signals_.Add<void, GSettings*, const gchar*>(gestures_settings_, "changed", [this] (GSettings*, const gchar*) {
+      UpdateGesturesSetting();
+    });
+
+    signals_.Add<void, GSettings*, const gchar*>(remote_content_settings_, "changed::" + REMOTE_CONTENT_KEY, [this] (GSettings*, const gchar* t) {
+      UpdateRemoteContentSearch();
+    });
+
+    UScreen::GetDefault()->changed.connect(sigc::hide(sigc::hide(sigc::mem_fun(this, &Impl::UpdateDPI))));
+
+    // The order is important here, DPI is the last thing to be updated
+    UpdateLimSetting();
+    UpdateGesturesSetting();
+    UpdateTextScaleFactor();
+    UpdateCursorScaleFactor();
+    UpdateDPI();
+
+    CacheFormFactor();
+    CacheDoubleClickActivate();
+    UpdateRemoteContentSearch();
+    CacheLauncherPosition();
+  }
+
+  void CacheFormFactor()
+  {
+    int raw_from_factor = g_settings_get_enum(usettings_, FORM_FACTOR.c_str());
+    FormFactor new_form_factor;
+
+    if (raw_from_factor == 0) //Automatic
+    {
+      auto uscreen = UScreen::GetDefault();
+      int primary_monitor = uscreen->GetPrimaryMonitor();
+      auto const& geo = uscreen->GetMonitorGeometry(primary_monitor);
+      double monitor_scaling = em(primary_monitor)->DPIScale();
+
+      new_form_factor = (geo.height * monitor_scaling) >= MINIMUM_DESKTOP_HEIGHT ? FormFactor::DESKTOP : FormFactor::NETBOOK;
+    }
+    else
+    {
+      new_form_factor = static_cast<FormFactor>(raw_from_factor);
+    }
+
+    if (new_form_factor != cached_form_factor_)
+    {
+      cached_form_factor_ = new_form_factor;
+      parent_->form_factor.changed.emit(cached_form_factor_);
+    }
+  }
+
+  void CacheDoubleClickActivate()
+  {
+    cached_double_click_activate_ = g_settings_get_boolean(usettings_, DOUBLE_CLICK_ACTIVATE.c_str());
+  }
+
+  void CacheLauncherPosition()
+  {
+    cached_launcher_position_ = static_cast<LauncherPosition>(g_settings_get_enum(launcher_settings_, LAUNCHER_POSITION.c_str()));
+  }
+
+  void InitializeLowGfx()
+  {
+    parent_->low_gfx = GetLowGfxSetting();
+    UpdateCompizProfile(parent_->low_gfx());
+  }
+
+  std::string GetCurrentCompizProfile()
+  {
+    return glib::String(g_settings_get_string(compiz_settings_, COMPIZ_PROFILE.c_str())).Str();
+  }
+
+  glib::Variant GetUserLowGfxSetting()
+  {
+    return glib::Variant(g_settings_get_user_value(usettings_, LOWGFX.c_str()), glib::StealRef());
+  }
+
+  bool GetLowGfxSetting()
+  {
+    if (glib::Variant const& user_setting = GetUserLowGfxSetting())
+    {
+      return user_setting.GetBool();
+    }
+    else
+    {
+      auto default_profile = glib::gchar_to_string(g_getenv("UNITY_DEFAULT_PROFILE"));
+      if (!default_profile.empty())
+      {
+        return (default_profile == CCS_PROFILE_LOWGFX);
+      }
+      else if (!parent_->supports_3d() ||
+               glib::gchar_to_string(getenv("UNITY_HAS_3D_SUPPORT")) == "false")
+      {
+        return true;
+      }
+      else
+      {
+        return (GetCurrentCompizProfile() == CCS_PROFILE_LOWGFX);
+      }
+    }
+  }
+
+  void UpdateCompizProfile(bool lowgfx)
+  {
+    auto const& profile = lowgfx ? CCS_PROFILE_LOWGFX : CCS_PROFILE_DEFAULT;
+
+    if (GetCurrentCompizProfile() == profile)
+      return;
+
+    auto profile_change_cmd = (std::string(UNITY_LIBDIR G_DIR_SEPARATOR_S) + CCS_PROFILE_CHANGER_TOOL + " " + profile);
+
+    glib::Error error;
+    g_spawn_command_line_async(profile_change_cmd.c_str(), &error);
+
+    if (error)
+    {
+      LOG_ERROR(logger) << "Failed to switch compiz profile: " << error;
+    }
+  }
+
+  void OnSupports3DChanged(bool supports_3d)
+  {
+    if (!GetUserLowGfxSetting())
+      parent_->low_gfx = !supports_3d;
+  }
+
+  void UpdateLimSetting()
+  {
+    parent_->lim_movement_thresold = g_settings_get_uint(lim_settings_, CLICK_MOVEMENT_THRESHOLD.c_str());
+    parent_->lim_double_click_wait = g_settings_get_uint(lim_settings_, DOUBLE_CLICK_WAIT.c_str());
+    parent_->lim_unfocused_popup = g_settings_get_boolean(lim_settings_, UNFOCUSED_MENU_POPUP.c_str());
+  }
+
+  void UpdateGesturesSetting()
+  {
+    parent_->gestures_launcher_drag = g_settings_get_boolean(gestures_settings_, LAUNCHER_DRAG.c_str());
+    parent_->gestures_dash_tap = g_settings_get_boolean(gestures_settings_, DASH_TAP.c_str());
+    parent_->gestures_windows_drag_pinch = g_settings_get_boolean(gestures_settings_, WINDOWS_DRAG_PINCH.c_str());
+    parent_->gestures_changed.emit();
+  }
+
+  FormFactor GetFormFactor() const
+  {
+    return cached_form_factor_;
+  }
+
+  bool SetFormFactor(FormFactor factor)
+  {
+    g_settings_set_enum(usettings_, FORM_FACTOR.c_str(), static_cast<int>(factor));
+    return false;
+  }
+
+  bool GetDoubleClickActivate() const
+  {
+    return cached_double_click_activate_;
+  }
+
+  LauncherPosition GetLauncherPosition() const
+  {
+    return cached_launcher_position_;
+  }
+
+  bool SetLauncherPosition(LauncherPosition launcherPosition)
+  {
+    g_settings_set_enum(launcher_settings_, LAUNCHER_POSITION.c_str(), static_cast<int>(launcherPosition));
+    return false;
+  }
+
+  DesktopType GetDesktopType() const
+  {
+    return static_cast<DesktopType>(g_settings_get_enum(usettings_, DESKTOP_TYPE.c_str()));
+  }
+
+  bool GetPamCheckAccountType() const
+  {
+    return g_settings_get_boolean(usettings_, PAM_CHECK_ACCOUNT_TYPE.c_str());
+  }
+
+  void UpdateTextScaleFactor()
+  {
+    parent_->font_scaling = g_settings_get_double(ui_settings_, TEXT_SCALE_FACTOR.c_str());
+    decoration::Style::Get()->font_scale = parent_->font_scaling();
+  }
+
+  void UpdateCursorScaleFactor()
+  {
+    cursor_scale_ = g_settings_get_double(ui_settings_, CURSOR_SCALE_FACTOR.c_str());
+  }
+
+  EMConverter::Ptr const& em(int monitor) const
+  {
+    if (monitor < 0 || monitor >= (int)monitors::MAX)
+    {
+      LOG_ERROR(logger) << "Invalid monitor index: " << monitor << ". Returning index 0 monitor instead.";
+      return em_converters_[0];
+    }
+
+    return em_converters_[monitor];
+  }
+
+  int FindOptimalScale(const UScreen* uscreen, const int monitor)
+  {
+    auto const& geo = uscreen->GetMonitorGeometry(monitor);
+    auto const& size = uscreen->GetMonitorPhysicalSize(monitor);
+    auto scale = DPI_SCALING_STEP;
+
+    if ((size.width == 160 && size.height == 90) ||
+        (size.width == 160 && size.height == 100) ||
+        (size.width == 16 && size.height == 9) ||
+        (size.width == 16 && size.height == 10))
+    {
+      return scale;
+    }
+
+    if (size.width > 0 && size.height > 0)
+    {
+      const double dpi_x = static_cast<double>(geo.width) / (size.width / 25.4);
+      const double dpi_y = static_cast<double>(geo.height) / (size.height / 25.4);
+
+      const auto dpi = std::max(dpi_x, dpi_y);
+
+      if (dpi > DPI_SCALING_LIMIT)
+        scale = static_cast<int>(scale * std::lround(dpi / DPI_SCALING_LIMIT));
+    }
+
+    return scale;
+  }
+
+  void UpdateDPI()
+  {
+    auto* uscreen = UScreen::GetDefault();
+    double min_scale = 4.0;
+    double max_scale = 0.0;
+    bool any_changed = false;
+
+    glib::Variant dict;
+    g_settings_get(ubuntu_ui_settings_, SCALE_FACTOR.c_str(), "@a{si}", &dict);
+
+    bool dict_changed = false;
+    GVariantBuilder builder;
+    g_variant_builder_init(&builder, G_VARIANT_TYPE("a{si}"));
+
+    glib::String app_target_monitor(g_settings_get_string(ui_settings_, APP_SCALE_MONITOR.c_str()));
+    double app_target_scale = 0;
+
+    for (unsigned monitor = 0; monitor < em_converters_.size(); ++monitor)
+    {
+      int dpi = DEFAULT_DPI;
+
+      if (monitor < uscreen->GetMonitors().size())
+      {
+        auto const& monitor_name = uscreen->GetMonitorName(monitor);
+        double ui_scale = 1.0f;
+        int value;
+
+        if (g_variant_lookup(dict, monitor_name.c_str(), "i", &value))
+        {
+          if (value > 0)
+            ui_scale = static_cast<double>(value)/DPI_SCALING_STEP;
+        }
+        else
+        {
+          value = FindOptimalScale(uscreen, monitor);
+          ui_scale = static_cast<double>(value)/DPI_SCALING_STEP;
+          dict_changed = true;
+        }
+        g_variant_builder_add(&builder, "{si}", monitor_name.c_str(), value);
+
+        if (app_target_monitor.Str() == monitor_name)
+          app_target_scale = ui_scale;
+
+        dpi = DEFAULT_DPI * ui_scale;
+        min_scale = std::min(min_scale, ui_scale);
+        max_scale = std::max(max_scale, ui_scale);
+      }
+
+      if (em_converters_[monitor]->SetDPI(dpi))
+        any_changed = true;
+    }
+
+    glib::Variant new_dict(g_variant_builder_end(&builder));
+    if (dict_changed)
+    {
+      g_settings_set_value(ubuntu_ui_settings_, SCALE_FACTOR.c_str(), new_dict);
+    }
+
+    if (app_target_scale == 0)
+      app_target_scale = (g_settings_get_boolean(ui_settings_, APP_USE_MAX_SCALE.c_str())) ? max_scale : min_scale;
+
+    UpdateAppsScaling(app_target_scale);
+
+    if (any_changed)
+      parent_->dpi_changed.emit();
+  }
+
+  void UpdateAppsScaling(double scale)
+  {
+    signals_.Block(desktop_ui_settings_);
+    unsigned integer_scaling = std::max<unsigned>(1, std::lround(scale));
+    double point_scaling = scale / static_cast<double>(integer_scaling);
+    double text_scale_factor = parent_->font_scaling() * point_scaling;
+    glib::Variant default_cursor_size(g_settings_get_default_value(desktop_ui_settings_, DESKTOP_CURSOR_SIZE.c_str()), glib::StealRef());
+    int cursor_size = std::round(default_cursor_size.GetInt32() * point_scaling * cursor_scale_);
+    g_settings_set_int(desktop_ui_settings_, DESKTOP_CURSOR_SIZE.c_str(), cursor_size);
+    g_settings_set_uint(desktop_ui_settings_, DESKTOP_SCALE_FACTOR.c_str(), integer_scaling);
+    g_settings_set_double(desktop_ui_settings_, DESKTOP_TEXT_SCALE_FACTOR.c_str(), text_scale_factor);
+
+    changing_desktop_settings_timeout_.reset(new glib::TimeoutSeconds(DESKTOP_SETTINGS_CHANGED_WAIT_SECONDS, [this] {
+      signals_.Unblock(desktop_ui_settings_);
+      return false;
+    }, glib::Source::Priority::LOW));
+  }
+
+  void UpdateRemoteContentSearch()
+  {
+    glib::String remote_content(g_settings_get_string(remote_content_settings_, REMOTE_CONTENT_KEY.c_str()));
+    bool remote_content_enabled = ((remote_content.Str() == "all") ? true : false);
+
+    if (remote_content_enabled != remote_content_enabled_)
+    {
+      remote_content_enabled_ = remote_content_enabled;
+      parent_->remote_content.changed.emit(remote_content_enabled_);
+    }
+  }
+
+  bool GetRemoteContentEnabled() const
+  {
+    return remote_content_enabled_;
+  }
+
+  Settings* parent_;
+  glib::Object<GSettings> usettings_;
+  glib::Object<GSettings> compiz_settings_;
+  glib::Object<GSettings> launcher_settings_;
+  glib::Object<GSettings> lim_settings_;
+  glib::Object<GSettings> gestures_settings_;
+  glib::Object<GSettings> ui_settings_;
+  glib::Object<GSettings> ubuntu_ui_settings_;
+  glib::Object<GSettings> desktop_ui_settings_;
+  glib::Object<GSettings> remote_content_settings_;
+  glib::Source::UniquePtr changing_desktop_settings_timeout_;
+  glib::SignalManager signals_;
+  std::vector<EMConverter::Ptr> em_converters_;
+  std::vector<int> launcher_sizes_;
+  LauncherPosition cached_launcher_position_;
+  FormFactor cached_form_factor_;
+  double cursor_scale_;
+  bool cached_double_click_activate_;
+  bool remote_content_enabled_;
+};
+
+//
+// End private implementation
+//
+
+Settings::Settings()
+  : supports_3d(glib::gchar_to_string(getenv("UNITY_HAS_3D_SUPPORT")) != "false")
+  , is_standalone(false)
+  , pimpl(new Impl(this))
+{
+  if (settings_instance)
+  {
+    LOG_ERROR(logger) << "More than one unity::Settings created.";
+    return;
+  }
+
+  settings_instance = this;
+}
+
+Settings::~Settings()
+{
+  if (settings_instance == this)
+    settings_instance = nullptr;
+}
+
+Settings& Settings::Instance()
+{
+  if (!settings_instance)
+  {
+    LOG_ERROR(logger) << "No unity::Settings created yet.";
+  }
+
+  return *settings_instance;
+}
+
+EMConverter::Ptr const& Settings::em(int monitor) const
+{
+  return pimpl->em(monitor);
+}
+
+void Settings::SetLauncherSize(int launcher_size, int monitor)
+{
+  if (monitor < 0 || monitor >= (int)monitors::MAX)
+  {
+    LOG_ERROR(logger) << "Invalid monitor index: " << monitor << ". Not updating launcher size.";
+  }
+  else
+  {
+    pimpl->launcher_sizes_[monitor] = launcher_size;
+  }
+}
+
+int Settings::LauncherSize(int monitor) const
+{
+  if (monitor < 0 || monitor >= (int)monitors::MAX)
+  {
+    LOG_ERROR(logger) << "Invalid monitor index: " << monitor << ". Returning 0.";
+    return 0;
+  }
+
+  return pimpl->launcher_sizes_[monitor];
+}
+
+} // namespace unity

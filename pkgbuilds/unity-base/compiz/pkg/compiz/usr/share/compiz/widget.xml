@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+	<plugin useBcop="true" name="widget">
+		<short>Widget Layer</short>
+		<short xml:lang="da">Kontrollag</short>
+		<long>Show widget windows on a separate layer</long>
+		<category>Desktop</category>
+		<deps>
+			<relation type="before">
+				<plugin>fade</plugin>
+				<plugin>animation</plugin>
+			</relation>
+			<requirement>
+				<plugin>opengl</plugin>
+			</requirement>
+			<relation type="after">
+				<plugin>composite</plugin>
+				<plugin>opengl</plugin>
+				<plugin>decor</plugin>
+			</relation>
+		</deps>
+		<options>
+			<option type="key" name="toggle_key">
+				<short>Toggle Widget Display</short>
+				<long>Show or hide widget windows</long>
+				<default>F9</default>
+			</option>
+			<option type="button" name="toggle_button">
+				<short>Toggle Widget Display</short>
+				<long>Show or hide widget windows</long>
+			</option>
+			<option type="edge" name="toggle_edge">
+				<short>Toggle Widget Display</short>
+				<long>Show or hide widget windows</long>
+			</option>
+			<group>
+				<short>Behaviour</short>
+				<short xml:lang="am">ባህሪው</short>
+				<short xml:lang="ast">Comportamientu</short>
+				<short xml:lang="be">Паводзіны</short>
+				<short xml:lang="bg">Поведение</short>
+				<short xml:lang="bs">Ponašanje</short>
+				<short xml:lang="cs">Chování</short>
+				<short xml:lang="de">Verhalten</short>
+				<short xml:lang="el">Συμπεριφορά</short>
+				<short xml:lang="en_AU">Behaviour</short>
+				<short xml:lang="en_GB">Behaviour</short>
+				<short xml:lang="es">Comportamiento</short>
+				<short xml:lang="eu">Portaera</short>
+				<short xml:lang="fi">Käyttäytyminen</short>
+				<short xml:lang="fr">Comportement</short>
+				<short xml:lang="gl">Comportamento</short>
+				<short xml:lang="he">אופן</short>
+				<short xml:lang="hr">Ponašanje</short>
+				<short xml:lang="hu">Viselkedés</short>
+				<short xml:lang="it">Comportamento</short>
+				<short xml:lang="ja">動作</short>
+				<short xml:lang="ko">동작</short>
+				<short xml:lang="ms">Kelakuan</short>
+				<short xml:lang="nb">Oppførsel</short>
+				<short xml:lang="nds">Verhollen</short>
+				<short xml:lang="nl">Gedrag</short>
+				<short xml:lang="oc">Compòrtament</short>
+				<short xml:lang="pl">Zachowanie</short>
+				<short xml:lang="pt">Comportamento</short>
+				<short xml:lang="pt_BR">Comportamento</short>
+				<short xml:lang="ro">Comportament</short>
+				<short xml:lang="ru">Поведение</short>
+				<short xml:lang="sl">Obnašanje</short>
+				<short xml:lang="sq">Sjellja</short>
+				<short xml:lang="sr">Понашање</short>
+				<short xml:lang="sv">Beteende</short>
+				<short xml:lang="te">ప్రవర్తన</short>
+				<short xml:lang="tr">Davranış</short>
+				<short xml:lang="ug">قىلمىش</short>
+				<short xml:lang="uk">Поведінка</short>
+				<short xml:lang="vi">Hành vi</short>
+				<short xml:lang="zh_CN">特性</short>
+				<short xml:lang="zh_HK">特性</short>
+				<short xml:lang="zh_TW">特性</short>
+				<option type="match" name="match">
+					<short>Widget Windows</short>
+					<long>Windows that always should be treated as widgets</long>
+					<default/>
+				</option>
+				<option type="bool" name="end_on_click">
+					<short>End Widget Mode on Click</short>
+					<long>End widget mode when a non-widget window is clicked.</long>
+					<default>true</default>
+				</option>
+			</group>
+			<group>
+				<short>Appearance</short>
+				<short xml:lang="am">አቀራረብ</short>
+				<short xml:lang="ast">Aspeutu</short>
+				<short xml:lang="be">Вонкавы выгляд</short>
+				<short xml:lang="bg">Външен вид</short>
+				<short xml:lang="bs">Izgled</short>
+				<short xml:lang="cs">Vzhled</short>
+				<short xml:lang="da">Udseende</short>
+				<short xml:lang="de">Erscheinung</short>
+				<short xml:lang="el">Εμφάνιση</short>
+				<short xml:lang="en_AU">Appearance</short>
+				<short xml:lang="en_GB">Appearance</short>
+				<short xml:lang="es">Apariencia</short>
+				<short xml:lang="eu">Itxura</short>
+				<short xml:lang="fi">Ulkoasu</short>
+				<short xml:lang="fr">Apparence</short>
+				<short xml:lang="fy">Foarkommen</short>
+				<short xml:lang="gl">Aparencia</short>
+				<short xml:lang="he">מראה</short>
+				<short xml:lang="hr">Izgled</short>
+				<short xml:lang="hu">Megjelenés</short>
+				<short xml:lang="it">Aspetto</short>
+				<short xml:lang="ja">外観</short>
+				<short xml:lang="ko">모양</short>
+				<short xml:lang="ms">Penampilan</short>
+				<short xml:lang="my">ပုံပန်းသဏ္ဍာန်</short>
+				<short xml:lang="nb">Utseende</short>
+				<short xml:lang="nds">Utsehn</short>
+				<short xml:lang="nl">Uiterlijk</short>
+				<short xml:lang="oc">Aparéncia</short>
+				<short xml:lang="pl">Wygląd</short>
+				<short xml:lang="pt">Aparência</short>
+				<short xml:lang="pt_BR">Aparência</short>
+				<short xml:lang="ro">Aspect</short>
+				<short xml:lang="ru">Внешний вид</short>
+				<short xml:lang="sl">Videz</short>
+				<short xml:lang="sq">Pamja</short>
+				<short xml:lang="sr">Изглед</short>
+				<short xml:lang="sv">Utseende</short>
+				<short xml:lang="tr">Görünüm</short>
+				<short xml:lang="ug">كۆرۈنۈشى</short>
+				<short xml:lang="uk">Зовнішній вигляд</short>
+				<short xml:lang="vi">Diện mạo</short>
+				<short xml:lang="zh_CN">外观</short>
+				<short xml:lang="zh_HK">外觀</short>
+				<short xml:lang="zh_TW">外觀</short>
+				<option type="float" name="fade_time">
+					<short>Fade Time</short>
+					<short xml:lang="ast">Tiempu de dilíu</short>
+					<short xml:lang="be">Час затухання</short>
+					<short xml:lang="bg">Време за избледняване</short>
+					<short xml:lang="bs">Vrijeme iščezavanja</short>
+					<short xml:lang="ca">Temps d'esvaïment</short>
+					<short xml:lang="cs">Doba zprůhlednění</short>
+					<short xml:lang="de">Ausblendungszeit</short>
+					<short xml:lang="el">Χρόνος Ξεθωριάσματος</short>
+					<short xml:lang="en_AU">Fade Time</short>
+					<short xml:lang="en_GB">Fade Time</short>
+					<short xml:lang="es">Tiempo de desvanecimiento</short>
+					<short xml:lang="et">Hajumise aeg</short>
+					<short xml:lang="eu">Iraungitze denbora</short>
+					<short xml:lang="fi">Häivytysviive</short>
+					<short xml:lang="fr">Temps de Fondu</short>
+					<short xml:lang="gl">Tempo de esvaecemento</short>
+					<short xml:lang="gu">આછાપણાનો સમય</short>
+					<short xml:lang="he">משך עמעום</short>
+					<short xml:lang="hr">Vrijeme izblijeđivanja</short>
+					<short xml:lang="hu">Elhalványítási idő</short>
+					<short xml:lang="it">Tempo dissolvenza</short>
+					<short xml:lang="ja">フェード時間</short>
+					<short xml:lang="ko">페이드 시간</short>
+					<short xml:lang="ms">Masa Pudar</short>
+					<short xml:lang="nb">Uttoningstid</short>
+					<short xml:lang="nl">Vervagingstijdsduur</short>
+					<short xml:lang="oc">Durada de fondut</short>
+					<short xml:lang="or">ଫିକାହେବା ସମଯ</short>
+					<short xml:lang="pl">Czas przenikania</short>
+					<short xml:lang="pt">Tempo de Esmaecimento</short>
+					<short xml:lang="pt_BR">Tempo de desvanecimento</short>
+					<short xml:lang="ro">Durată estompare</short>
+					<short xml:lang="ru">Время исчезновения</short>
+					<short xml:lang="sk">Doba stmavnutia</short>
+					<short xml:lang="sl">Čas pojemanja</short>
+					<short xml:lang="sq">Ndrysho Kohën</short>
+					<short xml:lang="sr">Време ишчезавања</short>
+					<short xml:lang="sv">Toningstid</short>
+					<short xml:lang="tr">Solma Süresi</short>
+					<short xml:lang="ug">سۇسلاشتۇرۇش ۋاقتى</short>
+					<short xml:lang="uk">Час зникнення</short>
+					<short xml:lang="vi">Thời gian mờ/hiện dần</short>
+					<short xml:lang="zh_CN">渐隐时间</short>
+					<short xml:lang="zh_HK">淡入/淡出時間</short>
+					<short xml:lang="zh_TW">淡入/淡出時間</short>
+					<long>Time (in s) for fading into/out of the widget layer.</long>
+					<default>0.5</default>
+					<min>0</min>
+					<max>10</max>
+					<precision>0.1</precision>
+				</option>
+				<subgroup>
+					<short>Background in Widget Mode</short>
+					<option type="int" name="bg_brightness">
+						<short>Background Brightness</short>
+						<long>Brightness of non-widget windows in widget modes.</long>
+						<default>50</default>
+						<min>0</min>
+						<max>100</max>
+					</option>
+					<option type="int" name="bg_saturation">
+						<short>Background Saturation</short>
+						<short xml:lang="uk">Насиченість тла</short>
+						<long>Saturation of non-widget windows in widget modes.</long>
+						<default>100</default>
+						<min>0</min>
+						<max>100</max>
+					</option>
+				</subgroup>
+			</group>
+		</options>
+	</plugin>
+</compiz>

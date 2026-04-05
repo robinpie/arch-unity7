@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr/bin
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: libdecoration
+Description: Window decoration library
+Version: 0.9.14.2
+
+Requires: xrender >= 0.9.3
+Libs: -L/usr/lib -lXrender -lX11  -L${libdir} -ldecoration
+Cflags: -I/usr/include  -I${includedir}/compiz

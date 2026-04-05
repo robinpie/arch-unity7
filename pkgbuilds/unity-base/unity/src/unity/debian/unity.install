@@ -1,0 +1,14 @@
+etc/compizconfig
+etc/pam.d
+usr/bin/unity
+usr/lib/*/compiz/libunity*.so
+usr/lib/*/unity/unity-active-plugins-safety-check
+usr/lib/*/unity/compiz-config-profile-setter
+usr/lib/*/unity/compiz-profile-selector
+usr/lib/*/unity/*-prestart-check
+usr/lib/systemd/user/unity7.service
+usr/share/man/*/unity.1
+usr/share/compiz
+usr/share/compizconfig
+usr/share/locale
+usr/share/upstart/systemd-session/upstart/unity7.override

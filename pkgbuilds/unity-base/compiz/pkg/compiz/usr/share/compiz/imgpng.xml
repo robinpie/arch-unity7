@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin name="imgpng">
+	<short>PNG</short>
+	<short xml:lang="am">PNG</short>
+	<short xml:lang="bs">PNG</short>
+	<short xml:lang="da">PNG</short>
+	<short xml:lang="de">PNG</short>
+	<short xml:lang="el">PNG</short>
+	<short xml:lang="en_AU">PNG</short>
+	<short xml:lang="en_GB">PNG</short>
+	<short xml:lang="es">PNG</short>
+	<short xml:lang="fi">PNG</short>
+	<short xml:lang="fr">PNG</short>
+	<short xml:lang="gl">PNG</short>
+	<short xml:lang="hr">PNG</short>
+	<short xml:lang="it">PNG</short>
+	<short xml:lang="ko">PNG</short>
+	<short xml:lang="ms">PNG</short>
+	<short xml:lang="nl">PNG</short>
+	<short xml:lang="oc">PNG</short>
+	<short xml:lang="pl">PNG</short>
+	<short xml:lang="pt">PNG</short>
+	<short xml:lang="pt_BR">PNG</short>
+	<short xml:lang="ro">PNG</short>
+	<short xml:lang="ru">PNG</short>
+	<short xml:lang="sl">PNG</short>
+	<short xml:lang="sv">PNG</short>
+	<short xml:lang="tr">PNG</short>
+	<short xml:lang="ug">PNG</short>
+	<short xml:lang="uk">PNG</short>
+	<short xml:lang="zh_CN">PNG</short>
+	<long>PNG image loader</long>
+	<long xml:lang="am">PNG ምስል መጫኛ</long>
+	<long xml:lang="bs">PNG učitavanje slike</long>
+	<long xml:lang="cs">Načítač obrázků PNG</long>
+	<long xml:lang="de">Ladeprogramm für PNG-Bilder</long>
+	<long xml:lang="el">Φορτωτής εικόνων PNG</long>
+	<long xml:lang="en_AU">PNG image loader</long>
+	<long xml:lang="en_GB">PNG image loader</long>
+	<long xml:lang="es">Cargador de imágenes PNG</long>
+	<long xml:lang="fr">Chargeur d'image PNG</long>
+	<long xml:lang="gl">Cargador de imaxes PNG</long>
+	<long xml:lang="hr">Učitač PNG slika</long>
+	<long xml:lang="it">Caricatore immagini PNG</long>
+	<long xml:lang="ja">PNG画像ローダー</long>
+	<long xml:lang="ko">PNG 그림 불러오기 도구</long>
+	<long xml:lang="ms">Pemuat imej PNG</long>
+	<long xml:lang="nl">PNG-afbeeldingenlader</long>
+	<long xml:lang="oc">Cargador d'imatge PNG</long>
+	<long xml:lang="pt">Carregador e imagem PNG</long>
+	<long xml:lang="pt_BR">Carregador de imagem PNG</long>
+	<long xml:lang="ro">Încărcător imagine PNG</long>
+	<long xml:lang="ru">Загрузчик PNG изображений</long>
+	<long xml:lang="sl">Nalagalnik slik PNG</long>
+	<long xml:lang="sv">PNG-bildinläsare</long>
+	<long xml:lang="tr">PNG resim yükleyici</long>
+	<long xml:lang="ug">PNGسۈرەت قاچىلاش ماشىنىسى</long>
+	<long xml:lang="uk">завантажувач зображення PNG</long>
+	<long xml:lang="zh_CN">PNG 图像加载器</long>
+	<category>Image Loading</category>
+	<feature>imageext:png</feature>
+	<feature>imagemime:image/png</feature>
+	<deps>
+	    <relation type="after">
+		<plugin>composite</plugin>
+		<plugin>opengl</plugin>
+		<plugin>decor</plugin>
+	    </relation>
+	</deps>
+    </plugin>
+</compiz>

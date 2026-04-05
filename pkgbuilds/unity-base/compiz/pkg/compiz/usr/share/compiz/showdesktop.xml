@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+  <plugin useBcop="true" name="showdesktop">
+    <short>Show Desktop</short>
+    <short xml:lang="am">ዴስክቶፕ ማሳያ</short>
+    <short xml:lang="ast">Amosar Escritoriu</short>
+    <short xml:lang="be">Паказаць сталец</short>
+    <short xml:lang="bg">Покажи работния плот</short>
+    <short xml:lang="bs">Prikaži radnu površinu</short>
+    <short xml:lang="ca">Mostra l'escriptori</short>
+    <short xml:lang="cs">Zobrazit plochu</short>
+    <short xml:lang="da">Vis skrivebord</short>
+    <short xml:lang="de">Schreibtisch anzeigen</short>
+    <short xml:lang="el">Εμφάνιση Επιφάνειας Εργασίας</short>
+    <short xml:lang="en_AU">Show Desktop</short>
+    <short xml:lang="en_GB">Show Desktop</short>
+    <short xml:lang="es">Mostrar el escritorio</short>
+    <short xml:lang="eu">Ikus mahaigaina</short>
+    <short xml:lang="fi">Näytä työpöytä</short>
+    <short xml:lang="fr">Afficher le Bureau</short>
+    <short xml:lang="fy">Buroblêd sjen litte</short>
+    <short xml:lang="gl">Mostrar o escritorio</short>
+    <short xml:lang="gu">ડેસ્કટોપ બતાવો</short>
+    <short xml:lang="he">גלה שולחן עבודה</short>
+    <short xml:lang="hr">Prikaži radnu površinu</short>
+    <short xml:lang="hu">Munkaasztal megjelenítése</short>
+    <short xml:lang="it">Mostra scrivania</short>
+    <short xml:lang="ja">デスクトップの表示</short>
+    <short xml:lang="ko">데스크톱 보이기</short>
+    <short xml:lang="ms">Papar Desktop</short>
+    <short xml:lang="my">Desktop ကိုပြပါ။</short>
+    <short xml:lang="nb">Vis skrivebord</short>
+    <short xml:lang="nds">Schrievdisk opwiesen</short>
+    <short xml:lang="nl">Toon bureaublad</short>
+    <short xml:lang="oc">Afichar lo burèu</short>
+    <short xml:lang="or">ଡେସ୍କଟପ ଦେଖାଅ</short>
+    <short xml:lang="pl">Pokaż pulpit</short>
+    <short xml:lang="pt">Mostrar Área de Trabalho</short>
+    <short xml:lang="pt_BR">Mostrar Área de Trabalho</short>
+    <short xml:lang="ro">Afișare birou</short>
+    <short xml:lang="ru">Показать рабочий стол</short>
+    <short xml:lang="sk">Zobraziť Plochu</short>
+    <short xml:lang="sl">Prikaži namizje</short>
+    <short xml:lang="sq">Shfaq Hapësirën e Punës</short>
+    <short xml:lang="sr">Прикажи радну површ</short>
+    <short xml:lang="sv">Visa skrivbordet</short>
+    <short xml:lang="tr">Masaüstünü Göster</short>
+    <short xml:lang="ug">ئۈستەلئۈستىنى كۆرسەت</short>
+    <short xml:lang="uk">Показати стільницю</short>
+    <short xml:lang="vi">Hiện màn hình làm việc</short>
+    <short xml:lang="zh_CN">显示桌面</short>
+    <short xml:lang="zh_HK">顯示桌面</short>
+    <short xml:lang="zh_TW">顯示桌面</short>
+    <long>Access the desktop easily by using variable ways to move windows out of view</long>
+    <category>Desktop</category>
+    <feature>showdesktop</feature>
+    <deps>
+	<requirement>
+	    <plugin>opengl</plugin>
+	</requirement>
+	<relation type="after">
+	    <plugin>composite</plugin>
+	    <plugin>opengl</plugin>
+	    <plugin>fade</plugin>
+	    <plugin>decor</plugin>
+	    <plugin>unityshell</plugin>
+	</relation>
+    </deps>
+    <options>
+      <group>
+        <short>General</short>
+        <short xml:lang="da">Generelt</short>
+        <short xml:lang="uk">Загальне</short>
+        <option type="float" name="speed">
+          <short>Speed</short>
+          <short xml:lang="am">ፍጥነት</short>
+          <short xml:lang="ast">Velocidá</short>
+          <short xml:lang="be">Хуткасьць</short>
+          <short xml:lang="bg">Скорост</short>
+          <short xml:lang="bs">Brzina</short>
+          <short xml:lang="ca">Velocitat</short>
+          <short xml:lang="cs">Rychlost</short>
+          <short xml:lang="da">Hastighed</short>
+          <short xml:lang="de">Geschwindigkeit</short>
+          <short xml:lang="el">Ταχύτητα</short>
+          <short xml:lang="en_AU">Speed</short>
+          <short xml:lang="en_GB">Speed</short>
+          <short xml:lang="es">Velocidad</short>
+          <short xml:lang="eu">Abiadura</short>
+          <short xml:lang="fi">Nopeus</short>
+          <short xml:lang="fr">Vitesse</short>
+          <short xml:lang="gl">Velocidade</short>
+          <short xml:lang="gu">ઝડપ</short>
+          <short xml:lang="he">מהירות</short>
+          <short xml:lang="hr">Brzina</short>
+          <short xml:lang="hu">Sebesség</short>
+          <short xml:lang="id">Kecepatan</short>
+          <short xml:lang="it">Velocità</short>
+          <short xml:lang="ja">速度</short>
+          <short xml:lang="ko">속도</short>
+          <short xml:lang="ku">Lez</short>
+          <short xml:lang="ms">Kelajuan</short>
+          <short xml:lang="my">အလျင်</short>
+          <short xml:lang="nb">Hastighet</short>
+          <short xml:lang="nds">Gauheit</short>
+          <short xml:lang="nl">Snelheid</short>
+          <short xml:lang="oc">Velocitat</short>
+          <short xml:lang="or">ଗତି</short>
+          <short xml:lang="pl">Szybkość</short>
+          <short xml:lang="pt">Velocidade</short>
+          <short xml:lang="pt_BR">Velocidade</short>
+          <short xml:lang="ro">Viteză</short>
+          <short xml:lang="ru">Скорость</short>
+          <short xml:lang="sk">Rýchlosť</short>
+          <short xml:lang="sl">Hitrost</short>
+          <short xml:lang="sq">Shpejtësia</short>
+          <short xml:lang="sr">Брзина</short>
+          <short xml:lang="sv">Hastighet</short>
+          <short xml:lang="tr">Hız</short>
+          <short xml:lang="ug">سۈرئىتى</short>
+          <short xml:lang="uk">Швидкість</short>
+          <short xml:lang="vi">Tốc độ</short>
+          <short xml:lang="zh_CN">速度</short>
+          <short xml:lang="zh_HK">速度</short>
+          <short xml:lang="zh_TW">速度</short>
+          <long>The speed of the window movement.</long>
+          <default>1.2</default>
+          <min>0.1</min>
+          <max>50.0</max>
+          <precision>0.1</precision>
+        </option>
+        <option type="float" name="timestep">
+          <short>Timestep</short>
+          <short xml:lang="ast">Pasu</short>
+          <short xml:lang="be">সময়ধাপ</short>
+          <short xml:lang="bg">Времева стъпка</short>
+          <short xml:lang="bs">Korak vremena</short>
+          <short xml:lang="ca">Etapa</short>
+          <short xml:lang="cs">Časový krok</short>
+          <short xml:lang="da">Tidstrin</short>
+          <short xml:lang="de">Zeitintervall</short>
+          <short xml:lang="el">Χρονικό Βήμα</short>
+          <short xml:lang="en_AU">Timestep</short>
+          <short xml:lang="en_GB">Timestep</short>
+          <short xml:lang="es">Paso</short>
+          <short xml:lang="eu">denbora-pausoa</short>
+          <short xml:lang="fi">Aikaviive</short>
+          <short xml:lang="fr">Intervalle</short>
+          <short xml:lang="gl">Intervalo de tempo</short>
+          <short xml:lang="gu">સમયપગલું</short>
+          <short xml:lang="he">יחידת זמן</short>
+          <short xml:lang="hr">Vremenski korak</short>
+          <short xml:lang="hu">Időköz</short>
+          <short xml:lang="it">Intervallo</short>
+          <short xml:lang="ja">描画の時間刻み</short>
+          <short xml:lang="ko">시간 간격</short>
+          <short xml:lang="ms">Langkah Masa</short>
+          <short xml:lang="nb">Tidsskritt</short>
+          <short xml:lang="nl">Tijdstempel</short>
+          <short xml:lang="oc">Interval</short>
+          <short xml:lang="or">ସମଯସୋପାନ</short>
+          <short xml:lang="pl">Opóźnienie</short>
+          <short xml:lang="pt">Espaço de tempo</short>
+          <short xml:lang="pt_BR">Intervalo de tempo</short>
+          <short xml:lang="ro">Pas de timp</short>
+          <short xml:lang="ru">Шаг времени</short>
+          <short xml:lang="sk">Krok</short>
+          <short xml:lang="sl">Časovni interval</short>
+          <short xml:lang="sr">Корак времена</short>
+          <short xml:lang="sv">Tidsintervall</short>
+          <short xml:lang="tr">Süre aralığı</short>
+          <short xml:lang="ug">ۋاقىت قەدەم ئۇزۇنلۇقى</short>
+          <short xml:lang="uk">Крок часу</short>
+          <short xml:lang="vi">Bước</short>
+          <short xml:lang="zh_CN">时间步长</short>
+          <short xml:lang="zh_HK">時間間隔</short>
+          <short xml:lang="zh_TW">時間間隔</short>
+          <long>The timestep of the window movement.</long>
+          <default>0.1</default>
+          <min>0.1</min>
+          <max>50.0</max>
+          <precision>0.1</precision>
+        </option>
+        <option type="int" name="direction">
+          <short>Movement Direction</short>
+          <long>The direction in which the windows move.</long>
+		  <default>10</default>
+		  <min>0</min>
+		  <max>12</max>
+		  <desc>
+			  <value>0</value>
+			  <name>Up</name>
+			  <name xml:lang="uk">Угору</name>
+		  </desc>
+		  <desc>
+			  <value>1</value>
+			  <name>Down</name>
+			  <name xml:lang="uk">Униз</name>
+		  </desc>
+		  <desc>
+			  <value>2</value>
+			  <name>Left</name>
+			  <name xml:lang="uk">Ліворуч</name>
+		  </desc>
+		  <desc>
+			  <value>3</value>
+			  <name>Right</name>
+			  <name xml:lang="uk">Праворуч</name>
+		  </desc>
+		  <desc>
+			  <value>4</value>
+			  <name>Top Left Corner</name>
+			  <name xml:lang="uk">Верхній лівий кут</name>
+		  </desc>
+		  <desc>
+			  <value>5</value>
+			  <name>Bottom Left Corner</name>
+			  <name xml:lang="uk">Нижній лівий кут</name>
+		  </desc>
+		  <desc>
+			  <value>6</value>
+			  <name>Top Right Corner</name>
+			  <name xml:lang="uk">Верхній правий кут</name>
+		  </desc>
+		  <desc>
+			  <value>7</value>
+			  <name>Bottom Right Corner</name>
+			  <name xml:lang="uk">Нижній правий кут</name>
+		  </desc>
+		  <desc>
+			  <value>8</value>
+			  <name>Up/Down</name>
+		  </desc>
+		  <desc>
+			  <value>9</value>
+			  <name>Left/Right</name>
+			  <name xml:lang="uk">Вліво/Вправо</name>
+		  </desc>
+		  <desc>
+			  <value>10</value>
+			  <name>To Corners</name>
+		  </desc>
+		  <desc>
+			  <value>11</value>
+			  <name>Intelligent Random</name>
+		  </desc>
+		  <desc>
+			  <value>12</value>
+			  <name>Fully Random</name>
+		  </desc>
+        </option>
+        <option type="match" name="window_match">
+          <short>Window Types</short>
+          <short xml:lang="bg">Тип на прозореца</short>
+          <short xml:lang="es">Tipos de ventanas</short>
+          <short xml:lang="tr">Pencere Türleri</short>
+          <short xml:lang="uk">Типи вікон</short>
+          <long>Window types that should be moved out of sight when entering showdesktop-mode.</long>
+          <default>type=toolbar | type=utility | type=dialog | type=normal</default>
+        </option>
+	<option type="bool" name="skip_animation">
+          <short>Skip Animation</short>
+          <short xml:lang="bs">Preskoči animaciju</short>
+          <short xml:lang="de">Animation überspringen</short>
+          <short xml:lang="en_GB">Skip Animation</short>
+          <short xml:lang="es">Omitir animación</short>
+          <short xml:lang="gl">Saltar animación</short>
+          <short xml:lang="hr">Preskoči animaciju</short>
+          <short xml:lang="ko">애니메이션 건너뛰기</short>
+          <short xml:lang="ms">Langkau Animasi</short>
+          <short xml:lang="pt">Saltar animação</short>
+          <short xml:lang="sv">Hoppa över animering</short>
+          <short xml:lang="uk">Пропуск анімації</short>
+	  <long>Skips the showdesktop animation.</long>
+	  <default>false</default>
+	</option>
+      </group>
+      <group>
+        <short>Appearance</short>
+        <short xml:lang="am">አቀራረብ</short>
+        <short xml:lang="ast">Aspeutu</short>
+        <short xml:lang="be">Вонкавы выгляд</short>
+        <short xml:lang="bg">Външен вид</short>
+        <short xml:lang="bs">Izgled</short>
+        <short xml:lang="cs">Vzhled</short>
+        <short xml:lang="da">Udseende</short>
+        <short xml:lang="de">Erscheinung</short>
+        <short xml:lang="el">Εμφάνιση</short>
+        <short xml:lang="en_AU">Appearance</short>
+        <short xml:lang="en_GB">Appearance</short>
+        <short xml:lang="es">Apariencia</short>
+        <short xml:lang="eu">Itxura</short>
+        <short xml:lang="fi">Ulkoasu</short>
+        <short xml:lang="fr">Apparence</short>
+        <short xml:lang="fy">Foarkommen</short>
+        <short xml:lang="gl">Aparencia</short>
+        <short xml:lang="he">מראה</short>
+        <short xml:lang="hr">Izgled</short>
+        <short xml:lang="hu">Megjelenés</short>
+        <short xml:lang="it">Aspetto</short>
+        <short xml:lang="ja">外観</short>
+        <short xml:lang="ko">모양</short>
+        <short xml:lang="ms">Penampilan</short>
+        <short xml:lang="my">ပုံပန်းသဏ္ဍာန်</short>
+        <short xml:lang="nb">Utseende</short>
+        <short xml:lang="nds">Utsehn</short>
+        <short xml:lang="nl">Uiterlijk</short>
+        <short xml:lang="oc">Aparéncia</short>
+        <short xml:lang="pl">Wygląd</short>
+        <short xml:lang="pt">Aparência</short>
+        <short xml:lang="pt_BR">Aparência</short>
+        <short xml:lang="ro">Aspect</short>
+        <short xml:lang="ru">Внешний вид</short>
+        <short xml:lang="sl">Videz</short>
+        <short xml:lang="sq">Pamja</short>
+        <short xml:lang="sr">Изглед</short>
+        <short xml:lang="sv">Utseende</short>
+        <short xml:lang="tr">Görünüm</short>
+        <short xml:lang="ug">كۆرۈنۈشى</short>
+        <short xml:lang="uk">Зовнішній вигляд</short>
+        <short xml:lang="vi">Diện mạo</short>
+        <short xml:lang="zh_CN">外观</short>
+        <short xml:lang="zh_HK">外觀</short>
+        <short xml:lang="zh_TW">外觀</short>
+        <option type="float" name="window_opacity">
+          <short>Window Opacity</short>
+          <long>Windows will fade to this opacity when showdesktop'd.</long>
+          <default>0.3</default>
+          <min>0.1</min>
+          <max>1.0</max>
+          <precision>0.01</precision>
+        </option>
+        <option type="int" name="window_part_size">
+          <short>Window Part Size</short>
+          <long>The size of the window part that will remain on screen when showdesktop'd (in pixels).</long>
+          <default>20</default>
+          <min>0</min>
+          <max>300</max>
+        </option>
+      </group>
+    </options>
+  </plugin>
+</compiz>

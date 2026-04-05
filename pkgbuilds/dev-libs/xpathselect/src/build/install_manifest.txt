@@ -1,0 +1,5 @@
+/usr/lib/libxpathselect.so.1.4
+/usr/lib/libxpathselect.so
+/usr/include/xpathselect/node.h
+/usr/include/xpathselect/xpathselect.h
+/usr/lib/pkgconfig/xpathselect.pc

@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+	<plugin useBcop="true" name="shift">
+		<short>Shift Switcher</short>
+		<short xml:lang="da">Skiftskifter</short>
+		<short xml:lang="uk">Перемикач зміщення</short>
+		<long>Shift between open windows using a cover or flip mode</long>
+		<category>Window Management</category>
+		<deps>
+			<relation type="before">
+				<plugin>fade</plugin>
+				<plugin>obs</plugin>
+			</relation>
+			<relation type="after">
+				<plugin>composite</plugin>
+				<plugin>opengl</plugin>
+				<plugin>text</plugin>
+				<plugin>decor</plugin>
+			</relation>
+			<requirement>
+				<plugin>opengl</plugin>
+			</requirement>
+		</deps>
+		<options>
+			<group>
+				<short>Bindings</short>
+				<short xml:lang="ast">Lligadures</short>
+				<short xml:lang="be">Прывязваньні</short>
+				<short xml:lang="bg">Задължителни</short>
+				<short xml:lang="bs">Povezivanja</short>
+				<short xml:lang="cs">Klávesové zkratky</short>
+				<short xml:lang="da">Bindinger</short>
+				<short xml:lang="de">Tastenkombinationen</short>
+				<short xml:lang="el">Συνδυασμοί</short>
+				<short xml:lang="en_AU">Bindings</short>
+				<short xml:lang="en_GB">Bindings</short>
+				<short xml:lang="es">Vínculos</short>
+				<short xml:lang="eu">Laster-bideak</short>
+				<short xml:lang="fi">Pikanäppäimet</short>
+				<short xml:lang="fr">Assignations</short>
+				<short xml:lang="gl">Asociacións</short>
+				<short xml:lang="he">צירופים</short>
+				<short xml:lang="hr">Tipkovničke kratice</short>
+				<short xml:lang="hu">Gyorsbillentyűk</short>
+				<short xml:lang="it">Associazioni</short>
+				<short xml:lang="ja">割り当て</short>
+				<short xml:lang="ko">바로 가기</short>
+				<short xml:lang="ms">Pengikatan</short>
+				<short xml:lang="nl">Bindingen</short>
+				<short xml:lang="oc">Assignacions</short>
+				<short xml:lang="pl">Przyporządkowanie klawiszy</short>
+				<short xml:lang="pt">Atalhos</short>
+				<short xml:lang="pt_BR">Atalhos</short>
+				<short xml:lang="ro">Asocieri</short>
+				<short xml:lang="ru">Закрепление</short>
+				<short xml:lang="sl">Vezave</short>
+				<short xml:lang="sq">Bindings</short>
+				<short xml:lang="sr">Повезивања</short>
+				<short xml:lang="sv">Bindningar</short>
+				<short xml:lang="tr">Bağlayıcılar</short>
+				<short xml:lang="ug">باغلانمىلار</short>
+				<short xml:lang="uk">Закріплення</short>
+				<short xml:lang="vi">Gán</short>
+				<short xml:lang="zh_CN">绑定</short>
+				<short xml:lang="zh_HK">連結</short>
+				<short xml:lang="zh_TW">連結</short>
+				<option type="key" name="initiate_key">
+					<short>Initiate Key</short>
+					<long>Initiate the shift switcher view via keyboard shortcut.</long>
+					<default>&lt;Super&gt;&lt;Shift&gt;s</default>
+				</option>
+				<option type="button" name="initiate_button">
+					<short>Initiate Button</short>
+					<long>Initiate the shift switcher view via mouse button.</long>
+				</option>
+				<option type="edge" name="initiate_edge">
+					<short>Initiate Screen Corner / Edge</short>
+					<long>Initiate the shift switcher view via screen corner or edge.</long>
+				</option>
+				<option type="key" name="initiate_all_key">
+					<short>Initiate Key (All Workspaces)</short>
+					<long>Initiate the shift switcher view via keyboard shortcut, taking into account all windows on all workspaces.</long>
+				</option>
+				<option type="button" name="initiate_all_button">
+					<short>Initiate Button (All Workspaces)</short>
+					<long>Initiate the shift switcher view via mouse button, taking into account all windows on all workspaces.</long>
+				</option>
+				<option type="edge" name="initiate_all_edge">
+					<short>Initiate Screen Corner / Edge (All Workspaces)</short>
+					<long>Initiate the shift switcher view via screen corner or edge, taking into account all windows on all workspaces.</long>
+				</option>
+				<option type="key" name="next_key">
+					<short>Next Window Key</short>
+					<long>Reveals the shift switcher, if not visible and selects the next window on the current workspace. Release to switch focus to the selected window.</long>
+					<default>&lt;Super&gt;Tab</default>
+				</option>
+				<option type="button" name="next_button">
+					<short>Next Window Button</short>
+					<long>Reveals the shift switcher, if not visible and selects the next window on the current workspace. Release to switch focus to the selected window.</long>
+				</option>
+				<option type="key" name="prev_key">
+					<short>Previous Window Key</short>
+					<long>Reveals the shift switcher, if not visible and selects the previous window on the current workspace. Release to switch focus to the selected window.</long>
+					<default>&lt;Super&gt;&lt;Shift&gt;Tab</default>
+				</option>
+				<option type="button" name="prev_button">
+					<short>Previous Window Button</short>
+					<long>Reveals the shift switcher, if not visible and selects the previous window on the current workspace. Release to switch focus to the selected window.</long>
+				</option>
+				<option type="key" name="next_all_key">
+					<short>Next Window Key (All Workspaces)</short>
+					<long>Reveals the shift switcher, if not visible and selects the next window, taking into account all workspaces. Release to focus the selected window.</long>
+					<default>&lt;Super&gt;&lt;Alt&gt;Tab</default>
+				</option>
+				<option type="button" name="next_all_button">
+					<short>Next Window Button (All Workspaces)</short>
+					<long>Reveals the shift switcher, if not visible and selects the next window, taking into account all workspaces. Release to focus the selected window.</long>
+				</option>
+				<option type="key" name="prev_all_key">
+					<short>Previous Window Key (All Workspaces)</short>
+					<long>Reveals the shift switcher, if not visible and selects the previous window, taking into account all workspaces. Release to focus the selected window.</long>
+					<default>&lt;Super&gt;&lt;Shift&gt;&lt;Alt&gt;Tab</default>
+				</option>
+				<option type="button" name="prev_all_button">
+					<short>Previous Window Button (All Workspaces)</short>
+					<long>Reveals the shift switcher, if not visible and selects the previous window, taking into account all workspaces. Release to focus the selected window.</long>
+				</option>
+				<option type="key" name="next_group_key">
+					<short>Next Window Key (Group)</short>
+					<long>Reveals the shift switcher, if not visible and selects the next window of the currently selected application. Release to focus the selected window.</long>
+				</option>
+				<option type="button" name="next_group_button">
+					<short>Next Window Button (Group)</short>
+					<long>Reveals the shift switcher, if not visible and selects the next window of the currently selected application. Release to focus the selected window.</long>
+					<allowed key="true" button="true"/>
+					<default/>
+				</option>
+				<option type="key" name="prev_group_key">
+					<short>Previous Window Key (Group)</short>
+					<long>Reveals the shift switcher, if not visible and selects the previous window of the currently selected application. Release to focus the selected window.</long>
+				</option>
+				<option type="button" name="prev_group_button">
+					<short>Previous Window Button (Group)</short>
+					<long>Reveals the shift switcher, if not visible and selects the previous window of the currently selected application. Release to focus the selected window.</long>
+				</option>
+
+			</group>
+			<group>
+				<short>General Options</short>
+				<short xml:lang="af">Algemeen Opsies</short>
+				<short xml:lang="am">ባጠቃላይ ምርጫዎች</short>
+				<short xml:lang="ast">Opciones xenerales</short>
+				<short xml:lang="be">Агульныя настаўленьні</short>
+				<short xml:lang="bg">Общи настройки</short>
+				<short xml:lang="bn">সাধারণ বিকল্প</short>
+				<short xml:lang="bn_IN">সাধারণ বিকল্প</short>
+				<short xml:lang="bs">Opšta podešavanja</short>
+				<short xml:lang="ca">Opcions generals</short>
+				<short xml:lang="cs">Hlavní nastavení</short>
+				<short xml:lang="da">Generelle valgmuligheder</short>
+				<short xml:lang="de">Allgemeine Optionen</short>
+				<short xml:lang="el">Γενικές Επιλογές</short>
+				<short xml:lang="en_AU">General Options</short>
+				<short xml:lang="en_GB">General Options</short>
+				<short xml:lang="es">Opciones generales</short>
+				<short xml:lang="eu">Aukera orokorrak</short>
+				<short xml:lang="fi">Yleiset asetukset</short>
+				<short xml:lang="fr">Options générales</short>
+				<short xml:lang="fy">Algemiene opsjes</short>
+				<short xml:lang="gl">Opcións xerais</short>
+				<short xml:lang="gu">સામાન્ય વિકલ્પો</short>
+				<short xml:lang="he">אפשרויות כלליות</short>
+				<short xml:lang="hi">सामान्य विकल्प</short>
+				<short xml:lang="hr">Opće mogućnosti</short>
+				<short xml:lang="hu">Általános beállítások</short>
+				<short xml:lang="it">Opzioni generali</short>
+				<short xml:lang="ja">一般オプション</short>
+				<short xml:lang="km">​ជម្រើស​ទូទៅ</short>
+				<short xml:lang="ko">일반 옵션</short>
+				<short xml:lang="ku">Bijarteyên Giştî</short>
+				<short xml:lang="lv">Pamata iestatījumi</short>
+				<short xml:lang="ms">Pilihan Am</short>
+				<short xml:lang="nb">Generelle valg</short>
+				<short xml:lang="nds">Allgemeen Optschonen</short>
+				<short xml:lang="nl">Algemene opties</short>
+				<short xml:lang="oc">Opcions generalas</short>
+				<short xml:lang="or">ସାଧାରଣ ବିକଳ୍ପଗୁଡିକ</short>
+				<short xml:lang="pa">ਆਮ ਚੋਣਾਂ</short>
+				<short xml:lang="pl">Opcje Ogólne</short>
+				<short xml:lang="pt">Opções Gerais</short>
+				<short xml:lang="pt_BR">Opções gerais</short>
+				<short xml:lang="ro">Opțiuni generale</short>
+				<short xml:lang="ru">Общие настройки</short>
+				<short xml:lang="sk">Všeobecné nastavenia</short>
+				<short xml:lang="sl">Splošne možnosti</short>
+				<short xml:lang="sq">Opsione të Përgjithshme</short>
+				<short xml:lang="sr">Опште могућности</short>
+				<short xml:lang="sv">Allmänna alternativ</short>
+				<short xml:lang="te">సాధారణ ఐచ్ఛికాలు</short>
+				<short xml:lang="th">ตัวเลือกทั่วไป</short>
+				<short xml:lang="tr">Genel Seçenekler</short>
+				<short xml:lang="ug">ئادەتتىكى تاللانمىلار</short>
+				<short xml:lang="uk">Загальні Налаштування</short>
+				<short xml:lang="vi">Tuỳ chọn chung</short>
+				<short xml:lang="zh_CN">常规选项</short>
+				<short xml:lang="zh_HK">通用選項</short>
+				<short xml:lang="zh_TW">通用選項</short>
+				<option type="match" name="window_match">
+					<short>Shift Windows</short>
+					<long>Windows that should be shown in the shift switcher.</long>
+					<default>Normal | Dialog | ModalDialog | Utility | Unknown</default>
+				</option>
+				<option type="bool" name="minimized">
+					<short>Show Minimized</short>
+					<short xml:lang="uk">Показувати згорнуті</short>
+					<long>Show windows that are minimized, shaded or in show desktop mode.</long>
+					<long xml:lang="uk">Показувати згорнуті та затемнені вікна або вікна показувані на стільниці.</long>
+					<default>true</default>
+				</option>
+				<option type="float" name="speed">
+					<short>Fade Speed</short>
+					<short xml:lang="ast">Velocidá de dilíu</short>
+					<short xml:lang="be">Хуткасьць затуханьня</short>
+					<short xml:lang="bg">Скорост на избледняване</short>
+					<short xml:lang="bs">Brzina zamračenja</short>
+					<short xml:lang="ca">Velocitat d'esvaïment</short>
+					<short xml:lang="cs">Rychlost blednutí</short>
+					<short xml:lang="da">Fadehastighed</short>
+					<short xml:lang="de">Ausblendgeschwindigkeit</short>
+					<short xml:lang="el">Ταχύτητα Ξεθωριάσματος</short>
+					<short xml:lang="en_AU">Fade Speed</short>
+					<short xml:lang="en_GB">Fade Speed</short>
+					<short xml:lang="es">Velocidad de desvanecimiento</short>
+					<short xml:lang="et">Hajumise kiirus</short>
+					<short xml:lang="eu">Iraungitze abiadura</short>
+					<short xml:lang="fi">Häivytyksen nopeus</short>
+					<short xml:lang="fr">Vitesse de fondu</short>
+					<short xml:lang="gl">Velocidade de esvaecemento</short>
+					<short xml:lang="gu">આછાપણાની ઝડપ</short>
+					<short xml:lang="he">מהירות עמעום</short>
+					<short xml:lang="hr">Brzina izblijeđivanja</short>
+					<short xml:lang="hu">Elhalványulás sebessége</short>
+					<short xml:lang="id">Kecepatan Pudar</short>
+					<short xml:lang="it">Velocità dissolvenza</short>
+					<short xml:lang="ja">フェード速度</short>
+					<short xml:lang="ko">페이드 속도</short>
+					<short xml:lang="ms">Kelajuan Pudar</short>
+					<short xml:lang="nb">Toningshastighet</short>
+					<short xml:lang="nl">Vervagingssnelheid</short>
+					<short xml:lang="oc">Velocitat de fondut</short>
+					<short xml:lang="or">ଫିକାହେବା ଗତି</short>
+					<short xml:lang="pl">Szybkość rozjaśniania /ściemniania</short>
+					<short xml:lang="pt">Velocidade de Esmaecimento</short>
+					<short xml:lang="pt_BR">Velocidade de Esmaecimento</short>
+					<short xml:lang="ro">Viteză decolorare</short>
+					<short xml:lang="ru">Скорость затенения</short>
+					<short xml:lang="sk">Rýchlosť stmievania</short>
+					<short xml:lang="sl">Hitrost pojemanja</short>
+					<short xml:lang="sr">Брзина ишчезавања</short>
+					<short xml:lang="sv">Toningshastighet</short>
+					<short xml:lang="tr">Solma Hızı</short>
+					<short xml:lang="ug">تەدرىجىي تىزلىتىش</short>
+					<short xml:lang="uk">Швидкість знебарвлювання</short>
+					<short xml:lang="vi">Tốc độ mờ/hiện dần</short>
+					<short xml:lang="zh_CN">渐隐速度</short>
+					<short xml:lang="zh_HK">淡入/淡出速度</short>
+					<short xml:lang="zh_TW">淡入/淡出速度</short>
+					<long>Fade in/out speed (in seconds).</long>
+					<default>1.5</default>
+					<min>0.1</min>
+					<max>10.0</max>
+					<precision>0.1</precision>
+				</option>
+				<option type="float" name="shift_speed">
+					<short>Shift Speed</short>
+					<long>Shift switcher animation speed.</long>
+					<default>1.0</default>
+					<min>0.1</min>
+					<max>5.0</max>
+					<precision>0.01</precision>
+				</option>
+				<option type="float" name="timestep">
+					<short>Timestep</short>
+					<short xml:lang="ast">Pasu</short>
+					<short xml:lang="be">সময়ধাপ</short>
+					<short xml:lang="bg">Времева стъпка</short>
+					<short xml:lang="bs">Korak vremena</short>
+					<short xml:lang="ca">Etapa</short>
+					<short xml:lang="cs">Časový krok</short>
+					<short xml:lang="da">Tidstrin</short>
+					<short xml:lang="de">Zeitintervall</short>
+					<short xml:lang="el">Χρονικό Βήμα</short>
+					<short xml:lang="en_AU">Timestep</short>
+					<short xml:lang="en_GB">Timestep</short>
+					<short xml:lang="es">Paso</short>
+					<short xml:lang="eu">denbora-pausoa</short>
+					<short xml:lang="fi">Aikaviive</short>
+					<short xml:lang="fr">Intervalle</short>
+					<short xml:lang="gl">Intervalo de tempo</short>
+					<short xml:lang="gu">સમયપગલું</short>
+					<short xml:lang="he">יחידת זמן</short>
+					<short xml:lang="hr">Vremenski korak</short>
+					<short xml:lang="hu">Időköz</short>
+					<short xml:lang="it">Intervallo</short>
+					<short xml:lang="ja">描画の時間刻み</short>
+					<short xml:lang="ko">시간 간격</short>
+					<short xml:lang="ms">Langkah Masa</short>
+					<short xml:lang="nb">Tidsskritt</short>
+					<short xml:lang="nl">Tijdstempel</short>
+					<short xml:lang="oc">Interval</short>
+					<short xml:lang="or">ସମଯସୋପାନ</short>
+					<short xml:lang="pl">Opóźnienie</short>
+					<short xml:lang="pt">Espaço de tempo</short>
+					<short xml:lang="pt_BR">Intervalo de tempo</short>
+					<short xml:lang="ro">Pas de timp</short>
+					<short xml:lang="ru">Шаг времени</short>
+					<short xml:lang="sk">Krok</short>
+					<short xml:lang="sl">Časovni interval</short>
+					<short xml:lang="sr">Корак времена</short>
+					<short xml:lang="sv">Tidsintervall</short>
+					<short xml:lang="tr">Süre aralığı</short>
+					<short xml:lang="ug">ۋاقىت قەدەم ئۇزۇنلۇقى</short>
+					<short xml:lang="uk">Крок часу</short>
+					<short xml:lang="vi">Bước</short>
+					<short xml:lang="zh_CN">时间步长</short>
+					<short xml:lang="zh_HK">時間間隔</short>
+					<short xml:lang="zh_TW">時間間隔</short>
+					<long>Shift switcher timestep.</long>
+					<default>1.2</default>
+					<min>0.1</min>
+					<max>50.0</max>
+					<precision>0.1</precision>
+				</option>
+				<subgroup>
+					<short>Mouse Settings</short>
+					<short xml:lang="uk">Параметри миші</short>
+					<option type="float" name="mouse_speed">
+						<short>Mouse Speed</short>
+						<short xml:lang="uk">Швидкість миші</short>
+						<long>Mouse movement speed.</long>
+						<long xml:lang="uk">Швидкість руху миші.</long>
+						<default>10.0</default>
+						<min>0.1</min>
+						<max>50.0</max>
+						<precision>0.1</precision>
+					</option>
+					<option type="int" name="click_duration">
+						<short>Click Duration</short>
+						<long>Maximum click duration (in milliseconds).</long>
+						<default>500</default>
+						<min>10</min>
+						<max>2000</max>
+					</option>
+				</subgroup>
+			</group>
+			<group>
+				<short>Appearance</short>
+				<short xml:lang="am">አቀራረብ</short>
+				<short xml:lang="ast">Aspeutu</short>
+				<short xml:lang="be">Вонкавы выгляд</short>
+				<short xml:lang="bg">Външен вид</short>
+				<short xml:lang="bs">Izgled</short>
+				<short xml:lang="cs">Vzhled</short>
+				<short xml:lang="da">Udseende</short>
+				<short xml:lang="de">Erscheinung</short>
+				<short xml:lang="el">Εμφάνιση</short>
+				<short xml:lang="en_AU">Appearance</short>
+				<short xml:lang="en_GB">Appearance</short>
+				<short xml:lang="es">Apariencia</short>
+				<short xml:lang="eu">Itxura</short>
+				<short xml:lang="fi">Ulkoasu</short>
+				<short xml:lang="fr">Apparence</short>
+				<short xml:lang="fy">Foarkommen</short>
+				<short xml:lang="gl">Aparencia</short>
+				<short xml:lang="he">מראה</short>
+				<short xml:lang="hr">Izgled</short>
+				<short xml:lang="hu">Megjelenés</short>
+				<short xml:lang="it">Aspetto</short>
+				<short xml:lang="ja">外観</short>
+				<short xml:lang="ko">모양</short>
+				<short xml:lang="ms">Penampilan</short>
+				<short xml:lang="my">ပုံပန်းသဏ္ဍာန်</short>
+				<short xml:lang="nb">Utseende</short>
+				<short xml:lang="nds">Utsehn</short>
+				<short xml:lang="nl">Uiterlijk</short>
+				<short xml:lang="oc">Aparéncia</short>
+				<short xml:lang="pl">Wygląd</short>
+				<short xml:lang="pt">Aparência</short>
+				<short xml:lang="pt_BR">Aparência</short>
+				<short xml:lang="ro">Aspect</short>
+				<short xml:lang="ru">Внешний вид</short>
+				<short xml:lang="sl">Videz</short>
+				<short xml:lang="sq">Pamja</short>
+				<short xml:lang="sr">Изглед</short>
+				<short xml:lang="sv">Utseende</short>
+				<short xml:lang="tr">Görünüm</short>
+				<short xml:lang="ug">كۆرۈنۈشى</short>
+				<short xml:lang="uk">Зовнішній вигляд</short>
+				<short xml:lang="vi">Diện mạo</short>
+				<short xml:lang="zh_CN">外观</short>
+				<short xml:lang="zh_HK">外觀</short>
+				<short xml:lang="zh_TW">外觀</short>
+				<option type="int" name="size">
+					<short>Maximum Window Size</short>
+					<short xml:lang="uk">Щонайбільший розмір вікна</short>
+					<long>Maximum window size (in percent of the screen width).</long>
+					<default>50</default>
+					<min>1</min>
+					<max>100</max>
+				</option>
+				<option type="float" name="background_intensity">
+					<short>Background Intensity</short>
+					<short xml:lang="uk">Інтенсивність тла</short>
+					<long>The intensity of the background.</long>
+					<long xml:lang="uk">Інтенсивність тла</long>
+					<default>0.5</default>
+					<min>0.0</min>
+					<max>1.0</max>
+					<precision>0.01</precision>
+				</option>
+				<option type="bool" name="hide_all">
+					<short>Hide Non-Desktop Windows</short>
+					<long>Hide all non Desktop windows during switching.</long>
+					<default>false</default>
+				</option>
+				<subgroup>
+					<short>Reflection Settings</short>
+					<option type="bool" name="reflection">
+						<short>Reflection</short>
+						<short xml:lang="uk">Віддзеркалення</short>
+						<long>Render a reflection of shifted windows on the ground.</long>
+						<default>true</default>
+					</option>
+					<option type="color" name="ground_color1">
+						<short>Ground Color (near)</short>
+						<short xml:lang="uk">Колір основи (близько).</short>
+						<long>Color and opacity of the ground (near).</long>
+						<default>
+							<red>0xb333</red>
+							<green>0xb333</green>
+							<blue>0xb333</blue>
+							<alpha>0xcccc</alpha>
+						</default>
+					</option>
+					<option type="color" name="ground_color2">
+						<short>Ground Color (far)</short>
+						<short xml:lang="uk">Колір основи (далеко)</short>
+						<long>Color and opacity of the ground (far).</long>
+						<default>
+							<red>0xb333</red>
+							<green>0xb333</green>
+							<blue>0xb333</blue>
+							<alpha>0x0000</alpha>
+						</default>
+					</option>
+					<option type="float" name="ground_size">
+						<short>Reflection Ground Size</short>
+						<long>Size of the ground the reflection is rendered on.</long>
+						<default>0.5</default>
+						<min>0.0</min>
+						<max>1.0</max>
+						<precision>0.01</precision>
+					</option>
+					<option type="float" name="intensity">
+						<short>Intensity</short>
+						<short xml:lang="uk">Інтенсивність</short>
+						<long>The intensity of the reflection.</long>
+						<long xml:lang="uk">Інтенсивність відзеркалення.</long>
+						<default>0.4</default>
+						<min>0.0</min>
+						<max>1.0</max>
+						<precision>0.01</precision>
+					</option>
+				</subgroup>
+				<option type="int" name="overlay_icon">
+					<short>Overlay Icon</short>
+					<short xml:lang="ast">Superponer iconu</short>
+					<short xml:lang="be">ওভারলে চিত্রসংকেত</short>
+					<short xml:lang="bg">Икона за припокриване</short>
+					<short xml:lang="bn">ওভারলে চিত্রসংকেত</short>
+					<short xml:lang="bn_IN">ওভারলে চিত্রসংকেত</short>
+					<short xml:lang="bs">Ikona preklapanja</short>
+					<short xml:lang="ca">Superposa la icona</short>
+					<short xml:lang="cs">Překrýt ikonou</short>
+					<short xml:lang="da">Overlægningsikon</short>
+					<short xml:lang="de">Symbol überlagern</short>
+					<short xml:lang="el">Επίστρωση Εικονιδίου</short>
+					<short xml:lang="en_AU">Overlay Icon</short>
+					<short xml:lang="en_GB">Overlay Icon</short>
+					<short xml:lang="es">Superponer icono</short>
+					<short xml:lang="eu">Gainjarri Ikonoa</short>
+					<short xml:lang="fi">Aseta kuvake päälle</short>
+					<short xml:lang="fr">Icônes superposées</short>
+					<short xml:lang="gl">Sobrepoñer icona</short>
+					<short xml:lang="gu">ઓવરલે ચિહ્ન</short>
+					<short xml:lang="he">צלמית מודבקת</short>
+					<short xml:lang="hi">प्रतीक ढ़कें</short>
+					<short xml:lang="hr">Ikona prekrivanja</short>
+					<short xml:lang="hu">Átfedő ikon</short>
+					<short xml:lang="it">Icona di sovrapposizione</short>
+					<short xml:lang="ja">重ね表示アイコン</short>
+					<short xml:lang="ko">아이콘 덧붙이기</short>
+					<short xml:lang="ms">Tindinan Atas Ikon</short>
+					<short xml:lang="nb">Ikon for overlapp</short>
+					<short xml:lang="nl">Overlay icoon</short>
+					<short xml:lang="oc">Superpausar l'icòna</short>
+					<short xml:lang="or">ବିସ୍ତୃତକରିବା ଆଇକନ</short>
+					<short xml:lang="pa">ਓਵਰਲੇ ਆਈਕਾਨ</short>
+					<short xml:lang="pl">Ikona okna</short>
+					<short xml:lang="pt">Ícone de Instalação Sobreposta</short>
+					<short xml:lang="pt_BR">Ícone de sobreposição</short>
+					<short xml:lang="ro">Pictogramă suprapusă</short>
+					<short xml:lang="ru">Наложить значок</short>
+					<short xml:lang="sk">Prekladať ikonou</short>
+					<short xml:lang="sl">Prekrij z ikono</short>
+					<short xml:lang="sr">Икона прекривања</short>
+					<short xml:lang="sv">Lägg ikoner över</short>
+					<short xml:lang="tr">Örtülü Durum Simgesi</short>
+					<short xml:lang="ug">سىنبەلگە دەستىلە</short>
+					<short xml:lang="uk">Накласти піктограму</short>
+					<short xml:lang="vi">Biểu tượng</short>
+					<short xml:lang="zh_CN">覆盖图标</short>
+					<short xml:lang="zh_HK">覆蓋圖示</short>
+					<short xml:lang="zh_TW">覆蓋圖示</short>
+					<long>The type of icon overlay to draw on windows in the shift switcher.</long>
+					<default>1</default>
+					<min>0</min>
+					<max>2</max>
+					<desc>
+						<value>0</value>
+						<name>None</name>
+						<name xml:lang="ace">Hana</name>
+						<name xml:lang="am">ምንም</name>
+						<name xml:lang="ar">بدون</name>
+						<name xml:lang="ast">Dengún</name>
+						<name xml:lang="be">Нічога</name>
+						<name xml:lang="bg">Без избор</name>
+						<name xml:lang="bn">কিছু না</name>
+						<name xml:lang="bn_IN">কিছু না</name>
+						<name xml:lang="br">Netra</name>
+						<name xml:lang="bs">Nijedno</name>
+						<name xml:lang="ca">Cap</name>
+						<name xml:lang="cs">Nic</name>
+						<name xml:lang="da">Ingen</name>
+						<name xml:lang="de">Keine</name>
+						<name xml:lang="el">Κανένα</name>
+						<name xml:lang="en_AU">None</name>
+						<name xml:lang="en_GB">None</name>
+						<name xml:lang="eo">Nenio</name>
+						<name xml:lang="es">Ninguno</name>
+						<name xml:lang="et">Puudub</name>
+						<name xml:lang="eu">Bat ere ez</name>
+						<name xml:lang="fi">Ei mitään</name>
+						<name xml:lang="fr">Aucune</name>
+						<name xml:lang="fy">Gjin</name>
+						<name xml:lang="gl">Ningunha</name>
+						<name xml:lang="gu">કંઈ નહિં</name>
+						<name xml:lang="he">ללא</name>
+						<name xml:lang="hi">कुछ नहीं</name>
+						<name xml:lang="hr">Nijedna</name>
+						<name xml:lang="hu">Egyik sem</name>
+						<name xml:lang="it">Niente</name>
+						<name xml:lang="ja">なし</name>
+						<name xml:lang="kab">Ulac</name>
+						<name xml:lang="km">គ្មាន</name>
+						<name xml:lang="kn">ಯಾವುದೂ ಇಲ್ಲ</name>
+						<name xml:lang="ko">없음</name>
+						<name xml:lang="ku">Ne yek</name>
+						<name xml:lang="lt">Nieko</name>
+						<name xml:lang="ml">ഒന്നുമില്ല</name>
+						<name xml:lang="ms">Tiada</name>
+						<name xml:lang="nb">Ingen</name>
+						<name xml:lang="nds">Keen</name>
+						<name xml:lang="nl">Geen</name>
+						<name xml:lang="oc">Pas cap</name>
+						<name xml:lang="or">କିଛିନାହିଁ</name>
+						<name xml:lang="pa">ਕੋਈ ਨਹੀਂ</name>
+						<name xml:lang="pl">Brak</name>
+						<name xml:lang="pt">Nenhum</name>
+						<name xml:lang="pt_BR">Nenhum</name>
+						<name xml:lang="ro">Nespecificat</name>
+						<name xml:lang="ru">Никакой</name>
+						<name xml:lang="si">කිසිවෙක් නැත</name>
+						<name xml:lang="sk">Žiadna</name>
+						<name xml:lang="sl">brez izbire</name>
+						<name xml:lang="sq">Asnjë</name>
+						<name xml:lang="sr">Nema</name>
+						<name xml:lang="sv">Ingen</name>
+						<name xml:lang="te">ఏదీకాదు</name>
+						<name xml:lang="th">ไม่มี</name>
+						<name xml:lang="tr">Hiçbiri</name>
+						<name xml:lang="ug">يوق</name>
+						<name xml:lang="uk">Ніякий</name>
+						<name xml:lang="vi">Không chọn</name>
+						<name xml:lang="zh_CN">无</name>
+						<name xml:lang="zh_HK">無</name>
+						<name xml:lang="zh_TW">無</name>
+					</desc>
+					<desc>
+						<value>1</value>
+						<name>Emblem</name>
+						<name xml:lang="ast">Emblema</name>
+						<name xml:lang="be">Эмблема</name>
+						<name xml:lang="bg">Емблема</name>
+						<name xml:lang="bn">প্রতীক</name>
+						<name xml:lang="bn_IN">প্রতীক</name>
+						<name xml:lang="bs">Amblem</name>
+						<name xml:lang="ca">Distintiu</name>
+						<name xml:lang="cs">Symbol</name>
+						<name xml:lang="da">Emblem</name>
+						<name xml:lang="de">Emblem</name>
+						<name xml:lang="el">Έμβλημα</name>
+						<name xml:lang="en_AU">Emblem</name>
+						<name xml:lang="en_GB">Emblem</name>
+						<name xml:lang="es">Emblema</name>
+						<name xml:lang="eu">Ikurra</name>
+						<name xml:lang="fi">Tunnus</name>
+						<name xml:lang="fr">Vignettes</name>
+						<name xml:lang="gl">Emblema</name>
+						<name xml:lang="gu">સંજ્ઞા</name>
+						<name xml:lang="he">סמלון</name>
+						<name xml:lang="hi">प्रतीक</name>
+						<name xml:lang="hr">Obilježje</name>
+						<name xml:lang="hu">Embléma</name>
+						<name xml:lang="it">Simbolo</name>
+						<name xml:lang="ja">エンブレム</name>
+						<name xml:lang="ko">아이콘</name>
+						<name xml:lang="ms">Lambang</name>
+						<name xml:lang="nb">Logo</name>
+						<name xml:lang="nl">Embleem</name>
+						<name xml:lang="oc">Emblèma</name>
+						<name xml:lang="or">ଚିହ୍ନ</name>
+						<name xml:lang="pa">ਨਿਸ਼ਾਨ</name>
+						<name xml:lang="pl">Emblemat</name>
+						<name xml:lang="pt">Emblema</name>
+						<name xml:lang="pt_BR">Emblema</name>
+						<name xml:lang="ro">Emblemă</name>
+						<name xml:lang="ru">Эмблема</name>
+						<name xml:lang="sk">Emblém</name>
+						<name xml:lang="sl">Znak</name>
+						<name xml:lang="sr">Амблем</name>
+						<name xml:lang="sv">Emblem</name>
+						<name xml:lang="tr">Simge</name>
+						<name xml:lang="ug">كاكار</name>
+						<name xml:lang="uk">Емблема</name>
+						<name xml:lang="vi">Tượng trưng</name>
+						<name xml:lang="zh_CN">标志</name>
+						<name xml:lang="zh_HK">象徵</name>
+						<name xml:lang="zh_TW">象徵</name>
+					</desc>
+					<desc>
+						<value>2</value>
+						<name>Big</name>
+						<name xml:lang="am">ትልቅ</name>
+						<name xml:lang="ast">Grande</name>
+						<name xml:lang="be">বড়</name>
+						<name xml:lang="bg">Голяма</name>
+						<name xml:lang="bn">বড়</name>
+						<name xml:lang="bn_IN">বড়</name>
+						<name xml:lang="bs">Veliki</name>
+						<name xml:lang="ca">Gran</name>
+						<name xml:lang="cs">Velká</name>
+						<name xml:lang="da">Stor</name>
+						<name xml:lang="de">Groß</name>
+						<name xml:lang="el">Μεγάλο</name>
+						<name xml:lang="en_AU">Big</name>
+						<name xml:lang="en_GB">Big</name>
+						<name xml:lang="es">Grande</name>
+						<name xml:lang="et">Suur</name>
+						<name xml:lang="eu">Handia</name>
+						<name xml:lang="fi">Suuri</name>
+						<name xml:lang="fr">Grandes</name>
+						<name xml:lang="gl">Grande</name>
+						<name xml:lang="gu">મોટું</name>
+						<name xml:lang="he">גדול</name>
+						<name xml:lang="hi">बड़ा</name>
+						<name xml:lang="hr">Velika</name>
+						<name xml:lang="hu">Nagy</name>
+						<name xml:lang="it">Grande</name>
+						<name xml:lang="ja">大きい</name>
+						<name xml:lang="km">ធំ</name>
+						<name xml:lang="ko">크게</name>
+						<name xml:lang="ku">Mezin</name>
+						<name xml:lang="lt">Didelis</name>
+						<name xml:lang="ms">Besar</name>
+						<name xml:lang="nb">Stor</name>
+						<name xml:lang="nl">Groot</name>
+						<name xml:lang="oc">Grand</name>
+						<name xml:lang="or">ବଡ</name>
+						<name xml:lang="pa">ਵੱਡਾ</name>
+						<name xml:lang="pl">Duży</name>
+						<name xml:lang="pt">Grande</name>
+						<name xml:lang="pt_BR">Grande</name>
+						<name xml:lang="ro">Mare</name>
+						<name xml:lang="ru">Большой</name>
+						<name xml:lang="sk">Veľký</name>
+						<name xml:lang="sl">Velik</name>
+						<name xml:lang="sq">E Madhe</name>
+						<name xml:lang="sr">Велика</name>
+						<name xml:lang="sv">Stor</name>
+						<name xml:lang="tr">Büyük</name>
+						<name xml:lang="ug">چوڭ</name>
+						<name xml:lang="uk">Великий</name>
+						<name xml:lang="vi">Lớn</name>
+						<name xml:lang="zh_CN">大</name>
+						<name xml:lang="zh_HK">大</name>
+						<name xml:lang="zh_TW">大</name>
+					</desc>
+				</option>
+				<option type="bool" name="mipmaps">
+					<short>Mipmaps</short>
+					<short xml:lang="uk">Міпмапи</short>
+					<long>Generate mipmaps for higher quality scaling.</long>
+					<long xml:lang="bs">Genrisanje mip mapa za kvalitetnije skaliranje.</long>
+					<long xml:lang="cs">Generování mipmap pro kvalitnější škálování.</long>
+					<long xml:lang="de">Mipmaps für bessere Skalierungsqualität erstellen.</long>
+					<long xml:lang="en_AU">Generate mipmaps for higher quality scaling.</long>
+					<long xml:lang="en_GB">Generate mipmaps for higher quality scaling.</long>
+					<long xml:lang="es">Generar mipmaps para una mayor calidad del escalado.</long>
+					<long xml:lang="fr">Générer des mipmaps pour une mise à l'échelle de plus grande qualité.</long>
+					<long xml:lang="gl">Xerar mapas de imaxes para un escalado de mellor calidade</long>
+					<long xml:lang="hr">Generiraj minimape za više kvalitetno razmjeravanje.</long>
+					<long xml:lang="it">Genera mipmap per una migliore qualità nel ridimensionamento.</long>
+					<long xml:lang="ko">밉맵을 만들어 보다 높은 품질로 크기를 조정합니다.</long>
+					<long xml:lang="ms">Jana peta mip untuk penskalaan kualiti yang lebih tinggi.</long>
+					<long xml:lang="nl">Mipmaps genereren voor een hogere opschaalkwaliteit</long>
+					<long xml:lang="pt">Gera 'mipmaps' para escala de alta qualidade</long>
+					<long xml:lang="ru">Использовать MIP-текстурирование для повышения качества масштабирования.</long>
+					<long xml:lang="sl">Ustvari podporne slike za kvalitetnejšo povečavo.</long>
+					<long xml:lang="sv">Skapa mipmaps för skalning med bättre kvalitet.</long>
+					<long xml:lang="uk">Використовувати MIP-текстурування для підвищення якости масштабування.</long>
+					<long xml:lang="zh_CN">生成可进行高品质缩放的贴图。</long>
+					<default>false</default>
+				</option>
+				<option type="int" name="multioutput_mode">
+					<short>Multi Output Mode</short>
+					<short xml:lang="ast">Mou multi salida</short>
+					<short xml:lang="be">বিবিধ আউটপুট প্রণালী</short>
+					<short xml:lang="bg">Многоизходен режим</short>
+					<short xml:lang="bn">বিবিধ আউটপুট প্রণালী</short>
+					<short xml:lang="bn_IN">বিবিধ আউটপুট প্রণালী</short>
+					<short xml:lang="bs">Mod više izlaza</short>
+					<short xml:lang="ca">Mode de sortida múltiple</short>
+					<short xml:lang="cs">Režim více výstupů</short>
+					<short xml:lang="de">Modus für Mehrfachausgabe</short>
+					<short xml:lang="el">Kατάσταση Πολλαπλών Οθονών</short>
+					<short xml:lang="en_AU">Multi Output Mode</short>
+					<short xml:lang="en_GB">Multi Output Mode</short>
+					<short xml:lang="es">Modo de multi salidas</short>
+					<short xml:lang="eu">Irteera anitzeko modua</short>
+					<short xml:lang="fi">Useita ulostuloja</short>
+					<short xml:lang="fr">Mode de sorties multiples</short>
+					<short xml:lang="gl">Modo de saídas múltiples</short>
+					<short xml:lang="gu">વિવિધ આઉટપુટ સ્થિતિ</short>
+					<short xml:lang="he">מצב פלט מרובה</short>
+					<short xml:lang="hi">मल्टी आउटपुट प्रकार</short>
+					<short xml:lang="hr">Više izlazni način</short>
+					<short xml:lang="hu">Többkimenetes üzemmód</short>
+					<short xml:lang="it">Modalità multi-output</short>
+					<short xml:lang="ja">マルチ出力の形式</short>
+					<short xml:lang="ko">다중 화면 모드</short>
+					<short xml:lang="ms">Mod Output Berbilang</short>
+					<short xml:lang="nb">Flerskjermsmodus</short>
+					<short xml:lang="nds">Multiutgav</short>
+					<short xml:lang="nl">Multi uitvoer modus</short>
+					<short xml:lang="oc">Mòde de sortidas multiplas</short>
+					<short xml:lang="or">ବହୁ-ଆଉଟପୁଟ ମୋଡ</short>
+					<short xml:lang="pa">ਮਲਟੀ ਆਉਟਪੁੱਟ ਮੋਡ</short>
+					<short xml:lang="pl">Tryb wielu urządzeń wyjściowych</short>
+					<short xml:lang="pt">Modo de Multi Saída</short>
+					<short xml:lang="pt_BR">Modo de Multi Saída</short>
+					<short xml:lang="ro">Regim „Ieșiri multiple”</short>
+					<short xml:lang="ru">Режим множественного вывода</short>
+					<short xml:lang="sk">Viacnásobný výstupný režim</short>
+					<short xml:lang="sl">Način z več izhodi</short>
+					<short xml:lang="sr">Режим више излаза</short>
+					<short xml:lang="sv">Läge för multipla utmatningar</short>
+					<short xml:lang="tr">Çoklu Çıktı Kipi</short>
+					<short xml:lang="ug">كۆپ چىقىرىش ھالىتى</short>
+					<short xml:lang="uk">Режим множинного виводу</short>
+					<short xml:lang="vi">Chế độ đa đầu ra</short>
+					<short xml:lang="zh_CN">多重输出模式</short>
+					<short xml:lang="zh_HK">多重輸出模式</short>
+					<short xml:lang="zh_TW">多重輸出模式</short>
+					<long>Selects how the switcher is displayed, if multiple output devices are used.</long>
+					<min>0</min>
+					<max>2</max>
+					<default>0</default>
+					<desc>
+						<value>0</value>
+						<name>Disabled</name>
+						<name xml:lang="uk">Вимк.</name>
+					</desc>
+					<desc>
+						<value>1</value>
+						<name>On activated output</name>
+						<name xml:lang="uk">На активованому виводі</name>
+					</desc>
+					<desc>
+						<value>2</value>
+						<name>One big switcher</name>
+						<name xml:lang="uk">Один великий перемикач</name>
+					</desc>
+				</option>
+			</group>
+			<group>
+				<short>Shift Mode</short>
+				<short xml:lang="uk">Режим зсуву</short>
+				<option type="int" name="mode">
+					<short>Shift Switcher Mode</short>
+					<long>The selected shift switcher mode.</long>
+					<default>0</default>
+					<min>0</min>
+					<max>1</max>
+					<desc>
+						<value>0</value>
+						<name>Cover</name>
+						<name xml:lang="uk">Обкладинка</name>
+					</desc>
+					<desc>
+						<value>1</value>
+						<name>Flip</name>
+					</desc>
+				</option>
+				<subgroup>
+					<short>Flip Mode</short>
+					<option type="int" name="flip_rotation">
+						<short>Flip Angle</short>
+						<long>Rotation angle of the flip animation (in degrees).</long>
+						<default>30</default>
+						<min>-80</min>
+						<max>80</max>
+					</option>
+				</subgroup>
+				<subgroup>
+					<short>Cover Mode</short>
+					<option type="float" name="cover_offset">
+						<short>Cover Offset</short>
+						<long>Cover movement offset.</long>
+						<long xml:lang="uk">Перекривання руху зміщення.</long>
+						<default>0.0</default>
+						<min>-0.4</min>
+						<max>0.4</max>
+						<precision>0.01</precision>
+					</option>
+					<option type="float" name="cover_angle">
+						<short>Cover Angle</short>
+						<long>How much windows should be tilted (in degrees).</long>
+						<default>60</default>
+						<min>0</min>
+						<max>360</max>
+						<precision>0.1</precision>
+					</option>
+					<option type="float" name="cover_extra_space">
+						<short>Space Factor</short>
+						<long>How much windows should be spaced apart.</long>
+						<default>1</default>
+						<min>1</min>
+						<max>2</max>
+						<precision>0.1</precision>
+					</option>
+					<option type="int" name="cover_max_visible_windows">
+						<short>Maximum Number Of Visible Windows</short>
+						<long>The maximum number of windows visible in cover mode.</long>
+						<default>10</default>
+						<min>1</min>
+						<max>100</max>
+					</option>
+				</subgroup>
+			</group>
+			<group>
+				<short>Window Title Display</short>
+				<short xml:lang="uk">Показ заголовку вікна</short>
+				<option type="bool" name="window_title">
+					<short>Show Window Title</short>
+					<short xml:lang="uk">Показувати заголовок вікна</short>
+					<long>Show the window title of the currently selected window.</long>
+					<default>true</default>
+				</option>
+				<option type="bool" name="title_font_bold">
+					<short>Bold Font</short>
+					<short xml:lang="uk">Жирний шрифт</short>
+					<long>Render the window title using a bold font.</long>
+					<default>false</default>
+				</option>
+				<option type="int" name="title_font_size">
+					<short>Font Size</short>
+					<short xml:lang="uk">Розмір шрифту</short>
+					<long>Font size of the window title text (in pixels).</long>
+					<default>16</default>
+					<min>6</min>
+					<max>96</max>
+				</option>
+				<option type="color" name="title_back_color">
+					<short>Background Color</short>
+					<short xml:lang="bs">Boja pozadine</short>
+					<short xml:lang="ca">Color del fons</short>
+					<short xml:lang="de">Hintergrundfarbe</short>
+					<short xml:lang="en_AU">Background Colour</short>
+					<short xml:lang="en_GB">Background Colour</short>
+					<short xml:lang="es">Color de fondo</short>
+					<short xml:lang="fr">Couleur d’arrière-plan</short>
+					<short xml:lang="gl">Cor do fondo</short>
+					<short xml:lang="hr">Boja pozadine</short>
+					<short xml:lang="ko">배경 색</short>
+					<short xml:lang="ms">Warna Latar Belakang</short>
+					<short xml:lang="pl">Kolor tła</short>
+					<short xml:lang="pt">Cor de Fundo</short>
+					<short xml:lang="ru">Цвет фона</short>
+					<short xml:lang="sl">Barva ozadja</short>
+					<short xml:lang="sv">Bakgrundsfärg</short>
+					<short xml:lang="uk">Колір тла</short>
+					<short xml:lang="zh_CN">背景色</short>
+					<long>Color and opacity of the window title background.</long>
+					<default>
+						<red>0x0000</red>
+						<green>0x0000</green>
+						<blue>0x0000</blue>
+						<alpha>0x9999</alpha>
+					</default>
+				</option>
+				<option type="color" name="title_font_color">
+					<short>Font Color</short>
+					<short xml:lang="uk">Колір шрифту</short>
+					<long>Font color and opacity of the window title.</long>
+					<default>
+						<red>0xffff</red>
+						<green>0xffff</green>
+						<blue>0xffff</blue>
+						<alpha>0xffff</alpha>
+					</default>
+				</option>
+				<option type="int" name="title_text_placement">
+					<short>Text Placement</short>
+					<short xml:lang="uk">Розташування заголовку</short>
+					<long>Selects where to place the window title.</long>
+					<long xml:lang="uk">Обрати розташування заголовку вікна</long>
+					<default>2</default>
+					<min>0</min>
+					<max>2</max>
+					<desc>
+						<value>0</value>
+						<name>Centered on screen</name>
+						<name xml:lang="uk">У центрі екрану</name>
+					</desc>
+					<desc>
+						<value>1</value>
+						<name>Top of screen minus offset</name>
+					</desc>
+					<desc>
+						<value>2</value>
+						<name>Bottom of screen plus offset</name>
+					</desc>
+				</option>
+				<option type="int" name="vertical_offset">
+					<short>Vertical Offset</short>
+					<short xml:lang="uk">Вертикальний зсув</short>
+					<long>Vertical offset from top or bottom of the screen (in pixels).</long>
+					<default>50</default>
+					<min>0</min>
+					<max>500</max>
+				</option>
+			</group>
+		</options>
+	</plugin>
+</compiz>

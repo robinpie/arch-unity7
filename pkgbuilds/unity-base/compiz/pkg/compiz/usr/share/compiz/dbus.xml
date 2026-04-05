@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin name="dbus">
+	<short>D-Bus</short>
+	<short xml:lang="bs">D-bus</short>
+	<short xml:lang="da">D-Bus</short>
+	<short xml:lang="de">D-Bus</short>
+	<short xml:lang="el">D-Bus</short>
+	<short xml:lang="en_AU">D-Bus</short>
+	<short xml:lang="en_GB">D-Bus</short>
+	<short xml:lang="es">D-Bus</short>
+	<short xml:lang="fi">D-Bus</short>
+	<short xml:lang="fr">D-Bus</short>
+	<short xml:lang="gl">D-Bus</short>
+	<short xml:lang="hr">D-Bus</short>
+	<short xml:lang="it">D-Bus</short>
+	<short xml:lang="ja">D-Bus</short>
+	<short xml:lang="ko">디버스</short>
+	<short xml:lang="ms">D-Bus</short>
+	<short xml:lang="my">D-Bus</short>
+	<short xml:lang="nl">D-Bus</short>
+	<short xml:lang="oc">D-Bus</short>
+	<short xml:lang="pl">D-Bus</short>
+	<short xml:lang="pt">D-Bus</short>
+	<short xml:lang="pt_BR">D-Bus</short>
+	<short xml:lang="ro">D-Bus</short>
+	<short xml:lang="ru">D-Bus</short>
+	<short xml:lang="sl">D-Bus</short>
+	<short xml:lang="sv">D-Bus</short>
+	<short xml:lang="tr">D-Bus</short>
+	<short xml:lang="ug">D-Bus</short>
+	<short xml:lang="uk">D-Bus</short>
+	<short xml:lang="zh_CN">D-Bus</short>
+	<long>D-Bus Control Backend</long>
+	<long xml:lang="bs">D-Bus kontrolna pozadina</long>
+	<long xml:lang="cs">Nastavení D-Bus</long>
+	<long xml:lang="de">D-Bus-Steuerhintergundprogramm</long>
+	<long xml:lang="el">Σύστημα υποστήριξης ελέγχου του D-Bus</long>
+	<long xml:lang="en_AU">D-Bus Control Backend</long>
+	<long xml:lang="en_GB">D-Bus Control Backend</long>
+	<long xml:lang="es">Motor de control de D-bus</long>
+	<long xml:lang="fr">Moteur de contrôle D-Bus</long>
+	<long xml:lang="gl">Infraestrutura de control de D-Bus</long>
+	<long xml:lang="hr">D-Bus pozadinski program upravljanja</long>
+	<long xml:lang="it">Backend controllo D-Bus</long>
+	<long xml:lang="ko">디버스 조정 백엔드</long>
+	<long xml:lang="ms">Bahagian Belakang Kawalan D-Bus</long>
+	<long xml:lang="my">D-Bus Control Backend</long>
+	<long xml:lang="nl">D-Bus Control Backend</long>
+	<long xml:lang="oc">Motor de contraròtle D-Bus</long>
+	<long xml:lang="pt">Controlo do Backend D-Bus</long>
+	<long xml:lang="pt_BR">Backend de controle do D-Bus</long>
+	<long xml:lang="ru">Внутренний интерфейс управления D-Bus</long>
+	<long xml:lang="sl">Zaledje nadzora D-Bus</long>
+	<long xml:lang="sv">Styrprogram för D-Bus</long>
+	<long xml:lang="ug">D-Busتىزگىنلەش ئارقا ئۇچى</long>
+	<long xml:lang="uk">Внутрішній інтерфейс керування D-Bus</long>
+	<long xml:lang="zh_CN">D-Bus 控制后端</long>
+	<category>Utility</category>
+	<deps>
+	    <relation type="after">
+		<plugin>composite</plugin>
+		<plugin>opengl</plugin>
+		<plugin>decor</plugin>
+	    </relation>
+	</deps>
+    </plugin>
+</compiz>

@@ -1,0 +1,1839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="grid">
+	<short>Grid</short>
+	<short xml:lang="da">Gitter</short>
+	<short xml:lang="uk">Ґратка</short>
+	<long>Warp and resize windows to fit an imaginary grid</long>
+	<category>Window Management</category>
+	<deps>
+	    <requirement>
+		<plugin>opengl</plugin>
+	    </requirement>
+	    <relation type="before">
+		<plugin>wobbly</plugin>
+	    </relation>
+	    <relation type="after">
+		<plugin>composite</plugin>
+		<plugin>opengl</plugin>
+		<plugin>decor</plugin>
+	    </relation>
+	</deps>
+	<options>
+	    <group>
+		<short>Bindings</short>
+		<short xml:lang="ast">Lligadures</short>
+		<short xml:lang="be">Прывязваньні</short>
+		<short xml:lang="bg">Задължителни</short>
+		<short xml:lang="bs">Povezivanja</short>
+		<short xml:lang="cs">Klávesové zkratky</short>
+		<short xml:lang="da">Bindinger</short>
+		<short xml:lang="de">Tastenkombinationen</short>
+		<short xml:lang="el">Συνδυασμοί</short>
+		<short xml:lang="en_AU">Bindings</short>
+		<short xml:lang="en_GB">Bindings</short>
+		<short xml:lang="es">Vínculos</short>
+		<short xml:lang="eu">Laster-bideak</short>
+		<short xml:lang="fi">Pikanäppäimet</short>
+		<short xml:lang="fr">Assignations</short>
+		<short xml:lang="gl">Asociacións</short>
+		<short xml:lang="he">צירופים</short>
+		<short xml:lang="hr">Tipkovničke kratice</short>
+		<short xml:lang="hu">Gyorsbillentyűk</short>
+		<short xml:lang="it">Associazioni</short>
+		<short xml:lang="ja">割り当て</short>
+		<short xml:lang="ko">바로 가기</short>
+		<short xml:lang="ms">Pengikatan</short>
+		<short xml:lang="nl">Bindingen</short>
+		<short xml:lang="oc">Assignacions</short>
+		<short xml:lang="pl">Przyporządkowanie klawiszy</short>
+		<short xml:lang="pt">Atalhos</short>
+		<short xml:lang="pt_BR">Atalhos</short>
+		<short xml:lang="ro">Asocieri</short>
+		<short xml:lang="ru">Закрепление</short>
+		<short xml:lang="sl">Vezave</short>
+		<short xml:lang="sq">Bindings</short>
+		<short xml:lang="sr">Повезивања</short>
+		<short xml:lang="sv">Bindningar</short>
+		<short xml:lang="tr">Bağlayıcılar</short>
+		<short xml:lang="ug">باغلانمىلار</short>
+		<short xml:lang="uk">Закріплення</short>
+		<short xml:lang="vi">Gán</short>
+		<short xml:lang="zh_CN">绑定</short>
+		<short xml:lang="zh_HK">連結</short>
+		<short xml:lang="zh_TW">連結</short>
+		<option type="key" name="put_center_key">
+		    <short>Put Center Key</short>
+		    <long>Move window to the center.</long>
+		    <default>&lt;Control&gt;&lt;Alt&gt;KP_5</default>
+		</option>
+		<option type="key" name="put_left_key">
+		    <short>Put Left Key</short>
+		    <long>Move window to the left edge.</long>
+		    <default>&lt;Control&gt;&lt;Alt&gt;KP_4</default>
+		</option>
+		<option type="key" name="put_right_key">
+		    <short>Put Right Key</short>
+		    <long>Move window to the right edge.</long>
+		    <default>&lt;Control&gt;&lt;Alt&gt;KP_6</default>
+		</option>
+		<option type="key" name="put_top_key">
+		    <short>Put Top Key</short>
+		    <long>Move window to the top edge.</long>
+		    <default>&lt;Control&gt;&lt;Alt&gt;KP_8</default>
+		</option>
+		<option type="key" name="put_bottom_key">
+		    <short>Put Bottom Key</short>
+		    <long>Move window to the bottom edge.</long>
+		    <default>&lt;Control&gt;&lt;Alt&gt;KP_2</default>
+		</option>
+		<option type="key" name="put_topleft_key">
+		    <short>Put Top Left Key</short>
+		    <long>Move window to the top left corner.</long>
+		    <default>&lt;Control&gt;&lt;Alt&gt;KP_7</default>
+		</option>
+		<option type="key" name="put_topright_key">
+		    <short>Put Top Right Key</short>
+		    <long>Move window to the top right corner.</long>
+		    <default>&lt;Control&gt;&lt;Alt&gt;KP_9</default>
+		</option>
+		<option type="key" name="put_bottomleft_key">
+		    <short>Put Bottom Left Key</short>
+		    <long>Move window to the bottom left corner.</long>
+		    <default>&lt;Control&gt;&lt;Alt&gt;KP_1</default>
+		</option>
+		<option type="key" name="put_bottomright_key">
+		    <short>Put Bottom Right Key</short>
+		    <long>Move window to the bottom right corner.</long>
+		    <default>&lt;Control&gt;&lt;Alt&gt;KP_3</default>
+		</option>
+		<option type="key" name="put_maximize_key">
+		    <short>Maximize Key</short>
+		    <long>Maximize window.</long>
+		    <default>&lt;Control&gt;&lt;Super&gt;Up</default>
+		</option>
+		<option type="key" name="put_restore_key">
+		    <short>Restore</short>
+		    <short xml:lang="uk">Поновлення</short>
+		    <long>Restore window to it's original size. Note: Use the same shortcut you are using to unmaximize a window to be able to restore grid-maximized windows.</long>
+		    <default>&lt;Control&gt;&lt;Super&gt;Down</default>
+		</option>
+		<option type="key" name="left_maximize">
+		    <short>Left Maximize</short>
+		    <long>Left vertically maximize window.</long>
+		    <default>&lt;Control&gt;&lt;Super&gt;Left</default>
+		</option>
+		<option type="key" name="right_maximize">
+		    <short>Right Maximize</short>
+		    <long>Right vertically maximize window.</long>
+		    <default>&lt;Control&gt;&lt;Super&gt;Right</default>
+ 		</option>
+	    </group>
+	    <group>
+		<short>Corners / Edges</short>
+		<short xml:lang="uk">Кути / Краї</short>
+		<option type="int" name="top_left_corner_action">
+		    <short>Upper Left Corner</short>
+		    <short xml:lang="uk">Верхній лівий кут</short>
+		    <long>Action to be performed when window is dropped on the top left corner.</long>
+		    <default>4</default>
+		    <min>0</min>
+		    <max>10</max>
+		    <desc>
+			<value>0</value>
+			<name>None</name>
+			<name xml:lang="ace">Hana</name>
+			<name xml:lang="am">ምንም</name>
+			<name xml:lang="ar">بدون</name>
+			<name xml:lang="ast">Dengún</name>
+			<name xml:lang="be">Нічога</name>
+			<name xml:lang="bg">Без избор</name>
+			<name xml:lang="bn">কিছু না</name>
+			<name xml:lang="bn_IN">কিছু না</name>
+			<name xml:lang="br">Netra</name>
+			<name xml:lang="bs">Nijedno</name>
+			<name xml:lang="ca">Cap</name>
+			<name xml:lang="cs">Nic</name>
+			<name xml:lang="da">Ingen</name>
+			<name xml:lang="de">Keine</name>
+			<name xml:lang="el">Κανένα</name>
+			<name xml:lang="en_AU">None</name>
+			<name xml:lang="en_GB">None</name>
+			<name xml:lang="eo">Nenio</name>
+			<name xml:lang="es">Ninguno</name>
+			<name xml:lang="et">Puudub</name>
+			<name xml:lang="eu">Bat ere ez</name>
+			<name xml:lang="fi">Ei mitään</name>
+			<name xml:lang="fr">Aucune</name>
+			<name xml:lang="fy">Gjin</name>
+			<name xml:lang="gl">Ningunha</name>
+			<name xml:lang="gu">કંઈ નહિં</name>
+			<name xml:lang="he">ללא</name>
+			<name xml:lang="hi">कुछ नहीं</name>
+			<name xml:lang="hr">Nijedna</name>
+			<name xml:lang="hu">Egyik sem</name>
+			<name xml:lang="it">Niente</name>
+			<name xml:lang="ja">なし</name>
+			<name xml:lang="kab">Ulac</name>
+			<name xml:lang="km">គ្មាន</name>
+			<name xml:lang="kn">ಯಾವುದೂ ಇಲ್ಲ</name>
+			<name xml:lang="ko">없음</name>
+			<name xml:lang="ku">Ne yek</name>
+			<name xml:lang="lt">Nieko</name>
+			<name xml:lang="ml">ഒന്നുമില്ല</name>
+			<name xml:lang="ms">Tiada</name>
+			<name xml:lang="nb">Ingen</name>
+			<name xml:lang="nds">Keen</name>
+			<name xml:lang="nl">Geen</name>
+			<name xml:lang="oc">Pas cap</name>
+			<name xml:lang="or">କିଛିନାହିଁ</name>
+			<name xml:lang="pa">ਕੋਈ ਨਹੀਂ</name>
+			<name xml:lang="pl">Brak</name>
+			<name xml:lang="pt">Nenhum</name>
+			<name xml:lang="pt_BR">Nenhum</name>
+			<name xml:lang="ro">Nespecificat</name>
+			<name xml:lang="ru">Никакой</name>
+			<name xml:lang="si">කිසිවෙක් නැත</name>
+			<name xml:lang="sk">Žiadna</name>
+			<name xml:lang="sl">brez izbire</name>
+			<name xml:lang="sq">Asnjë</name>
+			<name xml:lang="sr">Nema</name>
+			<name xml:lang="sv">Ingen</name>
+			<name xml:lang="te">ఏదీకాదు</name>
+			<name xml:lang="th">ไม่มี</name>
+			<name xml:lang="tr">Hiçbiri</name>
+			<name xml:lang="ug">يوق</name>
+			<name xml:lang="uk">Ніякий</name>
+			<name xml:lang="vi">Không chọn</name>
+			<name xml:lang="zh_CN">无</name>
+			<name xml:lang="zh_HK">無</name>
+			<name xml:lang="zh_TW">無</name>
+		    </desc>
+		    <desc>
+			<value>1</value>
+			<name>Bottom Left Corner</name>
+			<name xml:lang="uk">Нижній лівий кут</name>
+		    </desc>
+		    <desc>
+			<value>2</value>
+			<name>Bottom Half</name>
+			<name xml:lang="uk">Долішня половина</name>
+		    </desc>
+		    <desc>
+			<value>3</value>
+			<name>Bottom Right Corner</name>
+			<name xml:lang="uk">Нижній правий кут</name>
+		    </desc>
+		    <desc>
+			<value>4</value>
+			<name>Left Half</name>
+			<name xml:lang="uk">Ліва половина</name>
+		    </desc>
+		    <desc>
+			<value>5</value>
+			<name>Fill Screen</name>
+			<name xml:lang="uk">На весь екран</name>
+		    </desc>
+		    <desc>
+			<value>6</value>
+			<name>Right Half</name>
+			<name xml:lang="uk">Права половина</name>
+		    </desc>
+		    <desc>
+			<value>7</value>
+			<name>Top Left Corner</name>
+			<name xml:lang="uk">Верхній лівий кут</name>
+		    </desc>
+		    <desc>
+			<value>8</value>
+			<name>Top Half</name>
+			<name xml:lang="uk">Горішня половина</name>
+		    </desc>
+		    <desc>
+			<value>9</value>
+			<name>Top Right Corner</name>
+			<name xml:lang="uk">Верхній правий кут</name>
+		    </desc>
+		    <desc>
+			<value>10</value>
+			<name>Maximize</name>
+			<name xml:lang="ace">Peurayeuk</name>
+			<name xml:lang="am">ማሳደጊያ</name>
+			<name xml:lang="ar">تكبير</name>
+			<name xml:lang="ast">Maximizar</name>
+			<name xml:lang="be">Разгарнуць</name>
+			<name xml:lang="bg">Максимизиране</name>
+			<name xml:lang="bn">বড় করা</name>
+			<name xml:lang="bn_IN">বড় করা</name>
+			<name xml:lang="br">Brasaat</name>
+			<name xml:lang="bs">Maksimizirano</name>
+			<name xml:lang="ca">Maximitza</name>
+			<name xml:lang="cs">Maximalizovat</name>
+			<name xml:lang="da">Maksimer</name>
+			<name xml:lang="de">Maximieren</name>
+			<name xml:lang="el">Μεγιστοποίησε</name>
+			<name xml:lang="en_AU">Maximise</name>
+			<name xml:lang="en_GB">Maximise</name>
+			<name xml:lang="eo">Maksimumigi</name>
+			<name xml:lang="es">Maximizada</name>
+			<name xml:lang="et">Maksimeeri</name>
+			<name xml:lang="eu">Maximizatu</name>
+			<name xml:lang="fi">Suurenna</name>
+			<name xml:lang="fr">Maximiser</name>
+			<name xml:lang="fy">Maksimalisearje</name>
+			<name xml:lang="gl">Maximizar</name>
+			<name xml:lang="gu">મહત્તમ કરો</name>
+			<name xml:lang="he">הגדל למקסימום</name>
+			<name xml:lang="hr">Povećaj</name>
+			<name xml:lang="hu">Maximalizálás</name>
+			<name xml:lang="it">Massimizzato</name>
+			<name xml:lang="ja">最大化</name>
+			<name xml:lang="kab">Semɣer</name>
+			<name xml:lang="kn">ಹಿಗ್ಗಿಸು</name>
+			<name xml:lang="ko">최대화</name>
+			<name xml:lang="ku">Mezin bike</name>
+			<name xml:lang="lt">Išdidinti</name>
+			<name xml:lang="lv">Maksimizēt</name>
+			<name xml:lang="ml">വലുതാക്കുക</name>
+			<name xml:lang="mr">मोठी करा</name>
+			<name xml:lang="ms">Maksimumkan</name>
+			<name xml:lang="my">အက်ယ္ခ်ဲ ့</name>
+			<name xml:lang="nb">Maksimer</name>
+			<name xml:lang="nds">Vergrötern</name>
+			<name xml:lang="nl">Maximaliseer</name>
+			<name xml:lang="oc">Maximizar</name>
+			<name xml:lang="or">ସର୍ବାଧିକ କର</name>
+			<name xml:lang="pl">Maksymalizuj</name>
+			<name xml:lang="pt">Maximizar</name>
+			<name xml:lang="pt_BR">Maximizar</name>
+			<name xml:lang="ro">Maximizează</name>
+			<name xml:lang="ru">Развернуть</name>
+			<name xml:lang="si">උපරිම</name>
+			<name xml:lang="sk">Maximalizovať</name>
+			<name xml:lang="sl">Razpni</name>
+			<name xml:lang="sq">Maksimizo</name>
+			<name xml:lang="sr">Увећај</name>
+			<name xml:lang="sv">Maximera</name>
+			<name xml:lang="ta">பெரிதாக்கு</name>
+			<name xml:lang="th">ขยายใหญ่</name>
+			<name xml:lang="tr">Büyüt</name>
+			<name xml:lang="ug">چوڭايت</name>
+			<name xml:lang="uk">Розгорнути</name>
+			<name xml:lang="vi">Phóng to</name>
+			<name xml:lang="zh_CN">最大化</name>
+			<name xml:lang="zh_HK">最大化</name>
+			<name xml:lang="zh_TW">最大化</name>
+		    </desc>
+		</option>
+		<option type="int" name="top_edge_action">
+		    <short>Top Edge</short>
+		    <long>Action to be performed when window is dropped on the top edge.</long>
+		    <default>10</default>
+		    <min>0</min>
+		    <max>10</max>
+		    <desc>
+			<value>0</value>
+			<name>None</name>
+			<name xml:lang="ace">Hana</name>
+			<name xml:lang="am">ምንም</name>
+			<name xml:lang="ar">بدون</name>
+			<name xml:lang="ast">Dengún</name>
+			<name xml:lang="be">Нічога</name>
+			<name xml:lang="bg">Без избор</name>
+			<name xml:lang="bn">কিছু না</name>
+			<name xml:lang="bn_IN">কিছু না</name>
+			<name xml:lang="br">Netra</name>
+			<name xml:lang="bs">Nijedno</name>
+			<name xml:lang="ca">Cap</name>
+			<name xml:lang="cs">Nic</name>
+			<name xml:lang="da">Ingen</name>
+			<name xml:lang="de">Keine</name>
+			<name xml:lang="el">Κανένα</name>
+			<name xml:lang="en_AU">None</name>
+			<name xml:lang="en_GB">None</name>
+			<name xml:lang="eo">Nenio</name>
+			<name xml:lang="es">Ninguno</name>
+			<name xml:lang="et">Puudub</name>
+			<name xml:lang="eu">Bat ere ez</name>
+			<name xml:lang="fi">Ei mitään</name>
+			<name xml:lang="fr">Aucune</name>
+			<name xml:lang="fy">Gjin</name>
+			<name xml:lang="gl">Ningunha</name>
+			<name xml:lang="gu">કંઈ નહિં</name>
+			<name xml:lang="he">ללא</name>
+			<name xml:lang="hi">कुछ नहीं</name>
+			<name xml:lang="hr">Nijedna</name>
+			<name xml:lang="hu">Egyik sem</name>
+			<name xml:lang="it">Niente</name>
+			<name xml:lang="ja">なし</name>
+			<name xml:lang="kab">Ulac</name>
+			<name xml:lang="km">គ្មាន</name>
+			<name xml:lang="kn">ಯಾವುದೂ ಇಲ್ಲ</name>
+			<name xml:lang="ko">없음</name>
+			<name xml:lang="ku">Ne yek</name>
+			<name xml:lang="lt">Nieko</name>
+			<name xml:lang="ml">ഒന്നുമില്ല</name>
+			<name xml:lang="ms">Tiada</name>
+			<name xml:lang="nb">Ingen</name>
+			<name xml:lang="nds">Keen</name>
+			<name xml:lang="nl">Geen</name>
+			<name xml:lang="oc">Pas cap</name>
+			<name xml:lang="or">କିଛିନାହିଁ</name>
+			<name xml:lang="pa">ਕੋਈ ਨਹੀਂ</name>
+			<name xml:lang="pl">Brak</name>
+			<name xml:lang="pt">Nenhum</name>
+			<name xml:lang="pt_BR">Nenhum</name>
+			<name xml:lang="ro">Nespecificat</name>
+			<name xml:lang="ru">Никакой</name>
+			<name xml:lang="si">කිසිවෙක් නැත</name>
+			<name xml:lang="sk">Žiadna</name>
+			<name xml:lang="sl">brez izbire</name>
+			<name xml:lang="sq">Asnjë</name>
+			<name xml:lang="sr">Nema</name>
+			<name xml:lang="sv">Ingen</name>
+			<name xml:lang="te">ఏదీకాదు</name>
+			<name xml:lang="th">ไม่มี</name>
+			<name xml:lang="tr">Hiçbiri</name>
+			<name xml:lang="ug">يوق</name>
+			<name xml:lang="uk">Ніякий</name>
+			<name xml:lang="vi">Không chọn</name>
+			<name xml:lang="zh_CN">无</name>
+			<name xml:lang="zh_HK">無</name>
+			<name xml:lang="zh_TW">無</name>
+		    </desc>
+		    <desc>
+			<value>1</value>
+			<name>Bottom Left Corner</name>
+			<name xml:lang="uk">Нижній лівий кут</name>
+		    </desc>
+		    <desc>
+			<value>2</value>
+			<name>Bottom Half</name>
+			<name xml:lang="uk">Долішня половина</name>
+		    </desc>
+		    <desc>
+			<value>3</value>
+			<name>Bottom Right Corner</name>
+			<name xml:lang="uk">Нижній правий кут</name>
+		    </desc>
+		    <desc>
+			<value>4</value>
+			<name>Left Half</name>
+			<name xml:lang="uk">Ліва половина</name>
+		    </desc>
+		    <desc>
+			<value>5</value>
+			<name>Fill Screen</name>
+			<name xml:lang="uk">На весь екран</name>
+		    </desc>
+		    <desc>
+			<value>6</value>
+			<name>Right Half</name>
+			<name xml:lang="uk">Права половина</name>
+		    </desc>
+		    <desc>
+			<value>7</value>
+			<name>Top Left Corner</name>
+			<name xml:lang="uk">Верхній лівий кут</name>
+		    </desc>
+		    <desc>
+			<value>8</value>
+			<name>Top Half</name>
+			<name xml:lang="uk">Горішня половина</name>
+		    </desc>
+		    <desc>
+			<value>9</value>
+			<name>Top Right Corner</name>
+			<name xml:lang="uk">Верхній правий кут</name>
+		    </desc>
+		    <desc>
+			<value>10</value>
+			<name>Maximize</name>
+			<name xml:lang="ace">Peurayeuk</name>
+			<name xml:lang="am">ማሳደጊያ</name>
+			<name xml:lang="ar">تكبير</name>
+			<name xml:lang="ast">Maximizar</name>
+			<name xml:lang="be">Разгарнуць</name>
+			<name xml:lang="bg">Максимизиране</name>
+			<name xml:lang="bn">বড় করা</name>
+			<name xml:lang="bn_IN">বড় করা</name>
+			<name xml:lang="br">Brasaat</name>
+			<name xml:lang="bs">Maksimizirano</name>
+			<name xml:lang="ca">Maximitza</name>
+			<name xml:lang="cs">Maximalizovat</name>
+			<name xml:lang="da">Maksimer</name>
+			<name xml:lang="de">Maximieren</name>
+			<name xml:lang="el">Μεγιστοποίησε</name>
+			<name xml:lang="en_AU">Maximise</name>
+			<name xml:lang="en_GB">Maximise</name>
+			<name xml:lang="eo">Maksimumigi</name>
+			<name xml:lang="es">Maximizada</name>
+			<name xml:lang="et">Maksimeeri</name>
+			<name xml:lang="eu">Maximizatu</name>
+			<name xml:lang="fi">Suurenna</name>
+			<name xml:lang="fr">Maximiser</name>
+			<name xml:lang="fy">Maksimalisearje</name>
+			<name xml:lang="gl">Maximizar</name>
+			<name xml:lang="gu">મહત્તમ કરો</name>
+			<name xml:lang="he">הגדל למקסימום</name>
+			<name xml:lang="hr">Povećaj</name>
+			<name xml:lang="hu">Maximalizálás</name>
+			<name xml:lang="it">Massimizzato</name>
+			<name xml:lang="ja">最大化</name>
+			<name xml:lang="kab">Semɣer</name>
+			<name xml:lang="kn">ಹಿಗ್ಗಿಸು</name>
+			<name xml:lang="ko">최대화</name>
+			<name xml:lang="ku">Mezin bike</name>
+			<name xml:lang="lt">Išdidinti</name>
+			<name xml:lang="lv">Maksimizēt</name>
+			<name xml:lang="ml">വലുതാക്കുക</name>
+			<name xml:lang="mr">मोठी करा</name>
+			<name xml:lang="ms">Maksimumkan</name>
+			<name xml:lang="my">အက်ယ္ခ်ဲ ့</name>
+			<name xml:lang="nb">Maksimer</name>
+			<name xml:lang="nds">Vergrötern</name>
+			<name xml:lang="nl">Maximaliseer</name>
+			<name xml:lang="oc">Maximizar</name>
+			<name xml:lang="or">ସର୍ବାଧିକ କର</name>
+			<name xml:lang="pl">Maksymalizuj</name>
+			<name xml:lang="pt">Maximizar</name>
+			<name xml:lang="pt_BR">Maximizar</name>
+			<name xml:lang="ro">Maximizează</name>
+			<name xml:lang="ru">Развернуть</name>
+			<name xml:lang="si">උපරිම</name>
+			<name xml:lang="sk">Maximalizovať</name>
+			<name xml:lang="sl">Razpni</name>
+			<name xml:lang="sq">Maksimizo</name>
+			<name xml:lang="sr">Увећај</name>
+			<name xml:lang="sv">Maximera</name>
+			<name xml:lang="ta">பெரிதாக்கு</name>
+			<name xml:lang="th">ขยายใหญ่</name>
+			<name xml:lang="tr">Büyüt</name>
+			<name xml:lang="ug">چوڭايت</name>
+			<name xml:lang="uk">Розгорнути</name>
+			<name xml:lang="vi">Phóng to</name>
+			<name xml:lang="zh_CN">最大化</name>
+			<name xml:lang="zh_HK">最大化</name>
+			<name xml:lang="zh_TW">最大化</name>
+		    </desc>
+		</option>
+		<option type="int" name="top_right_corner_action">
+		    <short>Upper Right Corner</short>
+		    <long>Action to be performed when window is dropped on the top right corner.</long>
+		    <default>6</default>
+		    <min>0</min>
+		    <max>10</max>
+		    <desc>
+			<value>0</value>
+			<name>None</name>
+			<name xml:lang="ace">Hana</name>
+			<name xml:lang="am">ምንም</name>
+			<name xml:lang="ar">بدون</name>
+			<name xml:lang="ast">Dengún</name>
+			<name xml:lang="be">Нічога</name>
+			<name xml:lang="bg">Без избор</name>
+			<name xml:lang="bn">কিছু না</name>
+			<name xml:lang="bn_IN">কিছু না</name>
+			<name xml:lang="br">Netra</name>
+			<name xml:lang="bs">Nijedno</name>
+			<name xml:lang="ca">Cap</name>
+			<name xml:lang="cs">Nic</name>
+			<name xml:lang="da">Ingen</name>
+			<name xml:lang="de">Keine</name>
+			<name xml:lang="el">Κανένα</name>
+			<name xml:lang="en_AU">None</name>
+			<name xml:lang="en_GB">None</name>
+			<name xml:lang="eo">Nenio</name>
+			<name xml:lang="es">Ninguno</name>
+			<name xml:lang="et">Puudub</name>
+			<name xml:lang="eu">Bat ere ez</name>
+			<name xml:lang="fi">Ei mitään</name>
+			<name xml:lang="fr">Aucune</name>
+			<name xml:lang="fy">Gjin</name>
+			<name xml:lang="gl">Ningunha</name>
+			<name xml:lang="gu">કંઈ નહિં</name>
+			<name xml:lang="he">ללא</name>
+			<name xml:lang="hi">कुछ नहीं</name>
+			<name xml:lang="hr">Nijedna</name>
+			<name xml:lang="hu">Egyik sem</name>
+			<name xml:lang="it">Niente</name>
+			<name xml:lang="ja">なし</name>
+			<name xml:lang="kab">Ulac</name>
+			<name xml:lang="km">គ្មាន</name>
+			<name xml:lang="kn">ಯಾವುದೂ ಇಲ್ಲ</name>
+			<name xml:lang="ko">없음</name>
+			<name xml:lang="ku">Ne yek</name>
+			<name xml:lang="lt">Nieko</name>
+			<name xml:lang="ml">ഒന്നുമില്ല</name>
+			<name xml:lang="ms">Tiada</name>
+			<name xml:lang="nb">Ingen</name>
+			<name xml:lang="nds">Keen</name>
+			<name xml:lang="nl">Geen</name>
+			<name xml:lang="oc">Pas cap</name>
+			<name xml:lang="or">କିଛିନାହିଁ</name>
+			<name xml:lang="pa">ਕੋਈ ਨਹੀਂ</name>
+			<name xml:lang="pl">Brak</name>
+			<name xml:lang="pt">Nenhum</name>
+			<name xml:lang="pt_BR">Nenhum</name>
+			<name xml:lang="ro">Nespecificat</name>
+			<name xml:lang="ru">Никакой</name>
+			<name xml:lang="si">කිසිවෙක් නැත</name>
+			<name xml:lang="sk">Žiadna</name>
+			<name xml:lang="sl">brez izbire</name>
+			<name xml:lang="sq">Asnjë</name>
+			<name xml:lang="sr">Nema</name>
+			<name xml:lang="sv">Ingen</name>
+			<name xml:lang="te">ఏదీకాదు</name>
+			<name xml:lang="th">ไม่มี</name>
+			<name xml:lang="tr">Hiçbiri</name>
+			<name xml:lang="ug">يوق</name>
+			<name xml:lang="uk">Ніякий</name>
+			<name xml:lang="vi">Không chọn</name>
+			<name xml:lang="zh_CN">无</name>
+			<name xml:lang="zh_HK">無</name>
+			<name xml:lang="zh_TW">無</name>
+		    </desc>
+		    <desc>
+			<value>1</value>
+			<name>Bottom Left Corner</name>
+			<name xml:lang="uk">Нижній лівий кут</name>
+		    </desc>
+		    <desc>
+			<value>2</value>
+			<name>Bottom Half</name>
+			<name xml:lang="uk">Долішня половина</name>
+		    </desc>
+		    <desc>
+			<value>3</value>
+			<name>Bottom Right Corner</name>
+			<name xml:lang="uk">Нижній правий кут</name>
+		    </desc>
+		    <desc>
+			<value>4</value>
+			<name>Left Half</name>
+			<name xml:lang="uk">Ліва половина</name>
+		    </desc>
+		    <desc>
+			<value>5</value>
+			<name>Fill Screen</name>
+			<name xml:lang="uk">На весь екран</name>
+		    </desc>
+		    <desc>
+			<value>6</value>
+			<name>Right Half</name>
+			<name xml:lang="uk">Права половина</name>
+		    </desc>
+		    <desc>
+			<value>7</value>
+			<name>Top Left Corner</name>
+			<name xml:lang="uk">Верхній лівий кут</name>
+		    </desc>
+		    <desc>
+			<value>8</value>
+			<name>Top Half</name>
+			<name xml:lang="uk">Горішня половина</name>
+		    </desc>
+		    <desc>
+			<value>9</value>
+			<name>Top Right Corner</name>
+			<name xml:lang="uk">Верхній правий кут</name>
+		    </desc>
+		    <desc>
+			<value>10</value>
+			<name>Maximize</name>
+			<name xml:lang="ace">Peurayeuk</name>
+			<name xml:lang="am">ማሳደጊያ</name>
+			<name xml:lang="ar">تكبير</name>
+			<name xml:lang="ast">Maximizar</name>
+			<name xml:lang="be">Разгарнуць</name>
+			<name xml:lang="bg">Максимизиране</name>
+			<name xml:lang="bn">বড় করা</name>
+			<name xml:lang="bn_IN">বড় করা</name>
+			<name xml:lang="br">Brasaat</name>
+			<name xml:lang="bs">Maksimizirano</name>
+			<name xml:lang="ca">Maximitza</name>
+			<name xml:lang="cs">Maximalizovat</name>
+			<name xml:lang="da">Maksimer</name>
+			<name xml:lang="de">Maximieren</name>
+			<name xml:lang="el">Μεγιστοποίησε</name>
+			<name xml:lang="en_AU">Maximise</name>
+			<name xml:lang="en_GB">Maximise</name>
+			<name xml:lang="eo">Maksimumigi</name>
+			<name xml:lang="es">Maximizada</name>
+			<name xml:lang="et">Maksimeeri</name>
+			<name xml:lang="eu">Maximizatu</name>
+			<name xml:lang="fi">Suurenna</name>
+			<name xml:lang="fr">Maximiser</name>
+			<name xml:lang="fy">Maksimalisearje</name>
+			<name xml:lang="gl">Maximizar</name>
+			<name xml:lang="gu">મહત્તમ કરો</name>
+			<name xml:lang="he">הגדל למקסימום</name>
+			<name xml:lang="hr">Povećaj</name>
+			<name xml:lang="hu">Maximalizálás</name>
+			<name xml:lang="it">Massimizzato</name>
+			<name xml:lang="ja">最大化</name>
+			<name xml:lang="kab">Semɣer</name>
+			<name xml:lang="kn">ಹಿಗ್ಗಿಸು</name>
+			<name xml:lang="ko">최대화</name>
+			<name xml:lang="ku">Mezin bike</name>
+			<name xml:lang="lt">Išdidinti</name>
+			<name xml:lang="lv">Maksimizēt</name>
+			<name xml:lang="ml">വലുതാക്കുക</name>
+			<name xml:lang="mr">मोठी करा</name>
+			<name xml:lang="ms">Maksimumkan</name>
+			<name xml:lang="my">အက်ယ္ခ်ဲ ့</name>
+			<name xml:lang="nb">Maksimer</name>
+			<name xml:lang="nds">Vergrötern</name>
+			<name xml:lang="nl">Maximaliseer</name>
+			<name xml:lang="oc">Maximizar</name>
+			<name xml:lang="or">ସର୍ବାଧିକ କର</name>
+			<name xml:lang="pl">Maksymalizuj</name>
+			<name xml:lang="pt">Maximizar</name>
+			<name xml:lang="pt_BR">Maximizar</name>
+			<name xml:lang="ro">Maximizează</name>
+			<name xml:lang="ru">Развернуть</name>
+			<name xml:lang="si">උපරිම</name>
+			<name xml:lang="sk">Maximalizovať</name>
+			<name xml:lang="sl">Razpni</name>
+			<name xml:lang="sq">Maksimizo</name>
+			<name xml:lang="sr">Увећај</name>
+			<name xml:lang="sv">Maximera</name>
+			<name xml:lang="ta">பெரிதாக்கு</name>
+			<name xml:lang="th">ขยายใหญ่</name>
+			<name xml:lang="tr">Büyüt</name>
+			<name xml:lang="ug">چوڭايت</name>
+			<name xml:lang="uk">Розгорнути</name>
+			<name xml:lang="vi">Phóng to</name>
+			<name xml:lang="zh_CN">最大化</name>
+			<name xml:lang="zh_HK">最大化</name>
+			<name xml:lang="zh_TW">最大化</name>
+		    </desc>
+		</option>
+		<option type="int" name="left_edge_action">
+		    <short>Left Edge</short>
+		    <short xml:lang="uk">Лівий край</short>
+		    <long>Action to be performed when window is dropped on the left edge.</long>
+		    <default>4</default>
+		    <min>0</min>
+		    <max>10</max>
+		    <desc>
+			<value>0</value>
+			<name>None</name>
+			<name xml:lang="ace">Hana</name>
+			<name xml:lang="am">ምንም</name>
+			<name xml:lang="ar">بدون</name>
+			<name xml:lang="ast">Dengún</name>
+			<name xml:lang="be">Нічога</name>
+			<name xml:lang="bg">Без избор</name>
+			<name xml:lang="bn">কিছু না</name>
+			<name xml:lang="bn_IN">কিছু না</name>
+			<name xml:lang="br">Netra</name>
+			<name xml:lang="bs">Nijedno</name>
+			<name xml:lang="ca">Cap</name>
+			<name xml:lang="cs">Nic</name>
+			<name xml:lang="da">Ingen</name>
+			<name xml:lang="de">Keine</name>
+			<name xml:lang="el">Κανένα</name>
+			<name xml:lang="en_AU">None</name>
+			<name xml:lang="en_GB">None</name>
+			<name xml:lang="eo">Nenio</name>
+			<name xml:lang="es">Ninguno</name>
+			<name xml:lang="et">Puudub</name>
+			<name xml:lang="eu">Bat ere ez</name>
+			<name xml:lang="fi">Ei mitään</name>
+			<name xml:lang="fr">Aucune</name>
+			<name xml:lang="fy">Gjin</name>
+			<name xml:lang="gl">Ningunha</name>
+			<name xml:lang="gu">કંઈ નહિં</name>
+			<name xml:lang="he">ללא</name>
+			<name xml:lang="hi">कुछ नहीं</name>
+			<name xml:lang="hr">Nijedna</name>
+			<name xml:lang="hu">Egyik sem</name>
+			<name xml:lang="it">Niente</name>
+			<name xml:lang="ja">なし</name>
+			<name xml:lang="kab">Ulac</name>
+			<name xml:lang="km">គ្មាន</name>
+			<name xml:lang="kn">ಯಾವುದೂ ಇಲ್ಲ</name>
+			<name xml:lang="ko">없음</name>
+			<name xml:lang="ku">Ne yek</name>
+			<name xml:lang="lt">Nieko</name>
+			<name xml:lang="ml">ഒന്നുമില്ല</name>
+			<name xml:lang="ms">Tiada</name>
+			<name xml:lang="nb">Ingen</name>
+			<name xml:lang="nds">Keen</name>
+			<name xml:lang="nl">Geen</name>
+			<name xml:lang="oc">Pas cap</name>
+			<name xml:lang="or">କିଛିନାହିଁ</name>
+			<name xml:lang="pa">ਕੋਈ ਨਹੀਂ</name>
+			<name xml:lang="pl">Brak</name>
+			<name xml:lang="pt">Nenhum</name>
+			<name xml:lang="pt_BR">Nenhum</name>
+			<name xml:lang="ro">Nespecificat</name>
+			<name xml:lang="ru">Никакой</name>
+			<name xml:lang="si">කිසිවෙක් නැත</name>
+			<name xml:lang="sk">Žiadna</name>
+			<name xml:lang="sl">brez izbire</name>
+			<name xml:lang="sq">Asnjë</name>
+			<name xml:lang="sr">Nema</name>
+			<name xml:lang="sv">Ingen</name>
+			<name xml:lang="te">ఏదీకాదు</name>
+			<name xml:lang="th">ไม่มี</name>
+			<name xml:lang="tr">Hiçbiri</name>
+			<name xml:lang="ug">يوق</name>
+			<name xml:lang="uk">Ніякий</name>
+			<name xml:lang="vi">Không chọn</name>
+			<name xml:lang="zh_CN">无</name>
+			<name xml:lang="zh_HK">無</name>
+			<name xml:lang="zh_TW">無</name>
+		    </desc>
+		    <desc>
+			<value>1</value>
+			<name>Bottom Left Corner</name>
+			<name xml:lang="uk">Нижній лівий кут</name>
+		    </desc>
+		    <desc>
+			<value>2</value>
+			<name>Bottom Half</name>
+			<name xml:lang="uk">Долішня половина</name>
+		    </desc>
+		    <desc>
+			<value>3</value>
+			<name>Bottom Right Corner</name>
+			<name xml:lang="uk">Нижній правий кут</name>
+		    </desc>
+		    <desc>
+			<value>4</value>
+			<name>Left Half</name>
+			<name xml:lang="uk">Ліва половина</name>
+		    </desc>
+		    <desc>
+			<value>5</value>
+			<name>Fill Screen</name>
+			<name xml:lang="uk">На весь екран</name>
+		    </desc>
+		    <desc>
+			<value>6</value>
+			<name>Right Half</name>
+			<name xml:lang="uk">Права половина</name>
+		    </desc>
+		    <desc>
+			<value>7</value>
+			<name>Top Left Corner</name>
+			<name xml:lang="uk">Верхній лівий кут</name>
+		    </desc>
+		    <desc>
+			<value>8</value>
+			<name>Top Half</name>
+			<name xml:lang="uk">Горішня половина</name>
+		    </desc>
+		    <desc>
+			<value>9</value>
+			<name>Top Right Corner</name>
+			<name xml:lang="uk">Верхній правий кут</name>
+		    </desc>
+		    <desc>
+			<value>10</value>
+			<name>Maximize</name>
+			<name xml:lang="ace">Peurayeuk</name>
+			<name xml:lang="am">ማሳደጊያ</name>
+			<name xml:lang="ar">تكبير</name>
+			<name xml:lang="ast">Maximizar</name>
+			<name xml:lang="be">Разгарнуць</name>
+			<name xml:lang="bg">Максимизиране</name>
+			<name xml:lang="bn">বড় করা</name>
+			<name xml:lang="bn_IN">বড় করা</name>
+			<name xml:lang="br">Brasaat</name>
+			<name xml:lang="bs">Maksimizirano</name>
+			<name xml:lang="ca">Maximitza</name>
+			<name xml:lang="cs">Maximalizovat</name>
+			<name xml:lang="da">Maksimer</name>
+			<name xml:lang="de">Maximieren</name>
+			<name xml:lang="el">Μεγιστοποίησε</name>
+			<name xml:lang="en_AU">Maximise</name>
+			<name xml:lang="en_GB">Maximise</name>
+			<name xml:lang="eo">Maksimumigi</name>
+			<name xml:lang="es">Maximizada</name>
+			<name xml:lang="et">Maksimeeri</name>
+			<name xml:lang="eu">Maximizatu</name>
+			<name xml:lang="fi">Suurenna</name>
+			<name xml:lang="fr">Maximiser</name>
+			<name xml:lang="fy">Maksimalisearje</name>
+			<name xml:lang="gl">Maximizar</name>
+			<name xml:lang="gu">મહત્તમ કરો</name>
+			<name xml:lang="he">הגדל למקסימום</name>
+			<name xml:lang="hr">Povećaj</name>
+			<name xml:lang="hu">Maximalizálás</name>
+			<name xml:lang="it">Massimizzato</name>
+			<name xml:lang="ja">最大化</name>
+			<name xml:lang="kab">Semɣer</name>
+			<name xml:lang="kn">ಹಿಗ್ಗಿಸು</name>
+			<name xml:lang="ko">최대화</name>
+			<name xml:lang="ku">Mezin bike</name>
+			<name xml:lang="lt">Išdidinti</name>
+			<name xml:lang="lv">Maksimizēt</name>
+			<name xml:lang="ml">വലുതാക്കുക</name>
+			<name xml:lang="mr">मोठी करा</name>
+			<name xml:lang="ms">Maksimumkan</name>
+			<name xml:lang="my">အက်ယ္ခ်ဲ ့</name>
+			<name xml:lang="nb">Maksimer</name>
+			<name xml:lang="nds">Vergrötern</name>
+			<name xml:lang="nl">Maximaliseer</name>
+			<name xml:lang="oc">Maximizar</name>
+			<name xml:lang="or">ସର୍ବାଧିକ କର</name>
+			<name xml:lang="pl">Maksymalizuj</name>
+			<name xml:lang="pt">Maximizar</name>
+			<name xml:lang="pt_BR">Maximizar</name>
+			<name xml:lang="ro">Maximizează</name>
+			<name xml:lang="ru">Развернуть</name>
+			<name xml:lang="si">උපරිම</name>
+			<name xml:lang="sk">Maximalizovať</name>
+			<name xml:lang="sl">Razpni</name>
+			<name xml:lang="sq">Maksimizo</name>
+			<name xml:lang="sr">Увећај</name>
+			<name xml:lang="sv">Maximera</name>
+			<name xml:lang="ta">பெரிதாக்கு</name>
+			<name xml:lang="th">ขยายใหญ่</name>
+			<name xml:lang="tr">Büyüt</name>
+			<name xml:lang="ug">چوڭايت</name>
+			<name xml:lang="uk">Розгорнути</name>
+			<name xml:lang="vi">Phóng to</name>
+			<name xml:lang="zh_CN">最大化</name>
+			<name xml:lang="zh_HK">最大化</name>
+			<name xml:lang="zh_TW">最大化</name>
+		    </desc>
+		</option>
+		<option type="int" name="right_edge_action">
+		    <short>Right Edge</short>
+		    <short xml:lang="uk">Правий край</short>
+		    <long>Action to be performed when window is dropped on the right edge.</long>
+		    <default>6</default>
+		    <min>0</min>
+		    <max>10</max>
+		    <desc>
+			<value>0</value>
+			<name>None</name>
+			<name xml:lang="ace">Hana</name>
+			<name xml:lang="am">ምንም</name>
+			<name xml:lang="ar">بدون</name>
+			<name xml:lang="ast">Dengún</name>
+			<name xml:lang="be">Нічога</name>
+			<name xml:lang="bg">Без избор</name>
+			<name xml:lang="bn">কিছু না</name>
+			<name xml:lang="bn_IN">কিছু না</name>
+			<name xml:lang="br">Netra</name>
+			<name xml:lang="bs">Nijedno</name>
+			<name xml:lang="ca">Cap</name>
+			<name xml:lang="cs">Nic</name>
+			<name xml:lang="da">Ingen</name>
+			<name xml:lang="de">Keine</name>
+			<name xml:lang="el">Κανένα</name>
+			<name xml:lang="en_AU">None</name>
+			<name xml:lang="en_GB">None</name>
+			<name xml:lang="eo">Nenio</name>
+			<name xml:lang="es">Ninguno</name>
+			<name xml:lang="et">Puudub</name>
+			<name xml:lang="eu">Bat ere ez</name>
+			<name xml:lang="fi">Ei mitään</name>
+			<name xml:lang="fr">Aucune</name>
+			<name xml:lang="fy">Gjin</name>
+			<name xml:lang="gl">Ningunha</name>
+			<name xml:lang="gu">કંઈ નહિં</name>
+			<name xml:lang="he">ללא</name>
+			<name xml:lang="hi">कुछ नहीं</name>
+			<name xml:lang="hr">Nijedna</name>
+			<name xml:lang="hu">Egyik sem</name>
+			<name xml:lang="it">Niente</name>
+			<name xml:lang="ja">なし</name>
+			<name xml:lang="kab">Ulac</name>
+			<name xml:lang="km">គ្មាន</name>
+			<name xml:lang="kn">ಯಾವುದೂ ಇಲ್ಲ</name>
+			<name xml:lang="ko">없음</name>
+			<name xml:lang="ku">Ne yek</name>
+			<name xml:lang="lt">Nieko</name>
+			<name xml:lang="ml">ഒന്നുമില്ല</name>
+			<name xml:lang="ms">Tiada</name>
+			<name xml:lang="nb">Ingen</name>
+			<name xml:lang="nds">Keen</name>
+			<name xml:lang="nl">Geen</name>
+			<name xml:lang="oc">Pas cap</name>
+			<name xml:lang="or">କିଛିନାହିଁ</name>
+			<name xml:lang="pa">ਕੋਈ ਨਹੀਂ</name>
+			<name xml:lang="pl">Brak</name>
+			<name xml:lang="pt">Nenhum</name>
+			<name xml:lang="pt_BR">Nenhum</name>
+			<name xml:lang="ro">Nespecificat</name>
+			<name xml:lang="ru">Никакой</name>
+			<name xml:lang="si">කිසිවෙක් නැත</name>
+			<name xml:lang="sk">Žiadna</name>
+			<name xml:lang="sl">brez izbire</name>
+			<name xml:lang="sq">Asnjë</name>
+			<name xml:lang="sr">Nema</name>
+			<name xml:lang="sv">Ingen</name>
+			<name xml:lang="te">ఏదీకాదు</name>
+			<name xml:lang="th">ไม่มี</name>
+			<name xml:lang="tr">Hiçbiri</name>
+			<name xml:lang="ug">يوق</name>
+			<name xml:lang="uk">Ніякий</name>
+			<name xml:lang="vi">Không chọn</name>
+			<name xml:lang="zh_CN">无</name>
+			<name xml:lang="zh_HK">無</name>
+			<name xml:lang="zh_TW">無</name>
+		    </desc>
+		    <desc>
+			<value>1</value>
+			<name>Bottom Left Corner</name>
+			<name xml:lang="uk">Нижній лівий кут</name>
+		    </desc>
+		    <desc>
+			<value>2</value>
+			<name>Bottom Half</name>
+			<name xml:lang="uk">Долішня половина</name>
+		    </desc>
+		    <desc>
+			<value>3</value>
+			<name>Bottom Right Corner</name>
+			<name xml:lang="uk">Нижній правий кут</name>
+		    </desc>
+		    <desc>
+			<value>4</value>
+			<name>Left Half</name>
+			<name xml:lang="uk">Ліва половина</name>
+		    </desc>
+		    <desc>
+			<value>5</value>
+			<name>Fill Screen</name>
+			<name xml:lang="uk">На весь екран</name>
+		    </desc>
+		    <desc>
+			<value>6</value>
+			<name>Right Half</name>
+			<name xml:lang="uk">Права половина</name>
+		    </desc>
+		    <desc>
+			<value>7</value>
+			<name>Top Left Corner</name>
+			<name xml:lang="uk">Верхній лівий кут</name>
+		    </desc>
+		    <desc>
+			<value>8</value>
+			<name>Top Half</name>
+			<name xml:lang="uk">Горішня половина</name>
+		    </desc>
+		    <desc>
+			<value>9</value>
+			<name>Top Right Corner</name>
+			<name xml:lang="uk">Верхній правий кут</name>
+		    </desc>
+		    <desc>
+			<value>10</value>
+			<name>Maximize</name>
+			<name xml:lang="ace">Peurayeuk</name>
+			<name xml:lang="am">ማሳደጊያ</name>
+			<name xml:lang="ar">تكبير</name>
+			<name xml:lang="ast">Maximizar</name>
+			<name xml:lang="be">Разгарнуць</name>
+			<name xml:lang="bg">Максимизиране</name>
+			<name xml:lang="bn">বড় করা</name>
+			<name xml:lang="bn_IN">বড় করা</name>
+			<name xml:lang="br">Brasaat</name>
+			<name xml:lang="bs">Maksimizirano</name>
+			<name xml:lang="ca">Maximitza</name>
+			<name xml:lang="cs">Maximalizovat</name>
+			<name xml:lang="da">Maksimer</name>
+			<name xml:lang="de">Maximieren</name>
+			<name xml:lang="el">Μεγιστοποίησε</name>
+			<name xml:lang="en_AU">Maximise</name>
+			<name xml:lang="en_GB">Maximise</name>
+			<name xml:lang="eo">Maksimumigi</name>
+			<name xml:lang="es">Maximizada</name>
+			<name xml:lang="et">Maksimeeri</name>
+			<name xml:lang="eu">Maximizatu</name>
+			<name xml:lang="fi">Suurenna</name>
+			<name xml:lang="fr">Maximiser</name>
+			<name xml:lang="fy">Maksimalisearje</name>
+			<name xml:lang="gl">Maximizar</name>
+			<name xml:lang="gu">મહત્તમ કરો</name>
+			<name xml:lang="he">הגדל למקסימום</name>
+			<name xml:lang="hr">Povećaj</name>
+			<name xml:lang="hu">Maximalizálás</name>
+			<name xml:lang="it">Massimizzato</name>
+			<name xml:lang="ja">最大化</name>
+			<name xml:lang="kab">Semɣer</name>
+			<name xml:lang="kn">ಹಿಗ್ಗಿಸು</name>
+			<name xml:lang="ko">최대화</name>
+			<name xml:lang="ku">Mezin bike</name>
+			<name xml:lang="lt">Išdidinti</name>
+			<name xml:lang="lv">Maksimizēt</name>
+			<name xml:lang="ml">വലുതാക്കുക</name>
+			<name xml:lang="mr">मोठी करा</name>
+			<name xml:lang="ms">Maksimumkan</name>
+			<name xml:lang="my">အက်ယ္ခ်ဲ ့</name>
+			<name xml:lang="nb">Maksimer</name>
+			<name xml:lang="nds">Vergrötern</name>
+			<name xml:lang="nl">Maximaliseer</name>
+			<name xml:lang="oc">Maximizar</name>
+			<name xml:lang="or">ସର୍ବାଧିକ କର</name>
+			<name xml:lang="pl">Maksymalizuj</name>
+			<name xml:lang="pt">Maximizar</name>
+			<name xml:lang="pt_BR">Maximizar</name>
+			<name xml:lang="ro">Maximizează</name>
+			<name xml:lang="ru">Развернуть</name>
+			<name xml:lang="si">උපරිම</name>
+			<name xml:lang="sk">Maximalizovať</name>
+			<name xml:lang="sl">Razpni</name>
+			<name xml:lang="sq">Maksimizo</name>
+			<name xml:lang="sr">Увећај</name>
+			<name xml:lang="sv">Maximera</name>
+			<name xml:lang="ta">பெரிதாக்கு</name>
+			<name xml:lang="th">ขยายใหญ่</name>
+			<name xml:lang="tr">Büyüt</name>
+			<name xml:lang="ug">چوڭايت</name>
+			<name xml:lang="uk">Розгорнути</name>
+			<name xml:lang="vi">Phóng to</name>
+			<name xml:lang="zh_CN">最大化</name>
+			<name xml:lang="zh_HK">最大化</name>
+			<name xml:lang="zh_TW">最大化</name>
+		    </desc>
+		</option>
+		<option type="int" name="bottom_left_corner_action">
+		    <short>Bottom Left Corner</short>
+		    <short xml:lang="uk">Нижній лівий кут</short>
+		    <long>Action to be performed when window is dropped on the bottom left corner.</long>
+		    <default>4</default>
+		    <min>0</min>
+		    <max>10</max>
+		    <desc>
+			<value>0</value>
+			<name>None</name>
+			<name xml:lang="ace">Hana</name>
+			<name xml:lang="am">ምንም</name>
+			<name xml:lang="ar">بدون</name>
+			<name xml:lang="ast">Dengún</name>
+			<name xml:lang="be">Нічога</name>
+			<name xml:lang="bg">Без избор</name>
+			<name xml:lang="bn">কিছু না</name>
+			<name xml:lang="bn_IN">কিছু না</name>
+			<name xml:lang="br">Netra</name>
+			<name xml:lang="bs">Nijedno</name>
+			<name xml:lang="ca">Cap</name>
+			<name xml:lang="cs">Nic</name>
+			<name xml:lang="da">Ingen</name>
+			<name xml:lang="de">Keine</name>
+			<name xml:lang="el">Κανένα</name>
+			<name xml:lang="en_AU">None</name>
+			<name xml:lang="en_GB">None</name>
+			<name xml:lang="eo">Nenio</name>
+			<name xml:lang="es">Ninguno</name>
+			<name xml:lang="et">Puudub</name>
+			<name xml:lang="eu">Bat ere ez</name>
+			<name xml:lang="fi">Ei mitään</name>
+			<name xml:lang="fr">Aucune</name>
+			<name xml:lang="fy">Gjin</name>
+			<name xml:lang="gl">Ningunha</name>
+			<name xml:lang="gu">કંઈ નહિં</name>
+			<name xml:lang="he">ללא</name>
+			<name xml:lang="hi">कुछ नहीं</name>
+			<name xml:lang="hr">Nijedna</name>
+			<name xml:lang="hu">Egyik sem</name>
+			<name xml:lang="it">Niente</name>
+			<name xml:lang="ja">なし</name>
+			<name xml:lang="kab">Ulac</name>
+			<name xml:lang="km">គ្មាន</name>
+			<name xml:lang="kn">ಯಾವುದೂ ಇಲ್ಲ</name>
+			<name xml:lang="ko">없음</name>
+			<name xml:lang="ku">Ne yek</name>
+			<name xml:lang="lt">Nieko</name>
+			<name xml:lang="ml">ഒന്നുമില്ല</name>
+			<name xml:lang="ms">Tiada</name>
+			<name xml:lang="nb">Ingen</name>
+			<name xml:lang="nds">Keen</name>
+			<name xml:lang="nl">Geen</name>
+			<name xml:lang="oc">Pas cap</name>
+			<name xml:lang="or">କିଛିନାହିଁ</name>
+			<name xml:lang="pa">ਕੋਈ ਨਹੀਂ</name>
+			<name xml:lang="pl">Brak</name>
+			<name xml:lang="pt">Nenhum</name>
+			<name xml:lang="pt_BR">Nenhum</name>
+			<name xml:lang="ro">Nespecificat</name>
+			<name xml:lang="ru">Никакой</name>
+			<name xml:lang="si">කිසිවෙක් නැත</name>
+			<name xml:lang="sk">Žiadna</name>
+			<name xml:lang="sl">brez izbire</name>
+			<name xml:lang="sq">Asnjë</name>
+			<name xml:lang="sr">Nema</name>
+			<name xml:lang="sv">Ingen</name>
+			<name xml:lang="te">ఏదీకాదు</name>
+			<name xml:lang="th">ไม่มี</name>
+			<name xml:lang="tr">Hiçbiri</name>
+			<name xml:lang="ug">يوق</name>
+			<name xml:lang="uk">Ніякий</name>
+			<name xml:lang="vi">Không chọn</name>
+			<name xml:lang="zh_CN">无</name>
+			<name xml:lang="zh_HK">無</name>
+			<name xml:lang="zh_TW">無</name>
+		    </desc>
+		    <desc>
+			<value>1</value>
+			<name>Bottom Left Corner</name>
+			<name xml:lang="uk">Нижній лівий кут</name>
+		    </desc>
+		    <desc>
+			<value>2</value>
+			<name>Bottom Half</name>
+			<name xml:lang="uk">Долішня половина</name>
+		    </desc>
+		    <desc>
+			<value>3</value>
+			<name>Bottom Right Corner</name>
+			<name xml:lang="uk">Нижній правий кут</name>
+		    </desc>
+		    <desc>
+			<value>4</value>
+			<name>Left Half</name>
+			<name xml:lang="uk">Ліва половина</name>
+		    </desc>
+		    <desc>
+			<value>5</value>
+			<name>Fill Screen</name>
+			<name xml:lang="uk">На весь екран</name>
+		    </desc>
+		    <desc>
+			<value>6</value>
+			<name>Right Half</name>
+			<name xml:lang="uk">Права половина</name>
+		    </desc>
+		    <desc>
+			<value>7</value>
+			<name>Top Left Corner</name>
+			<name xml:lang="uk">Верхній лівий кут</name>
+		    </desc>
+		    <desc>
+			<value>8</value>
+			<name>Top Half</name>
+			<name xml:lang="uk">Горішня половина</name>
+		    </desc>
+		    <desc>
+			<value>9</value>
+			<name>Top Right Corner</name>
+			<name xml:lang="uk">Верхній правий кут</name>
+		    </desc>
+		    <desc>
+			<value>10</value>
+			<name>Maximize</name>
+			<name xml:lang="ace">Peurayeuk</name>
+			<name xml:lang="am">ማሳደጊያ</name>
+			<name xml:lang="ar">تكبير</name>
+			<name xml:lang="ast">Maximizar</name>
+			<name xml:lang="be">Разгарнуць</name>
+			<name xml:lang="bg">Максимизиране</name>
+			<name xml:lang="bn">বড় করা</name>
+			<name xml:lang="bn_IN">বড় করা</name>
+			<name xml:lang="br">Brasaat</name>
+			<name xml:lang="bs">Maksimizirano</name>
+			<name xml:lang="ca">Maximitza</name>
+			<name xml:lang="cs">Maximalizovat</name>
+			<name xml:lang="da">Maksimer</name>
+			<name xml:lang="de">Maximieren</name>
+			<name xml:lang="el">Μεγιστοποίησε</name>
+			<name xml:lang="en_AU">Maximise</name>
+			<name xml:lang="en_GB">Maximise</name>
+			<name xml:lang="eo">Maksimumigi</name>
+			<name xml:lang="es">Maximizada</name>
+			<name xml:lang="et">Maksimeeri</name>
+			<name xml:lang="eu">Maximizatu</name>
+			<name xml:lang="fi">Suurenna</name>
+			<name xml:lang="fr">Maximiser</name>
+			<name xml:lang="fy">Maksimalisearje</name>
+			<name xml:lang="gl">Maximizar</name>
+			<name xml:lang="gu">મહત્તમ કરો</name>
+			<name xml:lang="he">הגדל למקסימום</name>
+			<name xml:lang="hr">Povećaj</name>
+			<name xml:lang="hu">Maximalizálás</name>
+			<name xml:lang="it">Massimizzato</name>
+			<name xml:lang="ja">最大化</name>
+			<name xml:lang="kab">Semɣer</name>
+			<name xml:lang="kn">ಹಿಗ್ಗಿಸು</name>
+			<name xml:lang="ko">최대화</name>
+			<name xml:lang="ku">Mezin bike</name>
+			<name xml:lang="lt">Išdidinti</name>
+			<name xml:lang="lv">Maksimizēt</name>
+			<name xml:lang="ml">വലുതാക്കുക</name>
+			<name xml:lang="mr">मोठी करा</name>
+			<name xml:lang="ms">Maksimumkan</name>
+			<name xml:lang="my">အက်ယ္ခ်ဲ ့</name>
+			<name xml:lang="nb">Maksimer</name>
+			<name xml:lang="nds">Vergrötern</name>
+			<name xml:lang="nl">Maximaliseer</name>
+			<name xml:lang="oc">Maximizar</name>
+			<name xml:lang="or">ସର୍ବାଧିକ କର</name>
+			<name xml:lang="pl">Maksymalizuj</name>
+			<name xml:lang="pt">Maximizar</name>
+			<name xml:lang="pt_BR">Maximizar</name>
+			<name xml:lang="ro">Maximizează</name>
+			<name xml:lang="ru">Развернуть</name>
+			<name xml:lang="si">උපරිම</name>
+			<name xml:lang="sk">Maximalizovať</name>
+			<name xml:lang="sl">Razpni</name>
+			<name xml:lang="sq">Maksimizo</name>
+			<name xml:lang="sr">Увећај</name>
+			<name xml:lang="sv">Maximera</name>
+			<name xml:lang="ta">பெரிதாக்கு</name>
+			<name xml:lang="th">ขยายใหญ่</name>
+			<name xml:lang="tr">Büyüt</name>
+			<name xml:lang="ug">چوڭايت</name>
+			<name xml:lang="uk">Розгорнути</name>
+			<name xml:lang="vi">Phóng to</name>
+			<name xml:lang="zh_CN">最大化</name>
+			<name xml:lang="zh_HK">最大化</name>
+			<name xml:lang="zh_TW">最大化</name>
+		    </desc>
+		</option>
+		<option type="int" name="bottom_edge_action">
+		    <short>Bottom Edge</short>
+		    <short xml:lang="uk">Нижній край</short>
+		    <long>Action to be performed when window is dropped on the bottom edge.</long>
+		    <default>0</default>
+		    <min>0</min>
+		    <max>10</max>
+		    <desc>
+			<value>0</value>
+			<name>None</name>
+			<name xml:lang="ace">Hana</name>
+			<name xml:lang="am">ምንም</name>
+			<name xml:lang="ar">بدون</name>
+			<name xml:lang="ast">Dengún</name>
+			<name xml:lang="be">Нічога</name>
+			<name xml:lang="bg">Без избор</name>
+			<name xml:lang="bn">কিছু না</name>
+			<name xml:lang="bn_IN">কিছু না</name>
+			<name xml:lang="br">Netra</name>
+			<name xml:lang="bs">Nijedno</name>
+			<name xml:lang="ca">Cap</name>
+			<name xml:lang="cs">Nic</name>
+			<name xml:lang="da">Ingen</name>
+			<name xml:lang="de">Keine</name>
+			<name xml:lang="el">Κανένα</name>
+			<name xml:lang="en_AU">None</name>
+			<name xml:lang="en_GB">None</name>
+			<name xml:lang="eo">Nenio</name>
+			<name xml:lang="es">Ninguno</name>
+			<name xml:lang="et">Puudub</name>
+			<name xml:lang="eu">Bat ere ez</name>
+			<name xml:lang="fi">Ei mitään</name>
+			<name xml:lang="fr">Aucune</name>
+			<name xml:lang="fy">Gjin</name>
+			<name xml:lang="gl">Ningunha</name>
+			<name xml:lang="gu">કંઈ નહિં</name>
+			<name xml:lang="he">ללא</name>
+			<name xml:lang="hi">कुछ नहीं</name>
+			<name xml:lang="hr">Nijedna</name>
+			<name xml:lang="hu">Egyik sem</name>
+			<name xml:lang="it">Niente</name>
+			<name xml:lang="ja">なし</name>
+			<name xml:lang="kab">Ulac</name>
+			<name xml:lang="km">គ្មាន</name>
+			<name xml:lang="kn">ಯಾವುದೂ ಇಲ್ಲ</name>
+			<name xml:lang="ko">없음</name>
+			<name xml:lang="ku">Ne yek</name>
+			<name xml:lang="lt">Nieko</name>
+			<name xml:lang="ml">ഒന്നുമില്ല</name>
+			<name xml:lang="ms">Tiada</name>
+			<name xml:lang="nb">Ingen</name>
+			<name xml:lang="nds">Keen</name>
+			<name xml:lang="nl">Geen</name>
+			<name xml:lang="oc">Pas cap</name>
+			<name xml:lang="or">କିଛିନାହିଁ</name>
+			<name xml:lang="pa">ਕੋਈ ਨਹੀਂ</name>
+			<name xml:lang="pl">Brak</name>
+			<name xml:lang="pt">Nenhum</name>
+			<name xml:lang="pt_BR">Nenhum</name>
+			<name xml:lang="ro">Nespecificat</name>
+			<name xml:lang="ru">Никакой</name>
+			<name xml:lang="si">කිසිවෙක් නැත</name>
+			<name xml:lang="sk">Žiadna</name>
+			<name xml:lang="sl">brez izbire</name>
+			<name xml:lang="sq">Asnjë</name>
+			<name xml:lang="sr">Nema</name>
+			<name xml:lang="sv">Ingen</name>
+			<name xml:lang="te">ఏదీకాదు</name>
+			<name xml:lang="th">ไม่มี</name>
+			<name xml:lang="tr">Hiçbiri</name>
+			<name xml:lang="ug">يوق</name>
+			<name xml:lang="uk">Ніякий</name>
+			<name xml:lang="vi">Không chọn</name>
+			<name xml:lang="zh_CN">无</name>
+			<name xml:lang="zh_HK">無</name>
+			<name xml:lang="zh_TW">無</name>
+		    </desc>
+		    <desc>
+			<value>1</value>
+			<name>Bottom Left Corner</name>
+			<name xml:lang="uk">Нижній лівий кут</name>
+		    </desc>
+		    <desc>
+			<value>2</value>
+			<name>Bottom Half</name>
+			<name xml:lang="uk">Долішня половина</name>
+		    </desc>
+		    <desc>
+			<value>3</value>
+			<name>Bottom Right Corner</name>
+			<name xml:lang="uk">Нижній правий кут</name>
+		    </desc>
+		    <desc>
+			<value>4</value>
+			<name>Left Half</name>
+			<name xml:lang="uk">Ліва половина</name>
+		    </desc>
+		    <desc>
+			<value>5</value>
+			<name>Fill Screen</name>
+			<name xml:lang="uk">На весь екран</name>
+		    </desc>
+		    <desc>
+			<value>6</value>
+			<name>Right Half</name>
+			<name xml:lang="uk">Права половина</name>
+		    </desc>
+		    <desc>
+			<value>7</value>
+			<name>Top Left Corner</name>
+			<name xml:lang="uk">Верхній лівий кут</name>
+		    </desc>
+		    <desc>
+			<value>8</value>
+			<name>Top Half</name>
+			<name xml:lang="uk">Горішня половина</name>
+		    </desc>
+		    <desc>
+			<value>9</value>
+			<name>Top Right Corner</name>
+			<name xml:lang="uk">Верхній правий кут</name>
+		    </desc>
+		    <desc>
+			<value>10</value>
+			<name>Maximize</name>
+			<name xml:lang="ace">Peurayeuk</name>
+			<name xml:lang="am">ማሳደጊያ</name>
+			<name xml:lang="ar">تكبير</name>
+			<name xml:lang="ast">Maximizar</name>
+			<name xml:lang="be">Разгарнуць</name>
+			<name xml:lang="bg">Максимизиране</name>
+			<name xml:lang="bn">বড় করা</name>
+			<name xml:lang="bn_IN">বড় করা</name>
+			<name xml:lang="br">Brasaat</name>
+			<name xml:lang="bs">Maksimizirano</name>
+			<name xml:lang="ca">Maximitza</name>
+			<name xml:lang="cs">Maximalizovat</name>
+			<name xml:lang="da">Maksimer</name>
+			<name xml:lang="de">Maximieren</name>
+			<name xml:lang="el">Μεγιστοποίησε</name>
+			<name xml:lang="en_AU">Maximise</name>
+			<name xml:lang="en_GB">Maximise</name>
+			<name xml:lang="eo">Maksimumigi</name>
+			<name xml:lang="es">Maximizada</name>
+			<name xml:lang="et">Maksimeeri</name>
+			<name xml:lang="eu">Maximizatu</name>
+			<name xml:lang="fi">Suurenna</name>
+			<name xml:lang="fr">Maximiser</name>
+			<name xml:lang="fy">Maksimalisearje</name>
+			<name xml:lang="gl">Maximizar</name>
+			<name xml:lang="gu">મહત્તમ કરો</name>
+			<name xml:lang="he">הגדל למקסימום</name>
+			<name xml:lang="hr">Povećaj</name>
+			<name xml:lang="hu">Maximalizálás</name>
+			<name xml:lang="it">Massimizzato</name>
+			<name xml:lang="ja">最大化</name>
+			<name xml:lang="kab">Semɣer</name>
+			<name xml:lang="kn">ಹಿಗ್ಗಿಸು</name>
+			<name xml:lang="ko">최대화</name>
+			<name xml:lang="ku">Mezin bike</name>
+			<name xml:lang="lt">Išdidinti</name>
+			<name xml:lang="lv">Maksimizēt</name>
+			<name xml:lang="ml">വലുതാക്കുക</name>
+			<name xml:lang="mr">मोठी करा</name>
+			<name xml:lang="ms">Maksimumkan</name>
+			<name xml:lang="my">အက်ယ္ခ်ဲ ့</name>
+			<name xml:lang="nb">Maksimer</name>
+			<name xml:lang="nds">Vergrötern</name>
+			<name xml:lang="nl">Maximaliseer</name>
+			<name xml:lang="oc">Maximizar</name>
+			<name xml:lang="or">ସର୍ବାଧିକ କର</name>
+			<name xml:lang="pl">Maksymalizuj</name>
+			<name xml:lang="pt">Maximizar</name>
+			<name xml:lang="pt_BR">Maximizar</name>
+			<name xml:lang="ro">Maximizează</name>
+			<name xml:lang="ru">Развернуть</name>
+			<name xml:lang="si">උපරිම</name>
+			<name xml:lang="sk">Maximalizovať</name>
+			<name xml:lang="sl">Razpni</name>
+			<name xml:lang="sq">Maksimizo</name>
+			<name xml:lang="sr">Увећај</name>
+			<name xml:lang="sv">Maximera</name>
+			<name xml:lang="ta">பெரிதாக்கு</name>
+			<name xml:lang="th">ขยายใหญ่</name>
+			<name xml:lang="tr">Büyüt</name>
+			<name xml:lang="ug">چوڭايت</name>
+			<name xml:lang="uk">Розгорнути</name>
+			<name xml:lang="vi">Phóng to</name>
+			<name xml:lang="zh_CN">最大化</name>
+			<name xml:lang="zh_HK">最大化</name>
+			<name xml:lang="zh_TW">最大化</name>
+		    </desc>
+		</option>
+		<option type="int" name="bottom_right_corner_action">
+		    <short>Bottom Right Corner</short>
+		    <short xml:lang="uk">Нижній правий кут</short>
+		    <long>Action to be performed when window is dropped on the bottom right corner.</long>
+		    <default>6</default>
+		    <min>0</min>
+		    <max>10</max>
+		    <desc>
+			<value>0</value>
+			<name>None</name>
+			<name xml:lang="ace">Hana</name>
+			<name xml:lang="am">ምንም</name>
+			<name xml:lang="ar">بدون</name>
+			<name xml:lang="ast">Dengún</name>
+			<name xml:lang="be">Нічога</name>
+			<name xml:lang="bg">Без избор</name>
+			<name xml:lang="bn">কিছু না</name>
+			<name xml:lang="bn_IN">কিছু না</name>
+			<name xml:lang="br">Netra</name>
+			<name xml:lang="bs">Nijedno</name>
+			<name xml:lang="ca">Cap</name>
+			<name xml:lang="cs">Nic</name>
+			<name xml:lang="da">Ingen</name>
+			<name xml:lang="de">Keine</name>
+			<name xml:lang="el">Κανένα</name>
+			<name xml:lang="en_AU">None</name>
+			<name xml:lang="en_GB">None</name>
+			<name xml:lang="eo">Nenio</name>
+			<name xml:lang="es">Ninguno</name>
+			<name xml:lang="et">Puudub</name>
+			<name xml:lang="eu">Bat ere ez</name>
+			<name xml:lang="fi">Ei mitään</name>
+			<name xml:lang="fr">Aucune</name>
+			<name xml:lang="fy">Gjin</name>
+			<name xml:lang="gl">Ningunha</name>
+			<name xml:lang="gu">કંઈ નહિં</name>
+			<name xml:lang="he">ללא</name>
+			<name xml:lang="hi">कुछ नहीं</name>
+			<name xml:lang="hr">Nijedna</name>
+			<name xml:lang="hu">Egyik sem</name>
+			<name xml:lang="it">Niente</name>
+			<name xml:lang="ja">なし</name>
+			<name xml:lang="kab">Ulac</name>
+			<name xml:lang="km">គ្មាន</name>
+			<name xml:lang="kn">ಯಾವುದೂ ಇಲ್ಲ</name>
+			<name xml:lang="ko">없음</name>
+			<name xml:lang="ku">Ne yek</name>
+			<name xml:lang="lt">Nieko</name>
+			<name xml:lang="ml">ഒന്നുമില്ല</name>
+			<name xml:lang="ms">Tiada</name>
+			<name xml:lang="nb">Ingen</name>
+			<name xml:lang="nds">Keen</name>
+			<name xml:lang="nl">Geen</name>
+			<name xml:lang="oc">Pas cap</name>
+			<name xml:lang="or">କିଛିନାହିଁ</name>
+			<name xml:lang="pa">ਕੋਈ ਨਹੀਂ</name>
+			<name xml:lang="pl">Brak</name>
+			<name xml:lang="pt">Nenhum</name>
+			<name xml:lang="pt_BR">Nenhum</name>
+			<name xml:lang="ro">Nespecificat</name>
+			<name xml:lang="ru">Никакой</name>
+			<name xml:lang="si">කිසිවෙක් නැත</name>
+			<name xml:lang="sk">Žiadna</name>
+			<name xml:lang="sl">brez izbire</name>
+			<name xml:lang="sq">Asnjë</name>
+			<name xml:lang="sr">Nema</name>
+			<name xml:lang="sv">Ingen</name>
+			<name xml:lang="te">ఏదీకాదు</name>
+			<name xml:lang="th">ไม่มี</name>
+			<name xml:lang="tr">Hiçbiri</name>
+			<name xml:lang="ug">يوق</name>
+			<name xml:lang="uk">Ніякий</name>
+			<name xml:lang="vi">Không chọn</name>
+			<name xml:lang="zh_CN">无</name>
+			<name xml:lang="zh_HK">無</name>
+			<name xml:lang="zh_TW">無</name>
+		    </desc>
+		    <desc>
+			<value>1</value>
+			<name>Bottom Left Corner</name>
+			<name xml:lang="uk">Нижній лівий кут</name>
+		    </desc>
+		    <desc>
+			<value>2</value>
+			<name>Bottom Half</name>
+			<name xml:lang="uk">Долішня половина</name>
+		    </desc>
+		    <desc>
+			<value>3</value>
+			<name>Bottom Right Corner</name>
+			<name xml:lang="uk">Нижній правий кут</name>
+		    </desc>
+		    <desc>
+			<value>4</value>
+			<name>Left Half</name>
+			<name xml:lang="uk">Ліва половина</name>
+		    </desc>
+		    <desc>
+			<value>5</value>
+			<name>Fill Screen</name>
+			<name xml:lang="uk">На весь екран</name>
+		    </desc>
+		    <desc>
+			<value>6</value>
+			<name>Right Half</name>
+			<name xml:lang="uk">Права половина</name>
+		    </desc>
+		    <desc>
+			<value>7</value>
+			<name>Top Left Corner</name>
+			<name xml:lang="uk">Верхній лівий кут</name>
+		    </desc>
+		    <desc>
+			<value>8</value>
+			<name>Top Half</name>
+			<name xml:lang="uk">Горішня половина</name>
+		    </desc>
+		    <desc>
+			<value>9</value>
+			<name>Top Right Corner</name>
+			<name xml:lang="uk">Верхній правий кут</name>
+		    </desc>
+		    <desc>
+			<value>10</value>
+			<name>Maximize</name>
+			<name xml:lang="ace">Peurayeuk</name>
+			<name xml:lang="am">ማሳደጊያ</name>
+			<name xml:lang="ar">تكبير</name>
+			<name xml:lang="ast">Maximizar</name>
+			<name xml:lang="be">Разгарнуць</name>
+			<name xml:lang="bg">Максимизиране</name>
+			<name xml:lang="bn">বড় করা</name>
+			<name xml:lang="bn_IN">বড় করা</name>
+			<name xml:lang="br">Brasaat</name>
+			<name xml:lang="bs">Maksimizirano</name>
+			<name xml:lang="ca">Maximitza</name>
+			<name xml:lang="cs">Maximalizovat</name>
+			<name xml:lang="da">Maksimer</name>
+			<name xml:lang="de">Maximieren</name>
+			<name xml:lang="el">Μεγιστοποίησε</name>
+			<name xml:lang="en_AU">Maximise</name>
+			<name xml:lang="en_GB">Maximise</name>
+			<name xml:lang="eo">Maksimumigi</name>
+			<name xml:lang="es">Maximizada</name>
+			<name xml:lang="et">Maksimeeri</name>
+			<name xml:lang="eu">Maximizatu</name>
+			<name xml:lang="fi">Suurenna</name>
+			<name xml:lang="fr">Maximiser</name>
+			<name xml:lang="fy">Maksimalisearje</name>
+			<name xml:lang="gl">Maximizar</name>
+			<name xml:lang="gu">મહત્તમ કરો</name>
+			<name xml:lang="he">הגדל למקסימום</name>
+			<name xml:lang="hr">Povećaj</name>
+			<name xml:lang="hu">Maximalizálás</name>
+			<name xml:lang="it">Massimizzato</name>
+			<name xml:lang="ja">最大化</name>
+			<name xml:lang="kab">Semɣer</name>
+			<name xml:lang="kn">ಹಿಗ್ಗಿಸು</name>
+			<name xml:lang="ko">최대화</name>
+			<name xml:lang="ku">Mezin bike</name>
+			<name xml:lang="lt">Išdidinti</name>
+			<name xml:lang="lv">Maksimizēt</name>
+			<name xml:lang="ml">വലുതാക്കുക</name>
+			<name xml:lang="mr">मोठी करा</name>
+			<name xml:lang="ms">Maksimumkan</name>
+			<name xml:lang="my">အက်ယ္ခ်ဲ ့</name>
+			<name xml:lang="nb">Maksimer</name>
+			<name xml:lang="nds">Vergrötern</name>
+			<name xml:lang="nl">Maximaliseer</name>
+			<name xml:lang="oc">Maximizar</name>
+			<name xml:lang="or">ସର୍ବାଧିକ କର</name>
+			<name xml:lang="pl">Maksymalizuj</name>
+			<name xml:lang="pt">Maximizar</name>
+			<name xml:lang="pt_BR">Maximizar</name>
+			<name xml:lang="ro">Maximizează</name>
+			<name xml:lang="ru">Развернуть</name>
+			<name xml:lang="si">උපරිම</name>
+			<name xml:lang="sk">Maximalizovať</name>
+			<name xml:lang="sl">Razpni</name>
+			<name xml:lang="sq">Maksimizo</name>
+			<name xml:lang="sr">Увећај</name>
+			<name xml:lang="sv">Maximera</name>
+			<name xml:lang="ta">பெரிதாக்கு</name>
+			<name xml:lang="th">ขยายใหญ่</name>
+			<name xml:lang="tr">Büyüt</name>
+			<name xml:lang="ug">چوڭايت</name>
+			<name xml:lang="uk">Розгорнути</name>
+			<name xml:lang="vi">Phóng to</name>
+			<name xml:lang="zh_CN">最大化</name>
+			<name xml:lang="zh_HK">最大化</name>
+			<name xml:lang="zh_TW">最大化</name>
+		    </desc>
+		</option>
+	    </group>
+	    <group>
+		<short>Resize Actions</short>
+		<short xml:lang="uk">Дії зміни розміру</short>
+		<option type="bool" name="snapback_windows">
+			<short>Snap Windows Back To Original Size</short>
+			<long>Snaps windows back to their original size if dragged away from their gridded position.</long>
+			<default>true</default>
+		</option>
+		<option type="bool" name="cycle_sizes">
+			<short>Cycle Through Multiple Sizes</short>
+			<long>Cycle through multiple different sizes by using the same keyboard shortcut multiple times in a row.</long>
+			<default>false</default>
+		</option>
+		<subgroup>
+			<short>Grid Snapback Thresholds</short>
+			<option type="int" name="left_edge_threshold">
+				<short>Left Edge</short>
+				<short xml:lang="uk">Лівий край</short>
+				<long>Maximum number of pixels from the left edge a window can be dropped.</long>
+				<default>15</default>
+				<min>0</min>
+				<max>500</max>
+			</option>
+			<option type="int" name="right_edge_threshold">
+				<short>Right Edge</short>
+				<short xml:lang="uk">Правий край</short>
+				<long>Maximum number of pixels from the right edge a window can be dropped.</long>
+				<default>15</default>
+				<min>0</min>
+				<max>500</max>
+			</option>
+			<option type="int" name="top_edge_threshold">
+				<short>Top Edge</short>
+				<long>Maximum number of pixels from the top edge a window can be dropped.</long>
+				<default>20</default>
+				<min>0</min>
+				<max>500</max>
+			</option>
+			<option type="int" name="bottom_edge_threshold">
+				<short>Bottom Edge</short>
+				<short xml:lang="uk">Нижній край</short>
+				<long>Maximum number of pixels from the bottom edge a window can be dropped.</long>
+				<default>5</default>
+				<min>0</min>
+				<max>500</max>
+			</option>
+		</subgroup>
+		<subgroup>
+			<short>Grid Snapoff Threshold</short>
+			<option type="int" name="snapoff_threshold">
+				<short>General Size</short>
+				<short xml:lang="da">Generel størrelse</short>
+				<long>The pixels to drag until a grid-resized window snaps off.</long>
+				<default>50</default>
+				<min>0</min>
+				<max>500</max>
+			</option>
+		</subgroup>
+	    </group>
+	    <group>
+		<short>Appearance</short>
+		<short xml:lang="am">አቀራረብ</short>
+		<short xml:lang="ast">Aspeutu</short>
+		<short xml:lang="be">Вонкавы выгляд</short>
+		<short xml:lang="bg">Външен вид</short>
+		<short xml:lang="bs">Izgled</short>
+		<short xml:lang="cs">Vzhled</short>
+		<short xml:lang="da">Udseende</short>
+		<short xml:lang="de">Erscheinung</short>
+		<short xml:lang="el">Εμφάνιση</short>
+		<short xml:lang="en_AU">Appearance</short>
+		<short xml:lang="en_GB">Appearance</short>
+		<short xml:lang="es">Apariencia</short>
+		<short xml:lang="eu">Itxura</short>
+		<short xml:lang="fi">Ulkoasu</short>
+		<short xml:lang="fr">Apparence</short>
+		<short xml:lang="fy">Foarkommen</short>
+		<short xml:lang="gl">Aparencia</short>
+		<short xml:lang="he">מראה</short>
+		<short xml:lang="hr">Izgled</short>
+		<short xml:lang="hu">Megjelenés</short>
+		<short xml:lang="it">Aspetto</short>
+		<short xml:lang="ja">外観</short>
+		<short xml:lang="ko">모양</short>
+		<short xml:lang="ms">Penampilan</short>
+		<short xml:lang="my">ပုံပန်းသဏ္ဍာန်</short>
+		<short xml:lang="nb">Utseende</short>
+		<short xml:lang="nds">Utsehn</short>
+		<short xml:lang="nl">Uiterlijk</short>
+		<short xml:lang="oc">Aparéncia</short>
+		<short xml:lang="pl">Wygląd</short>
+		<short xml:lang="pt">Aparência</short>
+		<short xml:lang="pt_BR">Aparência</short>
+		<short xml:lang="ro">Aspect</short>
+		<short xml:lang="ru">Внешний вид</short>
+		<short xml:lang="sl">Videz</short>
+		<short xml:lang="sq">Pamja</short>
+		<short xml:lang="sr">Изглед</short>
+		<short xml:lang="sv">Utseende</short>
+		<short xml:lang="tr">Görünüm</short>
+		<short xml:lang="ug">كۆرۈنۈشى</short>
+		<short xml:lang="uk">Зовнішній вигляд</short>
+		<short xml:lang="vi">Diện mạo</short>
+		<short xml:lang="zh_CN">外观</short>
+		<short xml:lang="zh_HK">外觀</short>
+		<short xml:lang="zh_TW">外觀</short>
+		<option type="bool" name="draw_indicator">
+			<short>Preview Indicator</short>
+			<short xml:lang="uk">Індикатор передпрогляду</short>
+			<long>Draw a window resize indicator preview.</long>
+			<default>true</default>
+		</option>
+		<option type="bool" name="draw_stretched_window">
+			<short>Stretched Live Window Preview</short>
+			<long>Draw a stretched live window content animation.</long>
+			<default>true</default>
+		</option>
+		<option type="int" name="animation_duration">
+			<short>Preview Animation Duration</short>
+			<long>Preview animation duration (in ms).</long>
+			<default>350</default>
+			<min>0</min>
+		</option>
+		<option type="bool" name="use_desktop_average_color">
+		    <short>Use Desktop average color</short>
+		    <long>Try to use the desktop average color if defined by your DE.</long>
+		    <default>true</default>
+		</option>
+		<option type="color" name="outline_color">
+			<short>Preview Outline Color</short>
+			<short xml:lang="uk">Передпрогляд кольору контуру</short>
+			<long>Color and opacity of the resize indicator preview outline.</long>
+			<default>
+			    <red>0xfbfb</red>
+			    <green>0x8b8b</green>
+			    <blue>0x0</blue>
+			    <alpha>0x9f9f</alpha>
+			</default>
+		</option>
+		<option type="color" name="fill_color">
+			<short>Preview Fill Color</short>
+			<short xml:lang="uk">Передпрогляд кольору заливки</short>
+			<long>Fill color and opacity of the resize indicator preview.</long>
+			<default>
+			    <red>0xfbfb</red>
+			    <green>0x8b8b</green>
+			    <blue>0x0</blue>
+			    <alpha>0x4f4f</alpha>
+			</default>
+		</option>
+		<option type="bool" name="disable_blend">
+			<short>Disable Transparency</short>
+			<short xml:lang="de">Durchsichtigkeit deaktivieren</short>
+			<short xml:lang="uk">Вимкнути прозорість</short>
+			<long>Disable blending.</long>
+			<long xml:lang="uk">Вимкнути змішування.</long>
+			<default>false</default>
+		</option>
+	    </group>
+	</options>
+    </plugin>
+</compiz>

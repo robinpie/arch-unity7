@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="freewins">
+	<short>Freely Transformable Windows</short>
+	<short xml:lang="da">Frit transformerbare vinduer</short>
+	<long>Freely transform windows</long>
+	<long xml:lang="uk">Вільна трансформація вікон</long>
+	<category>Effects</category>
+	<deps>
+		<requirement>
+			<plugin>opengl</plugin>
+		</requirement>
+		<relation type="after">
+			<plugin>opengl</plugin>
+			<plugin>scale</plugin>
+			<plugin>ring</plugin>
+			<plugin>shift</plugin>
+			<plugin>shelf</plugin>
+			<plugin>group</plugin>
+			<plugin>wobbly</plugin>
+			<plugin>animation</plugin>
+			<plugin>water</plugin>
+			<plugin>cubeaddon</plugin>
+			<plugin>3d</plugin>
+		</relation>
+	</deps>
+	<options>
+	<option type='action' name='rotate'/>
+	<option type='action' name='increment_rotate'/>
+	<option type='action' name='scale'/>
+	<group>
+		<short>Free Transformation</short>
+		<option type="button" name="initiate_rotation_button">
+			<short>Initiate Rotation Button</short>
+			<long>Mouse button to start free rotation.</long>
+			<default>&lt;Control&gt;&lt;Shift&gt;Button1</default>
+		</option>
+		<option type="button" name="initiate_scale_button">
+			<short>Initiate Scaling Button</short>
+			<long>Mouse button to start free scaling.</long>
+			<default>&lt;Control&gt;&lt;Shift&gt;Button3</default>
+		</option>
+		<option type="button" name="reset_button">
+			<short>Reset Transformation Button</short>
+			<long>Mouse button to reset the transformation.</long>
+			<default>&lt;Control&gt;&lt;Shift&gt;Button2</default>
+		</option>
+		<option type="key" name="reset_key">
+			<short>Reset Transformation Key</short>
+			<long>Keyboard shortcut to reset the transformation.</long>
+			<default>&lt;Control&gt;&lt;Shift&gt;r</default>
+		</option>
+		<option type="key" name="toggle_axis_key">
+			<short>Axis Help Toggle</short>
+			<long>Keyboard shortcut to toggle the visibility of the axis selection helper.</long>
+			<default>&lt;Control&gt;&lt;Shift&gt;h</default>
+		</option>
+		<subgroup>
+		<short>Transformation Behaviour</short>
+		<option type="list" name="snap_mods">
+		  <short>Snap Modifier</short>
+		  <long>Use these bindings to enable/disable snapping.</long>
+			  <type>int</type>
+			  <min>0</min>
+			  <max>3</max>
+			  <desc>
+				  <value>0</value>
+				  <name>Shift</name>
+				  <name xml:lang="ast">Mayús</name>
+				  <name xml:lang="bg">Shift</name>
+				  <name xml:lang="bs">Shift</name>
+				  <name xml:lang="de">Umschalttaste</name>
+				  <name xml:lang="el">Shift</name>
+				  <name xml:lang="en_AU">Shift</name>
+				  <name xml:lang="en_GB">Shift</name>
+				  <name xml:lang="es">Mayús</name>
+				  <name xml:lang="fi">Shift</name>
+				  <name xml:lang="fr">Majuscule</name>
+				  <name xml:lang="gl">Maiús</name>
+				  <name xml:lang="hr">Shift</name>
+				  <name xml:lang="it">Maiusc</name>
+				  <name xml:lang="ko">쉬프트</name>
+				  <name xml:lang="ms">Shift</name>
+				  <name xml:lang="nl">Shift</name>
+				  <name xml:lang="oc">Majuscula</name>
+				  <name xml:lang="pl">Shift</name>
+				  <name xml:lang="pt">Shift</name>
+				  <name xml:lang="pt_BR">Shift</name>
+				  <name xml:lang="ro">Shift</name>
+				  <name xml:lang="ru">Shift</name>
+				  <name xml:lang="sl">Shift</name>
+				  <name xml:lang="sv">Skift</name>
+				  <name xml:lang="tr">Shift</name>
+				  <name xml:lang="ug">Shift</name>
+				  <name xml:lang="uk">Shift</name>
+				  <name xml:lang="vi">Shift</name>
+				  <name xml:lang="zh_CN">Shift</name>
+			  </desc>
+			  <desc>
+				  <value>1</value>
+				  <name>Alt</name>
+				  <name xml:lang="ast">Alt</name>
+				  <name xml:lang="bg">Alt</name>
+				  <name xml:lang="bs">Alt</name>
+				  <name xml:lang="de">Alt</name>
+				  <name xml:lang="el">Alt</name>
+				  <name xml:lang="en_AU">Alt</name>
+				  <name xml:lang="en_GB">Alt</name>
+				  <name xml:lang="es">Alt</name>
+				  <name xml:lang="fi">Alt</name>
+				  <name xml:lang="fr">Alt</name>
+				  <name xml:lang="gl">Alt</name>
+				  <name xml:lang="hr">Alt</name>
+				  <name xml:lang="it">Alt</name>
+				  <name xml:lang="ja">[Alt]</name>
+				  <name xml:lang="ko">알트</name>
+				  <name xml:lang="ms">Alt</name>
+				  <name xml:lang="nl">Alt</name>
+				  <name xml:lang="oc">Elev</name>
+				  <name xml:lang="pl">Alt</name>
+				  <name xml:lang="pt">Alt</name>
+				  <name xml:lang="pt_BR">Alt</name>
+				  <name xml:lang="ro">Alt</name>
+				  <name xml:lang="ru">Alt</name>
+				  <name xml:lang="sl">Alt</name>
+				  <name xml:lang="sv">Alt</name>
+				  <name xml:lang="tr">Alt</name>
+				  <name xml:lang="ug">Alt</name>
+				  <name xml:lang="uk">Alt</name>
+				  <name xml:lang="vi">Alt</name>
+				  <name xml:lang="zh_CN">Alt</name>
+			  </desc>
+			  <desc>
+				  <value>2</value>
+				  <name>Control</name>
+				  <name xml:lang="ast">Control</name>
+				  <name xml:lang="bg">Control</name>
+				  <name xml:lang="bs">Upravljanje</name>
+				  <name xml:lang="de">Steuerung</name>
+				  <name xml:lang="el">Control</name>
+				  <name xml:lang="en_AU">Control</name>
+				  <name xml:lang="en_GB">Control</name>
+				  <name xml:lang="es">Control</name>
+				  <name xml:lang="fi">Ctrl</name>
+				  <name xml:lang="fr">Ctrl</name>
+				  <name xml:lang="gl">Control</name>
+				  <name xml:lang="hr">Ctrl</name>
+				  <name xml:lang="it">Ctrl</name>
+				  <name xml:lang="ko">컨트롤</name>
+				  <name xml:lang="ms">Control</name>
+				  <name xml:lang="nl">Beheer</name>
+				  <name xml:lang="oc">Ctrl</name>
+				  <name xml:lang="pl">Control</name>
+				  <name xml:lang="pt">Controlo</name>
+				  <name xml:lang="pt_BR">Controle</name>
+				  <name xml:lang="ro">Control</name>
+				  <name xml:lang="ru">Ctrl</name>
+				  <name xml:lang="sl">Control</name>
+				  <name xml:lang="sv">Control</name>
+				  <name xml:lang="tr">Ctrl</name>
+				  <name xml:lang="ug">تىزگىن</name>
+				  <name xml:lang="uk">Control</name>
+				  <name xml:lang="vi">Control</name>
+				  <name xml:lang="zh_CN">Control</name>
+			  </desc>
+			  <desc>
+				  <value>3</value>
+				  <name>Meta</name>
+				  <name xml:lang="ast">Meta</name>
+				  <name xml:lang="bg">Meta</name>
+				  <name xml:lang="bs">Meta</name>
+				  <name xml:lang="de">Meta</name>
+				  <name xml:lang="el">Meta</name>
+				  <name xml:lang="en_AU">Meta</name>
+				  <name xml:lang="en_GB">Meta</name>
+				  <name xml:lang="es">Meta</name>
+				  <name xml:lang="fi">Meta</name>
+				  <name xml:lang="fr">Méta</name>
+				  <name xml:lang="gl">Super</name>
+				  <name xml:lang="hr">Meta</name>
+				  <name xml:lang="it">Meta</name>
+				  <name xml:lang="ko">윈도 키</name>
+				  <name xml:lang="ms">Meta</name>
+				  <name xml:lang="nl">Meta</name>
+				  <name xml:lang="oc">Meta</name>
+				  <name xml:lang="pt">Meta</name>
+				  <name xml:lang="pt_BR">Meta</name>
+				  <name xml:lang="ro">Meta</name>
+				  <name xml:lang="ru">Meta</name>
+				  <name xml:lang="sl">Meta</name>
+				  <name xml:lang="sv">Meta</name>
+				  <name xml:lang="ug">Meta</name>
+				  <name xml:lang="uk">Meta</name>
+				  <name xml:lang="vi">Meta</name>
+				  <name xml:lang="zh_CN">Meta</name>
+			  </desc>
+		</option>
+		</subgroup>
+		<subgroup>
+		<short>Rotation</short>
+		<short xml:lang="uk">Обертання</short>
+		  <option type="list" name="invert_mods">
+		  <short>Invert Modifier</short>
+		  <long>Use these bindings to invert the rotation mode.</long>
+			  <type>int</type>
+			  <min>0</min>
+			  <max>3</max>
+			  <desc>
+				  <value>0</value>
+				  <name>Shift</name>
+				  <name xml:lang="ast">Mayús</name>
+				  <name xml:lang="bg">Shift</name>
+				  <name xml:lang="bs">Shift</name>
+				  <name xml:lang="de">Umschalttaste</name>
+				  <name xml:lang="el">Shift</name>
+				  <name xml:lang="en_AU">Shift</name>
+				  <name xml:lang="en_GB">Shift</name>
+				  <name xml:lang="es">Mayús</name>
+				  <name xml:lang="fi">Shift</name>
+				  <name xml:lang="fr">Majuscule</name>
+				  <name xml:lang="gl">Maiús</name>
+				  <name xml:lang="hr">Shift</name>
+				  <name xml:lang="it">Maiusc</name>
+				  <name xml:lang="ko">쉬프트</name>
+				  <name xml:lang="ms">Shift</name>
+				  <name xml:lang="nl">Shift</name>
+				  <name xml:lang="oc">Majuscula</name>
+				  <name xml:lang="pl">Shift</name>
+				  <name xml:lang="pt">Shift</name>
+				  <name xml:lang="pt_BR">Shift</name>
+				  <name xml:lang="ro">Shift</name>
+				  <name xml:lang="ru">Shift</name>
+				  <name xml:lang="sl">Shift</name>
+				  <name xml:lang="sv">Skift</name>
+				  <name xml:lang="tr">Shift</name>
+				  <name xml:lang="ug">Shift</name>
+				  <name xml:lang="uk">Shift</name>
+				  <name xml:lang="vi">Shift</name>
+				  <name xml:lang="zh_CN">Shift</name>
+			  </desc>
+			  <desc>
+				  <value>1</value>
+				  <name>Alt</name>
+				  <name xml:lang="ast">Alt</name>
+				  <name xml:lang="bg">Alt</name>
+				  <name xml:lang="bs">Alt</name>
+				  <name xml:lang="de">Alt</name>
+				  <name xml:lang="el">Alt</name>
+				  <name xml:lang="en_AU">Alt</name>
+				  <name xml:lang="en_GB">Alt</name>
+				  <name xml:lang="es">Alt</name>
+				  <name xml:lang="fi">Alt</name>
+				  <name xml:lang="fr">Alt</name>
+				  <name xml:lang="gl">Alt</name>
+				  <name xml:lang="hr">Alt</name>
+				  <name xml:lang="it">Alt</name>
+				  <name xml:lang="ja">[Alt]</name>
+				  <name xml:lang="ko">알트</name>
+				  <name xml:lang="ms">Alt</name>
+				  <name xml:lang="nl">Alt</name>
+				  <name xml:lang="oc">Elev</name>
+				  <name xml:lang="pl">Alt</name>
+				  <name xml:lang="pt">Alt</name>
+				  <name xml:lang="pt_BR">Alt</name>
+				  <name xml:lang="ro">Alt</name>
+				  <name xml:lang="ru">Alt</name>
+				  <name xml:lang="sl">Alt</name>
+				  <name xml:lang="sv">Alt</name>
+				  <name xml:lang="tr">Alt</name>
+				  <name xml:lang="ug">Alt</name>
+				  <name xml:lang="uk">Alt</name>
+				  <name xml:lang="vi">Alt</name>
+				  <name xml:lang="zh_CN">Alt</name>
+			  </desc>
+			  <desc>
+				  <value>2</value>
+				  <name>Control</name>
+				  <name xml:lang="ast">Control</name>
+				  <name xml:lang="bg">Control</name>
+				  <name xml:lang="bs">Upravljanje</name>
+				  <name xml:lang="de">Steuerung</name>
+				  <name xml:lang="el">Control</name>
+				  <name xml:lang="en_AU">Control</name>
+				  <name xml:lang="en_GB">Control</name>
+				  <name xml:lang="es">Control</name>
+				  <name xml:lang="fi">Ctrl</name>
+				  <name xml:lang="fr">Ctrl</name>
+				  <name xml:lang="gl">Control</name>
+				  <name xml:lang="hr">Ctrl</name>
+				  <name xml:lang="it">Ctrl</name>
+				  <name xml:lang="ko">컨트롤</name>
+				  <name xml:lang="ms">Control</name>
+				  <name xml:lang="nl">Beheer</name>
+				  <name xml:lang="oc">Ctrl</name>
+				  <name xml:lang="pl">Control</name>
+				  <name xml:lang="pt">Controlo</name>
+				  <name xml:lang="pt_BR">Controle</name>
+				  <name xml:lang="ro">Control</name>
+				  <name xml:lang="ru">Ctrl</name>
+				  <name xml:lang="sl">Control</name>
+				  <name xml:lang="sv">Control</name>
+				  <name xml:lang="tr">Ctrl</name>
+				  <name xml:lang="ug">تىزگىن</name>
+				  <name xml:lang="uk">Control</name>
+				  <name xml:lang="vi">Control</name>
+				  <name xml:lang="zh_CN">Control</name>
+			  </desc>
+			  <desc>
+				  <value>3</value>
+				  <name>Meta</name>
+				  <name xml:lang="ast">Meta</name>
+				  <name xml:lang="bg">Meta</name>
+				  <name xml:lang="bs">Meta</name>
+				  <name xml:lang="de">Meta</name>
+				  <name xml:lang="el">Meta</name>
+				  <name xml:lang="en_AU">Meta</name>
+				  <name xml:lang="en_GB">Meta</name>
+				  <name xml:lang="es">Meta</name>
+				  <name xml:lang="fi">Meta</name>
+				  <name xml:lang="fr">Méta</name>
+				  <name xml:lang="gl">Super</name>
+				  <name xml:lang="hr">Meta</name>
+				  <name xml:lang="it">Meta</name>
+				  <name xml:lang="ko">윈도 키</name>
+				  <name xml:lang="ms">Meta</name>
+				  <name xml:lang="nl">Meta</name>
+				  <name xml:lang="oc">Meta</name>
+				  <name xml:lang="pt">Meta</name>
+				  <name xml:lang="pt_BR">Meta</name>
+				  <name xml:lang="ro">Meta</name>
+				  <name xml:lang="ru">Meta</name>
+				  <name xml:lang="sl">Meta</name>
+				  <name xml:lang="sv">Meta</name>
+				  <name xml:lang="ug">Meta</name>
+				  <name xml:lang="uk">Meta</name>
+				  <name xml:lang="vi">Meta</name>
+				  <name xml:lang="zh_CN">Meta</name>
+			  </desc>
+		</option>
+		</subgroup>
+    </group>
+	    <group>
+	    <short>Manual Transformation</short>
+		<subgroup>
+		    <short>Scaling</short>
+		    <short xml:lang="uk">Масштабув.</short>
+		<option type="button" name="scale_up_button">
+			    <short>Scale Up Button</short>
+			    <long>Mouse button to scale the window up by one increment.</long>
+				<default>&lt;Control&gt;&lt;Shift&gt;Button4</default>
+		</option>
+		<option type="button" name="scale_down_button">
+			    <short>Scale Down Button</short>
+			    <long>Mouse button to scale the window down by one increment.</long>
+				<default>&lt;Control&gt;&lt;Shift&gt;Button5</default>
+		</option>
+		    <short>Scaling</short>
+		    <short xml:lang="uk">Масштабув.</short>
+		<option type="key" name="scale_up_key">
+			    <short>Scale Up Key</short>
+			    <long>Keyboard shortcut to scale the window up by one increment.</long>
+				<default>&lt;Control&gt;&lt;Shift&gt;Page_Up</default>
+		</option>
+		<option type="key" name="scale_down_key">
+			    <short>Scale Down Key</short>
+			    <long>Keyboard shortcut to scale the window down by one increment.</long>
+				<default>&lt;Control&gt;&lt;Shift&gt;Page_Down</default>
+		</option>
+	    </subgroup>
+	    <subgroup>
+	    <short>Rotation</short>
+	    <short xml:lang="uk">Обертання</short>
+		    <option type="key" name="rotate_up_key">
+				<short>Rotate Up Key</short>
+				<long>Keyboard shortcut to rotate the window up by one increment.</long>
+		    		<default>&lt;Control&gt;&lt;Shift&gt;w</default>
+		    </option>
+		    <option type="key" name="rotate_down_key">
+				<short>Rotate Down Key</short>
+				<long>Keyboard shortcut to rotate the window down by one increment.</long>
+				<default>&lt;Control&gt;&lt;Shift&gt;s</default>
+		    </option>	
+		    <option type="key" name="rotate_left_key">
+				<short>Rotate Left Key</short>
+				<long>Keyboard shortcut to rotate the window left by one increment.</long>
+				<default>&lt;Control&gt;&lt;Shift&gt;d</default>
+		    </option>
+		    <option type="key" name="rotate_right_key">
+				<short>Rotate Right Key</short>
+				<long>Keyboard shortcut to rotate the window right by one increment.</long>
+				<default>&lt;Control&gt;&lt;Shift&gt;a</default>
+		    </option>
+		    <option type="key" name="rotate_c_key">
+				<short>Rotate Clockwise Key</short>
+				<long>Keyboard shortcut to rotate the window clockwise by one increment.</long>
+				<default>&lt;Control&gt;&lt;Shift&gt;e</default>
+		    </option>
+		    <option type="key" name="rotate_cc_key">
+				<short>Rotate Counter-Clockwise Key</short>
+				<long>Keyboard shortcut to rotate the window counter-clockwise by one increment.</long>
+				<default>&lt;Control&gt;&lt;Shift&gt;q</default>
+		    </option>
+		</subgroup>
+		</group>
+		<group>
+		<short>Free Transformation</short>
+	    <subgroup>
+	    <short>Transformation Behaviour</short>
+		    <option type="bool" name="snap">
+				    <short>Snap By Default</short>
+				    <long>Snap to common points by default.</long>
+				    <default>false</default>
+		    </option>
+		<option type="int" name="snap_threshold">
+				    <short>Snap Threshold</short>
+				    <long>Snap to every one of these angles.</long>
+				    <min>1</min>
+				    <max>100</max>
+		    </option>
+		    <option type="float" name="mouse_sensitivity">
+				<short>Mouse Sensitivity</short>
+				<long>Adjust how sensitive the mouse movement should be.</long>
+				<default>1.0</default>
+				<min>0.1</min>
+				<max>10.0</max>
+		    </option>
+	    </subgroup>
+		    <subgroup>
+		    <short>Scaling</short>
+		    <short xml:lang="uk">Масштабув.</short>
+			<option type="int" name="scale_mode">
+				    <short>Scale Mode</short>
+				    <short xml:lang="uk">Режим масштабування</short>
+				    <long>Select the method to scale windows.</long>
+				    <desc>
+		            <value>0</value><name>To Centre</name>
+		        </desc>
+				    <desc>
+		            <value>1</value><name>To Opposite Corner</name>
+		        </desc>
+		        <min>0</min>
+		        <max>0</max>
+		        <default>0</default>
+			</option>
+			<option type="bool" name="allow_negative">
+				    <short>Allow Negative</short>
+				    <long>Allow negative scaling</long>
+				    <default>true</default>
+			</option>
+			<option type="bool" name="scale_uniform">
+				    <short>Maintain Aspect Ratio</short>
+				    <short xml:lang="uk">Зберегти пропорції</short>
+				    <long>Keep the aspect ratio of the window constant when scaling.</long>
+				    <default>true</default>
+			</option>
+			<option type="float" name="min_scale">
+				    <short>Minimum scale</short>
+				    <short xml:lang="uk">Щонайменший масштаб</short>
+				    <long>How small the scale is allowed to be when 'Allow Negative' is not activated.</long>
+				    <default>0.1</default>
+				    <min>0.01</min>
+				    <max>1.0</max>
+			</option>
+		    </subgroup>
+		    <subgroup>
+		    <short>Rotation</short>
+		    <short xml:lang="uk">Обертання</short>
+			<option type="int" name="z_axis_rotation">
+				    <short>Rotation Type</short>
+				    <short xml:lang="uk">Тип обертання</short>
+				    <long>Choose the type of the rotation.</long>
+				    <long xml:lang="uk">Обрати тип обертання.</long>
+				    <desc>
+		            <value>0</value><name>Always 2D</name>
+		        </desc>
+				    <desc>
+		            <value>1</value><name>Always 3D</name>
+		        </desc>
+				    <desc>
+		            <value>2</value><name>Determine On Click</name>
+		        </desc>
+				    <desc>
+		            <value>3</value><name>Interchangeable</name>
+		        </desc>
+				    <desc>
+		            <value>4</value><name>Switch</name>
+		        </desc>
+				    <desc>
+		            <value>5</value><name>Trackball</name>
+		        </desc>
+		        <default>2</default>
+		        <min>0</min><max>3</max>
+			</option>
+			<option type="int" name="rotation_axis">
+				    <short>Rotation Axis</short>
+				    <short xml:lang="uk">Вісь обертання</short>
+				    <long>How Freely Transformable Windows should determine the rotation axis.</long>
+				    <desc>
+		            <value>0</value><name>Always Centre</name>
+		        </desc>
+				    <desc>
+		            <value>1</value><name>Click Point</name>
+		        </desc>
+				    <desc>
+		            <value>2</value><name>Opposite to Click</name>
+		        </desc>
+				    <desc>
+		            <value>3</value><name>Nearest Corner</name>
+		        </desc>
+		        <min>0</min>
+		        <max>2</max>
+		        <default>0</default>
+			</option>
+		    <option type="float" name="TD_percent">
+		        <short>3D Rotation Percentage</short>
+		        <short xml:lang="uk">Відсоток обертання 3D</short>
+		        <long>The percentage of the window area used for 3D rotation.</long>
+		        <default>35.0</default>
+		        <min>10.0</min>
+		        <max>90.0</max>
+		    </option>
+			<option type="bool" name="auto_zoom">
+				    <short>Auto-Zoom</short>
+				    <long>Auto-Zoom when rotating so that windows do not get too large.</long>
+				    <default>false</default>
+			</option>
+			<option type="bool" name="disable_on_transformed_screen">
+				    <short>Disable On Transformed Screen</short>
+				    <long>Disable the rotation on a transformed screen. This prevents ugly looking clipped windows when the screen is transformed.</long>
+				    <default>false</default>
+			</option>
+		</subgroup>
+		<subgroup>
+		    <short>Transformation Behaviour</short>
+		    <option type="float" name="speed">
+		        <short>Window Rotation Speed</short>
+		        <long>How fast the window should rotate.</long>
+		        <default>5.0</default>
+		        <min>0.1</min>
+		        <max>15.0</max>
+		    </option>
+		</subgroup>
+    </group>
+    <group>
+	    <short>Manual Transformation</short>
+	    <subgroup>
+		<short>Rotation</short>
+		<short xml:lang="uk">Обертання</short>
+		    <option type="float" name="rotate_increment_amount">
+				    <short>Rotate Increment Amount</short>
+				    <long>How far to rotate a window when rotating by an 'increment'.</long>
+				    <default>10.0</default>
+				    <min>1.0</min>
+				    <max>100.0</max>
+			</option>
+	    </subgroup>
+	    <subgroup>
+	    <short>Scaling</short>
+	    <short xml:lang="uk">Масштабув.</short> 
+		<option type="float" name="scale_increment_amount">
+				<short>Scale Increment Amount</short>
+				<long>How much to scale a window by when scaling by an 'increment'.</long>
+				<default>0.3</default>
+				<min>0.01</min>
+				<max>0.5</max>
+		    </option>
+		</subgroup>
+		</group>
+	    <group>
+	    <short>Misc</short>
+	    <short xml:lang="da">Diverse</short>
+	    <short xml:lang="uk">Різне</short>
+		<subgroup>
+		<short>Input Prevention</short>
+		<option type="match" name="shape_window_types">
+		  <short>Prevented Input Window Types</short>
+		  <long>Window types that should be shaped. Disable problematic windows here.</long>
+		  <default>(Toolbar | Utility | Dialog | ModalDialog | Normal)</default>
+		</option>
+		<option type="bool" name="do_shape_input">
+			    <short>Prevent Input</short>
+			    <long>Prevent input for transformed windows.</long>
+			    <default>true</default>
+		    </option>
+		<option type="bool" name="immediate_moves">
+		    <short>Immediate Moves</short>
+		    <long>Don't allow plugins like wobbly to manipulate the transformed window while it's being moved.</long>
+		    <default>true</default>
+		</option>
+		</subgroup>
+	       <subgroup>
+		   <short>Helper Options</short>	    
+		    <option type="color" name="circle_color">
+						<short>Helper Circle Color</short>
+						<long>Color and opacity of the circle.</long>
+						<default>
+							<red>0x5400</red>
+							<green>0xBE00</green>
+							<blue>0xFB00</blue>
+							<alpha>0x8000</alpha>
+						</default>
+			</option>
+			<option type="color" name="line_color">
+						<short>Helper Line Color</short>
+						<long>Color and opacity of the helper line around the circle.</long>
+						<default>
+							<red>0x1800</red>
+							<green>0x0000</green>
+							<blue>0xFF00</blue>
+							<alpha>0xFFFF</alpha>
+						</default>
+			</option>
+			<option type="color" name="cross_line_color">
+						<short>Helper Cross Line Color</short>
+						<long>Color and opacity of the cross lines.</long>
+						<default>
+							<red>0x1800</red>
+							<green>0x0000</green>
+							<blue>0xFF00</blue>
+							<alpha>0xFFFF</alpha>
+						</default>
+			</option>
+		<option type="bool" name="show_circle">
+			    <short>Show 3D Rotation Circle</short>
+			    <long>Show the click area for 3D rotation.</long>
+			    <default>true</default>
+		    </option>
+		<option type="bool" name="show_gizmo">
+			    <short>Show Rotation Gizmo</short>
+			    <long>Show the rotation axis info.</long>
+			    <default>true</default>
+		    </option>
+		<option type="bool" name="show_cross">
+			    <short>Show Crosshair</short>
+			    <long>Show the crosshair for scaling click regions.</long>
+			    <default>true</default>
+		    </option>
+		<option type="bool" name="show_region">
+			    <short>Show Input Regions</short>
+			    <long>Show the input region rectangle.</long>
+			    <default>true</default>
+		    </option>
+		</subgroup>
+		</group>
+	   </options>
+    </plugin>
+</compiz>

@@ -1,0 +1,13 @@
+/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/xpathselect/src/build/CMakeFiles/edit_cache.dir
+/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/xpathselect/src/build/CMakeFiles/rebuild_cache.dir
+/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/xpathselect/src/build/CMakeFiles/list_install_components.dir
+/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/xpathselect/src/build/CMakeFiles/install.dir
+/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/xpathselect/src/build/CMakeFiles/install/local.dir
+/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/xpathselect/src/build/CMakeFiles/install/strip.dir
+/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/xpathselect/src/build/lib/CMakeFiles/xpathselect.dir
+/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/xpathselect/src/build/lib/CMakeFiles/edit_cache.dir
+/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/xpathselect/src/build/lib/CMakeFiles/rebuild_cache.dir
+/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/xpathselect/src/build/lib/CMakeFiles/list_install_components.dir
+/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/xpathselect/src/build/lib/CMakeFiles/install.dir
+/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/xpathselect/src/build/lib/CMakeFiles/install/local.dir
+/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/dev-libs/xpathselect/src/build/lib/CMakeFiles/install/strip.dir

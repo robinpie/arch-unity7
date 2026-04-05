@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="imgsvg">
+	<short>SVG</short>
+	<short xml:lang="am">SVG</short>
+	<short xml:lang="bs">SVG</short>
+	<short xml:lang="da">SVG</short>
+	<short xml:lang="de">SVG</short>
+	<short xml:lang="el">SVG</short>
+	<short xml:lang="en_AU">SVG</short>
+	<short xml:lang="en_GB">SVG</short>
+	<short xml:lang="es">SVG</short>
+	<short xml:lang="fi">SVG</short>
+	<short xml:lang="fr">SVG</short>
+	<short xml:lang="gl">SVG</short>
+	<short xml:lang="hr">SVG</short>
+	<short xml:lang="it">SVG</short>
+	<short xml:lang="ko">SVN</short>
+	<short xml:lang="ms">SVG</short>
+	<short xml:lang="nl">SVG</short>
+	<short xml:lang="oc">SVG</short>
+	<short xml:lang="pl">SVG</short>
+	<short xml:lang="pt">SVG</short>
+	<short xml:lang="pt_BR">SVG</short>
+	<short xml:lang="ro">SVG</short>
+	<short xml:lang="ru">SVG</short>
+	<short xml:lang="sl">SVG</short>
+	<short xml:lang="sv">SVG</short>
+	<short xml:lang="tr">SVG</short>
+	<short xml:lang="ug">SVG</short>
+	<short xml:lang="uk">SVG</short>
+	<short xml:lang="zh_CN">SVG</short>
+	<long>SVG image loader</long>
+	<long xml:lang="am">SVG ምስል መጫኛ</long>
+	<long xml:lang="bs">SVG učitavanje slike</long>
+	<long xml:lang="cs">Načítač obrázků SVG</long>
+	<long xml:lang="de">Ladeprogramm für SVG-Grafiken</long>
+	<long xml:lang="el">Φορτωτής εικόνων SVG</long>
+	<long xml:lang="en_AU">SVG image loader</long>
+	<long xml:lang="en_GB">SVG image loader</long>
+	<long xml:lang="es">Cargador de imágenes SVG</long>
+	<long xml:lang="fr">Chargeur d'image SVG</long>
+	<long xml:lang="gl">Cargador de imaxes SVG</long>
+	<long xml:lang="hr">Učitač SVG slika</long>
+	<long xml:lang="it">Caricatore immagini SVG</long>
+	<long xml:lang="ja">SVG画像ローダー</long>
+	<long xml:lang="ko">SVN 그림 불러오기 도구</long>
+	<long xml:lang="ms">Pemuat imej SVG</long>
+	<long xml:lang="nl">SVG-afbeeldingenlader</long>
+	<long xml:lang="oc">Cargador d'imatge SVG</long>
+	<long xml:lang="pt">Carregador de imagem SVG</long>
+	<long xml:lang="pt_BR">Carregador de imagem SVG</long>
+	<long xml:lang="ro">Încărcător imagine SVG</long>
+	<long xml:lang="ru">Загрузчик SVG изображений</long>
+	<long xml:lang="sl">Nalagalnik slik SVG</long>
+	<long xml:lang="sv">SVG-bildinläsare</long>
+	<long xml:lang="tr">SVG resim yükleyici</long>
+	<long xml:lang="ug">SVGسۈرەت قاچىلاش ماشىنىسى</long>
+	<long xml:lang="uk">завантажувач зображення SVG</long>
+	<long xml:lang="zh_CN">SVG 图像加载器</long>
+	<category>Image Loading</category>
+	<feature>imageext:svg</feature>
+	<feature>imagemime:image/svg+xml</feature>
+	<deps>
+	    <relation type="after">
+		<plugin>composite</plugin>
+		<plugin>opengl</plugin>
+		<plugin>decor</plugin>
+	    </relation>
+	</deps>
+	<options>
+	    <option type="action" name="set">
+		<short>Set overlay</short>
+		<short xml:lang="ast">Afitar contornu</short>
+		<short xml:lang="bs">Postavi preklopnik</short>
+		<short xml:lang="cs">Nastavit překrytí</short>
+		<short xml:lang="de">Deckkraft festlegen</short>
+		<short xml:lang="el">Θέση επίστρωσης</short>
+		<short xml:lang="en_AU">Set overlay</short>
+		<short xml:lang="en_GB">Set overlay</short>
+		<short xml:lang="es">Establecer contorno</short>
+		<short xml:lang="fr">Régler la superposition</short>
+		<short xml:lang="gl">Estabelecer sobreposición</short>
+		<short xml:lang="hr">Postavi prekrivanje</short>
+		<short xml:lang="it">Imposta sovrapposizione</short>
+		<short xml:lang="ko">오버레이 설정</short>
+		<short xml:lang="ms">Tetapkan tindihan atas</short>
+		<short xml:lang="nl">Overlapping instellen</short>
+		<short xml:lang="oc">Reglar la superposicion</short>
+		<short xml:lang="pl">Ustaw nakładkę</short>
+		<short xml:lang="pt">Definir sobreposição</short>
+		<short xml:lang="pt_BR">Definir sobreposição</short>
+		<short xml:lang="ro">Stabiliți suprapunerea</short>
+		<short xml:lang="ru">Установить наложение</short>
+		<short xml:lang="sl">Nastavi prekrivanje</short>
+		<short xml:lang="sv">Ange överlagring</short>
+		<short xml:lang="ug">دەستىلەشنى تەڭشە</short>
+		<short xml:lang="uk">Встановити накладку</short>
+		<short xml:lang="vi">Đặt màn phủ</short>
+		<short xml:lang="zh_CN">设置重叠</short>
+		<long>Set window overlay</long>
+		<long xml:lang="ast">Afitar contornu de la ventana</long>
+		<long xml:lang="bs">Postavi preklopnik prozora</long>
+		<long xml:lang="ca">Establiu la superposició de les finestres</long>
+		<long xml:lang="cs">Nastavit překrytí okna</long>
+		<long xml:lang="de">Fensterdeckkraft festlegen</long>
+		<long xml:lang="el">Θέση επίστρωσης παραθύρου</long>
+		<long xml:lang="en_AU">Set window overlay</long>
+		<long xml:lang="en_GB">Set window overlay</long>
+		<long xml:lang="es">Establecer contorno de la ventana</long>
+		<long xml:lang="fr">Régler la superposition des fenêtres</long>
+		<long xml:lang="gl">Estabelecer sobreposición da xanela</long>
+		<long xml:lang="hr">Postavi prekrivanje prozora</long>
+		<long xml:lang="it">Imposta la sovrapposizione della finestra</long>
+		<long xml:lang="ko">창 오버레이 설정</long>
+		<long xml:lang="ms">Tetapkan tindihan atas tetingkap</long>
+		<long xml:lang="nl">Vensteroverlapping instellen</long>
+		<long xml:lang="oc">Reglar la superposicion de las fenèstras</long>
+		<long xml:lang="pl">Ustaw nakładkę okna</long>
+		<long xml:lang="pt">Definir sobreposição de janelas</long>
+		<long xml:lang="pt_BR">Definir sobreposição janela</long>
+		<long xml:lang="ro">Stabiliți suprapunerea ferestrei</long>
+		<long xml:lang="ru">Установить наложение окна</long>
+		<long xml:lang="sl">Nastavi prekrivanje okna</long>
+		<long xml:lang="sv">Ange fönsteröverlagring</long>
+		<long xml:lang="ug">كۆزنەك دەستىلەشنى تەڭشە</long>
+		<long xml:lang="uk">Встановити накладку вікна</long>
+		<long xml:lang="vi">Đặt màn phủ cửa sổ</long>
+		<long xml:lang="zh_CN">设置窗口重叠</long>
+		<allowed/>
+		<default/>
+	    </option>
+	</options>
+    </plugin>
+</compiz>

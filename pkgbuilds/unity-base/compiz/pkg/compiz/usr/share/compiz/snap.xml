@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="snap">
+	<short>Snapping Windows</short>
+	<short xml:lang="da">Fastgørende vinduer</short>
+	<short xml:lang="uk">Прилипання вікон</short>
+	<long>Enables windows edges resistance</long>
+	<long xml:lang="uk">Вмикає опір країв вікон</long>
+	<category>Window Management</category>
+	<feature>edgeresistance</feature>
+	<deps>
+	    <relation type="after">
+		<plugin>opengl</plugin>
+		<plugin>composite</plugin>
+		<plugin>decor</plugin>
+	    </relation>
+	</deps>
+	<options>
+	    <group>
+		<short>Bindings</short>
+		<short xml:lang="ast">Lligadures</short>
+		<short xml:lang="be">Прывязваньні</short>
+		<short xml:lang="bg">Задължителни</short>
+		<short xml:lang="bs">Povezivanja</short>
+		<short xml:lang="cs">Klávesové zkratky</short>
+		<short xml:lang="da">Bindinger</short>
+		<short xml:lang="de">Tastenkombinationen</short>
+		<short xml:lang="el">Συνδυασμοί</short>
+		<short xml:lang="en_AU">Bindings</short>
+		<short xml:lang="en_GB">Bindings</short>
+		<short xml:lang="es">Vínculos</short>
+		<short xml:lang="eu">Laster-bideak</short>
+		<short xml:lang="fi">Pikanäppäimet</short>
+		<short xml:lang="fr">Assignations</short>
+		<short xml:lang="gl">Asociacións</short>
+		<short xml:lang="he">צירופים</short>
+		<short xml:lang="hr">Tipkovničke kratice</short>
+		<short xml:lang="hu">Gyorsbillentyűk</short>
+		<short xml:lang="it">Associazioni</short>
+		<short xml:lang="ja">割り当て</short>
+		<short xml:lang="ko">바로 가기</short>
+		<short xml:lang="ms">Pengikatan</short>
+		<short xml:lang="nl">Bindingen</short>
+		<short xml:lang="oc">Assignacions</short>
+		<short xml:lang="pl">Przyporządkowanie klawiszy</short>
+		<short xml:lang="pt">Atalhos</short>
+		<short xml:lang="pt_BR">Atalhos</short>
+		<short xml:lang="ro">Asocieri</short>
+		<short xml:lang="ru">Закрепление</short>
+		<short xml:lang="sl">Vezave</short>
+		<short xml:lang="sq">Bindings</short>
+		<short xml:lang="sr">Повезивања</short>
+		<short xml:lang="sv">Bindningar</short>
+		<short xml:lang="tr">Bağlayıcılar</short>
+		<short xml:lang="ug">باغلانمىلار</short>
+		<short xml:lang="uk">Закріплення</short>
+		<short xml:lang="vi">Gán</short>
+		<short xml:lang="zh_CN">绑定</short>
+		<short xml:lang="zh_HK">連結</short>
+		<short xml:lang="zh_TW">連結</short>
+		<option type="list" name="avoid_snap">
+		    <short>Avoid Snap Modifier</short>
+		    <short xml:lang="uk">Модифікатор уникнення прилипання</short>
+		    <long>Use these bindings to avoid snapping.</long>
+		    <type>int</type>
+		    <min>0</min>
+		    <max>3</max>
+		    <default>
+			<value>0</value>
+		    </default>
+		    <desc>
+			<value>0</value>
+			<name>Shift</name>
+			<name xml:lang="ast">Mayús</name>
+			<name xml:lang="bg">Shift</name>
+			<name xml:lang="bs">Shift</name>
+			<name xml:lang="de">Umschalttaste</name>
+			<name xml:lang="el">Shift</name>
+			<name xml:lang="en_AU">Shift</name>
+			<name xml:lang="en_GB">Shift</name>
+			<name xml:lang="es">Mayús</name>
+			<name xml:lang="fi">Shift</name>
+			<name xml:lang="fr">Majuscule</name>
+			<name xml:lang="gl">Maiús</name>
+			<name xml:lang="hr">Shift</name>
+			<name xml:lang="it">Maiusc</name>
+			<name xml:lang="ko">쉬프트</name>
+			<name xml:lang="ms">Shift</name>
+			<name xml:lang="nl">Shift</name>
+			<name xml:lang="oc">Majuscula</name>
+			<name xml:lang="pl">Shift</name>
+			<name xml:lang="pt">Shift</name>
+			<name xml:lang="pt_BR">Shift</name>
+			<name xml:lang="ro">Shift</name>
+			<name xml:lang="ru">Shift</name>
+			<name xml:lang="sl">Shift</name>
+			<name xml:lang="sv">Skift</name>
+			<name xml:lang="tr">Shift</name>
+			<name xml:lang="ug">Shift</name>
+			<name xml:lang="uk">Shift</name>
+			<name xml:lang="vi">Shift</name>
+			<name xml:lang="zh_CN">Shift</name>
+		    </desc>
+		    <desc>
+			<value>1</value>
+			<name>Alt</name>
+			<name xml:lang="ast">Alt</name>
+			<name xml:lang="bg">Alt</name>
+			<name xml:lang="bs">Alt</name>
+			<name xml:lang="de">Alt</name>
+			<name xml:lang="el">Alt</name>
+			<name xml:lang="en_AU">Alt</name>
+			<name xml:lang="en_GB">Alt</name>
+			<name xml:lang="es">Alt</name>
+			<name xml:lang="fi">Alt</name>
+			<name xml:lang="fr">Alt</name>
+			<name xml:lang="gl">Alt</name>
+			<name xml:lang="hr">Alt</name>
+			<name xml:lang="it">Alt</name>
+			<name xml:lang="ja">[Alt]</name>
+			<name xml:lang="ko">알트</name>
+			<name xml:lang="ms">Alt</name>
+			<name xml:lang="nl">Alt</name>
+			<name xml:lang="oc">Elev</name>
+			<name xml:lang="pl">Alt</name>
+			<name xml:lang="pt">Alt</name>
+			<name xml:lang="pt_BR">Alt</name>
+			<name xml:lang="ro">Alt</name>
+			<name xml:lang="ru">Alt</name>
+			<name xml:lang="sl">Alt</name>
+			<name xml:lang="sv">Alt</name>
+			<name xml:lang="tr">Alt</name>
+			<name xml:lang="ug">Alt</name>
+			<name xml:lang="uk">Alt</name>
+			<name xml:lang="vi">Alt</name>
+			<name xml:lang="zh_CN">Alt</name>
+		    </desc>
+		    <desc>
+			<value>2</value>
+			<name>Control</name>
+			<name xml:lang="ast">Control</name>
+			<name xml:lang="bg">Control</name>
+			<name xml:lang="bs">Upravljanje</name>
+			<name xml:lang="de">Steuerung</name>
+			<name xml:lang="el">Control</name>
+			<name xml:lang="en_AU">Control</name>
+			<name xml:lang="en_GB">Control</name>
+			<name xml:lang="es">Control</name>
+			<name xml:lang="fi">Ctrl</name>
+			<name xml:lang="fr">Ctrl</name>
+			<name xml:lang="gl">Control</name>
+			<name xml:lang="hr">Ctrl</name>
+			<name xml:lang="it">Ctrl</name>
+			<name xml:lang="ko">컨트롤</name>
+			<name xml:lang="ms">Control</name>
+			<name xml:lang="nl">Beheer</name>
+			<name xml:lang="oc">Ctrl</name>
+			<name xml:lang="pl">Control</name>
+			<name xml:lang="pt">Controlo</name>
+			<name xml:lang="pt_BR">Controle</name>
+			<name xml:lang="ro">Control</name>
+			<name xml:lang="ru">Ctrl</name>
+			<name xml:lang="sl">Control</name>
+			<name xml:lang="sv">Control</name>
+			<name xml:lang="tr">Ctrl</name>
+			<name xml:lang="ug">تىزگىن</name>
+			<name xml:lang="uk">Control</name>
+			<name xml:lang="vi">Control</name>
+			<name xml:lang="zh_CN">Control</name>
+		    </desc>
+		    <desc>
+			<value>3</value>
+			<name>Meta</name>
+			<name xml:lang="ast">Meta</name>
+			<name xml:lang="bg">Meta</name>
+			<name xml:lang="bs">Meta</name>
+			<name xml:lang="de">Meta</name>
+			<name xml:lang="el">Meta</name>
+			<name xml:lang="en_AU">Meta</name>
+			<name xml:lang="en_GB">Meta</name>
+			<name xml:lang="es">Meta</name>
+			<name xml:lang="fi">Meta</name>
+			<name xml:lang="fr">Méta</name>
+			<name xml:lang="gl">Super</name>
+			<name xml:lang="hr">Meta</name>
+			<name xml:lang="it">Meta</name>
+			<name xml:lang="ko">윈도 키</name>
+			<name xml:lang="ms">Meta</name>
+			<name xml:lang="nl">Meta</name>
+			<name xml:lang="oc">Meta</name>
+			<name xml:lang="pt">Meta</name>
+			<name xml:lang="pt_BR">Meta</name>
+			<name xml:lang="ro">Meta</name>
+			<name xml:lang="ru">Meta</name>
+			<name xml:lang="sl">Meta</name>
+			<name xml:lang="sv">Meta</name>
+			<name xml:lang="ug">Meta</name>
+			<name xml:lang="uk">Meta</name>
+			<name xml:lang="vi">Meta</name>
+			<name xml:lang="zh_CN">Meta</name>
+		    </desc>
+		</option>
+	    </group>
+	    <group>
+		<short>Behaviour</short>
+		<short xml:lang="am">ባህሪው</short>
+		<short xml:lang="ast">Comportamientu</short>
+		<short xml:lang="be">Паводзіны</short>
+		<short xml:lang="bg">Поведение</short>
+		<short xml:lang="bs">Ponašanje</short>
+		<short xml:lang="cs">Chování</short>
+		<short xml:lang="de">Verhalten</short>
+		<short xml:lang="el">Συμπεριφορά</short>
+		<short xml:lang="en_AU">Behaviour</short>
+		<short xml:lang="en_GB">Behaviour</short>
+		<short xml:lang="es">Comportamiento</short>
+		<short xml:lang="eu">Portaera</short>
+		<short xml:lang="fi">Käyttäytyminen</short>
+		<short xml:lang="fr">Comportement</short>
+		<short xml:lang="gl">Comportamento</short>
+		<short xml:lang="he">אופן</short>
+		<short xml:lang="hr">Ponašanje</short>
+		<short xml:lang="hu">Viselkedés</short>
+		<short xml:lang="it">Comportamento</short>
+		<short xml:lang="ja">動作</short>
+		<short xml:lang="ko">동작</short>
+		<short xml:lang="ms">Kelakuan</short>
+		<short xml:lang="nb">Oppførsel</short>
+		<short xml:lang="nds">Verhollen</short>
+		<short xml:lang="nl">Gedrag</short>
+		<short xml:lang="oc">Compòrtament</short>
+		<short xml:lang="pl">Zachowanie</short>
+		<short xml:lang="pt">Comportamento</short>
+		<short xml:lang="pt_BR">Comportamento</short>
+		<short xml:lang="ro">Comportament</short>
+		<short xml:lang="ru">Поведение</short>
+		<short xml:lang="sl">Obnašanje</short>
+		<short xml:lang="sq">Sjellja</short>
+		<short xml:lang="sr">Понашање</short>
+		<short xml:lang="sv">Beteende</short>
+		<short xml:lang="te">ప్రవర్తన</short>
+		<short xml:lang="tr">Davranış</short>
+		<short xml:lang="ug">قىلمىش</short>
+		<short xml:lang="uk">Поведінка</short>
+		<short xml:lang="vi">Hành vi</short>
+		<short xml:lang="zh_CN">特性</short>
+		<short xml:lang="zh_HK">特性</short>
+		<short xml:lang="zh_TW">特性</short>
+		<option type="list" name="snap_type">
+		    <short>Snap Type</short>
+		    <short xml:lang="uk">Тип вирівнювання</short>
+		    <long>Choose 'Resistance', 'Attraction' or 'Full Mode'.</long>
+		    <long xml:lang="uk">Оберіть "Опір", "Притягування" або "Повний режим '.</long>
+		    <type>int</type>
+		    <min>0</min>
+		    <max>1</max>
+		    <default>
+			<value>0</value>
+		    </default>
+		    <desc>
+			<value>0</value>
+			<name>Edge resistance</name>
+			<name xml:lang="uk">Опір країв</name>
+		    </desc>
+		    <desc>
+			<value>1</value>
+			<name>Edge attraction</name>
+			<name xml:lang="uk">Притягання країв</name>
+		    </desc>
+		</option>
+		<option type="list" name="edges_categories">
+		    <short>Edges</short>
+		    <short xml:lang="uk">Ребра</short>
+		    <long>Snap to 'Screen Edges', 'Windows Edges' or 'Both'.</long>
+		    <long xml:lang="uk">Вирівнювання до 'Країв екрану', 'Країв вікон' або 'Обидвох'.</long>
+		    <type>int</type>
+		    <min>0</min>
+		    <max>1</max>
+		    <default>
+			<value>0</value>
+		    </default>
+		    <desc>
+			<value>0</value>
+			<name>Screen edges</name>
+			<name xml:lang="uk">Краї екрану</name>
+		    </desc>
+		    <desc>
+			<value>1</value>
+			<name>Window edges</name>
+			<name xml:lang="uk">Краї вікна</name>
+		    </desc>
+		</option>
+		<option type="int" name="resistance_distance">
+		    <short>Edge Resistance Distance</short>
+		    <short xml:lang="uk">Відстань опору країв</short>
+		    <long>The distance until edge resistance takes place.</long>
+		    <long xml:lang="uk">Відстань, на якій з’являється опір країв</long>
+		    <default>30</default>
+		    <min>1</min>
+		    <max>100</max>
+		</option>
+		<option type="int" name="attraction_distance">
+		    <short>Edge Attraction Distance</short>
+		    <short xml:lang="uk">Відстань притягання країв</short>
+		    <long>The distance until edge attraction takes place.</long>
+		    <long xml:lang="uk">Відстань, на якій з’являється притягання країв</long>
+		    <default>20</default>
+		    <min>1</min>
+		    <max>100</max>
+		</option>
+	    </group>
+	</options>
+    </plugin>
+</compiz>

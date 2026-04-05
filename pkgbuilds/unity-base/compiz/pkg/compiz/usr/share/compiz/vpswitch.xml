@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+	<plugin useBcop="true" name="vpswitch">
+		<short>Viewport Switcher</short>
+		<short xml:lang="da">Visningsområdeskrifter</short>
+		<short xml:lang="uk">Перемикач проєкцій</short>
+		<long>Initiate viewport changes through several events</long>
+		<long xml:lang="uk">Ініціювати зміну проєкції через різні події</long>
+		<category>Desktop</category>
+		<deps>
+			<relation type="after">
+			    <plugin>composite</plugin>
+			    <plugin>decor</plugin>
+			    <plugin>opengl</plugin>
+			</relation>
+		</deps>
+		<options>
+			<group>
+				<short>Number-Based Viewport Switching</short>
+				<short xml:lang="uk">Перемикання проєкції за номером</short>
+				<option type="key" name="begin_key">
+					<short>Begin Viewport Switch</short>
+					<short xml:lang="uk">Почати перемикання проєкції</short>
+					<long>Begin entering viewport number</long>
+					<long xml:lang="uk">Почати вводити номер проєкції</long>
+				</option>
+			</group>
+			<group>
+				<short>Go to specific viewport</short>
+				<short xml:lang="uk">Перейти до конкретної проєкції</short>
+				<option type="key" name="switch_to_1_key">
+					<short>Switch to Viewport 1</short>
+					<short xml:lang="uk">Перемкнути на проєкцію 1</short>
+					<long>Switch to viewport 1</long>
+					<long xml:lang="uk">Перемкнути на проєкцію 1</long>
+				</option>
+				<option type="key" name="switch_to_2_key">
+					<short>Switch to Viewport 2</short>
+					<short xml:lang="uk">Перемкнути на проєкцію 2</short>
+					<long>Switch to viewport 2</long>
+					<long xml:lang="uk">Перемкнути на проєкцію 2</long>
+				</option>
+				<option type="key" name="switch_to_3_key">
+					<short>Switch to Viewport 3</short>
+					<short xml:lang="uk">Перемкнути на проєкцію 3</short>
+					<long>Switch to viewport 3</long>
+					<long xml:lang="uk">Перемкнути на проєкцію 3</long>
+				</option>
+				<option type="key" name="switch_to_4_key">
+					<short>Switch to Viewport 4</short>
+					<short xml:lang="uk">Перемкнути на проєкцію 4</short>
+					<long>Switch to viewport 4</long>
+					<long xml:lang="uk">Перемкнути на проєкцію 4</long>
+				</option>
+				<option type="key" name="switch_to_5_key">
+					<short>Switch to Viewport 5</short>
+					<short xml:lang="uk">Перемкнути на проєкцію 5</short>
+					<long>Switch to viewport 5</long>
+					<long xml:lang="uk">Перемкнути на проєкцію 5</long>
+				</option>
+				<option type="key" name="switch_to_6_key">
+					<short>Switch to Viewport 6</short>
+					<short xml:lang="uk">Перемкнути на проєкцію 6</short>
+					<long>Switch to viewport 6</long>
+					<long xml:lang="uk">Перемкнути на проєкцію 6</long>
+				</option>
+				<option type="key" name="switch_to_7_key">
+					<short>Switch to Viewport 7</short>
+					<short xml:lang="uk">Перемкнути на проєкцію 7</short>
+					<long>Switch to viewport 7</long>
+					<long xml:lang="uk">Перемкнути на проєкцію 7</long>
+				</option>
+				<option type="key" name="switch_to_8_key">
+					<short>Switch to Viewport 8</short>
+					<short xml:lang="uk">Перемкнути на проєкцію 8</short>
+					<long>Switch to viewport 8</long>
+					<long xml:lang="uk">Перемкнути на проєкцію 8</long>
+				</option>
+				<option type="key" name="switch_to_9_key">
+					<short>Switch to Viewport 9</short>
+					<short xml:lang="uk">Перемкнути на проєкцію 9</short>
+					<long>Switch to viewport 9</long>
+					<long xml:lang="uk">Перемкнути на проєкцію 9</long>
+				</option>
+				<option type="key" name="switch_to_10_key">
+					<short>Switch to Viewport 10</short>
+					<short xml:lang="uk">Перемкнути на проєкцію 10</short>
+					<long>Switch to viewport 10</long>
+					<long xml:lang="uk">Перемкнути на проєкцію 10</long>
+				</option>
+				<option type="key" name="switch_to_11_key">
+					<short>Switch to Viewport 11</short>
+					<short xml:lang="uk">Перемкнути на проєкцію 11</short>
+					<long>Switch to viewport 11</long>
+					<long xml:lang="uk">Перемкнути на проєкцію 11</long>
+				</option>
+				<option type="key" name="switch_to_12_key">
+					<short>Switch to Viewport 12</short>
+					<short xml:lang="uk">Перемкнути на проєкцію 12</short>
+					<long>Switch to viewport 12</long>
+					<long xml:lang="uk">Перемкнути на проєкцію 12</long>
+				</option>
+			</group>
+			<group>
+				<short>Desktop-based Viewport Switching</short>
+				<short xml:lang="uk">Перемикання проєкції на стільниці</short>
+				<option type="button" name="left_button">
+					<short>Move Left</short>
+					<short xml:lang="uk">Перемістити ліворуч</short>
+					<long>Move to the left</long>
+					<long xml:lang="uk">Перемістити ліворуч</long>
+					<internal/>
+				</option>
+				<option type="button" name="right_button">
+					<short>Move Right</short>
+					<short xml:lang="uk">Перемістити праворуч</short>
+					<long>Move to the right</long>
+					<long xml:lang="uk">Перемістити праворуч</long>
+					<internal/>
+				</option>
+				<option type="button" name="up_button">
+					<short>Move Up</short>
+					<short xml:lang="uk">Перемістити вище</short>
+					<long>Move up</long>
+					<long xml:lang="uk">Перемістити вгору</long>
+					<internal/>
+				</option>
+				<option type="button" name="down_button">
+					<short>Move Down</short>
+					<short xml:lang="uk">Перемістити нижче</short>
+					<long>Move down</long>
+					<long xml:lang="uk">Перемістити вниз</long>
+					<internal/>
+				</option>
+				<option type="button" name="next_button">
+					<short>Move Next</short>
+					<short xml:lang="uk">Перемістити вперед</short>
+					<long>Move to the next viewport</long>
+					<long xml:lang="uk">Перемістити до наступної проєкції</long>
+					<internal/>
+				</option>
+				<option type="button" name="prev_button">
+					<short>Move Prev</short>
+					<short xml:lang="uk">Перемістити назад</short>
+					<long>Move to the previous viewport</long>
+					<long xml:lang="uk">Перемістити до попередньої проєкції</long>
+					<internal/>
+				</option>
+				<option type="button" name="initiate_button">
+					<short>Initiate plugin action</short>
+					<short xml:lang="uk">Ініціювати дію втулка</short>
+					<long>Initiate/Terminate the selected plugin action</long>
+					<long xml:lang="uk">Ініціювати/припинити дію вибраного втулка</long>
+					<default>Button2</default>
+					<internal/>
+				</option>
+				<option type="string" name="init_plugin">
+					<short>Plugin for initiate action</short>
+					<short xml:lang="uk">Втулок для дії ініціювання</short>
+					<long>Plugin for initiate/action action</long>
+					<long xml:lang="uk">Втулок для дії ініціювання/поведінки</long>
+					<default>rotate</default>
+				</option>
+				<option type="string" name="init_action">
+					<short>Action name for initiate</short>
+					<short xml:lang="uk">Назва дії для ініціювання</short>
+					<long>Action name for initiate/terminate</long>
+					<long xml:lang="uk">Назва дії для ініціювання/припинення</long>
+					<default>initiate_button</default>
+				</option>
+			</group>
+		</options>
+	</plugin>
+</compiz>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="compiztoolbox">
+	<short>Compiz Library Toolbox</short>
+	<short xml:lang="bs">Compiz biblioteka traka sa alatima</short>
+	<short xml:lang="cs">Sada nástrojů knihovny Compiz</short>
+	<short xml:lang="da">Værktøjsboks for Compiz-bibliotek</short>
+	<short xml:lang="de">Compiz-Bibliothekswerkzeuge</short>
+	<short xml:lang="el">Εργαλειοθήκη της βιβλιοθήκης του Compiz</short>
+	<short xml:lang="en_AU">Compiz Library Toolbox</short>
+	<short xml:lang="en_GB">Compiz Library Toolbox</short>
+	<short xml:lang="es">Caja de herramientas de la biblioteca de Compiz</short>
+	<short xml:lang="fr">Boîte à outils de la bibliothèque Compiz</short>
+	<short xml:lang="gl">Caixa de ferramentas da biblioteca do Compiz</short>
+	<short xml:lang="hr">Alati Compiz biblioteke</short>
+	<short xml:lang="it">Libreria Compiz Toolbox</short>
+	<short xml:lang="ja">Compizライブラリーツールボックス</short>
+	<short xml:lang="ko">컴피즈 라이브러리 도구 상자</short>
+	<short xml:lang="ms">Kotak Alat Pustaka Compiz</short>
+	<short xml:lang="nl">Compiz Library Toolbox</short>
+	<short xml:lang="oc">Bóstia d'aisinas de la bibliotèca Compiz</short>
+	<short xml:lang="pt">Caixa de ferramenta Biblioteca Compiz</short>
+	<short xml:lang="pt_BR">Caixa de ferramentas da biblioteca do Compiz</short>
+	<short xml:lang="ru">Оснастка библиотеки Compiz</short>
+	<short xml:lang="sl">Zbirka orodij knjižnice Compiz</short>
+	<short xml:lang="sv">Compiz bibliotekverktygslåda</short>
+	<short xml:lang="tr">Compiz Kitaplık Araç Çubuğu</short>
+	<short xml:lang="ug">Compizنىڭ كۇتۇپخانا قورال ساندۇقى</short>
+	<short xml:lang="uk">Бібліотека інструментарію Compiz</short>
+	<short xml:lang="zh_CN">Compiz 库工具箱</short>
+	<long>Commonly used routines by plugins separated into a separate library</long>
+	<long xml:lang="bs">Često korišteni potprogrami za dodatke odvojeni u zasebnu biblioteku</long>
+	<long xml:lang="cs">Často využívané pluginové rutiny oddělené do oddělené knihovny</long>
+	<long xml:lang="de">Gewöhnlich von Erweiterungen genutzte Unterprogramme als eigenständige Bibliothek</long>
+	<long xml:lang="el">Ρουτίνες που χρησιμοποιούνται συχνά από πρόσθετα διαχωρισμένες σε μια ξεχωριστή βιβλιοθήκη</long>
+	<long xml:lang="en_AU">Commonly used routines by plugins separated into a separate library</long>
+	<long xml:lang="en_GB">Commonly used routines by plug-ins separated into a separate library</long>
+	<long xml:lang="es">Rutinas comúnmente usadas por complementos, separadas en una biblioteca aparte</long>
+	<long xml:lang="fr">Routines couramment utilisées par des extensions séparées dans une bibliothèque distincte.</long>
+	<long xml:lang="gl">Rutinas usadas comunmente polos engadidos, separadas en bibliotecas separadas</long>
+	<long xml:lang="hr">Najčešće korištene rutine priključaka odvojenih u zasebne biblioteke</long>
+	<long xml:lang="it">Routine molto utilizzate separate in una libreria dedicata</long>
+	<long xml:lang="ko">별도의 라이브러리로 구분된 플러그인이 제공하는 일상적으로 사용되는 루틴</long>
+	<long xml:lang="ms">Rutin yang biasa digunakan oleh pemalam yang diasingkan dalam pustaka yang berasingan</long>
+	<long xml:lang="nl">Door plug-ins veelgebruikte routines, gescheiden in een aparte bibliotheek</long>
+	<long xml:lang="oc">Rotinas utilizadas correntament per d'extensions separadas dins una bibliotèca distincta.</long>
+	<long xml:lang="pt">Rotinas comuns usadas por plugins separados dentro de outra biblioteca</long>
+	<long xml:lang="pt_BR">Rotinas normalmente utilizadas por plug-ins separadas em uma biblioteca separada</long>
+	<long xml:lang="ro">Rutinele frecvent utilizate de module despărțite într-o bibliotecă separată</long>
+	<long xml:lang="ru">Обычно используемые регулярные процедуры обслуживаемые надстройками выделенными в отдельную библиотеку.</long>
+	<long xml:lang="sl">Pogosto uporabljene rutine vstavkov, ki so ločene v ločeno knjižnico</long>
+	<long xml:lang="sv">Vanligt förekommando rutiner i insticksprogram som delas in i ett separat bibliotek</long>
+	<long xml:lang="ug">دائىم ئىشلىتىلىدىغان قىستۇرمىنى بىر مۇستەقىل</long>
+	<long xml:lang="uk">Зазвичай використовувані регулярні процедури обслуговувані надбудовами виділеними в окрему бібліотеку.</long>
+	<long xml:lang="zh_CN">插件常用的分离到库中的函数方法</long>
+	<category>Utility</category>
+	<deps>
+	    <relation type="after">
+		<plugin>composite</plugin>
+		<plugin>opengl</plugin>
+	    </relation>
+	</deps>
+    </plugin>
+</compiz>

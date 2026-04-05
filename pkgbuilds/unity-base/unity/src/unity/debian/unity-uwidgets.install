@@ -1,0 +1,3 @@
+usr/lib/python*/*/uwidgets*
+usr/bin/uwidgets-runner
+etc/xdg/autostart/uwidgets-runner.desktop

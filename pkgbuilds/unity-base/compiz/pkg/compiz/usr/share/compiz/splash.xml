@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+  <plugin useBcop="true" name="splash">
+    <short>Splash</short>
+    <short xml:lang="ca">Pantalla de presentació</short>
+    <short xml:lang="cs">Úvodní okno</short>
+    <short xml:lang="da">Opstartsbillede</short>
+    <short xml:lang="de">Splash</short>
+    <short xml:lang="es">Pantalla inicial</short>
+    <short xml:lang="fi">Splash</short>
+    <short xml:lang="pl">Splash</short>
+    <short xml:lang="uk">Заставка</short>
+    <short xml:lang="zh_CN">Splash</short>
+    <short xml:lang="zh_TW">開頭顯示畫面</short>
+    <long>A simple splash plugin</long>
+	<category>Extras</category>
+    <deps>
+      <requirement>
+        <plugin>opengl</plugin>
+      </requirement>
+      <relation type="after">
+        <plugin>composite</plugin>
+        <plugin>opengl</plugin>
+        <plugin>imgsvg</plugin>
+        <plugin>imgpng</plugin>
+        <plugin>imgjpeg</plugin>
+        <plugin>decor</plugin>
+      </relation>
+    </deps>
+    <options>
+      <group>
+        <short>Main</short>
+        <short xml:lang="uk">Головне</short>
+        <option type="key" name="initiate_key">
+          <short>Initiate Splash</short>
+          <long>Start Splash.</long>
+          <default>&lt;Control&gt;F11</default>
+        </option>
+        <option type="bool" name="firststart">
+          <short>Show on first start</short>
+          <long>Show splash on first start.</long>
+          <default>true</default>
+        </option>
+      </group>
+      <group>
+        <short>Images</short>
+        <short xml:lang="uk">Зображення</short>
+        <option type="string" name="background">
+          <short>Background File</short>
+          <short xml:lang="uk">Файл тла</short>
+          <long>Background image File.</long>
+          <long xml:lang="uk">Файл тлового зображення.</long>
+          <hints>file;image;</hints>
+          <default>splash_background.png</default>
+        </option>
+        <option type="string" name="logo">
+          <short>Logo File</short>
+          <short xml:lang="uk">Файл логотипу</short>
+          <long>Logo image File.</long>
+          <long xml:lang="uk">Файл зображення логотипу.</long>
+          <hints>file;image;</hints>
+          <default>splash_logo.png</default>
+        </option>
+      </group>
+      <group>
+        <short>Appearance</short>
+        <short xml:lang="am">አቀራረብ</short>
+        <short xml:lang="ast">Aspeutu</short>
+        <short xml:lang="be">Вонкавы выгляд</short>
+        <short xml:lang="bg">Външен вид</short>
+        <short xml:lang="bs">Izgled</short>
+        <short xml:lang="cs">Vzhled</short>
+        <short xml:lang="da">Udseende</short>
+        <short xml:lang="de">Erscheinung</short>
+        <short xml:lang="el">Εμφάνιση</short>
+        <short xml:lang="en_AU">Appearance</short>
+        <short xml:lang="en_GB">Appearance</short>
+        <short xml:lang="es">Apariencia</short>
+        <short xml:lang="eu">Itxura</short>
+        <short xml:lang="fi">Ulkoasu</short>
+        <short xml:lang="fr">Apparence</short>
+        <short xml:lang="fy">Foarkommen</short>
+        <short xml:lang="gl">Aparencia</short>
+        <short xml:lang="he">מראה</short>
+        <short xml:lang="hr">Izgled</short>
+        <short xml:lang="hu">Megjelenés</short>
+        <short xml:lang="it">Aspetto</short>
+        <short xml:lang="ja">外観</short>
+        <short xml:lang="ko">모양</short>
+        <short xml:lang="ms">Penampilan</short>
+        <short xml:lang="my">ပုံပန်းသဏ္ဍာန်</short>
+        <short xml:lang="nb">Utseende</short>
+        <short xml:lang="nds">Utsehn</short>
+        <short xml:lang="nl">Uiterlijk</short>
+        <short xml:lang="oc">Aparéncia</short>
+        <short xml:lang="pl">Wygląd</short>
+        <short xml:lang="pt">Aparência</short>
+        <short xml:lang="pt_BR">Aparência</short>
+        <short xml:lang="ro">Aspect</short>
+        <short xml:lang="ru">Внешний вид</short>
+        <short xml:lang="sl">Videz</short>
+        <short xml:lang="sq">Pamja</short>
+        <short xml:lang="sr">Изглед</short>
+        <short xml:lang="sv">Utseende</short>
+        <short xml:lang="tr">Görünüm</short>
+        <short xml:lang="ug">كۆرۈنۈشى</short>
+        <short xml:lang="uk">Зовнішній вигляд</short>
+        <short xml:lang="vi">Diện mạo</short>
+        <short xml:lang="zh_CN">外观</short>
+        <short xml:lang="zh_HK">外觀</short>
+        <short xml:lang="zh_TW">外觀</short>
+        <option type="float" name="fade_time">
+          <short>Fade Time</short>
+          <short xml:lang="ast">Tiempu de dilíu</short>
+          <short xml:lang="be">Час затухання</short>
+          <short xml:lang="bg">Време за избледняване</short>
+          <short xml:lang="bs">Vrijeme iščezavanja</short>
+          <short xml:lang="ca">Temps d'esvaïment</short>
+          <short xml:lang="cs">Doba zprůhlednění</short>
+          <short xml:lang="de">Ausblendungszeit</short>
+          <short xml:lang="el">Χρόνος Ξεθωριάσματος</short>
+          <short xml:lang="en_AU">Fade Time</short>
+          <short xml:lang="en_GB">Fade Time</short>
+          <short xml:lang="es">Tiempo de desvanecimiento</short>
+          <short xml:lang="et">Hajumise aeg</short>
+          <short xml:lang="eu">Iraungitze denbora</short>
+          <short xml:lang="fi">Häivytysviive</short>
+          <short xml:lang="fr">Temps de Fondu</short>
+          <short xml:lang="gl">Tempo de esvaecemento</short>
+          <short xml:lang="gu">આછાપણાનો સમય</short>
+          <short xml:lang="he">משך עמעום</short>
+          <short xml:lang="hr">Vrijeme izblijeđivanja</short>
+          <short xml:lang="hu">Elhalványítási idő</short>
+          <short xml:lang="it">Tempo dissolvenza</short>
+          <short xml:lang="ja">フェード時間</short>
+          <short xml:lang="ko">페이드 시간</short>
+          <short xml:lang="ms">Masa Pudar</short>
+          <short xml:lang="nb">Uttoningstid</short>
+          <short xml:lang="nl">Vervagingstijdsduur</short>
+          <short xml:lang="oc">Durada de fondut</short>
+          <short xml:lang="or">ଫିକାହେବା ସମଯ</short>
+          <short xml:lang="pl">Czas przenikania</short>
+          <short xml:lang="pt">Tempo de Esmaecimento</short>
+          <short xml:lang="pt_BR">Tempo de desvanecimento</short>
+          <short xml:lang="ro">Durată estompare</short>
+          <short xml:lang="ru">Время исчезновения</short>
+          <short xml:lang="sk">Doba stmavnutia</short>
+          <short xml:lang="sl">Čas pojemanja</short>
+          <short xml:lang="sq">Ndrysho Kohën</short>
+          <short xml:lang="sr">Време ишчезавања</short>
+          <short xml:lang="sv">Toningstid</short>
+          <short xml:lang="tr">Solma Süresi</short>
+          <short xml:lang="ug">سۇسلاشتۇرۇش ۋاقتى</short>
+          <short xml:lang="uk">Час зникнення</short>
+          <short xml:lang="vi">Thời gian mờ/hiện dần</short>
+          <short xml:lang="zh_CN">渐隐时间</short>
+          <short xml:lang="zh_HK">淡入/淡出時間</short>
+          <short xml:lang="zh_TW">淡入/淡出時間</short>
+          <long>Fade In/Out Time.</long>
+          <default>1.0</default>
+          <min>0.0</min>
+          <max>100.0</max>
+          <precision>0.1</precision>
+        </option>
+        <option type="float" name="display_time">
+          <short>Display Time</short>
+          <short xml:lang="uk">Показ часу</short>
+          <long>Display In/Out Time.</long>
+          <default>2.0</default>
+          <min>0.0</min>
+          <max>100.0</max>
+          <precision>0.1</precision>
+        </option>
+        <option type="float" name="saturation">
+          <short>Saturation</short>
+          <short xml:lang="am">መሙያ</short>
+          <short xml:lang="ast">Saturación</short>
+          <short xml:lang="be">Насычанасьць</short>
+          <short xml:lang="bg">Наситеност</short>
+          <short xml:lang="bs">Zasićenje</short>
+          <short xml:lang="ca">Saturació</short>
+          <short xml:lang="cs">Sytost</short>
+          <short xml:lang="da">Farvemætning</short>
+          <short xml:lang="de">Sättigung</short>
+          <short xml:lang="el">Κορεσμός</short>
+          <short xml:lang="en_AU">Saturation</short>
+          <short xml:lang="en_GB">Saturation</short>
+          <short xml:lang="es">Saturación</short>
+          <short xml:lang="eu">Saturazioa</short>
+          <short xml:lang="fi">Kylläisyys</short>
+          <short xml:lang="fr">Saturation</short>
+          <short xml:lang="fy">Sêding</short>
+          <short xml:lang="gl">Saturacion</short>
+          <short xml:lang="he">רווייה</short>
+          <short xml:lang="hr">Zasićenje</short>
+          <short xml:lang="hu">Telítettség</short>
+          <short xml:lang="it">Saturazione</short>
+          <short xml:lang="ja">彩度</short>
+          <short xml:lang="ko">채도</short>
+          <short xml:lang="ms">Ketepuan</short>
+          <short xml:lang="nb">Metning</short>
+          <short xml:lang="nl">Verzadiging</short>
+          <short xml:lang="oc">Saturacion</short>
+          <short xml:lang="or">ସଂପୂର୍ଣ୍ଣ ମିଶ୍ରଣ</short>
+          <short xml:lang="pl">Nasycenie</short>
+          <short xml:lang="pt">Saturação</short>
+          <short xml:lang="pt_BR">Saturação</short>
+          <short xml:lang="ro">Saturație</short>
+          <short xml:lang="ru">Насыщенность</short>
+          <short xml:lang="sk">Sýtosť</short>
+          <short xml:lang="sl">Nasičenost</short>
+          <short xml:lang="sq">Ngopja</short>
+          <short xml:lang="sr">Засићење</short>
+          <short xml:lang="sv">Färgmättnad</short>
+          <short xml:lang="tr">Doygunluk</short>
+          <short xml:lang="ug">تويۇنۇش</short>
+          <short xml:lang="uk">Насиченість</short>
+          <short xml:lang="vi">Độ bão hòa</short>
+          <short xml:lang="zh_CN">饱和度</short>
+          <short xml:lang="zh_HK">飽和度</short>
+          <short xml:lang="zh_TW">飽和度</short>
+          <long>Background saturation.</long>
+          <long xml:lang="uk">Насиченість тла.</long>
+          <default>50.0</default>
+          <min>0.0</min>
+          <max>100.0</max>
+          <precision>0.1</precision>
+        </option>
+        <option type="float" name="brightness">
+          <short>Brightness</short>
+          <short xml:lang="am">ብሩህነት</short>
+          <short xml:lang="ast">Claridá</short>
+          <short xml:lang="be">Яркасьць</short>
+          <short xml:lang="bg">Яркост</short>
+          <short xml:lang="bs">Svjetlina</short>
+          <short xml:lang="ca">Brillantor</short>
+          <short xml:lang="cs">Jas</short>
+          <short xml:lang="da">Lysstyrke</short>
+          <short xml:lang="de">Helligkeit</short>
+          <short xml:lang="el">Φωτεινότητα</short>
+          <short xml:lang="en_AU">Brightness</short>
+          <short xml:lang="en_GB">Brightness</short>
+          <short xml:lang="es">Brillo</short>
+          <short xml:lang="et">Heledus</short>
+          <short xml:lang="eu">Distira</short>
+          <short xml:lang="fi">Kirkkaus</short>
+          <short xml:lang="fr">Luminosité</short>
+          <short xml:lang="gl">Brillo</short>
+          <short xml:lang="gu">તેજસ્વીતા</short>
+          <short xml:lang="he">בהירות</short>
+          <short xml:lang="hr">Svjetlina</short>
+          <short xml:lang="hu">Fényerő</short>
+          <short xml:lang="it">Luminosità</short>
+          <short xml:lang="ja">明度</short>
+          <short xml:lang="ko">밝기</short>
+          <short xml:lang="ms">Kecerahan</short>
+          <short xml:lang="nb">Skarphet</short>
+          <short xml:lang="nl">Helderheid</short>
+          <short xml:lang="oc">Luminositat</short>
+          <short xml:lang="or">ଉଜ୍ବଳତା</short>
+          <short xml:lang="pl">Jasność</short>
+          <short xml:lang="pt">Brilho</short>
+          <short xml:lang="pt_BR">Brilho</short>
+          <short xml:lang="ro">Luminozitate</short>
+          <short xml:lang="ru">Яркость</short>
+          <short xml:lang="sk">Jas</short>
+          <short xml:lang="sl">Svetlost</short>
+          <short xml:lang="sq">Ndriçimi</short>
+          <short xml:lang="sr">Светлина</short>
+          <short xml:lang="sv">Ljusstyrka</short>
+          <short xml:lang="tr">Parlaklık</short>
+          <short xml:lang="ug">يورۇقلۇق</short>
+          <short xml:lang="uk">Яскравість</short>
+          <short xml:lang="vi">Độ sáng</short>
+          <short xml:lang="zh_CN">亮度</short>
+          <short xml:lang="zh_HK">亮度</short>
+          <short xml:lang="zh_TW">亮度</short>
+          <long>Background brightness.</long>
+          <long xml:lang="uk">Яскравість тла.</long>
+          <default>50.0</default>
+          <min>0.0</min>
+          <max>100.0</max>
+          <precision>0.1</precision>
+        </option>
+      </group>
+    </options>
+  </plugin>
+</compiz>

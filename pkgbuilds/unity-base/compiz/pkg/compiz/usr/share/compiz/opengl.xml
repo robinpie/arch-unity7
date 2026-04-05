@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="opengl">
+	<short>OpenGL</short>
+	<short xml:lang="ast">OpenGL</short>
+	<short xml:lang="bg">OpenGL</short>
+	<short xml:lang="bs">OpenGL</short>
+	<short xml:lang="cs">OpenGL</short>
+	<short xml:lang="da">OpenGL</short>
+	<short xml:lang="de">OpenGL</short>
+	<short xml:lang="el">OpenGL</short>
+	<short xml:lang="en_AU">OpenGL</short>
+	<short xml:lang="en_GB">OpenGL</short>
+	<short xml:lang="es">OpenGL</short>
+	<short xml:lang="fi">OpenGL</short>
+	<short xml:lang="fr">OpenGL</short>
+	<short xml:lang="gl">OpenGL</short>
+	<short xml:lang="hr">OpenGL</short>
+	<short xml:lang="it">OpenGL</short>
+	<short xml:lang="ko">오픈GL</short>
+	<short xml:lang="ms">OpenGL</short>
+	<short xml:lang="nl">OpenGL</short>
+	<short xml:lang="oc">OpenGL</short>
+	<short xml:lang="pl">OpenGL</short>
+	<short xml:lang="pt">OpenGL</short>
+	<short xml:lang="pt_BR">OpenGL</short>
+	<short xml:lang="ro">OpenGL</short>
+	<short xml:lang="ru">OpenGL</short>
+	<short xml:lang="sl">OpenGL</short>
+	<short xml:lang="sv">OpenGL</short>
+	<short xml:lang="tr">OpenGL</short>
+	<short xml:lang="ug">OpenGL</short>
+	<short xml:lang="uk">OpenGL</short>
+	<short xml:lang="vi">OpenGL</short>
+	<short xml:lang="zh_CN">OpenGL</short>
+	<long>OpenGL Plugin</long>
+	<long xml:lang="ast">Complementu OpenGL</long>
+	<long xml:lang="bg">Приставка OpenGL</long>
+	<long xml:lang="bs">OpenGL dodatak</long>
+	<long xml:lang="ca">Connector OpenGL</long>
+	<long xml:lang="cs">OpenGL Plugin</long>
+	<long xml:lang="de">OpenGL-Erweiterung</long>
+	<long xml:lang="el">Πρόσθετο OpenGL</long>
+	<long xml:lang="en_AU">OpenGL Plugin</long>
+	<long xml:lang="en_GB">OpenGL Plug-in</long>
+	<long xml:lang="es">Complemento OpenGL</long>
+	<long xml:lang="fi">OpenGL-liitännäinen</long>
+	<long xml:lang="fr">Extension OpenGL</long>
+	<long xml:lang="gl">Engadido OpenGL</long>
+	<long xml:lang="hr">OpenGl priključak</long>
+	<long xml:lang="it">Plugin OpenGL</long>
+	<long xml:lang="ja">OpenGLプラグイン</long>
+	<long xml:lang="ko">오픈GL 플러그인</long>
+	<long xml:lang="ms">Pemalam OpenGL</long>
+	<long xml:lang="nl">OpenGL-plug-in</long>
+	<long xml:lang="oc">Extension OpenGL</long>
+	<long xml:lang="pl">Wtyczka OpenGL</long>
+	<long xml:lang="pt">Plugin OpenGL</long>
+	<long xml:lang="pt_BR">Plug-in OpenGL</long>
+	<long xml:lang="ro">Modul OpenGL</long>
+	<long xml:lang="ru">Надстройка OpenGL</long>
+	<long xml:lang="sl">Vstavek OpenGL</long>
+	<long xml:lang="sv">OpenGL-instick</long>
+	<long xml:lang="tr">OpenGL Eklentisi</long>
+	<long xml:lang="ug">OpenGLقىستۇرمىسى</long>
+	<long xml:lang="uk">Втулок OpenGL</long>
+	<long xml:lang="vi">Phần bổ sung OpenGL</long>
+	<long xml:lang="zh_CN">OpenGL 插件</long>
+	<category>General</category>
+	<deps>
+	    <requirement>
+		<plugin>composite</plugin>
+	    </requirement>
+	</deps>
+	<options>
+	    <option type="int" name="texture_filter">
+		<short>Texture Filter</short>
+		<short xml:lang="ast">Peñera de Testura</short>
+		<short xml:lang="be">টেক্সচার ফিল্টার</short>
+		<short xml:lang="bg">Филтър на текстура</short>
+		<short xml:lang="bn">টেক্সচার ফিল্টার</short>
+		<short xml:lang="bn_IN">টেক্সচার ফিল্টার</short>
+		<short xml:lang="bs">Filter za teksture</short>
+		<short xml:lang="ca">Filtre de textura</short>
+		<short xml:lang="cs">Filtr textur</short>
+		<short xml:lang="da">Teksturfilter</short>
+		<short xml:lang="de">Strukturfilter</short>
+		<short xml:lang="el">Φίλτρο υφής</short>
+		<short xml:lang="en_AU">Texture Filter</short>
+		<short xml:lang="en_GB">Texture Filter</short>
+		<short xml:lang="es">Filtro de Textura</short>
+		<short xml:lang="eu">Testura iragazkia</short>
+		<short xml:lang="fi">Tekstuurisuodatin</short>
+		<short xml:lang="fr">Filtre de texture</short>
+		<short xml:lang="gl">Filtro de texturas</short>
+		<short xml:lang="gu">લખાણ ગાળક</short>
+		<short xml:lang="he">מסנן טקסטורות</short>
+		<short xml:lang="hr">Filtar tekstura</short>
+		<short xml:lang="hu">Textúraszűrő</short>
+		<short xml:lang="it">Filtro texture</short>
+		<short xml:lang="ja">テクスチャ・フィルタ</short>
+		<short xml:lang="ko">텍스처 필터</short>
+		<short xml:lang="ms">Penapis Tekstur</short>
+		<short xml:lang="nb">Teksturfilter</short>
+		<short xml:lang="nl">Texturen filter</short>
+		<short xml:lang="oc">Filtre de textura</short>
+		<short xml:lang="or">ଟେକ୍ସଚର ଫିଲ୍ଟର</short>
+		<short xml:lang="pl">Filtr tekstury</short>
+		<short xml:lang="pt">Filtro de Textura</short>
+		<short xml:lang="pt_BR">Filtro de Textura</short>
+		<short xml:lang="ro">Filtru textură</short>
+		<short xml:lang="ru">Фильтр текстур</short>
+		<short xml:lang="sk">Filter textúr</short>
+		<short xml:lang="sl">Filter tekstur</short>
+		<short xml:lang="sr">Филтер текстуре</short>
+		<short xml:lang="sv">Texturfilter</short>
+		<short xml:lang="tr">Doku Filtresi</short>
+		<short xml:lang="ug">ئىزنا سۈزگۈچى</short>
+		<short xml:lang="uk">Фільтр текстур</short>
+		<short xml:lang="vi">Lọc hoạt tiết</short>
+		<short xml:lang="zh_CN">纹理过滤器</short>
+		<short xml:lang="zh_HK">材質過濾器</short>
+		<short xml:lang="zh_TW">材質過濾器</short>
+		<long>Texture filtering</long>
+		<long xml:lang="ast">Peñeráu de testures</long>
+		<long xml:lang="be">টেক্সচার ফিল্টার করা</long>
+		<long xml:lang="bg">Филтриране на текстура</long>
+		<long xml:lang="bn">টেক্সচার ফিল্টার করা</long>
+		<long xml:lang="bn_IN">টেক্সচার ফিল্টার করা</long>
+		<long xml:lang="bs">Obrada podataka tekstura</long>
+		<long xml:lang="ca">Filtres de textures</long>
+		<long xml:lang="cs">Filtrování textur</long>
+		<long xml:lang="de">Texturfilter</long>
+		<long xml:lang="el">Φιλτράρισμα υφής</long>
+		<long xml:lang="en_AU">Texture filtering</long>
+		<long xml:lang="en_GB">Texture filtering</long>
+		<long xml:lang="es">Filtrado de Texturas</long>
+		<long xml:lang="eu">Testura iragazten</long>
+		<long xml:lang="fi">Tekstuurisuodatus</long>
+		<long xml:lang="fr">Filtrage de texture</long>
+		<long xml:lang="gl">Filtrado de texturas</long>
+		<long xml:lang="gu">લખાણ ગાળણ</long>
+		<long xml:lang="he">סינון טקסטורות</long>
+		<long xml:lang="hr">Filtriranje tekstura</long>
+		<long xml:lang="hu">Textúraszűrés</long>
+		<long xml:lang="id">Penyaringan tekstur</long>
+		<long xml:lang="it">Modalità di filtro texture</long>
+		<long xml:lang="ja">テクスチャ・フィルタ</long>
+		<long xml:lang="ko">텍스처 필터링</long>
+		<long xml:lang="ms">Penapisan tekstur</long>
+		<long xml:lang="nb">Teksturfiltrering</long>
+		<long xml:lang="nl">Texturen filteren</long>
+		<long xml:lang="oc">Filtratge de textura</long>
+		<long xml:lang="or">ଟେକ୍ସଟର ଫିଲ୍ଟର କରିବା</long>
+		<long xml:lang="pl">Filtrowanie tekstur</long>
+		<long xml:lang="pt">Filtro de texturas</long>
+		<long xml:lang="pt_BR">Filtro de Texturas</long>
+		<long xml:lang="ro">Filtrare textură</long>
+		<long xml:lang="ru">Фильтрация текстур</long>
+		<long xml:lang="sk">Filtrovanie textúr</long>
+		<long xml:lang="sl">Filtriranje tekstur</long>
+		<long xml:lang="sr">Филтрирање текстуре</long>
+		<long xml:lang="sv">Texturfiltrering</long>
+		<long xml:lang="tr">Doku filtreleme</long>
+		<long xml:lang="ug">ئىزنا سۈزۈلگەن</long>
+		<long xml:lang="uk">Фільтрація текстур</long>
+		<long xml:lang="vi">Lọc họa tiết</long>
+		<long xml:lang="zh_CN">纹理过滤</long>
+		<long xml:lang="zh_HK">材質篩選</long>
+		<long xml:lang="zh_TW">材質篩選</long>
+		<default>1</default>
+		<min>0</min>
+		<max>2</max>
+		<desc>
+		    <value>0</value>
+		    <name>Fast</name>
+		    <name xml:lang="ast">Rápidu</name>
+		    <name xml:lang="be">দ্রুত</name>
+		    <name xml:lang="bg">Бързо</name>
+		    <name xml:lang="bn">দ্রুত</name>
+		    <name xml:lang="bn_IN">দ্রুত</name>
+		    <name xml:lang="bs">Brzo</name>
+		    <name xml:lang="ca">Ràpid</name>
+		    <name xml:lang="cs">Rychlé</name>
+		    <name xml:lang="da">Hurtig</name>
+		    <name xml:lang="de">Schnell</name>
+		    <name xml:lang="el">Γρήγορο</name>
+		    <name xml:lang="en_AU">Fast</name>
+		    <name xml:lang="en_GB">Fast</name>
+		    <name xml:lang="es">Rápido</name>
+		    <name xml:lang="eu">Azkarra</name>
+		    <name xml:lang="fi">Nopea</name>
+		    <name xml:lang="fr">Rapide</name>
+		    <name xml:lang="gl">Rápido</name>
+		    <name xml:lang="gu">ઝડપી</name>
+		    <name xml:lang="he">מהיר</name>
+		    <name xml:lang="hi">तेज</name>
+		    <name xml:lang="hr">Brže</name>
+		    <name xml:lang="hu">Gyors</name>
+		    <name xml:lang="it">Veloce</name>
+		    <name xml:lang="ja">速さ重視</name>
+		    <name xml:lang="ko">빠름</name>
+		    <name xml:lang="ku">Bilez</name>
+		    <name xml:lang="ms">Pantas</name>
+		    <name xml:lang="nb">Rask</name>
+		    <name xml:lang="nds">Gau</name>
+		    <name xml:lang="nl">Snel</name>
+		    <name xml:lang="oc">Rapid</name>
+		    <name xml:lang="or">ଶୀଘ୍ର</name>
+		    <name xml:lang="pa">ਤੇਜ਼</name>
+		    <name xml:lang="pl">Szybki</name>
+		    <name xml:lang="pt">Rápido</name>
+		    <name xml:lang="pt_BR">Rápido</name>
+		    <name xml:lang="ro">Rapidă</name>
+		    <name xml:lang="ru">Быстрое</name>
+		    <name xml:lang="sk">Rýchlo</name>
+		    <name xml:lang="sl">Hitro</name>
+		    <name xml:lang="sq">E Shpejtë</name>
+		    <name xml:lang="sr">Брзо</name>
+		    <name xml:lang="sv">Snabb</name>
+		    <name xml:lang="tr">Hızlı</name>
+		    <name xml:lang="ug">تېز</name>
+		    <name xml:lang="uk">Швидко</name>
+		    <name xml:lang="vi">Nhanh</name>
+		    <name xml:lang="zh_CN">快速</name>
+		    <name xml:lang="zh_HK">快速</name>
+		    <name xml:lang="zh_TW">快速</name>
+		</desc>
+		<desc>
+		    <value>1</value>
+		    <name>Good</name>
+		    <name xml:lang="ast">Bonu</name>
+		    <name xml:lang="be">ভালো</name>
+		    <name xml:lang="bg">Добро</name>
+		    <name xml:lang="bn">ভালো</name>
+		    <name xml:lang="bn_IN">ভালো</name>
+		    <name xml:lang="bs">Dobar</name>
+		    <name xml:lang="ca">Bo</name>
+		    <name xml:lang="cs">Dobré</name>
+		    <name xml:lang="da">God</name>
+		    <name xml:lang="de">Gut</name>
+		    <name xml:lang="el">Καλό</name>
+		    <name xml:lang="en_AU">Good</name>
+		    <name xml:lang="en_GB">Good</name>
+		    <name xml:lang="es">Bueno</name>
+		    <name xml:lang="eu">Ona</name>
+		    <name xml:lang="fi">Hyvä</name>
+		    <name xml:lang="fr">Bon</name>
+		    <name xml:lang="gl">Bo</name>
+		    <name xml:lang="gu">સરસ</name>
+		    <name xml:lang="he">טוב</name>
+		    <name xml:lang="hi">अच्छा</name>
+		    <name xml:lang="hr">Bolje</name>
+		    <name xml:lang="hu">Jó</name>
+		    <name xml:lang="it">Buono</name>
+		    <name xml:lang="ja">良</name>
+		    <name xml:lang="ko">좋음</name>
+		    <name xml:lang="ku">Baş</name>
+		    <name xml:lang="ms">Baik</name>
+		    <name xml:lang="nb">God</name>
+		    <name xml:lang="nds">Geiht</name>
+		    <name xml:lang="nl">Goed</name>
+		    <name xml:lang="oc">Bon</name>
+		    <name xml:lang="or">ଉତ୍ତମ</name>
+		    <name xml:lang="pa">ਚੰਗਾ</name>
+		    <name xml:lang="pl">Dobry</name>
+		    <name xml:lang="pt">Bom</name>
+		    <name xml:lang="pt_BR">Bom</name>
+		    <name xml:lang="ro">Bună</name>
+		    <name xml:lang="ru">Хорошее</name>
+		    <name xml:lang="sk">V poriadku</name>
+		    <name xml:lang="sl">Dobro</name>
+		    <name xml:lang="sq">E Mirë</name>
+		    <name xml:lang="sr">Добар</name>
+		    <name xml:lang="sv">Bra</name>
+		    <name xml:lang="tr">İyi</name>
+		    <name xml:lang="ug">ياخشى</name>
+		    <name xml:lang="uk">Добре</name>
+		    <name xml:lang="vi">Tốt</name>
+		    <name xml:lang="zh_CN">好</name>
+		    <name xml:lang="zh_HK">好</name>
+		    <name xml:lang="zh_TW">好</name>
+		</desc>
+		<desc>
+		    <value>2</value>
+		    <name>Best</name>
+		    <name xml:lang="ast">El meyor</name>
+		    <name xml:lang="be">সর্বোত্তম</name>
+		    <name xml:lang="bg">Най-добър</name>
+		    <name xml:lang="bn">সর্বোত্তম</name>
+		    <name xml:lang="bn_IN">সর্বোত্তম</name>
+		    <name xml:lang="bs">Najbolje</name>
+		    <name xml:lang="ca">Millor</name>
+		    <name xml:lang="cs">Nejlepší</name>
+		    <name xml:lang="da">Bedste</name>
+		    <name xml:lang="de">Beste</name>
+		    <name xml:lang="el">Βέλτιστο</name>
+		    <name xml:lang="en_AU">Best</name>
+		    <name xml:lang="en_GB">Best</name>
+		    <name xml:lang="es">El mejor</name>
+		    <name xml:lang="eu">Onena</name>
+		    <name xml:lang="fi">Paras</name>
+		    <name xml:lang="fr">Meilleur</name>
+		    <name xml:lang="gl">Mellor</name>
+		    <name xml:lang="gu">શ્રેષ્ઠ</name>
+		    <name xml:lang="he">מיטבי</name>
+		    <name xml:lang="hi">सर्वोत्तम</name>
+		    <name xml:lang="hr">Najbolje</name>
+		    <name xml:lang="hu">Legjobb</name>
+		    <name xml:lang="it">Ottimo</name>
+		    <name xml:lang="ja">最高</name>
+		    <name xml:lang="ko">최고</name>
+		    <name xml:lang="ku">Baştirîn</name>
+		    <name xml:lang="lv">Labākā</name>
+		    <name xml:lang="ms">Terbaik</name>
+		    <name xml:lang="nb">Beste</name>
+		    <name xml:lang="nds">Best</name>
+		    <name xml:lang="nl">Best</name>
+		    <name xml:lang="oc">Melhor</name>
+		    <name xml:lang="or">ଉତ୍ତମ</name>
+		    <name xml:lang="pa">ਉੱਤਮ</name>
+		    <name xml:lang="pl">Najlepszy</name>
+		    <name xml:lang="pt">Melhor</name>
+		    <name xml:lang="pt_BR">Melhor</name>
+		    <name xml:lang="ro">Cea mai bună</name>
+		    <name xml:lang="ru">Наилучшее</name>
+		    <name xml:lang="sk">Najlepšie</name>
+		    <name xml:lang="sl">Najboljše</name>
+		    <name xml:lang="sq">Më i Miri</name>
+		    <name xml:lang="sr">Најбоље</name>
+		    <name xml:lang="sv">Bästa</name>
+		    <name xml:lang="te">ఉత్తమ</name>
+		    <name xml:lang="tr">En iyi</name>
+		    <name xml:lang="ug">ئەڭ ياخشى</name>
+		    <name xml:lang="uk">Найкраще</name>
+		    <name xml:lang="vi">Tốt nhất</name>
+		    <name xml:lang="zh_CN">最佳</name>
+		    <name xml:lang="zh_HK">最佳</name>
+		    <name xml:lang="zh_TW">最佳</name>
+		</desc>
+	    </option>
+	    <option type="bool" name="lighting">
+		<short>Lighting</short>
+		<short xml:lang="ast">Illuminación</short>
+		<short xml:lang="be">Асвятленьне</short>
+		<short xml:lang="bg">Осветление</short>
+		<short xml:lang="bn">আলোকপাত</short>
+		<short xml:lang="bn_IN">আলোকপাত</short>
+		<short xml:lang="bs">Osvjetljenje</short>
+		<short xml:lang="ca">Il·luminació</short>
+		<short xml:lang="cs">Světlo</short>
+		<short xml:lang="da">Belysning</short>
+		<short xml:lang="de">Beleuchtung</short>
+		<short xml:lang="el">Φωτισμός</short>
+		<short xml:lang="en_AU">Lighting</short>
+		<short xml:lang="en_GB">Lighting</short>
+		<short xml:lang="es">Iluminación</short>
+		<short xml:lang="eu">Argitasuna</short>
+		<short xml:lang="fi">Valaistus</short>
+		<short xml:lang="fr">Éclairage</short>
+		<short xml:lang="gl">Iluminación</short>
+		<short xml:lang="gu">પ્રકાશન</short>
+		<short xml:lang="he">תאורה</short>
+		<short xml:lang="hr">Osvjetljenje</short>
+		<short xml:lang="hu">Világosítás</short>
+		<short xml:lang="it">Illuminazione</short>
+		<short xml:lang="ja">照明</short>
+		<short xml:lang="ko">조명 효과</short>
+		<short xml:lang="ms">Pencahayaan</short>
+		<short xml:lang="nb">Lyn</short>
+		<short xml:lang="nds">Licht</short>
+		<short xml:lang="nl">Belichting</short>
+		<short xml:lang="oc">Esclairatge</short>
+		<short xml:lang="or">ଆଲୋକିତକରିବା</short>
+		<short xml:lang="pl">Oświetlenie</short>
+		<short xml:lang="pt">Iluminação</short>
+		<short xml:lang="pt_BR">Iluminação</short>
+		<short xml:lang="ro">Iluminare</short>
+		<short xml:lang="ru">Освещение</short>
+		<short xml:lang="sk">Osvetlenie</short>
+		<short xml:lang="sl">Osvetlitev</short>
+		<short xml:lang="sq">Ndriçimi</short>
+		<short xml:lang="sr">Осветљење</short>
+		<short xml:lang="sv">Ljussättning</short>
+		<short xml:lang="tr">Aydınlatma</short>
+		<short xml:lang="ug">يورۇت</short>
+		<short xml:lang="uk">Освітлення</short>
+		<short xml:lang="vi">Ánh sáng</short>
+		<short xml:lang="zh_CN">光线</short>
+		<short xml:lang="zh_HK">光源</short>
+		<short xml:lang="zh_TW">光源</short>
+		<long>Use diffuse light when screen is transformed</long>
+		<long xml:lang="ast">Usa lluz indireuto cuando camuda la pantalla</long>
+		<long xml:lang="be">স্ক্রিন স্থানান্তরিত করার সময় বিচ্ছুরিত আলো প্রয়োগ করুন</long>
+		<long xml:lang="bn">স্ক্রিন স্থানান্তরিত করার সময় বিচ্ছুরিত আলো প্রয়োগ করুন</long>
+		<long xml:lang="bn_IN">স্ক্রিন স্থানান্তরিত করার সময় বিচ্ছুরিত আলো প্রয়োগ করুন</long>
+		<long xml:lang="bs">Koristi rasipanje svjetlosti kad je ekran transformisan</long>
+		<long xml:lang="ca">Utilitza llum de difusió en transformar la pantalla</long>
+		<long xml:lang="cs">Použít rozptýlené světlo při transformaci okna</long>
+		<long xml:lang="da">Brug diffust lys, når skærmen transformeres</long>
+		<long xml:lang="de">Beim Umwandeln des Bildschirms diffuses Licht verwenden</long>
+		<long xml:lang="el">Χρήση διάχυτου φωτός όταν η οθόνη μεταμορφώνεται</long>
+		<long xml:lang="en_AU">Use diffuse light when screen is transformed</long>
+		<long xml:lang="en_GB">Use diffuse light when screen is transformed</long>
+		<long xml:lang="es">Usa luz indirecta cuando se transforma la pantalla</long>
+		<long xml:lang="eu">Erabili argi barreiatua pantaila transformatzean</long>
+		<long xml:lang="fi">Käytä hajavaloa ruudun muuttuessa</long>
+		<long xml:lang="fr">Utiliser la lumière diffuse lorsque l'écran est transformé</long>
+		<long xml:lang="gl">Usar luz difusa cando se transforma a pantalla</long>
+		<long xml:lang="gu">જ્યારે સ્ક્રીન પરિવહન થઈ રહી હોય ત્યારે આછો પ્રકાશ વાપરો</long>
+		<long xml:lang="he">השתמש בפיזור אור בעת שינוי צורת מסך</long>
+		<long xml:lang="hi">स्क्रीन के बदले जाने पर विसरित प्रकाश का प्रयोग करें</long>
+		<long xml:lang="hr">Koristi difuzno svjetlo kada se zaslon preoblikuje</long>
+		<long xml:lang="hu">Szórt fény használata képernyő-transzformációnál</long>
+		<long xml:lang="it">Usa luce diffusa alla trasformazione della schermata</long>
+		<long xml:lang="ja">画面の変換時に拡散反射光を使用</long>
+		<long xml:lang="ko">화면이 전환될 때 빛이 퍼지는 사용</long>
+		<long xml:lang="ms">Guna cahaya tersebar bila skrin terjelma</long>
+		<long xml:lang="nb">Bruk diffust lys når skjermen omdannes</long>
+		<long xml:lang="nl">Gebruik diffuus licht als het scherm wordt getransformeerd</long>
+		<long xml:lang="oc">Utilizar lo lum atenuat quand l'ecran es transformat</long>
+		<long xml:lang="or">ୟେବେ ସ୍କ୍ରିନ ରୂପାନ୍ତରିତ ହୋଇଥାଏ, ବିକ୍ଷିପ୍ତ ଆଲୋକ ଉପୟୋଗ କର</long>
+		<long xml:lang="pa">ਜਦੋਂ ਸਕਰੀਨ ਟਰਾਂਸਫਰਮ ਕੀਤੀ ਜਾਵੇ ਤਾਂ ਹਲਕੀ ਲਾਈਟ ਵਰਤੋਂ</long>
+		<long xml:lang="pl">Używaj rozproszonego światła podczas przekształceń ekranu</long>
+		<long xml:lang="pt">Usar luz difusa quando a tela for transformada</long>
+		<long xml:lang="pt_BR">Usar luz difusa quando a tela for transformada</long>
+		<long xml:lang="ro">Utilizare lumină difuză la transformarea ecranului</long>
+		<long xml:lang="ru">Использование рассеянного света при преобразовании экрана</long>
+		<long xml:lang="sk">Použiť rozptýlené svetlo pri transformácii obrazovky</long>
+		<long xml:lang="sl">Ob preobrazbah zaslona uporabi razpršeno svetlobo</long>
+		<long xml:lang="sr">Користи расипање светлости кад је екран трансформисан</long>
+		<long xml:lang="sv">Använd diffus belysning när skärmen transformeras</long>
+		<long xml:lang="tr">Ekran boyutu değiştirildiğinde geçirgenlik ışığı kullan</long>
+		<long xml:lang="uk">Використання розсіяного світла при перетворенні екрану</long>
+		<long xml:lang="vi">Sử dụng nguồn sáng khuếch tán khi màn hình bị biến đổi</long>
+		<long xml:lang="zh_CN">转换屏幕时使用漫射光</long>
+		<long xml:lang="zh_HK">在螢幕轉換時使用擴散光</long>
+		<long xml:lang="zh_TW">在螢幕轉換時使用擴散光</long>
+		<default>false</default>
+	    </option>
+	    <option type="bool" name="sync_to_vblank">
+		<short>Sync To VBlank</short>
+		<short xml:lang="ast">Sincronizar con desaniciu vertical</short>
+		<short xml:lang="be">VBlank এ Sync</short>
+		<short xml:lang="bg">Синхронизиране с VBlank</short>
+		<short xml:lang="bn">VBlank এ Sync</short>
+		<short xml:lang="bn_IN">VBlank এ Sync</short>
+		<short xml:lang="bs">Sinhronizuj na „Vertikalnu Prazninu“</short>
+		<short xml:lang="ca">Sincronitza amb enfosquiment vertical</short>
+		<short xml:lang="cs">Synchronizovat při VBlank</short>
+		<short xml:lang="da">Synkroniser til lodret rydning</short>
+		<short xml:lang="de">Mit VBlank synchronisieren</short>
+		<short xml:lang="el">Συγχρονισμός Στην Καθετη Ανανέωση</short>
+		<short xml:lang="en_AU">Sync To VBlank</short>
+		<short xml:lang="en_GB">Sync To VBlank</short>
+		<short xml:lang="es">Sincronizar con borrado vertical</short>
+		<short xml:lang="eu">VBlank-era sinkronizatu</short>
+		<short xml:lang="fi">Synkronoi VBlankiin</short>
+		<short xml:lang="fr">Sync vers VBlank</short>
+		<short xml:lang="gl">Sincronizar co borrado vertical (VBlank)</short>
+		<short xml:lang="gu">VBlank માં સુમેળ કરો</short>
+		<short xml:lang="he">סינכרון עם VBlank</short>
+		<short xml:lang="hi">VBlank में तुल्यकालित करें</short>
+		<short xml:lang="hr">Uskladi s VBlankom</short>
+		<short xml:lang="hu">Szinkronizálás VBlank jelre</short>
+		<short xml:lang="it">Sincronizzare con VBlank</short>
+		<short xml:lang="ja">垂直ブランクに同期化</short>
+		<short xml:lang="ko">VBlank에 동기화</short>
+		<short xml:lang="ms">Segerak Ke VBlank</short>
+		<short xml:lang="nb">Synkroniser til VBlank</short>
+		<short xml:lang="nl">Sync naar VBlank</short>
+		<short xml:lang="oc">Sync cap a VBlank</short>
+		<short xml:lang="or">ସିଙ୍କ Vଖାଲିକୁ</short>
+		<short xml:lang="pa">VBlank ਨਾਲ ਸੈਕਰੋਨਾਈਜ਼</short>
+		<short xml:lang="pl">Synchronizuj z VBlank</short>
+		<short xml:lang="pt">Sincronizar a VBlank</short>
+		<short xml:lang="pt_BR">Sincronizar a VBlank</short>
+		<short xml:lang="ro">Sincronizare la VBlank</short>
+		<short xml:lang="ru">Синхронизировать с VBlank</short>
+		<short xml:lang="sk">Synchronizovať pri VBlank</short>
+		<short xml:lang="sl">Uskladi z VBlank</short>
+		<short xml:lang="sr">Синхронизуј на „Вертикалну Празнину“</short>
+		<short xml:lang="sv">Synkronisera till VBlank</short>
+		<short xml:lang="tr">Dikey Boşaltma ile Eşzamanla</short>
+		<short xml:lang="uk">Синхронізація з VBlank</short>
+		<short xml:lang="vi">Đồng bộ theo VBlank</short>
+		<short xml:lang="zh_CN">与VBlank同步</short>
+		<short xml:lang="zh_HK">同步化到 VBlank</short>
+		<short xml:lang="zh_TW">同步化到 VBlank</short>
+		<long>Only perform screen updates during vertical blanking period</long>
+		<long xml:lang="ast">Anovar la pantalla sólo nos periodos verticales de parpaguéu</long>
+		<long xml:lang="be">উল্লম্ব ফাঁকা পর্যায়ে শুধুমাত্র স্ক্রিন আপডেট সম্পাদন করুন</long>
+		<long xml:lang="bg">Извършване на обновяване на екрана само при период на вертикално изпразване</long>
+		<long xml:lang="bn">উল্লম্ব ফাঁকা পর্যায়ে শুধুমাত্র স্ক্রিন আপডেট সম্পাদন করুন</long>
+		<long xml:lang="bn_IN">উল্লম্ব ফাঁকা পর্যায়ে শুধুমাত্র স্ক্রিন আপডেট সম্পাদন করুন</long>
+		<long xml:lang="bs">Ekran osvježavaj samo u toku perioda vertikalne praznine</long>
+		<long xml:lang="ca">Només actualitza la pantalla durant els períodes d'enfosquiment vertical</long>
+		<long xml:lang="cs">Provádět aktualizace obrazovky pouze během intervalu vertikálního zatemnění</long>
+		<long xml:lang="da">Udfør kun skærmopdateringer i perioden med lodret rydning</long>
+		<long xml:lang="de">Bildschirmaktualisierungen nur während inaktiver senkrechter Anzeige durchführen</long>
+		<long xml:lang="el">Πραγματοποίηση ανανεώσεων οθόνης μόνο κατα τη διάρκεια της κάθετης περιοδικής ανανέωσης</long>
+		<long xml:lang="en_AU">Only perform screen updates during vertical blanking period</long>
+		<long xml:lang="en_GB">Only perform screen updates during vertical blanking period</long>
+		<long xml:lang="es">Solo se llevan a cabo actualizaciones de la pantalla durante el período de borrado vertical</long>
+		<long xml:lang="eu">Pantaila eguneratzeak zuritze bertikalaren denboran bakarrik baimendu</long>
+		<long xml:lang="fi">Suorita vain näyttöpäivitykset pystytasossa tehtävän tyhjäyksen aikana</long>
+		<long xml:lang="fr">N'effectuer les mises à jour de l'écran que lors de la période de vidage vertical</long>
+		<long xml:lang="gl">Actualizar a pantalla só durante o período de borrado vertical</long>
+		<long xml:lang="gu">ઊભા કોરા સમયગાળા દરમ્યાન માત્ર સ્ક્રીન સુધારાઓ જ કરે છે</long>
+		<long xml:lang="he">בצע עדכוני מסך רק במשך המחיקות האנכיות</long>
+		<long xml:lang="hi">लंबवत रिक्ति अवधि के दौरान सिर्फ स्क्रीन अद्यतन निष्पादित करें</long>
+		<long xml:lang="hr">Samo obavljaj obnavljanje zaslona tijekom okomitog razdoblja osvježavanja</long>
+		<long xml:lang="hu">A képernyő-frissítések végrehajtása csak a függőleges törlési periódusban</long>
+		<long xml:lang="it">Esegue aggiornamenti dello schermo solo durante periodo di cancellazione verticale</long>
+		<long xml:lang="ja">垂直帰線期間にのみ画面を更新する</long>
+		<long xml:lang="ko">수직 공백 주기로만 화면을 업데이트함</long>
+		<long xml:lang="ms">Hanya buat kemaskini skrin semasa tempoh penghitaman menegak</long>
+		<long xml:lang="nb">Bare utfør skjermoppdateringer ved vertikale blankingsperioder</long>
+		<long xml:lang="nl">Scherm alleen bijwerken tijdens verticale blanking periode</long>
+		<long xml:lang="oc">Efectuar las mesas a jorn de l'ecran pas qu'al moment lo periòde de voidatge vertical</long>
+		<long xml:lang="or">ଦଣ୍ଡରୂପ ଖାଲିକରିବା ଅବଧି ସମଯରେ କେବଳ ସ୍କ୍ରିନ ଅପଡେଟଗୁଡିକୁ କର</long>
+		<long xml:lang="pa">ਵਰਟੀਕਲ ਝਪਕ ਪੀਰੀਅਡ ਦੌਰਾਨ ਹੀ ਸਕਰੀਨ ਅੱਪਡੇਟ ਕਰੋ</long>
+		<long xml:lang="pl">Odświeżaj ekran tylko podczas okresu poziomego wygaszania</long>
+		<long xml:lang="pt">Apenas efectuar actualizações de ecrã durante o período de limpeza vertical</long>
+		<long xml:lang="pt_BR">Apenas efetuar atualizações de tela durante o período de limpeza vertical</long>
+		<long xml:lang="ro">Actualizează ecranul numai în timpul golirii verticale</long>
+		<long xml:lang="ru">Обновлять экран во время гашения обратного хода луча кадровой развертки</long>
+		<long xml:lang="sk">Vykonávať aktualizácie obrazovky počas intervalu vertikálneho zatemnenia</long>
+		<long xml:lang="sl">Zaslon osvežuj le med navpičnimi praznimi prehodi</long>
+		<long xml:lang="sr">Екран освежавај само за време вертикалне празнине</long>
+		<long xml:lang="sv">Genomför endast skärmuppdateringar under vertikal blankningsperiod</long>
+		<long xml:lang="tr">Ekran güncellemeyi sadece dikey boşaltma sürecinde yap</long>
+		<long xml:lang="uk">Оновлювати екран під час гасіння зворотнього ходу променю кадрової розгортки</long>
+		<long xml:lang="vi">Chỉ thực hiện cập nhật màn hình trong kỳ xoá dọc</long>
+		<long xml:lang="zh_CN">只在垂直清屏期间执行屏幕更新</long>
+		<long xml:lang="zh_HK">只在垂直空白期間執行螢幕更新</long>
+		<long xml:lang="zh_TW">只在垂直空白期間執行螢幕更新</long>
+		<default>true</default>
+	    </option>
+	    <option type="bool" name="texture_compression">
+		<short>Texture Compression</short>
+		<short xml:lang="ast">Compresión de testura</short>
+		<short xml:lang="bg">Компресия на текстура</short>
+		<short xml:lang="bs">Sažimanje teksture</short>
+		<short xml:lang="ca">Compressió de textures</short>
+		<short xml:lang="cs">Komprese textur</short>
+		<short xml:lang="de">Texturkompression</short>
+		<short xml:lang="el">Συμπίεση υφής</short>
+		<short xml:lang="en_AU">Texture Compression</short>
+		<short xml:lang="en_GB">Texture Compression</short>
+		<short xml:lang="es">Compresión de Textura</short>
+		<short xml:lang="eu">Testura trinkotzea</short>
+		<short xml:lang="fi">Tekstuurien pakkaus</short>
+		<short xml:lang="fr">Compression de texture</short>
+		<short xml:lang="gl">Compresión da textura</short>
+		<short xml:lang="he">דחיסת טקסטורות</short>
+		<short xml:lang="hr">Sažimanje tekstura</short>
+		<short xml:lang="hu">Textúratömörítés</short>
+		<short xml:lang="it">Compressione texture</short>
+		<short xml:lang="ja">テクスチャ圧縮</short>
+		<short xml:lang="ko">텍스처 압축</short>
+		<short xml:lang="ms">Pemampatan Tekstur</short>
+		<short xml:lang="nl">Textuurcompressie</short>
+		<short xml:lang="oc">Compression de textura</short>
+		<short xml:lang="pl">Kompresja tekstur</short>
+		<short xml:lang="pt">Compressão Texturas</short>
+		<short xml:lang="pt_BR">Compressão de Textura</short>
+		<short xml:lang="ro">Compresie textură</short>
+		<short xml:lang="ru">Компрессия текстур</short>
+		<short xml:lang="sk">Kompersia textúr</short>
+		<short xml:lang="sl">Stiskanje tekstur</short>
+		<short xml:lang="sr">Компресија текстуре</short>
+		<short xml:lang="sv">Texturkomprimering</short>
+		<short xml:lang="tr">Doku Sıkıştırma</short>
+		<short xml:lang="ug">ئىزنانى پرېسلا</short>
+		<short xml:lang="uk">Компресія текстур</short>
+		<short xml:lang="vi">Nén họa tiết</short>
+		<short xml:lang="zh_CN">纹理压缩</short>
+		<short xml:lang="zh_HK">材質壓縮</short>
+		<short xml:lang="zh_TW">材質壓縮</short>
+		<long>If available use compression for textures converted from images</long>
+		<long xml:lang="ast">Si se puede, usa compresión pa les testures convertíes dende imáxenes</long>
+		<long xml:lang="bg">Ако е достъпно, използване на компресия на изображение преобразувани от изображения</long>
+		<long xml:lang="bs">Ako je dostupno, koristi kompresiju za teksture konvertovane iz slika</long>
+		<long xml:lang="ca">Si està disponible utilitzeu compressió per a les textures convertides a partir d'imatges</long>
+		<long xml:lang="cs">Pokud je k dispozici komprese textur převedených z obrázků</long>
+		<long xml:lang="de">Benutze Kompression für aus Bildern generierte Texturen, wenn möglich.</long>
+		<long xml:lang="el">Εάν είναι διαθέσιμη να γίνει χρήση συμπίεσης για υφές που μετατράπηκαν από εικόνες</long>
+		<long xml:lang="en_AU">If available use compression for textures converted from images</long>
+		<long xml:lang="en_GB">If available, use compression for textures converted from images</long>
+		<long xml:lang="es">Si está disponible usar la compresión de texturas convertidas desde imágenes</long>
+		<long xml:lang="eu">Ahal denean erabili trinkotzea irudietatik eratorritako testurentzat</long>
+		<long xml:lang="fi">Käytä pakkausta kuvista muunnetuille tekstuureille, jos mahdollista</long>
+		<long xml:lang="fr">Si elle est disponible, utiliser la compression des textures venant d'images converties</long>
+		<long xml:lang="gl">Usar a compresión para as texturas convertidas desde imaxes</long>
+		<long xml:lang="he">אם ניתן, השתמש בדחיסה עבור טקסטורות שהומרו מתמונות</long>
+		<long xml:lang="hr">Ako je dostupno koristi sažimanje za teksture pretvorene iz slika</long>
+		<long xml:lang="hu">Képekből konvertált textúrák tömörítése, amennyiben az lehetséges</long>
+		<long xml:lang="it">Se disponibile, usa la compressione per le texture convertite dalle immagini</long>
+		<long xml:lang="ja">利用可能な場合は画像から変換されたテクスチャに圧縮を使用する</long>
+		<long xml:lang="ko">가능하다면 이미지로부터 변형된 텍스처를 압축합니다.</long>
+		<long xml:lang="ms">Jika tersedia guna pemampatan untuk tekstur yang ditukar dari imej</long>
+		<long xml:lang="nb">Hvis mulig, bruk kompresjon for teksturer hentet fra bilder</long>
+		<long xml:lang="nl">Gebruik waar mogelijk compressie voor textures van omgezette afbeeldingen</long>
+		<long xml:lang="oc">S'es disponibla, utilizatz la compression de las texturas que venon d'imatges convertits</long>
+		<long xml:lang="pl">Jeśli możliwe używaj kompresji dla tekstur przekonwertowanych z obrazków</long>
+		<long xml:lang="pt">Se disponível, usar compressão para texturas convertidas de imagens</long>
+		<long xml:lang="pt_BR">Se disponível usar a compressão para texturas convertidas a partir de imagens</long>
+		<long xml:lang="ro">Utilizează compresie pentru texturi convertite din imagini dacă e posibil</long>
+		<long xml:lang="ru">Использовать сжатие для текстур, конвертированных от изображений, если доступно</long>
+		<long xml:lang="sk">Ak sa dá, použiť kompresiu textúr, ktoré boli konvertované z obrázkov.</long>
+		<long xml:lang="sl">Kadar je na voljo, uporabljaj stiskanje za teksture pretvorjene iz slik</long>
+		<long xml:lang="sr">Ако је доступно користи компресије текстура конвертоване из слика</long>
+		<long xml:lang="sv">Om möjligt, komprimera texturer som skapats från bilder.</long>
+		<long xml:lang="tr">Eğer mümkünse, görüntülerden dönüştürülmüş dokular için sıkıştırma kullan</long>
+		<long xml:lang="uk">Використовувати стиснення для текстур, конвертованих від зображень, якщо є</long>
+		<long xml:lang="vi">Nén các hoạt tiết có nguồn gốc từ ảnh nếu có thể</long>
+		<long xml:lang="zh_CN">如果可能，对从图片转换来的纹理进行压缩</long>
+		<long xml:lang="zh_HK">如果可能，從圖片影像當中取得的紋理材質進行壓縮</long>
+		<long xml:lang="zh_TW">如果可能，從圖片影像當中取得的紋理材質進行壓縮</long>
+		<default>false</default>
+	    </option>
+	    <option type="bool" name="framebuffer_object">
+		<short>Framebuffer object</short>
+		<short xml:lang="bs">Objekt framebuffer područja</short>
+		<short xml:lang="de">Bildpufferobjekt</short>
+		<short xml:lang="el">Αντικείμενο framebuffer</short>
+		<short xml:lang="en_AU">Framebuffer object</short>
+		<short xml:lang="en_GB">Framebuffer object</short>
+		<short xml:lang="es">Objeto Framebuffer</short>
+		<short xml:lang="fr">objet de mémoire tampon vidéo</short>
+		<short xml:lang="gl">Obxecto de framebuffer</short>
+		<short xml:lang="hr">Međuspremnik sličica objekta</short>
+		<short xml:lang="it">Oggetto framebuffer</short>
+		<short xml:lang="ja">フレームバッファオブジェクト</short>
+		<short xml:lang="ko">프레임버퍼 객체</short>
+		<short xml:lang="ms">Objek penimbal bingkai</short>
+		<short xml:lang="nl">Frame-bufferobject</short>
+		<short xml:lang="oc">objècte de memòria tampon vidèo</short>
+		<short xml:lang="pt">Objecto de framebuffer</short>
+		<short xml:lang="pt_BR">Objeto do buffer de quadros</short>
+		<short xml:lang="ru">Объект кадрового буфера</short>
+		<short xml:lang="sl">Predmet medpomnilnika zaslona</short>
+		<short xml:lang="sv">Bildbufferobjekt</short>
+		<short xml:lang="uk">Об’єкт кадрового буферу</short>
+		<short xml:lang="zh_CN">帧缓冲对象</short>
+		<long>Render all frames indirectly using framebuffer objects (GL_EXT_framebuffer_object), if supported by the driver. Pros: Might be faster than the default buffer swapping method in some cases. Cons: This will come at the cost of (1) usually reduced graphics benchmark performance; (2) increased GPU resource consumption; and (3) possibly higher visible lag. Note: This feature is always on in OpenGL|ES builds such as ARM platforms.</long>
+		<long xml:lang="bs">Ako je podržano od strane upravljačkog programa, Iscrtati sve okvire posredno koristeći videomeđuspremnik (GL_EXT_framebuffer_object). Argument za: Može biti brže nego predodređena zamjena metode u nekim slučajevima. Argument protiv: doći će na trošak (1) obično se svode na slike referentne izvedbe; (2) povećana GPU potrošnja resursa; i (3) eventualno veći vidljivi pomak. Bilješka: Ova opcija je uvijek uključena u OpenGL|ES i temelji se na ARM platformi.</long>
+		<long xml:lang="de">Alle Bilder indirekt mithilfe von Framebuffer-Objekten (GL_EXT_framebuffer_object) rendern, falls vom Treiber unterstützt. Pro: In manchen Fällen eventuell schneller als die normale Buffer-Swapping-Methode. Contra: Dies passiert auf Kosten von (1) meist langsamerer Grafikkartenperformance; (2) erhöhtem GPU-Ressourcenverbrauch; und (3) möglicherweise höherer sichtbarer Verzögerung. Notiz: Dieses Feature ist bei OpenGL|ES-Builds und ARM-Plattformen immer aktiviert.</long>
+		<long xml:lang="el">Αποτύπωση όλων των καρέ με τη χρήση αντικειμένων framebuffer (GL_EXT_framebuffer_object), αν αυτό υποστηρίζεται από τον οδηγό. Υπέρ: Ενδεχομένως να είναι ταχύτερο από την προεπιλεγμένη μέθοδο εναλλαγής buffer σε κάποιες περιπτώσεις. Κατά: Αυτό θα επιτευχθεί με κόστος στην (1) μειωμένη συνήθως απόδοση γραφικών, (2) αυξημένη κατανάλωση πόρων της κάρτας γραφικών και (3) πιθανώς μεγαλύτερη ορατή υστέρηση. Σημείωση: Αυτή η λειτουργία είναι πάντα ενεργοποιημένη στις υλοποιήσεις OpenGL|ES καθώς και στις πλατφόρμες ARM.</long>
+		<long xml:lang="en_AU">Render all frames indirectly using framebuffer objects (GL_EXT_framebuffer_object), if supported by the driver. Pros: Might be faster than the default buffer swapping method in some cases. Cons: This will come at the cost of (1) usually reduced graphics benchmark performance; (2) increased GPU resource consumption; and (3) possibly higher visible lag. Note: This feature is always on in OpenGL|ES builds such as ARM platforms.</long>
+		<long xml:lang="en_GB">Render all frames indirectly using framebuffer objects (GL_EXT_framebuffer_object), if supported by the driver. Pros: Might be faster than the default buffer swapping method in some cases. Cons: This will come at the cost of (1) usually reduced graphics benchmark performance; (2) increased GPU resource consumption; and (3) possibly higher visible lag. Note: This feature is always on in OpenGL|ES builds such as ARM platforms.</long>
+		<long xml:lang="es">Genera todos los cuadros indirectamente usando objetos framebuffer (GL_EXT_framebuffer_object), si están soportados por el controlador. Ventajas: en algunos casos podría ser más rápido que el método de intercambio de búfer predeterminado. Desventajas: esto supondrá un coste de (1) normalmente reducir el rendimiento en la prueba de gráficos;  (2) aumentar el consumo de recursos de la GPU; y (3) posiblemente un mayor retardo visible. Nota: esta característica siempre está activada en compilaciones OpenGL|ES tales como las plataformas ARM.</long>
+		<long xml:lang="fr">Afficher toutes les trames indirectement en utilisant des objets en cache vidéo (GL_EXT_framebuffer_object), si elle est soutenue par le pilote graphique. Avantages : peut être plus rapide que la méthode par défaut du tampon échange dans certains cas. Inconvénients : cela va se faire aux dépens (1) des performances graphiques habituellement réduite de référence, (2) de l'augmentation de la consommation des ressources GPU, et (3) du décalage qui pourrait être plus élevé. Remarque : cette fonction est toujours activée en OpenGL | ES construit comme des plates-formes ARM.</long>
+		<long xml:lang="gl">Renderiza todos os cadros indirectamente usando obxectos do búfer de cadros (GL_EXT_framebuffer_object), se o controlador o permite. Vantaxes: pode ser mais rápido que o método de búfer de alternancia predeterminado nalgúns casos. Contras: isto terá o custo de (1) xeralmente, unha redución de rendemento en avaliacións de funcionamento; (2) aumento do consumo de recursos da GPU; e (3) posíbel aumento de estancamentos visíbeis. Nota: Esta funcionalidade está sempre activada en compilacións de OpenGL|ES tales como as de plataformas ARM.</long>
+		<long xml:lang="hr">Prikazuje sve sličice neizravno upotrebom međuspremnika sličica objekta (GL_EXT_framebuffer_object), ako je podržano upravljačkim programom. Prednosti: može biti brže od zadanog načina zamjene međuspremnika u nekim slučajevima. Mane: to će raditi na uštrb (1) uobičajeno smanjenju grafičkih performansi pri izvođenju testiranja; (2) povećanje upotrebe GPU resursa; i (3) mogući jako izraženi problemi u radu. Napomena: ova značajka je uvijek uključena u OpenGL|ES izdanjima poput ARM platformama.</long>
+		<long xml:lang="it">La resa grafica dei frame, se supportato dal driver, è indiretta sfruttando oggetti framebuffer (GL_EXT_framebuffer_object). Pro: potrebbe essere più veloce del metodo predefinito di swap dei buffer. Contro: benchmark di prestazioni grafiche peggiori, utilizzo intenso di risorse GPU, possibili ritardi visibili. Nota: questa caratteristica è sempre abilitata nelle build OpenGL|ES su piattaforme ARM.</long>
+		<long xml:lang="ko">드라이버가 지원하는 경우 프레임버퍼 객체(GL_EXT_framebuffer_object)를 사용해 모든 프레임을 간접적으로 렌더링합니다.  일부 상황에서 기본 버퍼 교체 방식보다 빠륵 수 있습니다. 하지만 그래픽 벤치마크 성능을 줄일 수 있고 GPU 자원 소모를 늘릴 수 있으며 화면 지연이 심해질 수 있습니다. 주의: 이 기능은 ARM 플래폼과 같은 OpenGL|ES 빌드에서는 항상 사용하게 됩니다.</long>
+		<long xml:lang="ms">Terap semua bingkai secara tidak langsung menggunakan objek penimbal bingkai (GL_EXT_framebuffer_object), jika disokong oleh pemacu. Kebaikan: Mungkin lebih pantas berbanding kaedah penimbal lalai dalam sestengah kes. Keburukan: Ia memberi kesan pada (1) prestasi tanda aras grafik yang mengalami pengurangan; (2) meningkatkan penggunaan sumber CPU; dan (3) lambatan tampak yang lebih tinggi. Perhatian: Fitur ini biasanya dihidupkan dalam binaan OpenGL|ES seperti platform ARM.</long>
+		<long xml:lang="nl">Rendert alle frames indirect via framebuffer objecten (GL_EXT_framebuffer_object), indien ondersteund door stuurprogramma. Voordeel: kan soms sneller zijn dan de standaard bufferomschakelingsmethode. Nadelen: (1) meestal verminderde grafische prestaties; (2) verhoogd processorgebruik; (3) mogelijk hogere visuele vertraging. Let op: deze optie staat altijd aan in OpenGL|ES-builds zoals ARM-platforms.</long>
+		<long xml:lang="pt">Renderizar todos os quadros indirectamente usando objectos framebuffer (GL_EXT_framebuffer_object), se suportado pelo driver. Prós: Pode ser mais rápido do que o método buffer Swapping padrão em alguns casos. Contras: Isso será à custa de (1), redução geralmente da performance gráfica de referência; (2) o aumento do consumo de recursos GPU; e (3) atraso possivelmente superior visível. Nota: Esta função está sempre em OpenGL|ES construidas como plataformas ARM.</long>
+		<long xml:lang="pt_BR">Renderiza todos os quadros indiretamente usando objetos do buffer de quadros (GL_EXT_framebuffer_object), se isto for suportado pelo driver. Prós: pode ser mais rápido que o método de buffer de troca padrão em alguns casos. Contras: isto se dará às custas de (1) geralmente, redução de desempenho em avaliações de desempenho; (2) aumento do consumo de recursos da GPU; e (3) possível aumento de lags visíveis. Nota: Este recurso está sempre ativado em montagens OpenGL|ES como em plataformas ARM.</long>
+		<long xml:lang="ru">Отрисовывать все кадры напрямую с использованием объектов кадрового буфера(GL_EXT_framebuffer_object), если драйвер поддерживает это. Преимущества: Может оказаться быстрее чем стандартный метод замены буфера. Недостатки: Это может стоить вам (1) ухудшения производительности в тестах; (2) увеличения затрат ресурсов GPU; и (3) возможно более видимым задержкам. Замечание: Эта опция всегда включена на OpenGL|ES сборках для ARM платформ.</long>
+		<long xml:lang="sl">Izriše vse okvirje posredno z uporabo predmetov slikovnega medpomnilnika (GL_EXT_framebuffer_object), če to gonilnik podpira. Prednosti: v nekaterih primerih je to morda hitrejše kot privzeti načini zamenjave medpomnilnika. Slabosti: to vas bo stalo (1) običajno počasnejše hitrosti v programih za merjenje hitrosti, (2) povečane porabe CPE in morda (3) bolj vidne zakasnitve. Ta zmožnost je vedno vklopljena na izgradnjah OpenGL|ES kot je ARM.</long>
+		<long xml:lang="sv">Rita upp alla ramar indirekt som bildbufferobjekt (GL_EXT_framebuffer_object), om det stöds av drivrutinen. För: Kan vara snabbare än den förvalda bufferväxlingsmetoden i vissa fall. Emot: Kostar (1) ofta minskad prestanda i grafiktester; (2) ökad resursanvändning av GPU:n; och (3) potentiellt ökad synlig eftersläpning. OBS: Den här funktionen är alltid aktiverad i OpenGL|ES-byggen, såsom ARM-plattformar.</long>
+		<long xml:lang="uk">Відмальовувати всі кадри напряму з використанням об’єктів кадрового буферу(GL_EXT_framebuffer_object), якщо драйвер підтримує це. Переваги: Може виявитися швидше ніж стандартний метод заміни буферу. Недоліки: Це може коштувати вам (1) погіршення продуктивности у тестах; (2) збільшення витрат ресурсів GPU; та (3) можливо більш видимим затримкам. Нотатка: Ця опція завжди увімкнена на OpenGL|ES збірках для ARM платформ.</long>
+		<long xml:lang="zh_CN">如果驱动支持，使用帧缓冲对象(GL_EXT_framebuffer_object)间接渲染所有帧。优点：在某些情况下可能会比默认的交换缓冲法快。缺点：(1)通常会导致显卡基准性能降低；(2)提高 GPU 资源的消耗；(3)可能导致更高的可见延迟。注意：该特性在 ARM 等平台的 OpenGL|ES 安装中总是启用。</long>
+		<default>true</default>
+	    </option>
+	    <option type="bool" name="vertex_buffer_object">
+		<short>Vertex buffer object</short>
+		<short xml:lang="bs">Tjemeni međuspremni objekat</short>
+		<short xml:lang="de">Vertex-Pufferobjekt</short>
+		<short xml:lang="el">Αντικείμενο Vertex buffer</short>
+		<short xml:lang="en_AU">Vertex buffer object</short>
+		<short xml:lang="en_GB">Vertex buffer object</short>
+		<short xml:lang="es">Objeto búfer de vértice</short>
+		<short xml:lang="fr">Objet du tampon de vertex</short>
+		<short xml:lang="gl">Obxecto de búfer de vértices</short>
+		<short xml:lang="hr">Međuspremnik hvatišta objekta</short>
+		<short xml:lang="it">Oggetto buffer vertex</short>
+		<short xml:lang="ja">頂点バッファオブジェクト</short>
+		<short xml:lang="ko">버텍스 버퍼 객체</short>
+		<short xml:lang="ms">Objek penimbal verteks</short>
+		<short xml:lang="nl">Vertex-bufferobject</short>
+		<short xml:lang="pt">Objecto Vertex buffer</short>
+		<short xml:lang="pt_BR">Objeto do buffer de vértices</short>
+		<short xml:lang="ru">Объект вертекстного буфера</short>
+		<short xml:lang="sl">Točkovno varovalni objekt</short>
+		<short xml:lang="sv">Vertexbufferobjekt</short>
+		<short xml:lang="ug">چوقا يىغلەك ئوبيېكتى</short>
+		<short xml:lang="uk">Об’єкт вершинного буферу</short>
+		<short xml:lang="zh_CN">顶点缓冲对象</short>
+		<long>Render all graphics primitives using vertex buffer objects (GL_ARB_vertex_buffer_object), if supported by the driver. Pros: This provides higher graphics performance for some drivers. Cons: This is a new feature and may cause graphical problems. Note: This feature is always on in OpenGL|ES builds such as ARM platforms.</long>
+		<long xml:lang="bs">Ako je podržano od strane upravljačkog programa, uscrtaj sve grafičke primitive koristeći međuspremne objekte(GL_ARB_vertex_buffer_object). Prednosti: To osigurava veću grafičku performansu za neke upravljačke programe. Nedostaci: Ovo je nova funkcija i mogla bi prouzrakovati grafičke probleme. Bilješka: Ovo svojstvo je uvijek uključeno u OpenGL|ES građi kao što su ARM platforme.</long>
+		<long xml:lang="de">Alle grafischen Primitiven mit Hilfe von Vertex-Puffer-Objekten (GL_ARB_vertex_buffer_object) darstellen, falls vom Treiber unterstützt. Vorteil:  Erlaubt eine höhere Grafikleistung für manche Treiber. Nachteil:  Da es sich um  eine neue Funktion handelt kann es zu Darstellungsproblemen führen. Anmerkung: Diese Option ist in OpenGL|ES-Builds wie zum Beispiel ARM-Plattformen immer aktiviert.</long>
+		<long xml:lang="el">Αποτύπωση όλων των αρχέτυπων γραφικών με τη χρήση αντικειμένων vertex buffer (GL_ARB_vertex_buffer_object), αν αυτό υποστηρίζεται από τον οδηγό. Υπέρ: Αυτό παρέχει υψηλότερη απόδοση γραφικών για κάποιους οδηγούς. Κατά: Αυτή είναι μια νέα λειτουργία και ενδέχεται να δημιουργήσει προβλήματα γραφικών. Σημείωση: Αυτή η λειτουργία είναι πάντα ενεργοποιημένη σε εκδόσεις OpenGL|ES όπως οι πλατφόρμες ARM.</long>
+		<long xml:lang="en_AU">Render all graphics primitives using vertex buffer objects (GL_ARB_vertex_buffer_object), if supported by the driver. Pros: This provides higher graphics performance for some drivers. Cons: This is a new feature and may cause graphical problems. Note: This feature is always on in OpenGL|ES builds such as ARM platforms.</long>
+		<long xml:lang="en_GB">Render all graphics primitives using vertex buffer objects (GL_ARB_vertex_buffer_object), if supported by the driver. Pros: This provides higher graphics performance for some drivers. Cons: This is a new feature and may cause graphical problems. Note: This feature is always on in OpenGL|ES builds such as ARM platforms.</long>
+		<long xml:lang="es">Genera todas las primitivas gráficas usando objetos de búfer vertex (GL_ARB_vertex_buffer_object), si están soportados por el controlador. Ventajas: proporciona un rendimiento de gráficos mayor para algunos controladores. Desventajas: es una nueva característica y puede provocar problemas gráficos. Nota: esta característica siempre está activada en compilaciones OpenGL|ES tales como las plataformas ARM.</long>
+		<long xml:lang="fr">Afficher toutes les primitives graphiques en utilisant des objets du tampon vertex (GL_ARB_vertex_buffer_object), si elle est soutenue par le conducteur. Avantages : ceci offre de meilleures performances graphiques pour certains pilotes graphiques. Inconvénients : Il s'agit d'une nouvelle fonctionnalité qui peut causer des problèmes graphiques. Remarque : cette fonction est toujours activée en OpenGL | ES construit comme des plates-formes ARM.</long>
+		<long xml:lang="gl">Renderizar todos os gráficos primitivos usando obxectos de búfer de vértices (GL_ARB_vertex_buffer_object), se o controlador o permite. Vantaxes: proporciona un maior rendemento nos gráficos nalgúns dispositivos. Desvantaxes: trátase dunha funcionalidade novidosa e pode causar problemas gráficos. Nota: esta funcionalidade está sempre presente nas compilacións OpenGL|ES tales como as da plataformas ARM.</long>
+		<long xml:lang="hr">Prikazuje svu jednostavnu grafiku upotrebom međuspremnika hvatišta objekta (GL_ARB_vertex_buffer_object), ako je podržano upravljačkim programom. Prednosti: ovo omogućuje veće grafičke performanse za određene upravljačke programe. Mane: ovo je nova značajka i može uzrokovati grafičke probleme. Napomena: ova značajka je uvijek uključena u OpenGL|ES izdanjima poput ARM platformama.</long>
+		<long xml:lang="it">Tutte le primitive grafiche, se supportato dal driver, sono elaborate attraverso oggetti vertex buffer (GL_ARB_vertex_buffer_object). Pro: fornisce prestazioni migliori per alcuni driver. Contro: è una nuova caratteristica e potrebbe portare a problemi grafici. Nota: questa caratteristica è sempre abilitata nelle build OpenGL|ES su piattaforme ARM.</long>
+		<long xml:lang="ko">드라이버가 지원하는 경우 버텍스 객체(GL_ARB_vertex_buffer_object)를 사용해 모든 그래픽 기초 요소를 렌더링합니다.  일부 드라이버에서 더 나은 성능을 제공하지만 그래픽 문제를 야기할 수 있습니다. 주의: 이 기능은 ARM 플래폼과 같은 OpenGL|ES 빌드에서는 항상 사용하게 됩니다.</long>
+		<long xml:lang="ms">Teras semua primitif grafik menggunakan objek penimbal verteks (GL_ARB_vertex_buffer_object), jika disokong oleh pemacu. Kebaikan: Ia sediakan prestasi grafik lebih tinggi untuk sesetengah pemacu. KeburukanL Ini merupakan fitur baru dan mungkin menyebabkan masalah grafik. Perhatian: Fitur ini sentiasa dihidupkan dalam binaan OpenGL|ES seperti platform ARM.</long>
+		<long xml:lang="nl">Render alle grafische effecten met behulp van vertex buffer-objecten (GL_ARB_vertex_buffer_object), indien ondersteund door het stuurprogramma. Voordeel: Dit verhoogt de grafische prestaties voor sommige stuurprogramma's. Nadeel: deze functie is altijd actief in OpenGL|ES-builds zoals ARM-platformen.</long>
+		<long xml:lang="pt">Renderizar todos os gráficos primitivos usando objectos de buffer vertex (GL_ARB_vertex_buffer_object), se suportado pelo controlador. Prós: Isto proporciona maior desempenho gráfico para alguns controladores. Contras: Este é um novo recurso e pode causar problemas gráficos. Nota: Esta função está sempre em OpenGL|ES construido como plataformas ARM.</long>
+		<long xml:lang="pt_BR">Renderizar todos os primitivos gráficos utilizando o objetos do buffer de vértices (GL_ARB_vertex_buffer_object), se suportado pelo driver. Prós: Isto resulta num melhor desempenho para alguns drivers. Contras: Este é um recurso novo e pode causa problemas gráficos. Nota: Este recurso está sempre ativado em montagens OpenGL|ES como plataformas ARM.</long>
+		<long xml:lang="ru">Отрисовывать все кадры напрямую с использованием объектов вершинного буфера(GL_ARB_vertex_buffer_object), если драйвер поддерживает это. Преимущества: Увеличивает производительность графики для некоторых драйверов. Недостатки: Это может привести к проблемам с графикой. Замечание: Эта опция всегда включена на OpenGL|ES сборках для ARM платформ.</long>
+		<long xml:lang="sl">Izriše vse grafične predmete s predmeti predpomnilnika vertex (GL_ARB_vertex_buffer_object), če to gonilnik podpira. Prednosti: to zagotavlja boljšo grafično zmogljivost za nekatere gonilnike. Slabosti: to je nova zmožnost, ki lahko povzroči grafične težave. Ta zmožnost je vedno vklopljena v gradnjah OpenGL|ES kot je ARM.</long>
+		<long xml:lang="sv">Rita upp alla grafikprimitiver som overtexbufferobjekt (GL_ARB_vertex_buffer_object), om det stöds av drivrutinen. För: Detta ger bättre grafikprestanda för vissa drivrutiner. Emot: Detta är en ny funktion och kan orsaka grafikproblem. OBS: Den här funktionen är alltid aktiverad i OpenGL|ES-byggen, såsom ARM-plattformar.</long>
+		<long xml:lang="uk">Відмальовувати всі кадри напряму з використанням об’єктів вершинного буферу(GL_ARB_vertex_buffer_object), якщо драйвер підтримує це. Переваги: Збільшує продуктивність графіки для деяких драйверів. Недоліки: Це може призвести до проблем з графікою. Нотатка: Ця опція завжди увімкнена на OpenGL|ES збірках для ARM платформ.</long>
+		<long xml:lang="zh_CN">如果驱动支持，使用顶点缓冲对象(GL_ARB_vertex_buffer_object)渲染所有基本图形。优点：可以为某些驱动提供更高的图形性能。缺点：这是一个新功能，可能引起图形显示问题。注意：该特性在 ARM 等平台的 OpenGL|ES 安装中总是启用。</long>
+		<default>true</default>
+	    </option>
+	    <option type="bool" name="always_swap_buffers">
+		<short>Always use buffer swapping</short>
+		<short xml:lang="bs">Uvijek koristi međuspremnu zamjenu</short>
+		<short xml:lang="de">Immer Puffer-Swapping verwenden</short>
+		<short xml:lang="el">Να γίνεται πάντα χρήση της εναλλαγής buffer</short>
+		<short xml:lang="en_AU">Always use buffer swapping</short>
+		<short xml:lang="en_GB">Always use buffer swapping</short>
+		<short xml:lang="es">Siempre usar intercambio de búferes</short>
+		<short xml:lang="fr">Toujours utiliser l'échange de tampons</short>
+		<short xml:lang="gl">Usar sempre o intercambio de búferes</short>
+		<short xml:lang="hr">Uvijek korsiti zamjenu međuspremnika</short>
+		<short xml:lang="it">Usare sempre lo swap del buffer</short>
+		<short xml:lang="ko">버퍼 교체 기능을 항상 사용</short>
+		<short xml:lang="ms">Sentiasa guna penyilihan penimbal</short>
+		<short xml:lang="nl">Altijd bufferomschakeling gebruiken</short>
+		<short xml:lang="oc">Utilizar totjorn l'escambi de tampons</short>
+		<short xml:lang="pt">Utilizar sempre a troca da memória intermédia</short>
+		<short xml:lang="pt_BR">Sempre utilizar buffer de troca</short>
+		<short xml:lang="ru">Всегда использовать подкачку буфера</short>
+		<short xml:lang="sl">Vedno uporabi medpomnilnik zamenjave</short>
+		<short xml:lang="sv">Använd alltid bufferväxling</short>
+		<short xml:lang="ug">باشتىن ئاخىر يىغلەك ئالماشتۇرۇشنى ئىشلىتىدۇ</short>
+		<short xml:lang="uk">Завжди використовуйте буфер обміну</short>
+		<short xml:lang="zh_CN">总是使用缓冲交换</short>
+		<long>Use glXSwapBuffers to display every frame. This eliminates visible tearing with most drivers and dramatically improves visual smoothness. Automatically enabled when framebuffer_object is on.</long>
+		<long xml:lang="bs">Koristi glXSwap međuspremnike za prikaz svakog okvira. To uklanja vidljivo kidanje kod većine upravljačkih programa i znaćajno povećava vizuelnu glatkoću.</long>
+		<long xml:lang="cs">Používat glXSwapBuffers pro zobrazení každého snímu. Eliminuje viditelné trhání s většinou ovladačů a výrazně zlepšuje vizuální plynulost. Automaticky povoleno pokud je zapnutý framebuffer_object.</long>
+		<long xml:lang="de">glXSwapBuffers verwenden, um jedes Bild anzuzeigen. Dadurch werden sichtbare Risse bei den meisten Treibern eliminiert und die Geschmeidigkeit drastisch verbessert. Wird automatisch eingeschaltet, wenn framebuffer_object an ist.</long>
+		<long xml:lang="el">Χρήση του glXSwapBuffers για την απεικόνιση κάθε καρέ. Αυτό καταργεί το ορατό tearing με τους περισσότερους οδηγούς και βελτιώνει δραματικά την οπτική ομαλότητα. Ενεργοποιείται αυτόματα όταν είναι ενεργό το framebuffer_object (αντικείμενο framebuffer)</long>
+		<long xml:lang="en_AU">Use glXSwapBuffers to display every frame. This eliminates visible tearing with most drivers and dramatically improves visual smoothness. Automatically enabled when framebuffer_object is on.</long>
+		<long xml:lang="en_GB">Use glXSwapBuffers to display every frame. This eliminates visible tearing with most drivers and dramatically improves visual smoothness. Automatically enabled when framebuffer_object is on.</long>
+		<long xml:lang="es">Usa glXSwapBuffers para mostrar todos los cuadros. Esto elimina el desgarro visible con la mayoría de los controladores y mejora de forma dramática la suavidad visual. Se activa automáticamente cuando framebuffer_object está activado.</long>
+		<long xml:lang="fr">Utiliser glXSwapBuffers pour afficher chaque image. Ceci élimine la déchirure visible avec la plupart des pilotes et améliore considérablement la finesse visuelle. Automatiquement activé lorsque framebuffer_object est activé.</long>
+		<long xml:lang="gl">Use glXSwapBuffers para presentar cada cadro. Isto elimina riscos visíbeis na maioría dos controladores e mellora substancialmente a suavidade visual. Actívase automaticamente cando framebuffer_object está activo.</long>
+		<long xml:lang="hr">Koristi glXSwapBuffers za prikaz svake sličice. To uklanja vidljivo trzanje i kidanje slike s većinom upravljačkih programa i dramatično poboljšava vizualnu glatkoću. Automatski je omogućeno kada je framebuffer_object uključen.</long>
+		<long xml:lang="it">Utilizza glXSwapBuffer per visualizzare tutti i frame, eliminando distorsioni visive con la maggior parte dei driver e migliorando la fluidità visiva. È abilitato automaticamente se viene attivato framebuffer_object.</long>
+		<long xml:lang="ko">glXSwapBuffers 기능을 사용해 모든 프레임을 표시합니다. 이 기능을 사용하면 대부분의 드라이버에서 티어링 현상을 제거하고 화면 효과를 상당히 부드럽게 합니다. framebuffer_object 기능을 사용하는 경우에 자동으로 이 기능을 사용합니다.</long>
+		<long xml:lang="ms">Guna glXSwapBuffers untuk papar setiap bingkai. Ia singkirkan pengoyakan tampaka dengan kebanyakan pemacu dan pertingkatkan kelancara visual dengan mendadak. Dibenarkan secara automatik bila framebuffer_object dihidupkan.</long>
+		<long xml:lang="nl">Gebruik glXSwapBuffers om elk frame weer te geven. Dit voorkomt dat het beeld trekt met de meeste stuurprogramma's en zorgt ervoor dat de visuele weergave aanzienlijk verbetert. Automatisch ingeschakeld wanneer framebuffer_object is ingeschakeld.</long>
+		<long xml:lang="pt">Usa glXSwapBuffers para exibir cada quadro. Isto elimina rasgamento visível com a maioria dos controladores e melhora dramaticamente a suavidade visual. Activado automaticamente quando framebuffer_object está ligado.</long>
+		<long xml:lang="pt_BR">Utilize glXSwapBuffers para exibir cada quadro. Isto elimina rasgos visíveis na maioria dos drivers e melhora dramaticamente a suavidade visual. Automaticamente ativo quando framebuffer_object está ligado.</long>
+		<long xml:lang="ru">Использовать glXSwapBuffers для отображения каждого кадра. Это устраняет видимое искажение для большинства драйверов и сильно увеличивает плавность интерфейса. Включается автоматически при включенном framebuffer_object.</long>
+		<long xml:lang="sl">Za prikaz vsake sličice uporabi glXSwapBuffers. To odstrani vidno trganje za večino gonilnikov in dratamtično izboljša vidno gladkost. Samodejno omogočeno, ko je framebuffer_object omogočen.</long>
+		<long xml:lang="sv">Använd glXSwapBuffers för att visa varje bild. Detta motverkar synliga slitningar med de flesta drivrutiner och förbättrar drastiskt den visuella upplevelsen. Automatiskt aktiverad när framebuffer_object är aktiverat.</long>
+		<long xml:lang="uk">Використовувати glXSwapBuffers для показу кожного кадру. Це усуває видиме спотворення для більшости драйверів та дуже збільшує плавність інтерфейсу. Вмикається автоматично при ввімкненому framebuffer_object.</long>
+		<long xml:lang="zh_CN">使用 glXSwapBuffers 显示所有帧，对大多数驱动，这将消除可见的撕裂并显著改善显示的平滑性。如果开启了 framebuffer_object，该特性将自动开启。</long>
+		<default>true</default>
+	    </option>
+	    <option type="string" name="unredirect_driver_blacklist">
+		<short>Unredirect Driver Blacklist</short>
+		<short xml:lang="bs">Isključi preusmjerenje drajverove crne liste</short>
+		<short xml:lang="cs">Nepřesměrovatelná černá listina ovladačů</short>
+		<short xml:lang="de">Treiber-Blockierliste für Umleitungsaufhebung</short>
+		<short xml:lang="en_AU">Unredirect Driver Blacklist</short>
+		<short xml:lang="en_GB">Unredirect Driver Blacklist</short>
+		<short xml:lang="es">Lista negra de controladores de no redirección</short>
+		<short xml:lang="gl">Lista negra de controladores non redireccionados</short>
+		<short xml:lang="hr">Popis nedozvljenih neprusmjrenih upravljačkih programa</short>
+		<short xml:lang="it">Blacklist dei driver non redirezionati</short>
+		<short xml:lang="ko">직접 그리기를 사용할 수 없는 드라이버 목록</short>
+		<short xml:lang="ms">Senarai Hitam Pemacu Tidak Langsung</short>
+		<short xml:lang="nl">Zwarte lijst met stuurprogramma's niet omleiden</short>
+		<short xml:lang="pt">Lista Negra de Controladores Não Redirecionáveis</short>
+		<short xml:lang="pt_BR">Lista-negra de drivers não-redirecionados</short>
+		<short xml:lang="ru">Отменить перенаправления черного списка драйверов</short>
+		<short xml:lang="sl">Odpreusmeri črni seznam gonilnikov</short>
+		<short xml:lang="uk">Скасувати переспрямування чорного переліку драйверів</short>
+		<short xml:lang="zh_CN">取消重定向驱动黑名单</short>
+		<long>If non-empty, specifies a POSIX (extended) regular expression to match against the OpenGL driver strings (newline separated): "GL_VENDOR\nGL_RENDERER\nGL_VERSION". If the regular expression matches a substring of that concatenation then no windows will ever be unredirected while using that particular graphics driver.</long>
+		<long xml:lang="bs">Ako nije prazno, navodi POSIX (prošireni) regularni izraz usaglašen prema OpenGL drajverskim stringovima (razdvojeno novim redovima): "GL_VENDOR\nGL_RENDERER\nGL_VERSION". Ako regularni izraz odgovara podnizu tog ulančavanja onda nijedan prozor neće biti vraćen na stanje prije preusmjerenja kada se koristi odgovarajući grafički upravljački program.</long>
+		<long xml:lang="de">Falls nicht-leer, gibt dies einen POSIX(erweiterten) regulären Ausdruck an, der mit den OpenGL-Treiber-Zeichenketten (durch neue Zeilen getrennt) verglichen wird: »GL_VENDOR\nGL_RENDERER\nGL_VERSION«. Falls der reguläre Ausdruck mit einer Unterkette der Zeichenkette übereinstimmt, wird bei Gebrauch des betreffenden Grafiktreibers für kein Fenster jemals die Umleitung aufgehoben.</long>
+		<long xml:lang="en_AU">If non-empty, specifies a POSIX (extended) regular expression to match against the OpenGL driver strings (newline separated): "GL_VENDOR\nGL_RENDERER\nGL_VERSION". If the regular expression matches a substring of that concatenation then no windows will ever be unredirected while using that particular graphics driver.</long>
+		<long xml:lang="en_GB">If non-empty, specifies a POSIX (extended) regular expression to match against the OpenGL driver strings (newline separated): "GL_VENDOR\nGL_RENDERER\nGL_VERSION". If the regular expression matches a substring of that concatenation then no windows will ever be unredirected while using that particular graphics driver.</long>
+		<long xml:lang="es">Si no está vacía, especifica una expresión regular POSIX (extendida) que comparar con las cadenas del controlador OpenGL (separadas por saltos de línea): «GL_VENDOR\nGL_RENDERER\nGL_VERSION». Si la expresión regular coincide con alguna cadena de esa concatenación entonces nunca se des-redirigirá ninguna ventana mientras esté en uso ese controlador de gráficos particular.</long>
+		<long xml:lang="gl">Se non está baleira, especifica unha expresión regular POSIX (ampliada) para comparar con cadeas do controlador OpenGL (separadas por saltos de liña): GL_VENDOR\nGL_RENDERER\nGL_VERSION". Se a expresión regular corresponde a unha subcadea de concatenación, entón ningunha xanela se redireccionará ao usar este controlador gráfico específico.</long>
+		<long xml:lang="hr">Ako polje nije prazno, određuje POSIX (prošireni) običan izraz za upotrebu protiv OpenGL nizova upravljačkog programa (odvojeno novim redkom): "GL_VENDOR\nGL_RENDERER\nGL_VERSION". Ako se običan izraz podudara s podnizom ulančavanja tada nijedan prozor neće biti nikada nepreusmjeren pri korištenju tog određenog upravljačkog programa.</long>
+		<long xml:lang="it">Se non vuoto, specifica un'espressione regolare POSIX (estesa) da confrontare con le stringe del driver OpenGL (separate da una riga vuota): "GL_VENDOR\nGL_RENDERER\nGL_VERSION". Se l'espressione regolare corrisponde a una sotto-stringa di quella concatenazione, allora nessuna finestra sarà mai non re-direzionata durante l'utilizzo di quel particolare driver grafico.</long>
+		<long xml:lang="ko">공백이 아니면 OpenGL 드라이버 문자열(새 줄로 구분함)와 일치하는 POSIX(확장) 정규 표현식을 지정합니다. 예: "GL_VENDOR\nGL_RENDERER\nGL_VERSION".정규 표현식이 하위 문자열 접합과 일치하면 특정 그래픽 드라이버를 사용할 때 절대 창을 전용하지 않습니다.</long>
+		<long xml:lang="ms">Jika bukan-kosong, nyatakan ungkapan nalar (lanjutan) POSIX untuk dipadankan dengan rentetan pemacu OpenGL (baris baru terpisah): "GL_VENDOR\nGL_RENDERER\nGL_VERSION". Jika ungkapan nalar sepadan dengan sub-rentetan yang dipangkas maka tiada tetingkap akan dinyahteruskan ketika menggunakan pemacu grafik tersebut.</long>
+		<long xml:lang="nl">Indien niet leeg, specificeert dit een POSIX (uitgebreide) reguliere expressie die overeenkomt met de OpenGL-stuurprogrammatekenreeks (newline separated): "GL_VENDOR\nGL_RENDERER\nGL_VERSION". Als de reguliere expressie overeenkomt met een sub-tekenreeks van die samenvoeging, dan zullen er geen vensters niet omgeleid worden zolang dat grafische stuurprogramma gebruikt wordt.</long>
+		<long xml:lang="pt">Se não estiver vazio, especifica uma expressão regular POSIX (extendida) para corresponder contra cordas condutoras OpenGL (nova linha separada): "GL_VENDOR\nGL_RENDERER\nGL_VERSION". Se a expressão regular corresponde uma sub-sequência dessa concatenação então sem janelas nunca vai ser não redireccionada enquanto estiver usando o driver gráfico específico.</long>
+		<long xml:lang="pt_BR">Se não-vazia, especifica uma expressão regular POSIX (estendida) para comparar com strings do driver OpenGL (separadas por nova-linha): GL_VENDOR\nGL_RENDERER\nGL_VERSION". Se a expressão regular corresponder a uma substring da concatenação, então nenhuma janela será não-redirecionada ao usar esse driver gráfico específico.</long>
+		<long xml:lang="ru">Если помечено, указывает регулярным выражениям POSIX (расширенный) искать соответствия в строках драйвера OpenGL (разделение новой строкой): "GL_VENDOR\nGL_RENDERER\nGL_VERSION". Если регулярное выражение соответствует подстроке, то отмена перенаправления никогда не будет производиться для любого окна, пока используется именно этот графический драйвер.</long>
+		<long xml:lang="sl">Če ni prazno, določi logični izraz POSIX (razširjen) za ujemanje z nizi gonilnika OpenGL (ločeno z znaki za novo vrstico): "GL_VENDOR\nGL_RENDERER\nGL_VERSION". Če se logični izraz ujema s podnizom te združitve, ne bo nobeno okno nikdar odpreusmerjeno, kadar se uporablja posebni grafični gonilnik.</long>
+		<long xml:lang="uk">Якщо позначено, вказує регулярним виразам POSIX (розширений) шукати відповідності у рядках драйвера OpenGL (розділення новим рядком): "GL_VENDOR\nGL_RENDERER\nGL_VERSION". Якщо регулярний вираз відповідає підрядку, то скасування переспрямування ніколи не буде робитися для будь-якого вікна, поки використовується саме цей графічний драйвер.</long>
+		<long xml:lang="zh_CN">如果非空，请使用(扩展的) POSIX 正则表达式匹配 OpenGL 驱动字符串(换行分隔)：“GL_VENDOR\nGL_RENDERER\nGL_VERSION”。如果正则表达式与该连接的子串相匹配，那么使用该显卡驱动时不会有任何窗口被取消重定向。</long>
+		<default>(nouveau|Intel).*Mesa 8.0</default>
+	    </option>
+
+	    <group>
+		<short>X11 Sync Objects</short>
+		<short xml:lang="bs">X11 Sinhronizirani objekti</short>
+		<short xml:lang="de">X11-Synchronisationsobjekte</short>
+		<short xml:lang="en_AU">X11 Sync Objects</short>
+		<short xml:lang="en_GB">X11 Sync Objects</short>
+		<short xml:lang="es">Sincronización de objetos de X11</short>
+		<short xml:lang="gl">Obxectos de X11 Sync</short>
+		<short xml:lang="hr">Objekti X11 usklađivanja</short>
+		<short xml:lang="ko">X11 Sync Objects</short>
+		<short xml:lang="ms">X11 Sync Objects</short>
+		<short xml:lang="pt">Objetos de sincronização X11</short>
+		<short xml:lang="sl">Predmeti za usklajevanje X11</short>
+		<short xml:lang="sv">X11 synkobjekt</short>
+		<short xml:lang="uk">X11 Синхронізація об’єктів</short>
+		<short xml:lang="zh_CN">X11 同步对象</short>
+		<option type="bool" name="enable_x11_sync">
+		    <short>Enabled</short>
+		    <short xml:lang="bs">Omogućeno</short>
+		    <short xml:lang="de">Aktiviert</short>
+		    <short xml:lang="en_AU">Enabled</short>
+		    <short xml:lang="en_GB">Enabled</short>
+		    <short xml:lang="es">Activada</short>
+		    <short xml:lang="fr">Activé</short>
+		    <short xml:lang="gl">Activado</short>
+		    <short xml:lang="hr">Omogućeno</short>
+		    <short xml:lang="ko">사용</short>
+		    <short xml:lang="ms">Dibenarkan</short>
+		    <short xml:lang="pl">Włączone</short>
+		    <short xml:lang="pt">Ativo</short>
+		    <short xml:lang="sl">Omogočeno</short>
+		    <short xml:lang="sv">Aktiverad</short>
+		    <short xml:lang="ug">قوزغىتىلغان</short>
+		    <short xml:lang="uk">Увімк.</short>
+		    <short xml:lang="zh_CN">已启用</short>
+		    <long>Use X11 Sync fences to synchronize rendering between X11 and OpenGL (GL_EXT_x11_sync_object). Without this, the contents of windows may not be completely redrawn.</long>
+		    <long xml:lang="bs">Koristi X11 usklađivanje objekta za usklađivanje prikaza između X11 i OpenGL (GL_EXT_x11_sync_object). Bez ovoga, sadržaj prozora možda neće biti u potpunosti pravilno iscrtan.</long>
+		    <long xml:lang="de">X11-Synchronisationsgrenzen verwenden, um das Darstellen zwischen X11 und OpenGL (GL_EXT_x11_sync_object) anzugleichen. Ohne diese Einstellung könnte der Fensterinhalt nicht erneut vollständig gezeichnet werden.</long>
+		    <long xml:lang="en_AU">Use X11 Sync fences to synchronise rendering between X11 and OpenGL (GL_EXT_x11_sync_object). Without this, the contents of windows may not be completely redrawn.</long>
+		    <long xml:lang="en_GB">Use X11 Sync fences to synchronise rendering between X11 and OpenGL (GL_EXT_x11_sync_object). Without this, the contents of windows may not be completely redrawn.</long>
+		    <long xml:lang="es">Utilice X11 Sync para sincronizar el renderizado entre X11 y OpenGL  (GL_EXT_x11_sync_object). Sin esto, el contenido de las ventanas podría no estar completamente rediseñados</long>
+		    <long xml:lang="gl">Usar X11 Sync fences para sincronizar o renderizado entre X11 e OpenGL (GL_EXT_x11_sync_object). Sen isto, os contidos das xanelas quizais non se redibuxen conpletamente.</long>
+		    <long xml:lang="hr">Koristi X11 usklađivanje objekta za usklađivanje prikaza između X11 i OpenGL (GL_EXT_x11_sync_object). Bez ovoga, sadržaj prozora možda neće biti u potpunosti pravilno iscrtan.</long>
+		    <long xml:lang="ko">X11과 OpenGL(GL_EXT_x11_sync_object) 사이의 렌더링을 동기화합니다. 이 기능을 사용하지 않으면 창의 내용을 온전히 다시 그릴 수 없을 수 있습니다.</long>
+		    <long xml:lang="ms">Guna X11 Sync fences untuk segerakkan penerapan diantara 11 dengan OpenGL (GL_EXT_x11_sync_object). Tanpa ia, kandungan tetingkap mungkin tidak sepenuhnya dilukis semula.</long>
+		    <long xml:lang="pt">Utilizar o X11 Sync fences para sincronizar a renderização entre o X11 e o OpenGL (GL_EXT_x11_sync_object). Sem isto, o conteúdo da janela pode não ser completamente redesenhado.</long>
+		    <long xml:lang="uk">Використовувати обмеження синхронізації X11 для синхронізації рендерингу між X11 і OpenGL (GL_EXT_x11_sync_object). Без цього, вміст вікна не може бути повністю перемальовано.</long>
+		    <long xml:lang="zh_CN">使用 X11 同步栅在 X11 和 OpenGL (GL_EXT_x11_sync_object) 之间同步渲染。不启用时，窗口内容将不完全重绘。</long>
+		    <default>true</default>
+		</option>
+
+		<subgroup>
+			<short>Cards Blacklist</short>
+			<short xml:lang="bs">Nedozvoljene kartice</short>
+			<short xml:lang="de">Grafikkartennegativliste</short>
+			<short xml:lang="en_AU">Cards Blacklist</short>
+			<short xml:lang="en_GB">Cards Blacklist</short>
+			<short xml:lang="es">Lista negra de tarjetas</short>
+			<short xml:lang="gl">Lista negra de tarxetas</short>
+			<short xml:lang="hr">Nedozvoljene kartice</short>
+			<short xml:lang="ko">키드 블랙리스트</short>
+			<short xml:lang="ms">Kad Senarai Hitam</short>
+			<short xml:lang="pt">Lista negra</short>
+			<short xml:lang="sl">Črni seznam kartic</short>
+			<short xml:lang="sv">Svartlistade kort</short>
+			<short xml:lang="uk">Чорний перелік карт</short>
+			<short xml:lang="zh_CN">显卡黑名单</short>
+			<long>The list of the cards for which we should disable X11/GL syncing.</long>
+			<long xml:lang="bs">Popis kartica za koje treba biti onemogućeno X11/GL usklađivanje.</long>
+			<long xml:lang="de">Liste der Karten, für die die X11/GL-Synchronisation deaktiviert werden sollte</long>
+			<long xml:lang="en_AU">The list of the cards for which we should disable X11/GL syncing.</long>
+			<long xml:lang="en_GB">The list of the cards for which we should disable X11/GL syncing.</long>
+			<long xml:lang="es">La lista de las tarjetas en que debe desactivarse la sincronización de X11/GL.</long>
+			<long xml:lang="gl">Lista de tarxetas para as que se debería desactivar a sincronización X11/GL.</long>
+			<long xml:lang="hr">Popis kartica za koje treba biti onemogućeno X11/GL usklađivanje.</long>
+			<long xml:lang="ko">X11/GL 동기화 기능을 사용하지 말아야 하는 카드 목록입니다.</long>
+			<long xml:lang="ms">Senarai kad yang mana perlu lumpuhkan penyegerakan X11/GL.</long>
+			<long xml:lang="pt">A lista de cartões para quais devem ser desligadas a sincronização X11/GL.</long>
+			<long xml:lang="sl">Seznam kartic, za katere bi moralo biti usklajevanje X11/GL onemogočeno.</long>
+			<long xml:lang="sv">Listan över kort för vilka vi bör avaktivera X11/GL-synkning.</long>
+			<long xml:lang="uk">Перелік карт, для яких ми повинні відімкнути X11/GL синхронізацію.</long>
+			<long xml:lang="zh_CN">禁用 X11/GL 同步的显卡列表</long>
+			<option type="list" name="x11_sync_blacklist_vendor">
+			    <short>Vendor</short>
+			    <short xml:lang="bs">Proizvođač</short>
+			    <short xml:lang="de">Hersteller</short>
+			    <short xml:lang="en_AU">Vendor</short>
+			    <short xml:lang="en_GB">Vendor</short>
+			    <short xml:lang="es">Fabricante</short>
+			    <short xml:lang="fr">Fournisseur</short>
+			    <short xml:lang="gl">Vendedor</short>
+			    <short xml:lang="hr">Proizvođač</short>
+			    <short xml:lang="ko">제조사</short>
+			    <short xml:lang="ms">Pembekal</short>
+			    <short xml:lang="pl">Dostawca</short>
+			    <short xml:lang="pt">Fabricante</short>
+			    <short xml:lang="ru">Поставщик</short>
+			    <short xml:lang="sl">Proizvajalec</short>
+			    <short xml:lang="sv">Tillverkare</short>
+			    <short xml:lang="ug">تەمىنلىگۈچى</short>
+			    <short xml:lang="uk">Постачальник</short>
+			    <short xml:lang="zh_CN">制造商</short>
+			    <long>The card vendor for which X11 sync should be disabled.</long>
+			    <long xml:lang="bs">Proizvođač kartice za koju X11 usklađivanje mora biti onomogućen.</long>
+			    <long xml:lang="de">Grafikkartenhersteller, für dessen Karten die X11-Synchronisation deaktiviert werden sollte</long>
+			    <long xml:lang="en_AU">The card vendor for which X11 sync should be disabled.</long>
+			    <long xml:lang="en_GB">The card vendor for which X11 sync should be disabled.</long>
+			    <long xml:lang="es">El fabricante de la tarjeta para la cual debe desactivarse la sincronización de X11.</long>
+			    <long xml:lang="fr">Le fournisseur de carte pour lequel la synchronisation X11 devrait être désactivée.</long>
+			    <long xml:lang="gl">Provedor da tarxeta para a que se debería desactivar X11 sync.</long>
+			    <long xml:lang="hr">Proizvođač kartice za koju X11 usklađivanje mora biti onomogućeno.</long>
+			    <long xml:lang="ko">X11 동기화 기능을 사용하지 말아야 하는 키드 제조사입니다.</long>
+			    <long xml:lang="ms">Vendor kad yang mana segerak X11 patut dilumpuhkan.</long>
+			    <long xml:lang="pt">O fabricante para qual a sincronização X11 deve ser desativada.</long>
+			    <long xml:lang="sl">Proizvajalec kartice, za katerega bi moralo biti uskaljevanje X11 onemogočeno.</long>
+			    <long xml:lang="sv">Korttillverkaren för vilken X11 synk bör avaktiveras.</long>
+			    <long xml:lang="uk">Постачальник карт, для яких Х11 синхронізація повинна бути відімкнена.</long>
+			    <long xml:lang="zh_CN">禁用 X11 同步的显卡厂商列表。</long>
+			    <type>string</type>
+			    <default>
+				<value>NVIDIA</value>
+				<value>NVIDIA</value>
+			    </default>
+			</option>
+			<option type="list" name="x11_sync_blacklist_model">
+			    <short>Model</short>
+			    <short xml:lang="bs">Model</short>
+			    <short xml:lang="de">Modell</short>
+			    <short xml:lang="en_AU">Model</short>
+			    <short xml:lang="en_GB">Model</short>
+			    <short xml:lang="es">Modelo</short>
+			    <short xml:lang="fr">Modèle</short>
+			    <short xml:lang="gl">Modelo</short>
+			    <short xml:lang="hr">Model</short>
+			    <short xml:lang="ko">모델</short>
+			    <short xml:lang="ms">Model</short>
+			    <short xml:lang="pl">Model</short>
+			    <short xml:lang="pt">Modelo</short>
+			    <short xml:lang="ru">Модель</short>
+			    <short xml:lang="sl">Model</short>
+			    <short xml:lang="sv">Modell</short>
+			    <short xml:lang="ug">ئەندىزە</short>
+			    <short xml:lang="uk">Модель</short>
+			    <short xml:lang="zh_CN">型号</short>
+			    <long>The card vendor for which X11 sync should be disabled.</long>
+			    <long xml:lang="bs">Proizvođač kartice za koju X11 usklađivanje mora biti onomogućen.</long>
+			    <long xml:lang="de">Grafikkartenhersteller, für dessen Karten die X11-Synchronisation deaktiviert werden sollte</long>
+			    <long xml:lang="en_AU">The card vendor for which X11 sync should be disabled.</long>
+			    <long xml:lang="en_GB">The card vendor for which X11 sync should be disabled.</long>
+			    <long xml:lang="es">El fabricante de la tarjeta para la cual debe desactivarse la sincronización de X11.</long>
+			    <long xml:lang="fr">Le fournisseur de carte pour lequel la synchronisation X11 devrait être désactivée.</long>
+			    <long xml:lang="gl">Provedor da tarxeta para a que se debería desactivar X11 sync.</long>
+			    <long xml:lang="hr">Proizvođač kartice za koju X11 usklađivanje mora biti onomogućeno.</long>
+			    <long xml:lang="ko">X11 동기화 기능을 사용하지 말아야 하는 키드 제조사입니다.</long>
+			    <long xml:lang="ms">Vendor kad yang mana segerak X11 patut dilumpuhkan.</long>
+			    <long xml:lang="pt">O fabricante para qual a sincronização X11 deve ser desativada.</long>
+			    <long xml:lang="sl">Proizvajalec kartice, za katerega bi moralo biti uskaljevanje X11 onemogočeno.</long>
+			    <long xml:lang="sv">Korttillverkaren för vilken X11 synk bör avaktiveras.</long>
+			    <long xml:lang="uk">Постачальник карт, для яких Х11 синхронізація повинна бути відімкнена.</long>
+			    <long xml:lang="zh_CN">禁用 X11 同步的显卡厂商列表。</long>
+			    <type>string</type>
+			    <default>
+				<value>GeForce 6150(LE|SE)</value>
+				<value>GeForce (7025|7050 PV)</value>
+			    </default>
+		   	</option>
+		</subgroup>
+	    </group>
+	</options>
+    </plugin>
+</compiz>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+  <plugin useBcop="true" name="shelf">
+    <short>Shelf</short>
+    <short xml:lang="da">Hylde</short>
+    <short xml:lang="uk">Полиця</short>
+    <long>Visually scales a window down to allow easy monitoring without true/traditional resizing.</long>
+    <category>Window Management</category>
+    <deps>
+	<requirement>
+	    <plugin>opengl</plugin>
+	</requirement>
+	<relation type="after">
+	    <plugin>composite</plugin>
+	    <plugin>opengl</plugin>
+	    <plugin>wall</plugin>
+	    <plugin>decor</plugin>
+	</relation>
+    </deps>
+    <options>
+      <group>
+        <short>Bindings</short>
+        <short xml:lang="ast">Lligadures</short>
+        <short xml:lang="be">Прывязваньні</short>
+        <short xml:lang="bg">Задължителни</short>
+        <short xml:lang="bs">Povezivanja</short>
+        <short xml:lang="cs">Klávesové zkratky</short>
+        <short xml:lang="da">Bindinger</short>
+        <short xml:lang="de">Tastenkombinationen</short>
+        <short xml:lang="el">Συνδυασμοί</short>
+        <short xml:lang="en_AU">Bindings</short>
+        <short xml:lang="en_GB">Bindings</short>
+        <short xml:lang="es">Vínculos</short>
+        <short xml:lang="eu">Laster-bideak</short>
+        <short xml:lang="fi">Pikanäppäimet</short>
+        <short xml:lang="fr">Assignations</short>
+        <short xml:lang="gl">Asociacións</short>
+        <short xml:lang="he">צירופים</short>
+        <short xml:lang="hr">Tipkovničke kratice</short>
+        <short xml:lang="hu">Gyorsbillentyűk</short>
+        <short xml:lang="it">Associazioni</short>
+        <short xml:lang="ja">割り当て</short>
+        <short xml:lang="ko">바로 가기</short>
+        <short xml:lang="ms">Pengikatan</short>
+        <short xml:lang="nl">Bindingen</short>
+        <short xml:lang="oc">Assignacions</short>
+        <short xml:lang="pl">Przyporządkowanie klawiszy</short>
+        <short xml:lang="pt">Atalhos</short>
+        <short xml:lang="pt_BR">Atalhos</short>
+        <short xml:lang="ro">Asocieri</short>
+        <short xml:lang="ru">Закрепление</short>
+        <short xml:lang="sl">Vezave</short>
+        <short xml:lang="sq">Bindings</short>
+        <short xml:lang="sr">Повезивања</short>
+        <short xml:lang="sv">Bindningar</short>
+        <short xml:lang="tr">Bağlayıcılar</short>
+        <short xml:lang="ug">باغلانمىلار</short>
+        <short xml:lang="uk">Закріплення</short>
+        <short xml:lang="vi">Gán</short>
+        <short xml:lang="zh_CN">绑定</short>
+        <short xml:lang="zh_HK">連結</short>
+        <short xml:lang="zh_TW">連結</short>
+        <option type="key" name="trigger_key">
+          <short>Trigger scale down</short>
+          <long>Scale a window down to a portion of it's size.</long>
+          <default>&lt;Super&gt;l</default>
+        </option>
+	<option type="key" name="reset_key">
+	  <short>Reset the window to original size</short>
+	  <long>Resets the currently focused window to original size</long>
+	</option>
+        <option type="key" name="triggerscreen_key">
+          <short>Trigger scale down to screen</short>
+          <long>Scale a window down to a ration of the screen size. Respectively half, a third or a sixth of the screen.</long>
+          <default>&lt;Super&gt;p</default>
+        </option>
+        <option type="button" name="dec_button">
+          <short>Make the window smaller</short>
+          <short xml:lang="uk">Зробити вікно меншим</short>
+          <long>Reduces the scale factor making the window smaller.</long>
+          <default>&lt;Alt&gt;&lt;Super&gt;Button4</default>
+        </option>
+        <option type="button" name="inc_button">
+          <short>Make the window bigger</short>
+          <long>Increase the scale factor making the window bigger.</long>
+          <default>&lt;Alt&gt;&lt;Super&gt;Button5</default>
+        </option>
+      </group>
+      <option type="int" name="animtime">
+       <short>Animation duration</short>
+       <short xml:lang="uk">Тривалість анімації</short>
+       <long>Duration of the animation in milliseconds.</long>
+       <default>150</default>
+       <min>1</min>
+       <max>10000</max>
+      </option>
+      <option type="float" name="interval">
+       <short>Scale interval</short>
+       <long>The number to divide the scale factor by or multiply it with when (respectively) increasing and decreasing the scale level manually. Higher number means finer changes.</long>
+       <default>0.9</default>
+       <min>0.100</min>
+       <max>0.999</max>
+       <precision>0.001</precision>
+      </option>
+    </options>
+  </plugin>
+</compiz>

@@ -1,0 +1,297 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/unity
+
+pkgname=unity
+pkgver=7.7.1
+_uver=+26.04.20260306
+_urev=0ubuntu2
+pkgrel=1
+pkgdesc="The Ubuntu Unity Desktop"
+arch=('x86_64')
+url="https://launchpad.net/unity"
+license=('GPL-3.0-or-later' 'LGPL-3.0-or-later')
+depends=(
+    'at-spi2-core'
+    'appstream'
+    'dee'
+    'glib2'
+    'ido'
+    'json-glib'
+    'libdbusmenu-gtk3'
+    'libindicator-gtk3'
+    'libsigc++'
+    'libunity'
+    'libunity-misc'
+    'zeitgeist'
+    'pam'
+    'bamf'
+    'compiz'
+    'gsettings-ubuntu-touch-schemas'
+    'nux'
+    'unity-settings-daemon'
+    'cairo'
+    'gtk3'
+    'libnotify'
+    'libxfixes'
+    'libxi'
+    'pango'
+    'libxinerama'
+    # runtime
+    'dconf'
+    'gnome-session'
+    'libglvnd'
+    'libx11'
+    'libxext'
+    'libxrender'
+    'nemo'
+    'hud'
+)
+makedepends=(
+    'cmake'
+    'pkgconf'
+    'intltool'
+    'python'
+    'python-setuptools'
+    'boost'
+    'xpathselect'
+    'libxslt'
+    'gsettings-desktop-schemas'
+    'gnome-desktop'
+    'dbus'
+    'geis'
+    'libxtst'
+    'startup-notification'
+    'xcb-util-wm'
+    'cmake-extras'
+)
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.tar.xz"
+    "add-unity-version-xml.patch"
+    "nemo-support.patch"
+    "revert-unwanted-ubuntu-unity-changes.patch"
+    "remove-all-code-related-to-online-search.patch"
+    "prevent-compiz-segfault-by-guarding-pthread_join.patch"
+    "dash-and-hud-border-fixes.patch"
+    "transparent-panel-fixes.patch"
+    # branding
+    "launcher_bfb.svg"
+    "lockscreen_cof.png"
+    # resources
+    "dash_bottom_border_tile.png"
+    "dash_bottom_left_corner.png"
+    "dash_bottom_left_corner_mask.png"
+    "dash_bottom_right_corner.png"
+    "dash_left_tile.png"
+    "dash_right_border_tile.png"
+    "dash_top_edge.png"
+    "dash_top_right_corner.png"
+    "dash_top_right_corner_mask.png"
+    "dash_top_tile.png"
+    # session scripts
+    "70im-config"
+    "99unity-session_systemd"
+    # pam / polkit
+    "com.ubuntu.desktop.pkla"
+    # xinitrc hints
+    "xinitrc"
+)
+sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP'
+            'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP'
+            'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP')
+
+prepare() {
+    cd "${pkgname}"
+
+    # Apply overlay patches
+    patch -p1 --forward -i ../add-unity-version-xml.patch || true
+    patch -p1 -i ../nemo-support.patch
+    patch -p1 -i ../revert-unwanted-ubuntu-unity-changes.patch
+    patch -p1 -i ../remove-all-code-related-to-online-search.patch
+    patch -p1 -i ../prevent-compiz-segfault-by-guarding-pthread_join.patch
+    patch -p1 -i ../dash-and-hud-border-fixes.patch
+    patch -p1 -i ../transparent-panel-fixes.patch
+
+    # Fix preview width
+    sed -i -e "/preview_width =/{s/770/700/}" unity-shared/PreviewStyle.cpp || true
+
+    # Arch branding instead of Gentoo
+    sed -i \
+        -e 's/"Ubuntu Desktop"/"Arch Unity⁷ Desktop"/' \
+        -e 's:"Ubuntu":"Arch":' \
+        panel/PanelMenuView.cpp || true
+
+    # Setup Unity side launcher default applications
+    sed -i \
+        -e "s/org.gnome.Nautilus/nemo/" \
+        -e '/ubiquity/d' \
+        -e '/org.gnome.Software/d' \
+        data/com.canonical.Unity.gschema.xml || true
+
+    # Change ubuntu to unity session name
+    sed -i \
+        -e 's:SESSION=ubuntu:SESSION=unity:g' \
+        data/unity7.conf.in services/unity-panel-service.conf.in 2>/dev/null || true
+    sed -i \
+        -e 's:ubuntu.session:unity.session:g' \
+        tools/systemd-prestart-check tools/upstart-prestart-check 2>/dev/null || true
+
+    # Don't kill -9 unity-panel-service when using PANEL_USE_LOCAL_SERVICE
+    sed -i \
+        -e '/killall -9 unity-panel-service/,+1 d' \
+        UnityCore/DBusIndicators.cpp || true
+
+    # New stable boost-1.71+ compatibility
+    sed -i \
+        -e 's:boost/utility.hpp:boost/next_prior.hpp:g' \
+        launcher/FavoriteStorePrivate.cpp || true
+
+    # Boost.Math requires C++14
+    sed -i "s/c++11/c++14/" CMakeLists.txt || true
+
+    # unity-gtk-module.service replacement (use gtk-module directly)
+    sed -i \
+        -e 's:unity-gtk-module.service ::' \
+        data/unity7.service.in 2>/dev/null || true
+
+    # Use go-down-symbolic instead of drop-down (Adwaita 3.30+ compatibility)
+    sed -i \
+        -e "s/go-down-symbolic/drop-down-symbolic/" \
+        decorations/DecorationsMenuDropdown.cpp || true
+
+    # Fix build.ninja lexing errors
+    sed -i \
+        -e '/echo "/{s/"/\\"/g}' \
+        -e '/bzr log/{s/"/\\"/g}' \
+        -e 's/\\n/\\\\n/' \
+        CMakeLists.txt || true
+
+    # Disable recompiling GSettings schemas and pam install inside build
+    sed -i \
+        -e "/(pam)/d" \
+        -e "/Compiling GSettings schemas/,+1 d" \
+        data/CMakeLists.txt || true
+
+    # Fix libdir
+    sed -i \
+        -e "s:/usr/lib/:/usr/lib/:" \
+        tools/compiz-profile-selector.in 2>/dev/null || true
+
+    # Font size fix for multirange filter
+    sed -i \
+        -e "/const int FONT_SIZE_PX/{s/10/12/}" \
+        dash/FilterMultiRangeButton.cpp || true
+
+    # Fix address-of-array warning treated as error
+    sed -i \
+        -e "s/event->text && //" \
+        a11y/unity-util-accessible.cpp || true
+
+    # Remove upstart integration
+    sed -i "/[Uu]pstart/d" lockscreen/LockScreenController.cpp lockscreen/LockScreenController.h 2>/dev/null || true
+
+    # Fix python shebangs
+    find tools -name "*.py" -exec sed -i 's|#!/usr/bin/python$|#!/usr/bin/python3|' {} \; 2>/dev/null || true
+
+    # Fix missing headers for gcc 14+ (no-pch mode)
+    sed -i '/#include "GLibWrapper.h"/a #include <iostream>' UnityCore/GLibWrapper.cpp || true
+    sed -i '/#include <functional>/a #include <string>' UnityCore/GLibSource.h || true
+    sed -i '/#include "GLibWrapper.h"/a #include <vector>' UnityCore/ScopeData.h || true
+    sed -i '/#include <NuxCore\/Property.h>/a #include <vector>' unity-shared/ThemeSettings.h || true
+    sed -i '/#include <map>/a #include <cstdint>' UnityCore/Variant.h || true
+    sed -i '/#include <glib.h>/a #include <cstdint>' unity-shared/IntrospectionData.h || true
+    sed -i '/#include <vector>/a #include <algorithm>' unity-shared/DecorationStyle.h || true
+    sed -i '/#include "FileManager.h"/a #include <algorithm>' unity-shared/GnomeFileManager.h || true
+    sed -i '/#include "Indicator.h"/a #include <algorithm>' UnityCore/AppmenuIndicator.h || true
+    sed -i '/#include "Scopes.h"/a #include <algorithm>' UnityCore/GSettingsScopes.h || true
+    sed -i '/#include "Scope.h"/a #include <algorithm>' UnityCore/Scopes.h || true
+    for f in UnityCore/ActionHandle.h UnityCore/GLibDBusNameWatcher.h UnityCore/GLibSource.h UnityCore/IndicatorEntry.h; do
+        sed -i '/#include <memory>/a #include <cstdint>' "$f" 2>/dev/null || true
+    done
+}
+
+build() {
+    cmake -B build -S "${pkgname}" \
+        -DCMAKE_BUILD_TYPE=None \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DCMAKE_INSTALL_LOCALSTATEDIR=/var \
+        -DCMAKE_INSTALL_SYSCONFDIR=/etc \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.10 \
+        -DBUILD_GLES=OFF \
+        -DCOMPIZ_BUILD_WITH_RPATH=OFF \
+        -DCOMPIZ_PACKAGING_ENABLED=ON \
+        -DCOMPIZ_PLUGIN_INSTALL_TYPE=package \
+        -DENABLE_UNIT_TESTS=OFF \
+        -DI18N_SUPPORT=OFF \
+        -DUNITY_RELEASE="Arch Unity⁷" \
+        -Duse_pch=OFF \
+        -Wno-dev
+    cmake --build build
+}
+
+package() {
+    DESTDIR="$pkgdir" cmake --install build
+
+    # Install branding
+    install -Dm644 launcher_bfb.svg "$pkgdir/usr/share/unity/icons/launcher_bfb.svg"
+    install -Dm644 lockscreen_cof.png "$pkgdir/usr/share/unity/icons/lockscreen_cof.png"
+
+    # Install dash/hud border resources
+    for f in dash_bottom_border_tile.png dash_bottom_left_corner.png dash_bottom_left_corner_mask.png \
+              dash_bottom_right_corner.png dash_left_tile.png dash_right_border_tile.png \
+              dash_top_edge.png dash_top_right_corner.png dash_top_right_corner_mask.png \
+              dash_top_tile.png; do
+        install -Dm644 "$f" "$pkgdir/usr/share/unity/icons/$f"
+    done
+
+    # Install session xinitrc scripts
+    install -Dm755 70im-config "$pkgdir/etc/X11/xinit/xinitrc.d/70im-config"
+    install -Dm755 99unity-session_systemd "$pkgdir/etc/X11/xinit/xinitrc.d/99unity-session_systemd"
+
+    # Install PAM config
+    install -Dm644 /etc/pam.d/system-login "$pkgdir/etc/pam.d/unity" 2>/dev/null || \
+    printf "%s\n" "auth include system-local-login" \
+                  "account include system-local-login" \
+                  "session include system-local-login" \
+        > "$pkgdir/etc/pam.d/unity"
+
+    # Install polkit authority file
+    install -Dm644 com.ubuntu.desktop.pkla \
+        "$pkgdir/var/lib/polkit-1/localauthority/10-vendor.d/com.ubuntu.desktop.pkla"
+
+    # Systemd symlinks for unity session
+    local userunitdir=/usr/lib/systemd/user
+    install -d "$pkgdir$userunitdir/unity-session.target.requires"
+    install -d "$pkgdir$userunitdir/unity-session.target.wants"
+    ln -sf /usr/lib/systemd/user/unity7.service \
+        "$pkgdir$userunitdir/unity-session.target.requires/unity7.service" 2>/dev/null || true
+    ln -sf /usr/lib/systemd/user/unity-settings-daemon.service \
+        "$pkgdir$userunitdir/unity-session.target.wants/unity-settings-daemon.service" 2>/dev/null || true
+    ln -sf /usr/lib/systemd/user/window-stack-bridge.service \
+        "$pkgdir$userunitdir/unity-session.target.wants/window-stack-bridge.service" 2>/dev/null || true
+
+    # Panel service indicator symlinks
+    local panel_indicators="application bluetooth datetime keyboard messages power printers session sound"
+    install -d "$pkgdir$userunitdir/unity-panel-service.service.wants"
+    for ind in $panel_indicators; do
+        ln -sf "/usr/lib/systemd/user/indicator-${ind}.service" \
+            "$pkgdir$userunitdir/unity-panel-service.service.wants/indicator-${ind}.service" 2>/dev/null || true
+    done
+
+    local lockscreen_indicators="datetime keyboard power session sound"
+    install -d "$pkgdir$userunitdir/unity-panel-service-lockscreen.service.wants"
+    for ind in $lockscreen_indicators; do
+        ln -sf "/usr/lib/systemd/user/indicator-${ind}.service" \
+            "$pkgdir$userunitdir/unity-panel-service-lockscreen.service.wants/indicator-${ind}.service" 2>/dev/null || true
+    done
+
+    # Compiz migration files
+    install -d "$pkgdir/usr/lib/compiz/migration"
+    install -m644 "${pkgname}/tools/convert-files/"*.convert \
+        "$pkgdir/usr/lib/compiz/migration/" 2>/dev/null || true
+
+    # unity-control-center keybinding symlink
+    install -d "$pkgdir/usr/share/unity-control-center/keybindings"
+    ln -sf /usr/share/gnome-control-center/keybindings/50-unity-launchers.xml \
+        "$pkgdir/usr/share/unity-control-center/keybindings/50-unity-launchers.xml" 2>/dev/null || true
+}

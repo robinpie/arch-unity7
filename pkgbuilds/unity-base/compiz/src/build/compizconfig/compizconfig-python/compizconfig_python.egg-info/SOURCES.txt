@@ -1,0 +1,17 @@
+CTestTestfile.cmake
+Makefile
+cmake_install.cmake
+compizconfig.c
+compizconfig.pyx
+CMakeFiles/CMakeDirectoryInformation.cmake
+CMakeFiles/progress.marks
+CMakeFiles/compizconfig_python_module.dir/DependInfo.cmake
+CMakeFiles/compizconfig_python_module.dir/build.make
+CMakeFiles/compizconfig_python_module.dir/cmake_clean.cmake
+CMakeFiles/compizconfig_python_module.dir/compiler_depend.make
+CMakeFiles/compizconfig_python_module.dir/compiler_depend.ts
+CMakeFiles/compizconfig_python_module.dir/progress.make
+compizconfig_python.egg-info/PKG-INFO
+compizconfig_python.egg-info/SOURCES.txt
+compizconfig_python.egg-info/dependency_links.txt
+compizconfig_python.egg-info/top_level.txt

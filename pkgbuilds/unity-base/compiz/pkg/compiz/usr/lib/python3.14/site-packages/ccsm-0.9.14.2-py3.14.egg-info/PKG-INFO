@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: ccsm
+Version: 0.9.14.2
+Summary: CompizConfig Settings Manager
+Home-page: https://launchpad.net/compiz
+Author: Patrick Niklaus
+Author-email: marex@opencompositing.org
+License: GPL
+License-File: LICENSE
+License-File: COPYING
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: summary

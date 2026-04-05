@@ -1,0 +1,90 @@
+From 0d38aa3e4a019c62a315d984f83884ca888a57cd Mon Sep 17 00:00:00 2001
+From: c4pp4
+Date: Mon, 9 Feb 2026 01:23:51 +0100
+Subject: [PATCH 1/1] Transparent panel fixes
+
+Signed-off-by: c4pp4
+---
+ panel/PanelView.cpp                   | 7 ++-----
+ plugins/unityshell/src/unityshell.cpp | 6 ++----
+ 2 files changed, 4 insertions(+), 9 deletions(-)
+
+diff --git a/panel/PanelView.cpp b/panel/PanelView.cpp
+index 1a54ab1..cffa311 100644
+--- a/panel/PanelView.cpp
++++ b/panel/PanelView.cpp
+@@ -186,16 +186,12 @@ void PanelView::EnableOverlayMode(bool overlay_mode)
+ {
+   if (overlay_mode)
+   {
+-    bg_effect_helper_.enabled = true;
+     indicators_->OverlayShown();
+     menu_view_->OverlayShown();
+     SetAcceptKeyNavFocusOnMouseDown(false);
+   }
+   else
+   {
+-    if (opacity_ >= 1.0f)
+-      bg_effect_helper_.enabled = false;
+-
+     menu_view_->OverlayHidden();
+     indicators_->OverlayHidden();
+     SetAcceptKeyNavFocusOnMouseDown(true);
+@@ -532,6 +528,8 @@ PanelView::UpdateBackground()
+   WindowManager& wm = WindowManager::Default();
+   is_dirty_ = false;
+ 
++  bg_effect_helper_.enabled = IsTransparent();
++
+   nux::ROPConfig rop;
+   rop.Blend = true;
+   rop.SrcBlend = GL_ONE;
+@@ -691,7 +689,6 @@ void PanelView::SetOpacity(float opacity)
+     return;
+ 
+   opacity_ = (opacity <= 0.0f ? 0.0001f : opacity); // Not to get a black menu area
+-  bg_effect_helper_.enabled = IsTransparent();
+ 
+   ForceUpdateBackground();
+ }
+diff --git a/plugins/unityshell/src/unityshell.cpp b/plugins/unityshell/src/unityshell.cpp
+index 38f433a..6fd9720 100644
+--- a/plugins/unityshell/src/unityshell.cpp
++++ b/plugins/unityshell/src/unityshell.cpp
+@@ -892,8 +892,6 @@ void UnityScreen::paintOutput()
+ {
+   CompOutput *output = last_output_;
+ 
+-  DrawPanelUnderDash();
+-
+   /* Bind the currently bound draw framebuffer to the read framebuffer binding.
+    * The reason being that we want to use the results of nux images being
+    * drawn to this framebuffer in glCopyTexSubImage2D operations */
+@@ -1010,6 +1008,7 @@ void UnityScreen::paintOutput()
+   didShellRepaint = true;
+ }
+ 
++/*
+ void UnityScreen::DrawPanelUnderDash()
+ {
+   if (!paint_panel_under_dash_ || (!dash_controller_->IsVisible() && !hud_controller_->IsVisible()))
+@@ -1037,6 +1036,7 @@ void UnityScreen::DrawPanelUnderDash()
+   auto const& texture = panel_style_.GetBackground(monitor)->GetDeviceTexture();
+   graphics_engine->QRP_GLSL_1Tex(0, 0, output_dev.width(), texture->GetHeight(), texture, texxform, nux::color::White);
+ }
++*/
+ 
+ bool UnityScreen::forcePaintOnTop()
+ {
+@@ -3155,8 +3155,6 @@ bool UnityWindow::glDraw(const GLMatrix& matrix,
+     OVER_WINDOW,
+   };
+ 
+-  auto draw_panel_shadow = DrawPanelShadow::NO;
+-
+   deco_win_->Draw(matrix, attrib, region, mask);
+   bool ret = gWindow->glDraw(matrix, attrib, region, mask);
+ 
+-- 
+2.52.0
+

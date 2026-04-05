@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+  <plugin useBcop="true" name="colorfilter">
+    <short>Color filter</short>
+    <short xml:lang="da">Farvefilter</short>
+    <short xml:lang="tr">Renk filtresi</short>
+    <short xml:lang="uk">Фільтр кольорів</short>
+    <long>Filter colors for accessibility purposes</long>
+    <long xml:lang="uk">Фільтрувати кольори для спрощення сприйняття людьми з обмеженими можливостями</long>
+    <category>Accessibility</category>
+    <deps>
+      <requirement>
+	<plugin>opengl</plugin>
+      </requirement>
+      <relation type="after">
+	<plugin>blur</plugin>
+	<plugin>composite</plugin>
+	<plugin>opengl</plugin>
+	<plugin>decor</plugin>
+      </relation>
+    </deps>
+    <options>
+      <option type="key" name="toggle_window_key">
+        <short>Toggle window filtering</short>
+        <short xml:lang="uk">Увімкнути фільтрацію вікон.</short>
+        <long>Toggle filtering for currently focused window.</long>
+        <long xml:lang="uk">Увімкнути фільтрацію для сфокусованого вікна.</long>
+        <default>&lt;Super&gt;f</default>
+      </option>
+      <option type="key" name="toggle_screen_key">
+        <short>Toggle screen filtering</short>
+        <short xml:lang="uk">Увімкнути фільтрацію екрану.</short>
+        <long>Toggle filtering for every window on the screen.</long>
+        <long xml:lang="uk">Увімкнути фільтрацію для всіх вікон на екрані.</long>
+        <default>&lt;Super&gt;d</default>
+      </option>
+      <option type="key" name="switch_filter_key">
+        <short>Switch filter</short>
+        <short xml:lang="uk">Перемкнути фільтр</short>
+        <long>Select filter to use from filters list : either apply all filters or only one specific filter (triggering this action switches filters one by one and eventually comes back to the "all filters" mode).</long>
+        <long xml:lang="uk">Оберіть із переліку фільтр, який буде використовуватися: або застосовуйте всі фільтри, або тільки один конкретний (ця дія перемикає фільтри по черзі та зрештою повертається до режиму всіх фільтрів).</long>
+        <default>&lt;Control&gt;&lt;Super&gt;s</default>
+      </option>
+      <option type="list" name="filters">
+        <short>Filters files</short>
+        <short xml:lang="uk">Файли фільтрів</short>
+        <long>List of plain text filter files that should be applied when filtering windows or screen.</long>
+        <long xml:lang="uk">Перелік текстових файлів із фільтрами, які застосовуються для фільтрації вікон або екрану.</long>
+        <type>string</type>
+        <default>
+	    <value>negative</value>
+	    <value>negative-lightness</value>
+	    <value>negative-green</value>
+	    <value>blueish-filter</value>
+	    <value>sepia</value>
+	    <value>grayscale</value>
+	    <value>deuteranopia</value>
+	    <value>protanopia</value>
+	</default>
+        <hints>file;</hints>
+      </option>
+      <option type="bool" name="filter_decorations">
+        <short>Filter window decorations</short>
+        <short xml:lang="uk">Фільтрувати оздоблення вікон</short>
+        <long>Window decorations (borders and titlebar) will be filtered as well as window contents if enabled.</long>
+        <long xml:lang="uk">Оздоблення вікон (облямівка та заголовок) будуть фільтруватися так само як і вміст вікна, якщо ввімкнуто.</long>
+        <default>false</default>
+      </option>
+      <option type="match" name="filter_match">
+        <short>Filtered windows</short>
+        <short xml:lang="uk">Фільтровані вікна</short>
+        <long>Windows to be filtered by default.</long>
+        <long xml:lang="uk">Вікна, які фільтруються усталено.</long>
+        <default>any</default>
+      </option>
+      <option type="match" name="exclude_match">
+        <short>Exclude windows</short>
+        <short xml:lang="uk">Виключені вікна</short>
+        <long>Windows to exclude from filtering.</long>
+        <long xml:lang="uk">Вікна, які виключено з фільтрації.</long>
+        <default>type=Desktop</default>
+      </option>
+    </options>
+  </plugin>
+</compiz>

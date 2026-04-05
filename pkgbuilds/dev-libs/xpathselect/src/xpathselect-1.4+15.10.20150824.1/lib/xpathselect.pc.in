@@ -1,0 +1,11 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+
+libdir=${prefix}/lib/@CMAKE_LIBRARY_ARCHITECTURE@
+includedir=${prefix}/include
+
+Cflags: -I${includedir}
+Libs: -lxpathselect
+
+Name: libxpathselect
+Description: libxpathselect.
+Version: @VERSION@

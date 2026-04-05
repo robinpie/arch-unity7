@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+  <plugin useBcop="true" name="addhelper">
+    <short>Dim Inactive</short>
+    <short xml:lang="bg">Затъмняване на неактивния</short>
+    <short xml:lang="da">Nedton inaktive</short>
+    <short xml:lang="es">Oscurecer la ventana inactiva</short>
+    <short xml:lang="tr">Pasifleri Karart</short>
+    <short xml:lang="uk">Затемнити неактивне</short>
+	<long>Make it slightly easier to concentrate by dimming all but the active window.</long>
+	<long xml:lang="bg">Улеснява концентрацията, като затъмнява всички прозорци освен активния</long>
+	<long xml:lang="es">Hace que sea más fácil concentrarse oscureciendo todas las ventanas excepto la ventana activa.</long>
+	<long xml:lang="tr">Etkin pencere dışında diğerlerini karartarak etkin pencereye odaklanmayı kolaylaştırır.</long>
+	<long xml:lang="uk">Дозволяє краще зосередитися, затьмарюючи всі вікна, крім активного.</long>
+	<category>Accessibility</category>
+	<deps>
+		<requirement>
+			<plugin>opengl</plugin>
+		</requirement>
+		<relation type="after">
+			<plugin>composite</plugin>
+			<plugin>opengl</plugin>
+			<plugin>fade</plugin>
+			<plugin>decor</plugin>
+		</relation>
+	</deps>
+    <options>
+      <group>
+        <short>Bindings</short>
+        <short xml:lang="ast">Lligadures</short>
+        <short xml:lang="be">Прывязваньні</short>
+        <short xml:lang="bg">Задължителни</short>
+        <short xml:lang="bs">Povezivanja</short>
+        <short xml:lang="cs">Klávesové zkratky</short>
+        <short xml:lang="da">Bindinger</short>
+        <short xml:lang="de">Tastenkombinationen</short>
+        <short xml:lang="el">Συνδυασμοί</short>
+        <short xml:lang="en_AU">Bindings</short>
+        <short xml:lang="en_GB">Bindings</short>
+        <short xml:lang="es">Vínculos</short>
+        <short xml:lang="eu">Laster-bideak</short>
+        <short xml:lang="fi">Pikanäppäimet</short>
+        <short xml:lang="fr">Assignations</short>
+        <short xml:lang="gl">Asociacións</short>
+        <short xml:lang="he">צירופים</short>
+        <short xml:lang="hr">Tipkovničke kratice</short>
+        <short xml:lang="hu">Gyorsbillentyűk</short>
+        <short xml:lang="it">Associazioni</short>
+        <short xml:lang="ja">割り当て</short>
+        <short xml:lang="ko">바로 가기</short>
+        <short xml:lang="ms">Pengikatan</short>
+        <short xml:lang="nl">Bindingen</short>
+        <short xml:lang="oc">Assignacions</short>
+        <short xml:lang="pl">Przyporządkowanie klawiszy</short>
+        <short xml:lang="pt">Atalhos</short>
+        <short xml:lang="pt_BR">Atalhos</short>
+        <short xml:lang="ro">Asocieri</short>
+        <short xml:lang="ru">Закрепление</short>
+        <short xml:lang="sl">Vezave</short>
+        <short xml:lang="sq">Bindings</short>
+        <short xml:lang="sr">Повезивања</short>
+        <short xml:lang="sv">Bindningar</short>
+        <short xml:lang="tr">Bağlayıcılar</short>
+        <short xml:lang="ug">باغلانمىلار</short>
+        <short xml:lang="uk">Закріплення</short>
+        <short xml:lang="vi">Gán</short>
+        <short xml:lang="zh_CN">绑定</short>
+        <short xml:lang="zh_HK">連結</short>
+        <short xml:lang="zh_TW">連結</short>
+        <option type="key" name="toggle_key">
+          <short>Toggle AddHelper</short>
+          <short xml:lang="es">Activar/desactivar la ayuda a la concentración</short>
+          <short xml:lang="uk">Перемикнути AddHelper</short>
+          <long>Use this to enable/disable AddHelper on the fly.</long>
+          <long xml:lang="bg">Използвайте това за включване/изключване на AddHelper-а в движение.</long>
+          <long xml:lang="es">Use esta opción para activar o desactivar la ayuda a la concentración rápidamente.</long>
+          <long xml:lang="uk">Використовуйте це, щоб увімкнути/вимкнути AddHelper на льоту</long>
+          <default>&lt;Super&gt;p</default>
+        </option>
+      </group>
+      <group>
+        <short>Misc. Options</short>
+        <short xml:lang="bg">Други опции</short>
+        <short xml:lang="da">Diverse valgmuligheder</short>
+        <short xml:lang="es">Opciones varias</short>
+        <short xml:lang="tr">Diğer Seçenekler</short>
+        <short xml:lang="uk">Різне</short>
+        <option type="match" name="window_types">
+          <short>Window Types</short>
+          <short xml:lang="bg">Тип на прозореца</short>
+          <short xml:lang="es">Tipos de ventanas</short>
+          <short xml:lang="tr">Pencere Türleri</short>
+          <short xml:lang="uk">Типи вікон</short>
+          <long>Window types that should be Opacified.</long>
+          <long xml:lang="bg">Типове прозорци, които трябва да са непрозрачни.</long>
+          <long xml:lang="es">Tipos de ventanas de deben ser opacas.</long>
+          <long xml:lang="tr">Matlaştırılması gereken pencere tipleri.</long>
+          <long xml:lang="uk">Типи вікон, які мусять бути непрозорими</long>
+          <default>Toolbar | Utility | Dialog | ModalDialog | Fullscreen | Normal</default>
+        </option>
+	<option type="bool" name="ononinit">
+	  <short>Enable ADD Helper on start</short>
+	  <short xml:lang="bg">Включване на ADD Helper при стартиране</short>
+	  <short xml:lang="es">Activar el ayudante al iniciar</short>
+	  <short xml:lang="uk">Запускати помічник ADD при старті</short>
+	  <long>Enables ADD helper when it is first loaded.</long>
+	  <long xml:lang="bg">Включване на ADD Helper, когато е зареден за пръв път.</long>
+	  <long xml:lang="es">Activa el ayudante cuando se carga por primera vez.</long>
+	  <long xml:lang="uk">Вмикає помічник ADD при першому завантаженні.</long>
+	  <default>false</default>
+	</option>
+        <option type="int" name="brightness">
+          <short>Brightness</short>
+          <short xml:lang="am">ብሩህነት</short>
+          <short xml:lang="ast">Claridá</short>
+          <short xml:lang="be">Яркасьць</short>
+          <short xml:lang="bg">Яркост</short>
+          <short xml:lang="bs">Svjetlina</short>
+          <short xml:lang="ca">Brillantor</short>
+          <short xml:lang="cs">Jas</short>
+          <short xml:lang="da">Lysstyrke</short>
+          <short xml:lang="de">Helligkeit</short>
+          <short xml:lang="el">Φωτεινότητα</short>
+          <short xml:lang="en_AU">Brightness</short>
+          <short xml:lang="en_GB">Brightness</short>
+          <short xml:lang="es">Brillo</short>
+          <short xml:lang="et">Heledus</short>
+          <short xml:lang="eu">Distira</short>
+          <short xml:lang="fi">Kirkkaus</short>
+          <short xml:lang="fr">Luminosité</short>
+          <short xml:lang="gl">Brillo</short>
+          <short xml:lang="gu">તેજસ્વીતા</short>
+          <short xml:lang="he">בהירות</short>
+          <short xml:lang="hr">Svjetlina</short>
+          <short xml:lang="hu">Fényerő</short>
+          <short xml:lang="it">Luminosità</short>
+          <short xml:lang="ja">明度</short>
+          <short xml:lang="ko">밝기</short>
+          <short xml:lang="ms">Kecerahan</short>
+          <short xml:lang="nb">Skarphet</short>
+          <short xml:lang="nl">Helderheid</short>
+          <short xml:lang="oc">Luminositat</short>
+          <short xml:lang="or">ଉଜ୍ବଳତା</short>
+          <short xml:lang="pl">Jasność</short>
+          <short xml:lang="pt">Brilho</short>
+          <short xml:lang="pt_BR">Brilho</short>
+          <short xml:lang="ro">Luminozitate</short>
+          <short xml:lang="ru">Яркость</short>
+          <short xml:lang="sk">Jas</short>
+          <short xml:lang="sl">Svetlost</short>
+          <short xml:lang="sq">Ndriçimi</short>
+          <short xml:lang="sr">Светлина</short>
+          <short xml:lang="sv">Ljusstyrka</short>
+          <short xml:lang="tr">Parlaklık</short>
+          <short xml:lang="ug">يورۇقلۇق</short>
+          <short xml:lang="uk">Яскравість</short>
+          <short xml:lang="vi">Độ sáng</short>
+          <short xml:lang="zh_CN">亮度</short>
+          <short xml:lang="zh_HK">亮度</short>
+          <short xml:lang="zh_TW">亮度</short>
+          <long>Brightness of faded windows</long>
+          <long xml:lang="bg">Яркост на избледнелите прозорци</long>
+          <long xml:lang="es">Brillo de las ventanas semitransparentes</long>
+          <long xml:lang="tr">Etkin olmayan pencerelerin parlaklığı</long>
+          <long xml:lang="uk">Яскравість затемнених вікон</long>
+          <default>30</default>
+          <min>1</min>
+          <max>100</max>
+        </option>
+        <option type="int" name="saturation">
+          <short>Saturation</short>
+          <short xml:lang="am">መሙያ</short>
+          <short xml:lang="ast">Saturación</short>
+          <short xml:lang="be">Насычанасьць</short>
+          <short xml:lang="bg">Наситеност</short>
+          <short xml:lang="bs">Zasićenje</short>
+          <short xml:lang="ca">Saturació</short>
+          <short xml:lang="cs">Sytost</short>
+          <short xml:lang="da">Farvemætning</short>
+          <short xml:lang="de">Sättigung</short>
+          <short xml:lang="el">Κορεσμός</short>
+          <short xml:lang="en_AU">Saturation</short>
+          <short xml:lang="en_GB">Saturation</short>
+          <short xml:lang="es">Saturación</short>
+          <short xml:lang="eu">Saturazioa</short>
+          <short xml:lang="fi">Kylläisyys</short>
+          <short xml:lang="fr">Saturation</short>
+          <short xml:lang="fy">Sêding</short>
+          <short xml:lang="gl">Saturacion</short>
+          <short xml:lang="he">רווייה</short>
+          <short xml:lang="hr">Zasićenje</short>
+          <short xml:lang="hu">Telítettség</short>
+          <short xml:lang="it">Saturazione</short>
+          <short xml:lang="ja">彩度</short>
+          <short xml:lang="ko">채도</short>
+          <short xml:lang="ms">Ketepuan</short>
+          <short xml:lang="nb">Metning</short>
+          <short xml:lang="nl">Verzadiging</short>
+          <short xml:lang="oc">Saturacion</short>
+          <short xml:lang="or">ସଂପୂର୍ଣ୍ଣ ମିଶ୍ରଣ</short>
+          <short xml:lang="pl">Nasycenie</short>
+          <short xml:lang="pt">Saturação</short>
+          <short xml:lang="pt_BR">Saturação</short>
+          <short xml:lang="ro">Saturație</short>
+          <short xml:lang="ru">Насыщенность</short>
+          <short xml:lang="sk">Sýtosť</short>
+          <short xml:lang="sl">Nasičenost</short>
+          <short xml:lang="sq">Ngopja</short>
+          <short xml:lang="sr">Засићење</short>
+          <short xml:lang="sv">Färgmättnad</short>
+          <short xml:lang="tr">Doygunluk</short>
+          <short xml:lang="ug">تويۇنۇش</short>
+          <short xml:lang="uk">Насиченість</short>
+          <short xml:lang="vi">Độ bão hòa</short>
+          <short xml:lang="zh_CN">饱和度</short>
+          <short xml:lang="zh_HK">飽和度</short>
+          <short xml:lang="zh_TW">飽和度</short>
+          <long>Saturation of faded windows</long>
+          <long xml:lang="bg">Наситеност на избледнелите прозорци</long>
+          <long xml:lang="es">Saturación de las ventanas semitransparentes</long>
+          <long xml:lang="tr">Etkin olmayan pencerelerin doygunluğu</long>
+          <long xml:lang="uk">Насиченість затемнених вікон</long>
+          <default>50</default>
+          <min>0</min>
+          <max>100</max>
+        </option>
+        <option type="int" name="opacity">
+          <short>Opacity</short>
+          <short xml:lang="am">በውስጡ የማያሳልፍ</short>
+          <short xml:lang="ast">Opacidá</short>
+          <short xml:lang="be">Непразрыстасьць</short>
+          <short xml:lang="bg">Непрозрачност</short>
+          <short xml:lang="bn">অস্বচ্ছতা</short>
+          <short xml:lang="bn_IN">অস্বচ্ছতা</short>
+          <short xml:lang="bs">Providnost</short>
+          <short xml:lang="ca">Opacitat</short>
+          <short xml:lang="cs">Krytí</short>
+          <short xml:lang="da">Opacitet</short>
+          <short xml:lang="de">Deckkraft</short>
+          <short xml:lang="el">Αδιαφάνεια</short>
+          <short xml:lang="en_AU">Opacity</short>
+          <short xml:lang="en_GB">Opacity</short>
+          <short xml:lang="es">Opacidad</short>
+          <short xml:lang="eu">Opakutasuna</short>
+          <short xml:lang="fi">Läpinäkyvyys</short>
+          <short xml:lang="fr">Opacité</short>
+          <short xml:lang="gl">Opacidade</short>
+          <short xml:lang="gu">અપારદર્શકતા</short>
+          <short xml:lang="he">אטימות</short>
+          <short xml:lang="hr">Prozirnost</short>
+          <short xml:lang="hu">Átlátszatlanság</short>
+          <short xml:lang="it">Opacità</short>
+          <short xml:lang="ja">不透明度</short>
+          <short xml:lang="ko">투명</short>
+          <short xml:lang="ms">Kelegapan</short>
+          <short xml:lang="nb">Dekkevne</short>
+          <short xml:lang="nds">Deckstärk</short>
+          <short xml:lang="nl">Ondoorzichtigheid</short>
+          <short xml:lang="oc">Opacitat</short>
+          <short xml:lang="or">ଅସ୍ବଚ୍ଛତା</short>
+          <short xml:lang="pl">Nieprzezroczystość</short>
+          <short xml:lang="pt">Opacidade</short>
+          <short xml:lang="pt_BR">Opacidade</short>
+          <short xml:lang="ro">Opacitate</short>
+          <short xml:lang="ru">Прозрачность</short>
+          <short xml:lang="sk">Nepriehľadnosť</short>
+          <short xml:lang="sl">Prekrivnost</short>
+          <short xml:lang="sq">Transparenca</short>
+          <short xml:lang="sr">Провидност</short>
+          <short xml:lang="sv">Opacitet</short>
+          <short xml:lang="tr">Matlık</short>
+          <short xml:lang="ug">غۇۋالىقى</short>
+          <short xml:lang="uk">Прозорість</short>
+          <short xml:lang="vi">Độ trong suốt</short>
+          <short xml:lang="zh_CN">不透明度</short>
+          <short xml:lang="zh_HK">不透明度</short>
+          <short xml:lang="zh_TW">不透明度</short>
+          <long>Opacity of faded windows</long>
+          <long xml:lang="es">Opacidad de las ventanas semitransparentes</long>
+          <long xml:lang="tr">Etkin olmayan pencerelerin matlığı</long>
+          <long xml:lang="uk">Прозорість затемнених вікон</long>
+          <default>100</default>
+          <min>1</min>
+          <max>100</max>
+        </option>
+      </group>
+    </options>
+  </plugin>
+</compiz>

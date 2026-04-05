@@ -1,0 +1,3127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+    <plugin useBcop="true" name="staticswitcher">
+	<short>Static Application Switcher</short>
+	<short xml:lang="da">Statisk programskifter</short>
+	<short xml:lang="uk">Статичний перемикач програм</short>
+	<long>Static Application Switcher</long>
+	<long xml:lang="da">Statisk programskifter</long>
+	<long xml:lang="uk">Статичний перемикач програм</long>
+	<deps>
+	    <requirement>
+		<plugin>opengl</plugin>
+		<plugin>compiztoolbox</plugin>
+	    </requirement>
+	    <relation type="after">
+		<plugin>composite</plugin>
+		<plugin>opengl</plugin>
+		<plugin>compiztoolbox</plugin>
+		<plugin>decor</plugin>
+	    </relation>
+	    <relation type="before">
+		<plugin>bs</plugin>
+	    </relation>
+	</deps>
+	<category>Window Management</category>
+	<options>
+	    <group>
+		<short>Bindings</short>
+		<short xml:lang="ast">Lligadures</short>
+		<short xml:lang="be">Прывязваньні</short>
+		<short xml:lang="bg">Задължителни</short>
+		<short xml:lang="bs">Povezivanja</short>
+		<short xml:lang="cs">Klávesové zkratky</short>
+		<short xml:lang="da">Bindinger</short>
+		<short xml:lang="de">Tastenkombinationen</short>
+		<short xml:lang="el">Συνδυασμοί</short>
+		<short xml:lang="en_AU">Bindings</short>
+		<short xml:lang="en_GB">Bindings</short>
+		<short xml:lang="es">Vínculos</short>
+		<short xml:lang="eu">Laster-bideak</short>
+		<short xml:lang="fi">Pikanäppäimet</short>
+		<short xml:lang="fr">Assignations</short>
+		<short xml:lang="gl">Asociacións</short>
+		<short xml:lang="he">צירופים</short>
+		<short xml:lang="hr">Tipkovničke kratice</short>
+		<short xml:lang="hu">Gyorsbillentyűk</short>
+		<short xml:lang="it">Associazioni</short>
+		<short xml:lang="ja">割り当て</short>
+		<short xml:lang="ko">바로 가기</short>
+		<short xml:lang="ms">Pengikatan</short>
+		<short xml:lang="nl">Bindingen</short>
+		<short xml:lang="oc">Assignacions</short>
+		<short xml:lang="pl">Przyporządkowanie klawiszy</short>
+		<short xml:lang="pt">Atalhos</short>
+		<short xml:lang="pt_BR">Atalhos</short>
+		<short xml:lang="ro">Asocieri</short>
+		<short xml:lang="ru">Закрепление</short>
+		<short xml:lang="sl">Vezave</short>
+		<short xml:lang="sq">Bindings</short>
+		<short xml:lang="sr">Повезивања</short>
+		<short xml:lang="sv">Bindningar</short>
+		<short xml:lang="tr">Bağlayıcılar</short>
+		<short xml:lang="ug">باغلانمىلار</short>
+		<short xml:lang="uk">Закріплення</short>
+		<short xml:lang="vi">Gán</short>
+		<short xml:lang="zh_CN">绑定</short>
+		<short xml:lang="zh_HK">連結</short>
+		<short xml:lang="zh_TW">連結</short>
+		<option type="button" name="next_button">
+		    <short>Next window</short>
+		    <short xml:lang="am">የሚቀጥለው መስኮት</short>
+		    <short xml:lang="ast">Ventana siguiente</short>
+		    <short xml:lang="be">Наступнае вакно</short>
+		    <short xml:lang="bg">Следващ прозорец</short>
+		    <short xml:lang="bn">পরবর্তী উইন্ডো</short>
+		    <short xml:lang="bn_IN">পরবর্তী উইন্ডো</short>
+		    <short xml:lang="bs">Sljedeći prozor</short>
+		    <short xml:lang="ca">Finestra següent</short>
+		    <short xml:lang="cs">Další okno</short>
+		    <short xml:lang="da">Næste vindue</short>
+		    <short xml:lang="de">Nächstes Fenster</short>
+		    <short xml:lang="el">Επόμενο παράθυρο</short>
+		    <short xml:lang="en_AU">Next window</short>
+		    <short xml:lang="en_GB">Next window</short>
+		    <short xml:lang="es">Ventana siguiente</short>
+		    <short xml:lang="eu">Hurrengo leihoa</short>
+		    <short xml:lang="fi">Seuraava ikkuna</short>
+		    <short xml:lang="fr">Fenêtre suivante</short>
+		    <short xml:lang="fy">Folgjend finster</short>
+		    <short xml:lang="gl">Seguinte xanela</short>
+		    <short xml:lang="he">החלון הבא</short>
+		    <short xml:lang="hr">Sljedeći prozor</short>
+		    <short xml:lang="hu">Következő ablak</short>
+		    <short xml:lang="it">Finestra successiva</short>
+		    <short xml:lang="ja">次のウィンドウ</short>
+		    <short xml:lang="ko">다음 창</short>
+		    <short xml:lang="ku">Paceya dû ve</short>
+		    <short xml:lang="ms">Tetingkap berikutnya</short>
+		    <short xml:lang="nb">Neste vindu</short>
+		    <short xml:lang="nl">Volgende venster</short>
+		    <short xml:lang="oc">Fenèstra seguenta</short>
+		    <short xml:lang="or">ପରବର୍ତ୍ତୀ ଉଇଣ୍ଡୋ</short>
+		    <short xml:lang="pl">Następne okno</short>
+		    <short xml:lang="pt">Próxima janela</short>
+		    <short xml:lang="pt_BR">Próxima Janela</short>
+		    <short xml:lang="ro">Fereastra următoare</short>
+		    <short xml:lang="ru">Следующее окно</short>
+		    <short xml:lang="sk">Nasledujúce okno</short>
+		    <short xml:lang="sl">Naslednje okno</short>
+		    <short xml:lang="sr">Следећи прозор</short>
+		    <short xml:lang="sv">Nästa fönster</short>
+		    <short xml:lang="tr">Sonraki pencere</short>
+		    <short xml:lang="ug">كېيىنكى كۆزنەك</short>
+		    <short xml:lang="uk">Наступне вікно</short>
+		    <short xml:lang="vi">Cửa sổ tiếp theo</short>
+		    <short xml:lang="zh_CN">下一个窗口</short>
+		    <short xml:lang="zh_HK">下一個視窗</short>
+		    <short xml:lang="zh_TW">下一個視窗</short>
+		    <long>Popup switcher if not visible and select next window</long>
+		    <long xml:lang="ast">Activa'l menú emerxente si nun ta visible y escueye la siguiente ventana</long>
+		    <long xml:lang="be">পপআপ পরিবর্তনকারী দেখা না গেলে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn">পপআপ পরিবর্তনকারী দেখা না গেলে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn_IN">পপআপ পরিবর্তনকারী দেখা না গেলে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bs">Prikaži prebacivač iskačućeg prozora, ako već nije prikazan, i označi sljedeći prozor</long>
+		    <long xml:lang="ca">Fa sortir el canviador si no està visible i selecciona la finestra següent</long>
+		    <long xml:lang="cs">Zobrazit přepínač, pokud není viditelný, a vybrat další okno</long>
+		    <long xml:lang="da">Vis skifteren, hvis den ikke er synlig, og vælg næste vindue</long>
+		    <long xml:lang="de">Vorschaufenster anzeigen und nächstes Fenster auswählen</long>
+		    <long xml:lang="el">Ανάδυση εναλλάκτη αν δεν είναι ορατός και επιλογή επόμενου παραθύρου</long>
+		    <long xml:lang="en_AU">Popup switcher if not visible and select next window</long>
+		    <long xml:lang="en_GB">Popup switcher if not visible and select next window</long>
+		    <long xml:lang="es">Cambiador emergente si no está visible y seleccionar la ventana siguiente</long>
+		    <long xml:lang="eu">Popup aldatzailea bistara ez badago eta hautatu hurrengo leihoa</long>
+		    <long xml:lang="fi">Ponnauta vaihtaja näkyviin jos ei ole ja valitse seuraava ikkuna</long>
+		    <long xml:lang="fr">Afficher le sélecteur s'il n'est pas visible et sélectionner la fenêtre suivante</long>
+		    <long xml:lang="gl">Mostrar o alternador se non está visíbel e seleccionar a xanela seguinte</long>
+		    <long xml:lang="gu">પોપઅપ બદલનાર જો દેખીતું ના હોય અને આગળની વિન્ડો પસંદ કરો</long>
+		    <long xml:lang="he">הקפץ את המעביר אם הוא מוסתר ובחר את החלון הבא</long>
+		    <long xml:lang="hi">पॉप अप स्विचर यदि दृष्टिगोच़र नहीं है और अगला विंडो चुनें</long>
+		    <long xml:lang="hr">Neka mjenjač iskoči ako nije vidljiv i odaberi sljedeći prozor</long>
+		    <long xml:lang="hu">Ablakváltó megjelenítése ha nem látható és a következő ablak kiválasztása</long>
+		    <long xml:lang="it">Mostra il selettore se non visibile e seleziona la finestra successiva</long>
+		    <long xml:lang="ja">スイッチャーが非表示の場合ポップアップして、次のウィンドウを選択</long>
+		    <long xml:lang="ko">전환 창이 없을 때는 전환 창을 보이고, 다음 창으로 전환</long>
+		    <long xml:lang="ms">Timbulkan penukar jika tidak kelihatan dan pilih tetingkap berikutnya</long>
+		    <long xml:lang="nb">Sprett opp skifter hvis ikke synlig og velg neste vindu</long>
+		    <long xml:lang="nl">Toon de wisselaar als deze niet zichtbaar is en selecteer het volgende venster</long>
+		    <long xml:lang="oc">Afichar lo selector s'es pas visible e seleccionar la fenèstra seguenta.</long>
+		    <long xml:lang="or">ପପ୍ ଅପ ବଦଳକାରୀ ୟଦି ଦୃଶ୍ଯମାନ ନ ଥାଏ ଏବଂ ପରବର୍ତ୍ତୀ ଉଇଣ୍ଡୋକୁ ମନୋନୀତକର</long>
+		    <long xml:lang="pa">ਪੋਪਅੱਪ ਸਵਿੱਚ, ਜੇ ਨਾ ਦਿੱਸੇ ਅਤੇ ਅਗਲੀ ਵਿੰਡੋ ਚੁਣੋ</long>
+		    <long xml:lang="pl">Okno przełączania gdy niewidoczne i wybór następnego okna</long>
+		    <long xml:lang="pt">Mostrar alternador se não estiver visível e seleccionar próxima janela</long>
+		    <long xml:lang="pt_BR">Mostrar alternador se não estiver visível e selecionar próxima janela</long>
+		    <long xml:lang="ro">Comutator-balon dacă nu este vizibil și alege următoarea fereastră</long>
+		    <long xml:lang="ru">Отображение переключателя (если он невидим) и выбор следующего окна</long>
+		    <long xml:lang="sk">Zobraziť prepínač ak nie je viditeľný a vybrať ďalšie okno</long>
+		    <long xml:lang="sl">Prikaži preklopnik, kadar ni viden, in izberi novo okno</long>
+		    <long xml:lang="sr">Прикажи бирач, ако није приказан, и одабери следећи прозор</long>
+		    <long xml:lang="sv">Popupväxlare om inte synlig och välj nästa fönster</long>
+		    <long xml:lang="tr">Değiştirici gizliyse göster ve bir sonraki pencereyi seç</long>
+		    <long xml:lang="uk">Показати перемикач, якщо він невидимий, і вибрати наступне вікно</long>
+		    <long xml:lang="vi">Hiện bộ chuyển đổi và chọn cửa sổ tiếp theo</long>
+		    <long xml:lang="zh_CN">不可见时弹出切换程序并选择下一个窗口</long>
+		    <long xml:lang="zh_HK">看不到切換器時快顯切換器，並選取下一個視窗</long>
+		    <long xml:lang="zh_TW">看不到切換器時快顯切換器，並選取下一個視窗</long>
+		</option>
+		<option type="key" name="next_key">
+		    <short>Next window</short>
+		    <short xml:lang="am">የሚቀጥለው መስኮት</short>
+		    <short xml:lang="ast">Ventana siguiente</short>
+		    <short xml:lang="be">Наступнае вакно</short>
+		    <short xml:lang="bg">Следващ прозорец</short>
+		    <short xml:lang="bn">পরবর্তী উইন্ডো</short>
+		    <short xml:lang="bn_IN">পরবর্তী উইন্ডো</short>
+		    <short xml:lang="bs">Sljedeći prozor</short>
+		    <short xml:lang="ca">Finestra següent</short>
+		    <short xml:lang="cs">Další okno</short>
+		    <short xml:lang="da">Næste vindue</short>
+		    <short xml:lang="de">Nächstes Fenster</short>
+		    <short xml:lang="el">Επόμενο παράθυρο</short>
+		    <short xml:lang="en_AU">Next window</short>
+		    <short xml:lang="en_GB">Next window</short>
+		    <short xml:lang="es">Ventana siguiente</short>
+		    <short xml:lang="eu">Hurrengo leihoa</short>
+		    <short xml:lang="fi">Seuraava ikkuna</short>
+		    <short xml:lang="fr">Fenêtre suivante</short>
+		    <short xml:lang="fy">Folgjend finster</short>
+		    <short xml:lang="gl">Seguinte xanela</short>
+		    <short xml:lang="he">החלון הבא</short>
+		    <short xml:lang="hr">Sljedeći prozor</short>
+		    <short xml:lang="hu">Következő ablak</short>
+		    <short xml:lang="it">Finestra successiva</short>
+		    <short xml:lang="ja">次のウィンドウ</short>
+		    <short xml:lang="ko">다음 창</short>
+		    <short xml:lang="ku">Paceya dû ve</short>
+		    <short xml:lang="ms">Tetingkap berikutnya</short>
+		    <short xml:lang="nb">Neste vindu</short>
+		    <short xml:lang="nl">Volgende venster</short>
+		    <short xml:lang="oc">Fenèstra seguenta</short>
+		    <short xml:lang="or">ପରବର୍ତ୍ତୀ ଉଇଣ୍ଡୋ</short>
+		    <short xml:lang="pl">Następne okno</short>
+		    <short xml:lang="pt">Próxima janela</short>
+		    <short xml:lang="pt_BR">Próxima Janela</short>
+		    <short xml:lang="ro">Fereastra următoare</short>
+		    <short xml:lang="ru">Следующее окно</short>
+		    <short xml:lang="sk">Nasledujúce okno</short>
+		    <short xml:lang="sl">Naslednje okno</short>
+		    <short xml:lang="sr">Следећи прозор</short>
+		    <short xml:lang="sv">Nästa fönster</short>
+		    <short xml:lang="tr">Sonraki pencere</short>
+		    <short xml:lang="ug">كېيىنكى كۆزنەك</short>
+		    <short xml:lang="uk">Наступне вікно</short>
+		    <short xml:lang="vi">Cửa sổ tiếp theo</short>
+		    <short xml:lang="zh_CN">下一个窗口</short>
+		    <short xml:lang="zh_HK">下一個視窗</short>
+		    <short xml:lang="zh_TW">下一個視窗</short>
+		    <long>Popup switcher if not visible and select next window</long>
+		    <long xml:lang="ast">Activa'l menú emerxente si nun ta visible y escueye la siguiente ventana</long>
+		    <long xml:lang="be">পপআপ পরিবর্তনকারী দেখা না গেলে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn">পপআপ পরিবর্তনকারী দেখা না গেলে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn_IN">পপআপ পরিবর্তনকারী দেখা না গেলে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bs">Prikaži prebacivač iskačućeg prozora, ako već nije prikazan, i označi sljedeći prozor</long>
+		    <long xml:lang="ca">Fa sortir el canviador si no està visible i selecciona la finestra següent</long>
+		    <long xml:lang="cs">Zobrazit přepínač, pokud není viditelný, a vybrat další okno</long>
+		    <long xml:lang="da">Vis skifteren, hvis den ikke er synlig, og vælg næste vindue</long>
+		    <long xml:lang="de">Vorschaufenster anzeigen und nächstes Fenster auswählen</long>
+		    <long xml:lang="el">Ανάδυση εναλλάκτη αν δεν είναι ορατός και επιλογή επόμενου παραθύρου</long>
+		    <long xml:lang="en_AU">Popup switcher if not visible and select next window</long>
+		    <long xml:lang="en_GB">Popup switcher if not visible and select next window</long>
+		    <long xml:lang="es">Cambiador emergente si no está visible y seleccionar la ventana siguiente</long>
+		    <long xml:lang="eu">Popup aldatzailea bistara ez badago eta hautatu hurrengo leihoa</long>
+		    <long xml:lang="fi">Ponnauta vaihtaja näkyviin jos ei ole ja valitse seuraava ikkuna</long>
+		    <long xml:lang="fr">Afficher le sélecteur s'il n'est pas visible et sélectionner la fenêtre suivante</long>
+		    <long xml:lang="gl">Mostrar o alternador se non está visíbel e seleccionar a xanela seguinte</long>
+		    <long xml:lang="gu">પોપઅપ બદલનાર જો દેખીતું ના હોય અને આગળની વિન્ડો પસંદ કરો</long>
+		    <long xml:lang="he">הקפץ את המעביר אם הוא מוסתר ובחר את החלון הבא</long>
+		    <long xml:lang="hi">पॉप अप स्विचर यदि दृष्टिगोच़र नहीं है और अगला विंडो चुनें</long>
+		    <long xml:lang="hr">Neka mjenjač iskoči ako nije vidljiv i odaberi sljedeći prozor</long>
+		    <long xml:lang="hu">Ablakváltó megjelenítése ha nem látható és a következő ablak kiválasztása</long>
+		    <long xml:lang="it">Mostra il selettore se non visibile e seleziona la finestra successiva</long>
+		    <long xml:lang="ja">スイッチャーが非表示の場合ポップアップして、次のウィンドウを選択</long>
+		    <long xml:lang="ko">전환 창이 없을 때는 전환 창을 보이고, 다음 창으로 전환</long>
+		    <long xml:lang="ms">Timbulkan penukar jika tidak kelihatan dan pilih tetingkap berikutnya</long>
+		    <long xml:lang="nb">Sprett opp skifter hvis ikke synlig og velg neste vindu</long>
+		    <long xml:lang="nl">Toon de wisselaar als deze niet zichtbaar is en selecteer het volgende venster</long>
+		    <long xml:lang="oc">Afichar lo selector s'es pas visible e seleccionar la fenèstra seguenta.</long>
+		    <long xml:lang="or">ପପ୍ ଅପ ବଦଳକାରୀ ୟଦି ଦୃଶ୍ଯମାନ ନ ଥାଏ ଏବଂ ପରବର୍ତ୍ତୀ ଉଇଣ୍ଡୋକୁ ମନୋନୀତକର</long>
+		    <long xml:lang="pa">ਪੋਪਅੱਪ ਸਵਿੱਚ, ਜੇ ਨਾ ਦਿੱਸੇ ਅਤੇ ਅਗਲੀ ਵਿੰਡੋ ਚੁਣੋ</long>
+		    <long xml:lang="pl">Okno przełączania gdy niewidoczne i wybór następnego okna</long>
+		    <long xml:lang="pt">Mostrar alternador se não estiver visível e seleccionar próxima janela</long>
+		    <long xml:lang="pt_BR">Mostrar alternador se não estiver visível e selecionar próxima janela</long>
+		    <long xml:lang="ro">Comutator-balon dacă nu este vizibil și alege următoarea fereastră</long>
+		    <long xml:lang="ru">Отображение переключателя (если он невидим) и выбор следующего окна</long>
+		    <long xml:lang="sk">Zobraziť prepínač ak nie je viditeľný a vybrať ďalšie okno</long>
+		    <long xml:lang="sl">Prikaži preklopnik, kadar ni viden, in izberi novo okno</long>
+		    <long xml:lang="sr">Прикажи бирач, ако није приказан, и одабери следећи прозор</long>
+		    <long xml:lang="sv">Popupväxlare om inte synlig och välj nästa fönster</long>
+		    <long xml:lang="tr">Değiştirici gizliyse göster ve bir sonraki pencereyi seç</long>
+		    <long xml:lang="uk">Показати перемикач, якщо він невидимий, і вибрати наступне вікно</long>
+		    <long xml:lang="vi">Hiện bộ chuyển đổi và chọn cửa sổ tiếp theo</long>
+		    <long xml:lang="zh_CN">不可见时弹出切换程序并选择下一个窗口</long>
+		    <long xml:lang="zh_HK">看不到切換器時快顯切換器，並選取下一個視窗</long>
+		    <long xml:lang="zh_TW">看不到切換器時快顯切換器，並選取下一個視窗</long>
+		    <default>&lt;Alt&gt;Tab</default>
+		</option>
+		<option type="button" name="prev_button">
+		    <short>Prev window</short>
+		    <short xml:lang="am">ቀደም ያለው መስኮት</short>
+		    <short xml:lang="ast">Ventana anterior</short>
+		    <short xml:lang="be">Папярэдняе вакно</short>
+		    <short xml:lang="bg">Предишен прозорец</short>
+		    <short xml:lang="bn">পূর্ববর্তী উইন্ডো</short>
+		    <short xml:lang="bn_IN">পূর্ববর্তী উইন্ডো</short>
+		    <short xml:lang="bs">Prethodni prozor</short>
+		    <short xml:lang="ca">Finestra anterior</short>
+		    <short xml:lang="cs">Předchozí okno</short>
+		    <short xml:lang="da">Forrige vindue</short>
+		    <short xml:lang="de">Vorheriges Fenster</short>
+		    <short xml:lang="el">Προηγούμενο παράθυρο</short>
+		    <short xml:lang="en_AU">Prev window</short>
+		    <short xml:lang="en_GB">Prev window</short>
+		    <short xml:lang="es">Ventana ant</short>
+		    <short xml:lang="eu">Aurreko leihoa</short>
+		    <short xml:lang="fi">Edellinen ikkuna</short>
+		    <short xml:lang="fr">Fenêtre précédente</short>
+		    <short xml:lang="fy">Foarich finster</short>
+		    <short xml:lang="gl">Xanela anterior</short>
+		    <short xml:lang="gu">પહેલાંની વિન્ડો</short>
+		    <short xml:lang="he">חלון קודם</short>
+		    <short xml:lang="hr">Prethodni prozor</short>
+		    <short xml:lang="hu">Előző ablak</short>
+		    <short xml:lang="it">Finestra precedente</short>
+		    <short xml:lang="ja">前のウィンドウ</short>
+		    <short xml:lang="ko">이전 창</short>
+		    <short xml:lang="ku">Paceya berê</short>
+		    <short xml:lang="ms">Tetingkap terdahulu</short>
+		    <short xml:lang="nb">Forrige vindu</short>
+		    <short xml:lang="nl">Vorig venster</short>
+		    <short xml:lang="oc">Fenèstra precedenta</short>
+		    <short xml:lang="or">ପୂର୍ବବର୍ତ୍ତୀ ଉଇଣ୍ଡୋ</short>
+		    <short xml:lang="pl">Poprzednie okno</short>
+		    <short xml:lang="pt">Janela anterior</short>
+		    <short xml:lang="pt_BR">Janela anterior</short>
+		    <short xml:lang="ro">Fereastra precedentă</short>
+		    <short xml:lang="ru">Предыдущее окно</short>
+		    <short xml:lang="sk">Predchádzajúce okno</short>
+		    <short xml:lang="sl">Predhodno okno</short>
+		    <short xml:lang="sr">Претходни прозор</short>
+		    <short xml:lang="sv">Föreg fönster</short>
+		    <short xml:lang="tr">Önceki pencere</short>
+		    <short xml:lang="ug">ئالدىنقى كۆزنەك</short>
+		    <short xml:lang="uk">Попереднє вікно</short>
+		    <short xml:lang="vi">Cửa sổ trước</short>
+		    <short xml:lang="zh_CN">上一个窗口</short>
+		    <short xml:lang="zh_HK">上一個視窗</short>
+		    <short xml:lang="zh_TW">上一個視窗</short>
+		    <long>Popup switcher if not visible and select previous window</long>
+		    <long xml:lang="ast">Amosar el cambiador de ventanes si nun se ve y escoyer la ventana anterior</long>
+		    <long xml:lang="be">পপআপ পরিবর্তনকারী দেখা না গেলে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn">পপআপ পরিবর্তনকারী দেখা না গেলে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn_IN">পপআপ পরিবর্তনকারী দেখা না গেলে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bs">Prikaži prebacivač iskačućeg prozora, ako već nije prikazan, i označi prethodni prozor</long>
+		    <long xml:lang="ca">Fes sortir el canviador si no està visible i selecciona la finestra anterior</long>
+		    <long xml:lang="cs">Zobrazit přepínač, pokud není viditelný, a vybrat předchozí okno</long>
+		    <long xml:lang="da">Vis skifteren, hvis den ikke er synlig, og vælg forrige vindue</long>
+		    <long xml:lang="de">Vorschaufenster anzeigen und vorheriges Fenster auswählen</long>
+		    <long xml:lang="el">Ανάδυση εναλλάκτη αν δεν είναι ορατός και επιλογή προηγούμενου παραθύρου</long>
+		    <long xml:lang="en_AU">Popup switcher if not visible and select previous window</long>
+		    <long xml:lang="en_GB">Popup switcher if not visible and select previous window</long>
+		    <long xml:lang="es">Mostrar el conmutador si no está visible y seleccionar la ventana anterior</long>
+		    <long xml:lang="eu">Popup aldatzailea bistara ez badago eta hautatu aurreko leihoa</long>
+		    <long xml:lang="fi">Ponnauta vaihtaja näkyviin jos ei ole ja valitse edellinen ikkuna</long>
+		    <long xml:lang="fr">Afficher le sélecteur s'il n'est pas visible et sélectionner la fenêtre précédente</long>
+		    <long xml:lang="gl">Mostrar o alternador se non está visíbel e seleccionar a xanela anterior</long>
+		    <long xml:lang="gu">પોપઅપ બદલનાર જો દેખીતું ના હોય અને પહેલાંની વિન્ડો પસંદ કરો</long>
+		    <long xml:lang="he">הקפץ את המעביר אם הוא מוסתר ובחר את החלון הקודם</long>
+		    <long xml:lang="hi">पॉप अप स्विचर यदि दृष्टिगोच़र नहीं है और पिछला विंडो चुनें</long>
+		    <long xml:lang="hr">Neka mjenjač iskoči ako nije vidljiv i odaberi prethodni prozor</long>
+		    <long xml:lang="hu">Ablakváltó megjelenítése ha nem látható és az előző ablak kiválasztása</long>
+		    <long xml:lang="it">Mostra il selettore se non visibile e seleziona la finestra precedente</long>
+		    <long xml:lang="ja">スイッチャーが非表示の場合ポップアップして、前のウィンドウを選択</long>
+		    <long xml:lang="ko">전환 창이 없을 때는 전환 창을 보이고, 모든 창 중에서 이전 창으로 전환</long>
+		    <long xml:lang="ms">Timbulkan penukar jika tidak kelihatan dan pilih tetingkap terdahulu</long>
+		    <long xml:lang="nb">Sprett opp skifter hvis ikke synlig og velg forrige vindu</long>
+		    <long xml:lang="nl">Toon de wisselaar als deze niet zichtbaar is en selecteer het vorige venster</long>
+		    <long xml:lang="oc">Afichar lo selector s'es pas visible e seleccionar la fenèstra precedenta.</long>
+		    <long xml:lang="or">ପପ୍ ଅପ ବଦଳକାରୀ ୟଦି ଦୃଶ୍ଯମାନ ନ ଥାଏ ଏବଂ ପୂର୍ବବର୍ତ୍ତୀ ଉଇଣ୍ଡୋକୁ ମନୋନୀତକର</long>
+		    <long xml:lang="pa">ਪੋਪਅੱਪ ਸਵਿੱਚਰ, ਜੇ ਉਪਲੱਬਧ ਨਾ ਹੋਵੇ ਅਤੇ ਪਿਛਲੀ ਵਿੰਡੋ ਚੁਣੇ</long>
+		    <long xml:lang="pl">Okno przełączania gdy niewidoczne i wybór poprzedniego okna</long>
+		    <long xml:lang="pt">Mostrar alternador se não estiver visível e seleccionar janela anterior</long>
+		    <long xml:lang="pt_BR">Mostrar alternador se não estiver visível e selecionar janela anterior</long>
+		    <long xml:lang="ro">Comutator-balon dacă nu este vizibil și alege fereastra precedentă</long>
+		    <long xml:lang="ru">Отображение переключателя (если он невидим) и выбор предыдущего окна</long>
+		    <long xml:lang="sk">Zobraziť prepínač ak nie je viditeľný a vybrať predchádzajúce okno</long>
+		    <long xml:lang="sl">Prikaži preklopnik, kadar ni viden, in izberi prejšnje okno</long>
+		    <long xml:lang="sr">Прикажи бирач, ако није приказан, и одабери претходни прозор</long>
+		    <long xml:lang="sv">Popupväxlare om inte synlig och välj föregående fönster</long>
+		    <long xml:lang="tr">Değiştirici gizliyse göster ve bir önceki pencereyi seç</long>
+		    <long xml:lang="uk">Показати перемикач, якщо він невидимий, і вибрати попереднє вікно</long>
+		    <long xml:lang="vi">Hiện bộ chuyển đổi và chọn cửa sổ trước</long>
+		    <long xml:lang="zh_CN">不可见时弹出切换程序并选择上一个窗口</long>
+		    <long xml:lang="zh_HK">看不到切換器時快顯切換器，並選取上一個視窗</long>
+		    <long xml:lang="zh_TW">看不到切換器時快顯切換器，並選取上一個視窗</long>
+		</option>
+		<option type="key" name="prev_key">
+		    <short>Prev window</short>
+		    <short xml:lang="am">ቀደም ያለው መስኮት</short>
+		    <short xml:lang="ast">Ventana anterior</short>
+		    <short xml:lang="be">Папярэдняе вакно</short>
+		    <short xml:lang="bg">Предишен прозорец</short>
+		    <short xml:lang="bn">পূর্ববর্তী উইন্ডো</short>
+		    <short xml:lang="bn_IN">পূর্ববর্তী উইন্ডো</short>
+		    <short xml:lang="bs">Prethodni prozor</short>
+		    <short xml:lang="ca">Finestra anterior</short>
+		    <short xml:lang="cs">Předchozí okno</short>
+		    <short xml:lang="da">Forrige vindue</short>
+		    <short xml:lang="de">Vorheriges Fenster</short>
+		    <short xml:lang="el">Προηγούμενο παράθυρο</short>
+		    <short xml:lang="en_AU">Prev window</short>
+		    <short xml:lang="en_GB">Prev window</short>
+		    <short xml:lang="es">Ventana ant</short>
+		    <short xml:lang="eu">Aurreko leihoa</short>
+		    <short xml:lang="fi">Edellinen ikkuna</short>
+		    <short xml:lang="fr">Fenêtre précédente</short>
+		    <short xml:lang="fy">Foarich finster</short>
+		    <short xml:lang="gl">Xanela anterior</short>
+		    <short xml:lang="gu">પહેલાંની વિન્ડો</short>
+		    <short xml:lang="he">חלון קודם</short>
+		    <short xml:lang="hr">Prethodni prozor</short>
+		    <short xml:lang="hu">Előző ablak</short>
+		    <short xml:lang="it">Finestra precedente</short>
+		    <short xml:lang="ja">前のウィンドウ</short>
+		    <short xml:lang="ko">이전 창</short>
+		    <short xml:lang="ku">Paceya berê</short>
+		    <short xml:lang="ms">Tetingkap terdahulu</short>
+		    <short xml:lang="nb">Forrige vindu</short>
+		    <short xml:lang="nl">Vorig venster</short>
+		    <short xml:lang="oc">Fenèstra precedenta</short>
+		    <short xml:lang="or">ପୂର୍ବବର୍ତ୍ତୀ ଉଇଣ୍ଡୋ</short>
+		    <short xml:lang="pl">Poprzednie okno</short>
+		    <short xml:lang="pt">Janela anterior</short>
+		    <short xml:lang="pt_BR">Janela anterior</short>
+		    <short xml:lang="ro">Fereastra precedentă</short>
+		    <short xml:lang="ru">Предыдущее окно</short>
+		    <short xml:lang="sk">Predchádzajúce okno</short>
+		    <short xml:lang="sl">Predhodno okno</short>
+		    <short xml:lang="sr">Претходни прозор</short>
+		    <short xml:lang="sv">Föreg fönster</short>
+		    <short xml:lang="tr">Önceki pencere</short>
+		    <short xml:lang="ug">ئالدىنقى كۆزنەك</short>
+		    <short xml:lang="uk">Попереднє вікно</short>
+		    <short xml:lang="vi">Cửa sổ trước</short>
+		    <short xml:lang="zh_CN">上一个窗口</short>
+		    <short xml:lang="zh_HK">上一個視窗</short>
+		    <short xml:lang="zh_TW">上一個視窗</short>
+		    <long>Popup switcher if not visible and select previous window</long>
+		    <long xml:lang="ast">Amosar el cambiador de ventanes si nun se ve y escoyer la ventana anterior</long>
+		    <long xml:lang="be">পপআপ পরিবর্তনকারী দেখা না গেলে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn">পপআপ পরিবর্তনকারী দেখা না গেলে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn_IN">পপআপ পরিবর্তনকারী দেখা না গেলে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bs">Prikaži prebacivač iskačućeg prozora, ako već nije prikazan, i označi prethodni prozor</long>
+		    <long xml:lang="ca">Fes sortir el canviador si no està visible i selecciona la finestra anterior</long>
+		    <long xml:lang="cs">Zobrazit přepínač, pokud není viditelný, a vybrat předchozí okno</long>
+		    <long xml:lang="da">Vis skifteren, hvis den ikke er synlig, og vælg forrige vindue</long>
+		    <long xml:lang="de">Vorschaufenster anzeigen und vorheriges Fenster auswählen</long>
+		    <long xml:lang="el">Ανάδυση εναλλάκτη αν δεν είναι ορατός και επιλογή προηγούμενου παραθύρου</long>
+		    <long xml:lang="en_AU">Popup switcher if not visible and select previous window</long>
+		    <long xml:lang="en_GB">Popup switcher if not visible and select previous window</long>
+		    <long xml:lang="es">Mostrar el conmutador si no está visible y seleccionar la ventana anterior</long>
+		    <long xml:lang="eu">Popup aldatzailea bistara ez badago eta hautatu aurreko leihoa</long>
+		    <long xml:lang="fi">Ponnauta vaihtaja näkyviin jos ei ole ja valitse edellinen ikkuna</long>
+		    <long xml:lang="fr">Afficher le sélecteur s'il n'est pas visible et sélectionner la fenêtre précédente</long>
+		    <long xml:lang="gl">Mostrar o alternador se non está visíbel e seleccionar a xanela anterior</long>
+		    <long xml:lang="gu">પોપઅપ બદલનાર જો દેખીતું ના હોય અને પહેલાંની વિન્ડો પસંદ કરો</long>
+		    <long xml:lang="he">הקפץ את המעביר אם הוא מוסתר ובחר את החלון הקודם</long>
+		    <long xml:lang="hi">पॉप अप स्विचर यदि दृष्टिगोच़र नहीं है और पिछला विंडो चुनें</long>
+		    <long xml:lang="hr">Neka mjenjač iskoči ako nije vidljiv i odaberi prethodni prozor</long>
+		    <long xml:lang="hu">Ablakváltó megjelenítése ha nem látható és az előző ablak kiválasztása</long>
+		    <long xml:lang="it">Mostra il selettore se non visibile e seleziona la finestra precedente</long>
+		    <long xml:lang="ja">スイッチャーが非表示の場合ポップアップして、前のウィンドウを選択</long>
+		    <long xml:lang="ko">전환 창이 없을 때는 전환 창을 보이고, 모든 창 중에서 이전 창으로 전환</long>
+		    <long xml:lang="ms">Timbulkan penukar jika tidak kelihatan dan pilih tetingkap terdahulu</long>
+		    <long xml:lang="nb">Sprett opp skifter hvis ikke synlig og velg forrige vindu</long>
+		    <long xml:lang="nl">Toon de wisselaar als deze niet zichtbaar is en selecteer het vorige venster</long>
+		    <long xml:lang="oc">Afichar lo selector s'es pas visible e seleccionar la fenèstra precedenta.</long>
+		    <long xml:lang="or">ପପ୍ ଅପ ବଦଳକାରୀ ୟଦି ଦୃଶ୍ଯମାନ ନ ଥାଏ ଏବଂ ପୂର୍ବବର୍ତ୍ତୀ ଉଇଣ୍ଡୋକୁ ମନୋନୀତକର</long>
+		    <long xml:lang="pa">ਪੋਪਅੱਪ ਸਵਿੱਚਰ, ਜੇ ਉਪਲੱਬਧ ਨਾ ਹੋਵੇ ਅਤੇ ਪਿਛਲੀ ਵਿੰਡੋ ਚੁਣੇ</long>
+		    <long xml:lang="pl">Okno przełączania gdy niewidoczne i wybór poprzedniego okna</long>
+		    <long xml:lang="pt">Mostrar alternador se não estiver visível e seleccionar janela anterior</long>
+		    <long xml:lang="pt_BR">Mostrar alternador se não estiver visível e selecionar janela anterior</long>
+		    <long xml:lang="ro">Comutator-balon dacă nu este vizibil și alege fereastra precedentă</long>
+		    <long xml:lang="ru">Отображение переключателя (если он невидим) и выбор предыдущего окна</long>
+		    <long xml:lang="sk">Zobraziť prepínač ak nie je viditeľný a vybrať predchádzajúce okno</long>
+		    <long xml:lang="sl">Prikaži preklopnik, kadar ni viden, in izberi prejšnje okno</long>
+		    <long xml:lang="sr">Прикажи бирач, ако није приказан, и одабери претходни прозор</long>
+		    <long xml:lang="sv">Popupväxlare om inte synlig och välj föregående fönster</long>
+		    <long xml:lang="tr">Değiştirici gizliyse göster ve bir önceki pencereyi seç</long>
+		    <long xml:lang="uk">Показати перемикач, якщо він невидимий, і вибрати попереднє вікно</long>
+		    <long xml:lang="vi">Hiện bộ chuyển đổi và chọn cửa sổ trước</long>
+		    <long xml:lang="zh_CN">不可见时弹出切换程序并选择上一个窗口</long>
+		    <long xml:lang="zh_HK">看不到切換器時快顯切換器，並選取上一個視窗</long>
+		    <long xml:lang="zh_TW">看不到切換器時快顯切換器，並選取上一個視窗</long>
+		    <default>&lt;Shift&gt;&lt;Alt&gt;Tab</default>
+		</option>
+		<option type="button" name="next_all_button">
+		    <short>Next window (All windows)</short>
+		    <short xml:lang="am">የሚቀጥለው መስኮት (ሁሉንም መስኮቶች)</short>
+		    <short xml:lang="ast">Ventana siguiente (Toles ventanes)</short>
+		    <short xml:lang="be">Наступнае вакно (Усе вокны)</short>
+		    <short xml:lang="bg">Следващ прозорец (всички прозорци)</short>
+		    <short xml:lang="bn">পরবর্তী উইন্ডো (সব উইন্ডোগুলি)</short>
+		    <short xml:lang="bn_IN">পরবর্তী উইন্ডো (সব উইন্ডোগুলি)</short>
+		    <short xml:lang="bs">Sljedeći prozor (svi prozori)</short>
+		    <short xml:lang="ca">Finestra següent (Totes les finestres)</short>
+		    <short xml:lang="cs">Další okno(všechna okna)</short>
+		    <short xml:lang="de">Nächstes Fenster (Alle Arbeitsflächen)</short>
+		    <short xml:lang="el">Επόμενο παράθυρο (Όλα τα παράθυρα)</short>
+		    <short xml:lang="en_AU">Next window (All windows)</short>
+		    <short xml:lang="en_GB">Next window (All windows)</short>
+		    <short xml:lang="es">Ventana siguiente (Todas las ventanas)</short>
+		    <short xml:lang="eu">Hurrengo leihoa (Leiho guztiak)</short>
+		    <short xml:lang="fi">Seuraava ikkuna (kaikki ikkunat)</short>
+		    <short xml:lang="fr">Fenêtre suivante (toutes les fenêtres)</short>
+		    <short xml:lang="fy">Folgjend finster (alle finsters)</short>
+		    <short xml:lang="gl">Seguinte xanela (todas as xanelas)</short>
+		    <short xml:lang="he">החלון הבא (כל החלונות)</short>
+		    <short xml:lang="hr">Sljedeći prozor (svi prozori)</short>
+		    <short xml:lang="hu">Következő ablak (minden ablak)</short>
+		    <short xml:lang="it">Finestra successiva (tutte le finestre)</short>
+		    <short xml:lang="ja">次のウィンドウ（全ウィンドウから）</short>
+		    <short xml:lang="ko">다음 창(모든 창)</short>
+		    <short xml:lang="ms">Tetingkap berikutnya (Semua tetingkap)</short>
+		    <short xml:lang="nb">Neste vindu (alle vinduer)</short>
+		    <short xml:lang="nl">Volgende venster (alle vensters)</short>
+		    <short xml:lang="oc">Fenèstra seguenta (totes los burèus)</short>
+		    <short xml:lang="or">ପରବର୍ତ୍ତୀ ଉଇଣ୍ଡୋ(ସବୁ ଉଇଣ୍ଡୋ)</short>
+		    <short xml:lang="pl">Następne okno (wszystkie okna)</short>
+		    <short xml:lang="pt">Próxima Janela (Todas as janelas)</short>
+		    <short xml:lang="pt_BR">Próxima Janela (Todas as janelas)</short>
+		    <short xml:lang="ro">Fereastra următoare (toate ferestrele)</short>
+		    <short xml:lang="ru">Следующее окно (Все окна)</short>
+		    <short xml:lang="sk">Nasledujúce okno (všetky okná)</short>
+		    <short xml:lang="sl">Naslednje okno (vsa okna)</short>
+		    <short xml:lang="sr">Следећи прозор (сви прозори)</short>
+		    <short xml:lang="sv">Nästa fönster (Alla fönster)</short>
+		    <short xml:lang="tr">Sonraki pencere (Tüm pencereler)</short>
+		    <short xml:lang="ug">كېيىنكى كۆزنەك(ھەممە كۆزنەكلەر)</short>
+		    <short xml:lang="uk">Наступне вікно (Усі вікна)</short>
+		    <short xml:lang="vi">Cửa sổ tiếp theo (Tất cả các cửa sổ)</short>
+		    <short xml:lang="zh_CN">下一个窗口(所有)</short>
+		    <short xml:lang="zh_HK">下一個視窗(全部視窗)</short>
+		    <short xml:lang="zh_TW">下一個視窗(全部視窗)</short>
+		    <long>Popup switcher if not visible and select next window out of all windows</long>
+		    <long xml:lang="ast">Amuesa'l cambiador si nun se ve y esbilla la siguiente ventana d'ente toes</long>
+		    <long xml:lang="be">পপআপ পরিবর্তনকারী দেখা না গেলে সব উইন্ডোগুলির মধ্যে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn">পপআপ পরিবর্তনকারী দেখা না গেলে সব উইন্ডোগুলির মধ্যে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn_IN">পপআপ পরিবর্তনকারী দেখা না গেলে সব উইন্ডোগুলির মধ্যে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bs">Prikaži prebacivač iskačućeg prozora, ako već nije prikazan, i označi sljedeći prozor izvan svih prozora</long>
+		    <long xml:lang="ca">Fes sortir el canviador si no està visible i selecciona la següent de totes les finestres</long>
+		    <long xml:lang="cs">Zobrazit přepínač, pokud není viditelný, a vybrat další okno ze všech oken</long>
+		    <long xml:lang="da">Vis skifteren, hvis den ikke er synlig, og vælg næste vindue blandt alle vinduer</long>
+		    <long xml:lang="de">Vorschaufenster anzeigen und nächstes Fenster (von allen Arbeitsflächen) auswählen</long>
+		    <long xml:lang="el">Ανάδυση εναλλάκτη αν δεν είναι ορατός και επιλογή επόμενου παραθύρου ανάμεσα από όλα τα παράθυρα</long>
+		    <long xml:lang="en_AU">Popup switcher if not visible and select next window out of all windows</long>
+		    <long xml:lang="en_GB">Popup switcher if not visible and select next window out of all windows</long>
+		    <long xml:lang="es">Mostrar el conmutador si no está visible y seleccionar la siguiente ventana del conjunto total de ventanas</long>
+		    <long xml:lang="eu">Popup aldatzailea bistara ez badago eta hautatu hurrengo leihoa, leiho guztien artean</long>
+		    <long xml:lang="fi">Ponnauta vaihtaja näkyviin jos ei ole ja valitse edellinen ikkuna ja valitse seuraava ikkuna kaikista ikkunoista</long>
+		    <long xml:lang="fr">Afficher le sélecteur s'il n'est pas visible et sélectionner la fenêtre suivante parmi toutes les fenêtres</long>
+		    <long xml:lang="gl">Mostrar o alternador se non está visíbel e seleccionar a xanela seguinte do total de xanelas</long>
+		    <long xml:lang="gu">પોપઅપ બદલનાર જો દેખીતું ના હોય અને બધી વિન્ડોમાંથી આગળની વિન્ડો પસંદ કરો</long>
+		    <long xml:lang="he">הקפץ את המעביר אם הוא מוסתר ובחר את החלון הבא מבין כל החלונות</long>
+		    <long xml:lang="hi">पॉप अप स्विचर यदि दृष्टिगोच़र नहीं है और अगला विंडो सभी विंडो में से चुनें</long>
+		    <long xml:lang="hr">Neka mjenjač iskoči ako nije vidljiv i odaberi sljedeći prozor od svih prozora</long>
+		    <long xml:lang="hu">Ablakváltó megjelenítése ha nem látható és az összes ablak közül a következő kiválasztása</long>
+		    <long xml:lang="it">Mostra il selettore se non visibile e seleziona la finestra successiva tra tutte le altre finestre</long>
+		    <long xml:lang="ja">スイッチャーが非表示の場合ポップアップして、すべてのウィンドウから次のウィンドウを選択</long>
+		    <long xml:lang="ko">전환 창이 없을 때는 전환 창을 보이고, 모든 창 중에서 다음 창으로 전환</long>
+		    <long xml:lang="ms">Timbulkan penukar jika tidak kelihatan dan pilih tetingkap berikut keluar dari semua tetingkap</long>
+		    <long xml:lang="nb">Sprett opp skifter hvis ikke synlig og velg neste vindu blant alle vinduer</long>
+		    <long xml:lang="nl">Toon de wisselaar als deze niet zichtbaar is en selecteer het volgende venster uit alle vensters</long>
+		    <long xml:lang="oc">Afichar lo selector s'es pas visible e seleccionar la fenèstra seguenta, de totes los burèus.</long>
+		    <long xml:lang="or">ପପ୍ ଅପ ବଦଳକାରୀ ୟଦି ଦୃଶ୍ଯମାନ ନ ଥାଏ ଏବଂ ସବୁ ଉଇଣ୍ଡୋ ମଧ୍ଯରୁ ପରବର୍ତ୍ତୀ ଉଇଣ୍ଡୋକୁ ମନୋନୀତକର</long>
+		    <long xml:lang="pa">ਪੋਪ-ਅੱਪ ਸਵਿੱਚਰ, ਜੇ ਉਪਲੱਬਧ ਨਾ ਹੋਵੇ ਅਤੇ ਸਭ ਵਿੰਡੋ ਵਿੱਚੋਂ ਅਗਲੀ ਵਿੰਡੋ ਚੁਣੋ</long>
+		    <long xml:lang="pl">Okno przełączania gdy niewidoczne i wybór następnego okna spośród wszystkich</long>
+		    <long xml:lang="pt">Mostrar alternador se não estiver visível e seleccionar próxima janela de todas</long>
+		    <long xml:lang="pt_BR">Mostrar alternador se não estiver visível e selecionar próxima janela de todas</long>
+		    <long xml:lang="ro">Comutator-balon dacă nu este vizibil și alege următoarea fereastră dintre toate ferestrele</long>
+		    <long xml:lang="ru">Отображение переключателя (если он невидим) и выбор следующего окна из всех имеющихся</long>
+		    <long xml:lang="sk">Zobraziť prepínač ak nie je viditeľný a vybrať ďalšie okno spomedzi všetkých okien</long>
+		    <long xml:lang="sl">Prikaži preklopnik, kadar ni viden, in med vsemi okni izberi naslednje</long>
+		    <long xml:lang="sr">Прикажи бирач, ако није приказан, и одабери следећи прозор од свих прозора</long>
+		    <long xml:lang="sv">Popupväxlare om inte synlig och välj nästa fönster av alla fönster</long>
+		    <long xml:lang="tr">Değiştirici gizliyse göster ve bütün pencereler içinden bir sonraki pencereyi seç</long>
+		    <long xml:lang="uk">Показати перемикач, якщо він невидимий, і вибрати наступне вікно з усіх наявних</long>
+		    <long xml:lang="vi">Hiện bộ chuyển đổi và chọn cửa sổ tiếp theo trong tất cả các cửa sổ</long>
+		    <long xml:lang="zh_CN">不可见时弹出切换程序并选择所有窗口的下一个窗口</long>
+		    <long xml:lang="zh_HK">看不到切換器時快顯切換器，並從所有視窗選取下一個視窗</long>
+		    <long xml:lang="zh_TW">看不到切換器時快顯切換器，並從所有視窗選取下一個視窗</long>
+		</option>
+		<option type="key" name="next_all_key">
+		    <short>Next window (All windows)</short>
+		    <short xml:lang="am">የሚቀጥለው መስኮት (ሁሉንም መስኮቶች)</short>
+		    <short xml:lang="ast">Ventana siguiente (Toles ventanes)</short>
+		    <short xml:lang="be">Наступнае вакно (Усе вокны)</short>
+		    <short xml:lang="bg">Следващ прозорец (всички прозорци)</short>
+		    <short xml:lang="bn">পরবর্তী উইন্ডো (সব উইন্ডোগুলি)</short>
+		    <short xml:lang="bn_IN">পরবর্তী উইন্ডো (সব উইন্ডোগুলি)</short>
+		    <short xml:lang="bs">Sljedeći prozor (svi prozori)</short>
+		    <short xml:lang="ca">Finestra següent (Totes les finestres)</short>
+		    <short xml:lang="cs">Další okno(všechna okna)</short>
+		    <short xml:lang="de">Nächstes Fenster (Alle Arbeitsflächen)</short>
+		    <short xml:lang="el">Επόμενο παράθυρο (Όλα τα παράθυρα)</short>
+		    <short xml:lang="en_AU">Next window (All windows)</short>
+		    <short xml:lang="en_GB">Next window (All windows)</short>
+		    <short xml:lang="es">Ventana siguiente (Todas las ventanas)</short>
+		    <short xml:lang="eu">Hurrengo leihoa (Leiho guztiak)</short>
+		    <short xml:lang="fi">Seuraava ikkuna (kaikki ikkunat)</short>
+		    <short xml:lang="fr">Fenêtre suivante (toutes les fenêtres)</short>
+		    <short xml:lang="fy">Folgjend finster (alle finsters)</short>
+		    <short xml:lang="gl">Seguinte xanela (todas as xanelas)</short>
+		    <short xml:lang="he">החלון הבא (כל החלונות)</short>
+		    <short xml:lang="hr">Sljedeći prozor (svi prozori)</short>
+		    <short xml:lang="hu">Következő ablak (minden ablak)</short>
+		    <short xml:lang="it">Finestra successiva (tutte le finestre)</short>
+		    <short xml:lang="ja">次のウィンドウ（全ウィンドウから）</short>
+		    <short xml:lang="ko">다음 창(모든 창)</short>
+		    <short xml:lang="ms">Tetingkap berikutnya (Semua tetingkap)</short>
+		    <short xml:lang="nb">Neste vindu (alle vinduer)</short>
+		    <short xml:lang="nl">Volgende venster (alle vensters)</short>
+		    <short xml:lang="oc">Fenèstra seguenta (totes los burèus)</short>
+		    <short xml:lang="or">ପରବର୍ତ୍ତୀ ଉଇଣ୍ଡୋ(ସବୁ ଉଇଣ୍ଡୋ)</short>
+		    <short xml:lang="pl">Następne okno (wszystkie okna)</short>
+		    <short xml:lang="pt">Próxima Janela (Todas as janelas)</short>
+		    <short xml:lang="pt_BR">Próxima Janela (Todas as janelas)</short>
+		    <short xml:lang="ro">Fereastra următoare (toate ferestrele)</short>
+		    <short xml:lang="ru">Следующее окно (Все окна)</short>
+		    <short xml:lang="sk">Nasledujúce okno (všetky okná)</short>
+		    <short xml:lang="sl">Naslednje okno (vsa okna)</short>
+		    <short xml:lang="sr">Следећи прозор (сви прозори)</short>
+		    <short xml:lang="sv">Nästa fönster (Alla fönster)</short>
+		    <short xml:lang="tr">Sonraki pencere (Tüm pencereler)</short>
+		    <short xml:lang="ug">كېيىنكى كۆزنەك(ھەممە كۆزنەكلەر)</short>
+		    <short xml:lang="uk">Наступне вікно (Усі вікна)</short>
+		    <short xml:lang="vi">Cửa sổ tiếp theo (Tất cả các cửa sổ)</short>
+		    <short xml:lang="zh_CN">下一个窗口(所有)</short>
+		    <short xml:lang="zh_HK">下一個視窗(全部視窗)</short>
+		    <short xml:lang="zh_TW">下一個視窗(全部視窗)</short>
+		    <long>Popup switcher if not visible and select next window out of all windows</long>
+		    <long xml:lang="ast">Amuesa'l cambiador si nun se ve y esbilla la siguiente ventana d'ente toes</long>
+		    <long xml:lang="be">পপআপ পরিবর্তনকারী দেখা না গেলে সব উইন্ডোগুলির মধ্যে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn">পপআপ পরিবর্তনকারী দেখা না গেলে সব উইন্ডোগুলির মধ্যে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn_IN">পপআপ পরিবর্তনকারী দেখা না গেলে সব উইন্ডোগুলির মধ্যে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bs">Prikaži prebacivač iskačućeg prozora, ako već nije prikazan, i označi sljedeći prozor izvan svih prozora</long>
+		    <long xml:lang="ca">Fes sortir el canviador si no està visible i selecciona la següent de totes les finestres</long>
+		    <long xml:lang="cs">Zobrazit přepínač, pokud není viditelný, a vybrat další okno ze všech oken</long>
+		    <long xml:lang="da">Vis skifteren, hvis den ikke er synlig, og vælg næste vindue blandt alle vinduer</long>
+		    <long xml:lang="de">Vorschaufenster anzeigen und nächstes Fenster (von allen Arbeitsflächen) auswählen</long>
+		    <long xml:lang="el">Ανάδυση εναλλάκτη αν δεν είναι ορατός και επιλογή επόμενου παραθύρου ανάμεσα από όλα τα παράθυρα</long>
+		    <long xml:lang="en_AU">Popup switcher if not visible and select next window out of all windows</long>
+		    <long xml:lang="en_GB">Popup switcher if not visible and select next window out of all windows</long>
+		    <long xml:lang="es">Mostrar el conmutador si no está visible y seleccionar la siguiente ventana del conjunto total de ventanas</long>
+		    <long xml:lang="eu">Popup aldatzailea bistara ez badago eta hautatu hurrengo leihoa, leiho guztien artean</long>
+		    <long xml:lang="fi">Ponnauta vaihtaja näkyviin jos ei ole ja valitse edellinen ikkuna ja valitse seuraava ikkuna kaikista ikkunoista</long>
+		    <long xml:lang="fr">Afficher le sélecteur s'il n'est pas visible et sélectionner la fenêtre suivante parmi toutes les fenêtres</long>
+		    <long xml:lang="gl">Mostrar o alternador se non está visíbel e seleccionar a xanela seguinte do total de xanelas</long>
+		    <long xml:lang="gu">પોપઅપ બદલનાર જો દેખીતું ના હોય અને બધી વિન્ડોમાંથી આગળની વિન્ડો પસંદ કરો</long>
+		    <long xml:lang="he">הקפץ את המעביר אם הוא מוסתר ובחר את החלון הבא מבין כל החלונות</long>
+		    <long xml:lang="hi">पॉप अप स्विचर यदि दृष्टिगोच़र नहीं है और अगला विंडो सभी विंडो में से चुनें</long>
+		    <long xml:lang="hr">Neka mjenjač iskoči ako nije vidljiv i odaberi sljedeći prozor od svih prozora</long>
+		    <long xml:lang="hu">Ablakváltó megjelenítése ha nem látható és az összes ablak közül a következő kiválasztása</long>
+		    <long xml:lang="it">Mostra il selettore se non visibile e seleziona la finestra successiva tra tutte le altre finestre</long>
+		    <long xml:lang="ja">スイッチャーが非表示の場合ポップアップして、すべてのウィンドウから次のウィンドウを選択</long>
+		    <long xml:lang="ko">전환 창이 없을 때는 전환 창을 보이고, 모든 창 중에서 다음 창으로 전환</long>
+		    <long xml:lang="ms">Timbulkan penukar jika tidak kelihatan dan pilih tetingkap berikut keluar dari semua tetingkap</long>
+		    <long xml:lang="nb">Sprett opp skifter hvis ikke synlig og velg neste vindu blant alle vinduer</long>
+		    <long xml:lang="nl">Toon de wisselaar als deze niet zichtbaar is en selecteer het volgende venster uit alle vensters</long>
+		    <long xml:lang="oc">Afichar lo selector s'es pas visible e seleccionar la fenèstra seguenta, de totes los burèus.</long>
+		    <long xml:lang="or">ପପ୍ ଅପ ବଦଳକାରୀ ୟଦି ଦୃଶ୍ଯମାନ ନ ଥାଏ ଏବଂ ସବୁ ଉଇଣ୍ଡୋ ମଧ୍ଯରୁ ପରବର୍ତ୍ତୀ ଉଇଣ୍ଡୋକୁ ମନୋନୀତକର</long>
+		    <long xml:lang="pa">ਪੋਪ-ਅੱਪ ਸਵਿੱਚਰ, ਜੇ ਉਪਲੱਬਧ ਨਾ ਹੋਵੇ ਅਤੇ ਸਭ ਵਿੰਡੋ ਵਿੱਚੋਂ ਅਗਲੀ ਵਿੰਡੋ ਚੁਣੋ</long>
+		    <long xml:lang="pl">Okno przełączania gdy niewidoczne i wybór następnego okna spośród wszystkich</long>
+		    <long xml:lang="pt">Mostrar alternador se não estiver visível e seleccionar próxima janela de todas</long>
+		    <long xml:lang="pt_BR">Mostrar alternador se não estiver visível e selecionar próxima janela de todas</long>
+		    <long xml:lang="ro">Comutator-balon dacă nu este vizibil și alege următoarea fereastră dintre toate ferestrele</long>
+		    <long xml:lang="ru">Отображение переключателя (если он невидим) и выбор следующего окна из всех имеющихся</long>
+		    <long xml:lang="sk">Zobraziť prepínač ak nie je viditeľný a vybrať ďalšie okno spomedzi všetkých okien</long>
+		    <long xml:lang="sl">Prikaži preklopnik, kadar ni viden, in med vsemi okni izberi naslednje</long>
+		    <long xml:lang="sr">Прикажи бирач, ако није приказан, и одабери следећи прозор од свих прозора</long>
+		    <long xml:lang="sv">Popupväxlare om inte synlig och välj nästa fönster av alla fönster</long>
+		    <long xml:lang="tr">Değiştirici gizliyse göster ve bütün pencereler içinden bir sonraki pencereyi seç</long>
+		    <long xml:lang="uk">Показати перемикач, якщо він невидимий, і вибрати наступне вікно з усіх наявних</long>
+		    <long xml:lang="vi">Hiện bộ chuyển đổi và chọn cửa sổ tiếp theo trong tất cả các cửa sổ</long>
+		    <long xml:lang="zh_CN">不可见时弹出切换程序并选择所有窗口的下一个窗口</long>
+		    <long xml:lang="zh_HK">看不到切換器時快顯切換器，並從所有視窗選取下一個視窗</long>
+		    <long xml:lang="zh_TW">看不到切換器時快顯切換器，並從所有視窗選取下一個視窗</long>
+		    <default>&lt;Control&gt;&lt;Alt&gt;Tab</default>
+		</option>
+		<option type="button" name="prev_all_button">
+		    <short>Prev window (All windows)</short>
+		    <short xml:lang="am">ቀደም ያለው መስኮት (ሁሉንም መስኮቶች)</short>
+		    <short xml:lang="ast">Ventana anterior (Toles ventanes)</short>
+		    <short xml:lang="be">Папярэдняе вакно (Усе вокны)</short>
+		    <short xml:lang="bg">Предишен прозорец (Всички прозорци)</short>
+		    <short xml:lang="bn">পূর্ববর্তী উইন্ডো (সব উইন্ডোগুলি)</short>
+		    <short xml:lang="bn_IN">পূর্ববর্তী উইন্ডো (সব উইন্ডোগুলি)</short>
+		    <short xml:lang="bs">Prethodni prozor (svi prozori)</short>
+		    <short xml:lang="ca">Finestra anterior (Totes les finestres)</short>
+		    <short xml:lang="cs">Předchozí okno(všechna okna)</short>
+		    <short xml:lang="de">Vorheriges Fenster (Alle Arbeitsflächen)</short>
+		    <short xml:lang="el">Προηγούμενο παράθυρο (Όλα τα παράθυρα)</short>
+		    <short xml:lang="en_AU">Prev window (All windows)</short>
+		    <short xml:lang="en_GB">Prev window (All windows)</short>
+		    <short xml:lang="es">Ventana ant (Todas las ventanas)</short>
+		    <short xml:lang="eu">Aurreko leihoa (leiho guztiak)</short>
+		    <short xml:lang="fi">Edellinen ikkuna (kaikki ikkunat)</short>
+		    <short xml:lang="fr">Fenêtre précédente (toutes les fenêtres)</short>
+		    <short xml:lang="fy">Foarich finster (alle finsters)</short>
+		    <short xml:lang="gl">Xanela anterior (todas as xanelas)</short>
+		    <short xml:lang="gu">પહેલાંની વિન્ડો (બધી વિન્ડો)</short>
+		    <short xml:lang="he">חלון קודם (כל החלונות)</short>
+		    <short xml:lang="hr">Prethodni prozor (svi prozori)</short>
+		    <short xml:lang="hu">Előző ablak (minden ablak)</short>
+		    <short xml:lang="it">Finestra precedente (tutte le finestre)</short>
+		    <short xml:lang="ja">前のウィンドウ（全ウィンドウから）</short>
+		    <short xml:lang="ko">이전 창(모든 창)</short>
+		    <short xml:lang="ms">Tetingkap terdahulu (Semua tetingkap)</short>
+		    <short xml:lang="nb">Forrige vindu (alle vinduer)</short>
+		    <short xml:lang="nl">Vorig venster (all vensters)</short>
+		    <short xml:lang="oc">Fenèstra precedenta (totes los burèus)</short>
+		    <short xml:lang="or">ପୂର୍ବବର୍ତ୍ତୀ ଉଇଣ୍ଡୋ( ସବୁ ଉଇଣ୍ଡୋ)</short>
+		    <short xml:lang="pl">Poprzednie okno (wszystkie okna)</short>
+		    <short xml:lang="pt">Janela anterior (Todas as janelas)</short>
+		    <short xml:lang="pt_BR">Janela anterior (Todas as janelas)</short>
+		    <short xml:lang="ro">Fereastra precedentă (toate ferestrele)</short>
+		    <short xml:lang="ru">Предыдущее окно (Все окна)</short>
+		    <short xml:lang="sk">Predchádzajúce okno (všetky okná)</short>
+		    <short xml:lang="sl">Predhodno okno (vsa okna)</short>
+		    <short xml:lang="sr">Претходни прозор (сви прозори)</short>
+		    <short xml:lang="sv">Föreg fönster (Alla fönster)</short>
+		    <short xml:lang="tr">Önceki pencere (Tüm pencereler)</short>
+		    <short xml:lang="ug">ئالدىنقى كۆزنەك( ھەممە كۆزنەكلەر)</short>
+		    <short xml:lang="uk">Попереднє вікно (Усі вікна)</short>
+		    <short xml:lang="vi">Cửa sổ trước (Tất cả các cửa sổ)</short>
+		    <short xml:lang="zh_CN">上一个窗口(全部窗口)</short>
+		    <short xml:lang="zh_HK">上一個視窗(全部視窗)</short>
+		    <short xml:lang="zh_TW">上一個視窗(全部視窗)</short>
+		    <long>Popup switcher if not visible and select previous window out of all windows</long>
+		    <long xml:lang="ast">Amuesa'l cambiador si nun se ve y esbilla la ventana anterior d'ente toes</long>
+		    <long xml:lang="be">পপআপ পরিবর্তনকারী দেখা না গেলে সব উইন্ডোগুলির মধ্যে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn">পপআপ পরিবর্তনকারী দেখা না গেলে সব উইন্ডোগুলির মধ্যে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn_IN">পপআপ পরিবর্তনকারী দেখা না গেলে সব উইন্ডোগুলির মধ্যে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bs">Prikaži prebacivač iskačućeg prozora, ako već nije prikazan, i označi prethodni prozor</long>
+		    <long xml:lang="ca">Fes sortir el canviador si no està visible i selecciona l'anterior de totes les finestres</long>
+		    <long xml:lang="cs">Zobrazit přepínač, pokud není viditelný, a vybrat předchozí okno ze všech oken</long>
+		    <long xml:lang="da">Vis skifteren, hvis den ikke er synlig, og vælg forrige vindue blandt alle vinduer</long>
+		    <long xml:lang="de">Vorschaufenster anzeigen und vorheriges Fenster (von allen Arbeitsflächen) auswählen</long>
+		    <long xml:lang="el">Ανάδυση εναλλάκτη αν δεν είναι ορατός και επιλογή προηγούμενου παραθύρου ανάμεσα από όλα τα παράθυρα</long>
+		    <long xml:lang="en_AU">Popup switcher if not visible and select previous window out of all windows</long>
+		    <long xml:lang="en_GB">Popup switcher if not visible and select previous window out of all windows</long>
+		    <long xml:lang="es">Mostrar el conmutador si no está visible y seleccionar la ventana anterior del conjunto total de ventanas</long>
+		    <long xml:lang="eu">Popup aldatzailea bistara ez badago eta hautatu aurreko leihoa, leiho guztien artean</long>
+		    <long xml:lang="fi">Ponnauta vaihtaja näkyviin jos ei ole ja valitse edellinen ikkuna kaikista ikkunoista</long>
+		    <long xml:lang="fr">Afficher le sélecteur s'il n'est pas visible et sélectionner la fenêtre précédente parmi toutes les fenêtres</long>
+		    <long xml:lang="gl">Mostrar o alternador se non está visíbel e seleccionar a xanela anterior do total das xanelas</long>
+		    <long xml:lang="gu">પોપઅપ બદલનાર જો દેખીતું ના હોય અને બધી વિન્ડોમાંથી પહેલાંની વિન્ડો પસંદ કરો</long>
+		    <long xml:lang="he">הקפץ את המעביר אם הוא מוסתר ובחר את החלון הקודם מבין כל החלונות</long>
+		    <long xml:lang="hi">पॉप अप स्विचर यदि दृष्टिगोच़र नहीं है और पिछला विंडो सभी विंडो में से चुनें</long>
+		    <long xml:lang="hr">Neka mjenjač iskoči ako nije vidljiv i odaberi prethodni prozor od svih prozora</long>
+		    <long xml:lang="hu">Ablakváltó megjelenítése ha nem látható és az összes ablak közül az előző kiválasztása</long>
+		    <long xml:lang="it">Mostra il selettore se non visibile e seleziona la finestra precedente tra tutte le altre finestre</long>
+		    <long xml:lang="ja">スイッチャーが非表示の場合ポップアップして、すべてのウィンドウから前のウィンドウを選択</long>
+		    <long xml:lang="ko">전환 창이 없을 때는 전환 창을 보이고, 모든 창 중에서 이전 창으로 전환</long>
+		    <long xml:lang="ms">Timbulkan penukar jika tidak kelihatan dan pilih tetingkap terdahulu keluar dari semua tetingkap</long>
+		    <long xml:lang="nb">Sprett opp skifter hvis ikke synlig og velg forrige vindu blant alle vinduer</long>
+		    <long xml:lang="nl">Toon de wisselaar als deze niet zichtbaar is en selecteer het vorige venster uit alle vensters</long>
+		    <long xml:lang="oc">Afichar lo selector s'es pas visible e seleccionar la fenèstra precedenta, de totes los burèus.</long>
+		    <long xml:lang="or">ପପ୍ ଅପ ବଦଳକାରୀ ୟଦି ଦୃଶ୍ଯମାନ ନ ଥାଏ ଏବଂ ସବୁ ଉଇଣ୍ଡୋ ମଧ୍ଯରୁ ପୂର୍ବବର୍ତ୍ତୀ ଉଇଣ୍ଡୋକୁ ମନୋନୀତକର</long>
+		    <long xml:lang="pa">ਪੋਪਅੱਪ ਸਵਿੱਚਰ, ਜੇ ਉਪਲੱਬਧ ਨਾ ਹੋਵੇ ਅਤੇ ਸਭ ਵਿੰਡੋ ਵਿੱਚੋਂ ਪਿਛਲੀ ਚੁਣੇ</long>
+		    <long xml:lang="pl">Okno przełączania gdy niewidoczne i wybór poprzedniego okna spośród wszystkich</long>
+		    <long xml:lang="pt">Mostrar alternador se não estiver visível e seleccionar janela anterior de todas</long>
+		    <long xml:lang="pt_BR">Mostrar alternador se não estiver visível e selecionar janela anterior de todas</long>
+		    <long xml:lang="ro">Comutator-balon dacă nu este vizibil și alege fereastra precedentă dintre toate ferestrele</long>
+		    <long xml:lang="ru">Отображение переключателя (если он невидим) и выбор предыдущего окна из всех имеющихся</long>
+		    <long xml:lang="sk">Zobraziť prepínač ak nie je viditeľný a vybrať predchádzajúce okno zo všetkých okien</long>
+		    <long xml:lang="sl">Prikaži preklopnik, kadar ni viden, in med vsemi okni izberi prejšnje</long>
+		    <long xml:lang="sr">Прикажи бирач, ако није приказан, и одабери претходни прозор од свих прозора</long>
+		    <long xml:lang="sv">Popupväxlare om inte synlig och välj föregående fönster av alla fönster</long>
+		    <long xml:lang="tr">Değiştirici gizliyse göster ve bütün pencereler içinden bir önceki pencereyi seç</long>
+		    <long xml:lang="uk">Показати перемикач, якщо він невидимий, і вибрати попереднє вікно з усіх наявних</long>
+		    <long xml:lang="vi">Hiện bộ chuyển đổi và chọn cửa sổ trước trong tất cả các cửa sổ</long>
+		    <long xml:lang="zh_CN">不可见时弹出切换程序并选择所有窗口的上一个窗口</long>
+		    <long xml:lang="zh_HK">看不到切換器時快顯切換器，並從所有視窗選取上一個視窗</long>
+		    <long xml:lang="zh_TW">看不到切換器時快顯切換器，並從所有視窗選取上一個視窗</long>
+		</option>
+		<option type="key" name="prev_all_key">
+		    <short>Prev window (All windows)</short>
+		    <short xml:lang="am">ቀደም ያለው መስኮት (ሁሉንም መስኮቶች)</short>
+		    <short xml:lang="ast">Ventana anterior (Toles ventanes)</short>
+		    <short xml:lang="be">Папярэдняе вакно (Усе вокны)</short>
+		    <short xml:lang="bg">Предишен прозорец (Всички прозорци)</short>
+		    <short xml:lang="bn">পূর্ববর্তী উইন্ডো (সব উইন্ডোগুলি)</short>
+		    <short xml:lang="bn_IN">পূর্ববর্তী উইন্ডো (সব উইন্ডোগুলি)</short>
+		    <short xml:lang="bs">Prethodni prozor (svi prozori)</short>
+		    <short xml:lang="ca">Finestra anterior (Totes les finestres)</short>
+		    <short xml:lang="cs">Předchozí okno(všechna okna)</short>
+		    <short xml:lang="de">Vorheriges Fenster (Alle Arbeitsflächen)</short>
+		    <short xml:lang="el">Προηγούμενο παράθυρο (Όλα τα παράθυρα)</short>
+		    <short xml:lang="en_AU">Prev window (All windows)</short>
+		    <short xml:lang="en_GB">Prev window (All windows)</short>
+		    <short xml:lang="es">Ventana ant (Todas las ventanas)</short>
+		    <short xml:lang="eu">Aurreko leihoa (leiho guztiak)</short>
+		    <short xml:lang="fi">Edellinen ikkuna (kaikki ikkunat)</short>
+		    <short xml:lang="fr">Fenêtre précédente (toutes les fenêtres)</short>
+		    <short xml:lang="fy">Foarich finster (alle finsters)</short>
+		    <short xml:lang="gl">Xanela anterior (todas as xanelas)</short>
+		    <short xml:lang="gu">પહેલાંની વિન્ડો (બધી વિન્ડો)</short>
+		    <short xml:lang="he">חלון קודם (כל החלונות)</short>
+		    <short xml:lang="hr">Prethodni prozor (svi prozori)</short>
+		    <short xml:lang="hu">Előző ablak (minden ablak)</short>
+		    <short xml:lang="it">Finestra precedente (tutte le finestre)</short>
+		    <short xml:lang="ja">前のウィンドウ（全ウィンドウから）</short>
+		    <short xml:lang="ko">이전 창(모든 창)</short>
+		    <short xml:lang="ms">Tetingkap terdahulu (Semua tetingkap)</short>
+		    <short xml:lang="nb">Forrige vindu (alle vinduer)</short>
+		    <short xml:lang="nl">Vorig venster (all vensters)</short>
+		    <short xml:lang="oc">Fenèstra precedenta (totes los burèus)</short>
+		    <short xml:lang="or">ପୂର୍ବବର୍ତ୍ତୀ ଉଇଣ୍ଡୋ( ସବୁ ଉଇଣ୍ଡୋ)</short>
+		    <short xml:lang="pl">Poprzednie okno (wszystkie okna)</short>
+		    <short xml:lang="pt">Janela anterior (Todas as janelas)</short>
+		    <short xml:lang="pt_BR">Janela anterior (Todas as janelas)</short>
+		    <short xml:lang="ro">Fereastra precedentă (toate ferestrele)</short>
+		    <short xml:lang="ru">Предыдущее окно (Все окна)</short>
+		    <short xml:lang="sk">Predchádzajúce okno (všetky okná)</short>
+		    <short xml:lang="sl">Predhodno okno (vsa okna)</short>
+		    <short xml:lang="sr">Претходни прозор (сви прозори)</short>
+		    <short xml:lang="sv">Föreg fönster (Alla fönster)</short>
+		    <short xml:lang="tr">Önceki pencere (Tüm pencereler)</short>
+		    <short xml:lang="ug">ئالدىنقى كۆزنەك( ھەممە كۆزنەكلەر)</short>
+		    <short xml:lang="uk">Попереднє вікно (Усі вікна)</short>
+		    <short xml:lang="vi">Cửa sổ trước (Tất cả các cửa sổ)</short>
+		    <short xml:lang="zh_CN">上一个窗口(全部窗口)</short>
+		    <short xml:lang="zh_HK">上一個視窗(全部視窗)</short>
+		    <short xml:lang="zh_TW">上一個視窗(全部視窗)</short>
+		    <long>Popup switcher if not visible and select previous window out of all windows</long>
+		    <long xml:lang="ast">Amuesa'l cambiador si nun se ve y esbilla la ventana anterior d'ente toes</long>
+		    <long xml:lang="be">পপআপ পরিবর্তনকারী দেখা না গেলে সব উইন্ডোগুলির মধ্যে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn">পপআপ পরিবর্তনকারী দেখা না গেলে সব উইন্ডোগুলির মধ্যে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn_IN">পপআপ পরিবর্তনকারী দেখা না গেলে সব উইন্ডোগুলির মধ্যে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bs">Prikaži prebacivač iskačućeg prozora, ako već nije prikazan, i označi prethodni prozor</long>
+		    <long xml:lang="ca">Fes sortir el canviador si no està visible i selecciona l'anterior de totes les finestres</long>
+		    <long xml:lang="cs">Zobrazit přepínač, pokud není viditelný, a vybrat předchozí okno ze všech oken</long>
+		    <long xml:lang="da">Vis skifteren, hvis den ikke er synlig, og vælg forrige vindue blandt alle vinduer</long>
+		    <long xml:lang="de">Vorschaufenster anzeigen und vorheriges Fenster (von allen Arbeitsflächen) auswählen</long>
+		    <long xml:lang="el">Ανάδυση εναλλάκτη αν δεν είναι ορατός και επιλογή προηγούμενου παραθύρου ανάμεσα από όλα τα παράθυρα</long>
+		    <long xml:lang="en_AU">Popup switcher if not visible and select previous window out of all windows</long>
+		    <long xml:lang="en_GB">Popup switcher if not visible and select previous window out of all windows</long>
+		    <long xml:lang="es">Mostrar el conmutador si no está visible y seleccionar la ventana anterior del conjunto total de ventanas</long>
+		    <long xml:lang="eu">Popup aldatzailea bistara ez badago eta hautatu aurreko leihoa, leiho guztien artean</long>
+		    <long xml:lang="fi">Ponnauta vaihtaja näkyviin jos ei ole ja valitse edellinen ikkuna kaikista ikkunoista</long>
+		    <long xml:lang="fr">Afficher le sélecteur s'il n'est pas visible et sélectionner la fenêtre précédente parmi toutes les fenêtres</long>
+		    <long xml:lang="gl">Mostrar o alternador se non está visíbel e seleccionar a xanela anterior do total das xanelas</long>
+		    <long xml:lang="gu">પોપઅપ બદલનાર જો દેખીતું ના હોય અને બધી વિન્ડોમાંથી પહેલાંની વિન્ડો પસંદ કરો</long>
+		    <long xml:lang="he">הקפץ את המעביר אם הוא מוסתר ובחר את החלון הקודם מבין כל החלונות</long>
+		    <long xml:lang="hi">पॉप अप स्विचर यदि दृष्टिगोच़र नहीं है और पिछला विंडो सभी विंडो में से चुनें</long>
+		    <long xml:lang="hr">Neka mjenjač iskoči ako nije vidljiv i odaberi prethodni prozor od svih prozora</long>
+		    <long xml:lang="hu">Ablakváltó megjelenítése ha nem látható és az összes ablak közül az előző kiválasztása</long>
+		    <long xml:lang="it">Mostra il selettore se non visibile e seleziona la finestra precedente tra tutte le altre finestre</long>
+		    <long xml:lang="ja">スイッチャーが非表示の場合ポップアップして、すべてのウィンドウから前のウィンドウを選択</long>
+		    <long xml:lang="ko">전환 창이 없을 때는 전환 창을 보이고, 모든 창 중에서 이전 창으로 전환</long>
+		    <long xml:lang="ms">Timbulkan penukar jika tidak kelihatan dan pilih tetingkap terdahulu keluar dari semua tetingkap</long>
+		    <long xml:lang="nb">Sprett opp skifter hvis ikke synlig og velg forrige vindu blant alle vinduer</long>
+		    <long xml:lang="nl">Toon de wisselaar als deze niet zichtbaar is en selecteer het vorige venster uit alle vensters</long>
+		    <long xml:lang="oc">Afichar lo selector s'es pas visible e seleccionar la fenèstra precedenta, de totes los burèus.</long>
+		    <long xml:lang="or">ପପ୍ ଅପ ବଦଳକାରୀ ୟଦି ଦୃଶ୍ଯମାନ ନ ଥାଏ ଏବଂ ସବୁ ଉଇଣ୍ଡୋ ମଧ୍ଯରୁ ପୂର୍ବବର୍ତ୍ତୀ ଉଇଣ୍ଡୋକୁ ମନୋନୀତକର</long>
+		    <long xml:lang="pa">ਪੋਪਅੱਪ ਸਵਿੱਚਰ, ਜੇ ਉਪਲੱਬਧ ਨਾ ਹੋਵੇ ਅਤੇ ਸਭ ਵਿੰਡੋ ਵਿੱਚੋਂ ਪਿਛਲੀ ਚੁਣੇ</long>
+		    <long xml:lang="pl">Okno przełączania gdy niewidoczne i wybór poprzedniego okna spośród wszystkich</long>
+		    <long xml:lang="pt">Mostrar alternador se não estiver visível e seleccionar janela anterior de todas</long>
+		    <long xml:lang="pt_BR">Mostrar alternador se não estiver visível e selecionar janela anterior de todas</long>
+		    <long xml:lang="ro">Comutator-balon dacă nu este vizibil și alege fereastra precedentă dintre toate ferestrele</long>
+		    <long xml:lang="ru">Отображение переключателя (если он невидим) и выбор предыдущего окна из всех имеющихся</long>
+		    <long xml:lang="sk">Zobraziť prepínač ak nie je viditeľný a vybrať predchádzajúce okno zo všetkých okien</long>
+		    <long xml:lang="sl">Prikaži preklopnik, kadar ni viden, in med vsemi okni izberi prejšnje</long>
+		    <long xml:lang="sr">Прикажи бирач, ако није приказан, и одабери претходни прозор од свих прозора</long>
+		    <long xml:lang="sv">Popupväxlare om inte synlig och välj föregående fönster av alla fönster</long>
+		    <long xml:lang="tr">Değiştirici gizliyse göster ve bütün pencereler içinden bir önceki pencereyi seç</long>
+		    <long xml:lang="uk">Показати перемикач, якщо він невидимий, і вибрати попереднє вікно з усіх наявних</long>
+		    <long xml:lang="vi">Hiện bộ chuyển đổi và chọn cửa sổ trước trong tất cả các cửa sổ</long>
+		    <long xml:lang="zh_CN">不可见时弹出切换程序并选择所有窗口的上一个窗口</long>
+		    <long xml:lang="zh_HK">看不到切換器時快顯切換器，並從所有視窗選取上一個視窗</long>
+		    <long xml:lang="zh_TW">看不到切換器時快顯切換器，並從所有視窗選取上一個視窗</long>
+		    <default>&lt;Shift&gt;&lt;Control&gt;&lt;Alt&gt;Tab</default>
+		</option>
+		<option type="button" name="next_group_button">
+		    <short>Next window (Group)</short>
+		    <short xml:lang="uk">Наступне вікно (група)</short>
+		    <long>Popup switcher if not visible and select next window of the current application.</long>
+		    <long xml:lang="uk">Показати перемикач, якщо він невидимий, і вибрати наступне вікно чинної програми.</long>
+		</option>
+		<option type="key" name="next_group_key">
+		    <short>Next window (Group)</short>
+		    <short xml:lang="uk">Наступне вікно (група)</short>
+		    <long>Popup switcher if not visible and select next window of the current application.</long>
+		    <long xml:lang="uk">Показати перемикач, якщо він невидимий, і вибрати наступне вікно чинної програми.</long>
+		</option>
+		<option type="button" name="prev_group_button">
+		    <short>Prev window (Group)</short>
+		    <short xml:lang="uk">Попереднє вікно (група)</short>
+		    <long>Popup switcher if not visible and select previous window of the current application.</long>
+		    <long xml:lang="uk">Показати перемикач, якщо він невидимий, і вибрати попереднє вікно чинної програми.</long>
+		</option>
+		<option type="key" name="prev_group_key">
+		    <short>Prev window (Group)</short>
+		    <short xml:lang="uk">Попереднє вікно (група)</short>
+		    <long>Popup switcher if not visible and select previous window of the current application.</long>
+		    <long xml:lang="uk">Показати перемикач, якщо він невидимий, і вибрати попереднє вікно чинної програми.</long>
+		</option>
+		<option type="button" name="next_no_popup_button">
+		    <short>Next window (No popup)</short>
+		    <short xml:lang="ast">Ventana siguiente (Nun hai emerxentes)</short>
+		    <short xml:lang="be">পরবর্তী উইন্ডো (কোন পপআপ নেই)</short>
+		    <short xml:lang="bg">Следващ прозорец (без изскачащите)</short>
+		    <short xml:lang="bn">পরবর্তী উইন্ডো (কোন পপআপ নেই)</short>
+		    <short xml:lang="bn_IN">পরবর্তী উইন্ডো (কোন পপআপ নেই)</short>
+		    <short xml:lang="bs">Sljedeći prozor (bez iskačućeg prozora)</short>
+		    <short xml:lang="ca">Finestra següent (No emergents)</short>
+		    <short xml:lang="cs">Další okno (bez přepínače)</short>
+		    <short xml:lang="de">Nächstes Fenster (Keine Vorschau)</short>
+		    <short xml:lang="el">Επόμενο παράθυρο (Οχι popup)</short>
+		    <short xml:lang="en_AU">Next window (No popup)</short>
+		    <short xml:lang="en_GB">Next window (No popup)</short>
+		    <short xml:lang="es">Ventana siguiente (Sin emerger)</short>
+		    <short xml:lang="eu">Hurrengo leihoa (popup ez)</short>
+		    <short xml:lang="fi">Seuraava ikkuna (ei ponnahdusikkunaa)</short>
+		    <short xml:lang="fr">Fenêtre suivante (pas de sélecteur)</short>
+		    <short xml:lang="gl">Seguinte xanela (sen alternador)</short>
+		    <short xml:lang="he">החלון הבא (ללא חלונות קופצים)</short>
+		    <short xml:lang="hr">Sljedeći prozor (bez skočne obavijesti)</short>
+		    <short xml:lang="hu">Következő ablak (nincs előugró ablak)</short>
+		    <short xml:lang="it">Finestra successiva (nessun pop-up)</short>
+		    <short xml:lang="ja">次のウィンドウ（ポップアップなし）</short>
+		    <short xml:lang="ko">다음 창(전환 창 없이)</short>
+		    <short xml:lang="ms">Tetingkap berikutnya (Tanpa timbul)</short>
+		    <short xml:lang="nb">Neste vindu (ikke sprett-opp)</short>
+		    <short xml:lang="nl">Volgende venster (geen popup)</short>
+		    <short xml:lang="oc">Fenèstra seguenta (sens popup)</short>
+		    <short xml:lang="or">ପରବର୍ତ୍ତୀ ଉଇଣ୍ଡୋ(ପପ୍ଅପ ନାହିଁ)</short>
+		    <short xml:lang="pl">Następne okno (bez pop-upów)</short>
+		    <short xml:lang="pt">Próxima Janela (Sem popup)</short>
+		    <short xml:lang="pt_BR">Próxima Janela (Sem popup)</short>
+		    <short xml:lang="ro">Fereastra următoare (fără meniu contextual)</short>
+		    <short xml:lang="ru">Следующее окно (Не активируя)</short>
+		    <short xml:lang="sk">Nasledujúce okno (žiadne vyskakovacie okno)</short>
+		    <short xml:lang="sl">Naslednje okno (brez pojavnih oken)</short>
+		    <short xml:lang="sr">Следећи прозор (без искачућег прозора)</short>
+		    <short xml:lang="sv">Nästa fönster (Ingen popup)</short>
+		    <short xml:lang="tr">Sonraki pencere (Açılabilir pencere yok)</short>
+		    <short xml:lang="ug">كېيىنكى كۆزنەك(قاڭقىمايدىغان)</short>
+		    <short xml:lang="uk">Наступне вікно (не виринне)</short>
+		    <short xml:lang="vi">Cửa sổ tiếp theo (Không bật lên)</short>
+		    <short xml:lang="zh_CN">下一个窗口(非弹出)</short>
+		    <short xml:lang="zh_HK">下一個視窗(沒有彈出)</short>
+		    <short xml:lang="zh_TW">下一個視窗(沒有彈出)</short>
+		    <long>Select next window without showing the popup window.</long>
+		    <long xml:lang="ast">Escoyer la próxima ventan ensin amosala como ventanu</long>
+		    <long xml:lang="be">পপআপ উইন্ডো না দেখিয়ে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn">পপআপ উইন্ডো না দেখিয়ে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn_IN">পপআপ উইন্ডো না দেখিয়ে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bs">Označi sljedeći prozor bez prikazivanja iskačućeg prozora</long>
+		    <long xml:lang="ca">Seleccioneu la finestra següent sense mostrar la finestra emergent</long>
+		    <long xml:lang="cs">Vybrat další okno bez zobrazení přepínače</long>
+		    <long xml:lang="de">Nächstes Fenster auswählen, ohne dabei das Vorschaufenster anzuzeigen.</long>
+		    <long xml:lang="el">Επιλογή του επόμενου παραθύρου χωρίς εμφάνιση του παραθύρου popup.</long>
+		    <long xml:lang="en_AU">Select next window without showing the popup window.</long>
+		    <long xml:lang="en_GB">Select next window without showing the popup window.</long>
+		    <long xml:lang="es">Seleccionar la ventana siguiente sin mostrar la ventana emergente</long>
+		    <long xml:lang="eu">Hautatu hurrengo leihoa popup leihoa ikusi gabe.</long>
+		    <long xml:lang="fi">Siirry seuraavaan ikkunaan ilman vaihtajan ponnahdusikkunaa</long>
+		    <long xml:lang="fr">Sélectionner la fenêtre suivante sans montrer le sélecteur</long>
+		    <long xml:lang="gl">Seleccionar a seguinte xanela sen mostrar o alternador emerxente</long>
+		    <long xml:lang="gu">પોપઅપ વિન્ડો બતાવ્યા વિના આગળની વિન્ડો પસંદ કરો.</long>
+		    <long xml:lang="he">בחר את החלון הבא בלי להראות את החלון הקופץ.</long>
+		    <long xml:lang="hi">पॉपअप विंडो को बिना दिखाए अगले विंडो को चुनें.</long>
+		    <long xml:lang="hr">Odaberi sljedeći prozor bez pokazivanja skočnog prozora.</long>
+		    <long xml:lang="hu">Következő ablak kiválasztása a felbukkanó ablak nélkül.</long>
+		    <long xml:lang="it">Seleziona la finestra successiva senza mostrare la finestra pop-up.</long>
+		    <long xml:lang="ja">ポップアップウィンドウ表示なしで次のウィンドウを選択</long>
+		    <long xml:lang="ko">전환 창을 보여주지 않고 다음 창으로 전환합니다.</long>
+		    <long xml:lang="ms">Pilih tetingkap berikutnya tanpa memaparkan tetingkap timbul.</long>
+		    <long xml:lang="nb">Velg neste vindu uten å vise oppsprettsvinduet</long>
+		    <long xml:lang="nl">Selecteer volgende venster zonder het popup venster te tonen.</long>
+		    <long xml:lang="oc">Seleccionar la fenèstra seguenta sens afichar la popup.</long>
+		    <long xml:lang="or">ପପ୍ ଅପ ଉଇଣ୍ଡୋକୁ ବିନା ଦେଖାଇ ପରବର୍ତ୍ତୀ ଉଇଣ୍ଡୋକୁ ମନୋନୀତକର</long>
+		    <long xml:lang="pa">ਪੋਪਅੱਪ ਵਿੰਡੋ ਵੇਖਾਏ ਬਿਨਾਂ ਹੀ ਅਗਲੀ ਵਿੰਡੋ ਚੁਣੋ</long>
+		    <long xml:lang="pl">Wybierz następne okno bez pokazywania wyskakującego okienka.</long>
+		    <long xml:lang="pt">Seleccionar próxima janela sem mostrar o popup de janelas.</long>
+		    <long xml:lang="pt_BR">Selecionar próxima janela sem mostrar o popup de janelas.</long>
+		    <long xml:lang="ro">Alege următoarea fereastră fără a afișa fereastra-balon.</long>
+		    <long xml:lang="ru">Выбрать следующее окно без показа всплывающего окна.</long>
+		    <long xml:lang="sk">Vybrať ďalšie okno bez ukázania vyskakovacieho okna</long>
+		    <long xml:lang="sl">Izberi naslednje okno brez prikaza pojavnega okna</long>
+		    <long xml:lang="sr">Одаберите следећи прозор не пирказујући искачучи прозор.</long>
+		    <long xml:lang="sv">Välj nästa fönster utan att visa popupfönstret</long>
+		    <long xml:lang="tr">Beliren pencereyi göstermeden sonraki pencereyi seç.</long>
+		    <long xml:lang="ug">كۆرسەتمەيدىغان قاڭقىش كۆزنەكتىن كېيىنكى كۆزنەكنى تاللا</long>
+		    <long xml:lang="uk">Обрати наступне вікно без показу виринного вікна.</long>
+		    <long xml:lang="vi">Chuyển tới cửa sổ tiếp theo mà không hiện bộ chuyển đổi lên.</long>
+		    <long xml:lang="zh_CN">选取下一个窗口，且排除显示弹出窗口。</long>
+		    <long xml:lang="zh_HK">選取下一個視窗不要顯示提示視窗</long>
+		    <long xml:lang="zh_TW">選取下一個視窗不要顯示提示視窗</long>
+		</option>
+		<option type="key" name="next_no_popup_key">
+		    <short>Next window (No popup)</short>
+		    <short xml:lang="ast">Ventana siguiente (Nun hai emerxentes)</short>
+		    <short xml:lang="be">পরবর্তী উইন্ডো (কোন পপআপ নেই)</short>
+		    <short xml:lang="bg">Следващ прозорец (без изскачащите)</short>
+		    <short xml:lang="bn">পরবর্তী উইন্ডো (কোন পপআপ নেই)</short>
+		    <short xml:lang="bn_IN">পরবর্তী উইন্ডো (কোন পপআপ নেই)</short>
+		    <short xml:lang="bs">Sljedeći prozor (bez iskačućeg prozora)</short>
+		    <short xml:lang="ca">Finestra següent (No emergents)</short>
+		    <short xml:lang="cs">Další okno (bez přepínače)</short>
+		    <short xml:lang="de">Nächstes Fenster (Keine Vorschau)</short>
+		    <short xml:lang="el">Επόμενο παράθυρο (Οχι popup)</short>
+		    <short xml:lang="en_AU">Next window (No popup)</short>
+		    <short xml:lang="en_GB">Next window (No popup)</short>
+		    <short xml:lang="es">Ventana siguiente (Sin emerger)</short>
+		    <short xml:lang="eu">Hurrengo leihoa (popup ez)</short>
+		    <short xml:lang="fi">Seuraava ikkuna (ei ponnahdusikkunaa)</short>
+		    <short xml:lang="fr">Fenêtre suivante (pas de sélecteur)</short>
+		    <short xml:lang="gl">Seguinte xanela (sen alternador)</short>
+		    <short xml:lang="he">החלון הבא (ללא חלונות קופצים)</short>
+		    <short xml:lang="hr">Sljedeći prozor (bez skočne obavijesti)</short>
+		    <short xml:lang="hu">Következő ablak (nincs előugró ablak)</short>
+		    <short xml:lang="it">Finestra successiva (nessun pop-up)</short>
+		    <short xml:lang="ja">次のウィンドウ（ポップアップなし）</short>
+		    <short xml:lang="ko">다음 창(전환 창 없이)</short>
+		    <short xml:lang="ms">Tetingkap berikutnya (Tanpa timbul)</short>
+		    <short xml:lang="nb">Neste vindu (ikke sprett-opp)</short>
+		    <short xml:lang="nl">Volgende venster (geen popup)</short>
+		    <short xml:lang="oc">Fenèstra seguenta (sens popup)</short>
+		    <short xml:lang="or">ପରବର୍ତ୍ତୀ ଉଇଣ୍ଡୋ(ପପ୍ଅପ ନାହିଁ)</short>
+		    <short xml:lang="pl">Następne okno (bez pop-upów)</short>
+		    <short xml:lang="pt">Próxima Janela (Sem popup)</short>
+		    <short xml:lang="pt_BR">Próxima Janela (Sem popup)</short>
+		    <short xml:lang="ro">Fereastra următoare (fără meniu contextual)</short>
+		    <short xml:lang="ru">Следующее окно (Не активируя)</short>
+		    <short xml:lang="sk">Nasledujúce okno (žiadne vyskakovacie okno)</short>
+		    <short xml:lang="sl">Naslednje okno (brez pojavnih oken)</short>
+		    <short xml:lang="sr">Следећи прозор (без искачућег прозора)</short>
+		    <short xml:lang="sv">Nästa fönster (Ingen popup)</short>
+		    <short xml:lang="tr">Sonraki pencere (Açılabilir pencere yok)</short>
+		    <short xml:lang="ug">كېيىنكى كۆزنەك(قاڭقىمايدىغان)</short>
+		    <short xml:lang="uk">Наступне вікно (не виринне)</short>
+		    <short xml:lang="vi">Cửa sổ tiếp theo (Không bật lên)</short>
+		    <short xml:lang="zh_CN">下一个窗口(非弹出)</short>
+		    <short xml:lang="zh_HK">下一個視窗(沒有彈出)</short>
+		    <short xml:lang="zh_TW">下一個視窗(沒有彈出)</short>
+		    <long>Select next window without showing the popup window.</long>
+		    <long xml:lang="ast">Escoyer la próxima ventan ensin amosala como ventanu</long>
+		    <long xml:lang="be">পপআপ উইন্ডো না দেখিয়ে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn">পপআপ উইন্ডো না দেখিয়ে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn_IN">পপআপ উইন্ডো না দেখিয়ে পরবর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bs">Označi sljedeći prozor bez prikazivanja iskačućeg prozora</long>
+		    <long xml:lang="ca">Seleccioneu la finestra següent sense mostrar la finestra emergent</long>
+		    <long xml:lang="cs">Vybrat další okno bez zobrazení přepínače</long>
+		    <long xml:lang="de">Nächstes Fenster auswählen, ohne dabei das Vorschaufenster anzuzeigen.</long>
+		    <long xml:lang="el">Επιλογή του επόμενου παραθύρου χωρίς εμφάνιση του παραθύρου popup.</long>
+		    <long xml:lang="en_AU">Select next window without showing the popup window.</long>
+		    <long xml:lang="en_GB">Select next window without showing the popup window.</long>
+		    <long xml:lang="es">Seleccionar la ventana siguiente sin mostrar la ventana emergente</long>
+		    <long xml:lang="eu">Hautatu hurrengo leihoa popup leihoa ikusi gabe.</long>
+		    <long xml:lang="fi">Siirry seuraavaan ikkunaan ilman vaihtajan ponnahdusikkunaa</long>
+		    <long xml:lang="fr">Sélectionner la fenêtre suivante sans montrer le sélecteur</long>
+		    <long xml:lang="gl">Seleccionar a seguinte xanela sen mostrar o alternador emerxente</long>
+		    <long xml:lang="gu">પોપઅપ વિન્ડો બતાવ્યા વિના આગળની વિન્ડો પસંદ કરો.</long>
+		    <long xml:lang="he">בחר את החלון הבא בלי להראות את החלון הקופץ.</long>
+		    <long xml:lang="hi">पॉपअप विंडो को बिना दिखाए अगले विंडो को चुनें.</long>
+		    <long xml:lang="hr">Odaberi sljedeći prozor bez pokazivanja skočnog prozora.</long>
+		    <long xml:lang="hu">Következő ablak kiválasztása a felbukkanó ablak nélkül.</long>
+		    <long xml:lang="it">Seleziona la finestra successiva senza mostrare la finestra pop-up.</long>
+		    <long xml:lang="ja">ポップアップウィンドウ表示なしで次のウィンドウを選択</long>
+		    <long xml:lang="ko">전환 창을 보여주지 않고 다음 창으로 전환합니다.</long>
+		    <long xml:lang="ms">Pilih tetingkap berikutnya tanpa memaparkan tetingkap timbul.</long>
+		    <long xml:lang="nb">Velg neste vindu uten å vise oppsprettsvinduet</long>
+		    <long xml:lang="nl">Selecteer volgende venster zonder het popup venster te tonen.</long>
+		    <long xml:lang="oc">Seleccionar la fenèstra seguenta sens afichar la popup.</long>
+		    <long xml:lang="or">ପପ୍ ଅପ ଉଇଣ୍ଡୋକୁ ବିନା ଦେଖାଇ ପରବର୍ତ୍ତୀ ଉଇଣ୍ଡୋକୁ ମନୋନୀତକର</long>
+		    <long xml:lang="pa">ਪੋਪਅੱਪ ਵਿੰਡੋ ਵੇਖਾਏ ਬਿਨਾਂ ਹੀ ਅਗਲੀ ਵਿੰਡੋ ਚੁਣੋ</long>
+		    <long xml:lang="pl">Wybierz następne okno bez pokazywania wyskakującego okienka.</long>
+		    <long xml:lang="pt">Seleccionar próxima janela sem mostrar o popup de janelas.</long>
+		    <long xml:lang="pt_BR">Selecionar próxima janela sem mostrar o popup de janelas.</long>
+		    <long xml:lang="ro">Alege următoarea fereastră fără a afișa fereastra-balon.</long>
+		    <long xml:lang="ru">Выбрать следующее окно без показа всплывающего окна.</long>
+		    <long xml:lang="sk">Vybrať ďalšie okno bez ukázania vyskakovacieho okna</long>
+		    <long xml:lang="sl">Izberi naslednje okno brez prikaza pojavnega okna</long>
+		    <long xml:lang="sr">Одаберите следећи прозор не пирказујући искачучи прозор.</long>
+		    <long xml:lang="sv">Välj nästa fönster utan att visa popupfönstret</long>
+		    <long xml:lang="tr">Beliren pencereyi göstermeden sonraki pencereyi seç.</long>
+		    <long xml:lang="ug">كۆرسەتمەيدىغان قاڭقىش كۆزنەكتىن كېيىنكى كۆزنەكنى تاللا</long>
+		    <long xml:lang="uk">Обрати наступне вікно без показу виринного вікна.</long>
+		    <long xml:lang="vi">Chuyển tới cửa sổ tiếp theo mà không hiện bộ chuyển đổi lên.</long>
+		    <long xml:lang="zh_CN">选取下一个窗口，且排除显示弹出窗口。</long>
+		    <long xml:lang="zh_HK">選取下一個視窗不要顯示提示視窗</long>
+		    <long xml:lang="zh_TW">選取下一個視窗不要顯示提示視窗</long>
+		</option>
+		<option type="button" name="prev_no_popup_button">
+		    <short>Prev window (No popup)</short>
+		    <short xml:lang="ast">Ventana anterior (Nun hai ventanos)</short>
+		    <short xml:lang="be">পূর্ববর্তী উইন্ডো (কোন পপআপ নেই)</short>
+		    <short xml:lang="bg">Предишен прозорец (Без изскачане)</short>
+		    <short xml:lang="bn">পূর্ববর্তী উইন্ডো (কোন পপআপ নেই)</short>
+		    <short xml:lang="bn_IN">পূর্ববর্তী উইন্ডো (কোন পপআপ নেই)</short>
+		    <short xml:lang="bs">Prethodni prozor (bez iskačućeg prozora)</short>
+		    <short xml:lang="ca">Finestra anterior (No  emergents)</short>
+		    <short xml:lang="cs">Předchozí okno (bez přepínače)</short>
+		    <short xml:lang="de">Vorheriges Fenster (Keine Vorschau)</short>
+		    <short xml:lang="el">Προηγούμενο παράθυρο (Οχι popup)</short>
+		    <short xml:lang="en_AU">Prev window (No popup)</short>
+		    <short xml:lang="en_GB">Prev window (No popup)</short>
+		    <short xml:lang="es">Ventana anterior (sin emerger)</short>
+		    <short xml:lang="eu">Aurreko leihoa (popup ez)</short>
+		    <short xml:lang="fi">Edellinen ikkuna (ei ponnahdusikkunaa)</short>
+		    <short xml:lang="fr">Fenêtre précédente (pas de sélecteur)</short>
+		    <short xml:lang="gl">Xanela anterior (sen alternador)</short>
+		    <short xml:lang="gu">પહેલાંની વિન્ડો (કોઈ પોપઅપ નથી)</short>
+		    <short xml:lang="he">חלון קודם (ללא קופצים)</short>
+		    <short xml:lang="hr">Prethodni prozor (bez skočne obavijesti)</short>
+		    <short xml:lang="hu">Előző ablak (nincs előugró ablak)</short>
+		    <short xml:lang="it">Finestra precedente (nessun pop-up)</short>
+		    <short xml:lang="ja">前のウィンドウ（ポップアップなし）</short>
+		    <short xml:lang="ko">이전 창(전환 창 없이)</short>
+		    <short xml:lang="ms">Tetingkap terdahulu (Tanpa timbul)</short>
+		    <short xml:lang="nb">Forrige vindu (ikke sprett-opp)</short>
+		    <short xml:lang="nl">Vorig venster (geen popup)</short>
+		    <short xml:lang="oc">Fenèstra precedenta (sens popup)</short>
+		    <short xml:lang="or">ପୂର୍ବବର୍ତ୍ତୀ ଉଇଣ୍ଡୋ(ପପ୍ଅପ ନାହିଁ)</short>
+		    <short xml:lang="pl">Poprzednie okno (bez pop-upów)</short>
+		    <short xml:lang="pt">Janela anterior (Sem popup)</short>
+		    <short xml:lang="pt_BR">Janela anterior (Sem popup)</short>
+		    <short xml:lang="ro">Fereastra precedentă (fără meniu contextual)</short>
+		    <short xml:lang="ru">Предыдущее окно (Не активируя)</short>
+		    <short xml:lang="sk">Predchádzajúce okno (žiadne vyskakovacie okno)</short>
+		    <short xml:lang="sl">Predhodno okno (brez pojavnih oken)</short>
+		    <short xml:lang="sr">Претходни прозор (без искачућег прозора)</short>
+		    <short xml:lang="sv">Föreg fönster (Ingen popup)</short>
+		    <short xml:lang="tr">Önceki pencere (Açılabilir pencere yok)</short>
+		    <short xml:lang="ug">ئالدىنقى كۆزنەك(قاڭقىمايدىغان)</short>
+		    <short xml:lang="uk">Попереднє вікно (Не виринне)</short>
+		    <short xml:lang="vi">Cửa sổ trước (Không bật lện)</short>
+		    <short xml:lang="zh_CN">上一个窗口(非弹出)</short>
+		    <short xml:lang="zh_HK">上一個視窗(沒有彈出)</short>
+		    <short xml:lang="zh_TW">上一個視窗(沒有彈出)</short>
+		    <long>Select previous window without showing the popup window.</long>
+		    <long xml:lang="ast">Escoyer la ventana anterior ensin amosar el ventanu</long>
+		    <long xml:lang="be">পপআপ উইন্ডো না দেখিয়ে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn">পপআপ উইন্ডো না দেখিয়ে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn_IN">পপআপ উইন্ডো না দেখিয়ে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bs">Označi sljedeći prozor bez prikazivanja iskačućeg prozora</long>
+		    <long xml:lang="ca">Seleccioneu la finestra anterior sense mostrar la finestra emergent</long>
+		    <long xml:lang="cs">Vybrat předchozí okno bez zobrazení přepínače</long>
+		    <long xml:lang="de">Vorheriges Fenster auswählen, ohne dabei das Vorschaufenster anzuzeigen.</long>
+		    <long xml:lang="el">Επιλογή του προηγούμενου παραθύρου χωρίς εμφάνιση του παραθύρου popup.</long>
+		    <long xml:lang="en_AU">Select previous window without showing the popup window.</long>
+		    <long xml:lang="en_GB">Select previous window without showing the popup window.</long>
+		    <long xml:lang="es">Seleccionar la ventana anterior sin mostrar la ventana emergente</long>
+		    <long xml:lang="eu">Hautatu aurreko leihoa popup leihoa ikusi gabe.</long>
+		    <long xml:lang="fi">Siirry edelliseen ikkunaan ilman vaihtajaa ponnahdusikkunaa</long>
+		    <long xml:lang="fr">Sélectionner la fenêtre précédente sans montrer le sélecteur</long>
+		    <long xml:lang="gl">Seleccionar a xanela anterior sen mostrar o alternador emerxente.</long>
+		    <long xml:lang="gu">પોપઅપ વિન્ડો બતાવ્યા વિના પહેલાંની વિન્ડો પસંદ કરો.</long>
+		    <long xml:lang="he">בחר את החלון הקודם בלי להראות את החלון הקופץ.</long>
+		    <long xml:lang="hi">पॉपअप विंडो को बिना दिखाए पिछले विंडो को चुनें.</long>
+		    <long xml:lang="hr">Odaberi prethodni prozor bez pokazivanja skočnog prozora.</long>
+		    <long xml:lang="hu">Előző ablak kiválasztása a felbukkanó ablak nélkül.</long>
+		    <long xml:lang="it">Seleziona la finestra precedente senza mostrare la finestra pop-up.</long>
+		    <long xml:lang="ja">ポップアップウィンドウ表示なしで前のウィンドウを選択</long>
+		    <long xml:lang="ko">전환 창을 보여주지 않고 다음 창으로 전환합니다.</long>
+		    <long xml:lang="ms">Pilih tetingkap terdahulu tanpa memaparkan tetingkap timbul.</long>
+		    <long xml:lang="nb">Velg forrige vindu uten å vise oppsprettsvinduet</long>
+		    <long xml:lang="nl">Selecteer vorige venster zonder het popup venster te tonen.</long>
+		    <long xml:lang="oc">Seleccionar la fenèstra precedenta sens afichar la popup.</long>
+		    <long xml:lang="or">ପପ୍ ଅପ ଉଇଣ୍ଡୋକୁ ବିନା ଦେଖାଇ ପୂର୍ବବର୍ତ୍ତୀ ଉଇଣ୍ଡୋକୁ ମନୋନୀତକର</long>
+		    <long xml:lang="pa">ਪੋਪਅੱਪ ਵਿੰਡੋ ਵੇਖਾਏ ਬਿਨਾਂ ਹੀ ਪਿਛਲੀ ਵਿੰਡੋ ਚੁਣੋ</long>
+		    <long xml:lang="pl">Wybierz poprzednie okno bez pokazywania wyskakującego okienka.</long>
+		    <long xml:lang="pt">Seleccionar janela anterior sem mostrar o popup de janelas.</long>
+		    <long xml:lang="pt_BR">Selecionar janela anterior sem mostrar o popup de janelas.</long>
+		    <long xml:lang="ro">Alege fereastra precedentă fără a afișa fereastra-balon.</long>
+		    <long xml:lang="ru">Выбрать предыдущее окно без показа всплывающего окна.</long>
+		    <long xml:lang="sk">Vybrať predchádzajúce okno bez ukázania vyskakovacieho okna</long>
+		    <long xml:lang="sl">Izberi prejšnje okno brez prikaza pojavnega okna</long>
+		    <long xml:lang="sr">Одаберите претходни прозор не пирказујући искачучи прозор.</long>
+		    <long xml:lang="sv">Välj föregående fönster utan att visa popupfönstret</long>
+		    <long xml:lang="tr">Beliren pencereyi göstermeden önceki pencereyi seç.</long>
+		    <long xml:lang="ug">كۆرسەتمەيدىغان قاڭقىش كۆزنىكىنىڭ ئالدىدىكى كۆزنەكنى تاللا</long>
+		    <long xml:lang="uk">Обрати попереднє вікно без показу виринного вікна.</long>
+		    <long xml:lang="vi">Chuyển tới cửa sổ trước mà không hiện bộ chuyển đổi lên.</long>
+		    <long xml:lang="zh_CN">选取下一个窗口，且排除显示弹出窗口。</long>
+		    <long xml:lang="zh_HK">選取上一個視窗時不要顯示出提示視窗</long>
+		    <long xml:lang="zh_TW">選取上一個視窗時不要顯示出提示視窗</long>
+		</option>
+		<option type="key" name="prev_no_popup_key">
+		    <short>Prev window (No popup)</short>
+		    <short xml:lang="ast">Ventana anterior (Nun hai ventanos)</short>
+		    <short xml:lang="be">পূর্ববর্তী উইন্ডো (কোন পপআপ নেই)</short>
+		    <short xml:lang="bg">Предишен прозорец (Без изскачане)</short>
+		    <short xml:lang="bn">পূর্ববর্তী উইন্ডো (কোন পপআপ নেই)</short>
+		    <short xml:lang="bn_IN">পূর্ববর্তী উইন্ডো (কোন পপআপ নেই)</short>
+		    <short xml:lang="bs">Prethodni prozor (bez iskačućeg prozora)</short>
+		    <short xml:lang="ca">Finestra anterior (No  emergents)</short>
+		    <short xml:lang="cs">Předchozí okno (bez přepínače)</short>
+		    <short xml:lang="de">Vorheriges Fenster (Keine Vorschau)</short>
+		    <short xml:lang="el">Προηγούμενο παράθυρο (Οχι popup)</short>
+		    <short xml:lang="en_AU">Prev window (No popup)</short>
+		    <short xml:lang="en_GB">Prev window (No popup)</short>
+		    <short xml:lang="es">Ventana anterior (sin emerger)</short>
+		    <short xml:lang="eu">Aurreko leihoa (popup ez)</short>
+		    <short xml:lang="fi">Edellinen ikkuna (ei ponnahdusikkunaa)</short>
+		    <short xml:lang="fr">Fenêtre précédente (pas de sélecteur)</short>
+		    <short xml:lang="gl">Xanela anterior (sen alternador)</short>
+		    <short xml:lang="gu">પહેલાંની વિન્ડો (કોઈ પોપઅપ નથી)</short>
+		    <short xml:lang="he">חלון קודם (ללא קופצים)</short>
+		    <short xml:lang="hr">Prethodni prozor (bez skočne obavijesti)</short>
+		    <short xml:lang="hu">Előző ablak (nincs előugró ablak)</short>
+		    <short xml:lang="it">Finestra precedente (nessun pop-up)</short>
+		    <short xml:lang="ja">前のウィンドウ（ポップアップなし）</short>
+		    <short xml:lang="ko">이전 창(전환 창 없이)</short>
+		    <short xml:lang="ms">Tetingkap terdahulu (Tanpa timbul)</short>
+		    <short xml:lang="nb">Forrige vindu (ikke sprett-opp)</short>
+		    <short xml:lang="nl">Vorig venster (geen popup)</short>
+		    <short xml:lang="oc">Fenèstra precedenta (sens popup)</short>
+		    <short xml:lang="or">ପୂର୍ବବର୍ତ୍ତୀ ଉଇଣ୍ଡୋ(ପପ୍ଅପ ନାହିଁ)</short>
+		    <short xml:lang="pl">Poprzednie okno (bez pop-upów)</short>
+		    <short xml:lang="pt">Janela anterior (Sem popup)</short>
+		    <short xml:lang="pt_BR">Janela anterior (Sem popup)</short>
+		    <short xml:lang="ro">Fereastra precedentă (fără meniu contextual)</short>
+		    <short xml:lang="ru">Предыдущее окно (Не активируя)</short>
+		    <short xml:lang="sk">Predchádzajúce okno (žiadne vyskakovacie okno)</short>
+		    <short xml:lang="sl">Predhodno okno (brez pojavnih oken)</short>
+		    <short xml:lang="sr">Претходни прозор (без искачућег прозора)</short>
+		    <short xml:lang="sv">Föreg fönster (Ingen popup)</short>
+		    <short xml:lang="tr">Önceki pencere (Açılabilir pencere yok)</short>
+		    <short xml:lang="ug">ئالدىنقى كۆزنەك(قاڭقىمايدىغان)</short>
+		    <short xml:lang="uk">Попереднє вікно (Не виринне)</short>
+		    <short xml:lang="vi">Cửa sổ trước (Không bật lện)</short>
+		    <short xml:lang="zh_CN">上一个窗口(非弹出)</short>
+		    <short xml:lang="zh_HK">上一個視窗(沒有彈出)</short>
+		    <short xml:lang="zh_TW">上一個視窗(沒有彈出)</short>
+		    <long>Select previous window without showing the popup window.</long>
+		    <long xml:lang="ast">Escoyer la ventana anterior ensin amosar el ventanu</long>
+		    <long xml:lang="be">পপআপ উইন্ডো না দেখিয়ে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn">পপআপ উইন্ডো না দেখিয়ে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bn_IN">পপআপ উইন্ডো না দেখিয়ে পূর্ববর্তী উইন্ডো নির্বাচন করুন</long>
+		    <long xml:lang="bs">Označi sljedeći prozor bez prikazivanja iskačućeg prozora</long>
+		    <long xml:lang="ca">Seleccioneu la finestra anterior sense mostrar la finestra emergent</long>
+		    <long xml:lang="cs">Vybrat předchozí okno bez zobrazení přepínače</long>
+		    <long xml:lang="de">Vorheriges Fenster auswählen, ohne dabei das Vorschaufenster anzuzeigen.</long>
+		    <long xml:lang="el">Επιλογή του προηγούμενου παραθύρου χωρίς εμφάνιση του παραθύρου popup.</long>
+		    <long xml:lang="en_AU">Select previous window without showing the popup window.</long>
+		    <long xml:lang="en_GB">Select previous window without showing the popup window.</long>
+		    <long xml:lang="es">Seleccionar la ventana anterior sin mostrar la ventana emergente</long>
+		    <long xml:lang="eu">Hautatu aurreko leihoa popup leihoa ikusi gabe.</long>
+		    <long xml:lang="fi">Siirry edelliseen ikkunaan ilman vaihtajaa ponnahdusikkunaa</long>
+		    <long xml:lang="fr">Sélectionner la fenêtre précédente sans montrer le sélecteur</long>
+		    <long xml:lang="gl">Seleccionar a xanela anterior sen mostrar o alternador emerxente.</long>
+		    <long xml:lang="gu">પોપઅપ વિન્ડો બતાવ્યા વિના પહેલાંની વિન્ડો પસંદ કરો.</long>
+		    <long xml:lang="he">בחר את החלון הקודם בלי להראות את החלון הקופץ.</long>
+		    <long xml:lang="hi">पॉपअप विंडो को बिना दिखाए पिछले विंडो को चुनें.</long>
+		    <long xml:lang="hr">Odaberi prethodni prozor bez pokazivanja skočnog prozora.</long>
+		    <long xml:lang="hu">Előző ablak kiválasztása a felbukkanó ablak nélkül.</long>
+		    <long xml:lang="it">Seleziona la finestra precedente senza mostrare la finestra pop-up.</long>
+		    <long xml:lang="ja">ポップアップウィンドウ表示なしで前のウィンドウを選択</long>
+		    <long xml:lang="ko">전환 창을 보여주지 않고 다음 창으로 전환합니다.</long>
+		    <long xml:lang="ms">Pilih tetingkap terdahulu tanpa memaparkan tetingkap timbul.</long>
+		    <long xml:lang="nb">Velg forrige vindu uten å vise oppsprettsvinduet</long>
+		    <long xml:lang="nl">Selecteer vorige venster zonder het popup venster te tonen.</long>
+		    <long xml:lang="oc">Seleccionar la fenèstra precedenta sens afichar la popup.</long>
+		    <long xml:lang="or">ପପ୍ ଅପ ଉଇଣ୍ଡୋକୁ ବିନା ଦେଖାଇ ପୂର୍ବବର୍ତ୍ତୀ ଉଇଣ୍ଡୋକୁ ମନୋନୀତକର</long>
+		    <long xml:lang="pa">ਪੋਪਅੱਪ ਵਿੰਡੋ ਵੇਖਾਏ ਬਿਨਾਂ ਹੀ ਪਿਛਲੀ ਵਿੰਡੋ ਚੁਣੋ</long>
+		    <long xml:lang="pl">Wybierz poprzednie okno bez pokazywania wyskakującego okienka.</long>
+		    <long xml:lang="pt">Seleccionar janela anterior sem mostrar o popup de janelas.</long>
+		    <long xml:lang="pt_BR">Selecionar janela anterior sem mostrar o popup de janelas.</long>
+		    <long xml:lang="ro">Alege fereastra precedentă fără a afișa fereastra-balon.</long>
+		    <long xml:lang="ru">Выбрать предыдущее окно без показа всплывающего окна.</long>
+		    <long xml:lang="sk">Vybrať predchádzajúce okno bez ukázania vyskakovacieho okna</long>
+		    <long xml:lang="sl">Izberi prejšnje okno brez prikaza pojavnega okna</long>
+		    <long xml:lang="sr">Одаберите претходни прозор не пирказујући искачучи прозор.</long>
+		    <long xml:lang="sv">Välj föregående fönster utan att visa popupfönstret</long>
+		    <long xml:lang="tr">Beliren pencereyi göstermeden önceki pencereyi seç.</long>
+		    <long xml:lang="ug">كۆرسەتمەيدىغان قاڭقىش كۆزنىكىنىڭ ئالدىدىكى كۆزنەكنى تاللا</long>
+		    <long xml:lang="uk">Обрати попереднє вікно без показу виринного вікна.</long>
+		    <long xml:lang="vi">Chuyển tới cửa sổ trước mà không hiện bộ chuyển đổi lên.</long>
+		    <long xml:lang="zh_CN">选取下一个窗口，且排除显示弹出窗口。</long>
+		    <long xml:lang="zh_HK">選取上一個視窗時不要顯示出提示視窗</long>
+		    <long xml:lang="zh_TW">選取上一個視窗時不要顯示出提示視窗</long>
+		</option>
+		<option type="button" name="next_panel_button">
+		    <short>Next Panel</short>
+		    <short xml:lang="ast">Panel siguiente</short>
+		    <short xml:lang="be">Наступная панэль</short>
+		    <short xml:lang="bg">Следващ панел</short>
+		    <short xml:lang="bs">Sljedeća ploča</short>
+		    <short xml:lang="ca">Tauler següent</short>
+		    <short xml:lang="cs">Následující panel</short>
+		    <short xml:lang="de">Nächstes Panel</short>
+		    <short xml:lang="el">Επόμενο Πάνελ</short>
+		    <short xml:lang="en_AU">Next Panel</short>
+		    <short xml:lang="en_GB">Next Panel</short>
+		    <short xml:lang="es">Panel siguiente</short>
+		    <short xml:lang="eu">Hurrengo panela</short>
+		    <short xml:lang="fi">Seuraava paneeli</short>
+		    <short xml:lang="fr">Panneau Suivant</short>
+		    <short xml:lang="fy">Folgjend paniel</short>
+		    <short xml:lang="gl">Seguinte panel</short>
+		    <short xml:lang="he">הפאנל הבא</short>
+		    <short xml:lang="hr">Sljedeća ploča</short>
+		    <short xml:lang="hu">Következő panel</short>
+		    <short xml:lang="it">Pannello successivo</short>
+		    <short xml:lang="ja">次のパネル</short>
+		    <short xml:lang="ko">다음 패널</short>
+		    <short xml:lang="ms">Panel Berikutnya</short>
+		    <short xml:lang="nl">Volgend paneel</short>
+		    <short xml:lang="oc">Panèl seguent</short>
+		    <short xml:lang="pl">Następny panel</short>
+		    <short xml:lang="pt">Painel Seguinte</short>
+		    <short xml:lang="pt_BR">Próximo Painel</short>
+		    <short xml:lang="ro">Panoul următor</short>
+		    <short xml:lang="ru">Следующая панель</short>
+		    <short xml:lang="sk">Nasledujúca výplň</short>
+		    <short xml:lang="sl">Naslednji pult</short>
+		    <short xml:lang="sr">Следећи панел</short>
+		    <short xml:lang="sv">Nästa panel</short>
+		    <short xml:lang="tr">Sonraki Panel</short>
+		    <short xml:lang="ug">كېيىنكى تەگلىك</short>
+		    <short xml:lang="uk">Наступна панель</short>
+		    <short xml:lang="vi">Bảng điều khiển tiếp theo</short>
+		    <short xml:lang="zh_CN">下一个面板</short>
+		    <short xml:lang="zh_HK">下一個面板</short>
+		    <short xml:lang="zh_TW">下一個面板</short>
+		    <long>Select next panel type window.</long>
+		    <long xml:lang="ast">Escoyer la ventana de la triba del siguiente panel</long>
+		    <long xml:lang="bg">Избор на следващ панел на тип прозорец</long>
+		    <long xml:lang="bs">Označi sljedeći tip prozora ploče</long>
+		    <long xml:lang="ca">Seleccioneu la finestra següent de tipus de tauler</long>
+		    <long xml:lang="cs">Vybere další okno typu panel</long>
+		    <long xml:lang="de">Das nächste Fenster vom Typ »Panel« auswählen.</long>
+		    <long xml:lang="el">Επιλογή τύπου παραθύρου του επόμενου πάνελ.</long>
+		    <long xml:lang="en_AU">Select next panel type window.</long>
+		    <long xml:lang="en_GB">Select next panel type window.</long>
+		    <long xml:lang="es">Seleccionar la ventana del tipo de panel siguiente</long>
+		    <long xml:lang="eu">Hautatu hurrengo paneleko leiho mota.</long>
+		    <long xml:lang="fi">Valitse seuraava paneelityypin ikkuna.</long>
+		    <long xml:lang="fr">Sélectionner la prochaine fenêtre de la police du panneau</long>
+		    <long xml:lang="gl">Seleccionar a seguinte xanela de tipo panel.</long>
+		    <long xml:lang="he">בחר את חלון הפאנל הבא.</long>
+		    <long xml:lang="hr">Odaberi sljedeći prozor na ploči.</long>
+		    <long xml:lang="hu">Válassza ki a következő paneltípus-ablakot.</long>
+		    <long xml:lang="it">Seleziona il tipo di pannello di finestra successivo.</long>
+		    <long xml:lang="ja">次のパネルタイプのウィンドウを選択</long>
+		    <long xml:lang="ko">다음 패널 타입 창을 선택하세요.</long>
+		    <long xml:lang="ms">Pilih tetingkap jenis panel berikutnya</long>
+		    <long xml:lang="nl">Selecteer volgende paneel-type venster</long>
+		    <long xml:lang="oc">Seleccionar la fenèstra de tipe de panèl seguenta.</long>
+		    <long xml:lang="pl">Wybierz następny typ panelu okna</long>
+		    <long xml:lang="pt">Seleccionar tipo de janela do painel seguinte.</long>
+		    <long xml:lang="pt_BR">Selecionar próxima janela de tipo de painel</long>
+		    <long xml:lang="ro">Selectează următoarea fereastră tip panou</long>
+		    <long xml:lang="ru">Выбрать следующее окно типа панель.</long>
+		    <long xml:lang="sk">Označ nasledujúci typ výplne okna</long>
+		    <long xml:lang="sl">Izberi naslednje okno ploščnega tipa</long>
+		    <long xml:lang="sr">Одаберите тип прозора следећег панела.</long>
+		    <long xml:lang="sv">Välj nästa panelfönster</long>
+		    <long xml:lang="tr">Sonraki panel türündeki pencereyi seç.</long>
+		    <long xml:lang="ug">كېيىنكى تەگلىك كۆزنىكىنى تاللا</long>
+		    <long xml:lang="uk">Обрати наступне вікно типу панель.</long>
+		    <long xml:lang="vi">Chuyển tới bảng điều khiển tiếp theo.</long>
+		    <long xml:lang="zh_CN">选择下一个面板类型窗口。</long>
+		    <long xml:lang="zh_HK">選取下一個視窗面板樣式</long>
+		    <long xml:lang="zh_TW">選取下一個視窗面板樣式</long>
+		</option>
+		<option type="key" name="next_panel_key">
+		    <short>Next Panel</short>
+		    <short xml:lang="ast">Panel siguiente</short>
+		    <short xml:lang="be">Наступная панэль</short>
+		    <short xml:lang="bg">Следващ панел</short>
+		    <short xml:lang="bs">Sljedeća ploča</short>
+		    <short xml:lang="ca">Tauler següent</short>
+		    <short xml:lang="cs">Následující panel</short>
+		    <short xml:lang="de">Nächstes Panel</short>
+		    <short xml:lang="el">Επόμενο Πάνελ</short>
+		    <short xml:lang="en_AU">Next Panel</short>
+		    <short xml:lang="en_GB">Next Panel</short>
+		    <short xml:lang="es">Panel siguiente</short>
+		    <short xml:lang="eu">Hurrengo panela</short>
+		    <short xml:lang="fi">Seuraava paneeli</short>
+		    <short xml:lang="fr">Panneau Suivant</short>
+		    <short xml:lang="fy">Folgjend paniel</short>
+		    <short xml:lang="gl">Seguinte panel</short>
+		    <short xml:lang="he">הפאנל הבא</short>
+		    <short xml:lang="hr">Sljedeća ploča</short>
+		    <short xml:lang="hu">Következő panel</short>
+		    <short xml:lang="it">Pannello successivo</short>
+		    <short xml:lang="ja">次のパネル</short>
+		    <short xml:lang="ko">다음 패널</short>
+		    <short xml:lang="ms">Panel Berikutnya</short>
+		    <short xml:lang="nl">Volgend paneel</short>
+		    <short xml:lang="oc">Panèl seguent</short>
+		    <short xml:lang="pl">Następny panel</short>
+		    <short xml:lang="pt">Painel Seguinte</short>
+		    <short xml:lang="pt_BR">Próximo Painel</short>
+		    <short xml:lang="ro">Panoul următor</short>
+		    <short xml:lang="ru">Следующая панель</short>
+		    <short xml:lang="sk">Nasledujúca výplň</short>
+		    <short xml:lang="sl">Naslednji pult</short>
+		    <short xml:lang="sr">Следећи панел</short>
+		    <short xml:lang="sv">Nästa panel</short>
+		    <short xml:lang="tr">Sonraki Panel</short>
+		    <short xml:lang="ug">كېيىنكى تەگلىك</short>
+		    <short xml:lang="uk">Наступна панель</short>
+		    <short xml:lang="vi">Bảng điều khiển tiếp theo</short>
+		    <short xml:lang="zh_CN">下一个面板</short>
+		    <short xml:lang="zh_HK">下一個面板</short>
+		    <short xml:lang="zh_TW">下一個面板</short>
+		    <long>Select next panel type window.</long>
+		    <long xml:lang="ast">Escoyer la ventana de la triba del siguiente panel</long>
+		    <long xml:lang="bg">Избор на следващ панел на тип прозорец</long>
+		    <long xml:lang="bs">Označi sljedeći tip prozora ploče</long>
+		    <long xml:lang="ca">Seleccioneu la finestra següent de tipus de tauler</long>
+		    <long xml:lang="cs">Vybere další okno typu panel</long>
+		    <long xml:lang="de">Das nächste Fenster vom Typ »Panel« auswählen.</long>
+		    <long xml:lang="el">Επιλογή τύπου παραθύρου του επόμενου πάνελ.</long>
+		    <long xml:lang="en_AU">Select next panel type window.</long>
+		    <long xml:lang="en_GB">Select next panel type window.</long>
+		    <long xml:lang="es">Seleccionar la ventana del tipo de panel siguiente</long>
+		    <long xml:lang="eu">Hautatu hurrengo paneleko leiho mota.</long>
+		    <long xml:lang="fi">Valitse seuraava paneelityypin ikkuna.</long>
+		    <long xml:lang="fr">Sélectionner la prochaine fenêtre de la police du panneau</long>
+		    <long xml:lang="gl">Seleccionar a seguinte xanela de tipo panel.</long>
+		    <long xml:lang="he">בחר את חלון הפאנל הבא.</long>
+		    <long xml:lang="hr">Odaberi sljedeći prozor na ploči.</long>
+		    <long xml:lang="hu">Válassza ki a következő paneltípus-ablakot.</long>
+		    <long xml:lang="it">Seleziona il tipo di pannello di finestra successivo.</long>
+		    <long xml:lang="ja">次のパネルタイプのウィンドウを選択</long>
+		    <long xml:lang="ko">다음 패널 타입 창을 선택하세요.</long>
+		    <long xml:lang="ms">Pilih tetingkap jenis panel berikutnya</long>
+		    <long xml:lang="nl">Selecteer volgende paneel-type venster</long>
+		    <long xml:lang="oc">Seleccionar la fenèstra de tipe de panèl seguenta.</long>
+		    <long xml:lang="pl">Wybierz następny typ panelu okna</long>
+		    <long xml:lang="pt">Seleccionar tipo de janela do painel seguinte.</long>
+		    <long xml:lang="pt_BR">Selecionar próxima janela de tipo de painel</long>
+		    <long xml:lang="ro">Selectează următoarea fereastră tip panou</long>
+		    <long xml:lang="ru">Выбрать следующее окно типа панель.</long>
+		    <long xml:lang="sk">Označ nasledujúci typ výplne okna</long>
+		    <long xml:lang="sl">Izberi naslednje okno ploščnega tipa</long>
+		    <long xml:lang="sr">Одаберите тип прозора следећег панела.</long>
+		    <long xml:lang="sv">Välj nästa panelfönster</long>
+		    <long xml:lang="tr">Sonraki panel türündeki pencereyi seç.</long>
+		    <long xml:lang="ug">كېيىنكى تەگلىك كۆزنىكىنى تاللا</long>
+		    <long xml:lang="uk">Обрати наступне вікно типу панель.</long>
+		    <long xml:lang="vi">Chuyển tới bảng điều khiển tiếp theo.</long>
+		    <long xml:lang="zh_CN">选择下一个面板类型窗口。</long>
+		    <long xml:lang="zh_HK">選取下一個視窗面板樣式</long>
+		    <long xml:lang="zh_TW">選取下一個視窗面板樣式</long>
+		</option>
+		<option type="button" name="prev_panel_button">
+		    <short>Prev Panel</short>
+		    <short xml:lang="ast">Panel anterior</short>
+		    <short xml:lang="be">Папярэдняя панэль</short>
+		    <short xml:lang="bg">Предишен панел</short>
+		    <short xml:lang="bs">Prethodna ploča</short>
+		    <short xml:lang="ca">Tauler anterior</short>
+		    <short xml:lang="cs">Předchozí panel</short>
+		    <short xml:lang="de">Vorheriges Panel</short>
+		    <short xml:lang="el">Προηγούμενο Πάνελ</short>
+		    <short xml:lang="en_AU">Prev Panel</short>
+		    <short xml:lang="en_GB">Prev Panel</short>
+		    <short xml:lang="es">Panel anterior</short>
+		    <short xml:lang="eu">Aurreko panela</short>
+		    <short xml:lang="fi">Edellinen paneeli</short>
+		    <short xml:lang="fr">Panneau Précédent</short>
+		    <short xml:lang="fy">Foarich paniel</short>
+		    <short xml:lang="gl">Panel anterior</short>
+		    <short xml:lang="he">הפאנל הקודם</short>
+		    <short xml:lang="hr">Prethodna ploča</short>
+		    <short xml:lang="hu">Előző panel</short>
+		    <short xml:lang="it">Panello precedente</short>
+		    <short xml:lang="ja">前のパネル</short>
+		    <short xml:lang="ko">이전 패널</short>
+		    <short xml:lang="ms">Panel Terdahulu</short>
+		    <short xml:lang="nl">Vorig paneel</short>
+		    <short xml:lang="oc">Panèl precedent</short>
+		    <short xml:lang="pl">Poprzedni panel</short>
+		    <short xml:lang="pt">Painel Anterior</short>
+		    <short xml:lang="pt_BR">Painel Anterior</short>
+		    <short xml:lang="ro">Panoul precedent</short>
+		    <short xml:lang="ru">Предыдущая панель</short>
+		    <short xml:lang="sk">Predchádzajúca výplň</short>
+		    <short xml:lang="sl">Predhodni pult</short>
+		    <short xml:lang="sr">Претходни панел</short>
+		    <short xml:lang="sv">Föreg panel</short>
+		    <short xml:lang="tr">Önceki Panel</short>
+		    <short xml:lang="ug">ئالدىنقى تەگلىك</short>
+		    <short xml:lang="uk">Попередня панель</short>
+		    <short xml:lang="vi">Bảng điều khiển trước</short>
+		    <short xml:lang="zh_CN">上一个面板</short>
+		    <short xml:lang="zh_HK">上一個面板</short>
+		    <short xml:lang="zh_TW">上一個面板</short>
+		    <long>Select previous panel type window.</long>
+		    <long xml:lang="ast">Escoyer la ventan de la triba del anterior panel</long>
+		    <long xml:lang="bs">Označi prethodni tip prozora ploče</long>
+		    <long xml:lang="ca">Seleccioneu la finestra anterior de tipus de tauler</long>
+		    <long xml:lang="cs">Vybere předchozí okno typu panel</long>
+		    <long xml:lang="de">Das vorherige Fenster vom Typ »Panel« auswählen.</long>
+		    <long xml:lang="el">Επιλογή τύπου παραθύρου του προηγούμενου πάνελ.</long>
+		    <long xml:lang="en_AU">Select previous panel type window.</long>
+		    <long xml:lang="en_GB">Select previous panel type window.</long>
+		    <long xml:lang="es">Seleccionar la ventana del tipo de panel anterior</long>
+		    <long xml:lang="eu">Hautatu aurreko paneleko leiho mota.</long>
+		    <long xml:lang="fi">Valitse edellinen paneelityypin ikkuna.</long>
+		    <long xml:lang="fr">Sélectionner la précédente fenêtre de la police du panneau</long>
+		    <long xml:lang="gl">Seleccionar a xanela anterior de tipo panel.</long>
+		    <long xml:lang="he">בחר את חלון הפאנל הקודם.</long>
+		    <long xml:lang="hr">Odaberi prethodni prozor na ploči.</long>
+		    <long xml:lang="hu">Válassza ki az előző paneltípus-ablakot.</long>
+		    <long xml:lang="it">Seleziona il tipo di pannello di finestra precedente</long>
+		    <long xml:lang="ja">前のパネルタイプのウィンドウを選択</long>
+		    <long xml:lang="ko">이전 패널 타입 창을 선택합니다.</long>
+		    <long xml:lang="ms">Pilih tetingkap jenis panel terdahulu</long>
+		    <long xml:lang="nl">Selecteer vorig paneel-type venster</long>
+		    <long xml:lang="oc">Seleccionar la fenèstra de tipe de panèl precedenta.</long>
+		    <long xml:lang="pl">Wybierz poprzedni typ panelu okna</long>
+		    <long xml:lang="pt">Seleccionar tipo de janela do painel anterior.</long>
+		    <long xml:lang="pt_BR">Selecionar janela de tipo de painel anterior</long>
+		    <long xml:lang="ro">Selectează fereastra precedentă tip panou</long>
+		    <long xml:lang="ru">Выбрать предыдущее окно типа панель.</long>
+		    <long xml:lang="sk">Vybrať predchádzajúci typ výplne okna</long>
+		    <long xml:lang="sl">Izberi prejšnje okno ploščnega tipa</long>
+		    <long xml:lang="sr">Одаберите тип прозора претходног панела.</long>
+		    <long xml:lang="sv">Välj föregående panelfönster</long>
+		    <long xml:lang="tr">Önceki panel türündeki pencereyi seç.</long>
+		    <long xml:lang="ug">ئالدىنقى تەگلىك كۆزنىكىنى تاللا</long>
+		    <long xml:lang="uk">Обрати попереднє вікно типу панель.</long>
+		    <long xml:lang="vi">Chuyển tới bảng điều khiển trước.</long>
+		    <long xml:lang="zh_CN">选择前一个面板类型窗口。</long>
+		    <long xml:lang="zh_HK">選取上一個視窗面板樣式</long>
+		    <long xml:lang="zh_TW">選取上一個視窗面板樣式</long>
+		</option>
+		<option type="key" name="prev_panel_key">
+		    <short>Prev Panel</short>
+		    <short xml:lang="ast">Panel anterior</short>
+		    <short xml:lang="be">Папярэдняя панэль</short>
+		    <short xml:lang="bg">Предишен панел</short>
+		    <short xml:lang="bs">Prethodna ploča</short>
+		    <short xml:lang="ca">Tauler anterior</short>
+		    <short xml:lang="cs">Předchozí panel</short>
+		    <short xml:lang="de">Vorheriges Panel</short>
+		    <short xml:lang="el">Προηγούμενο Πάνελ</short>
+		    <short xml:lang="en_AU">Prev Panel</short>
+		    <short xml:lang="en_GB">Prev Panel</short>
+		    <short xml:lang="es">Panel anterior</short>
+		    <short xml:lang="eu">Aurreko panela</short>
+		    <short xml:lang="fi">Edellinen paneeli</short>
+		    <short xml:lang="fr">Panneau Précédent</short>
+		    <short xml:lang="fy">Foarich paniel</short>
+		    <short xml:lang="gl">Panel anterior</short>
+		    <short xml:lang="he">הפאנל הקודם</short>
+		    <short xml:lang="hr">Prethodna ploča</short>
+		    <short xml:lang="hu">Előző panel</short>
+		    <short xml:lang="it">Panello precedente</short>
+		    <short xml:lang="ja">前のパネル</short>
+		    <short xml:lang="ko">이전 패널</short>
+		    <short xml:lang="ms">Panel Terdahulu</short>
+		    <short xml:lang="nl">Vorig paneel</short>
+		    <short xml:lang="oc">Panèl precedent</short>
+		    <short xml:lang="pl">Poprzedni panel</short>
+		    <short xml:lang="pt">Painel Anterior</short>
+		    <short xml:lang="pt_BR">Painel Anterior</short>
+		    <short xml:lang="ro">Panoul precedent</short>
+		    <short xml:lang="ru">Предыдущая панель</short>
+		    <short xml:lang="sk">Predchádzajúca výplň</short>
+		    <short xml:lang="sl">Predhodni pult</short>
+		    <short xml:lang="sr">Претходни панел</short>
+		    <short xml:lang="sv">Föreg panel</short>
+		    <short xml:lang="tr">Önceki Panel</short>
+		    <short xml:lang="ug">ئالدىنقى تەگلىك</short>
+		    <short xml:lang="uk">Попередня панель</short>
+		    <short xml:lang="vi">Bảng điều khiển trước</short>
+		    <short xml:lang="zh_CN">上一个面板</short>
+		    <short xml:lang="zh_HK">上一個面板</short>
+		    <short xml:lang="zh_TW">上一個面板</short>
+		    <long>Select previous panel type window.</long>
+		    <long xml:lang="ast">Escoyer la ventan de la triba del anterior panel</long>
+		    <long xml:lang="bs">Označi prethodni tip prozora ploče</long>
+		    <long xml:lang="ca">Seleccioneu la finestra anterior de tipus de tauler</long>
+		    <long xml:lang="cs">Vybere předchozí okno typu panel</long>
+		    <long xml:lang="de">Das vorherige Fenster vom Typ »Panel« auswählen.</long>
+		    <long xml:lang="el">Επιλογή τύπου παραθύρου του προηγούμενου πάνελ.</long>
+		    <long xml:lang="en_AU">Select previous panel type window.</long>
+		    <long xml:lang="en_GB">Select previous panel type window.</long>
+		    <long xml:lang="es">Seleccionar la ventana del tipo de panel anterior</long>
+		    <long xml:lang="eu">Hautatu aurreko paneleko leiho mota.</long>
+		    <long xml:lang="fi">Valitse edellinen paneelityypin ikkuna.</long>
+		    <long xml:lang="fr">Sélectionner la précédente fenêtre de la police du panneau</long>
+		    <long xml:lang="gl">Seleccionar a xanela anterior de tipo panel.</long>
+		    <long xml:lang="he">בחר את חלון הפאנל הקודם.</long>
+		    <long xml:lang="hr">Odaberi prethodni prozor na ploči.</long>
+		    <long xml:lang="hu">Válassza ki az előző paneltípus-ablakot.</long>
+		    <long xml:lang="it">Seleziona il tipo di pannello di finestra precedente</long>
+		    <long xml:lang="ja">前のパネルタイプのウィンドウを選択</long>
+		    <long xml:lang="ko">이전 패널 타입 창을 선택합니다.</long>
+		    <long xml:lang="ms">Pilih tetingkap jenis panel terdahulu</long>
+		    <long xml:lang="nl">Selecteer vorig paneel-type venster</long>
+		    <long xml:lang="oc">Seleccionar la fenèstra de tipe de panèl precedenta.</long>
+		    <long xml:lang="pl">Wybierz poprzedni typ panelu okna</long>
+		    <long xml:lang="pt">Seleccionar tipo de janela do painel anterior.</long>
+		    <long xml:lang="pt_BR">Selecionar janela de tipo de painel anterior</long>
+		    <long xml:lang="ro">Selectează fereastra precedentă tip panou</long>
+		    <long xml:lang="ru">Выбрать предыдущее окно типа панель.</long>
+		    <long xml:lang="sk">Vybrať predchádzajúci typ výplne okna</long>
+		    <long xml:lang="sl">Izberi prejšnje okno ploščnega tipa</long>
+		    <long xml:lang="sr">Одаберите тип прозора претходног панела.</long>
+		    <long xml:lang="sv">Välj föregående panelfönster</long>
+		    <long xml:lang="tr">Önceki panel türündeki pencereyi seç.</long>
+		    <long xml:lang="ug">ئالدىنقى تەگلىك كۆزنىكىنى تاللا</long>
+		    <long xml:lang="uk">Обрати попереднє вікно типу панель.</long>
+		    <long xml:lang="vi">Chuyển tới bảng điều khiển trước.</long>
+		    <long xml:lang="zh_CN">选择前一个面板类型窗口。</long>
+		    <long xml:lang="zh_HK">選取上一個視窗面板樣式</long>
+		    <long xml:lang="zh_TW">選取上一個視窗面板樣式</long>
+		</option>
+	    </group>
+
+	    <group>
+		<short>Behaviour</short>
+		<short xml:lang="am">ባህሪው</short>
+		<short xml:lang="ast">Comportamientu</short>
+		<short xml:lang="be">Паводзіны</short>
+		<short xml:lang="bg">Поведение</short>
+		<short xml:lang="bs">Ponašanje</short>
+		<short xml:lang="cs">Chování</short>
+		<short xml:lang="de">Verhalten</short>
+		<short xml:lang="el">Συμπεριφορά</short>
+		<short xml:lang="en_AU">Behaviour</short>
+		<short xml:lang="en_GB">Behaviour</short>
+		<short xml:lang="es">Comportamiento</short>
+		<short xml:lang="eu">Portaera</short>
+		<short xml:lang="fi">Käyttäytyminen</short>
+		<short xml:lang="fr">Comportement</short>
+		<short xml:lang="gl">Comportamento</short>
+		<short xml:lang="he">אופן</short>
+		<short xml:lang="hr">Ponašanje</short>
+		<short xml:lang="hu">Viselkedés</short>
+		<short xml:lang="it">Comportamento</short>
+		<short xml:lang="ja">動作</short>
+		<short xml:lang="ko">동작</short>
+		<short xml:lang="ms">Kelakuan</short>
+		<short xml:lang="nb">Oppførsel</short>
+		<short xml:lang="nds">Verhollen</short>
+		<short xml:lang="nl">Gedrag</short>
+		<short xml:lang="oc">Compòrtament</short>
+		<short xml:lang="pl">Zachowanie</short>
+		<short xml:lang="pt">Comportamento</short>
+		<short xml:lang="pt_BR">Comportamento</short>
+		<short xml:lang="ro">Comportament</short>
+		<short xml:lang="ru">Поведение</short>
+		<short xml:lang="sl">Obnašanje</short>
+		<short xml:lang="sq">Sjellja</short>
+		<short xml:lang="sr">Понашање</short>
+		<short xml:lang="sv">Beteende</short>
+		<short xml:lang="te">ప్రవర్తన</short>
+		<short xml:lang="tr">Davranış</short>
+		<short xml:lang="ug">قىلمىش</short>
+		<short xml:lang="uk">Поведінка</short>
+		<short xml:lang="vi">Hành vi</short>
+		<short xml:lang="zh_CN">特性</short>
+		<short xml:lang="zh_HK">特性</short>
+		<short xml:lang="zh_TW">特性</short>
+		<option type="float" name="speed">
+		    <short>Speed</short>
+		    <short xml:lang="am">ፍጥነት</short>
+		    <short xml:lang="ast">Velocidá</short>
+		    <short xml:lang="be">Хуткасьць</short>
+		    <short xml:lang="bg">Скорост</short>
+		    <short xml:lang="bs">Brzina</short>
+		    <short xml:lang="ca">Velocitat</short>
+		    <short xml:lang="cs">Rychlost</short>
+		    <short xml:lang="da">Hastighed</short>
+		    <short xml:lang="de">Geschwindigkeit</short>
+		    <short xml:lang="el">Ταχύτητα</short>
+		    <short xml:lang="en_AU">Speed</short>
+		    <short xml:lang="en_GB">Speed</short>
+		    <short xml:lang="es">Velocidad</short>
+		    <short xml:lang="eu">Abiadura</short>
+		    <short xml:lang="fi">Nopeus</short>
+		    <short xml:lang="fr">Vitesse</short>
+		    <short xml:lang="gl">Velocidade</short>
+		    <short xml:lang="gu">ઝડપ</short>
+		    <short xml:lang="he">מהירות</short>
+		    <short xml:lang="hr">Brzina</short>
+		    <short xml:lang="hu">Sebesség</short>
+		    <short xml:lang="id">Kecepatan</short>
+		    <short xml:lang="it">Velocità</short>
+		    <short xml:lang="ja">速度</short>
+		    <short xml:lang="ko">속도</short>
+		    <short xml:lang="ku">Lez</short>
+		    <short xml:lang="ms">Kelajuan</short>
+		    <short xml:lang="my">အလျင်</short>
+		    <short xml:lang="nb">Hastighet</short>
+		    <short xml:lang="nds">Gauheit</short>
+		    <short xml:lang="nl">Snelheid</short>
+		    <short xml:lang="oc">Velocitat</short>
+		    <short xml:lang="or">ଗତି</short>
+		    <short xml:lang="pl">Szybkość</short>
+		    <short xml:lang="pt">Velocidade</short>
+		    <short xml:lang="pt_BR">Velocidade</short>
+		    <short xml:lang="ro">Viteză</short>
+		    <short xml:lang="ru">Скорость</short>
+		    <short xml:lang="sk">Rýchlosť</short>
+		    <short xml:lang="sl">Hitrost</short>
+		    <short xml:lang="sq">Shpejtësia</short>
+		    <short xml:lang="sr">Брзина</short>
+		    <short xml:lang="sv">Hastighet</short>
+		    <short xml:lang="tr">Hız</short>
+		    <short xml:lang="ug">سۈرئىتى</short>
+		    <short xml:lang="uk">Швидкість</short>
+		    <short xml:lang="vi">Tốc độ</short>
+		    <short xml:lang="zh_CN">速度</short>
+		    <short xml:lang="zh_HK">速度</short>
+		    <short xml:lang="zh_TW">速度</short>
+		    <long>Switcher speed</long>
+		    <long xml:lang="am">የ መቀየሪያ ፍጥነት</long>
+		    <long xml:lang="ast">Velocidá de conmutador</long>
+		    <long xml:lang="be">Хуткасьць пераключэньня</long>
+		    <long xml:lang="bs">Brzina birača</long>
+		    <long xml:lang="ca">Velocitat del canviador</long>
+		    <long xml:lang="cs">Rychlost přepínače</long>
+		    <long xml:lang="da">Hastighed for skifter</long>
+		    <long xml:lang="de">Schaltergeschwindigkeit</long>
+		    <long xml:lang="el">Ταχύτητα εναλλάκτη</long>
+		    <long xml:lang="en_AU">Switcher speed</long>
+		    <long xml:lang="en_GB">Switcher speed</long>
+		    <long xml:lang="es">Velocidad de cambiador</long>
+		    <long xml:lang="eu">Aldatzailearen abiadura</long>
+		    <long xml:lang="fi">Vaihtajanopeus</long>
+		    <long xml:lang="fr">Vitesse du sélecteur</long>
+		    <long xml:lang="gl">Velocidade do alternador</long>
+		    <long xml:lang="gu">બદલનારની ઝડપ</long>
+		    <long xml:lang="he">מהירות המעביר</long>
+		    <long xml:lang="hr">Brzina mjenjača</long>
+		    <long xml:lang="hu">Váltás sebessége</long>
+		    <long xml:lang="it">Velocità selettore</long>
+		    <long xml:lang="ja">スイッチャー速度</long>
+		    <long xml:lang="ko">전환 속도</long>
+		    <long xml:lang="ms">Kelajuan penukar</long>
+		    <long xml:lang="nb">Hastighet for skifter</long>
+		    <long xml:lang="nl">Wisselsnelheid</long>
+		    <long xml:lang="oc">Velocitat del selector</long>
+		    <long xml:lang="or">ଅଦଳବଦଳକାରୀ ଗତି</long>
+		    <long xml:lang="pl">Szybkość przełącznika</long>
+		    <long xml:lang="pt">Velocidade do alternador</long>
+		    <long xml:lang="pt_BR">Velocidade do alternador</long>
+		    <long xml:lang="ro">Viteză comutator</long>
+		    <long xml:lang="ru">Скорость переключателя</long>
+		    <long xml:lang="sk">Rýchlosť prepínača</long>
+		    <long xml:lang="sl">Hitrost preklopnika</long>
+		    <long xml:lang="sr">Брзина бирача</long>
+		    <long xml:lang="sv">Växlingshastighet</long>
+		    <long xml:lang="tr">Değiştirici hızı</long>
+		    <long xml:lang="ug">ئالماشتۇرغۇچى سۈرئىتى</long>
+		    <long xml:lang="uk">Швидкість перемикача</long>
+		    <long xml:lang="vi">Tốc độ chuyển đổi</long>
+		    <long xml:lang="zh_CN">切换程序速度</long>
+		    <long xml:lang="zh_HK">切換速度</long>
+		    <long xml:lang="zh_TW">切換速度</long>
+		    <default>4</default>
+		    <min>0.1</min>
+		    <max>50</max>
+		    <precision>0.1</precision>
+		</option>
+		<option type="float" name="timestep">
+		    <short>Timestep</short>
+		    <short xml:lang="ast">Pasu</short>
+		    <short xml:lang="be">সময়ধাপ</short>
+		    <short xml:lang="bg">Времева стъпка</short>
+		    <short xml:lang="bs">Korak vremena</short>
+		    <short xml:lang="ca">Etapa</short>
+		    <short xml:lang="cs">Časový krok</short>
+		    <short xml:lang="da">Tidstrin</short>
+		    <short xml:lang="de">Zeitintervall</short>
+		    <short xml:lang="el">Χρονικό Βήμα</short>
+		    <short xml:lang="en_AU">Timestep</short>
+		    <short xml:lang="en_GB">Timestep</short>
+		    <short xml:lang="es">Paso</short>
+		    <short xml:lang="eu">denbora-pausoa</short>
+		    <short xml:lang="fi">Aikaviive</short>
+		    <short xml:lang="fr">Intervalle</short>
+		    <short xml:lang="gl">Intervalo de tempo</short>
+		    <short xml:lang="gu">સમયપગલું</short>
+		    <short xml:lang="he">יחידת זמן</short>
+		    <short xml:lang="hr">Vremenski korak</short>
+		    <short xml:lang="hu">Időköz</short>
+		    <short xml:lang="it">Intervallo</short>
+		    <short xml:lang="ja">描画の時間刻み</short>
+		    <short xml:lang="ko">시간 간격</short>
+		    <short xml:lang="ms">Langkah Masa</short>
+		    <short xml:lang="nb">Tidsskritt</short>
+		    <short xml:lang="nl">Tijdstempel</short>
+		    <short xml:lang="oc">Interval</short>
+		    <short xml:lang="or">ସମଯସୋପାନ</short>
+		    <short xml:lang="pl">Opóźnienie</short>
+		    <short xml:lang="pt">Espaço de tempo</short>
+		    <short xml:lang="pt_BR">Intervalo de tempo</short>
+		    <short xml:lang="ro">Pas de timp</short>
+		    <short xml:lang="ru">Шаг времени</short>
+		    <short xml:lang="sk">Krok</short>
+		    <short xml:lang="sl">Časovni interval</short>
+		    <short xml:lang="sr">Корак времена</short>
+		    <short xml:lang="sv">Tidsintervall</short>
+		    <short xml:lang="tr">Süre aralığı</short>
+		    <short xml:lang="ug">ۋاقىت قەدەم ئۇزۇنلۇقى</short>
+		    <short xml:lang="uk">Крок часу</short>
+		    <short xml:lang="vi">Bước</short>
+		    <short xml:lang="zh_CN">时间步长</short>
+		    <short xml:lang="zh_HK">時間間隔</short>
+		    <short xml:lang="zh_TW">時間間隔</short>
+		    <long>Switcher timestep</long>
+		    <long xml:lang="ast">Pasu de conmutador</long>
+		    <long xml:lang="be">পরিবর্তনকারীর সময়ধাপ</long>
+		    <long xml:lang="bg">Времева стъпка на превключване</long>
+		    <long xml:lang="bs">Vremenski korak prebacivača</long>
+		    <long xml:lang="ca">Etapa del canviador</long>
+		    <long xml:lang="cs">Časový krok přepínače</long>
+		    <long xml:lang="da">Tidstrin for skifter</long>
+		    <long xml:lang="de">Schalterzeitintervall</long>
+		    <long xml:lang="el">Χρονικό βήμα εναλλάκτη</long>
+		    <long xml:lang="en_AU">Switcher timestep</long>
+		    <long xml:lang="en_GB">Switcher timestep</long>
+		    <long xml:lang="es">Paso de conmutador</long>
+		    <long xml:lang="eu">Aldatzailearen denbora-pausoa</long>
+		    <long xml:lang="fi">Vaihtaja-aikaväli</long>
+		    <long xml:lang="fr">Intervalle du sélecteur</long>
+		    <long xml:lang="gl">Tempo do alternador</long>
+		    <long xml:lang="gu">બદલનાર સમયપગલું</long>
+		    <long xml:lang="he">יחידת זמן של המעביר</long>
+		    <long xml:lang="hr">Vremenski korak mjenjača</long>
+		    <long xml:lang="hu">Váltás időköz</long>
+		    <long xml:lang="it">Intervallo selettore</long>
+		    <long xml:lang="ja">スイッチャー描画の時間刻み</long>
+		    <long xml:lang="ko">전환 간격</long>
+		    <long xml:lang="ms">Langkah masa penukar</long>
+		    <long xml:lang="nb">Tisskritt for skifter</long>
+		    <long xml:lang="nl">Tijdstappen van wisselaar</long>
+		    <long xml:lang="oc">Interval de temps del selector</long>
+		    <long xml:lang="or">ଅଦଳବଦଳକାରୀ ସମଯସୋପାନ</long>
+		    <long xml:lang="pl">Krok czasu przełącznika</long>
+		    <long xml:lang="pt">Timestep do alternador</long>
+		    <long xml:lang="pt_BR">Intervalo de tempo do alternador</long>
+		    <long xml:lang="ro">Marcă de timp comutator</long>
+		    <long xml:lang="ru">Квант времени переключателя</long>
+		    <long xml:lang="sk">Časový krok prepínača</long>
+		    <long xml:lang="sl">Časovni korak preklopnika</long>
+		    <long xml:lang="sr">Временски корак бирача</long>
+		    <long xml:lang="sv">Tidsintervall för växlare</long>
+		    <long xml:lang="tr">Değiştirici zaman aralığı</long>
+		    <long xml:lang="ug">چۆرگىلىتىش ۋاقتىنى ئالماشتۇرغۇچ</long>
+		    <long xml:lang="uk">Квант часу перемикача</long>
+		    <long xml:lang="vi">Bước chuyển đổi</long>
+		    <long xml:lang="zh_CN">切换程序时间区间</long>
+		    <long xml:lang="zh_HK">切換時間間隔</long>
+		    <long xml:lang="zh_TW">切換時間間隔</long>
+		    <default>1.2</default>
+		    <min>0.1</min>
+		    <max>50</max>
+		    <precision>0.1</precision>
+		</option>
+		<option type="match" name="window_match">
+		    <short>Switcher windows</short>
+		    <short xml:lang="am">መስኮቶች መቀየሪያ</short>
+		    <short xml:lang="ast">Conmutar ventanes</short>
+		    <short xml:lang="be">Пераключэньне вокнаў</short>
+		    <short xml:lang="bg">Превключване на прозорци</short>
+		    <short xml:lang="bs">Prozori birača</short>
+		    <short xml:lang="ca">Finestres del commutador</short>
+		    <short xml:lang="cs">Okna v přepínači</short>
+		    <short xml:lang="de">Fenster in Umschaltauswahl</short>
+		    <short xml:lang="el">Εναλλάκτης παραθύρων</short>
+		    <short xml:lang="en_AU">Switcher windows</short>
+		    <short xml:lang="en_GB">Switcher windows</short>
+		    <short xml:lang="es">Conmutar ventanas</short>
+		    <short xml:lang="eu">Leiho aldatzailea</short>
+		    <short xml:lang="fi">Ikkunoiden vaihtajassa näkyvät ikkunatyypit</short>
+		    <short xml:lang="fr">Types de fenêtres du sélecteur</short>
+		    <short xml:lang="gl">Alternador de xanelas</short>
+		    <short xml:lang="gu">બદલનાર વિન્ડો</short>
+		    <short xml:lang="he">חלונות המעביר</short>
+		    <short xml:lang="hr">Prozori mjenjača</short>
+		    <short xml:lang="hu">Ablakváltó ablak</short>
+		    <short xml:lang="it">Finestre da selezionare</short>
+		    <short xml:lang="ja">スイッチャーウィンドウ</short>
+		    <short xml:lang="ko">창 전환</short>
+		    <short xml:lang="ms">Tetingkap penukar</short>
+		    <short xml:lang="nb">Vinduer i skifteren</short>
+		    <short xml:lang="nl">Vensters voor wisselaar</short>
+		    <short xml:lang="oc">Selector de fenèstra</short>
+		    <short xml:lang="or">ଉଇଣ୍ଡୋ ଅଦଳବଦଳକାରୀ</short>
+		    <short xml:lang="pl">Zmieniacz okien</short>
+		    <short xml:lang="pt">Janelas a alternar</short>
+		    <short xml:lang="pt_BR">Janelas a alternar</short>
+		    <short xml:lang="ro">Ferestre comutator</short>
+		    <short xml:lang="ru">Переключатель окон</short>
+		    <short xml:lang="sk">Okná prepínača</short>
+		    <short xml:lang="sl">Okna preklopnika</short>
+		    <short xml:lang="sr">Прозори бирача</short>
+		    <short xml:lang="sv">Växelfönster</short>
+		    <short xml:lang="tr">Pencere değiştirici</short>
+		    <short xml:lang="ug">كۆزنەك ئالماشتۇرغۇچ</short>
+		    <short xml:lang="uk">Перемикач вікон</short>
+		    <short xml:lang="vi">Các cửa sổ chuyển đổi</short>
+		    <short xml:lang="zh_CN">切换程序窗口</short>
+		    <short xml:lang="zh_HK">切換視窗</short>
+		    <short xml:lang="zh_TW">切換視窗</short>
+		    <long>Windows that should be shown in switcher</long>
+		    <long xml:lang="ast">Ventanes que tienen qu'amosase nel conmutador</long>
+		    <long xml:lang="be">সুইচারে যে উইন্ডোগুলি প্রদর্শন করা হবে</long>
+		    <long xml:lang="bg">Прозорци, които трябва да бъдат показвани в превключвателя</long>
+		    <long xml:lang="bn">সুইচারে যে উইন্ডোগুলি প্রদর্শন করা হবে</long>
+		    <long xml:lang="bn_IN">সুইচারে যে উইন্ডোগুলি প্রদর্শন করা হবে</long>
+		    <long xml:lang="bs">Prozori koji bi trebali biti prikazani u prebacivaču</long>
+		    <long xml:lang="ca">Les finestres que s'haurien de mostrar al commutador</long>
+		    <long xml:lang="cs">Okna která se zobrazí v přepínači</long>
+		    <long xml:lang="de">Fenster, die beim Umschalten auswählbar sein sollen.</long>
+		    <long xml:lang="el">Παράθυρα που πρέπει να εμφανίζονται στον εναλλάκτη</long>
+		    <long xml:lang="en_AU">Windows that should be shown in switcher</long>
+		    <long xml:lang="en_GB">Windows that should be shown in switcher</long>
+		    <long xml:lang="es">Ventanas que deben mostrarse en el cambiador</long>
+		    <long xml:lang="eu">Aldatzailean erakutsiko diren leihoak</long>
+		    <long xml:lang="fi">Määrittää ikkunatyypit, jotka näkyvät ikkunoiden vaihtajassa</long>
+		    <long xml:lang="fr">Types de fenêtres à afficher dans le sélecteur</long>
+		    <long xml:lang="gl">Xanelas que deben mostrarse no alternador</long>
+		    <long xml:lang="gu">વિન્ડો કે જે બદલનારમાં બતાવવી જોઈએ</long>
+		    <long xml:lang="he">חלונות שיש להציג במעביר</long>
+		    <long xml:lang="hi">विंडोज जिसे स्विचर में दिखाया जाना चाहिए</long>
+		    <long xml:lang="hr">Prozori koji se trebaju pokazivati u mjenjaču</long>
+		    <long xml:lang="hu">Az ablakválasztóban megjelenítendő ablaktípusok</long>
+		    <long xml:lang="it">Tipi di finestre da visualizzare nel selettore</long>
+		    <long xml:lang="ja">スイッチャーに表示する対象ウィンドウ</long>
+		    <long xml:lang="ko">전환 창 안에 포함될 창들</long>
+		    <long xml:lang="ms">Tetingkap yang patut dipaparkan dalam penukar</long>
+		    <long xml:lang="nb">Vinduer som skal vises i skifteren</long>
+		    <long xml:lang="nl">Vensters die in de wisselaar getoond moeten worden</long>
+		    <long xml:lang="oc">Fenèstras que devon èsser afichadas dins lo selector</long>
+		    <long xml:lang="or">ଉଇଣ୍ଡୋ ୟାହାକି ବଦଳକାରୀରେ ଦେଖାଇବା ଉଚିତ</long>
+		    <long xml:lang="pa">ਵਿੰਡੋ, ਜੋ ਕਿ ਸਵਿੱਚਰ ਵਿੱਚ ਵੇਖਾਈਆਂ ਜਾਣ</long>
+		    <long xml:lang="pl">Typy okien, które mają być pokazywane w zmieniaczu</long>
+		    <long xml:lang="pt">Janelas que devem ser mostradas no alternador</long>
+		    <long xml:lang="pt_BR">Janelas que devem ser mostradas no alternador</long>
+		    <long xml:lang="ro">Ferestrele ce trebuiesc afișate în comutator</long>
+		    <long xml:lang="ru">Окна, которые должны быть отображены в переключателе</long>
+		    <long xml:lang="sk">Okná, ktoré budú zobrazené v prepínači</long>
+		    <long xml:lang="sl">Okna, ki naj bodo prikazana v preklopniku</long>
+		    <long xml:lang="sr">Прозори који треба да се приказују у бирачу</long>
+		    <long xml:lang="sv">Fönster som ska bli visade i växlaren</long>
+		    <long xml:lang="tr">Değiştiricide gösterilmesi gereken pencereler</long>
+		    <long xml:lang="ug">كۆزنەكنى ئالماشتۇرغۇچتا  كۆرسىتىدۇ</long>
+		    <long xml:lang="uk">Вікна, які повинні бути показані у перемикачі</long>
+		    <long xml:lang="vi">Các cửa sổ được hiện trong bộ chuyển đổi</long>
+		    <long xml:lang="zh_CN">切换程序中应显示的窗口</long>
+		    <long xml:lang="zh_HK">在切換當中要顯示視窗</long>
+		    <long xml:lang="zh_TW">在切換當中要顯示視窗</long>
+		    <default>Normal | Dialog | Toolbar | Utility | Unknown</default>
+		</option>
+		<option type="bool" name="minimized">
+		    <short>Show Minimized</short>
+		    <short xml:lang="uk">Показувати згорнуті</short>
+		    <long>Show minimized windows</long>
+		    <long xml:lang="ast">Amuesa ventanes minimizaes</long>
+		    <long xml:lang="be">Паказаць згорнутыя вокны</long>
+		    <long xml:lang="bg">Показване на минимизирани прозорци</long>
+		    <long xml:lang="bs">Prikaži umanjene prozore</long>
+		    <long xml:lang="ca">Mostra les finestres minimitzades</long>
+		    <long xml:lang="cs">Zobrazit minimalizovaná okna</long>
+		    <long xml:lang="da">Vis minimerede vinduer</long>
+		    <long xml:lang="de">Verkleinerte Fenster anzeigen</long>
+		    <long xml:lang="el">Εμφάνιση ελαχιστοποιημένων παραθύρων</long>
+		    <long xml:lang="en_AU">Show minimised windows</long>
+		    <long xml:lang="en_GB">Show minimised windows</long>
+		    <long xml:lang="es">Muestra ventanas minimizadas</long>
+		    <long xml:lang="eu">Erakutsi txikitutako leihoak</long>
+		    <long xml:lang="fi">Näytä pienennetyt ikkunat</long>
+		    <long xml:lang="fr">Afficher des fenêtres réduites</long>
+		    <long xml:lang="fy">Minimalisearre finsters sjen litte</long>
+		    <long xml:lang="gl">Mostrar xanelas minimizadas</long>
+		    <long xml:lang="gu">ન્યૂનતમ કરેલ વિન્ડો બતાવો</long>
+		    <long xml:lang="he">הראה חלונות ממוזערים</long>
+		    <long xml:lang="hr">Pokaži smanjene prozore</long>
+		    <long xml:lang="hu">Ikonizált ablakok megjelenítése</long>
+		    <long xml:lang="it">Mostra le finestre minimizzate</long>
+		    <long xml:lang="ja">最小化されているウィンドウも表示</long>
+		    <long xml:lang="ko">최소화된 창 표시</long>
+		    <long xml:lang="ms">Papar tetingkap diminimumkan</long>
+		    <long xml:lang="nb">Vis minimerte vinduer</long>
+		    <long xml:lang="nl">Toon geminimaliseerde vensters</long>
+		    <long xml:lang="oc">Afichar las fenèstras reduchas</long>
+		    <long xml:lang="or">ନ୍ଯୁନତମ ହୋଇଥିବା ଉଇଣ୍ଡୋକୁ ଦେଖାଅ</long>
+		    <long xml:lang="pl">Wyświetl zminimalizowan okna</long>
+		    <long xml:lang="pt">Mostrar janelas minimizadas</long>
+		    <long xml:lang="pt_BR">Mostrar janelas minimizadas</long>
+		    <long xml:lang="ro">Arată ferestrele minimizate</long>
+		    <long xml:lang="ru">Отображение свернутых окон</long>
+		    <long xml:lang="sk">Zobraziť minimalizované okná</long>
+		    <long xml:lang="sl">Prikaži skrčena okna</long>
+		    <long xml:lang="sr">Прикажи умањене прозоре</long>
+		    <long xml:lang="sv">Visa minimerade fönster</long>
+		    <long xml:lang="tr">Küçültülmüş pencereleri göster</long>
+		    <long xml:lang="ug">كىچىكلىتىلگەن كۆزنەكنى كۆرسەت</long>
+		    <long xml:lang="uk">Показ згорнутих вікон</long>
+		    <long xml:lang="vi">Hiện các cửa sổ bị thu nhỏ</long>
+		    <long xml:lang="zh_CN">显示最小化的窗口</long>
+		    <long xml:lang="zh_HK">顯示最小化的視窗</long>
+		    <long xml:lang="zh_TW">顯示最小化的視窗</long>
+		    <default>true</default>
+		</option>
+		<option type="bool" name="auto_change_vp">
+		    <short>Auto Change Viewport</short>
+		    <short xml:lang="uk">Автозміна проєкції</short>
+		    <long>Change to the viewport of the selected window while switching</long>
+		    <long xml:lang="uk">Змінити проєкцію вибраного вікна під час перемикання</long>
+		    <default>true</default>
+		</option>
+		<option type="float" name="popup_delay">
+		    <short>Popup Window Delay</short>
+		    <short xml:lang="uk">Затримка виринного вікна</short>
+		    <long>Time (in s) the popup window should be delayed before appearing</long>
+		    <long xml:lang="uk">Час (у секундах) затримки показу виринного вікна</long>
+		    <default>0.2</default>
+		    <min>0.0</min>
+		    <max>2.0</max>
+		    <precision>0.05</precision>
+		</option>
+		<option type="bool" name="mouse_select">
+		    <short>Allow Mouse Selection</short>
+		    <short xml:lang="uk">Дозволити вибір мишею</short>
+		    <long>Allow selection of windows from the switcher window with the mouse</long>
+		    <long xml:lang="uk">Дозволити вибір вікон із перемикача вікон за допомогою миші</long>
+		    <default>true</default>
+		</option>
+	    </group>
+	    <group>
+		<short>Appearance</short>
+		<short xml:lang="am">አቀራረብ</short>
+		<short xml:lang="ast">Aspeutu</short>
+		<short xml:lang="be">Вонкавы выгляд</short>
+		<short xml:lang="bg">Външен вид</short>
+		<short xml:lang="bs">Izgled</short>
+		<short xml:lang="cs">Vzhled</short>
+		<short xml:lang="da">Udseende</short>
+		<short xml:lang="de">Erscheinung</short>
+		<short xml:lang="el">Εμφάνιση</short>
+		<short xml:lang="en_AU">Appearance</short>
+		<short xml:lang="en_GB">Appearance</short>
+		<short xml:lang="es">Apariencia</short>
+		<short xml:lang="eu">Itxura</short>
+		<short xml:lang="fi">Ulkoasu</short>
+		<short xml:lang="fr">Apparence</short>
+		<short xml:lang="fy">Foarkommen</short>
+		<short xml:lang="gl">Aparencia</short>
+		<short xml:lang="he">מראה</short>
+		<short xml:lang="hr">Izgled</short>
+		<short xml:lang="hu">Megjelenés</short>
+		<short xml:lang="it">Aspetto</short>
+		<short xml:lang="ja">外観</short>
+		<short xml:lang="ko">모양</short>
+		<short xml:lang="ms">Penampilan</short>
+		<short xml:lang="my">ပုံပန်းသဏ္ဍာန်</short>
+		<short xml:lang="nb">Utseende</short>
+		<short xml:lang="nds">Utsehn</short>
+		<short xml:lang="nl">Uiterlijk</short>
+		<short xml:lang="oc">Aparéncia</short>
+		<short xml:lang="pl">Wygląd</short>
+		<short xml:lang="pt">Aparência</short>
+		<short xml:lang="pt_BR">Aparência</short>
+		<short xml:lang="ro">Aspect</short>
+		<short xml:lang="ru">Внешний вид</short>
+		<short xml:lang="sl">Videz</short>
+		<short xml:lang="sq">Pamja</short>
+		<short xml:lang="sr">Изглед</short>
+		<short xml:lang="sv">Utseende</short>
+		<short xml:lang="tr">Görünüm</short>
+		<short xml:lang="ug">كۆرۈنۈشى</short>
+		<short xml:lang="uk">Зовнішній вигляд</short>
+		<short xml:lang="vi">Diện mạo</short>
+		<short xml:lang="zh_CN">外观</short>
+		<short xml:lang="zh_HK">外觀</short>
+		<short xml:lang="zh_TW">外觀</short>
+		<option type="int" name="saturation">
+		    <short>Saturation</short>
+		    <short xml:lang="am">መሙያ</short>
+		    <short xml:lang="ast">Saturación</short>
+		    <short xml:lang="be">Насычанасьць</short>
+		    <short xml:lang="bg">Наситеност</short>
+		    <short xml:lang="bs">Zasićenje</short>
+		    <short xml:lang="ca">Saturació</short>
+		    <short xml:lang="cs">Sytost</short>
+		    <short xml:lang="da">Farvemætning</short>
+		    <short xml:lang="de">Sättigung</short>
+		    <short xml:lang="el">Κορεσμός</short>
+		    <short xml:lang="en_AU">Saturation</short>
+		    <short xml:lang="en_GB">Saturation</short>
+		    <short xml:lang="es">Saturación</short>
+		    <short xml:lang="eu">Saturazioa</short>
+		    <short xml:lang="fi">Kylläisyys</short>
+		    <short xml:lang="fr">Saturation</short>
+		    <short xml:lang="fy">Sêding</short>
+		    <short xml:lang="gl">Saturacion</short>
+		    <short xml:lang="he">רווייה</short>
+		    <short xml:lang="hr">Zasićenje</short>
+		    <short xml:lang="hu">Telítettség</short>
+		    <short xml:lang="it">Saturazione</short>
+		    <short xml:lang="ja">彩度</short>
+		    <short xml:lang="ko">채도</short>
+		    <short xml:lang="ms">Ketepuan</short>
+		    <short xml:lang="nb">Metning</short>
+		    <short xml:lang="nl">Verzadiging</short>
+		    <short xml:lang="oc">Saturacion</short>
+		    <short xml:lang="or">ସଂପୂର୍ଣ୍ଣ ମିଶ୍ରଣ</short>
+		    <short xml:lang="pl">Nasycenie</short>
+		    <short xml:lang="pt">Saturação</short>
+		    <short xml:lang="pt_BR">Saturação</short>
+		    <short xml:lang="ro">Saturație</short>
+		    <short xml:lang="ru">Насыщенность</short>
+		    <short xml:lang="sk">Sýtosť</short>
+		    <short xml:lang="sl">Nasičenost</short>
+		    <short xml:lang="sq">Ngopja</short>
+		    <short xml:lang="sr">Засићење</short>
+		    <short xml:lang="sv">Färgmättnad</short>
+		    <short xml:lang="tr">Doygunluk</short>
+		    <short xml:lang="ug">تويۇنۇش</short>
+		    <short xml:lang="uk">Насиченість</short>
+		    <short xml:lang="vi">Độ bão hòa</short>
+		    <short xml:lang="zh_CN">饱和度</short>
+		    <short xml:lang="zh_HK">飽和度</short>
+		    <short xml:lang="zh_TW">飽和度</short>
+		    <long>Amount of saturation in percent</long>
+		    <long xml:lang="ast">Porcentax de saturación</long>
+		    <long xml:lang="be">সম্পৃক্তির শতকরা পরিমাণ</long>
+		    <long xml:lang="bg">Количество наситеност в проценти</long>
+		    <long xml:lang="bn">সম্পৃক্তির শতকরা পরিমাণ</long>
+		    <long xml:lang="bn_IN">সম্পৃক্তির শতকরা পরিমাণ</long>
+		    <long xml:lang="bs">Količina zasićenja u procentima</long>
+		    <long xml:lang="ca">Quantitat de saturació en percentatge</long>
+		    <long xml:lang="cs">Hodnota sytosti v procentech</long>
+		    <long xml:lang="da">Mængden af farvemætning i procent</long>
+		    <long xml:lang="de">Wert der Sättigung in Prozent</long>
+		    <long xml:lang="el">Ποσό κορεσμού σε ποσοστό επι της εκατό</long>
+		    <long xml:lang="en_AU">Amount of saturation in percent</long>
+		    <long xml:lang="en_GB">Amount of saturation in percent</long>
+		    <long xml:lang="es">Porcentaje de saturación</long>
+		    <long xml:lang="eu">Saturazio kopurua ehunekotan</long>
+		    <long xml:lang="fi">Kylläisyyden määrä prosentteina</long>
+		    <long xml:lang="fr">Quantité de saturation en pourcentage</long>
+		    <long xml:lang="gl">Cantidade de saturación en porcentaxe</long>
+		    <long xml:lang="gu">સંતુલનનો જથ્થો ટકામાં</long>
+		    <long xml:lang="he">אחוזי רווייה</long>
+		    <long xml:lang="hi">प्रतिशत में संतृप्ति की मात्रा</long>
+		    <long xml:lang="hr">Količina zasićenja u postotku</long>
+		    <long xml:lang="hu">Telítettség (0-100%)</long>
+		    <long xml:lang="it">Quantità di saturazione in percentuale</long>
+		    <long xml:lang="ja">鮮やかさの量(%)</long>
+		    <long xml:lang="ko">대조(퍼센트)</long>
+		    <long xml:lang="ms">Sejumlah ketepuan dalam peratus</long>
+		    <long xml:lang="nb">Mengde metning i prosent</long>
+		    <long xml:lang="nl">Mate van verzadiging in procenten</long>
+		    <long xml:lang="oc">Taus de saturacion en percentatge</long>
+		    <long xml:lang="or">ଶତକଡାରେ ସଂପୂର୍ଣ୍ଣମିଶ୍ରଣର ପରିମାଣ</long>
+		    <long xml:lang="pa">ਫੀਸਦੀ ਵਿੱਚ ਸੰਤ੍ਰਿਪਤਾ ਦੀ ਮਾਤਰਾ</long>
+		    <long xml:lang="pl">Stopień nasycenia w procentach</long>
+		    <long xml:lang="pt">Quantidade de saturação em percentagem</long>
+		    <long xml:lang="pt_BR">Quantidade de saturação em percentagem</long>
+		    <long xml:lang="ro">Saturația în procente</long>
+		    <long xml:lang="ru">Уровень насыщенности в процентах</long>
+		    <long xml:lang="sk">Hodnota sýtosti v percentách</long>
+		    <long xml:lang="sl">Nasičenost v odstotkih</long>
+		    <long xml:lang="sr">Количина засићења у процентима</long>
+		    <long xml:lang="sv">Färgmättnad i procent</long>
+		    <long xml:lang="tr">Yüzde olarak doygunluk miktarı</long>
+		    <long xml:lang="ug">تويۇنۇش دەرىجىسى پىرسەنتى</long>
+		    <long xml:lang="uk">Рівень насичености у відсотках</long>
+		    <long xml:lang="vi">Độ bão hòa tính theo phần trăm</long>
+		    <long xml:lang="zh_CN">饱和度百分比</long>
+		    <long xml:lang="zh_HK">飽和度比例</long>
+		    <long xml:lang="zh_TW">飽和度比例</long>
+		    <default>100</default>
+		    <min>0</min>
+		    <max>100</max>
+		</option>
+		<option type="int" name="brightness">
+		    <short>Brightness</short>
+		    <short xml:lang="am">ብሩህነት</short>
+		    <short xml:lang="ast">Claridá</short>
+		    <short xml:lang="be">Яркасьць</short>
+		    <short xml:lang="bg">Яркост</short>
+		    <short xml:lang="bs">Svjetlina</short>
+		    <short xml:lang="ca">Brillantor</short>
+		    <short xml:lang="cs">Jas</short>
+		    <short xml:lang="da">Lysstyrke</short>
+		    <short xml:lang="de">Helligkeit</short>
+		    <short xml:lang="el">Φωτεινότητα</short>
+		    <short xml:lang="en_AU">Brightness</short>
+		    <short xml:lang="en_GB">Brightness</short>
+		    <short xml:lang="es">Brillo</short>
+		    <short xml:lang="et">Heledus</short>
+		    <short xml:lang="eu">Distira</short>
+		    <short xml:lang="fi">Kirkkaus</short>
+		    <short xml:lang="fr">Luminosité</short>
+		    <short xml:lang="gl">Brillo</short>
+		    <short xml:lang="gu">તેજસ્વીતા</short>
+		    <short xml:lang="he">בהירות</short>
+		    <short xml:lang="hr">Svjetlina</short>
+		    <short xml:lang="hu">Fényerő</short>
+		    <short xml:lang="it">Luminosità</short>
+		    <short xml:lang="ja">明度</short>
+		    <short xml:lang="ko">밝기</short>
+		    <short xml:lang="ms">Kecerahan</short>
+		    <short xml:lang="nb">Skarphet</short>
+		    <short xml:lang="nl">Helderheid</short>
+		    <short xml:lang="oc">Luminositat</short>
+		    <short xml:lang="or">ଉଜ୍ବଳତା</short>
+		    <short xml:lang="pl">Jasność</short>
+		    <short xml:lang="pt">Brilho</short>
+		    <short xml:lang="pt_BR">Brilho</short>
+		    <short xml:lang="ro">Luminozitate</short>
+		    <short xml:lang="ru">Яркость</short>
+		    <short xml:lang="sk">Jas</short>
+		    <short xml:lang="sl">Svetlost</short>
+		    <short xml:lang="sq">Ndriçimi</short>
+		    <short xml:lang="sr">Светлина</short>
+		    <short xml:lang="sv">Ljusstyrka</short>
+		    <short xml:lang="tr">Parlaklık</short>
+		    <short xml:lang="ug">يورۇقلۇق</short>
+		    <short xml:lang="uk">Яскравість</short>
+		    <short xml:lang="vi">Độ sáng</short>
+		    <short xml:lang="zh_CN">亮度</short>
+		    <short xml:lang="zh_HK">亮度</short>
+		    <short xml:lang="zh_TW">亮度</short>
+		    <long>Amount of brightness in percent</long>
+		    <long xml:lang="ast">Porcentax de brillu</long>
+		    <long xml:lang="be">উজ্জ্বলতার শতকরা পরিমাণ</long>
+		    <long xml:lang="bg">Количество яркост в проценти</long>
+		    <long xml:lang="bn">উজ্জ্বলতার শতকরা পরিমাণ</long>
+		    <long xml:lang="bn_IN">উজ্জ্বলতার শতকরা পরিমাণ</long>
+		    <long xml:lang="bs">Iznos osvjetljenja u procentima</long>
+		    <long xml:lang="ca">Quantitat de brillantor en percentatge</long>
+		    <long xml:lang="cs">Hodnota jasu v procentech</long>
+		    <long xml:lang="da">Mængden af lysstyrke i procent</long>
+		    <long xml:lang="de">Wert der Helligkeit in Prozent</long>
+		    <long xml:lang="el">Ποσό φωτεινότητας σε ποσοστό επι της εκατό</long>
+		    <long xml:lang="en_AU">Amount of brightness in percent</long>
+		    <long xml:lang="en_GB">Amount of brightness in percent</long>
+		    <long xml:lang="es">Porcentaje de brillo</long>
+		    <long xml:lang="eu">Distira kopurua ehunekotan</long>
+		    <long xml:lang="fi">Kirkkauden määrä prosentteina</long>
+		    <long xml:lang="fr">Quantité de luminosité en pourcentage</long>
+		    <long xml:lang="gl">Cantidade de brillo en porcentaxe</long>
+		    <long xml:lang="gu">તેજસ્વીતાનો જથ્થો ટકામાં</long>
+		    <long xml:lang="he">אחוזי בהירות</long>
+		    <long xml:lang="hi">प्रतिशत में चमकीलापन की मात्रा</long>
+		    <long xml:lang="hr">Količina osvjetljenja u postotku</long>
+		    <long xml:lang="hu">Fényerősség (0-100%)</long>
+		    <long xml:lang="it">Quantità di luminosità in percentuale</long>
+		    <long xml:lang="ja">明るさの量(%)</long>
+		    <long xml:lang="ko">밝기(퍼센트)</long>
+		    <long xml:lang="ms">Sejumlah kecerahan dalam peratus</long>
+		    <long xml:lang="nb">Mengde skarphet i prosent</long>
+		    <long xml:lang="nl">Mate van helderheid in procenten</long>
+		    <long xml:lang="oc">Taus de luminositat en percentatge</long>
+		    <long xml:lang="or">ଶତକଡାରେ ଉଜ୍ବଳତାର ପରିମାଣ</long>
+		    <long xml:lang="pa">ਫੀਸਦੀ ਵਿੱਚ ਚਮਕ ਦੀ ਮਾਤਰਾ</long>
+		    <long xml:lang="pl">Stopień jasności w procentach</long>
+		    <long xml:lang="pt">Quantidade de brilho em percentagem</long>
+		    <long xml:lang="pt_BR">Quantidade de brilho em percentagem</long>
+		    <long xml:lang="ro">Luminozitatea în procente</long>
+		    <long xml:lang="ru">Уровень яркости в процентах</long>
+		    <long xml:lang="sk">Hodnota jasu v percentách</long>
+		    <long xml:lang="sl">Svetlost v odstotkih</long>
+		    <long xml:lang="sr">Количина светлине у процентима</long>
+		    <long xml:lang="sv">Ljusstyrka i procent</long>
+		    <long xml:lang="tr">Yüzde olarak parlaklık miktarı</long>
+		    <long xml:lang="ug">يورۇقلۇق پىرسەنتى</long>
+		    <long xml:lang="uk">Рівень яскравости у відсотках</long>
+		    <long xml:lang="vi">Độ sáng tính theo phần trăm</long>
+		    <long xml:lang="zh_CN">亮度百分比</long>
+		    <long xml:lang="zh_HK">亮度比例</long>
+		    <long xml:lang="zh_TW">亮度比例</long>
+		    <default>100</default>
+		    <min>0</min>
+		    <max>100</max>
+		</option>
+		<option type="int" name="opacity">
+		    <short>Opacity</short>
+		    <short xml:lang="am">በውስጡ የማያሳልፍ</short>
+		    <short xml:lang="ast">Opacidá</short>
+		    <short xml:lang="be">Непразрыстасьць</short>
+		    <short xml:lang="bg">Непрозрачност</short>
+		    <short xml:lang="bn">অস্বচ্ছতা</short>
+		    <short xml:lang="bn_IN">অস্বচ্ছতা</short>
+		    <short xml:lang="bs">Providnost</short>
+		    <short xml:lang="ca">Opacitat</short>
+		    <short xml:lang="cs">Krytí</short>
+		    <short xml:lang="da">Opacitet</short>
+		    <short xml:lang="de">Deckkraft</short>
+		    <short xml:lang="el">Αδιαφάνεια</short>
+		    <short xml:lang="en_AU">Opacity</short>
+		    <short xml:lang="en_GB">Opacity</short>
+		    <short xml:lang="es">Opacidad</short>
+		    <short xml:lang="eu">Opakutasuna</short>
+		    <short xml:lang="fi">Läpinäkyvyys</short>
+		    <short xml:lang="fr">Opacité</short>
+		    <short xml:lang="gl">Opacidade</short>
+		    <short xml:lang="gu">અપારદર્શકતા</short>
+		    <short xml:lang="he">אטימות</short>
+		    <short xml:lang="hr">Prozirnost</short>
+		    <short xml:lang="hu">Átlátszatlanság</short>
+		    <short xml:lang="it">Opacità</short>
+		    <short xml:lang="ja">不透明度</short>
+		    <short xml:lang="ko">투명</short>
+		    <short xml:lang="ms">Kelegapan</short>
+		    <short xml:lang="nb">Dekkevne</short>
+		    <short xml:lang="nds">Deckstärk</short>
+		    <short xml:lang="nl">Ondoorzichtigheid</short>
+		    <short xml:lang="oc">Opacitat</short>
+		    <short xml:lang="or">ଅସ୍ବଚ୍ଛତା</short>
+		    <short xml:lang="pl">Nieprzezroczystość</short>
+		    <short xml:lang="pt">Opacidade</short>
+		    <short xml:lang="pt_BR">Opacidade</short>
+		    <short xml:lang="ro">Opacitate</short>
+		    <short xml:lang="ru">Прозрачность</short>
+		    <short xml:lang="sk">Nepriehľadnosť</short>
+		    <short xml:lang="sl">Prekrivnost</short>
+		    <short xml:lang="sq">Transparenca</short>
+		    <short xml:lang="sr">Провидност</short>
+		    <short xml:lang="sv">Opacitet</short>
+		    <short xml:lang="tr">Matlık</short>
+		    <short xml:lang="ug">غۇۋالىقى</short>
+		    <short xml:lang="uk">Прозорість</short>
+		    <short xml:lang="vi">Độ trong suốt</short>
+		    <short xml:lang="zh_CN">不透明度</short>
+		    <short xml:lang="zh_HK">不透明度</short>
+		    <short xml:lang="zh_TW">不透明度</short>
+		    <long>Amount of opacity in percent</long>
+		    <long xml:lang="ast">Porcentaxe d'opacidá</long>
+		    <long xml:lang="be">অস্বচ্ছতার শতকরা পরিমাণ</long>
+		    <long xml:lang="bn">অস্বচ্ছতার শতকরা পরিমাণ</long>
+		    <long xml:lang="bn_IN">অস্বচ্ছতার শতকরা পরিমাণ</long>
+		    <long xml:lang="bs">Iznos neprovidnosti u procentima</long>
+		    <long xml:lang="ca">Quantitat d'opacitat en percentatge</long>
+		    <long xml:lang="cs">Hodnota krytí v procentech</long>
+		    <long xml:lang="da">Mængden af opacitet i procent</long>
+		    <long xml:lang="de">Wert der Deckkraft in Prozent</long>
+		    <long xml:lang="el">Ποσοστό αδιαφάνειας επι της εκατό</long>
+		    <long xml:lang="en_AU">Amount of opacity in percent</long>
+		    <long xml:lang="en_GB">Amount of opacity in percent</long>
+		    <long xml:lang="es">Porcentaje de opacidad</long>
+		    <long xml:lang="eu">Opakutasun kopurua ehunekotan</long>
+		    <long xml:lang="fi">Läpinäkyvyys prosentteina</long>
+		    <long xml:lang="fr">Quantité d'opacité en pourcentage</long>
+		    <long xml:lang="gl">Nivel de opacidade en porcentaxe</long>
+		    <long xml:lang="gu">અપારદર્શકતાનો જથ્થો ટકામાં</long>
+		    <long xml:lang="he">אחוז האטימות</long>
+		    <long xml:lang="hi">प्रतिशत में अपारदर्शिता की मात्रा</long>
+		    <long xml:lang="hr">Količina neprozirnosti u postotku</long>
+		    <long xml:lang="hu">Átlátszatlanság (0-100%)</long>
+		    <long xml:lang="it">Quantità di opacità in percentuale</long>
+		    <long xml:lang="ja">不透明度(%)</long>
+		    <long xml:lang="ko">투명도(퍼센트)</long>
+		    <long xml:lang="ms">Sejumlah kelegapan dalam peratus</long>
+		    <long xml:lang="nb">Dekkevne i prosent</long>
+		    <long xml:lang="nl">Mate van ondoorzichtigheid in procenten</long>
+		    <long xml:lang="oc">Quantitat d'identitat en percentatge</long>
+		    <long xml:lang="or">ଶତକଡାରେ ଅସ୍ବଚ୍ଛତାର ପରିମାଣ</long>
+		    <long xml:lang="pa">ਫੀਸਦੀ ਵਿੱਚ ਧੁੰਦਲਾਪਨ ਮਾਤਰਾ</long>
+		    <long xml:lang="pl">Stopień nieprzezroczystości w procentach</long>
+		    <long xml:lang="pt">Volume de opacidade em percentagem</long>
+		    <long xml:lang="pt_BR">Volume de opacidade em percentagem</long>
+		    <long xml:lang="ro">Opacitatea în procente</long>
+		    <long xml:lang="ru">Степень прозрачности в процентах</long>
+		    <long xml:lang="sk">Miera nepriehľadnosti v percentách</long>
+		    <long xml:lang="sl">Prekrivnost v odstotkih</long>
+		    <long xml:lang="sr">Количина провидности у процентима</long>
+		    <long xml:lang="sv">Mängden opacitet i procent</long>
+		    <long xml:lang="tr">Yüzde olarak matlık miktarı</long>
+		    <long xml:lang="ug">غۇۋالىق پىرسەنتى</long>
+		    <long xml:lang="uk">Ступінь прозорости у відсотках</long>
+		    <long xml:lang="vi">Độ trong suốt tính theo phần trăm</long>
+		    <long xml:lang="zh_CN">不透明度百分比</long>
+		    <long xml:lang="zh_HK">不透明度比例</long>
+		    <long xml:lang="zh_TW">不透明度比例</long>
+		    <default>100</default>
+		    <min>0</min>
+		    <max>100</max>
+		</option>
+		<option type="bool" name="icon">
+		    <short>Icon</short>
+		    <short xml:lang="am">ምልክት</short>
+		    <short xml:lang="ast">Iconu</short>
+		    <short xml:lang="be">Іконка</short>
+		    <short xml:lang="bg">Икона</short>
+		    <short xml:lang="bn">চিত্রসংকেত</short>
+		    <short xml:lang="bn_IN">চিত্রসংকেত</short>
+		    <short xml:lang="bs">Ikona</short>
+		    <short xml:lang="ca">Icona</short>
+		    <short xml:lang="cs">Ikona</short>
+		    <short xml:lang="da">Ikon</short>
+		    <short xml:lang="de">Symbol</short>
+		    <short xml:lang="el">Εικονίδιο</short>
+		    <short xml:lang="en_AU">Icon</short>
+		    <short xml:lang="en_GB">Icon</short>
+		    <short xml:lang="es">Icono</short>
+		    <short xml:lang="et">Ikoon</short>
+		    <short xml:lang="eu">Ikonoa</short>
+		    <short xml:lang="fi">Kuvake</short>
+		    <short xml:lang="fr">Icône</short>
+		    <short xml:lang="fy">Ikoan</short>
+		    <short xml:lang="gl">Icona</short>
+		    <short xml:lang="gu">ચિહ્ન</short>
+		    <short xml:lang="he">צלמית</short>
+		    <short xml:lang="hr">Ikona</short>
+		    <short xml:lang="hu">Ikon</short>
+		    <short xml:lang="it">Icona</short>
+		    <short xml:lang="ja">アイコン</short>
+		    <short xml:lang="ko">아이콘</short>
+		    <short xml:lang="ku">Îkon</short>
+		    <short xml:lang="ms">Ikon</short>
+		    <short xml:lang="nb">Ikon</short>
+		    <short xml:lang="nl">Pictogram</short>
+		    <short xml:lang="oc">Icòna</short>
+		    <short xml:lang="or">ଆଇକନ</short>
+		    <short xml:lang="pl">Ikona</short>
+		    <short xml:lang="pt">Ícone</short>
+		    <short xml:lang="pt_BR">Ícone</short>
+		    <short xml:lang="ro">Iconiță</short>
+		    <short xml:lang="ru">Значок</short>
+		    <short xml:lang="sk">Ikona</short>
+		    <short xml:lang="sl">Ikona</short>
+		    <short xml:lang="sq">Ikona</short>
+		    <short xml:lang="sr">Икона</short>
+		    <short xml:lang="sv">Ikon</short>
+		    <short xml:lang="tr">Simge</short>
+		    <short xml:lang="ug">سىنبەلگە</short>
+		    <short xml:lang="uk">Піктограма</short>
+		    <short xml:lang="vi">Biểu tượng</short>
+		    <short xml:lang="zh_CN">图标</short>
+		    <short xml:lang="zh_HK">圖示</short>
+		    <short xml:lang="zh_TW">圖示</short>
+		    <long>Show icon next to thumbnail</long>
+		    <long xml:lang="ast">Amuesa l'iconu xunto a la miniatura</long>
+		    <long xml:lang="be">থাম্বনেলের পরবর্তী চিত্রসংকেত প্রদর্শন করা</long>
+		    <long xml:lang="bg">Показване на икона до миниатюра</long>
+		    <long xml:lang="bn">থাম্বনেলের পরবর্তী চিত্রসংকেত প্রদর্শন করা</long>
+		    <long xml:lang="bn_IN">থাম্বনেলের পরবর্তী চিত্রসংকেত প্রদর্শন করা</long>
+		    <long xml:lang="bs">Prikaži ikonu do sličice</long>
+		    <long xml:lang="ca">Mostra la icona al costat de la miniatura</long>
+		    <long xml:lang="cs">Zobrazit ikonu vedle náhledu</long>
+		    <long xml:lang="da">Vis ikon ved siden af miniature</long>
+		    <long xml:lang="de">Symbol neben Vorschaubild anzeigen</long>
+		    <long xml:lang="el">Εμφάνιση εικονιδίου δίπλα στη μικρογραφία</long>
+		    <long xml:lang="en_AU">Show icon next to thumbnail</long>
+		    <long xml:lang="en_GB">Show icon next to thumbnail</long>
+		    <long xml:lang="es">Muestra el icono junto a la miniatura</long>
+		    <long xml:lang="eu">Erakutsi ikonoa koadro txiki ondoan.</long>
+		    <long xml:lang="fi">Näytä kuvake esikatselukuvan vieressä</long>
+		    <long xml:lang="fr">Afficher l'icône à côté de la miniature</long>
+		    <long xml:lang="gl">Mostrar a icona a carón da miniatura</long>
+		    <long xml:lang="gu">થમ્બનેઈલ આગળ ચિહ્ન બતાવો</long>
+		    <long xml:lang="he">הראה צלמית לצד תמונה מוקטנת</long>
+		    <long xml:lang="hi">थंबनेल के बगल के प्रतीक को दिखाएं</long>
+		    <long xml:lang="hr">Pokaži ikonu pokraj umanjene sličice</long>
+		    <long xml:lang="hu">Ikon megjelenítése a miniatűr mellett</long>
+		    <long xml:lang="it">Mostra un'icona accanto all'anteprima</long>
+		    <long xml:lang="ja">サムネイルの隣にアイコンを表示</long>
+		    <long xml:lang="ko">미리 보기 옆에 아이콘 표시</long>
+		    <long xml:lang="ms">Papar ikon disebelah thumbnail</long>
+		    <long xml:lang="nb">Vis ikon ved siden av miniatyr</long>
+		    <long xml:lang="nl">Toon pictogram naast thumbnail</long>
+		    <long xml:lang="oc">Afichar l'icòna seguenta dins la miniatura</long>
+		    <long xml:lang="or">ଥମନେଇଲ ନିକଟରେ ଥିବା ଆଇକନକୁ ଦେଖାଅ</long>
+		    <long xml:lang="pa">ਥੰਮਨੇਲ ਲਈ ਅੱਗੇ ਆਈਕਾਨ ਵੇਖੋ</long>
+		    <long xml:lang="pl">Wyświetl ikonę obok miniaturki</long>
+		    <long xml:lang="pt">Mostrar ícone ao lado da miniatura</long>
+		    <long xml:lang="pt_BR">Mostrar ícone ao lado da miniatura</long>
+		    <long xml:lang="ro">Afișare pictogramă lîngă miniatură</long>
+		    <long xml:lang="ru">Отображение значка рядом с эскизом</long>
+		    <long xml:lang="sk">Ukázať ikonu vedľa náhľadu</long>
+		    <long xml:lang="sl">Ikono prikaži poleg predogleda</long>
+		    <long xml:lang="sr">Прикажи икону поред сличица</long>
+		    <long xml:lang="sv">Visa ikon bredvid miniatyrbild</long>
+		    <long xml:lang="tr">Minyatürden sonraki simgeyi göster</long>
+		    <long xml:lang="ug">كېيىنكى كىچىك سۈرەت سىنبەلگىلىرىنى كۆرسەت</long>
+		    <long xml:lang="uk">Піктограма поруч з ескізом</long>
+		    <long xml:lang="vi">Hiện biểu tượng bên cạnh hình thu nhỏ</long>
+		    <long xml:lang="zh_CN">在缩略图旁边显示图标</long>
+		    <long xml:lang="zh_HK">顯示圖示於縮圖旁</long>
+		    <long xml:lang="zh_TW">顯示圖示於縮圖旁</long>
+		    <default>true</default>
+		</option>
+		<option type="bool" name="icon_only">
+		    <short>Show icon only</short>
+		    <short xml:lang="uk">Показати лише піктограму</short>
+		    <long>Only show the application icon and do not show a thumbnail</long>
+		    <default>false</default>
+		</option>
+		<option type="bool" name="mipmap">
+		    <short>Mipmap</short>
+		    <short xml:lang="ast">Mipmap</short>
+		    <short xml:lang="be">মিপম্যাপ</short>
+		    <short xml:lang="bg">Mipmap</short>
+		    <short xml:lang="bn">মিপম্যাপ</short>
+		    <short xml:lang="bn_IN">মিপম্যাপ</short>
+		    <short xml:lang="bs">Mip mapa</short>
+		    <short xml:lang="ca">Mipmap</short>
+		    <short xml:lang="cs">Mipmap</short>
+		    <short xml:lang="da">Mipmap</short>
+		    <short xml:lang="de">Mipmaps</short>
+		    <short xml:lang="el">Mipmap</short>
+		    <short xml:lang="en_AU">Mipmap</short>
+		    <short xml:lang="en_GB">Mipmap</short>
+		    <short xml:lang="es">Mipmap</short>
+		    <short xml:lang="eu">Mipmap</short>
+		    <short xml:lang="fi">Mipmap</short>
+		    <short xml:lang="fr">Mipmap</short>
+		    <short xml:lang="gl">Mapa de imaxe</short>
+		    <short xml:lang="gu">મીપમેપ</short>
+		    <short xml:lang="he">הפעלת Mipmap</short>
+		    <short xml:lang="hr">Mipmapiranje</short>
+		    <short xml:lang="hu">MIP térkép</short>
+		    <short xml:lang="it">Mipmap</short>
+		    <short xml:lang="ja">ミップマップ</short>
+		    <short xml:lang="ko">밉맵</short>
+		    <short xml:lang="ms">Mipmap</short>
+		    <short xml:lang="my">Mipmap</short>
+		    <short xml:lang="nb">MIP-kart</short>
+		    <short xml:lang="nds">Mipmap</short>
+		    <short xml:lang="nl">Mipmap</short>
+		    <short xml:lang="oc">Mipmap</short>
+		    <short xml:lang="or">ମିପ୍ ମ୍ଯାପ</short>
+		    <short xml:lang="pl">Mipmapa</short>
+		    <short xml:lang="pt">Mipmap</short>
+		    <short xml:lang="pt_BR">MipMap</short>
+		    <short xml:lang="ro">Hartă MIP</short>
+		    <short xml:lang="ru">Мипмэппинг</short>
+		    <short xml:lang="sk">Mipmapy</short>
+		    <short xml:lang="sl">Mini zemljevid</short>
+		    <short xml:lang="sr">Мипмап</short>
+		    <short xml:lang="sv">Mipmap</short>
+		    <short xml:lang="tr">Mipmap</short>
+		    <short xml:lang="ug">Mipسۈرەت</short>
+		    <short xml:lang="uk">Mipmap</short>
+		    <short xml:lang="vi">Mipmap</short>
+		    <short xml:lang="zh_CN">Mipmap</short>
+		    <short xml:lang="zh_HK">Mipmap</short>
+		    <short xml:lang="zh_TW">Mipmap</short>
+		    <long>Generate mipmaps when possible for higher quality scaling</long>
+		    <long xml:lang="ast">Xenerar mipmap cuando se pueda pa obtener una escala de mayor calidá</long>
+		    <long xml:lang="be">উন্নততর স্কেলিং এর জন্য mipmaps  তৈরী করুন</long>
+		    <long xml:lang="bg">Създаване на компресирани изображения, когато е възможно за по-високо качество на мащабиране</long>
+		    <long xml:lang="bn">উন্নততর স্কেলিং এর জন্য mipmaps  তৈরী করুন</long>
+		    <long xml:lang="bn_IN">উন্নততর স্কেলিং এর জন্য mipmaps  তৈরী করুন</long>
+		    <long xml:lang="bs">Generiši mipmape za bolji kvalitet skaliranja, kada je to moguće</long>
+		    <long xml:lang="ca">Genera mipmaps sempre que sigui possible per a un canvi de mida de millor qualitat</long>
+		    <long xml:lang="cs">Jeli to možné, vytvářet pro kvalitní škálování mipmapy</long>
+		    <long xml:lang="da">Generer mipmaps, når det er muligt, for at opnå højere kvalitet af skalering</long>
+		    <long xml:lang="de">Mipmaps für bessere Skalierungsqualität, wenn möglich</long>
+		    <long xml:lang="el">Δημιουργία mipmaps όταν γίνεται για ανώτερη ποιότητα κλιμάκωσης</long>
+		    <long xml:lang="en_AU">Generate mipmaps when possible for higher quality scaling</long>
+		    <long xml:lang="en_GB">Generate mipmaps when possible for higher quality scaling</long>
+		    <long xml:lang="es">Generar mipmap cuando sea posible para obtener una escala de mayor calidad</long>
+		    <long xml:lang="eu">Kalitate handiagoko eskalan sortu mipmaps posible denean</long>
+		    <long xml:lang="fi">Luo mipmap skaalauksen laadun parantamiseksi mikäli se on mahdollista</long>
+		    <long xml:lang="fr">Générer des mipmaps dans la mesure du possible pour une mise à l'échelle de meilleure qualité</long>
+		    <long xml:lang="gl">Xerar mapas de imaxes cando sexa posíbel para un escalado de mellor calidade</long>
+		    <long xml:lang="gu">મીપમેપ બનાવો જ્યારે ઊંચી ગુણવત્તા ખેંચવા માટે શક્ય હોય</long>
+		    <long xml:lang="he">במידת האפשר צור mipmap עבור שינוי קנה מידה באיכות גבוהה</long>
+		    <long xml:lang="hi">उच्चतर गुणवत्ता के स्केलिंग के लिए मिपमैप बनाएं जब संभव हो</long>
+		    <long xml:lang="hr">Stvori mipmape kad je moguće, za prilagodbu veličine veće kvalitete</long>
+		    <long xml:lang="hu">MIP térképek készítése, hacsak lehetséges, a jobb minőségű átméretezés érdekében</long>
+		    <long xml:lang="it">Genera mipmap quando possibile per migliorare la qualità di ridimensionamento</long>
+		    <long xml:lang="ja">高品質スケーリングが可能な場合ミップマップを生成</long>
+		    <long xml:lang="ko">가능한 경우 밉맵을 만들어 높은 품질로 긔를 조정합니다.</long>
+		    <long xml:lang="ms">Jana peta mip bila boleh untuk penskalaan berkualiti tinggi</long>
+		    <long xml:lang="nb">Lag MIP-kart når det er mulig, for skalering med høyere kvalitet</long>
+		    <long xml:lang="nl">Genereer mipmap waarmogelijk voor een hogere schalings kwaliteit</long>
+		    <long xml:lang="oc">Generar de mipmaps dins la mesura de çò possible per una mesa a l'escala de qualitat melhora</long>
+		    <long xml:lang="or">ଉଚ୍ଚତର ଗୁଣବତ୍ତା ମାପିବା ପାଇଁ ୟେବେ ସମ୍ଭବ ମିପ୍ ମ୍ଯାପଗୁଡିକୁ ଉତ୍ପାଦନକର</long>
+		    <long xml:lang="pa">ਵੱਧ ਕੁਆਲਟੀ ਸਕੇਲਿੰਗ ਲਈ ਜਦੋਂ ਵੀ ਸੰਭਵ ਹੋਵੇ mip-ਮੈਪ ਬਣਾਓ</long>
+		    <long xml:lang="pl">O ile to możliwe, generuj mitmapy dla lepszej jakości skalowania</long>
+		    <long xml:lang="pt">Gerar mapas quando possível para dimensionamento de melhor qualidade</long>
+		    <long xml:lang="pt_BR">Gerar mapas quando possível para dimensionamento de melhor qualidade</long>
+		    <long xml:lang="ro">Generare hărți MIP pentru calitate mai înaltă cînd e posibil</long>
+		    <long xml:lang="ru">По возможности применять множественное отображение для масштабирования качества изображения</long>
+		    <long xml:lang="sk">Ak je to možné, vytvárať pre vysoko kvalitné modelovanie mipmapy</long>
+		    <long xml:lang="sl">Za bolj kakovostno prilagajanje velikosti uporabi teksturiranje MIP, če je mogoče</long>
+		    <long xml:lang="sr">Кад је могуће генериши мипмапе за бољи квалитет скалирања</long>
+		    <long xml:lang="sv">Generera mipmappar när det är möjligt för skalning av högre kvalitet</long>
+		    <long xml:lang="tr">Yüksek kalitede ölçeklendirme için mümkün olduğunda mipmapler oluştur</long>
+		    <long xml:lang="ug">mipرەسىمى ھاسىل قىلغاندا يۇقىرى سۈپەتتە كىچىكلىتىشى مۇمكىن</long>
+		    <long xml:lang="uk">За можливости застосовувати множинний показ для масштабування якости зображення</long>
+		    <long xml:lang="vi">Tạo ra mipmap khi có thể để có chất lượng co giãn tốt hơn</long>
+		    <long xml:lang="zh_CN">有可能时生成mipmaps用于更高质量的缩放比例</long>
+		    <long xml:lang="zh_HK">有可能產生mipmaps來產生更高品質的縮放</long>
+		    <long xml:lang="zh_TW">有可能產生mipmaps來產生更高品質的縮放</long>
+		    <default>false</default>
+		</option>
+		<option type="int" name="row_align">
+		    <short>Row Alignment</short>
+		    <short xml:lang="uk">Вирівнювання рядків</short>
+		    <long>Alignment for rows that are not fully filled</long>
+		    <long xml:lang="uk">Вирівнювання рядків, які не повністю заповнені</long>
+		    <default>1</default>
+		    <min>0</min>
+		    <max>2</max>
+		    <desc>
+			<value>0</value>
+			<name>Left</name>
+			<name xml:lang="uk">Ліворуч</name>
+		    </desc>
+		    <desc>
+			<value>1</value>
+			<name>Centered</name>
+			<name xml:lang="am">መሀከል</name>
+			<name xml:lang="ast">Centráu</name>
+			<name xml:lang="be">Раўнаваньне ў цэнтры</name>
+			<name xml:lang="bg">Центрирано подреждане</name>
+			<name xml:lang="bn">কেন্দ্রীভূত</name>
+			<name xml:lang="bn_IN">কেন্দ্রীভূত</name>
+			<name xml:lang="bs">Centrirano</name>
+			<name xml:lang="cs">Centrovaný</name>
+			<name xml:lang="de">Zentriert</name>
+			<name xml:lang="el">Στο Κέντρο</name>
+			<name xml:lang="en_AU">Centred</name>
+			<name xml:lang="en_GB">Centred</name>
+			<name xml:lang="es">Centrado</name>
+			<name xml:lang="eu">Zentratua</name>
+			<name xml:lang="fi">Keskitetty</name>
+			<name xml:lang="fr">Centré</name>
+			<name xml:lang="gl">Centrado</name>
+			<name xml:lang="gu">કેન્દ્રિત થયેલ</name>
+			<name xml:lang="he">ממורכז</name>
+			<name xml:lang="hi">केंद्रित</name>
+			<name xml:lang="hr">Centriran</name>
+			<name xml:lang="hu">Középre</name>
+			<name xml:lang="it">Centrato</name>
+			<name xml:lang="ja">中央</name>
+			<name xml:lang="ko">중앙</name>
+			<name xml:lang="ku">Navîn</name>
+			<name xml:lang="ms">Ditengahkan</name>
+			<name xml:lang="nb">Sentrert</name>
+			<name xml:lang="nds">In de Merrn</name>
+			<name xml:lang="nl">Gecentreerd</name>
+			<name xml:lang="oc">Centrat</name>
+			<name xml:lang="or">କେନ୍ଦ୍ରିତ</name>
+			<name xml:lang="pa">ਸੈਂਟਰਡ</name>
+			<name xml:lang="pl">Wyśrodkowany</name>
+			<name xml:lang="pt">Centrado</name>
+			<name xml:lang="pt_BR">Centralizado</name>
+			<name xml:lang="ro">Centrat</name>
+			<name xml:lang="ru">По центру</name>
+			<name xml:lang="sk">Vystrednené</name>
+			<name xml:lang="sl">Središčno</name>
+			<name xml:lang="sq">Në Qendër</name>
+			<name xml:lang="sr">Центрирано</name>
+			<name xml:lang="sv">Centrerad</name>
+			<name xml:lang="tr">Ortalanmış</name>
+			<name xml:lang="ug">ئوتتۇرىدا</name>
+			<name xml:lang="uk">У центрі</name>
+			<name xml:lang="vi">Ở giữa</name>
+			<name xml:lang="zh_CN">居中</name>
+			<name xml:lang="zh_HK">居中</name>
+			<name xml:lang="zh_TW">居中</name>
+		    </desc>
+		    <desc>
+			<value>2</value>
+			<name>Right</name>
+			<name xml:lang="uk">Праворуч</name>
+		    </desc>
+		</option>
+		<subgroup>
+		    <option type="bool" name="focus_on_switch">
+			<short>Focus on Switch</short>
+			<short xml:lang="ast">Enfocar al cambiar</short>
+			<short xml:lang="bs">Fokus pri prebacivanju</short>
+			<short xml:lang="ca">Focus quan es commuta</short>
+			<short xml:lang="cs">Aktivovat při přepínání</short>
+			<short xml:lang="de">Bei Wechsel fokussieren</short>
+			<short xml:lang="el">Εστίαση στην εναλλαγή</short>
+			<short xml:lang="en_AU">Focus on Switch</short>
+			<short xml:lang="en_GB">Focus on Switch</short>
+			<short xml:lang="es">Enfocar al cambiar</short>
+			<short xml:lang="fr">Focus lors du basculement</short>
+			<short xml:lang="gl">Enfocar ao alternar</short>
+			<short xml:lang="hr">Fokusiraj pri prebacivanju</short>
+			<short xml:lang="it">Focus alla selezione</short>
+			<short xml:lang="ko">전환할 때 포커스</short>
+			<short xml:lang="ms">Fokus bila Tukar</short>
+			<short xml:lang="nl">Focus tijdens wisselen</short>
+			<short xml:lang="oc">Focus al moment del bascuolament</short>
+			<short xml:lang="pl">Aktywizacja przycisku</short>
+			<short xml:lang="pt">Focar ao Mudar</short>
+			<short xml:lang="pt_BR">Foco na troca</short>
+			<short xml:lang="ru">Фокусировать при переключении</short>
+			<short xml:lang="sl">Žarišče ob preklopu</short>
+			<short xml:lang="sv">Fokus vid byte</short>
+			<short xml:lang="tr">Geçişe odaklan</short>
+			<short xml:lang="ug">ئالماشقاندا فوكۇسلان</short>
+			<short xml:lang="uk">Фокусувати при перемиканні</short>
+			<short xml:lang="vi">Chọn vào khi chuyển đổi</short>
+			<short xml:lang="zh_CN">切换聚焦</short>
+			<long>Focus windows when they are visible during the switch</long>
+			<long xml:lang="ast">Enfocar ventanes cuando tán visibles durante'l cambéu.</long>
+			<long xml:lang="bs">Fokusiraj prozore kada su vidljivi prilikom prebacivanja</long>
+			<long xml:lang="ca">Posa el focus en les finestres quan són visibles durant la commutació</long>
+			<long xml:lang="cs">Aktivuje okna pokud jsou viditelná při přepínání</long>
+			<long xml:lang="de">Fenster fokussieren, wenn diese während des Wechsels sichtbar sind</long>
+			<long xml:lang="el">Εστίαση παραθύρων όταν αυτά είναι ορατά κατά την εναλλαγή</long>
+			<long xml:lang="en_AU">Focus windows when they are visible during the switch</long>
+			<long xml:lang="en_GB">Focus windows when they are visible during the switch</long>
+			<long xml:lang="es">Enfocar ventanas cuando están visibles durante el cambio.</long>
+			<long xml:lang="fr">Focus sur les fenêtres lorsqu'elles sont visibles durant le basculement</long>
+			<long xml:lang="gl">Enfocar as xanelas cando son visíbeis durante o cambio.</long>
+			<long xml:lang="hr">Fokusiraj prozore kada su vidljivi tijekom prebacivanja</long>
+			<long xml:lang="it">Da il focus alle finestre quando sono visibili durante la selezione</long>
+			<long xml:lang="ko">전환 중 창이 보일 때 포커스 맞추기</long>
+			<long xml:lang="ms">Fokus tetingkap bila ia kelihatan semasa tukar</long>
+			<long xml:lang="nl">Focus vensters wanneer ze zichtbaar zijn tijdens wisselen</long>
+			<long xml:lang="oc">Focus sus las fenèstras quand son visiblas pendent lo bascuolament</long>
+			<long xml:lang="pl">Aktywizacja okna, gdy staje się widoczne podczas przełączania</long>
+			<long xml:lang="pt">Focar janelas quando visíveis durante a troca</long>
+			<long xml:lang="pt_BR">Focar janelas quando elas são visíveis durante a  troca</long>
+			<long xml:lang="ru">Фокусироваться на окнах, когда они видны при переключении</long>
+			<long xml:lang="sl">Žarišče na oknih, ko so vidna med preklopom</long>
+			<long xml:lang="sv">Fokusera fönster när de är synliga vid fönsterbyte</long>
+			<long xml:lang="tr">Geçiş sırasında görünür durumdalarsa pencereleri odakla</long>
+			<long xml:lang="ug">ئالماشقاندا كۆرۈنىدىغان كۆزنەك فوكۇسى</long>
+			<long xml:lang="uk">Фокусуватися на вікнах, коли їх видно при перемиканні</long>
+			<long xml:lang="vi">Chọn vào cửa sổ khi chúng được nhìn thấy trong khi chuyển đổi</long>
+			<long xml:lang="zh_CN">如果窗口可见，切换时聚焦到窗口</long>
+		    </option>
+		    <option type="bool" name="bring_to_front">
+			<short>Bring To Front</short>
+			<short xml:lang="am">ወደ ፊት ማምጫ</short>
+			<short xml:lang="ast">Traer a primer planu</short>
+			<short xml:lang="be">সামনে আনা</short>
+			<short xml:lang="bg">Извеждане отпред</short>
+			<short xml:lang="bs">Dovedi ispred</short>
+			<short xml:lang="ca">Porta endavant</short>
+			<short xml:lang="cs">Přenést na popředí</short>
+			<short xml:lang="da">Placer forrest</short>
+			<short xml:lang="de">In den Vordergrund verschieben</short>
+			<short xml:lang="el">Μεταφορά Μπροστά</short>
+			<short xml:lang="en_AU">Bring To Front</short>
+			<short xml:lang="en_GB">Bring To Front</short>
+			<short xml:lang="es">Traer al frente</short>
+			<short xml:lang="eu">Eraman aurrealdera</short>
+			<short xml:lang="fi">Tuo etualalle</short>
+			<short xml:lang="fr">Placer au-dessus</short>
+			<short xml:lang="gl">Traer á fronte</short>
+			<short xml:lang="he">הבא לחזית</short>
+			<short xml:lang="hr">Postavi ispred</short>
+			<short xml:lang="hu">Előrehozás</short>
+			<short xml:lang="id">Bawa Ke Depan</short>
+			<short xml:lang="it">Portare in primo piano</short>
+			<short xml:lang="ja">手前に提示</short>
+			<short xml:lang="ko">앞으로 띄우기</short>
+			<short xml:lang="ms">Bawa Ke Hadapan</short>
+			<short xml:lang="nb">Hent til front</short>
+			<short xml:lang="nl">Breng naar voren</short>
+			<short xml:lang="oc">Plçar en dessús</short>
+			<short xml:lang="or">ଆଗକୁ ଆଣ</short>
+			<short xml:lang="pl">Przenieś na pierwszy plan</short>
+			<short xml:lang="pt">Colocar em Primeiro Plano</short>
+			<short xml:lang="pt_BR">Colocar em Primeiro Plano</short>
+			<short xml:lang="ro">Adu în față</short>
+			<short xml:lang="ru">Переместить на передний план</short>
+			<short xml:lang="sk">Preniesť do popredia</short>
+			<short xml:lang="sl">Pošlji v ospredje</short>
+			<short xml:lang="sr">Доведи изнад</short>
+			<short xml:lang="sv">Lägg överst</short>
+			<short xml:lang="tr">Öne Getir</short>
+			<short xml:lang="uk">Перемістити на передню позицію</short>
+			<short xml:lang="vi">Đưa lên phía trước</short>
+			<short xml:lang="zh_CN">置前</short>
+			<short xml:lang="zh_HK">提到最上層</short>
+			<short xml:lang="zh_TW">提到最上層</short>
+			<long>Bring selected window to front</long>
+			<long xml:lang="am">የተመረጠውን መስኮት ወደ ፊት ማምጫ</long>
+			<long xml:lang="ast">Arrastra la ventana escoyida al primer planu</long>
+			<long xml:lang="be">নির্বাচিত উইন্ডোটিকে সামনে নিয়ে আসা</long>
+			<long xml:lang="bn">নির্বাচিত উইন্ডোটিকে সামনে নিয়ে আসা</long>
+			<long xml:lang="bn_IN">নির্বাচিত উইন্ডোটিকে সামনে নিয়ে আসা</long>
+			<long xml:lang="bs">Dovedi označeni prozor ispred</long>
+			<long xml:lang="ca">Porta la finestra seleccionada endavant</long>
+			<long xml:lang="cs">Přenést vybrané okno na popředí</long>
+			<long xml:lang="da">Placer det valgte vindue forrest</long>
+			<long xml:lang="de">Ausgewähltes Fenster in den Vordergrund verschieben</long>
+			<long xml:lang="el">Μεταφορά επιλεγμένου παράθυρου μπροστά</long>
+			<long xml:lang="en_AU">Bring selected window to front</long>
+			<long xml:lang="en_GB">Bring selected window to front</long>
+			<long xml:lang="es">Arrastra la ventana seleccionada al primer plano</long>
+			<long xml:lang="eu">Eraman hautatutako leihoak aurrealdera</long>
+			<long xml:lang="fi">Tuo aktiivinen ikkuna etualalle</long>
+			<long xml:lang="fr">Placer la fenêtre sélectionnée au-dessus</long>
+			<long xml:lang="gl">Traer a xanela seleccionada á fronte</long>
+			<long xml:lang="gu">પસંદિત વિન્ડોને આગળ લાવો</long>
+			<long xml:lang="he">הבא את החלון הנבחר לחזית</long>
+			<long xml:lang="hi">चयनित विंडो को सामने लायें</long>
+			<long xml:lang="hr">Postavi odabrani prozor ispred</long>
+			<long xml:lang="hu">A kijelölt ablak az előtérbe hozása</long>
+			<long xml:lang="it">Porta la finestra selezionata in primo piano</long>
+			<long xml:lang="ja">選択ウィンドウを手前に提示</long>
+			<long xml:lang="ko">선택한 창을 앞으로 띄우기</long>
+			<long xml:lang="ms">Bawa tetingkap terpilih ke hadapan</long>
+			<long xml:lang="nb">Hent valgte vinduer til fornt</long>
+			<long xml:lang="nl">Breng geselcteerd venster naar voren</long>
+			<long xml:lang="oc">Plaçar la fenèstra seleccionada en dessús</long>
+			<long xml:lang="or">ମନୋନୀତ ଉଇଣ୍ଡୋକୁ ଆଗକୁ ଆଣ</long>
+			<long xml:lang="pa">ਚੁਣੀ ਵਿੰਡੋ ਅੱਗੇ ਲਿਆਵੋ</long>
+			<long xml:lang="pl">Przenoś wybrane okno na wierzch</long>
+			<long xml:lang="pt">Colocar a janela selecionada em primeiro plano</long>
+			<long xml:lang="pt_BR">Colocar a janela selecionada em primeiro plano</long>
+			<long xml:lang="ro">Aduce fereastra aleasă în prim-plan</long>
+			<long xml:lang="ru">Перемещение выбранного окна на передний план</long>
+			<long xml:lang="sk">Preniesť vybrané okno do popredia</long>
+			<long xml:lang="sl">Izbrano okno pošlji v ospredje</long>
+			<long xml:lang="sr">Доведи селектовани прозор испред</long>
+			<long xml:lang="sv">Lägg markerat fönster överst</long>
+			<long xml:lang="tr">Seçilen pencereyi öne getir</long>
+			<long xml:lang="ug">تاللانغان كۆزنەكنى ئۈستى قەۋەتكە ئەكەل</long>
+			<long xml:lang="uk">Переміщення вибраного вікна на передню позицію</long>
+			<long xml:lang="vi">Đưa cửa sổ được chọn lên phía trước</long>
+			<long xml:lang="zh_CN">将选中的窗口放在前面</long>
+			<long xml:lang="zh_HK">將選取視窗提到最上層</long>
+			<long xml:lang="zh_TW">將選取視窗提到最上層</long>
+			<default>false</default>
+		    </option>
+		    <short>Selected Window Highlight</short>
+		    <short xml:lang="uk">Обрати підсвічування вікна</short>
+		    <option type="int" name="highlight_mode">
+			<short>Highlight Mode</short>
+			<short xml:lang="uk">Режим підсвічування</short>
+			<long>Mode for highlighting the currently selected window</long>
+			<long xml:lang="uk">Режим підсвічування чинного вибраного вікна</long>
+			<min>0</min>
+			<max>2</max>
+			<default>0</default>
+			<desc>
+			    <value>0</value>
+			    <name>None</name>
+			    <name xml:lang="ace">Hana</name>
+			    <name xml:lang="am">ምንም</name>
+			    <name xml:lang="ar">بدون</name>
+			    <name xml:lang="ast">Dengún</name>
+			    <name xml:lang="be">Нічога</name>
+			    <name xml:lang="bg">Без избор</name>
+			    <name xml:lang="bn">কিছু না</name>
+			    <name xml:lang="bn_IN">কিছু না</name>
+			    <name xml:lang="br">Netra</name>
+			    <name xml:lang="bs">Nijedno</name>
+			    <name xml:lang="ca">Cap</name>
+			    <name xml:lang="cs">Nic</name>
+			    <name xml:lang="da">Ingen</name>
+			    <name xml:lang="de">Keine</name>
+			    <name xml:lang="el">Κανένα</name>
+			    <name xml:lang="en_AU">None</name>
+			    <name xml:lang="en_GB">None</name>
+			    <name xml:lang="eo">Nenio</name>
+			    <name xml:lang="es">Ninguno</name>
+			    <name xml:lang="et">Puudub</name>
+			    <name xml:lang="eu">Bat ere ez</name>
+			    <name xml:lang="fi">Ei mitään</name>
+			    <name xml:lang="fr">Aucune</name>
+			    <name xml:lang="fy">Gjin</name>
+			    <name xml:lang="gl">Ningunha</name>
+			    <name xml:lang="gu">કંઈ નહિં</name>
+			    <name xml:lang="he">ללא</name>
+			    <name xml:lang="hi">कुछ नहीं</name>
+			    <name xml:lang="hr">Nijedna</name>
+			    <name xml:lang="hu">Egyik sem</name>
+			    <name xml:lang="it">Niente</name>
+			    <name xml:lang="ja">なし</name>
+			    <name xml:lang="kab">Ulac</name>
+			    <name xml:lang="km">គ្មាន</name>
+			    <name xml:lang="kn">ಯಾವುದೂ ಇಲ್ಲ</name>
+			    <name xml:lang="ko">없음</name>
+			    <name xml:lang="ku">Ne yek</name>
+			    <name xml:lang="lt">Nieko</name>
+			    <name xml:lang="ml">ഒന്നുമില്ല</name>
+			    <name xml:lang="ms">Tiada</name>
+			    <name xml:lang="nb">Ingen</name>
+			    <name xml:lang="nds">Keen</name>
+			    <name xml:lang="nl">Geen</name>
+			    <name xml:lang="oc">Pas cap</name>
+			    <name xml:lang="or">କିଛିନାହିଁ</name>
+			    <name xml:lang="pa">ਕੋਈ ਨਹੀਂ</name>
+			    <name xml:lang="pl">Brak</name>
+			    <name xml:lang="pt">Nenhum</name>
+			    <name xml:lang="pt_BR">Nenhum</name>
+			    <name xml:lang="ro">Nespecificat</name>
+			    <name xml:lang="ru">Никакой</name>
+			    <name xml:lang="si">කිසිවෙක් නැත</name>
+			    <name xml:lang="sk">Žiadna</name>
+			    <name xml:lang="sl">brez izbire</name>
+			    <name xml:lang="sq">Asnjë</name>
+			    <name xml:lang="sr">Nema</name>
+			    <name xml:lang="sv">Ingen</name>
+			    <name xml:lang="te">ఏదీకాదు</name>
+			    <name xml:lang="th">ไม่มี</name>
+			    <name xml:lang="tr">Hiçbiri</name>
+			    <name xml:lang="ug">يوق</name>
+			    <name xml:lang="uk">Ніякий</name>
+			    <name xml:lang="vi">Không chọn</name>
+			    <name xml:lang="zh_CN">无</name>
+			    <name xml:lang="zh_HK">無</name>
+			    <name xml:lang="zh_TW">無</name>
+			</desc>
+			<desc>
+			    <value>1</value>
+			    <name>Bring Selected To Front</name>
+			    <name xml:lang="uk">Перенести вибране вперед</name>
+			</desc>
+			<desc>
+			    <value>2</value>
+			    <name>Show Rectangle</name>
+			    <name xml:lang="uk">Показати прямокутник</name>
+			</desc>
+		    </option>
+		    <option type="int" name="highlight_rect_hidden">
+			<short>Minimized Window Highlight Rectangle</short>
+			<short xml:lang="uk">Унайменшений прямокутник згорнутого вікна</short>
+			<long>Where to draw highlight rectangle for minimized windows</long>
+			<long xml:lang="uk">Де розмістити підсвічені прямокутники згорнутих вікон</long>
+			<min>0</min>
+			<max>2</max>
+			<default>1</default>
+			<desc>
+			    <value>0</value>
+			    <name>None</name>
+			    <name xml:lang="ace">Hana</name>
+			    <name xml:lang="am">ምንም</name>
+			    <name xml:lang="ar">بدون</name>
+			    <name xml:lang="ast">Dengún</name>
+			    <name xml:lang="be">Нічога</name>
+			    <name xml:lang="bg">Без избор</name>
+			    <name xml:lang="bn">কিছু না</name>
+			    <name xml:lang="bn_IN">কিছু না</name>
+			    <name xml:lang="br">Netra</name>
+			    <name xml:lang="bs">Nijedno</name>
+			    <name xml:lang="ca">Cap</name>
+			    <name xml:lang="cs">Nic</name>
+			    <name xml:lang="da">Ingen</name>
+			    <name xml:lang="de">Keine</name>
+			    <name xml:lang="el">Κανένα</name>
+			    <name xml:lang="en_AU">None</name>
+			    <name xml:lang="en_GB">None</name>
+			    <name xml:lang="eo">Nenio</name>
+			    <name xml:lang="es">Ninguno</name>
+			    <name xml:lang="et">Puudub</name>
+			    <name xml:lang="eu">Bat ere ez</name>
+			    <name xml:lang="fi">Ei mitään</name>
+			    <name xml:lang="fr">Aucune</name>
+			    <name xml:lang="fy">Gjin</name>
+			    <name xml:lang="gl">Ningunha</name>
+			    <name xml:lang="gu">કંઈ નહિં</name>
+			    <name xml:lang="he">ללא</name>
+			    <name xml:lang="hi">कुछ नहीं</name>
+			    <name xml:lang="hr">Nijedna</name>
+			    <name xml:lang="hu">Egyik sem</name>
+			    <name xml:lang="it">Niente</name>
+			    <name xml:lang="ja">なし</name>
+			    <name xml:lang="kab">Ulac</name>
+			    <name xml:lang="km">គ្មាន</name>
+			    <name xml:lang="kn">ಯಾವುದೂ ಇಲ್ಲ</name>
+			    <name xml:lang="ko">없음</name>
+			    <name xml:lang="ku">Ne yek</name>
+			    <name xml:lang="lt">Nieko</name>
+			    <name xml:lang="ml">ഒന്നുമില്ല</name>
+			    <name xml:lang="ms">Tiada</name>
+			    <name xml:lang="nb">Ingen</name>
+			    <name xml:lang="nds">Keen</name>
+			    <name xml:lang="nl">Geen</name>
+			    <name xml:lang="oc">Pas cap</name>
+			    <name xml:lang="or">କିଛିନାହିଁ</name>
+			    <name xml:lang="pa">ਕੋਈ ਨਹੀਂ</name>
+			    <name xml:lang="pl">Brak</name>
+			    <name xml:lang="pt">Nenhum</name>
+			    <name xml:lang="pt_BR">Nenhum</name>
+			    <name xml:lang="ro">Nespecificat</name>
+			    <name xml:lang="ru">Никакой</name>
+			    <name xml:lang="si">කිසිවෙක් නැත</name>
+			    <name xml:lang="sk">Žiadna</name>
+			    <name xml:lang="sl">brez izbire</name>
+			    <name xml:lang="sq">Asnjë</name>
+			    <name xml:lang="sr">Nema</name>
+			    <name xml:lang="sv">Ingen</name>
+			    <name xml:lang="te">ఏదీకాదు</name>
+			    <name xml:lang="th">ไม่มี</name>
+			    <name xml:lang="tr">Hiçbiri</name>
+			    <name xml:lang="ug">يوق</name>
+			    <name xml:lang="uk">Ніякий</name>
+			    <name xml:lang="vi">Không chọn</name>
+			    <name xml:lang="zh_CN">无</name>
+			    <name xml:lang="zh_HK">無</name>
+			    <name xml:lang="zh_TW">無</name>
+			</desc>
+			<desc>
+			    <value>1</value>
+			    <name>Taskbar Entry</name>
+			    <name xml:lang="uk">Компонент панелі завдань</name>
+			</desc>
+			<desc>
+			    <value>2</value>
+			    <name>Original Window Position</name>
+			    <name xml:lang="uk">Початкова позиція вікна</name>
+			</desc>
+		    </option>
+		    <option type="color" name="highlight_color">
+			<short>Highlight Color</short>
+			<short xml:lang="uk">Колір підсвічування</short>
+			<long>Color of highlight rectangle</long>
+			<long xml:lang="uk">Колір підсвіченого прямокутника</long>
+			<default>
+			    <red>0x0000</red>
+			    <green>0x0000</green>
+			    <blue>0x0000</blue>
+			    <alpha>0x9696</alpha>
+			</default>
+		    </option>
+		    <option type="color" name="highlight_border_color">
+			<short>Highlight Border Color</short>
+			<short xml:lang="uk">Колір підсвіченої рамки</short>
+			<long>Color of highlight rectangle border</long>
+			<long xml:lang="uk">Колір рамки підсвіченого прямокутника</long>
+			<default>
+			    <red>0x0000</red>
+			    <green>0x0000</green>
+			    <blue>0x0000</blue>
+			    <alpha>0xc8c8</alpha>
+			</default>
+		    </option>
+		    <option type="color" name="highlight_border_inlay_color">
+			<short>Highlight Border Inlay Color</short>
+			<short xml:lang="uk">Колір оздоблення підсвіченої рамки</short>
+			<long>Color of inlay in highlight rectangle border</long>
+			<long xml:lang="uk">Колір оздоблення рамки підсвіченого прямокутника</long>
+			<default>
+			    <red>0xc8c8</red>
+			    <green>0xc8c8</green>
+			    <blue>0xc8c8</blue>
+			    <alpha>0xc8c8</alpha>
+			</default>
+		    </option>
+		</subgroup>
+		<subgroup>
+		    <short>Background</short>
+		    <short xml:lang="bs">Pozadina</short>
+		    <short xml:lang="ca">Fons</short>
+		    <short xml:lang="de">Hintergrund</short>
+		    <short xml:lang="en_AU">Background</short>
+		    <short xml:lang="en_GB">Background</short>
+		    <short xml:lang="es">Fondo</short>
+		    <short xml:lang="fr">Arrière-plan</short>
+		    <short xml:lang="gl">Fondo</short>
+		    <short xml:lang="hr">Pozadina</short>
+		    <short xml:lang="ko">배경</short>
+		    <short xml:lang="ms">Latar Belakang</short>
+		    <short xml:lang="pl">Tło</short>
+		    <short xml:lang="pt">Fundo</short>
+		    <short xml:lang="ru">Фон</short>
+		    <short xml:lang="sl">Ozadje</short>
+		    <short xml:lang="sv">Bakgrund</short>
+		    <short xml:lang="uk">Тло</short>
+		    <short xml:lang="zh_CN">背景</short>
+		    <option type="bool" name="use_background_color">
+			<short>Set background color</short>
+			<short xml:lang="bs">Postavi boju pozadine</short>
+			<short xml:lang="ca">Estableix el color de fons</short>
+			<short xml:lang="de">Hintergrundfarbe einstellen</short>
+			<short xml:lang="en_AU">Set background colour</short>
+			<short xml:lang="en_GB">Set background colour</short>
+			<short xml:lang="es">Establecer el color de fondo</short>
+			<short xml:lang="fr">Définir la couleur d'arrière-plan</short>
+			<short xml:lang="gl">Estabelecer a cor do fondo</short>
+			<short xml:lang="hr">Postavi boju pozadine</short>
+			<short xml:lang="ko">배경 색 지정</short>
+			<short xml:lang="ms">Tetapkan warna latar belakang</short>
+			<short xml:lang="pl">Ustawienie koloru tła</short>
+			<short xml:lang="pt">Definir cor do fundo</short>
+			<short xml:lang="ru">Указать цвет фона</short>
+			<short xml:lang="sl">Nastavi barvo ozadja</short>
+			<short xml:lang="sv">Ange bakgrundsfärg</short>
+			<short xml:lang="uk">Встановити колір тла</short>
+			<short xml:lang="zh_CN">设置背景色</short>
+			<long>Set background color</long>
+			<long xml:lang="bs">Postavi boju pozadine</long>
+			<long xml:lang="ca">Estableix el color de fons</long>
+			<long xml:lang="de">Hintergrundfarbe einstellen</long>
+			<long xml:lang="en_AU">Set background colour</long>
+			<long xml:lang="en_GB">Set background colour</long>
+			<long xml:lang="es">Establecer el color de fondo</long>
+			<long xml:lang="fr">Définir la couleur d'arrière-plan</long>
+			<long xml:lang="gl">Estabelecer a cor do fondo</long>
+			<long xml:lang="hr">Postavi boju pozadine</long>
+			<long xml:lang="ko">배경 색 지정</long>
+			<long xml:lang="ms">Tetapkan warna latar belakang</long>
+			<long xml:lang="pl">Ustawienie koloru tła</long>
+			<long xml:lang="pt">Definir cor do fundo</long>
+			<long xml:lang="ru">Указать цвет фона</long>
+			<long xml:lang="sl">Nastavi barvo ozadja</long>
+			<long xml:lang="sv">Ange bakgrundsfärg</long>
+			<long xml:lang="uk">Встановити колір тла</long>
+			<long xml:lang="zh_CN">设置背景色</long>
+			<default>false</default>
+		    </option>
+		    <option type="color" name="background_color">
+			<short>Background Color</short>
+			<short xml:lang="bs">Boja pozadine</short>
+			<short xml:lang="ca">Color del fons</short>
+			<short xml:lang="de">Hintergrundfarbe</short>
+			<short xml:lang="en_AU">Background Colour</short>
+			<short xml:lang="en_GB">Background Colour</short>
+			<short xml:lang="es">Color de fondo</short>
+			<short xml:lang="fr">Couleur d’arrière-plan</short>
+			<short xml:lang="gl">Cor do fondo</short>
+			<short xml:lang="hr">Boja pozadine</short>
+			<short xml:lang="ko">배경 색</short>
+			<short xml:lang="ms">Warna Latar Belakang</short>
+			<short xml:lang="pl">Kolor tła</short>
+			<short xml:lang="pt">Cor de Fundo</short>
+			<short xml:lang="ru">Цвет фона</short>
+			<short xml:lang="sl">Barva ozadja</short>
+			<short xml:lang="sv">Bakgrundsfärg</short>
+			<short xml:lang="uk">Колір тла</short>
+			<short xml:lang="zh_CN">背景色</short>
+			<long>Background color of the switcher window.</long>
+			<long xml:lang="bs">Boja pozadine mjenjača prozora.</long>
+			<long xml:lang="de">Hintergrundfarbe des  Umschalterfensters.</long>
+			<long xml:lang="en_AU">Background colour of the switcher window.</long>
+			<long xml:lang="en_GB">Background colour of the switcher window.</long>
+			<long xml:lang="es">Color del fondo del conmutador de ventanas.</long>
+			<long xml:lang="gl">Cor do fondo do selector de xanelas.</long>
+			<long xml:lang="hr">Boja pozadine mjenjača prozora.</long>
+			<long xml:lang="ko">전환 도구 창의 배경을 설정합니다.</long>
+			<long xml:lang="ms">Warna latar belakang bagi tetingkap penukar.</long>
+			<long xml:lang="pl">Kolor tła okna przełączania.</long>
+			<long xml:lang="pt">Cor de fundo da janela do interruptor.</long>
+			<long xml:lang="ru">Цвет фона окна переключателя.</long>
+			<long xml:lang="sl">Barva ozadja preklopnega okna.</long>
+			<long xml:lang="sv">Bakgrundsfärg för växlarfönstret.</long>
+			<long xml:lang="uk">Колір тла вікна перемикача.</long>
+			<long xml:lang="zh_CN">切换器窗口的背景色。</long>
+			<default>
+			    <red>0x3333</red>
+			    <green>0x3333</green>
+			    <blue>0x3333</blue>
+			    <alpha>0xd998</alpha>
+			</default>
+		    </option>
+		</subgroup>
+	    </group>
+	</options>
+    </plugin>
+</compiz>
