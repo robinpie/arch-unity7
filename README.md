@@ -31,7 +31,6 @@ makepkg -si
 ## Upstream
 
 - [gentoo-unity7] — the Gentoo overlay this was forked from
-- [Unity7 on Wikipedia][wiki]
 
 [gentoo-unity7]: https://github.com/c4pp4/gentoo-unity7
 [unity-gentoo]: https://github.com/shiznix/unity-gentoo
