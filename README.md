@@ -1,33 +1,37 @@
-[![Preview of Gentoo Unity⁷ Desktop][preview_image]][preview_image_url]
+# Arch Unity⁷
 
-# Gentoo Unity⁷ Desktop
+A port of the Unity7 desktop environment to Arch Linux, packaged as a collection of PKGBUILDs.
 
-A Gentoo overlay to build the Unity7 user interface.
+Forked from [gentoo-unity7] by c4pp4, which itself descends from [unity-gentoo] by shiznix. The original project is a Gentoo overlay; this is a re-packaging effort targeting Arch Linux.
 
-- [Build instructions][build]
-- [USE flag tips][tips]
-- [Additional packages list][addp]
-- [Source URIs list][uris]
-- [Join the Telegram group⬀][tg]
+## Status
 
-#
+Work in progress. The core stack builds and Unity starts. Expect rough edges.
 
-- [Forked from unity-gentoo][fork]
-- [About Unity7⬀][wiki]
+## What's included
 
-#
+PKGBUILDs for the full Unity7 stack, organized by tier:
 
-###### It defaults to the Gentoo stable software branch for the system's architecture amd64 and requires systemd. You can build `www-client/firefox` from the Gentoo testing branch since the *unity-menubar.patch* is available for both branches: stable ([Extended Support Release][fesr]) and testing ([Rapid Release][ftlr]). The same applies to `mail-client/thunderbird`.
+- **unity-base/** — core components: compiz, nux, unity, bamf, unity-settings-daemon, etc.
+- **unity-indicators/** — system indicators: sound, session, power, datetime, keyboard, messages, application, appmenu
+- **unity-lens/** — dash lenses and scopes: applications, files, music, video, photos, scope-home, scope-extras
+- **dev-libs/** — supporting libraries: libdbusmenu, libindicator, libunity, libcolumbus, etc.
 
-[//]: # (LINKS)
-[addp]: docs/additional_packages.md
-[build]: docs/build_instructions.md
-[fesr]: ehooks/www-client/firefox:esr/files
-[fork]: https://github.com/shiznix/unity-gentoo
-[ftlr]: ehooks/www-client/firefox:rapid/files
-[preview_image]: https://github.com/c4pp4/gentoo-unity7/blob/master/docs/assets/preview.png "Preview of Gentoo Unity⁷ Desktop"
-[preview_image_url]: https://raw.githubusercontent.com/c4pp4/gentoo-unity7/master/docs/assets/preview.png
-[tg]: https://t.me/gentoo_unity7
-[tips]: docs/use_flag_tips.md
-[uris]: docs/source_uris.md
-[wiki]: https://en.wikipedia.org/wiki/Unity_(user_interface)
+## Building
+
+Build order matters, as packages have dependencies on each other. The general tier order is documented in `downstreamDevlog.md` (yes it's claude vomit, will clean it up later). More user-friendly documentation and AUR packages coming once this is in a more stable state.
+
+Each package builds with standard makepkg:
+
+```
+cd pkgbuilds/<category>/<pkgname>
+makepkg -si
+```
+
+## Upstream
+
+- [gentoo-unity7] — the Gentoo overlay this was forked from
+- [Unity7 on Wikipedia][wiki]
+
+[gentoo-unity7]: https://github.com/c4pp4/gentoo-unity7
+[unity-gentoo]: https://github.com/shiznix/unity-gentoo
