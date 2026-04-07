@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-indicators/indicator-session/src/build/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-indicators/indicator-session/src/build/src/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-indicators/indicator-session/src/build/src/backend-dbus/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-indicators/indicator-session/src/build/data/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-indicators/indicator-session/src/build/data/icons/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

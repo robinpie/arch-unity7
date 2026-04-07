@@ -11,7 +11,7 @@
 #define UNITY_RELEASE "Arch Unity⁷"
 #define UNITY_DATE_COMMENT_START "<!--"
 #define UNITY_DATE_COMMENT_END "-->"
-#define UNITY_DATE "2026-04-05"
+#define UNITY_DATE "2026-04-07"
 #define PKGDATADIR "/usr/share/unity/icons"
 #define LOCALE_DIR "/usr/share/locale"
 #define VERSION "7.7.1"

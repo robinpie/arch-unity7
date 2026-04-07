@@ -1,0 +1,19 @@
+[Scope]
+DBusName=com.canonical.Unity.Scope.Info.Calculator
+DBusPath=/com/canonical/unity/scope/info/calculator
+Icon=/usr/share/icons/unity-icon-theme/places/svg/service-calculator.svg
+QueryBinary=gnome-calculator
+Keywords=calculator;result;calculate;calc;
+RequiredMetadata=
+OptionalMetadata=
+Loader=/usr/share/unity-scopes/calculator/unity_calculator_daemon.py
+Module=calculator.unity_calculator_daemon
+ModuleType=python3
+RemoteContent=false
+Type=info
+Name=Calculator
+Description=This is an Ubuntu search plugin that enables Calculator results to be displayed in the Dash underneath the Info header. If you do not wish to search this content source, you can disable this search plugin.
+SearchHint=Calculate
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-calculator

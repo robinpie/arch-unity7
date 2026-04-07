@@ -1,0 +1,9 @@
+Categorization
+==============
+Tests that the categorization of results is correct.
+
+#. Open the Dash and switch to the music lens.
+#. Make sure that the search string is empty.
+
+Outcome
+  The "Albums" category should list only album titles, if you see a song title the test failed.

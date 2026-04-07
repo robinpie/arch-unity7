@@ -1,0 +1,8 @@
+[Unit]
+Description=Indicator Application Service
+PartOf=graphical-session.target
+After=indicators-pre.target
+
+[Service]
+ExecStart=@pkglibexecdir@/indicator-application-service
+Restart=on-failure

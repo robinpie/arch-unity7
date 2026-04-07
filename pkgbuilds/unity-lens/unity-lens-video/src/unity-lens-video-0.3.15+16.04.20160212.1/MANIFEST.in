@@ -1,0 +1,7 @@
+include unity-lens-video.service
+include video.lens.in
+include src/unity-lens-video
+include unity-lens-video.desktop
+include unity-lens-video.png
+include po/*
+include COPYING

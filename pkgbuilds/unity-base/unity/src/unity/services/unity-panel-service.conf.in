@@ -8,7 +8,7 @@ author "Ted Gould <ted@ubuntu.com>"
 # start on started unity7
 # stop on stopped unity7
 
-start on desktop-start DESKTOP_SESSION=ubuntu
+start on desktop-start DESKTOP_SESSION=unity
 stop on desktop-end
 
 pre-start exec @UNITY_LIBDIR@/upstart-prestart-check

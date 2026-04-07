@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpanel-lib.a "CMakeFiles/panel-lib.dir/PanelController.cpp.o" "CMakeFiles/panel-lib.dir/PanelIndicatorEntryView.cpp.o" "CMakeFiles/panel-lib.dir/PanelIndicatorEntryDropdownView.cpp.o" "CMakeFiles/panel-lib.dir/PanelIndicatorsView.cpp.o" "CMakeFiles/panel-lib.dir/PanelMenuView.cpp.o" "CMakeFiles/panel-lib.dir/PanelTitlebarGrabAreaView.cpp.o" "CMakeFiles/panel-lib.dir/PanelTray.cpp.o" "CMakeFiles/panel-lib.dir/PanelView.cpp.o"
+/usr/bin/ranlib libpanel-lib.a

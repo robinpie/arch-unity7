@@ -1,0 +1,2 @@
+/usr/bin/ar qc libswitcher-lib.a "CMakeFiles/switcher-lib.dir/DeltaTracker.cpp.o" "CMakeFiles/switcher-lib.dir/SwitcherController.cpp.o" "CMakeFiles/switcher-lib.dir/SwitcherModel.cpp.o" "CMakeFiles/switcher-lib.dir/SwitcherView.cpp.o"
+/usr/bin/ranlib libswitcher-lib.a

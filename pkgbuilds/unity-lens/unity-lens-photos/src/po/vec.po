@@ -1,0 +1,231 @@
+# Venetian translation for unity-lens-photos
+# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
+# This file is distributed under the same license as the unity-lens-photos package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: unity-lens-photos\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-03-18 01:34+0100\n"
+"PO-Revision-Date: 2015-08-22 11:59+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Venetian <vec@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-08-23 05:50+0000\n"
+"X-Generator: Launchpad (build 17690)\n"
+
+#. Translatable strings
+#: ../src/unity_facebook_daemon.py:45 ../data/facebook.scope.in.h:2
+msgid "Facebook"
+msgstr "Facebook"
+
+#: ../src/unity_facebook_daemon.py:46 ../src/unity_picasa_daemon.py:56
+#: ../src/unity_shotwell_daemon.py:36 ../src/unity_flickr_daemon.py:47
+msgid "Sorry, there are no photos that match your search."
+msgstr "Non ghè alcuna someja che corisponda ala ricerca."
+
+#: ../src/unity_facebook_daemon.py:48 ../src/unity_picasa_daemon.py:45
+#: ../src/unity_shotwell_daemon.py:41 ../src/unity_flickr_daemon.py:49
+msgid "My Photos"
+msgstr "Le me someje"
+
+#: ../src/unity_facebook_daemon.py:49 ../src/unity_picasa_daemon.py:46
+#: ../src/unity_shotwell_daemon.py:42 ../src/unity_flickr_daemon.py:50
+msgid "Friends Photos"
+msgstr "Someje de amici"
+
+#: ../src/unity_facebook_daemon.py:50 ../src/unity_picasa_daemon.py:47
+#: ../src/unity_shotwell_daemon.py:43 ../src/unity_flickr_daemon.py:51
+msgid "Online Photos"
+msgstr "Someje on line"
+
+#: ../src/unity_facebook_daemon.py:51 ../src/unity_picasa_daemon.py:48
+#: ../src/unity_shotwell_daemon.py:44 ../src/unity_flickr_daemon.py:52
+msgid "Photos"
+msgstr "Someje"
+
+#: ../src/unity_facebook_daemon.py:52 ../src/unity_picasa_daemon.py:49
+#: ../src/unity_shotwell_daemon.py:45 ../src/unity_flickr_daemon.py:53
+msgid "Recent"
+msgstr "Recenti"
+
+#: ../src/unity_facebook_daemon.py:53 ../src/unity_picasa_daemon.py:50
+#: ../src/unity_shotwell_daemon.py:46 ../src/unity_flickr_daemon.py:54
+msgid "Date"
+msgstr "Data"
+
+#: ../src/unity_facebook_daemon.py:54 ../src/unity_picasa_daemon.py:51
+#: ../src/unity_shotwell_daemon.py:47 ../src/unity_flickr_daemon.py:55
+msgid "Last 7 days"
+msgstr "Ultimi 7 jiorni"
+
+#: ../src/unity_facebook_daemon.py:55 ../src/unity_picasa_daemon.py:52
+#: ../src/unity_shotwell_daemon.py:48 ../src/unity_flickr_daemon.py:56
+msgid "Last 30 days"
+msgstr "Ultimi 30 jiorni"
+
+#: ../src/unity_facebook_daemon.py:56 ../src/unity_picasa_daemon.py:53
+#: ../src/unity_shotwell_daemon.py:49 ../src/unity_flickr_daemon.py:57
+msgid "Last 6 months"
+msgstr "Ultimi 6 mesi"
+
+#: ../src/unity_facebook_daemon.py:57 ../src/unity_picasa_daemon.py:54
+#: ../src/unity_shotwell_daemon.py:50 ../src/unity_flickr_daemon.py:58
+msgid "Older"
+msgstr "Pi vecie"
+
+#: ../src/unity_facebook_daemon.py:495
+msgid "Location"
+msgstr "Posixion"
+
+#: ../src/unity_facebook_daemon.py:500 ../src/unity_picasa_daemon.py:397
+msgid "Album"
+msgstr "Album"
+
+#: ../src/unity_facebook_daemon.py:502
+msgid "With"
+msgstr "Con"
+
+#: ../src/unity_facebook_daemon.py:506 ../src/unity_picasa_daemon.py:400
+#: ../src/unity_shotwell_daemon.py:255 ../src/unity_flickr_daemon.py:561
+msgid "View"
+msgstr "Varda"
+
+#: ../src/unity_picasa_daemon.py:387 ../src/unity_flickr_daemon.py:539
+#, python-format
+msgid "By %s, %s"
+msgstr "De %s, %s"
+
+#: ../src/unity_picasa_daemon.py:389 ../src/unity_flickr_daemon.py:554
+msgid "Camera"
+msgstr "Camera"
+
+#: ../src/unity_picasa_daemon.py:391 ../src/unity_shotwell_daemon.py:249
+msgid "Dimensions"
+msgstr "Dimensioni"
+
+#: ../src/unity_picasa_daemon.py:393 ../src/unity_shotwell_daemon.py:251
+msgid "Size"
+msgstr "Taja"
+
+#: ../src/unity_picasa_daemon.py:395 ../src/unity_flickr_daemon.py:556
+msgid "License"
+msgstr "Licensa"
+
+#. Translatable strings
+#: ../src/unity_shotwell_daemon.py:35
+msgid "This Computer"
+msgstr "Sto computer"
+
+#: ../src/unity_shotwell_daemon.py:231
+msgid ""
+"<b>This photo is missing.</b>\n"
+"You can open Shotwell to retrieve it or remove it from your library."
+msgstr ""
+"<b>Sta someja non la ghe mia.</b>\n"
+"Te pol verxar Shotwell e recupararla o cavarla dala colexion."
+
+#: ../src/unity_shotwell_daemon.py:245
+#, python-format
+msgid "%s x %s pixels"
+msgstr "%s × %s pixel"
+
+#: ../src/unity_shotwell_daemon.py:253 ../src/unity_flickr_daemon.py:558
+msgid "Tags"
+msgstr "Etichete"
+
+#: ../src/unity_shotwell_daemon.py:259
+msgid "Show in Folder"
+msgstr "Mostra ne la cartela"
+
+#: ../src/unity_shotwell_daemon.py:263
+msgid "Email"
+msgstr "Email"
+
+#: ../src/unity_shotwell_daemon.py:267
+msgid "Print"
+msgstr "Stampa"
+
+#: ../src/unity_shotwell_daemon.py:271
+msgid "Open Shotwell"
+msgstr "Verxi Shotwell"
+
+#. Translatable strings
+#: ../src/unity_flickr_daemon.py:46 ../data/flickr.scope.in.h:2
+msgid "Flickr"
+msgstr "Flickr"
+
+#: ../data/flickr.scope.in.h:1
+msgid "flickr;"
+msgstr "flickr;"
+
+#: ../data/flickr.scope.in.h:3
+msgid "Find Flickr photos"
+msgstr ""
+
+#: ../data/flickr.scope.in.h:4
+msgid "Search Flickr"
+msgstr "Xerca su Flickr"
+
+#: ../data/facebook.scope.in.h:1
+msgid "facebook;"
+msgstr "facebook;"
+
+#: ../data/facebook.scope.in.h:3
+msgid "Find Facebook photos"
+msgstr ""
+
+#: ../data/facebook.scope.in.h:4
+msgid "Search Facebook"
+msgstr "Xerca su Facebook"
+
+#: ../data/shotwell.scope.in.h:1
+msgid "shotwell;"
+msgstr "shotwell;"
+
+#: ../data/shotwell.scope.in.h:2
+msgid "Shotwell"
+msgstr "Shotwell"
+
+#: ../data/shotwell.scope.in.h:3
+msgid "Find Shotwell photos"
+msgstr ""
+
+#: ../data/shotwell.scope.in.h:4
+msgid "Search Shotwell"
+msgstr "Xerca su Shotwell"
+
+#: ../data/picasa.scope.in.h:1
+msgid "picasa;"
+msgstr "picasa;"
+
+#: ../data/picasa.scope.in.h:2
+msgid "Picasa"
+msgstr "Picasa"
+
+#: ../data/picasa.scope.in.h:3
+msgid "Find Picasa photos"
+msgstr ""
+
+#: ../data/picasa.scope.in.h:4
+msgid "Search Picasa"
+msgstr "Xerca su Picasa"
+
+#: ../unity-lens-photos.application.in.h:1
+msgid "Photos search plugin"
+msgstr "Plugin di ricerca Someje"
+
+#: ../unity-lens-photos.application.in.h:2
+msgid "Search your and your friends' Flickr photos"
+msgstr "Xerca le to someje e quelle dei amici su Flickr"
+
+#: ../unity-lens-photos.application.in.h:3
+msgid "Search your and your friends' Facebook photos"
+msgstr "Xerca le to someje e quelle dei amici su Facebook"
+
+#: ../unity-lens-photos.application.in.h:4
+msgid "Search your Picasa photos"
+msgstr "Xerca le to someje su Picasa"

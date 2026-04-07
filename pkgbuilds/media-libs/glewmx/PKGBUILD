@@ -37,6 +37,33 @@ package() {
     install -Dm644 include/GL/glxew.h "$pkgdir/usr/include/glewmx/GL/glxew.h"
     install -Dm644 include/GL/wglew.h "$pkgdir/usr/include/glewmx/GL/wglew.h"
 
+    # Install a glext.h wrapper to prevent conflicts between GLEW 1.13 typedefs
+    # and modern xorgproto glext.h.
+    # GLEW 1.13 glew.h defines PFNGL*SGIX typedefs from GL_SGIX_fragment_lighting;
+    # modern glext.h also defines them → conflicting declaration errors.
+    # Solution: when compiled with -I/usr/include/glewmx, pre-define the
+    # GL_SGIX_fragment_lighting guard before including the real system glext.h.
+    install -dm755 "$pkgdir/usr/include/glewmx/GL"
+    cat > "$pkgdir/usr/include/glewmx/GL/glext.h" << 'GLEXTHDR'
+/* glewmx glext.h wrapper: suppress GL_SGIX_fragment_lighting typedefs
+ * that GLEW 1.13 glew.h already defines, to avoid conflicting declaration
+ * errors with modern xorgproto glext.h when building with -I.../glewmx */
+#ifndef __GLEWMX_GLEXT_WRAPPER_H__
+#define __GLEWMX_GLEXT_WRAPPER_H__
+
+/* Pre-define the SGIX_fragment_lighting guard so system glext.h skips it */
+#ifdef __glew_h__
+#  ifndef GL_SGIX_fragment_lighting
+#    define GL_SGIX_fragment_lighting 1
+#  endif
+#endif
+
+/* Include the real system glext.h (search system paths, not our prefix) */
+#include "/usr/include/GL/glext.h"
+
+#endif /* __GLEWMX_GLEXT_WRAPPER_H__ */
+GLEXTHDR
+
     # Install custom pkgconfig pointing to glewmx headers
     install -dm755 "$pkgdir/usr/lib/pkgconfig"
     cat > "$pkgdir/usr/lib/pkgconfig/glewmx.pc" << EOF

@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-indicators/indicator-sound/src/build/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-indicators/indicator-sound/src/build/data/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-indicators/indicator-sound/src/build/src/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-indicators/indicator-sound/src/build/src/gmenuharness/cmake_install.cmake",
+		"/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-indicators/indicator-sound/src/build/po/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

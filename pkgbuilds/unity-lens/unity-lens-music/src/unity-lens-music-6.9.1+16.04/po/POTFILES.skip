@@ -1,0 +1,5 @@
+src/main.c
+src/daemon.c
+src/utils.c
+src/simple-scope.c
+src/rhythmbox-scope.c

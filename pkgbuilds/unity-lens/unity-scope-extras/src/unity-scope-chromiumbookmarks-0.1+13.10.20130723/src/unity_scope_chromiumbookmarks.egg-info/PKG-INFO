@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: unity-scope-chromiumbookmarks
+Version: 0.1
+Home-page: http://launchpad.net/ubuntu-scopes
+Author: Mark Tully
+Author-email: markjtully@gmail.com
+License: GNU General Public License (GPL)
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license

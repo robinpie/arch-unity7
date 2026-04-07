@@ -1,0 +1,25 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/weather
+Icon=
+CategoryIcon=/usr/share/icons/unity-icon-theme/places/svg/group-info.svg
+Name=Weather
+Type=weather
+IsMaster=true
+Keywords=weather;
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category global]
+Name=Weather
+Icon=
+DedupField=uri
+ContentType=weather
+
+[Category weather]
+Name=Weather
+Icon=
+DedupField=uri
+ContentType=weather
+

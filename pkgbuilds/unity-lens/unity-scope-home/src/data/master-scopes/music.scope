@@ -1,0 +1,76 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/music
+Icon=/usr/share/unity/icons/lens-nav-music.svg
+CategoryIcon=/usr/share/icons/unity-icon-theme/places/svg/group-music.svg
+Name=Music
+SearchHint=Search music
+Type=music
+IsMaster=true
+Shortcut=m
+Keywords=music;
+NoContentHint=There is no music currently available on this computer.
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category global]
+Name=Music
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-music.svg
+ContentType=music
+
+[Category recent]
+Name=Recently played
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-songs.svg
+ContentType=music
+Renderer=carousel
+
+[Category songs]
+Name=Songs
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-songs.svg
+DedupField=uri
+ContentType=music
+Renderer=carousel
+
+[Category albums]
+Name=Albums
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-albums.svg
+DedupField=uri
+ContentType=music
+
+[Category online]
+Name=Online
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-internet.svg
+DedupField=uri
+ContentType=music
+
+[Category popular]
+Name=Popular online
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-internet.svg
+DedupField=uri
+ContentType=music
+
+[Category radio]
+Name=Radio
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-songs.svg
+DedupField=uri
+ContentType=music
+
+[Category more]
+Name=More suggestions
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-treat-yourself.svg
+DedupField=uri
+ContentType=music
+
+[Filter decade]
+Name=Decade
+Type=filter-multirange
+OptionIDs=0;1960;1970;1980;1990;2000;2010;
+OptionNames=Old;60s;70s;80s;90s;00s;10s;
+
+[Filter genre]
+Name=Genre
+Type=filter-checkoption-compact
+OptionIDs=blues;classical;country;disco;funk;rock;metal;hip-hop;house;new-wave;r-and-b;punk;jazz;pop;reggae;soul;techno;other;
+OptionNames=Blues;Classical;Country;Disco;Funk;Rock;Metal;Hip-hop;House;New-wave;R&B;Punk;Jazz;Pop;Reggae;Soul;Techno;Other;
+

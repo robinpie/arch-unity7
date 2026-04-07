@@ -1,0 +1,14 @@
+Search a local video file
+---------------------------
+Test that local video files in the ~/Videos folder are easily found
+
+Setup:
+Have some video files available in ~/Videos folder.
+
+Actions:
+1. Open the Dash and switch to the video lens.
+2. Make sure some video files from ~/Videos folder are displayed.
+3. Search for multiple consecutive substrings of a video file name.
+
+Expected Result:
+Results matching the search should be displayed. For example, searching for "ubuntu 1" should returns "ubuntu_video1.avi".

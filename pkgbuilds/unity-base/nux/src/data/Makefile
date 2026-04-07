@@ -174,7 +174,7 @@ CTAGS = ctags
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wp,-D_GLIBCXX_ASSERTIONS -g -ffile-prefix-map=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/nux/src=/usr/src/debug/nux -flto=auto
+CXXFLAGS = -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -g -ffile-prefix-map=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/nux/src=/usr/src/debug/nux -flto=auto
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -184,16 +184,16 @@ DSYMUTIL =
 DUMPBIN = 
 DX_CONFIG = doxygen.cfg
 DX_DOCDIR = doc
-DX_DOT = 
-DX_DOXYGEN = 
+DX_DOT = /usr/bin/dot
+DX_DOXYGEN = /usr/bin/doxygen
 DX_DVIPS = 
 DX_EGREP = 
-DX_ENV =  SRCDIR='.' PROJECT='nux' DOCDIR='doc' VERSION='4.0.8' HAVE_DOT='NO' GENERATE_MAN='NO' GENERATE_RTF='NO' GENERATE_XML='NO' GENERATE_HTMLHELP='NO' GENERATE_CHI='NO' GENERATE_HTML='NO' GENERATE_LATEX='NO'
+DX_ENV =  SRCDIR='.' PROJECT='nux' DOCDIR='doc' VERSION='4.0.8' PERL_PATH='/usr/bin/perl' HAVE_DOT='YES' DOT_PATH='/usr/bin' GENERATE_MAN='NO' GENERATE_RTF='NO' GENERATE_XML='NO' GENERATE_HTMLHELP='NO' GENERATE_CHI='NO' GENERATE_HTML='YES' GENERATE_LATEX='NO'
 DX_FLAG_chi = 0
 DX_FLAG_chm = 0
-DX_FLAG_doc = 0
-DX_FLAG_dot = 0
-DX_FLAG_html = 0
+DX_FLAG_doc = 1
+DX_FLAG_dot = 1
+DX_FLAG_html = 1
 DX_FLAG_man = 0
 DX_FLAG_pdf = 0
 DX_FLAG_ps = 0

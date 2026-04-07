@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 19:47-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Translatable strings
+#: ../src/unity_shotwell_daemon.py:35
+msgid "This Computer"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:36
+msgid "Sorry, there are no photos that match your search."
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:41
+msgid "My Photos"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:42
+msgid "Friends Photos"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:43
+msgid "Online Photos"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:44
+msgid "Photos"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:45
+msgid "Recent"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:46
+msgid "Date"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:47
+msgid "Last 7 days"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:48
+msgid "Last 30 days"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:49
+msgid "Last 6 months"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:50
+msgid "Older"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:231
+msgid ""
+"<b>This photo is missing.</b>\n"
+"You can open Shotwell to retrieve it or remove it from your library."
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:245
+#, python-format
+msgid "%s x %s pixels"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:249
+msgid "Dimensions"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:251
+msgid "Size"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:253
+msgid "Tags"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:255
+msgid "View"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:259
+msgid "Show in Folder"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:263
+msgid "Email"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:267
+msgid "Print"
+msgstr ""
+
+#: ../src/unity_shotwell_daemon.py:271
+msgid "Open Shotwell"
+msgstr ""
+
+#: ../data/shotwell.scope.in.h:1
+msgid "shotwell;"
+msgstr ""
+
+#: ../data/shotwell.scope.in.h:2
+msgid "Shotwell"
+msgstr ""
+
+#: ../data/shotwell.scope.in.h:3
+msgid ""
+"This is an Ubuntu search plugin that enables information from Shotwell to be "
+"searched and displayed in the Dash underneath the Photos header. If you do "
+"not wish to search this content source, you can disable this search plugin."
+msgstr ""
+
+#: ../data/shotwell.scope.in.h:4
+msgid "Search Shotwell"
+msgstr ""

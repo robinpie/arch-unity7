@@ -1,0 +1,885 @@
+--- unity-lens-music-6.9.1+16.04.orig/Makefile.am
++++ unity-lens-music-6.9.1+16.04/Makefile.am
+@@ -1,12 +1,11 @@
+ SUBDIRS = src data po tests
+ 
+ #
+-# Install the music.lens and musicstore.scope files
++# Install the music.lens files
+ #
+ scope_in_files = \
+   banshee.scope.in \
+-  rhythmbox.scope.in \
+-  musicstore.scope.in
++  rhythmbox.scope.in
+ scopedir = $(SCOPESDIR)/music
+ scope_DATA = $(scope_in_files:.scope.in=.scope)
+ 
+--- unity-lens-music-6.9.1+16.04.orig/configure.ac
++++ unity-lens-music-6.9.1+16.04/configure.ac
+@@ -1,5 +1,5 @@
+ AC_INIT(unity-lens-music, 6.9.1, https://launchpad.net/unity-lens-music)
+-AC_COPYRIGHT([Copyright 2011-2014 Canonical])
++AC_COPYRIGHT([Copyright 2011-2015 Canonical])
+ 
+ AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
+ 
+@@ -73,11 +73,9 @@
+                   gio-unix-2.0 >= $GLIB_REQUIRED
+                   dee-1.0 >= 1.2.5
+                   sqlite3 >= 3.7.7
+-                  gee-1.0
++                  gee-0.8
+                   json-glib-1.0
+                   libnotify
+-                  libsoup-2.4
+-                  oauth
+                   unity >= 7.1.0
+                   unity-extras >= 7.0.0
+                   tdb >= 1.2.6)
+--- unity-lens-music-6.9.1+16.04.orig/debian/changelog
++++ unity-lens-music-6.9.1+16.04/debian/changelog
+@@ -0,0 +1,531 @@
++unity-lens-music (6.9.1+16.04-0ubuntu7) resolute; urgency=medium
++
++  * No-change mass rebuild for Ubuntu 26.04 (LP: #2132257)
++
++ -- Graham Inggs <ginggs@ubuntu.com>  Mon, 12 Jan 2026 16:34:55 +0000
++
++unity-lens-music (6.9.1+16.04-0ubuntu6) noble; urgency=medium
++
++  * No-change rebuild for CVE-2024-3094
++
++ -- William Grant <wgrant@ubuntu.com>  Mon, 01 Apr 2024 19:30:14 +1100
++
++unity-lens-music (6.9.1+16.04-0ubuntu5) noble; urgency=medium
++
++  * Fix Vala incompatibilities. (LP: #2051343)
++
++ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Fri, 29 Mar 2024 00:56:25 +0000
++
++unity-lens-music (6.9.1+16.04-0ubuntu4) noble; urgency=medium
++
++  * No-change rebuild against libglib2.0-0t64
++
++ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 08 Mar 2024 07:53:19 +0000
++
++unity-lens-music (6.9.1+16.04-0ubuntu3) bionic; urgency=medium
++
++  * Add "X-Ubuntu-Use-Langpack: yes" to debian/control now that this package is
++    in Universe (LP: #1760435).
++
++ -- Simon Quigley <tsimonq2@ubuntu.com>  Thu, 05 Apr 2018 00:04:50 -0500
++
++unity-lens-music (6.9.1+16.04-0ubuntu2) artful; urgency=medium
++
++  * No-change rebuild to pick up -fPIE compiler default in static
++    libraries
++
++ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 21 Apr 2017 20:58:09 +0000
++
++unity-lens-music (6.9.1+16.04-0ubuntu1) xenial; urgency=medium
++
++  * Remove music online store search code (LP: #1521208)
++  * Remove unity-scope-musicstores package and add C/P against it to help apt
++    transition.
++  * Remove oauth and soup code and package dependencies now that we won't have
++    this kind of results.
++  * Bump version to 6.9.1
++  * Build-depends on gee-0.8 and transition to compatible 0.8 pkgconfig files
++    (LP: #1502094)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 30 Nov 2015 10:51:30 +0100
++
++unity-lens-music (6.9.0+15.04.20141219-0ubuntu1) vivid; urgency=low
++
++  [ Marco Trevisan (Treviño) ]
++  * Rhythmbox: Use proper unity icons paths for preview image (LP:
++    #1338820, #1339629)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 19 Dec 2014 18:36:56 +0000
++
++unity-lens-music (6.9.0+14.10.20141008-0ubuntu1) utopic; urgency=low
++
++  [ David Callé ]
++  * Convert Banshee track duration from ms to s. (LP: #1255500)
++
++  [ Iain Lane ]
++  * Qualify Notify to Notify.Notification to fix FTBFS due to ambiguity
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 08 Oct 2014 19:45:42 +0000
++
++unity-lens-music (6.9.0+13.10.20131011-0ubuntu1) saucy; urgency=low
++
++  [ Michal Hruby ]
++  * Fix FTBFS. (LP: #1210357)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 147
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 11 Oct 2013 06:16:25 +0000
++
++unity-lens-music (6.9.0daily13.06.21-0ubuntu1) saucy; urgency=low
++
++  [ Michal Hruby ]
++  * As per design guidelines, use capital letters only for first words.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 145
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 21 Jun 2013 04:02:07 +0000
++
++unity-lens-music (6.9.0daily13.06.19-0ubuntu1) saucy; urgency=low
++
++  [ Jeremy Bicha ]
++  * Build with default valac.
++  * Don't prefix Music to the Banshee & Rhythmbox scope names.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 143
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 19 Jun 2013 04:28:26 +0000
++
++unity-lens-music (6.9.0daily13.06.10-0ubuntu1) saucy; urgency=low
++
++  [ Michal Hruby ]
++  * Added a number of small fixes that design pointed out during the
++    manual testing. This branch does not activate the payment feature
++    yet until Ubuntu Payment confirms that all payment issues are fixed.
++    (LP: #1182361, #1182354, #1180347, #1179981, #1180717)
++
++  [ James Henstridge ]
++  * Added a number of small fixes that design pointed out during the
++    manual testing. This branch does not activate the payment feature
++    yet until Ubuntu Payment confirms that all payment issues are fixed.
++    (LP: #1182361, #1182354, #1180347, #1179981, #1180717)
++
++  [ Automatic PS uploader ]
++  * Added a number of small fixes that design pointed out during the
++    manual testing. This branch does not activate the payment feature
++    yet until Ubuntu Payment confirms that all payment issues are fixed.
++    (LP: #1182361, #1182354, #1180347, #1179981, #1180717)
++
++  [ Alejandro J. Cura ]
++  * Added a number of small fixes that design pointed out during the
++    manual testing. This branch does not activate the payment feature
++    yet until Ubuntu Payment confirms that all payment issues are fixed.
++    (LP: #1182361, #1182354, #1180347, #1179981, #1180717)
++
++  [ Didier Roche ]
++  * Added a number of small fixes that design pointed out during the
++    manual testing. This branch does not activate the payment feature
++    yet until Ubuntu Payment confirms that all payment issues are fixed.
++    (LP: #1182361, #1182354, #1180347, #1179981, #1180717)
++
++  [ Nick Dedekind ]
++  * Added a number of small fixes that design pointed out during the
++    manual testing. This branch does not activate the payment feature
++    yet until Ubuntu Payment confirms that all payment issues are fixed.
++    (LP: #1182361, #1182354, #1180347, #1179981, #1180717)
++
++  [ Manuel de la Pena ]
++  * Added a number of small fixes that design pointed out during the
++    manual testing. This branch does not activate the payment feature
++    yet until Ubuntu Payment confirms that all payment issues are fixed.
++    (LP: #1182361, #1182354, #1180347, #1179981, #1180717)
++
++  [ Pawel Stolowski ]
++  * Added a number of small fixes that design pointed out during the
++    manual testing. This branch does not activate the payment feature
++    yet until Ubuntu Payment confirms that all payment issues are fixed.
++    (LP: #1182361, #1182354, #1180347, #1179981, #1180717)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 140
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 10 Jun 2013 04:02:34 +0000
++
++unity-lens-music (6.9.0daily13.06.05-0ubuntu1) saucy; urgency=low
++
++  [ Alejandro J. Cura ]
++  * Allow overriding the urls that are opened from environment
++    variables.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 138
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 06:18:48 +0000
++
++unity-lens-music (6.9.0daily13.05.31ubuntu.unity.next-0ubuntu1) raring; urgency=low
++
++  [ Pawel Stolowski ]
++  * New upstream release.
++
++  [ Alejandro J. Cura ]
++  * Allow overriding the urls that are opened from environment
++    variables.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 137 (ubuntu-unity/next)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 31 May 2013 04:20:14 +0000
++
++unity-lens-music (6.8.1daily13.05.01.1ubuntu.unity.next-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 134 (ubuntu-unity/next)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 01 May 2013 21:58:05 +0000
++
++unity-lens-music (6.8.1daily13.04.18~13.04-0ubuntu1) raring; urgency=low
++
++  [ Alejandro J. Cura ]
++  * Purchased songs won't download when not logged to U1 (LP: #1168674)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 133
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 18 Apr 2013 05:37:17 +0000
++
++unity-lens-music (6.8.1daily13.03.04-0ubuntu1) raring; urgency=low
++
++  [ Pawel Stolowski ]
++  * Dash - Left clicking on purchasable/installable content should open
++    a preview (LP: #1045230)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 131
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Mon, 04 Mar 2013 04:01:16 +0000
++
++unity-lens-music (6.8.1daily13.02.26-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 129
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Tue, 26 Feb 2013 04:02:07 +0000
++
++unity-lens-music (6.8.1daily13.02.07-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 127
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Thu, 07 Feb 2013 06:19:06 +0000
++
++unity-lens-music (6.8.1daily13.01.11-0ubuntu1) raring; urgency=low
++
++  [ Alejandro J. Cura ]
++  * debian/control:
++    - added libsoup2.4-dev and liboauth-dev build dependencies
++
++  [ Michael Terry ]
++  * Update vala code to latest 0.18 standards (LP: #1087393)
++
++  [ Iain Lane <iain.lane@canonical.com>, Michael Terry ]
++  * Port to GStreamer 1.0 (LP: #1087426)
++
++  [ Alejandro J. Cura ]
++  * Needs to call Ubuntu One music store webservices (LP: #1088935)
++
++  [ Aditya Vaidya ]
++  * Genre "Classic" should be "Classical" (LP: #972987)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 125
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Fri, 11 Jan 2013 04:01:55 +0000
++
++unity-lens-music (6.8.1daily12.12.05-0ubuntu1) raring; urgency=low
++
++  [ Michael Terry ]
++  * Install daemons into pkglibexecdir, not libexecdir
++  * debian/control:
++    - Update Vcs-Bzr
++    - Build-Depend on dh-autoreconf and gnome-common
++  * debian/rules:
++    - Use dh_autoreconf
++    - Use --fail-missing
++  * Automatic snapshot from revision 116 (bootstrap)
++
++  [ Didier Roche ]
++  * debian/control:
++    - build-dep on latest libunity-dev
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 119
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Wed, 05 Dec 2012 09:27:57 +0000
++
++unity-lens-music (6.8.1-0ubuntu1) quantal-proposed; urgency=low
++
++  * New upstream release.
++    - Ignore iradio tag (radio stations) when parsing Rhythmbox database; 
++      check if track uri is a local file, this prevents unexpected network 
++      queries when radio stations are enabled back in the future
++      (LP: #1049075)
++    - Add conditional search activation to the remote scope (LP: #1054746)
++  * Bump libunity-dev dependency  
++
++ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Mon, 01 Oct 2012 16:10:51 +0300
++
++unity-lens-music (6.8.0-0ubuntu1) quantal-proposed; urgency=low
++
++  [ Timo Jyrinki ]
++  * New upstream release.
++    - Improved error handling affecting music preview player (LP: #1043773)
++    - Detect missing codecs and trigger their installation via gstreamer API
++      (LP: #1043825)
++    - Set price as extra_text of 'Download' action. (LP: #1048649)
++    - Set provide_personal_content flag. (LP: #1049593)
++    - Use annotated icon in musicstore results. Renamed 'Available for 
++      purchase' category to 'More suggestions' and use new icon.
++      (LP: #1049593)
++    - Use new icons when album cover is missing (LP: #1049217)
++    - Do not show Internet radio channels in music search results, because 
++      previews is not working for them (LP: #1049651)
++    - Request higher-resolution images from the U1 music store
++      (LP: #1049568)
++
++  [ Didier Roche ]
++  * debian/control:
++    - build-dep on latest libunity
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 20 Sep 2012 16:26:57 +0200
++
++unity-lens-music (6.6.0-0ubuntu1) quantal; urgency=low
++
++  * New upstream release.
++    - Provide video_properties dbus method for the video lens.
++  * debian/control:
++    - added libgstreamer-plugins-base0.10-dev dependency (gstreamer-pbutils)
++
++ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Thu, 23 Aug 2012 18:46:20 +0200
++
++unity-lens-music (6.4.0-0ubuntu3) quantal; urgency=low
++
++  * debian/control: of course it's 5.96 required
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 22 Aug 2012 22:44:30 +0200
++
++unity-lens-music (6.4.0-0ubuntu2) quantal; urgency=low
++
++  * debian/control: updated libunity requirement
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 22 Aug 2012 22:38:44 +0200
++
++unity-lens-music (6.4.0-0ubuntu1) quantal; urgency=low
++
++  [ Ricardo Mendoza ]
++  * debian/control:
++    - add a build-dep on libgstreamer0.10-dev
++  * debian/unity-lens-music.install
++    - install music-preview-player service and binary
++
++  [ Łukasz 'sil2100' Zemczak ]
++  * New upstream release.
++    - added implementation of previews
++
++ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Wed, 22 Aug 2012 20:49:58 +0200
++
++unity-lens-music (6.2.0-0ubuntu1) quantal-proposed; urgency=low
++
++  * debian/control:
++    - switch to vala version 0.16
++  * New upstream release.
++    - Fixed compatibility with Valac 0.16
++
++ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Fri, 10 Aug 2012 13:22:53 +0200
++
++unity-lens-music (6.0.0-0ubuntu3) quantal; urgency=low
++
++  * Cherry-pick a search result fix:
++    - lp:~unity-team/unity-lens-music/improved-result-quality
++      Fix u1 search results to not seem too random. Lowers mem churn in 
++      musicstore scope quite a bit. (LP: #1021656)
++  * Restore tests/assertions.vapi that was missed from the release
++
++ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Thu, 12 Jul 2012 15:26:35 +0300
++
++unity-lens-music (6.0.0-0ubuntu2) quantal-proposed; urgency=low
++
++  * debian/*install:
++    - multiarch support
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 10 Jul 2012 09:33:06 +0200
++
++unity-lens-music (6.0.0-0ubuntu1) quantal-proposed; urgency=low
++
++  [ Łukasz 'sil2100' Zemczak ]
++  * New upstream release.
++    - music lens doens't find rhythmbox radios (LP: #969697)
++    - Unknown albums can be shown if your language is not english 
++      (LP: #1009069)
++    - switched the assets directory to the unity 6.0 quantal one.
++  * debian/rules:
++    - touch the .stamp file before building to fix make check - temporary
++
++  [ Didier Roche ]
++  * debian/control:
++    - Breaks unity << 6 because of path change
++    - build-dep on debhelper 9
++    - move Vcs-Bzr to canonical branch
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 09 Jul 2012 17:04:32 +0200
++
++unity-lens-music (5.12.0-0ubuntu1) precise-proposed; urgency=low
++
++  * New upstream release.
++    - Music Lens doesn't work for albums in Precise with Rhythmbox
++      (LP: #970509)
++    - most genres do nothing (LP: #851424)
++    - Missing album art (LP: #976067)
++  * debian/control:
++    - add a build-dep on libtdb-dev
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 27 Apr 2012 11:33:01 +0200
++
++unity-lens-music (5.10.0-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++    - unity-music-daemon crashed with SIGSEGV in find_term_real() from
++      dee_tree_index_lookup() from dee_index_lookup() from
++      unity_music_lens_rhythmbox_collection_search() (LP: #963991)
++    - unity-music-daemon using a huge amount of ram (LP: #964684)
++  * debian/control:
++    - as there is no more banshee u1 music store, make unity-scope-musicstores
++      dep on rhythmbox-ubuntuone (LP: #969271)
++    - removing libxml2-dev build-dep
++    - bump Standards-Version to latest
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 12 Apr 2012 11:41:51 +0200
++
++unity-lens-music (5.8.0-0ubuntu1) precise-proposed; urgency=low
++
++  * New upstream release.
++    - Dash - No message displayed when no results are returned in the
++      Dash (LP: #711199)
++    - The music lens needs a Dee TreeIndex (LP: #948860)
++  * debian/control:
++    - add libxml2-dev to build-dep
++    - build-dep on latest dee
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 23 Mar 2012 15:27:08 +0100
++
++unity-lens-music (5.4.0-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++    - Dash - Remove Dash Home shortcut icons (LP: #885738)
++    - Dash - Genre filter category in the Music Lens should use a 3 column
++      layout (LP: #841902)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 17 Feb 2012 13:32:07 +0100
++
++unity-lens-music (5.2.0-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++    - Dash - Remove Dash Home shortcut icons (LP: #885738)
++    - Dash - Genre filter category in the Music Lens should use a 3 column
++      layout (LP: #841902)
++  * debian/control:
++    - build with vala 0.14
++    - build-dep on latest libunity-dev
++
++ -- Didier Roche <didrocks@ubuntu.com>  Fri, 03 Feb 2012 11:33:57 +0100
++
++unity-lens-music (5.0.0-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++  * debian/control:
++    - build-dep on latest libunity-dev
++  * debian/source:
++    - kill format 3, doesn't play well with bzr merge-upstream
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 12 Jan 2012 18:40:23 +0100
++
++unity-lens-music (0.2.6-0ubuntu3) precise; urgency=low
++
++  * debian/control: Drop recommends to Banshee, we use Rhythmbox now.
++  * debian/source/format: Go back to format 1.0, as we use direct merging from
++    trunk, and building source package fails with current dpkg and 3.0.
++
++ -- Martin Pitt <martin.pitt@ubuntu.com>  Sun, 27 Nov 2011 19:07:48 +0100
++
++unity-lens-music (0.2.6-0ubuntu2) oneiric; urgency=low
++
++  * Merge trunk:
++    - musicstores scope decade filter starts at 0 (LP: #864946)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Mon, 03 Oct 2011 17:43:36 +0200
++
++unity-lens-music (0.2.6-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++    - genre and decade filters don't work for music store (LP: #861754)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 29 Sep 2011 17:29:47 +0200
++
++unity-lens-music (0.2.4-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++    - Clicking song/album in music lens loads in Banshee but does not
++      focus on play queue (LP: #834933)
++    - [FFE] Add support for U1 in the music lens (LP: #851691)
++  * debian/control:
++    - makes u-l-m now recommends u-s-m as we want it by default now.
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 27 Sep 2011 18:30:39 +0200
++
++unity-lens-music (0.2.2-0ubuntu1) UNRELEASED; urgency=low
++
++  * New upstream release.
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 22 Sep 2011 18:38:00 +0200
++
++unity-lens-music (0.2.0-0ubuntu1) UNRELEASD; urgency=low
++
++  * New upstream release.
++    - initial ubuntuone music lens scope release
++      (/!\ seems to make unity crashes only for french people
++       because kamstrup and njpatel hate us)
++  * debian/control:
++    - added libjson-glib-dev to build-dep
++    - make banshee only a recommends
++  * debian/unity-lens-music.install,
++    debian/unity-scope-musicstores.install,
++    debian/control:
++    - add the new unity-scope-musicstores scope
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 15 Sep 2011 21:01:29 +0200
++
++unity-lens-music (0.1.4-0ubuntu2) oneiric; urgency=low
++
++  * Backport a crasher fix (LP: #846013)
++
++ -- Didier Roche <didrocks@ubuntu.com>  Tue, 13 Sep 2011 09:01:40 +0200
++
++unity-lens-music (0.1.4-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++    - Python PyGI support broken (LP: #844779)
++  * debian/control:
++    - build-dep on latest libunity-dev for ABI/API break
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 08 Sep 2011 20:12:26 +0200
++
++unity-lens-music (0.1.2-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 25 Aug 2011 16:41:14 +0200
++
++unity-lens-music (0.1.0-0ubuntu1) oneiric; urgency=low
++
++  * Fist release
++  * Cheery pick an additional commit to fix dbus activation
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 11 Aug 2011 19:37:31 +0200
+--- unity-lens-music-6.9.1+16.04.orig/debian/compat
++++ unity-lens-music-6.9.1+16.04/debian/compat
+@@ -0,0 +1 @@
++9
+--- unity-lens-music-6.9.1+16.04.orig/debian/control
++++ unity-lens-music-6.9.1+16.04/debian/control
+@@ -0,0 +1,38 @@
++Source: unity-lens-music
++Section: gnome
++Priority: optional
++Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
++Build-Depends: debhelper (>= 9),
++               dh-autoreconf,
++               gnome-common,
++               pkg-config,
++               dh-translations,
++               valac,
++               libglib2.0-dev (>= 2.32),
++               libgee-0.8-dev,
++               libjson-glib-dev,
++               libnotify-dev,
++               libdee-dev (>= 1.2.5),
++               libsqlite3-dev (>= 3.7.7),
++               libunity-dev (>= 7.0.0),
++               libtdb-dev (>= 1.2.6),
++               libgstreamer1.0-dev,
++               libgstreamer-plugins-base1.0-dev
++Standards-Version: 3.9.3
++Homepage: https://launchpad.net/unity-lens-music
++# If you aren't a member of ~unity-team but need to upload packaging changes,
++# just go ahead.  ~unity-team will notice and sync up the code again.
++Vcs-Bzr: https://code.launchpad.net/~unity-team/unity-lens-music/trunk
++X-Ubuntu-Use-Langpack: yes
++
++Package: unity-lens-music
++Architecture: any
++Depends: ${shlibs:Depends},
++         ${misc:Depends},
++Breaks: unity (<< 6.0)
++Conflicts: unity-scope-musicstores
++Provides: unity-scope-musicstores
++Description: Music lens for unity
++ This package contains the "music" lens which can be used
++ into Unity to browse your media files.
++
+--- unity-lens-music-6.9.1+16.04.orig/debian/copyright
++++ unity-lens-music-6.9.1+16.04/debian/copyright
+@@ -0,0 +1,20 @@
++Format: http://dep.debian.net/deps/dep5/
++Upstream-Name: unity-lens-music
++Upstream-Contact: Mikkel Kamstrup Erlandsen <mikkel.kamstrup@canonical.com>
++                  Alex Launi <alex.launi@canonical.com>
++Source: https://launchpad.net/unity-lens-music/+download
++
++File: *
++Copyright: 2011 Canonical Ltd
++License: GPL-3
++ This program is free software: you can redistribute it and/or modify
++ it under the terms of the GNU General Public License version 3 as
++ published by the Free Software Foundation.
++ .
++ This program is distributed in the hope that it will be useful,
++ but WITHOUT ANY WARRANTY; without even the implied warranty of
++ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ GNU General Public License for more details.
++ .
++ On Debian/Ubuntu systems, the full text of the GPL v3 can be found in
++ `/usr/share/common-licenses/GPL-3'
+--- unity-lens-music-6.9.1+16.04.orig/debian/rules
++++ unity-lens-music-6.9.1+16.04/debian/rules
+@@ -0,0 +1,16 @@
++#!/usr/bin/make -f
++# -*- makefile -*-
++
++# Uncomment this to turn on verbose mode.
++#export DH_VERBOSE=1
++
++%:
++	dh $@ --with translations,autoreconf
++
++override_dh_autoreconf:
++	NOCONFIGURE=1 dh_autoreconf ./autogen.sh
++
++override_dh_auto_build:
++	# TOREMOVE
++	touch tests/test_rhythmbox_parser_vala.stamp
++	dh_auto_build
+--- unity-lens-music-6.9.1+16.04.orig/debian/watch
++++ unity-lens-music-6.9.1+16.04/debian/watch
+@@ -0,0 +1,2 @@
++version=3
++https://launchpad.net/unity-lens-music/+download .*/unity-lens-music-([0-9.]+)\.tar\.gz
+--- unity-lens-music-6.9.1+16.04.orig/po/POTFILES.skip
++++ unity-lens-music-6.9.1+16.04/po/POTFILES.skip
+@@ -4,6 +4,3 @@
+ src/simple-scope.c
+ src/banshee-scope.c
+ src/rhythmbox-scope.c
+-src/musicstore-scope.c
+-src/ubuntuone-webservices.c
+-tests/unit/ubuntuone-webservices.c
+--- unity-lens-music-6.9.1+16.04.orig/src/Makefile.am
++++ unity-lens-music-6.9.1+16.04/src/Makefile.am
+@@ -31,7 +31,7 @@
+   --pkg sqlite3 \
+   --pkg unity \
+   --pkg unity-extras \
+-  --pkg gee-1.0 \
++  --pkg gee-0.8 \
+   --pkg gio-2.0 \
+   --pkg gio-unix-2.0 \
+   --pkg glib-2.0 \
+--- unity-lens-music-6.9.1+16.04.orig/src/album.vala
++++ unity-lens-music-6.9.1+16.04/src/album.vala
+@@ -29,7 +29,6 @@
+     public string artwork_path { get; set; }
+     public double price { get; set; }
+     public string formatted_price { get; set; }
+-    public string purchase_sku { get; set; }
+ 
+   }
+ }
+--- unity-lens-music-6.9.1+16.04.orig/src/categories.vala
++++ unity-lens-music-6.9.1+16.04/src/categories.vala
+@@ -23,7 +23,6 @@
+     MUSIC,
+     SONGS,
+     ALBUMS,
+-    PURCHASE,
+     RADIOS
+   }
+ 
+--- unity-lens-music-6.9.1+16.04.orig/src/filter-parser.vala
++++ unity-lens-music-6.9.1+16.04/src/filter-parser.vala
+@@ -23,7 +23,7 @@
+   
+   public abstract class FilterParser : Object
+   {
+-    public FilterParser (Filter filter)
++    protected FilterParser (Filter filter)
+     {
+       this.filter = filter;
+     }
+@@ -33,4 +33,4 @@
+     public abstract string id { get;}
+     public abstract string parse ();
+   }
+-}
+\ No newline at end of file
++}
+--- unity-lens-music-6.9.1+16.04.orig/src/player.vala
++++ unity-lens-music-6.9.1+16.04/src/player.vala
+@@ -21,7 +21,7 @@
+ 
+ namespace PreviewPlayer
+ {
+-  errordomain PreviewPlayerError
++  public errordomain PreviewPlayerError
+   {
+     GST_INIT_FAILED
+   }
+@@ -36,7 +36,6 @@
+       PAUSED
+     }
+ 
+-    private static uint GST_NETWORK_TIMEOUT_SECS = 10; //gstreamer network timeout (in seconds)
+     private static uint64 GST_STATE_QUERY_TIMEOUT = 1000000;
+ 
+     // gstreamer - playbin plugin flags; run 'gst-inspect1.0 playbin' for more flags & description
+@@ -88,12 +87,6 @@
+       GLib.Value source_element = GLib.Value (GLib.Type.from_name("GstElement"));
+       gst_playbin.get_property ("source", ref source_element);
+       Gst.Element obj = (Gst.Element)source_element.get_object();
+-
+-      // playbin use different source plugins (e.g. FileSrc), timeout is only valid for http source
+-      if (obj.get_class ().get_type ().name () == "GstSoupHTTPSrc")
+-      {
+-        obj.set_property ("timeout", GST_NETWORK_TIMEOUT_SECS);
+-      }
+     }
+ 
+     internal bool gst_bus_message_cb (Gst.Bus bus, Gst.Message message)
+--- unity-lens-music-6.9.1+16.04.orig/src/simple-scope.vala
++++ unity-lens-music-6.9.1+16.04/src/simple-scope.vala
+@@ -36,7 +36,7 @@
+                                                   int max_results = -1,
+                                                   GLib.Cancellable? cancellable = null);
+ 
+-    public SimpleScope ()
++    protected SimpleScope ()
+     {
+     }
+ 
+--- unity-lens-music-6.9.1+16.04.orig/tests/unit/Makefile.am
++++ unity-lens-music-6.9.1+16.04/tests/unit/Makefile.am
+@@ -15,13 +15,11 @@
+ AM_VALAFLAGS = \
+   -C			\
+   --pkg dee-1.0 \
+-  --pkg gee-1.0 \
++  --pkg gee-0.8 \
+   --pkg gio-2.0 \
+   --pkg gio-unix-2.0 \
+   --pkg glib-2.0 \
+   --pkg json-glib-1.0 \
+-  --pkg oauth \
+-  --pkg libsoup-2.4 \
+   --vapidir $(top_srcdir)/src \
+   --pkg tdb \
+   --pkg unity \
+--- unity-lens-music-6.9.1+16.04.orig/tests/unit/assertions.vapi
++++ unity-lens-music-6.9.1+16.04/tests/unit/assertions.vapi
+@@ -1,23 +1,25 @@
+ [CCode (cprefix = "G", lower_case_cprefix = "g_", cheader_filename = "glib.h")]
+ namespace Assertions {
+-  public enum OperatorType {
++#if !VALA_0_52
++  public enum CompareOperator {
+     [CCode (cname = "==")]
+-    EQUAL,
++    EQ,
+     [CCode (cname = "!=")]
+-    NOT_EQUAL,
++    NE,
+     [CCode (cname = "<")]
+-    LESS_THAN,
++    LT,
+     [CCode (cname = ">")]
+-    GREATER_THAN,
++    GT,
+     [CCode (cname = "<=")]
+-    LESS_OR_EQUAL,
++    LE,
+     [CCode (cname = ">=")]
+-    GREATER_OR_EQUAL
++    GE
+   }
+ 
+-  public void assert_cmpstr (string? s1, OperatorType op, string? s2);
+-  public void assert_cmpint (int n1, OperatorType op, int n2);
+-  public void assert_cmpuint (uint n1, OperatorType op, uint n2);
+-  public void assert_cmphex (uint n1, OperatorType op, uint n2);
+-  public void assert_cmpfloat (float n1, OperatorType op, float n2);
++  public void assert_cmpstr (string? s1, CompareOperator op, string? s2);
++  public void assert_cmpint (int n1, CompareOperator op, int n2);
++  public void assert_cmpuint (uint n1, CompareOperator op, uint n2);
++  public void assert_cmphex (uint n1, CompareOperator op, uint n2);
++  public void assert_cmpfloat (float n1, CompareOperator op, float n2);
++#endif
+ }
+--- unity-lens-music-6.9.1+16.04.orig/tests/unit/test-rhythmbox-parser.vala
++++ unity-lens-music-6.9.1+16.04/tests/unit/test-rhythmbox-parser.vala
+@@ -61,12 +61,12 @@
+ 
+     parser.track_info_ready.connect ((track) =>
+     {
+-      assert_cmpstr (track.title, OperatorType.EQUAL, "Absolute Radio 80s (Modem)");
+-      assert_cmpstr (track.genre, OperatorType.EQUAL, "other");
+-      assert_cmpstr (track.artist, OperatorType.EQUAL, "");
+-      assert_cmpstr (track.album, OperatorType.EQUAL, "");
+-      assert_cmpstr (track.uri, OperatorType.EQUAL, "http://network.absoluteradio.co.uk/core/audio/ogg/live.pls?service=a8");
+-      assert_cmpint (track.year, OperatorType.EQUAL, 0);
++      assert_cmpstr (track.title, CompareOperator.EQ, "Absolute Radio 80s (Modem)");
++      assert_cmpstr (track.genre, CompareOperator.EQ, "other");
++      assert_cmpstr (track.artist, CompareOperator.EQ, "");
++      assert_cmpstr (track.album, CompareOperator.EQ, "");
++      assert_cmpstr (track.uri, CompareOperator.EQ, "http://network.absoluteradio.co.uk/core/audio/ogg/live.pls?service=a8");
++      assert_cmpint (track.year, CompareOperator.EQ, 0);
+       assert (track.type_track == TrackType.RADIO);
+     });
+     parser.parse(collection_to_parse, collection_to_parse.length);
+@@ -99,13 +99,13 @@
+ 
+     parser.track_info_ready.connect ((track) =>
+     {
+-      assert_cmpstr (track.title, OperatorType.EQUAL, "LA PASSION");
+-      assert_cmpstr (track.genre, OperatorType.EQUAL, "techno");
+-      assert_cmpstr (track.artist, OperatorType.EQUAL, "GIGI D'AGOSTINO");
+-      assert_cmpstr (track.album, OperatorType.EQUAL, "Loulou 007");
+-      assert_cmpstr (track.uri, OperatorType.EQUAL, "file:///home/moi/Gigi%20d'agostino%20Passion.mp3");
+-      assert_cmpint (track.year, OperatorType.EQUAL, 2000);
+-      assert_cmpstr (track.mime_type, OperatorType.EQUAL, "audio/mpeg");
++      assert_cmpstr (track.title, CompareOperator.EQ, "LA PASSION");
++      assert_cmpstr (track.genre, CompareOperator.EQ, "techno");
++      assert_cmpstr (track.artist, CompareOperator.EQ, "GIGI D'AGOSTINO");
++      assert_cmpstr (track.album, CompareOperator.EQ, "Loulou 007");
++      assert_cmpstr (track.uri, CompareOperator.EQ, "file:///home/moi/Gigi%20d'agostino%20Passion.mp3");
++      assert_cmpint (track.year, CompareOperator.EQ, 2000);
++      assert_cmpstr (track.mime_type, CompareOperator.EQ, "audio/mpeg");
+       assert (track.type_track == TrackType.SONG);
+     });
+     parser.parse(collection_to_parse, collection_to_parse.length);
+@@ -140,8 +140,8 @@
+   </entry>""";
+     parser.track_info_ready.connect ((track) =>
+     {
+-      assert_cmpstr (track.title, OperatorType.EQUAL, "LA PASSION");
+-      assert_cmpstr (track.album, OperatorType.EQUAL, "Loulou 007");
++      assert_cmpstr (track.title, CompareOperator.EQ, "LA PASSION");
++      assert_cmpstr (track.album, CompareOperator.EQ, "Loulou 007");
+       assert (track.type_track == TrackType.SONG);
+     });  
+     parser.parse(collection_to_parse_chunk, collection_to_parse_chunk.length);
+@@ -164,7 +164,7 @@
+ 
+     parser.track_info_ready.connect ((track) =>
+     {
+-      assert_cmpstr (track.title, OperatorType.EQUAL, "le poisson");
++      assert_cmpstr (track.title, CompareOperator.EQ, "le poisson");
+       assert (track.type_track == TrackType.SONG);
+     });     
+     parser.parse(collection_to_parse_chunk, collection_to_parse_chunk.length);

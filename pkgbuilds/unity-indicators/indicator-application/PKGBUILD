@@ -1,0 +1,75 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/indicator-application
+
+pkgname=indicator-application
+pkgver=12.10.1
+_uver=+19.04.20190308.1
+_urev=0ubuntu6
+pkgrel=1
+pkgdesc="Application indicators used by the Unity7 user interface"
+arch=('x86_64')
+url="https://launchpad.net/indicator-application"
+license=('GPL-3.0-or-later')
+depends=(
+    'dbus-glib'
+    'glib2'
+    'libappindicator'
+    'libdbusmenu-gtk3'
+    'libindicator-gtk3'
+    'gtk3'
+    'pango'
+)
+makedepends=(
+    'pkgconf'
+    'json-glib'
+    'gnome-common'
+    'systemd'
+    'intltool'
+    'autoconf'
+    'automake'
+    'libtool'
+)
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+)
+sha256sums=('SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+
+    # Apply Ubuntu diff (flat extraction)
+    patch -p1 --batch --forward -i "${pkgname}_${pkgver}${_uver}-${_urev}.diff" || true
+
+    # Apply debian patch series
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+
+    # Fix desktop file installation location
+    if [ -f data/upstart/Makefile.am ]; then
+        sed -i \
+            -e 's:$(pkgdatadir)/upstart/xdg/autostart:$(datadir)/upstart/xdg/autostart:g' \
+            data/upstart/Makefile.am || true
+    fi
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "$srcdir"
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static
+    make
+}
+
+package() {
+    cd "$srcdir"
+    make DESTDIR="$pkgdir" install
+    find "$pkgdir" -name '*.la' -delete
+}

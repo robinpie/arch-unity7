@@ -1,0 +1,71 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/applications
+Icon=@prefix@/share/unity/icons/lens-nav-app.svg
+_Name=Applications
+_SearchHint=Search applications
+Type=applications
+IsMaster=true
+Shortcut=a
+OptionalMetadata=scope_disabled[u]
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category global]
+_Name=Applications
+Icon=@prefix@/share/icons/unity-icon-theme/places/svg/group-apps.svg
+DedupField=uri
+ContentType=apps
+
+[Category apps]
+_Name=Applications
+Icon=@prefix@/share/icons/unity-icon-theme/places/svg/group-apps.svg
+DedupField=uri
+ContentType=apps
+
+[Category recently-used]
+_Name=Recently used
+Icon=@prefix@/share/icons/unity-icon-theme/places/svg/group-apps.svg
+DedupField=uri
+ContentType=apps
+
+[Category recent]
+_Name=Recent apps
+Icon=@prefix@/share/icons/unity-icon-theme/places/svg/group-apps.svg
+DedupField=uri
+ContentType=apps
+Renderer=special
+
+[Category installed]
+_Name=Installed
+Icon=@prefix@/share/icons/unity-icon-theme/places/svg/group-installed.svg
+DedupField=uri
+ContentType=apps
+
+[Category more]
+_Name=More suggestions
+Icon=@prefix@/share/icons/unity-icon-theme/places/svg/group-treat-yourself.svg
+DedupField=uri
+ContentType=apps
+
+[Category updates]
+_Name=Updates
+Icon=@prefix@/share/icons/unity-icon-theme/places/svg/group-installed.svg
+DedupField=uri
+ContentType=apps
+
+[Category scopes]
+_Name=Dash plugins
+Icon=@prefix@/share/icons/unity-icon-theme/places/svg/group-installed.svg
+DedupField=uri
+SortField=scope_disabled;title;
+ContentType=apps
+RendererHint=toggled
+
+[Filter type]
+_Name=Type
+Type=filter-checkoption
+SortType=display-name
+OptionIDs=accessories;education;game;graphics;internet;fonts;office;media;customisation;accessibility;developer;science-and-engineering;scopes;system
+_OptionNames=Accessories;Education;Games;Graphics;Internet;Fonts;Office;Media;Customisation;Accessibility;Developer;Science & Engineering;Dash plugins;System

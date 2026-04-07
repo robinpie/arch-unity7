@@ -1,0 +1,5 @@
+	../src/daemon.vala \
+	../src/main.vala \
+	../src/rhythmbox-scope.vala \
+	../src/simple-scope.vala \
+	../rhythmbox.scope.in.in

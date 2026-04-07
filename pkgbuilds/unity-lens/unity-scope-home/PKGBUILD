@@ -1,0 +1,77 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/unity-scope-home
+
+pkgname=unity-scope-home
+pkgver=6.8.2
+_uver=+19.04.20190412
+_urev=0ubuntu8
+pkgrel=1
+pkgdesc="Home scope that aggregates results from multiple scopes for the Unity7 user interface"
+arch=('x86_64')
+url="https://launchpad.net/unity-scope-home"
+license=('GPL-3.0-or-later')
+depends=(
+    'dee'
+    'glib2'
+    'json-glib'
+    'libgee'
+    'libunity'
+    'lsb-release'
+    'util-linux-libs'
+)
+makedepends=(
+    'pkgconf'
+    'vala'
+    'gnome-common'
+    'autoconf'
+    'automake'
+    'libtool'
+)
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.debian.tar.xz"
+    "Remove-Software-center-and-1kB-filter-option-and-fix-100kB.patch"
+    "Do-not-retry-null-SmartScopesClient.patch"
+)
+sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+
+    # Apply debian patch series
+    if [ -f debian/patches/series ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+
+    patch -p1 --forward -i ../Remove-Software-center-and-1kB-filter-option-and-fix-100kB.patch || true
+    patch -p1 --forward -i ../Do-not-retry-null-SmartScopesClient.patch || true
+
+    # Disable tests
+    sed -i '/^add_subdirectory.*tests\|check_PROGRAMS\|TESTS =/s/^/#/' Makefile.am 2>/dev/null || true
+    sed -i "s/ tests//" Makefile.am || true
+
+    # Remove test subdirectory from build (doesn't exist and we don't need it)
+    sed -i 's:src/unit::g' Makefile.am || true
+    sed -i '/^SUBDIRS.*tests/s/tests//' Makefile.am || true
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "$srcdir"
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --disable-headless-tests
+    make
+}
+
+package() {
+    cd "$srcdir"
+    make DESTDIR="$pkgdir" install
+    find "$pkgdir" -name '*.la' -delete
+}

@@ -1,0 +1,19 @@
+[Scope]
+DBusName=com.canonical.Unity.Scope.Webhistory.Firefoxbookmarks
+DBusPath=/com/canonical/unity/scope/webhistory/firefoxbookmarks
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-browserbookmarks.svg
+QueryBinary=firefox
+Keywords=firefoxbookmarks;firefox;web;bookmarks;
+RequiredMetadata=
+OptionalMetadata=
+Loader=/usr/share/unity-scopes/firefoxbookmarks/unity_firefoxbookmarks_daemon.py
+Module=firefoxbookmarks.unity_firefoxbookmarks_daemon
+ModuleType=python3
+RemoteContent=false
+Type=web
+Name=Firefox Bookmarks
+Description=This is an Ubuntu search plugin that enables information from Firefox to be searched and displayed in the Dash underneath the Web header. If you do not wish to search this content source, you can disable this search plugin.
+SearchHint=Search Firefoxbookmarks
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-firefoxbookmarks

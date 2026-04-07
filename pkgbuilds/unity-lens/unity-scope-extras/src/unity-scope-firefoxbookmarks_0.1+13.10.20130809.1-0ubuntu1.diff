@@ -1,0 +1,226 @@
+--- unity-scope-firefoxbookmarks-0.1+13.10.20130809.1.orig/debian/copyright
++++ unity-scope-firefoxbookmarks-0.1+13.10.20130809.1/debian/copyright
+@@ -0,0 +1,22 @@
++Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
++Source: https://launchpad.net/unity-scope-firefoxbookmarks
++Upstream-Name: unity-scope-firefoxbookmarks
++Upstream-Contact: Mark Tully <markjtully@gmail.com>
++
++Files: *
++Copyright: 2013 Mark Tully
++License: GPL-3
++ This program is free software: you can redistribute it and/or modify
++ it under the terms of the GNU General Public License as published by
++ the Free Software Foundation, version 3 of the License.
++ .
++ This program is distributed in the hope that it will be useful,
++ but WITHOUT ANY WARRANTY; without even the implied warranty of
++ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ GNU General Public License for more details.
++ .
++ You should have received a copy of the GNU General Public License
++ along with this program.  If not, see <http://www.gnu.org/licenses/>.
++ .
++ On Debian systems, the complete text of the GNU General
++ Public License version 3 can be found in '/usr/share/common-licenses/GPL-3'.
+--- unity-scope-firefoxbookmarks-0.1+13.10.20130809.1.orig/debian/control
++++ unity-scope-firefoxbookmarks-0.1+13.10.20130809.1/debian/control
+@@ -0,0 +1,32 @@
++Source: unity-scope-firefoxbookmarks
++Section: gnome
++Priority: optional
++Maintainer: Mark Tully <markjtully@gmail.com>
++Build-Depends: debhelper (>= 9),
++               python3,
++               python3-distutils-extra,
++               python3-gi,
++               pkg-config,
++               python3-nose,
++               gir1.2-unity-5.0 (>= 7),
++               gir1.2-dee-1.0 (>= 1.2.5),
++               gir1.2-glib-2.0,
++Standards-Version: 3.9.4
++Homepage: https://launchpad.net/unity-scope-firefoxbookmarks
++# If you aren't a member of ~submarine but need to upload packaging changes,
++# just go ahead. ~submarine will notice and sync up the code again.
++Vcs-Bzr: https://code.launchpad.net/~submarine/unity-scope-firefoxbookmarks/trunk
++
++Package: unity-scope-firefoxbookmarks
++Architecture: all
++Depends: ${misc:Depends},
++         ${python3:Depends},
++         python3,
++         python3-gi,
++         gir1.2-unity-5.0 (>= 7),
++         gir1.2-dee-1.0 (>= 1.2.5),
++         unity-scopes-runner,
++         gir1.2-glib-2.0
++Description: Firefox bookmarks scope for Unity
++ This package contains the "firefoxbookmarks" scope which allows Unity
++ to search your Firefox bookmarks.
+--- unity-scope-firefoxbookmarks-0.1+13.10.20130809.1.orig/debian/compat
++++ unity-scope-firefoxbookmarks-0.1+13.10.20130809.1/debian/compat
+@@ -0,0 +1 @@
++9
+--- unity-scope-firefoxbookmarks-0.1+13.10.20130809.1.orig/debian/rules
++++ unity-scope-firefoxbookmarks-0.1+13.10.20130809.1/debian/rules
+@@ -0,0 +1,18 @@
++#!/usr/bin/make -f
++# -*- makefile -*-
++
++
++%:
++	dh $@ --with python3
++
++override_dh_auto_clean:
++	python3 setup.py clean -a
++
++override_dh_auto_build:
++	python3 setup.py build
++
++override_dh_auto_test:
++	nosetests3
++
++override_dh_auto_install:
++	python3 setup.py install --root=$(CURDIR)/debian/unity-scope-firefoxbookmarks --install-layout=deb
+--- unity-scope-firefoxbookmarks-0.1+13.10.20130809.1.orig/debian/changelog
++++ unity-scope-firefoxbookmarks-0.1+13.10.20130809.1/debian/changelog
+@@ -0,0 +1,134 @@
++unity-scope-firefoxbookmarks (0.1+13.10.20130809.1-0ubuntu1) saucy; urgency=low
++
++  [ David Callé ]
++  * Fix thumbnails fetching with FF23.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 33
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 09 Aug 2013 11:49:37 +0000
++
++unity-scope-firefoxbookmarks (0.1+13.10.20130723-0ubuntu1) saucy; urgency=low
++
++  [ David Callé ]
++  * Add module and moduletype.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 31
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 23 Jul 2013 06:19:31 +0000
++
++unity-scope-firefoxbookmarks (0.1+13.10.20130702-0ubuntu1) saucy; urgency=low
++
++  [ David Callé ]
++  * Use the bookmark icon and change Show to Open.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 29
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 02 Jul 2013 04:01:45 +0000
++
++unity-scope-firefoxbookmarks (0.1daily13.06.05-0ubuntu1) saucy; urgency=low
++
++  [ Michael Terry ]
++  * Update Description
++
++  [ David Callé ]
++  * Init/update POT file
++  * Fix copyright
++  * Install .scope file in its master folder
++  * Install to /usr/share/unity-scopes, fix service file accordingly
++  * Depends on unity-scopes-runner
++  * Fix Loader field in scope file
++  * Add QueryBinary field to .scope file.
++  * Fix display name.
++  * Update description.
++  * Bump Unity deps.
++
++  [ Mark Tully ]
++  * Initial commit
++  * Added tests
++  * Updated to new API Converted to Python 3 Updated test pass data
++    Updated .scope file to specs
++  * Updated translations
++  * Add packaging
++  * Parse bookmarks for all Firefox profiles.
++  * Add previews.
++
++  [ Didier Roche ]
++  * fix wrong copy/paste
++  * add python3-gi build-dep
++  * nuke wrong seederie
++  * Fix special character in debian/control
++
++  [ markjtully ]
++  * Parse bookmarks for all Firefox profiles.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 27
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 06:18:51 +0000
++
++unity-scope-firefoxbookmarks (0.1daily13.05.31ubuntu.unity.next-0ubuntu1) raring; urgency=low
++
++  [ Michael Terry ]
++  * Update Description
++
++  [ David Callé ]
++  * Init/update POT file
++  * Fix copyright
++  * Install .scope file in its master folder
++  * Install to /usr/share/unity-scopes, fix service file accordingly
++  * Depends on unity-scopes-runner
++  * Fix Loader field in scope file
++  * Add QueryBinary field to .scope file.
++  * Fix display name.
++  * Update description.
++  * Bump Unity deps.
++
++  [ Mark Tully ]
++  * Initial commit
++  * Added tests
++  * Updated to new API Converted to Python 3 Updated test pass data
++    Updated .scope file to specs
++  * Updated translations
++  * Add packaging
++  * Parse bookmarks for all Firefox profiles.
++  * Add previews.
++
++  [ Didier Roche ]
++  * fix wrong copy/paste
++  * add python3-gi build-dep
++  * nuke wrong seederie
++  * Fix special character in debian/control
++
++  [ markjtully ]
++  * Parse bookmarks for all Firefox profiles.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 26 (ubuntu-unity/next)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 31 May 2013 04:21:27 +0000
++
++unity-scope-firefoxbookmarks (0.1daily13.05.07ubuntu.unity.experimental.certified-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 24 (ubuntu-unity/experimental-
++    certified)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 07 May 2013 07:22:43 +0000
++
++unity-scope-firefoxbookmarks (0.1daily13.04.10ubuntu.unity.experimental.certified-0ubuntu1) raring; urgency=low
++
++  [ Mark Tully ]
++  * Initial release
++
++  [ Didier Roche ]
++  * bump version in debian/control
++  * small packaging fixes. Don't go native but split
++  * Automatic snapshot from revision 1 (boostrap)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 21 (ubuntu-unity/experimental-
++    certified)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 10 Apr 2013 07:29:15 +0000
+--- unity-scope-firefoxbookmarks-0.1+13.10.20130809.1.orig/debian/source/format
++++ unity-scope-firefoxbookmarks-0.1+13.10.20130809.1/debian/source/format
+@@ -0,0 +1 @@
++1.0

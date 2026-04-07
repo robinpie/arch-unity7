@@ -1,0 +1,22 @@
+#!/bin/sh
+
+TMPFILE=`mktemp`
+CURMENU="@LIBEXECDIR@/current-menu"
+DBUSDUMP="@LIBEXECDIR@/dbusmenu-dumper"
+
+$CURMENU > $TMPFILE
+
+OBPATH=`cat $TMPFILE | cut -d " " -f 3 | cut -d "'" -f 2`
+
+
+echo -n "Path: "
+echo $OBPATH
+
+OBADDR=`cat $TMPFILE | cut -d " " -f 1 | cut -d "'" -f 2`
+
+echo -n "Addr: "
+echo $OBADDR
+
+rm -f $TMPFILE
+
+$DBUSDUMP --dbus-name $OBADDR --dbus-object $OBPATH

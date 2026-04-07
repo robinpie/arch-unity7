@@ -1,0 +1,6 @@
+src/daemon.c
+src/scope.c
+src/ubuntu-video-search.c
+tests/unit/test-ubuntu-video-search.c
+tests/unit/ubuntu-video-search.c
+tests/unit/remote-scope.c

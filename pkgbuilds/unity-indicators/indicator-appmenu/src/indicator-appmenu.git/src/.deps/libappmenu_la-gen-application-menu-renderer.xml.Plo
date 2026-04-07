@@ -1,0 +1,3 @@
+libappmenu_la-gen-application-menu-renderer.xml.lo: \
+ gen-application-menu-renderer.xml.c /usr/include/stdc-predef.h
+/usr/include/stdc-predef.h:

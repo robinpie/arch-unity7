@@ -1,0 +1,3171 @@
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu8) noble; urgency=medium
+
+  * No-change rebuild for CVE-2024-3094
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 31 Mar 2024 17:24:14 +0000
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu7) noble; urgency=medium
+
+  * Fix multiple Vala errors leading to build failure. (LP: #2051343)
+
+ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Fri, 29 Mar 2024 00:25:16 +0000
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu6) noble; urgency=medium
+
+  * No-change rebuild against libdb5.3t64
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sat, 02 Mar 2024 20:39:04 +0000
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu5) focal; urgency=high
+
+  * No change rebuild against apt 1.9.11.
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Thu, 27 Feb 2020 09:52:11 +0100
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu4) eoan; urgency=high
+
+  * No change rebuild against apt 1.9.0.
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Mon, 17 Jun 2019 13:11:45 +0200
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu3) bionic; urgency=medium
+
+  * Add "X-Ubuntu-Use-Langpack: yes" to debian/control now that this package is
+    in Universe (LP: #1760435).
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Thu, 05 Apr 2018 00:04:18 -0500
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu2) zesty; urgency=medium
+
+  * No-change rebuild for libxapian30
+
+ -- Iain Lane <iain@orangesquash.org.uk>  Wed, 02 Nov 2016 11:49:01 +0000
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu1) yakkety; urgency=medium
+
+  [ Iain Lane ]
+  * debian/rules: Set HOME to the real home directory for the test. This might
+    not be set right when building the package, but one of the tests looks up
+    ~user and checks that it corresponds to $HOME, so we need to make sure it
+    is.
+  * src/main.vala: Don't call set_desktop_env(). It's not needed with modern
+    GLib, and prevents XDG_CURRENT_DESKTOP from being used.
+
+ -- iain@orangesquash.org.uk <iain@orangesquash.org.uk>  Tue, 27 Sep 2016 17:06:18 +0000
+
+unity-lens-applications (7.1.0+16.10.20160602-0ubuntu1) yakkety; urgency=medium
+
+  [ Andrea Azzarone ]
+  * Fallback from pkginfo.application_name in case app is NULL. (LP:
+    #1582433)
+
+ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Thu, 02 Jun 2016 01:01:00 +0000
+
+unity-lens-applications (7.1.0+16.04.20160217.2-0ubuntu1) xenial; urgency=medium
+
+  [ Marco Trevisan (Treviño), Matthias Klose ]
+  * Build using libgee-0.8-dev instead of libgee-dev (LP: #1502094)
+
+ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Wed, 17 Feb 2016 15:31:32 +0000
+
+unity-lens-applications (7.1.0+15.10.20151002-0ubuntu1) wily; urgency=medium
+
+  [ Sebastien Bacher ]
+  * Use the correct db version when trying to read s-c reviews (LP:
+    #1396553)
+
+ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Fri, 02 Oct 2015 00:33:56 +0000
+
+unity-lens-applications (7.1.0+15.10.20150804.1-0ubuntu3) wily; urgency=medium
+
+  * No-change rebuild against libcolumbus1v5
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 09 Aug 2015 00:07:16 +0000
+
+unity-lens-applications (7.1.0+15.10.20150804.1-0ubuntu2) wily; urgency=medium
+
+  * No-change rebuild against libcolumbus1v5
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sat, 08 Aug 2015 19:29:26 +0000
+
+unity-lens-applications (7.1.0+15.10.20150804.1-0ubuntu1) wily; urgency=medium
+
+  [ Stephen M. Webb ]
+  * no-change rebuild for GCC-5
+
+  [ CI Train Bot ]
+  * New rebuild forced.
+
+ -- CI Train Bot <ci-train-bot@canonical.com>  Tue, 04 Aug 2015 14:39:42 +0000
+
+unity-lens-applications (7.1.0+13.10.20131011-0ubuntu2) trusty; urgency=low
+
+  * Transition to libdb5.3 across the archive.
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Sun, 03 Nov 2013 13:43:35 +0000
+
+unity-lens-applications (7.1.0+13.10.20131011-0ubuntu1) saucy; urgency=low
+
+  [ Pawel Stolowski ]
+  * Remove running apps scope from the loader params. Mark running apps
+    scope as not visible. (LP: #1237257)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 373
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 11 Oct 2013 06:15:34 +0000
+
+unity-lens-applications (7.1.0+13.10.20131003-0ubuntu1) saucy; urgency=low
+
+  [ Pawel Stolowski ]
+  * Renamed 'Search plugins' filter option to 'Dash plugins'. (LP:
+    #1231556)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 371
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 03 Oct 2013 05:03:36 +0000
+
+unity-lens-applications (7.1.0+13.10.20130919.3-0ubuntu2) saucy; urgency=low
+
+  * No change rebuild.
+
+ -- Loïc Minier <loic.minier@ubuntu.com>  Thu, 19 Sep 2013 22:09:27 +0200
+
+unity-lens-applications (7.1.0+13.10.20130919.3-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Only dim disabled scopes, don't tint enabled ones. (LP: #1221804)
+  * Do not show home scope and scopes scope in the list of dash plugins,
+    this will ensure that you can't disable scopes without a way to re-
+    enable them. (LP: #1220717, #1220733)
+
+  [ Alejandro J. Cura ]
+  * Do not include applications from click packages in the results. (LP:
+    #1225387)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 368
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 19 Sep 2013 15:41:44 +0000
+
+unity-lens-applications (7.1.0+13.10.20130903.1-0ubuntu1) saucy; urgency=low
+
+  [ Jussi Pakkanen ]
+  * Change the build-dependency to the new libcolumbus1.
+
+  [ Łukasz 'sil2100' Zemczak ]
+  * Change the build-dependency to the new libcolumbus1.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 364
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 03 Sep 2013 06:35:48 +0000
+
+unity-lens-applications (7.1.0+13.10.20130828.1-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Colorize scope icons - use orange color for enabled scopes and dim
+    disabled ones.
+
+  [ Pawel Stolowski ]
+  * Implementation of unity-scope-runningapps for the phone.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 362
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 28 Aug 2013 13:21:46 +0000
+
+unity-lens-applications (7.1.0+13.10.20130816.2-0ubuntu1) saucy; urgency=low
+
+  [ Pawel Stolowski ]
+  * Set desktop_env variable on startup (fixes regression).
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 359
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 16 Aug 2013 10:33:58 +0000
+
+unity-lens-applications (7.1.0+13.10.20130809.1-0ubuntu1) saucy; urgency=low
+
+  [ James Henstridge ]
+  * Convert scope to run as a unity-scope-loader plugin.
+
+  [ Michal Hruby ]
+  * Move scopes into a separate scopes category.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 357
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 09 Aug 2013 11:49:22 +0000
+
+unity-lens-applications (7.0.0+13.10.20130729-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Revert r352.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 354
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 29 Jul 2013 04:02:26 +0000
+
+unity-lens-applications (7.0.0+13.10.20130723-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Turn the main applications scope into a sub-scope, to allow other
+    scopes to provide results of this type.
+  * Revert r351.
+
+  [ James Henstridge ]
+  * Turn the main applications scope into a sub-scope, to allow other
+    scopes to provide results of this type.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 352
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 23 Jul 2013 06:12:20 +0000
+
+unity-lens-applications (7.0.0+13.10.20130702-0ubuntu2) saucy; urgency=low
+
+  * Depend: unity-common-7.0, as unity-common is no longer a real package.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 14 Jul 2013 13:39:58 -0700
+
+unity-lens-applications (7.0.0+13.10.20130702-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Improve error handling, which can cause the scope searches to lock
+    up.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 348
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 02 Jul 2013 04:01:13 +0000
+
+unity-lens-applications (7.0.0daily13.06.21-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * As per design guidelines, use capital letters only for first words.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 346
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 21 Jun 2013 04:01:46 +0000
+
+unity-lens-applications (7.0.0daily13.06.19-0ubuntu1) saucy; urgency=low
+
+  [ James Henstridge ]
+  * Merge the phablet branch into trunk, making the removal of non-touch
+    apps conditional on using the phablet API.
+
+  [ Michał Sawicz ]
+  * Merge the phablet branch into trunk, making the removal of non-touch
+    apps conditional on using the phablet API.
+
+  [ Ying-Chun Liu ]
+  * Merge the phablet branch into trunk, making the removal of non-touch
+    apps conditional on using the phablet API.
+
+  [ Pawel Stolowski ]
+  * Changed unity-runner:// prefix to x-unity-no-preview: (no // is
+    intended) to disable previews for commands. (LP: #1188705)
+
+  [ Sergio Schvezov ]
+  * Merge the phablet branch into trunk, making the removal of non-touch
+    apps conditional on using the phablet API.
+
+  [ Ying-Chun Liu (PaulLiu) ]
+  * Merge the phablet branch into trunk, making the removal of non-touch
+    apps conditional on using the phablet API.
+
+  [ Jeremy Bicha ]
+  * capitalize More Suggestions and Search Plugins.
+  * Build with default valac.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 344
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 19 Jun 2013 04:28:13 +0000
+
+unity-lens-applications (7.0.0daily13.06.05-0ubuntu1) saucy; urgency=low
+
+  [ Sebastien Bacher ]
+  * Set one extra string as translatable. (LP: #1074038)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 339
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 06:08:37 +0000
+
+unity-lens-applications (7.0.0daily13.05.31ubuntu.unity.next-0ubuntu1) raring; urgency=low
+
+  [ Pawel Stolowski ]
+  * New upstream release.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 338 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 31 May 2013 04:03:15 +0000
+
+unity-lens-applications (6.10.0daily13.05.01.1ubuntu.unity.next-0ubuntu1) raring; urgency=low
+
+  [ Sebastien Bacher ]
+  * Some untranslatable and wrong strings in the previews (LP: #1074038)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 336 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 01 May 2013 21:58:08 +0000
+
+unity-lens-applications (6.10.0daily13.04.18~13.04-0ubuntu1) raring; urgency=low
+
+  * Automatic snapshot from revision 334
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 18 Apr 2013 05:50:32 +0000
+
+unity-lens-applications (6.10.0daily13.04.17~13.04-0ubuntu1) raring; urgency=low
+
+  [ Mathieu Trudel-Lapierre ]
+  * search in application lens is innacurate (LP: #1159812)
+  * search in application lens is innacurate (LP: #1159812)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 333
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 17 Apr 2013 04:07:02 +0000
+
+unity-lens-applications (6.10.0daily13.04.15-0ubuntu1) raring; urgency=low
+
+  [ Sebastien Bacher ]
+  * debian/control:
+    - Build-Depends on dh-translations
+    - updated Standards-Version
+  * debian/rules: use --with translations to get a template at build time
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 331
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 15 Apr 2013 04:17:07 +0000
+
+unity-lens-applications (6.10.0daily13.03.06-0ubuntu1) raring; urgency=low
+
+  [ Jussi Pakkanen ]
+  * [regression] Keywords are being ignored (LP: #1144464)
+  * Mines is not first when searching for "mines" (LP: #1144506)
+
+  [ Automatic PS uploader ]
+  * Automatic snapshot from revision 329
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Wed, 06 Mar 2013 13:25:55 +0000
+
+unity-lens-applications (6.10.0daily13.03.04-0ubuntu1) raring; urgency=low
+
+  [ Pawel Stolowski ]
+  * Dash - Left clicking on purchasable/installable content should open
+    a preview (LP: #1045230)
+
+  [ Jussi Pakkanen ]
+  * Add error tolerant matching support with libcolumbus (LP: #1135698)
+
+  [ Automatic PS uploader ]
+  * Automatic snapshot from revision 327
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Mon, 04 Mar 2013 04:02:23 +0000
+
+unity-lens-applications (6.10.0daily13.02.28-0ubuntu1) raring; urgency=low
+
+  [ Pawel Stolowski ]
+  * Dash - Left clicking on purchasable/installable content should open
+    a preview (LP: #1045230)
+
+  [ Automatic PS uploader ]
+  * Automatic snapshot from revision 324
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Thu, 28 Feb 2013 04:02:05 +0000
+
+unity-lens-applications (6.10.0daily13.02.26-0ubuntu1) raring; urgency=low
+
+  * Automatic snapshot from revision 322
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Tue, 26 Feb 2013 04:01:32 +0000
+
+unity-lens-applications (6.10.0daily12.12.05-0ubuntu1) raring; urgency=low
+
+  [ Michael Terry ]
+  * debian/control:
+    - Update Vcs-Bzr
+    - Bump required valac to 0.18
+    - Bump required debhelper to 9 and drop cdbs
+    - Fix libgnome-menu-dev Build-Dep to be libgnome-menu-3-dev
+  * debian/rules:
+    - Use dh9 instead of cdbs
+    - Use --fail-missing
+  * Automatic snapshot from revision 317 (bootstrap)
+    - Transition to libgnome-menu-3-0 (LP: #1048503)
+
+  [ Automatic PS uploader ]
+  * Automatic snapshot from revision 320
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Wed, 05 Dec 2012 09:26:30 +0000
+
+unity-lens-applications (6.10.0-0ubuntu1) quantal-proposed; urgency=low
+
+  * New upstream release.
+    - Dash - 'More suggestions' icons in App Lens are too large (LP: #1052513)
+    - The look of price on 'Buy' button in the preview is inconsistent with 
+      other lenses (LP: #1061630)
+    - Lots of IO during startup (LP: #1066816)
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Tue, 16 Oct 2012 13:47:18 +0200
+
+unity-lens-applications (6.8.0-0ubuntu1) quantal-proposed; urgency=low
+
+  [ Timo Jyrinki ]
+  * New upstream release.
+    - Use icon_url when displaying preview of an installable app; use 
+      find_pkg_icon instead of find_app_install_icon_path, as it also uses 
+      icons from ~/.cache/software-center/icons (LP: #1054085)
+    - Remove unneeded gconf dep
+    - Use size-hint for items in "More suggestions" category (LP: #1052513)
+    - Disable collapsing by key (desktop file) when querying for specific 
+      packages (LP: #1057565)
+    - Improve Utils.preprocess_text (LP: #1056743)
+  * Bump libunity-dev dependency
+
+  [ Didier Roche ]
+  * Remove gconf build-dep as removed upstream.
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 04 Oct 2012 16:22:31 +0200
+
+unity-lens-applications (6.6.0-0ubuntu1) quantal-proposed; urgency=low
+
+  [ Timo Jyrinki ]
+  * New upstream release.
+    - Home Lens requires binary names to be provided with results
+      (LP: #1043775)
+    - Dash - App Lens ratings are not working (LP: #1039789)
+    - Dash - When an application is installed direct from a Dash Preview, the
+      Software Centre should not be launched and the Software Centre window
+      should not be opened (LP: #1045330)
+    - [FFE][UIFE]Dash - Finesse the placement, movement and behaviour of the
+      12.10 Dash (LP: #1049593)
+    - Icons are missing in the previews for apps available for download
+      (LP: #1050344)
+    - Don't show 'Uninstall' button for critical apps (i.e. the ones that
+      depend on ubuntu-desktop). (LP: #1047315)
+    - List 10 'What's new' apps and the 12 'Top Rated' apps from Software 
+      Center in 'Apps Available for Download' before user performs any search 
+      if no filters are active. List 100 top rated apps according to active 
+      filters if search string is empty. (LP: #1045762)
+    - Implemented price ribbons for Application Lens search results.
+      (LP: #1049593)
+
+  [ Didier Roche ]
+  * debian/control:
+    - build-dep on latest libunity
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 20 Sep 2012 16:17:10 +0200
+
+unity-lens-applications (6.4.0-0ubuntu1) quantal; urgency=low
+
+  * New upstream release.
+    - added implementation for previews
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Wed, 22 Aug 2012 21:00:49 +0200
+
+unity-lens-applications (6.2.0-0ubuntu1) quantal-proposed; urgency=low
+
+  * debian/control:
+    - switch to vala version 0.16
+  * New upstream release.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Fri, 10 Aug 2012 13:13:23 +0200
+
+unity-lens-applications (5.12.0-0ubuntu2) quantal-proposed; urgency=low
+
+  [ Łukasz 'sil2100' Zemczak ]
+  * Cherry-pick from upstream:
+    - change icon paths from 5 to 6
+  * debian/control:
+    - add Breaks unity - we won't work with older unity, as icon paths changed
+    - unity-place* does not exist anymore
+
+  [ Didier Roche ]
+  * debian/control, debian/unity-lens-applications.install:
+    - remove unity-place-applications transitional package
+    - locate Vcs-Bzr to canonical path
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 09 Jul 2012 17:44:42 +0200
+
+unity-lens-applications (5.12.0-0ubuntu1) precise-proposed; urgency=low
+
+  * New upstream release.
+    - Popularity sorting not working correctly (LP: #985495)
+    - run command (alt+F2): results do not contain the exact match
+      (LP: #842108)
+    - [11.0412.04 upgrade] Dash is always empty due to zeitgeist crash:
+      Unable to upgrade from schema version 3 (LP: #986191)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 27 Apr 2012 11:18:48 +0200
+
+unity-lens-applications (5.10.0-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+    - Regression: Installed apps not sorted alphabetically (LP: #964325)
+    - unity-applications-daemon crashed with SIGSEGV in
+      g_variant_get_type_info() (LP: #938382)
+    - Apps rank too high with exact matches in Keywords (LP: #960269)
+  * debian/control:
+    - bump Standards-Version to latest
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 12 Apr 2012 11:48:26 +0200
+
+unity-lens-applications (5.8.0-0ubuntu1) precise-proposed; urgency=low
+
+  * New upstream release.
+    - Dash - No message displayed when no results are returned in the
+      Dash (LP: #711199)
+    - Dash - When multiple results have equal string match relevancy ranking,
+      those with equal ranking should be then sorted by frequency of use.
+      (LP: #871900)
+    - Dash - Combined filters lead to wrong search result in Applications lens
+      (LP: #942878)
+    - Alt+F2 - ssh:// and smb:// access doesn't work in Unity (should open
+      Nautilus) (LP: #770126)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 23 Mar 2012 15:23:52 +0100
+
+unity-lens-applications (5.6.0-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+    - unity-applications-daemon crashed with SIGSEGV in
+      dee_sequence_model_free_row() (LP: #916356)
+    - Can't launch applications from the launcher (LP: #938505)
+    - Unity Dash should support Keywords parameter in .desktop (formerly X
+      -GNOME-Keywords or X-AppInstall-Keywords) (LP: #941231)
+    - Dash - Currently the app lens doesn't show applications that are
+      available for purchase (LP: #916121)
+    - non-existent icons are referenced: category-available and category-
+      installed (LP: #932212)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 12 Mar 2012 11:52:14 +0100
+
+unity-lens-applications (5.4.0-0ubuntu2) precise; urgency=low
+
+  * debian/control: Build against libdb-dev to get the current default version
+    instead of the (obsolete) hardcoded 4.8.
+  * src/unity-ratings-db.c, configure.ac: Make software-center and
+    unity-lens-applications use the same libdb version 5.1, and the same cache
+    file. This will also drop the obsolete libdb4.8 from the default install.
+    This fix also landed upstream in r269.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Mon, 27 Feb 2012 09:55:43 +0100
+
+unity-lens-applications (5.4.0-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+    - Dash - Remove Dash Home shortcut icons (LP: #885738)
+    - Dash - Most Frequently Used apps change to Recently Used, without
+      Launcher favorites (LP: #893214)
+    - Apps Lens passes wrong arguments to Zeitgeist search (LP: #912719)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 17 Feb 2012 13:31:25 +0100
+
+unity-lens-applications (5.2.0-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+    - Dash - Remove Dash Home shortcut icons (LP: #885738)
+    - Dash - Most Frequently Used apps change to Recently Used, without
+      Launcher favorites (LP: #893214)
+    - Apps Lens passes wrong arguments to Zeitgeist search (LP: #912719)
+  * debian/control:
+    - ensure we continue building with vala 0.14
+    - put the transitional package to extra priority
+    - build-dep on latest libunity-dev
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 03 Feb 2012 11:40:17 +0100
+
+unity-lens-applications (5.0.0-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+    - Apps lens should bundle its own gsettings schema (LP: #890660)
+    - unable to remove the "Apps Available for Download" section from
+  * debian/control:
+    - don't dep anymore on zeitgeist-extension-fts. This functionality
+      is now provided by zeitgeist-core which is installed by libzeitgeist.
+    - bump libunity-dev to latest
+  * debian/source:
+    - kill debian source 3, works not well with bzr merge-upstream
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 12 Jan 2012 18:39:08 +0100
+
+unity-lens-applications (0.4.12-0ubuntu2) oneiric-proposed; urgency=low
+
+  * Cherry-pick upstream:
+    - Dash - "Apps Available for Download" recommends a program that is
+      already installed (LP: #858056)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 14 Oct 2011 10:56:04 +0200
+
+unity-lens-applications (0.4.12-0ubuntu1) oneiric; urgency=low
+
+  [ Paul Sladen ]
+  * debian/control: Description: grammar 'into'->'inside'
+
+  [ Didier Roche ]
+  * New upstream release.
+    - UIFe: download icon: the 'rosette with exclamation mark' next to
+      "Apps for Download" becomes a 'circle with a downwards arrow'.
+      (LP: #850714)
+    - Make sure we don't update the model too soon, otherwise Dash flickers
+      (LP: #868192)
+    - Dash - "Apps Available for Download" recommends a program that is
+      already installed (LP: #858056)
+    - Dash: Cannot drag application from 'Most Frquently Used' section to
+      desktop (LP: #864016)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 06 Oct 2011 14:32:48 +0200
+
+unity-lens-applications (0.4.10-0ubuntu3) oneiric; urgency=low
+
+  * Cherry-pick from upstream:
+    - print, printing, printer do not bring up printer settings in unity dash
+      (LP: #865528)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Wed, 05 Oct 2011 11:39:28 +0200
+
+unity-lens-applications (0.4.10-0ubuntu2) oneiric; urgency=low
+
+  * Cherry-pick from upstream:
+    - gedit fails to start on first try, but does on the second (LP: #827414)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Wed, 28 Sep 2011 12:21:01 +0200
+
+unity-lens-applications (0.4.10-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+    - Support X-GNOME-Keywords (LP: #828356)
+    - Ratings filter in apps lens allows unrated apps through (LP: #860537)
+  * debian/control:
+    - build-dep on latest libunity
+
+ -- Didier Roche <didrocks@ubuntu.com>  Tue, 27 Sep 2011 15:41:45 +0200
+
+unity-lens-applications (0.4.8-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+    - unity-applications-daemon crash in
+      dee_shared_model_flush_revision_queue() (LP: #740561)
+    - Apps Lens doesn't handle Software Center Index Corruption (LP: #762821)
+    - Star rating filter in apps lens not respected (LP: #855324)
+    - configure needs to test for xapian.h (LP: #736051)
+    - Random available apps does not belong to selected category (LP: #857409)
+  * debian/control:
+    - add libdb4.8-dev build-dep
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 23 Sep 2011 16:23:48 +0200
+
+unity-lens-applications (0.4.6-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+    - [dash] Category filters is sorted according to their english names,
+      even when another language is used (LP: #838023)
+    - application:// URIs are malformed (LP: #784478)
+    - Games Filter in Unity doesn't work (LP: #842240)
+  * debian/control:
+    - build-dep on latest libunity-dev
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 15 Sep 2011 14:27:11 +0200
+
+unity-lens-applications (0.4.4-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+    - Python PyGI support broken (LP: #844779)
+  * debian/control:
+    - build-dep on latest libunity-dev for ABI/API break
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 08 Sep 2011 20:11:04 +0200
+
+unity-lens-applications (0.4.2-0ubuntu1) oneiric; urgency=low
+
+  * New upstream version:
+    - Fix category icons and send in DND uri
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 25 Aug 2011 13:09:12 +0200
+
+unity-lens-applications (0.4.0-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+  * Cherry pick a fix upstream for making the activation work and some alt + F2
+    refinements (LP: #755432)
+  * debian/control:
+    - change the break for a dep rather
+    - build-dep now on libunity 4
+    - bump Standards-Version
+  * debian/changelog, debian/control, debian/copyright, debian/watch:
+    - good bye place, welcome lens (massive rename)
+    - add transitional package
+    - add debian/unity-lens-applications.install
+  * debian/rules:
+    - remove simple-patchsys.mk construct (format 3 now)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 11 Aug 2011 18:48:54 +0200
+
+unity-place-applications (0.2.48-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release:
+    - switch to gsettings for the runner (LP: #800704)
+  * debian/control:
+    - breaks on the missing schema unity-common version
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 21 Jul 2011 17:47:53 +0200
+
+unity-place-applications (0.2.46-0ubuntu3.1) natty-proposed; urgency=low
+
+  * Cherry-pick some fixes:
+    - Allow the Core category to be included under All Applications (and hence
+      show up in Dash searches as well). This means that one can now find Help,
+      Home Folder, Computer, and Network. The ommision of this xdg category was
+      probably a relic of our netbook launcher past (LP: #758042)
+    - Fix illegal XML in unity-place-applications.menu.in. xmllint is happy now.
+      Patch courtesy Daniel Holbert (LP: #772152)
+    - trim the alt + F2 command line (LP: #767750)
+    - ensure we are matching files as files (no space in the command). This
+      enables to launch gvim rrr:rrr.txt which is matched (LP: #776731)
+
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 26 May 2011 15:25:53 +0200
+
+unity-place-applications (0.2.46-0ubuntu3) natty; urgency=low
+
+  * applications.png:
+    - new correct export from sladen by design (LP: #745555)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 14 Apr 2011 18:09:25 +0200
+
+unity-place-applications (0.2.46-0ubuntu2) natty; urgency=low
+
+  * debian/control: Drop libzeitgeist-gio Recommends:, which is NBS.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Mon, 11 Apr 2011 09:17:34 +0200
+
+unity-place-applications (0.2.46-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - Alt-F2 in Unity can not open URLs (LP: #750262)
+  * bump libunity dep for soname bump
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 07 Apr 2011 13:06:38 +0200
+
+unity-place-applications (0.2.44-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - unity-applications-daemon crash when Software Center index is corrupted
+      (LP: #620294)
+    - Dash: Alt-F2 "nautilus ~/" errors to "Could not find '/~'" (LP: #734762)
+    - unity-applications-daemon crash in unity_package_searcher_search()
+      (LP: #739698)
+    - unity-applications-daemon crash because of invalid docid 0 (LP: #744261)
+    - Gnome-terminal doesn't start in user home directory when started from
+      alt+F2 (LP: #736471)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 31 Mar 2011 15:09:07 +0200
+
+unity-place-applications (0.2.42-0ubuntu2) natty; urgency=low
+
+  * Cherry-pick and rescale applications.png to latest asset (LP: #704997)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 24 Mar 2011 11:13:52 +0100
+
+unity-place-applications (0.2.42-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - Dash search unavoidably returns offensive results (LP: #739469)
+    - SearchFinished signal for Places API (LP: #739311)
+    - Dash: installed/not installed packages are conflated under "Applications":
+      incredibly confusing (LP: #733669)
+    - Apps Place: SIGABRT when monkey-typing global searches (LP: #737396)
+  * debian/control:
+    - bump dep req.
+
+ -- Didier Roche <didrocks@ubuntu.com>  Wed, 23 Mar 2011 17:06:19 +0100
+
+unity-place-applications (0.2.40-0ubuntu2) natty; urgency=low
+
+  * Cherry pick r185 to fix a common natty crasher on xapian errors
+    (lp: #738884)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 22 Mar 2011 10:38:11 +0100
+
+unity-place-applications (0.2.40-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - unity-applications-daemon crashed with SIGSEGV in
+      Xapian::MSetIterator::operator*() (LP: #732945)
+    - Dash: Alt-F2 box hint says "Search commands" not "Run a
+      command"/"Execute command" (LP: #733897)
+    - Wine applications not listed in Unity Applications Place (LP: #635223)
+    - Add application through "main menu" won't work (LP: #734042)
+    - Unable to scroll with wheel in unity places (LP: #732012)
+    - unity about:config should launch ccsm on the unityshell plugin page
+      (LP: #736765)
+  * debian/control:
+    - build-dep on latest dee
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 17 Mar 2011 16:20:28 +0100
+
+unity-place-applications (0.2.38-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - Unity: Alt-F2 not working (LP: #580295)
+    - "Find More Apps" shows only six applications by default (LP: #729023)
+    - [dash] Newly installed applications are not shown in the "Installed"
+      section though they disappeared from the "Available" section
+      (LP: #719400)
+    - Dash filter categories should be identical to the Software Center
+      categories (LP: #729013)
+    - looking for 'places' icons in the wrong location (LP: #727672)
+  * debian/control:
+    - build-dep on libgconf2-dev
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 10 Mar 2011 19:50:21 +0100
+
+unity-place-applications (0.2.36-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - Unintuative Application Matching (LP: #726711)
+    - dash search does not find names with '-' (d-feet, e-mail) (LP: #729025)
+    - not installed apps sorting in global search (LP: #636996)
+    - Speed up searches for Installed apps (LP: #730048)
+    - English printf string hard to translate (LP: #641480)
+    - Disk Usage Analyzer missing from applications place (LP: #660984)
+  * debian/control:
+    - bump dee and libunity req. to latest and greatest
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 07 Mar 2011 19:07:41 +0100
+
+unity-place-applications (0.2.34-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - dash - search string not always taken into account (LP: #701569)
+    - Sync problems when restarting Unity place daemons (LP: #721289)
+    - Super-shortcuts for apps, files, and workspace switcher (LP: #617356)
+    - Place icons should be in their respective packages (LP: #672447)
+  * debian/control:
+    - bump release req.
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 24 Feb 2011 20:11:50 +0100
+
+unity-place-applications (0.2.32-0ubuntu1) natty; urgency=low
+
+  * New upstream release:
+    - comply with new libunity API
+  * debian/control:
+    - build with latest libunity version to take the .deps file
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 11 Feb 2011 13:55:50 +0100
+
+unity-place-applications (0.2.30-0ubuntu3) natty; urgency=low
+
+  [ Artur Rona ]
+  * debian/control: Depends on zeitgeist-extension-fts. (LP: #688926)
+
+  [ Didier Roche ]
+  * debian/control:
+    - rebuild to get latest libunity version
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 11 Feb 2011 09:50:32 +0100
+
+unity-place-applications (0.2.30-0ubuntu2) natty; urgency=low
+
+  * Temporary switch to dpkg-source 3.0 (quilt) format to cherry-pick the
+    new binary from trunk
+  * Cherry-pick from trunk to get the place icon showing (LP: #710790)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Tue, 01 Feb 2011 13:23:26 +0100
+
+unity-place-applications (0.2.30-0ubuntu1) natty; urgency=low
+
+  * New upstream release:
+    - Workaround unity places race with gdbus to register objects on startup
+      (LP: #710560)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 31 Jan 2011 12:41:56 +0100
+
+unity-place-applications (0.2.28-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    (Not showing yet in the unity interface)
+  * debian/control:
+    - bump buil-dep requirements
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 21 Jan 2011 14:36:10 +0100
+
+unity-place-applications (0.2.26-0ubuntu2) maverick; urgency=low
+
+  * Cherry-pick from upstream:
+    - "Applications should be Unicode-sorted". (LP: #621577)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 01 Oct 2010 13:11:05 +0200
+
+unity-place-applications (0.2.26-0ubuntu1) maverick; urgency=low
+
+  * New upstream release:
+    - Fix "Applications" tooltip not translatable (LP: #644215)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 27 Sep 2010 17:19:17 +0200
+
+unity-place-applications (0.2.22-0ubuntu1) maverick; urgency=low
+
+  * New upstream release:
+    - Fix "Completing last letter of a search makes the application to be
+      hidden from result" (LP: #633100)
+    - Fix "Dupe apps in apps place (evolution)" (LP: #643034)
+    - "Applications" and "Files & Folders" tooltips are not translatable
+      (LP: #644215)
+  * debian/control:
+    - dep on latest libunity-dev
+
+ -- Didier Roche <didrocks@ubuntu.com>  Wed, 22 Sep 2010 22:36:47 +0200
+
+unity-place-applications (0.2.20-0ubuntu1) maverick; urgency=low
+
+  * New upstream release:
+    - Fix completing last letter of a search makes the application to be hidden
+      from result (LP: #633100)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Tue, 14 Sep 2010 16:34:08 +0200
+
+unity-place-applications (0.2.18-0ubuntu1) maverick; urgency=low
+
+  * New upstream release:
+    - Add internationalization support (LP: #619072, #632227, #630744)
+    - Typo in the "You search did not match any applications" stringxi
+      (LP: #630605)
+    - Fix missing applications in Unity Applications Place (LP: #600187)
+    - Take XDG_CONFIG_DIRS into account (LP: #598373)
+    - Fix unity-applications-daemon crashed with SIGSEGV in
+      gee_list_list_iterator() (LP: #629692)
+  * debian/rules:
+    - add --sysconfdir=/etc
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 09 Sep 2010 19:44:21 +0200
+
+unity-place-applications (0.2.16-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+  * remove debian/patches/01_add_vapi_file.patch and
+    debian/patches/02_get_all_files.patch
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 02 Sep 2010 15:56:25 +0200
+
+unity-place-applications (0.2.14-0ubuntu2) maverick; urgency=low
+
+  * debian/control: recommends libzeitgeist-gio
+  * debian/rules: drop LINGUAS hack since it's not required now
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 26 Aug 2010 21:57:52 +0200
+
+unity-place-applications (0.2.14-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+  * debian/control: build-depends on libdbus-glib-1-dev and new libunity
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 26 Aug 2010 18:46:23 +0200
+
+unity-place-applications (0.2.12-0ubuntu3) maverick; urgency=low
+
+  * rules: Workaround build issue do to empty files not being in the diff.gz
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 24 Aug 2010 16:26:48 +0200
+
+unity-place-applications (0.2.12-0ubuntu2) maverick; urgency=low
+
+  * Backport i18n support so the place can be translated
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 24 Aug 2010 12:12:26 +0200
+
+unity-place-applications (0.2.12-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - updated unity requirement
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 19 Aug 2010 18:58:47 +0200
+
+unity-place-applications (0.2.10-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+    - Update the applications model when changes are detected (LP: #610382)
+    - Available group shouldn't be shown when there is no search (LP: #615407)
+    - Implement Applications Place Software Center integration (LP: #608179)
+  * debian/control:
+    - build-dep on latest unity, dee, libzg
+    - depends on new zeitgeist-fts-extension
+    - bump Standards-Version to latest
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 13 Aug 2010 14:26:04 +0200
+
+unity-place-applications (0.2.8-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - build-dep against latest unity
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 02 Aug 2010 15:58:08 +0200
+
+unity-place-applications (0.2.5-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - bump libunity-dev dep
+    - build-dep on libxapian-dev and libapt-pkg-dev
+  * debian/patches/01_add_vapi_file.patch:
+    - add missing vapi folder
+  * debian/patches/02_get_all_files.patch:
+    - ship missing file
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 22 Jul 2010 21:43:39 +0200
+
+unity-place-applications (0.2.4-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+    - add support when search string is empty (LP: #600732)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 16 Jul 2010 14:45:42 +0200
+
+unity-place-applications (0.2.2-0ubuntu2) maverick; urgency=low
+
+  * New upstream release.
+    - fix buggy search filter in files and applications views (LP: #599893)
+    - distribute HACKING missing file (LP: #598394)
+    - fix system and preferences missing (LP: #598392)
+  * remove debian/patches/01_install_dbus_and_bin.patch: upstreamed
+  * debian/control:
+    - build-dep on libunity-dev (>= 0.2.13)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 01 Jul 2010 19:08:47 +0200
+
+unity-place-applications (0.2.1-0ubuntu1) maverick; urgency=low
+
+  * Initial Packaging
+  * debian/patches/01_install_dbus_and_bin.patch:
+    - install the bin lib and the dbus service
+  * debian/control, debian/rules: build-dep and run dh_autoreconf for
+    taken previous patch into account
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 24 Jun 2010 20:39:48 +0200
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu8) noble; urgency=medium
+
+  * No-change rebuild for CVE-2024-3094
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 31 Mar 2024 17:24:14 +0000
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu7) noble; urgency=medium
+
+  * Fix multiple Vala errors leading to build failure. (LP: #2051343)
+
+ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Fri, 29 Mar 2024 00:25:16 +0000
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu6) noble; urgency=medium
+
+  * No-change rebuild against libdb5.3t64
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sat, 02 Mar 2024 20:39:04 +0000
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu5) focal; urgency=high
+
+  * No change rebuild against apt 1.9.11.
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Thu, 27 Feb 2020 09:52:11 +0100
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu4) eoan; urgency=high
+
+  * No change rebuild against apt 1.9.0.
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Mon, 17 Jun 2019 13:11:45 +0200
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu3) bionic; urgency=medium
+
+  * Add "X-Ubuntu-Use-Langpack: yes" to debian/control now that this package is
+    in Universe (LP: #1760435).
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Thu, 05 Apr 2018 00:04:18 -0500
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu2) zesty; urgency=medium
+
+  * No-change rebuild for libxapian30
+
+ -- Iain Lane <iain@orangesquash.org.uk>  Wed, 02 Nov 2016 11:49:01 +0000
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu1) yakkety; urgency=medium
+
+  [ Iain Lane ]
+  * debian/rules: Set HOME to the real home directory for the test. This might
+    not be set right when building the package, but one of the tests looks up
+    ~user and checks that it corresponds to $HOME, so we need to make sure it
+    is.
+  * src/main.vala: Don't call set_desktop_env(). It's not needed with modern
+    GLib, and prevents XDG_CURRENT_DESKTOP from being used.
+
+ -- iain@orangesquash.org.uk <iain@orangesquash.org.uk>  Tue, 27 Sep 2016 17:06:18 +0000
+
+unity-lens-applications (7.1.0+16.10.20160602-0ubuntu1) yakkety; urgency=medium
+
+  [ Andrea Azzarone ]
+  * Fallback from pkginfo.application_name in case app is NULL. (LP:
+    #1582433)
+
+ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Thu, 02 Jun 2016 01:01:00 +0000
+
+unity-lens-applications (7.1.0+16.04.20160217.2-0ubuntu1) xenial; urgency=medium
+
+  [ Marco Trevisan (Treviño), Matthias Klose ]
+  * Build using libgee-0.8-dev instead of libgee-dev (LP: #1502094)
+
+ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Wed, 17 Feb 2016 15:31:32 +0000
+
+unity-lens-applications (7.1.0+15.10.20151002-0ubuntu1) wily; urgency=medium
+
+  [ Sebastien Bacher ]
+  * Use the correct db version when trying to read s-c reviews (LP:
+    #1396553)
+
+ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Fri, 02 Oct 2015 00:33:56 +0000
+
+unity-lens-applications (7.1.0+15.10.20150804.1-0ubuntu3) wily; urgency=medium
+
+  * No-change rebuild against libcolumbus1v5
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 09 Aug 2015 00:07:16 +0000
+
+unity-lens-applications (7.1.0+15.10.20150804.1-0ubuntu2) wily; urgency=medium
+
+  * No-change rebuild against libcolumbus1v5
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sat, 08 Aug 2015 19:29:26 +0000
+
+unity-lens-applications (7.1.0+15.10.20150804.1-0ubuntu1) wily; urgency=medium
+
+  [ Stephen M. Webb ]
+  * no-change rebuild for GCC-5
+
+  [ CI Train Bot ]
+  * New rebuild forced.
+
+ -- CI Train Bot <ci-train-bot@canonical.com>  Tue, 04 Aug 2015 14:39:42 +0000
+
+unity-lens-applications (7.1.0+13.10.20131011-0ubuntu2) trusty; urgency=low
+
+  * Transition to libdb5.3 across the archive.
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Sun, 03 Nov 2013 13:43:35 +0000
+
+unity-lens-applications (7.1.0+13.10.20131011-0ubuntu1) saucy; urgency=low
+
+  [ Pawel Stolowski ]
+  * Remove running apps scope from the loader params. Mark running apps
+    scope as not visible. (LP: #1237257)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 373
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 11 Oct 2013 06:15:34 +0000
+
+unity-lens-applications (7.1.0+13.10.20131003-0ubuntu1) saucy; urgency=low
+
+  [ Pawel Stolowski ]
+  * Renamed 'Search plugins' filter option to 'Dash plugins'. (LP:
+    #1231556)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 371
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 03 Oct 2013 05:03:36 +0000
+
+unity-lens-applications (7.1.0+13.10.20130919.3-0ubuntu2) saucy; urgency=low
+
+  * No change rebuild.
+
+ -- Loïc Minier <loic.minier@ubuntu.com>  Thu, 19 Sep 2013 22:09:27 +0200
+
+unity-lens-applications (7.1.0+13.10.20130919.3-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Only dim disabled scopes, don't tint enabled ones. (LP: #1221804)
+  * Do not show home scope and scopes scope in the list of dash plugins,
+    this will ensure that you can't disable scopes without a way to re-
+    enable them. (LP: #1220717, #1220733)
+
+  [ Alejandro J. Cura ]
+  * Do not include applications from click packages in the results. (LP:
+    #1225387)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 368
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 19 Sep 2013 15:41:44 +0000
+
+unity-lens-applications (7.1.0+13.10.20130903.1-0ubuntu1) saucy; urgency=low
+
+  [ Jussi Pakkanen ]
+  * Change the build-dependency to the new libcolumbus1.
+
+  [ Łukasz 'sil2100' Zemczak ]
+  * Change the build-dependency to the new libcolumbus1.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 364
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 03 Sep 2013 06:35:48 +0000
+
+unity-lens-applications (7.1.0+13.10.20130828.1-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Colorize scope icons - use orange color for enabled scopes and dim
+    disabled ones.
+
+  [ Pawel Stolowski ]
+  * Implementation of unity-scope-runningapps for the phone.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 362
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 28 Aug 2013 13:21:46 +0000
+
+unity-lens-applications (7.1.0+13.10.20130816.2-0ubuntu1) saucy; urgency=low
+
+  [ Pawel Stolowski ]
+  * Set desktop_env variable on startup (fixes regression).
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 359
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 16 Aug 2013 10:33:58 +0000
+
+unity-lens-applications (7.1.0+13.10.20130809.1-0ubuntu1) saucy; urgency=low
+
+  [ James Henstridge ]
+  * Convert scope to run as a unity-scope-loader plugin.
+
+  [ Michal Hruby ]
+  * Move scopes into a separate scopes category.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 357
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 09 Aug 2013 11:49:22 +0000
+
+unity-lens-applications (7.0.0+13.10.20130729-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Revert r352.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 354
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 29 Jul 2013 04:02:26 +0000
+
+unity-lens-applications (7.0.0+13.10.20130723-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Turn the main applications scope into a sub-scope, to allow other
+    scopes to provide results of this type.
+  * Revert r351.
+
+  [ James Henstridge ]
+  * Turn the main applications scope into a sub-scope, to allow other
+    scopes to provide results of this type.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 352
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 23 Jul 2013 06:12:20 +0000
+
+unity-lens-applications (7.0.0+13.10.20130702-0ubuntu2) saucy; urgency=low
+
+  * Depend: unity-common-7.0, as unity-common is no longer a real package.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 14 Jul 2013 13:39:58 -0700
+
+unity-lens-applications (7.0.0+13.10.20130702-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Improve error handling, which can cause the scope searches to lock
+    up.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 348
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 02 Jul 2013 04:01:13 +0000
+
+unity-lens-applications (7.0.0daily13.06.21-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * As per design guidelines, use capital letters only for first words.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 346
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 21 Jun 2013 04:01:46 +0000
+
+unity-lens-applications (7.0.0daily13.06.19-0ubuntu1) saucy; urgency=low
+
+  [ James Henstridge ]
+  * Merge the phablet branch into trunk, making the removal of non-touch
+    apps conditional on using the phablet API.
+
+  [ Michał Sawicz ]
+  * Merge the phablet branch into trunk, making the removal of non-touch
+    apps conditional on using the phablet API.
+
+  [ Ying-Chun Liu ]
+  * Merge the phablet branch into trunk, making the removal of non-touch
+    apps conditional on using the phablet API.
+
+  [ Pawel Stolowski ]
+  * Changed unity-runner:// prefix to x-unity-no-preview: (no // is
+    intended) to disable previews for commands. (LP: #1188705)
+
+  [ Sergio Schvezov ]
+  * Merge the phablet branch into trunk, making the removal of non-touch
+    apps conditional on using the phablet API.
+
+  [ Ying-Chun Liu (PaulLiu) ]
+  * Merge the phablet branch into trunk, making the removal of non-touch
+    apps conditional on using the phablet API.
+
+  [ Jeremy Bicha ]
+  * capitalize More Suggestions and Search Plugins.
+  * Build with default valac.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 344
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 19 Jun 2013 04:28:13 +0000
+
+unity-lens-applications (7.0.0daily13.06.05-0ubuntu1) saucy; urgency=low
+
+  [ Sebastien Bacher ]
+  * Set one extra string as translatable. (LP: #1074038)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 339
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 06:08:37 +0000
+
+unity-lens-applications (7.0.0daily13.05.31ubuntu.unity.next-0ubuntu1) raring; urgency=low
+
+  [ Pawel Stolowski ]
+  * New upstream release.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 338 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 31 May 2013 04:03:15 +0000
+
+unity-lens-applications (6.10.0daily13.05.01.1ubuntu.unity.next-0ubuntu1) raring; urgency=low
+
+  [ Sebastien Bacher ]
+  * Some untranslatable and wrong strings in the previews (LP: #1074038)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 336 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 01 May 2013 21:58:08 +0000
+
+unity-lens-applications (6.10.0daily13.04.18~13.04-0ubuntu1) raring; urgency=low
+
+  * Automatic snapshot from revision 334
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 18 Apr 2013 05:50:32 +0000
+
+unity-lens-applications (6.10.0daily13.04.17~13.04-0ubuntu1) raring; urgency=low
+
+  [ Mathieu Trudel-Lapierre ]
+  * search in application lens is innacurate (LP: #1159812)
+  * search in application lens is innacurate (LP: #1159812)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 333
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 17 Apr 2013 04:07:02 +0000
+
+unity-lens-applications (6.10.0daily13.04.15-0ubuntu1) raring; urgency=low
+
+  [ Sebastien Bacher ]
+  * debian/control:
+    - Build-Depends on dh-translations
+    - updated Standards-Version
+  * debian/rules: use --with translations to get a template at build time
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 331
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 15 Apr 2013 04:17:07 +0000
+
+unity-lens-applications (6.10.0daily13.03.06-0ubuntu1) raring; urgency=low
+
+  [ Jussi Pakkanen ]
+  * [regression] Keywords are being ignored (LP: #1144464)
+  * Mines is not first when searching for "mines" (LP: #1144506)
+
+  [ Automatic PS uploader ]
+  * Automatic snapshot from revision 329
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Wed, 06 Mar 2013 13:25:55 +0000
+
+unity-lens-applications (6.10.0daily13.03.04-0ubuntu1) raring; urgency=low
+
+  [ Pawel Stolowski ]
+  * Dash - Left clicking on purchasable/installable content should open
+    a preview (LP: #1045230)
+
+  [ Jussi Pakkanen ]
+  * Add error tolerant matching support with libcolumbus (LP: #1135698)
+
+  [ Automatic PS uploader ]
+  * Automatic snapshot from revision 327
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Mon, 04 Mar 2013 04:02:23 +0000
+
+unity-lens-applications (6.10.0daily13.02.28-0ubuntu1) raring; urgency=low
+
+  [ Pawel Stolowski ]
+  * Dash - Left clicking on purchasable/installable content should open
+    a preview (LP: #1045230)
+
+  [ Automatic PS uploader ]
+  * Automatic snapshot from revision 324
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Thu, 28 Feb 2013 04:02:05 +0000
+
+unity-lens-applications (6.10.0daily13.02.26-0ubuntu1) raring; urgency=low
+
+  * Automatic snapshot from revision 322
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Tue, 26 Feb 2013 04:01:32 +0000
+
+unity-lens-applications (6.10.0daily12.12.05-0ubuntu1) raring; urgency=low
+
+  [ Michael Terry ]
+  * debian/control:
+    - Update Vcs-Bzr
+    - Bump required valac to 0.18
+    - Bump required debhelper to 9 and drop cdbs
+    - Fix libgnome-menu-dev Build-Dep to be libgnome-menu-3-dev
+  * debian/rules:
+    - Use dh9 instead of cdbs
+    - Use --fail-missing
+  * Automatic snapshot from revision 317 (bootstrap)
+    - Transition to libgnome-menu-3-0 (LP: #1048503)
+
+  [ Automatic PS uploader ]
+  * Automatic snapshot from revision 320
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Wed, 05 Dec 2012 09:26:30 +0000
+
+unity-lens-applications (6.10.0-0ubuntu1) quantal-proposed; urgency=low
+
+  * New upstream release.
+    - Dash - 'More suggestions' icons in App Lens are too large (LP: #1052513)
+    - The look of price on 'Buy' button in the preview is inconsistent with 
+      other lenses (LP: #1061630)
+    - Lots of IO during startup (LP: #1066816)
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Tue, 16 Oct 2012 13:47:18 +0200
+
+unity-lens-applications (6.8.0-0ubuntu1) quantal-proposed; urgency=low
+
+  [ Timo Jyrinki ]
+  * New upstream release.
+    - Use icon_url when displaying preview of an installable app; use 
+      find_pkg_icon instead of find_app_install_icon_path, as it also uses 
+      icons from ~/.cache/software-center/icons (LP: #1054085)
+    - Remove unneeded gconf dep
+    - Use size-hint for items in "More suggestions" category (LP: #1052513)
+    - Disable collapsing by key (desktop file) when querying for specific 
+      packages (LP: #1057565)
+    - Improve Utils.preprocess_text (LP: #1056743)
+  * Bump libunity-dev dependency
+
+  [ Didier Roche ]
+  * Remove gconf build-dep as removed upstream.
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 04 Oct 2012 16:22:31 +0200
+
+unity-lens-applications (6.6.0-0ubuntu1) quantal-proposed; urgency=low
+
+  [ Timo Jyrinki ]
+  * New upstream release.
+    - Home Lens requires binary names to be provided with results
+      (LP: #1043775)
+    - Dash - App Lens ratings are not working (LP: #1039789)
+    - Dash - When an application is installed direct from a Dash Preview, the
+      Software Centre should not be launched and the Software Centre window
+      should not be opened (LP: #1045330)
+    - [FFE][UIFE]Dash - Finesse the placement, movement and behaviour of the
+      12.10 Dash (LP: #1049593)
+    - Icons are missing in the previews for apps available for download
+      (LP: #1050344)
+    - Don't show 'Uninstall' button for critical apps (i.e. the ones that
+      depend on ubuntu-desktop). (LP: #1047315)
+    - List 10 'What's new' apps and the 12 'Top Rated' apps from Software 
+      Center in 'Apps Available for Download' before user performs any search 
+      if no filters are active. List 100 top rated apps according to active 
+      filters if search string is empty. (LP: #1045762)
+    - Implemented price ribbons for Application Lens search results.
+      (LP: #1049593)
+
+  [ Didier Roche ]
+  * debian/control:
+    - build-dep on latest libunity
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 20 Sep 2012 16:17:10 +0200
+
+unity-lens-applications (6.4.0-0ubuntu1) quantal; urgency=low
+
+  * New upstream release.
+    - added implementation for previews
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Wed, 22 Aug 2012 21:00:49 +0200
+
+unity-lens-applications (6.2.0-0ubuntu1) quantal-proposed; urgency=low
+
+  * debian/control:
+    - switch to vala version 0.16
+  * New upstream release.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Fri, 10 Aug 2012 13:13:23 +0200
+
+unity-lens-applications (5.12.0-0ubuntu2) quantal-proposed; urgency=low
+
+  [ Łukasz 'sil2100' Zemczak ]
+  * Cherry-pick from upstream:
+    - change icon paths from 5 to 6
+  * debian/control:
+    - add Breaks unity - we won't work with older unity, as icon paths changed
+    - unity-place* does not exist anymore
+
+  [ Didier Roche ]
+  * debian/control, debian/unity-lens-applications.install:
+    - remove unity-place-applications transitional package
+    - locate Vcs-Bzr to canonical path
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 09 Jul 2012 17:44:42 +0200
+
+unity-lens-applications (5.12.0-0ubuntu1) precise-proposed; urgency=low
+
+  * New upstream release.
+    - Popularity sorting not working correctly (LP: #985495)
+    - run command (alt+F2): results do not contain the exact match
+      (LP: #842108)
+    - [11.0412.04 upgrade] Dash is always empty due to zeitgeist crash:
+      Unable to upgrade from schema version 3 (LP: #986191)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 27 Apr 2012 11:18:48 +0200
+
+unity-lens-applications (5.10.0-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+    - Regression: Installed apps not sorted alphabetically (LP: #964325)
+    - unity-applications-daemon crashed with SIGSEGV in
+      g_variant_get_type_info() (LP: #938382)
+    - Apps rank too high with exact matches in Keywords (LP: #960269)
+  * debian/control:
+    - bump Standards-Version to latest
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 12 Apr 2012 11:48:26 +0200
+
+unity-lens-applications (5.8.0-0ubuntu1) precise-proposed; urgency=low
+
+  * New upstream release.
+    - Dash - No message displayed when no results are returned in the
+      Dash (LP: #711199)
+    - Dash - When multiple results have equal string match relevancy ranking,
+      those with equal ranking should be then sorted by frequency of use.
+      (LP: #871900)
+    - Dash - Combined filters lead to wrong search result in Applications lens
+      (LP: #942878)
+    - Alt+F2 - ssh:// and smb:// access doesn't work in Unity (should open
+      Nautilus) (LP: #770126)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 23 Mar 2012 15:23:52 +0100
+
+unity-lens-applications (5.6.0-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+    - unity-applications-daemon crashed with SIGSEGV in
+      dee_sequence_model_free_row() (LP: #916356)
+    - Can't launch applications from the launcher (LP: #938505)
+    - Unity Dash should support Keywords parameter in .desktop (formerly X
+      -GNOME-Keywords or X-AppInstall-Keywords) (LP: #941231)
+    - Dash - Currently the app lens doesn't show applications that are
+      available for purchase (LP: #916121)
+    - non-existent icons are referenced: category-available and category-
+      installed (LP: #932212)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 12 Mar 2012 11:52:14 +0100
+
+unity-lens-applications (5.4.0-0ubuntu2) precise; urgency=low
+
+  * debian/control: Build against libdb-dev to get the current default version
+    instead of the (obsolete) hardcoded 4.8.
+  * src/unity-ratings-db.c, configure.ac: Make software-center and
+    unity-lens-applications use the same libdb version 5.1, and the same cache
+    file. This will also drop the obsolete libdb4.8 from the default install.
+    This fix also landed upstream in r269.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Mon, 27 Feb 2012 09:55:43 +0100
+
+unity-lens-applications (5.4.0-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+    - Dash - Remove Dash Home shortcut icons (LP: #885738)
+    - Dash - Most Frequently Used apps change to Recently Used, without
+      Launcher favorites (LP: #893214)
+    - Apps Lens passes wrong arguments to Zeitgeist search (LP: #912719)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 17 Feb 2012 13:31:25 +0100
+
+unity-lens-applications (5.2.0-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+    - Dash - Remove Dash Home shortcut icons (LP: #885738)
+    - Dash - Most Frequently Used apps change to Recently Used, without
+      Launcher favorites (LP: #893214)
+    - Apps Lens passes wrong arguments to Zeitgeist search (LP: #912719)
+  * debian/control:
+    - ensure we continue building with vala 0.14
+    - put the transitional package to extra priority
+    - build-dep on latest libunity-dev
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 03 Feb 2012 11:40:17 +0100
+
+unity-lens-applications (5.0.0-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+    - Apps lens should bundle its own gsettings schema (LP: #890660)
+    - unable to remove the "Apps Available for Download" section from
+  * debian/control:
+    - don't dep anymore on zeitgeist-extension-fts. This functionality
+      is now provided by zeitgeist-core which is installed by libzeitgeist.
+    - bump libunity-dev to latest
+  * debian/source:
+    - kill debian source 3, works not well with bzr merge-upstream
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 12 Jan 2012 18:39:08 +0100
+
+unity-lens-applications (0.4.12-0ubuntu2) oneiric-proposed; urgency=low
+
+  * Cherry-pick upstream:
+    - Dash - "Apps Available for Download" recommends a program that is
+      already installed (LP: #858056)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 14 Oct 2011 10:56:04 +0200
+
+unity-lens-applications (0.4.12-0ubuntu1) oneiric; urgency=low
+
+  [ Paul Sladen ]
+  * debian/control: Description: grammar 'into'->'inside'
+
+  [ Didier Roche ]
+  * New upstream release.
+    - UIFe: download icon: the 'rosette with exclamation mark' next to
+      "Apps for Download" becomes a 'circle with a downwards arrow'.
+      (LP: #850714)
+    - Make sure we don't update the model too soon, otherwise Dash flickers
+      (LP: #868192)
+    - Dash - "Apps Available for Download" recommends a program that is
+      already installed (LP: #858056)
+    - Dash: Cannot drag application from 'Most Frquently Used' section to
+      desktop (LP: #864016)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 06 Oct 2011 14:32:48 +0200
+
+unity-lens-applications (0.4.10-0ubuntu3) oneiric; urgency=low
+
+  * Cherry-pick from upstream:
+    - print, printing, printer do not bring up printer settings in unity dash
+      (LP: #865528)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Wed, 05 Oct 2011 11:39:28 +0200
+
+unity-lens-applications (0.4.10-0ubuntu2) oneiric; urgency=low
+
+  * Cherry-pick from upstream:
+    - gedit fails to start on first try, but does on the second (LP: #827414)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Wed, 28 Sep 2011 12:21:01 +0200
+
+unity-lens-applications (0.4.10-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+    - Support X-GNOME-Keywords (LP: #828356)
+    - Ratings filter in apps lens allows unrated apps through (LP: #860537)
+  * debian/control:
+    - build-dep on latest libunity
+
+ -- Didier Roche <didrocks@ubuntu.com>  Tue, 27 Sep 2011 15:41:45 +0200
+
+unity-lens-applications (0.4.8-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+    - unity-applications-daemon crash in
+      dee_shared_model_flush_revision_queue() (LP: #740561)
+    - Apps Lens doesn't handle Software Center Index Corruption (LP: #762821)
+    - Star rating filter in apps lens not respected (LP: #855324)
+    - configure needs to test for xapian.h (LP: #736051)
+    - Random available apps does not belong to selected category (LP: #857409)
+  * debian/control:
+    - add libdb4.8-dev build-dep
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 23 Sep 2011 16:23:48 +0200
+
+unity-lens-applications (0.4.6-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+    - [dash] Category filters is sorted according to their english names,
+      even when another language is used (LP: #838023)
+    - application:// URIs are malformed (LP: #784478)
+    - Games Filter in Unity doesn't work (LP: #842240)
+  * debian/control:
+    - build-dep on latest libunity-dev
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 15 Sep 2011 14:27:11 +0200
+
+unity-lens-applications (0.4.4-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+    - Python PyGI support broken (LP: #844779)
+  * debian/control:
+    - build-dep on latest libunity-dev for ABI/API break
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 08 Sep 2011 20:11:04 +0200
+
+unity-lens-applications (0.4.2-0ubuntu1) oneiric; urgency=low
+
+  * New upstream version:
+    - Fix category icons and send in DND uri
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 25 Aug 2011 13:09:12 +0200
+
+unity-lens-applications (0.4.0-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+  * Cherry pick a fix upstream for making the activation work and some alt + F2
+    refinements (LP: #755432)
+  * debian/control:
+    - change the break for a dep rather
+    - build-dep now on libunity 4
+    - bump Standards-Version
+  * debian/changelog, debian/control, debian/copyright, debian/watch:
+    - good bye place, welcome lens (massive rename)
+    - add transitional package
+    - add debian/unity-lens-applications.install
+  * debian/rules:
+    - remove simple-patchsys.mk construct (format 3 now)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 11 Aug 2011 18:48:54 +0200
+
+unity-place-applications (0.2.48-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release:
+    - switch to gsettings for the runner (LP: #800704)
+  * debian/control:
+    - breaks on the missing schema unity-common version
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 21 Jul 2011 17:47:53 +0200
+
+unity-place-applications (0.2.46-0ubuntu3.1) natty-proposed; urgency=low
+
+  * Cherry-pick some fixes:
+    - Allow the Core category to be included under All Applications (and hence
+      show up in Dash searches as well). This means that one can now find Help,
+      Home Folder, Computer, and Network. The ommision of this xdg category was
+      probably a relic of our netbook launcher past (LP: #758042)
+    - Fix illegal XML in unity-place-applications.menu.in. xmllint is happy now.
+      Patch courtesy Daniel Holbert (LP: #772152)
+    - trim the alt + F2 command line (LP: #767750)
+    - ensure we are matching files as files (no space in the command). This
+      enables to launch gvim rrr:rrr.txt which is matched (LP: #776731)
+
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 26 May 2011 15:25:53 +0200
+
+unity-place-applications (0.2.46-0ubuntu3) natty; urgency=low
+
+  * applications.png:
+    - new correct export from sladen by design (LP: #745555)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 14 Apr 2011 18:09:25 +0200
+
+unity-place-applications (0.2.46-0ubuntu2) natty; urgency=low
+
+  * debian/control: Drop libzeitgeist-gio Recommends:, which is NBS.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Mon, 11 Apr 2011 09:17:34 +0200
+
+unity-place-applications (0.2.46-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - Alt-F2 in Unity can not open URLs (LP: #750262)
+  * bump libunity dep for soname bump
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 07 Apr 2011 13:06:38 +0200
+
+unity-place-applications (0.2.44-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - unity-applications-daemon crash when Software Center index is corrupted
+      (LP: #620294)
+    - Dash: Alt-F2 "nautilus ~/" errors to "Could not find '/~'" (LP: #734762)
+    - unity-applications-daemon crash in unity_package_searcher_search()
+      (LP: #739698)
+    - unity-applications-daemon crash because of invalid docid 0 (LP: #744261)
+    - Gnome-terminal doesn't start in user home directory when started from
+      alt+F2 (LP: #736471)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 31 Mar 2011 15:09:07 +0200
+
+unity-place-applications (0.2.42-0ubuntu2) natty; urgency=low
+
+  * Cherry-pick and rescale applications.png to latest asset (LP: #704997)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 24 Mar 2011 11:13:52 +0100
+
+unity-place-applications (0.2.42-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - Dash search unavoidably returns offensive results (LP: #739469)
+    - SearchFinished signal for Places API (LP: #739311)
+    - Dash: installed/not installed packages are conflated under "Applications":
+      incredibly confusing (LP: #733669)
+    - Apps Place: SIGABRT when monkey-typing global searches (LP: #737396)
+  * debian/control:
+    - bump dep req.
+
+ -- Didier Roche <didrocks@ubuntu.com>  Wed, 23 Mar 2011 17:06:19 +0100
+
+unity-place-applications (0.2.40-0ubuntu2) natty; urgency=low
+
+  * Cherry pick r185 to fix a common natty crasher on xapian errors
+    (lp: #738884)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 22 Mar 2011 10:38:11 +0100
+
+unity-place-applications (0.2.40-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - unity-applications-daemon crashed with SIGSEGV in
+      Xapian::MSetIterator::operator*() (LP: #732945)
+    - Dash: Alt-F2 box hint says "Search commands" not "Run a
+      command"/"Execute command" (LP: #733897)
+    - Wine applications not listed in Unity Applications Place (LP: #635223)
+    - Add application through "main menu" won't work (LP: #734042)
+    - Unable to scroll with wheel in unity places (LP: #732012)
+    - unity about:config should launch ccsm on the unityshell plugin page
+      (LP: #736765)
+  * debian/control:
+    - build-dep on latest dee
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 17 Mar 2011 16:20:28 +0100
+
+unity-place-applications (0.2.38-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - Unity: Alt-F2 not working (LP: #580295)
+    - "Find More Apps" shows only six applications by default (LP: #729023)
+    - [dash] Newly installed applications are not shown in the "Installed"
+      section though they disappeared from the "Available" section
+      (LP: #719400)
+    - Dash filter categories should be identical to the Software Center
+      categories (LP: #729013)
+    - looking for 'places' icons in the wrong location (LP: #727672)
+  * debian/control:
+    - build-dep on libgconf2-dev
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 10 Mar 2011 19:50:21 +0100
+
+unity-place-applications (0.2.36-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - Unintuative Application Matching (LP: #726711)
+    - dash search does not find names with '-' (d-feet, e-mail) (LP: #729025)
+    - not installed apps sorting in global search (LP: #636996)
+    - Speed up searches for Installed apps (LP: #730048)
+    - English printf string hard to translate (LP: #641480)
+    - Disk Usage Analyzer missing from applications place (LP: #660984)
+  * debian/control:
+    - bump dee and libunity req. to latest and greatest
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 07 Mar 2011 19:07:41 +0100
+
+unity-place-applications (0.2.34-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - dash - search string not always taken into account (LP: #701569)
+    - Sync problems when restarting Unity place daemons (LP: #721289)
+    - Super-shortcuts for apps, files, and workspace switcher (LP: #617356)
+    - Place icons should be in their respective packages (LP: #672447)
+  * debian/control:
+    - bump release req.
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 24 Feb 2011 20:11:50 +0100
+
+unity-place-applications (0.2.32-0ubuntu1) natty; urgency=low
+
+  * New upstream release:
+    - comply with new libunity API
+  * debian/control:
+    - build with latest libunity version to take the .deps file
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 11 Feb 2011 13:55:50 +0100
+
+unity-place-applications (0.2.30-0ubuntu3) natty; urgency=low
+
+  [ Artur Rona ]
+  * debian/control: Depends on zeitgeist-extension-fts. (LP: #688926)
+
+  [ Didier Roche ]
+  * debian/control:
+    - rebuild to get latest libunity version
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 11 Feb 2011 09:50:32 +0100
+
+unity-place-applications (0.2.30-0ubuntu2) natty; urgency=low
+
+  * Temporary switch to dpkg-source 3.0 (quilt) format to cherry-pick the
+    new binary from trunk
+  * Cherry-pick from trunk to get the place icon showing (LP: #710790)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Tue, 01 Feb 2011 13:23:26 +0100
+
+unity-place-applications (0.2.30-0ubuntu1) natty; urgency=low
+
+  * New upstream release:
+    - Workaround unity places race with gdbus to register objects on startup
+      (LP: #710560)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 31 Jan 2011 12:41:56 +0100
+
+unity-place-applications (0.2.28-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    (Not showing yet in the unity interface)
+  * debian/control:
+    - bump buil-dep requirements
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 21 Jan 2011 14:36:10 +0100
+
+unity-place-applications (0.2.26-0ubuntu2) maverick; urgency=low
+
+  * Cherry-pick from upstream:
+    - "Applications should be Unicode-sorted". (LP: #621577)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 01 Oct 2010 13:11:05 +0200
+
+unity-place-applications (0.2.26-0ubuntu1) maverick; urgency=low
+
+  * New upstream release:
+    - Fix "Applications" tooltip not translatable (LP: #644215)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 27 Sep 2010 17:19:17 +0200
+
+unity-place-applications (0.2.22-0ubuntu1) maverick; urgency=low
+
+  * New upstream release:
+    - Fix "Completing last letter of a search makes the application to be
+      hidden from result" (LP: #633100)
+    - Fix "Dupe apps in apps place (evolution)" (LP: #643034)
+    - "Applications" and "Files & Folders" tooltips are not translatable
+      (LP: #644215)
+  * debian/control:
+    - dep on latest libunity-dev
+
+ -- Didier Roche <didrocks@ubuntu.com>  Wed, 22 Sep 2010 22:36:47 +0200
+
+unity-place-applications (0.2.20-0ubuntu1) maverick; urgency=low
+
+  * New upstream release:
+    - Fix completing last letter of a search makes the application to be hidden
+      from result (LP: #633100)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Tue, 14 Sep 2010 16:34:08 +0200
+
+unity-place-applications (0.2.18-0ubuntu1) maverick; urgency=low
+
+  * New upstream release:
+    - Add internationalization support (LP: #619072, #632227, #630744)
+    - Typo in the "You search did not match any applications" stringxi
+      (LP: #630605)
+    - Fix missing applications in Unity Applications Place (LP: #600187)
+    - Take XDG_CONFIG_DIRS into account (LP: #598373)
+    - Fix unity-applications-daemon crashed with SIGSEGV in
+      gee_list_list_iterator() (LP: #629692)
+  * debian/rules:
+    - add --sysconfdir=/etc
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 09 Sep 2010 19:44:21 +0200
+
+unity-place-applications (0.2.16-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+  * remove debian/patches/01_add_vapi_file.patch and
+    debian/patches/02_get_all_files.patch
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 02 Sep 2010 15:56:25 +0200
+
+unity-place-applications (0.2.14-0ubuntu2) maverick; urgency=low
+
+  * debian/control: recommends libzeitgeist-gio
+  * debian/rules: drop LINGUAS hack since it's not required now
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 26 Aug 2010 21:57:52 +0200
+
+unity-place-applications (0.2.14-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+  * debian/control: build-depends on libdbus-glib-1-dev and new libunity
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 26 Aug 2010 18:46:23 +0200
+
+unity-place-applications (0.2.12-0ubuntu3) maverick; urgency=low
+
+  * rules: Workaround build issue do to empty files not being in the diff.gz
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 24 Aug 2010 16:26:48 +0200
+
+unity-place-applications (0.2.12-0ubuntu2) maverick; urgency=low
+
+  * Backport i18n support so the place can be translated
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 24 Aug 2010 12:12:26 +0200
+
+unity-place-applications (0.2.12-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - updated unity requirement
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 19 Aug 2010 18:58:47 +0200
+
+unity-place-applications (0.2.10-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+    - Update the applications model when changes are detected (LP: #610382)
+    - Available group shouldn't be shown when there is no search (LP: #615407)
+    - Implement Applications Place Software Center integration (LP: #608179)
+  * debian/control:
+    - build-dep on latest unity, dee, libzg
+    - depends on new zeitgeist-fts-extension
+    - bump Standards-Version to latest
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 13 Aug 2010 14:26:04 +0200
+
+unity-place-applications (0.2.8-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - build-dep against latest unity
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 02 Aug 2010 15:58:08 +0200
+
+unity-place-applications (0.2.5-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - bump libunity-dev dep
+    - build-dep on libxapian-dev and libapt-pkg-dev
+  * debian/patches/01_add_vapi_file.patch:
+    - add missing vapi folder
+  * debian/patches/02_get_all_files.patch:
+    - ship missing file
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 22 Jul 2010 21:43:39 +0200
+
+unity-place-applications (0.2.4-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+    - add support when search string is empty (LP: #600732)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 16 Jul 2010 14:45:42 +0200
+
+unity-place-applications (0.2.2-0ubuntu2) maverick; urgency=low
+
+  * New upstream release.
+    - fix buggy search filter in files and applications views (LP: #599893)
+    - distribute HACKING missing file (LP: #598394)
+    - fix system and preferences missing (LP: #598392)
+  * remove debian/patches/01_install_dbus_and_bin.patch: upstreamed
+  * debian/control:
+    - build-dep on libunity-dev (>= 0.2.13)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 01 Jul 2010 19:08:47 +0200
+
+unity-place-applications (0.2.1-0ubuntu1) maverick; urgency=low
+
+  * Initial Packaging
+  * debian/patches/01_install_dbus_and_bin.patch:
+    - install the bin lib and the dbus service
+  * debian/control, debian/rules: build-dep and run dh_autoreconf for
+    taken previous patch into account
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 24 Jun 2010 20:39:48 +0200
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu8) noble; urgency=medium
+
+  * No-change rebuild for CVE-2024-3094
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 31 Mar 2024 17:24:14 +0000
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu7) noble; urgency=medium
+
+  * Fix multiple Vala errors leading to build failure. (LP: #2051343)
+
+ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Fri, 29 Mar 2024 00:25:16 +0000
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu6) noble; urgency=medium
+
+  * No-change rebuild against libdb5.3t64
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sat, 02 Mar 2024 20:39:04 +0000
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu5) focal; urgency=high
+
+  * No change rebuild against apt 1.9.11.
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Thu, 27 Feb 2020 09:52:11 +0100
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu4) eoan; urgency=high
+
+  * No change rebuild against apt 1.9.0.
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Mon, 17 Jun 2019 13:11:45 +0200
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu3) bionic; urgency=medium
+
+  * Add "X-Ubuntu-Use-Langpack: yes" to debian/control now that this package is
+    in Universe (LP: #1760435).
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Thu, 05 Apr 2018 00:04:18 -0500
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu2) zesty; urgency=medium
+
+  * No-change rebuild for libxapian30
+
+ -- Iain Lane <iain@orangesquash.org.uk>  Wed, 02 Nov 2016 11:49:01 +0000
+
+unity-lens-applications (7.1.0+16.10.20160927-0ubuntu1) yakkety; urgency=medium
+
+  [ Iain Lane ]
+  * debian/rules: Set HOME to the real home directory for the test. This might
+    not be set right when building the package, but one of the tests looks up
+    ~user and checks that it corresponds to $HOME, so we need to make sure it
+    is.
+  * src/main.vala: Don't call set_desktop_env(). It's not needed with modern
+    GLib, and prevents XDG_CURRENT_DESKTOP from being used.
+
+ -- iain@orangesquash.org.uk <iain@orangesquash.org.uk>  Tue, 27 Sep 2016 17:06:18 +0000
+
+unity-lens-applications (7.1.0+16.10.20160602-0ubuntu1) yakkety; urgency=medium
+
+  [ Andrea Azzarone ]
+  * Fallback from pkginfo.application_name in case app is NULL. (LP:
+    #1582433)
+
+ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Thu, 02 Jun 2016 01:01:00 +0000
+
+unity-lens-applications (7.1.0+16.04.20160217.2-0ubuntu1) xenial; urgency=medium
+
+  [ Marco Trevisan (Treviño), Matthias Klose ]
+  * Build using libgee-0.8-dev instead of libgee-dev (LP: #1502094)
+
+ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Wed, 17 Feb 2016 15:31:32 +0000
+
+unity-lens-applications (7.1.0+15.10.20151002-0ubuntu1) wily; urgency=medium
+
+  [ Sebastien Bacher ]
+  * Use the correct db version when trying to read s-c reviews (LP:
+    #1396553)
+
+ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Fri, 02 Oct 2015 00:33:56 +0000
+
+unity-lens-applications (7.1.0+15.10.20150804.1-0ubuntu3) wily; urgency=medium
+
+  * No-change rebuild against libcolumbus1v5
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 09 Aug 2015 00:07:16 +0000
+
+unity-lens-applications (7.1.0+15.10.20150804.1-0ubuntu2) wily; urgency=medium
+
+  * No-change rebuild against libcolumbus1v5
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sat, 08 Aug 2015 19:29:26 +0000
+
+unity-lens-applications (7.1.0+15.10.20150804.1-0ubuntu1) wily; urgency=medium
+
+  [ Stephen M. Webb ]
+  * no-change rebuild for GCC-5
+
+  [ CI Train Bot ]
+  * New rebuild forced.
+
+ -- CI Train Bot <ci-train-bot@canonical.com>  Tue, 04 Aug 2015 14:39:42 +0000
+
+unity-lens-applications (7.1.0+13.10.20131011-0ubuntu2) trusty; urgency=low
+
+  * Transition to libdb5.3 across the archive.
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Sun, 03 Nov 2013 13:43:35 +0000
+
+unity-lens-applications (7.1.0+13.10.20131011-0ubuntu1) saucy; urgency=low
+
+  [ Pawel Stolowski ]
+  * Remove running apps scope from the loader params. Mark running apps
+    scope as not visible. (LP: #1237257)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 373
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 11 Oct 2013 06:15:34 +0000
+
+unity-lens-applications (7.1.0+13.10.20131003-0ubuntu1) saucy; urgency=low
+
+  [ Pawel Stolowski ]
+  * Renamed 'Search plugins' filter option to 'Dash plugins'. (LP:
+    #1231556)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 371
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 03 Oct 2013 05:03:36 +0000
+
+unity-lens-applications (7.1.0+13.10.20130919.3-0ubuntu2) saucy; urgency=low
+
+  * No change rebuild.
+
+ -- Loïc Minier <loic.minier@ubuntu.com>  Thu, 19 Sep 2013 22:09:27 +0200
+
+unity-lens-applications (7.1.0+13.10.20130919.3-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Only dim disabled scopes, don't tint enabled ones. (LP: #1221804)
+  * Do not show home scope and scopes scope in the list of dash plugins,
+    this will ensure that you can't disable scopes without a way to re-
+    enable them. (LP: #1220717, #1220733)
+
+  [ Alejandro J. Cura ]
+  * Do not include applications from click packages in the results. (LP:
+    #1225387)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 368
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 19 Sep 2013 15:41:44 +0000
+
+unity-lens-applications (7.1.0+13.10.20130903.1-0ubuntu1) saucy; urgency=low
+
+  [ Jussi Pakkanen ]
+  * Change the build-dependency to the new libcolumbus1.
+
+  [ Łukasz 'sil2100' Zemczak ]
+  * Change the build-dependency to the new libcolumbus1.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 364
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 03 Sep 2013 06:35:48 +0000
+
+unity-lens-applications (7.1.0+13.10.20130828.1-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Colorize scope icons - use orange color for enabled scopes and dim
+    disabled ones.
+
+  [ Pawel Stolowski ]
+  * Implementation of unity-scope-runningapps for the phone.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 362
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 28 Aug 2013 13:21:46 +0000
+
+unity-lens-applications (7.1.0+13.10.20130816.2-0ubuntu1) saucy; urgency=low
+
+  [ Pawel Stolowski ]
+  * Set desktop_env variable on startup (fixes regression).
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 359
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 16 Aug 2013 10:33:58 +0000
+
+unity-lens-applications (7.1.0+13.10.20130809.1-0ubuntu1) saucy; urgency=low
+
+  [ James Henstridge ]
+  * Convert scope to run as a unity-scope-loader plugin.
+
+  [ Michal Hruby ]
+  * Move scopes into a separate scopes category.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 357
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 09 Aug 2013 11:49:22 +0000
+
+unity-lens-applications (7.0.0+13.10.20130729-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Revert r352.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 354
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 29 Jul 2013 04:02:26 +0000
+
+unity-lens-applications (7.0.0+13.10.20130723-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Turn the main applications scope into a sub-scope, to allow other
+    scopes to provide results of this type.
+  * Revert r351.
+
+  [ James Henstridge ]
+  * Turn the main applications scope into a sub-scope, to allow other
+    scopes to provide results of this type.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 352
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 23 Jul 2013 06:12:20 +0000
+
+unity-lens-applications (7.0.0+13.10.20130702-0ubuntu2) saucy; urgency=low
+
+  * Depend: unity-common-7.0, as unity-common is no longer a real package.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 14 Jul 2013 13:39:58 -0700
+
+unity-lens-applications (7.0.0+13.10.20130702-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Improve error handling, which can cause the scope searches to lock
+    up.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 348
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 02 Jul 2013 04:01:13 +0000
+
+unity-lens-applications (7.0.0daily13.06.21-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * As per design guidelines, use capital letters only for first words.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 346
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 21 Jun 2013 04:01:46 +0000
+
+unity-lens-applications (7.0.0daily13.06.19-0ubuntu1) saucy; urgency=low
+
+  [ James Henstridge ]
+  * Merge the phablet branch into trunk, making the removal of non-touch
+    apps conditional on using the phablet API.
+
+  [ Michał Sawicz ]
+  * Merge the phablet branch into trunk, making the removal of non-touch
+    apps conditional on using the phablet API.
+
+  [ Ying-Chun Liu ]
+  * Merge the phablet branch into trunk, making the removal of non-touch
+    apps conditional on using the phablet API.
+
+  [ Pawel Stolowski ]
+  * Changed unity-runner:// prefix to x-unity-no-preview: (no // is
+    intended) to disable previews for commands. (LP: #1188705)
+
+  [ Sergio Schvezov ]
+  * Merge the phablet branch into trunk, making the removal of non-touch
+    apps conditional on using the phablet API.
+
+  [ Ying-Chun Liu (PaulLiu) ]
+  * Merge the phablet branch into trunk, making the removal of non-touch
+    apps conditional on using the phablet API.
+
+  [ Jeremy Bicha ]
+  * capitalize More Suggestions and Search Plugins.
+  * Build with default valac.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 344
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 19 Jun 2013 04:28:13 +0000
+
+unity-lens-applications (7.0.0daily13.06.05-0ubuntu1) saucy; urgency=low
+
+  [ Sebastien Bacher ]
+  * Set one extra string as translatable. (LP: #1074038)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 339
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 06:08:37 +0000
+
+unity-lens-applications (7.0.0daily13.05.31ubuntu.unity.next-0ubuntu1) raring; urgency=low
+
+  [ Pawel Stolowski ]
+  * New upstream release.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 338 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 31 May 2013 04:03:15 +0000
+
+unity-lens-applications (6.10.0daily13.05.01.1ubuntu.unity.next-0ubuntu1) raring; urgency=low
+
+  [ Sebastien Bacher ]
+  * Some untranslatable and wrong strings in the previews (LP: #1074038)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 336 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 01 May 2013 21:58:08 +0000
+
+unity-lens-applications (6.10.0daily13.04.18~13.04-0ubuntu1) raring; urgency=low
+
+  * Automatic snapshot from revision 334
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 18 Apr 2013 05:50:32 +0000
+
+unity-lens-applications (6.10.0daily13.04.17~13.04-0ubuntu1) raring; urgency=low
+
+  [ Mathieu Trudel-Lapierre ]
+  * search in application lens is innacurate (LP: #1159812)
+  * search in application lens is innacurate (LP: #1159812)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 333
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 17 Apr 2013 04:07:02 +0000
+
+unity-lens-applications (6.10.0daily13.04.15-0ubuntu1) raring; urgency=low
+
+  [ Sebastien Bacher ]
+  * debian/control:
+    - Build-Depends on dh-translations
+    - updated Standards-Version
+  * debian/rules: use --with translations to get a template at build time
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 331
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 15 Apr 2013 04:17:07 +0000
+
+unity-lens-applications (6.10.0daily13.03.06-0ubuntu1) raring; urgency=low
+
+  [ Jussi Pakkanen ]
+  * [regression] Keywords are being ignored (LP: #1144464)
+  * Mines is not first when searching for "mines" (LP: #1144506)
+
+  [ Automatic PS uploader ]
+  * Automatic snapshot from revision 329
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Wed, 06 Mar 2013 13:25:55 +0000
+
+unity-lens-applications (6.10.0daily13.03.04-0ubuntu1) raring; urgency=low
+
+  [ Pawel Stolowski ]
+  * Dash - Left clicking on purchasable/installable content should open
+    a preview (LP: #1045230)
+
+  [ Jussi Pakkanen ]
+  * Add error tolerant matching support with libcolumbus (LP: #1135698)
+
+  [ Automatic PS uploader ]
+  * Automatic snapshot from revision 327
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Mon, 04 Mar 2013 04:02:23 +0000
+
+unity-lens-applications (6.10.0daily13.02.28-0ubuntu1) raring; urgency=low
+
+  [ Pawel Stolowski ]
+  * Dash - Left clicking on purchasable/installable content should open
+    a preview (LP: #1045230)
+
+  [ Automatic PS uploader ]
+  * Automatic snapshot from revision 324
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Thu, 28 Feb 2013 04:02:05 +0000
+
+unity-lens-applications (6.10.0daily13.02.26-0ubuntu1) raring; urgency=low
+
+  * Automatic snapshot from revision 322
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Tue, 26 Feb 2013 04:01:32 +0000
+
+unity-lens-applications (6.10.0daily12.12.05-0ubuntu1) raring; urgency=low
+
+  [ Michael Terry ]
+  * debian/control:
+    - Update Vcs-Bzr
+    - Bump required valac to 0.18
+    - Bump required debhelper to 9 and drop cdbs
+    - Fix libgnome-menu-dev Build-Dep to be libgnome-menu-3-dev
+  * debian/rules:
+    - Use dh9 instead of cdbs
+    - Use --fail-missing
+  * Automatic snapshot from revision 317 (bootstrap)
+    - Transition to libgnome-menu-3-0 (LP: #1048503)
+
+  [ Automatic PS uploader ]
+  * Automatic snapshot from revision 320
+
+ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Wed, 05 Dec 2012 09:26:30 +0000
+
+unity-lens-applications (6.10.0-0ubuntu1) quantal-proposed; urgency=low
+
+  * New upstream release.
+    - Dash - 'More suggestions' icons in App Lens are too large (LP: #1052513)
+    - The look of price on 'Buy' button in the preview is inconsistent with 
+      other lenses (LP: #1061630)
+    - Lots of IO during startup (LP: #1066816)
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Tue, 16 Oct 2012 13:47:18 +0200
+
+unity-lens-applications (6.8.0-0ubuntu1) quantal-proposed; urgency=low
+
+  [ Timo Jyrinki ]
+  * New upstream release.
+    - Use icon_url when displaying preview of an installable app; use 
+      find_pkg_icon instead of find_app_install_icon_path, as it also uses 
+      icons from ~/.cache/software-center/icons (LP: #1054085)
+    - Remove unneeded gconf dep
+    - Use size-hint for items in "More suggestions" category (LP: #1052513)
+    - Disable collapsing by key (desktop file) when querying for specific 
+      packages (LP: #1057565)
+    - Improve Utils.preprocess_text (LP: #1056743)
+  * Bump libunity-dev dependency
+
+  [ Didier Roche ]
+  * Remove gconf build-dep as removed upstream.
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 04 Oct 2012 16:22:31 +0200
+
+unity-lens-applications (6.6.0-0ubuntu1) quantal-proposed; urgency=low
+
+  [ Timo Jyrinki ]
+  * New upstream release.
+    - Home Lens requires binary names to be provided with results
+      (LP: #1043775)
+    - Dash - App Lens ratings are not working (LP: #1039789)
+    - Dash - When an application is installed direct from a Dash Preview, the
+      Software Centre should not be launched and the Software Centre window
+      should not be opened (LP: #1045330)
+    - [FFE][UIFE]Dash - Finesse the placement, movement and behaviour of the
+      12.10 Dash (LP: #1049593)
+    - Icons are missing in the previews for apps available for download
+      (LP: #1050344)
+    - Don't show 'Uninstall' button for critical apps (i.e. the ones that
+      depend on ubuntu-desktop). (LP: #1047315)
+    - List 10 'What's new' apps and the 12 'Top Rated' apps from Software 
+      Center in 'Apps Available for Download' before user performs any search 
+      if no filters are active. List 100 top rated apps according to active 
+      filters if search string is empty. (LP: #1045762)
+    - Implemented price ribbons for Application Lens search results.
+      (LP: #1049593)
+
+  [ Didier Roche ]
+  * debian/control:
+    - build-dep on latest libunity
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 20 Sep 2012 16:17:10 +0200
+
+unity-lens-applications (6.4.0-0ubuntu1) quantal; urgency=low
+
+  * New upstream release.
+    - added implementation for previews
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Wed, 22 Aug 2012 21:00:49 +0200
+
+unity-lens-applications (6.2.0-0ubuntu1) quantal-proposed; urgency=low
+
+  * debian/control:
+    - switch to vala version 0.16
+  * New upstream release.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Fri, 10 Aug 2012 13:13:23 +0200
+
+unity-lens-applications (5.12.0-0ubuntu2) quantal-proposed; urgency=low
+
+  [ Łukasz 'sil2100' Zemczak ]
+  * Cherry-pick from upstream:
+    - change icon paths from 5 to 6
+  * debian/control:
+    - add Breaks unity - we won't work with older unity, as icon paths changed
+    - unity-place* does not exist anymore
+
+  [ Didier Roche ]
+  * debian/control, debian/unity-lens-applications.install:
+    - remove unity-place-applications transitional package
+    - locate Vcs-Bzr to canonical path
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 09 Jul 2012 17:44:42 +0200
+
+unity-lens-applications (5.12.0-0ubuntu1) precise-proposed; urgency=low
+
+  * New upstream release.
+    - Popularity sorting not working correctly (LP: #985495)
+    - run command (alt+F2): results do not contain the exact match
+      (LP: #842108)
+    - [11.0412.04 upgrade] Dash is always empty due to zeitgeist crash:
+      Unable to upgrade from schema version 3 (LP: #986191)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 27 Apr 2012 11:18:48 +0200
+
+unity-lens-applications (5.10.0-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+    - Regression: Installed apps not sorted alphabetically (LP: #964325)
+    - unity-applications-daemon crashed with SIGSEGV in
+      g_variant_get_type_info() (LP: #938382)
+    - Apps rank too high with exact matches in Keywords (LP: #960269)
+  * debian/control:
+    - bump Standards-Version to latest
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 12 Apr 2012 11:48:26 +0200
+
+unity-lens-applications (5.8.0-0ubuntu1) precise-proposed; urgency=low
+
+  * New upstream release.
+    - Dash - No message displayed when no results are returned in the
+      Dash (LP: #711199)
+    - Dash - When multiple results have equal string match relevancy ranking,
+      those with equal ranking should be then sorted by frequency of use.
+      (LP: #871900)
+    - Dash - Combined filters lead to wrong search result in Applications lens
+      (LP: #942878)
+    - Alt+F2 - ssh:// and smb:// access doesn't work in Unity (should open
+      Nautilus) (LP: #770126)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 23 Mar 2012 15:23:52 +0100
+
+unity-lens-applications (5.6.0-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+    - unity-applications-daemon crashed with SIGSEGV in
+      dee_sequence_model_free_row() (LP: #916356)
+    - Can't launch applications from the launcher (LP: #938505)
+    - Unity Dash should support Keywords parameter in .desktop (formerly X
+      -GNOME-Keywords or X-AppInstall-Keywords) (LP: #941231)
+    - Dash - Currently the app lens doesn't show applications that are
+      available for purchase (LP: #916121)
+    - non-existent icons are referenced: category-available and category-
+      installed (LP: #932212)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 12 Mar 2012 11:52:14 +0100
+
+unity-lens-applications (5.4.0-0ubuntu2) precise; urgency=low
+
+  * debian/control: Build against libdb-dev to get the current default version
+    instead of the (obsolete) hardcoded 4.8.
+  * src/unity-ratings-db.c, configure.ac: Make software-center and
+    unity-lens-applications use the same libdb version 5.1, and the same cache
+    file. This will also drop the obsolete libdb4.8 from the default install.
+    This fix also landed upstream in r269.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Mon, 27 Feb 2012 09:55:43 +0100
+
+unity-lens-applications (5.4.0-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+    - Dash - Remove Dash Home shortcut icons (LP: #885738)
+    - Dash - Most Frequently Used apps change to Recently Used, without
+      Launcher favorites (LP: #893214)
+    - Apps Lens passes wrong arguments to Zeitgeist search (LP: #912719)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 17 Feb 2012 13:31:25 +0100
+
+unity-lens-applications (5.2.0-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+    - Dash - Remove Dash Home shortcut icons (LP: #885738)
+    - Dash - Most Frequently Used apps change to Recently Used, without
+      Launcher favorites (LP: #893214)
+    - Apps Lens passes wrong arguments to Zeitgeist search (LP: #912719)
+  * debian/control:
+    - ensure we continue building with vala 0.14
+    - put the transitional package to extra priority
+    - build-dep on latest libunity-dev
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 03 Feb 2012 11:40:17 +0100
+
+unity-lens-applications (5.0.0-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+    - Apps lens should bundle its own gsettings schema (LP: #890660)
+    - unable to remove the "Apps Available for Download" section from
+  * debian/control:
+    - don't dep anymore on zeitgeist-extension-fts. This functionality
+      is now provided by zeitgeist-core which is installed by libzeitgeist.
+    - bump libunity-dev to latest
+  * debian/source:
+    - kill debian source 3, works not well with bzr merge-upstream
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 12 Jan 2012 18:39:08 +0100
+
+unity-lens-applications (0.4.12-0ubuntu2) oneiric-proposed; urgency=low
+
+  * Cherry-pick upstream:
+    - Dash - "Apps Available for Download" recommends a program that is
+      already installed (LP: #858056)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 14 Oct 2011 10:56:04 +0200
+
+unity-lens-applications (0.4.12-0ubuntu1) oneiric; urgency=low
+
+  [ Paul Sladen ]
+  * debian/control: Description: grammar 'into'->'inside'
+
+  [ Didier Roche ]
+  * New upstream release.
+    - UIFe: download icon: the 'rosette with exclamation mark' next to
+      "Apps for Download" becomes a 'circle with a downwards arrow'.
+      (LP: #850714)
+    - Make sure we don't update the model too soon, otherwise Dash flickers
+      (LP: #868192)
+    - Dash - "Apps Available for Download" recommends a program that is
+      already installed (LP: #858056)
+    - Dash: Cannot drag application from 'Most Frquently Used' section to
+      desktop (LP: #864016)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 06 Oct 2011 14:32:48 +0200
+
+unity-lens-applications (0.4.10-0ubuntu3) oneiric; urgency=low
+
+  * Cherry-pick from upstream:
+    - print, printing, printer do not bring up printer settings in unity dash
+      (LP: #865528)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Wed, 05 Oct 2011 11:39:28 +0200
+
+unity-lens-applications (0.4.10-0ubuntu2) oneiric; urgency=low
+
+  * Cherry-pick from upstream:
+    - gedit fails to start on first try, but does on the second (LP: #827414)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Wed, 28 Sep 2011 12:21:01 +0200
+
+unity-lens-applications (0.4.10-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+    - Support X-GNOME-Keywords (LP: #828356)
+    - Ratings filter in apps lens allows unrated apps through (LP: #860537)
+  * debian/control:
+    - build-dep on latest libunity
+
+ -- Didier Roche <didrocks@ubuntu.com>  Tue, 27 Sep 2011 15:41:45 +0200
+
+unity-lens-applications (0.4.8-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+    - unity-applications-daemon crash in
+      dee_shared_model_flush_revision_queue() (LP: #740561)
+    - Apps Lens doesn't handle Software Center Index Corruption (LP: #762821)
+    - Star rating filter in apps lens not respected (LP: #855324)
+    - configure needs to test for xapian.h (LP: #736051)
+    - Random available apps does not belong to selected category (LP: #857409)
+  * debian/control:
+    - add libdb4.8-dev build-dep
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 23 Sep 2011 16:23:48 +0200
+
+unity-lens-applications (0.4.6-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+    - [dash] Category filters is sorted according to their english names,
+      even when another language is used (LP: #838023)
+    - application:// URIs are malformed (LP: #784478)
+    - Games Filter in Unity doesn't work (LP: #842240)
+  * debian/control:
+    - build-dep on latest libunity-dev
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 15 Sep 2011 14:27:11 +0200
+
+unity-lens-applications (0.4.4-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+    - Python PyGI support broken (LP: #844779)
+  * debian/control:
+    - build-dep on latest libunity-dev for ABI/API break
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 08 Sep 2011 20:11:04 +0200
+
+unity-lens-applications (0.4.2-0ubuntu1) oneiric; urgency=low
+
+  * New upstream version:
+    - Fix category icons and send in DND uri
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 25 Aug 2011 13:09:12 +0200
+
+unity-lens-applications (0.4.0-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release.
+  * Cherry pick a fix upstream for making the activation work and some alt + F2
+    refinements (LP: #755432)
+  * debian/control:
+    - change the break for a dep rather
+    - build-dep now on libunity 4
+    - bump Standards-Version
+  * debian/changelog, debian/control, debian/copyright, debian/watch:
+    - good bye place, welcome lens (massive rename)
+    - add transitional package
+    - add debian/unity-lens-applications.install
+  * debian/rules:
+    - remove simple-patchsys.mk construct (format 3 now)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 11 Aug 2011 18:48:54 +0200
+
+unity-place-applications (0.2.48-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release:
+    - switch to gsettings for the runner (LP: #800704)
+  * debian/control:
+    - breaks on the missing schema unity-common version
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 21 Jul 2011 17:47:53 +0200
+
+unity-place-applications (0.2.46-0ubuntu3.1) natty-proposed; urgency=low
+
+  * Cherry-pick some fixes:
+    - Allow the Core category to be included under All Applications (and hence
+      show up in Dash searches as well). This means that one can now find Help,
+      Home Folder, Computer, and Network. The ommision of this xdg category was
+      probably a relic of our netbook launcher past (LP: #758042)
+    - Fix illegal XML in unity-place-applications.menu.in. xmllint is happy now.
+      Patch courtesy Daniel Holbert (LP: #772152)
+    - trim the alt + F2 command line (LP: #767750)
+    - ensure we are matching files as files (no space in the command). This
+      enables to launch gvim rrr:rrr.txt which is matched (LP: #776731)
+
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 26 May 2011 15:25:53 +0200
+
+unity-place-applications (0.2.46-0ubuntu3) natty; urgency=low
+
+  * applications.png:
+    - new correct export from sladen by design (LP: #745555)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 14 Apr 2011 18:09:25 +0200
+
+unity-place-applications (0.2.46-0ubuntu2) natty; urgency=low
+
+  * debian/control: Drop libzeitgeist-gio Recommends:, which is NBS.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Mon, 11 Apr 2011 09:17:34 +0200
+
+unity-place-applications (0.2.46-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - Alt-F2 in Unity can not open URLs (LP: #750262)
+  * bump libunity dep for soname bump
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 07 Apr 2011 13:06:38 +0200
+
+unity-place-applications (0.2.44-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - unity-applications-daemon crash when Software Center index is corrupted
+      (LP: #620294)
+    - Dash: Alt-F2 "nautilus ~/" errors to "Could not find '/~'" (LP: #734762)
+    - unity-applications-daemon crash in unity_package_searcher_search()
+      (LP: #739698)
+    - unity-applications-daemon crash because of invalid docid 0 (LP: #744261)
+    - Gnome-terminal doesn't start in user home directory when started from
+      alt+F2 (LP: #736471)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 31 Mar 2011 15:09:07 +0200
+
+unity-place-applications (0.2.42-0ubuntu2) natty; urgency=low
+
+  * Cherry-pick and rescale applications.png to latest asset (LP: #704997)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 24 Mar 2011 11:13:52 +0100
+
+unity-place-applications (0.2.42-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - Dash search unavoidably returns offensive results (LP: #739469)
+    - SearchFinished signal for Places API (LP: #739311)
+    - Dash: installed/not installed packages are conflated under "Applications":
+      incredibly confusing (LP: #733669)
+    - Apps Place: SIGABRT when monkey-typing global searches (LP: #737396)
+  * debian/control:
+    - bump dep req.
+
+ -- Didier Roche <didrocks@ubuntu.com>  Wed, 23 Mar 2011 17:06:19 +0100
+
+unity-place-applications (0.2.40-0ubuntu2) natty; urgency=low
+
+  * Cherry pick r185 to fix a common natty crasher on xapian errors
+    (lp: #738884)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 22 Mar 2011 10:38:11 +0100
+
+unity-place-applications (0.2.40-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - unity-applications-daemon crashed with SIGSEGV in
+      Xapian::MSetIterator::operator*() (LP: #732945)
+    - Dash: Alt-F2 box hint says "Search commands" not "Run a
+      command"/"Execute command" (LP: #733897)
+    - Wine applications not listed in Unity Applications Place (LP: #635223)
+    - Add application through "main menu" won't work (LP: #734042)
+    - Unable to scroll with wheel in unity places (LP: #732012)
+    - unity about:config should launch ccsm on the unityshell plugin page
+      (LP: #736765)
+  * debian/control:
+    - build-dep on latest dee
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 17 Mar 2011 16:20:28 +0100
+
+unity-place-applications (0.2.38-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - Unity: Alt-F2 not working (LP: #580295)
+    - "Find More Apps" shows only six applications by default (LP: #729023)
+    - [dash] Newly installed applications are not shown in the "Installed"
+      section though they disappeared from the "Available" section
+      (LP: #719400)
+    - Dash filter categories should be identical to the Software Center
+      categories (LP: #729013)
+    - looking for 'places' icons in the wrong location (LP: #727672)
+  * debian/control:
+    - build-dep on libgconf2-dev
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 10 Mar 2011 19:50:21 +0100
+
+unity-place-applications (0.2.36-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - Unintuative Application Matching (LP: #726711)
+    - dash search does not find names with '-' (d-feet, e-mail) (LP: #729025)
+    - not installed apps sorting in global search (LP: #636996)
+    - Speed up searches for Installed apps (LP: #730048)
+    - English printf string hard to translate (LP: #641480)
+    - Disk Usage Analyzer missing from applications place (LP: #660984)
+  * debian/control:
+    - bump dee and libunity req. to latest and greatest
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 07 Mar 2011 19:07:41 +0100
+
+unity-place-applications (0.2.34-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    - dash - search string not always taken into account (LP: #701569)
+    - Sync problems when restarting Unity place daemons (LP: #721289)
+    - Super-shortcuts for apps, files, and workspace switcher (LP: #617356)
+    - Place icons should be in their respective packages (LP: #672447)
+  * debian/control:
+    - bump release req.
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 24 Feb 2011 20:11:50 +0100
+
+unity-place-applications (0.2.32-0ubuntu1) natty; urgency=low
+
+  * New upstream release:
+    - comply with new libunity API
+  * debian/control:
+    - build with latest libunity version to take the .deps file
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 11 Feb 2011 13:55:50 +0100
+
+unity-place-applications (0.2.30-0ubuntu3) natty; urgency=low
+
+  [ Artur Rona ]
+  * debian/control: Depends on zeitgeist-extension-fts. (LP: #688926)
+
+  [ Didier Roche ]
+  * debian/control:
+    - rebuild to get latest libunity version
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 11 Feb 2011 09:50:32 +0100
+
+unity-place-applications (0.2.30-0ubuntu2) natty; urgency=low
+
+  * Temporary switch to dpkg-source 3.0 (quilt) format to cherry-pick the
+    new binary from trunk
+  * Cherry-pick from trunk to get the place icon showing (LP: #710790)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Tue, 01 Feb 2011 13:23:26 +0100
+
+unity-place-applications (0.2.30-0ubuntu1) natty; urgency=low
+
+  * New upstream release:
+    - Workaround unity places race with gdbus to register objects on startup
+      (LP: #710560)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 31 Jan 2011 12:41:56 +0100
+
+unity-place-applications (0.2.28-0ubuntu1) natty; urgency=low
+
+  * New upstream release.
+    (Not showing yet in the unity interface)
+  * debian/control:
+    - bump buil-dep requirements
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 21 Jan 2011 14:36:10 +0100
+
+unity-place-applications (0.2.26-0ubuntu2) maverick; urgency=low
+
+  * Cherry-pick from upstream:
+    - "Applications should be Unicode-sorted". (LP: #621577)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 01 Oct 2010 13:11:05 +0200
+
+unity-place-applications (0.2.26-0ubuntu1) maverick; urgency=low
+
+  * New upstream release:
+    - Fix "Applications" tooltip not translatable (LP: #644215)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 27 Sep 2010 17:19:17 +0200
+
+unity-place-applications (0.2.22-0ubuntu1) maverick; urgency=low
+
+  * New upstream release:
+    - Fix "Completing last letter of a search makes the application to be
+      hidden from result" (LP: #633100)
+    - Fix "Dupe apps in apps place (evolution)" (LP: #643034)
+    - "Applications" and "Files & Folders" tooltips are not translatable
+      (LP: #644215)
+  * debian/control:
+    - dep on latest libunity-dev
+
+ -- Didier Roche <didrocks@ubuntu.com>  Wed, 22 Sep 2010 22:36:47 +0200
+
+unity-place-applications (0.2.20-0ubuntu1) maverick; urgency=low
+
+  * New upstream release:
+    - Fix completing last letter of a search makes the application to be hidden
+      from result (LP: #633100)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Tue, 14 Sep 2010 16:34:08 +0200
+
+unity-place-applications (0.2.18-0ubuntu1) maverick; urgency=low
+
+  * New upstream release:
+    - Add internationalization support (LP: #619072, #632227, #630744)
+    - Typo in the "You search did not match any applications" stringxi
+      (LP: #630605)
+    - Fix missing applications in Unity Applications Place (LP: #600187)
+    - Take XDG_CONFIG_DIRS into account (LP: #598373)
+    - Fix unity-applications-daemon crashed with SIGSEGV in
+      gee_list_list_iterator() (LP: #629692)
+  * debian/rules:
+    - add --sysconfdir=/etc
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 09 Sep 2010 19:44:21 +0200
+
+unity-place-applications (0.2.16-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+  * remove debian/patches/01_add_vapi_file.patch and
+    debian/patches/02_get_all_files.patch
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 02 Sep 2010 15:56:25 +0200
+
+unity-place-applications (0.2.14-0ubuntu2) maverick; urgency=low
+
+  * debian/control: recommends libzeitgeist-gio
+  * debian/rules: drop LINGUAS hack since it's not required now
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 26 Aug 2010 21:57:52 +0200
+
+unity-place-applications (0.2.14-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+  * debian/control: build-depends on libdbus-glib-1-dev and new libunity
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 26 Aug 2010 18:46:23 +0200
+
+unity-place-applications (0.2.12-0ubuntu3) maverick; urgency=low
+
+  * rules: Workaround build issue do to empty files not being in the diff.gz
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 24 Aug 2010 16:26:48 +0200
+
+unity-place-applications (0.2.12-0ubuntu2) maverick; urgency=low
+
+  * Backport i18n support so the place can be translated
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 24 Aug 2010 12:12:26 +0200
+
+unity-place-applications (0.2.12-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - updated unity requirement
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 19 Aug 2010 18:58:47 +0200
+
+unity-place-applications (0.2.10-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+    - Update the applications model when changes are detected (LP: #610382)
+    - Available group shouldn't be shown when there is no search (LP: #615407)
+    - Implement Applications Place Software Center integration (LP: #608179)
+  * debian/control:
+    - build-dep on latest unity, dee, libzg
+    - depends on new zeitgeist-fts-extension
+    - bump Standards-Version to latest
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 13 Aug 2010 14:26:04 +0200
+
+unity-place-applications (0.2.8-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - build-dep against latest unity
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 02 Aug 2010 15:58:08 +0200
+
+unity-place-applications (0.2.5-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - bump libunity-dev dep
+    - build-dep on libxapian-dev and libapt-pkg-dev
+  * debian/patches/01_add_vapi_file.patch:
+    - add missing vapi folder
+  * debian/patches/02_get_all_files.patch:
+    - ship missing file
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 22 Jul 2010 21:43:39 +0200
+
+unity-place-applications (0.2.4-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+    - add support when search string is empty (LP: #600732)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 16 Jul 2010 14:45:42 +0200
+
+unity-place-applications (0.2.2-0ubuntu2) maverick; urgency=low
+
+  * New upstream release.
+    - fix buggy search filter in files and applications views (LP: #599893)
+    - distribute HACKING missing file (LP: #598394)
+    - fix system and preferences missing (LP: #598392)
+  * remove debian/patches/01_install_dbus_and_bin.patch: upstreamed
+  * debian/control:
+    - build-dep on libunity-dev (>= 0.2.13)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 01 Jul 2010 19:08:47 +0200
+
+unity-place-applications (0.2.1-0ubuntu1) maverick; urgency=low
+
+  * Initial Packaging
+  * debian/patches/01_install_dbus_and_bin.patch:
+    - install the bin lib and the dbus service
+  * debian/control, debian/rules: build-dep and run dh_autoreconf for
+    taken previous patch into account
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 24 Jun 2010 20:39:48 +0200

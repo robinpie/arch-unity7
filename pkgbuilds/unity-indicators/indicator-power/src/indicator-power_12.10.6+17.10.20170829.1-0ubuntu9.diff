@@ -1,0 +1,1225 @@
+--- indicator-power-12.10.6+17.10.20170829.1.orig/CMakeLists.txt
++++ indicator-power-12.10.6+17.10.20170829.1/CMakeLists.txt
+@@ -43,7 +43,7 @@
+                   gio-unix-2.0>=2.36
+                   gudev-1.0>=204
+                   libnotify>=0.7.6
+-                  url-dispatcher-1>=1)
++                  )
+ 
+ include_directories (SYSTEM ${SERVICE_DEPS_INCLUDE_DIRS})
+ 
+@@ -73,7 +73,6 @@
+ endif()
+ set(C_WARNING_ARGS "${C_WARNING_ARGS} -Wno-missing-field-initializers") # GActionEntry
+ 
+-
+ include_directories (${CMAKE_CURRENT_SOURCE_DIR}/include)
+ include_directories (${CMAKE_CURRENT_BINARY_DIR}/include)
+ 
+@@ -83,11 +82,13 @@
+ add_subdirectory(po)
+ 
+ # testing & coverage
+-enable_testing ()
+-add_subdirectory(tests)
+-find_package(CoverageReport)
+-ENABLE_COVERAGE_REPORT(
+-  TARGETS ${SERVICE_LIB} ${SERVICE_EXEC}
+-  TESTS ${COVERAGE_TEST_TARGETS}
+-  FILTER /usr/include ${CMAKE_BINARY_DIR}/*
+-)
++# DISABLED due to C++14 incompatibilities in indicator-power
++#
++#enable_testing ()
++#add_subdirectory(tests)
++#find_package(CoverageReport)
++#ENABLE_COVERAGE_REPORT(
++#  TARGETS ${SERVICE_LIB} ${SERVICE_EXEC}
++#  TESTS ${COVERAGE_TEST_TARGETS}
++#  FILTER /usr/include ${CMAKE_BINARY_DIR}/*
++#)
+--- indicator-power-12.10.6+17.10.20170829.1.orig/debian/changelog
++++ indicator-power-12.10.6+17.10.20170829.1/debian/changelog
+@@ -0,0 +1,970 @@
++indicator-power (12.10.6+17.10.20170829.1-0ubuntu9) noble; urgency=medium
++
++  * Disable test suite, googletest requires at least C++14 but indicator-power
++    is incompatible with C++14 at the moment
++
++ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Tue, 09 Apr 2024 15:17:37 -0500
++
++indicator-power (12.10.6+17.10.20170829.1-0ubuntu8) noble; urgency=medium
++
++  * No-change rebuild against libglib2.0-0t64
++
++ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 08 Mar 2024 05:09:37 +0000
++
++indicator-power (12.10.6+17.10.20170829.1-0ubuntu7) hirsute; urgency=medium
++
++  * Add libgmock-dev build dependency (LP: #1924594)
++
++ -- Heather Ellsworth <heather.ellsworth@canonical.com>  Thu, 15 Apr 2021 16:21:03 +0000
++
++indicator-power (12.10.6+17.10.20170829.1-0ubuntu6) groovy; urgency=medium
++
++  * Revert the revert version 12.10.6+17.10.20170829.1-0ubuntu3 and drop
++    Unity8 support. Unity8 is removed from the archive, and no equivalent
++    replacements currently exist. ubuntu-app-launch/url-dispatcher now
++    FTBFS in groovy due to incompatibility with glib, holding up
++    completing gcc-s1 migration. This code path can be re-instated if
++    ubuntu-app-launch/url-dispatcher are fixed to not fail to build from
++    source and if there is a Desktp Enrionment that provides the required
++    endpoints.
++
++ -- Dimitri John Ledkov <xnox@ubuntu.com>  Thu, 04 Jun 2020 12:28:23 +0100
++
++indicator-power (12.10.6+17.10.20170829.1-0ubuntu5) focal; urgency=medium
++
++  * Drop python dep, as codegen got ported to python3.
++
++ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 30 Mar 2020 22:47:44 +0100
++
++indicator-power (12.10.6+17.10.20170829.1-0ubuntu4) bionic; urgency=medium
++
++  * No change rebuild for launchpad translations import
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 03 Apr 2018 11:08:27 +0200
++
++indicator-power (12.10.6+17.10.20170829.1-0ubuntu3) artful; urgency=medium
++
++  * Revert the previous upload which was done outside of the standard 
++    workflow ignoring reviews and the vcs.
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 19 Sep 2017 13:09:17 +0200
++
++indicator-power (12.10.6+17.10.20170829.1-0ubuntu2) artful; urgency=medium
++
++  * Drop url-dispatcher support, do not open settings.
++
++ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 18 Sep 2017 21:16:38 +0100
++
++indicator-power (12.10.6+17.10.20170829.1-0ubuntu1) artful; urgency=medium
++
++  [ Sebastien Bacher ]
++  * use 'X-Ubuntu-Use-Langpack: yes' since the indicator is now in
++    universe,
++
++ -- Andrea Azzarone <andrea.azzarone@canonical.com>  Tue, 29 Aug 2017 15:36:39 +0000
++
++indicator-power (12.10.6+17.10.20170817-0ubuntu1) artful; urgency=medium
++
++  * Try using unity-* prepended icons before real ones. As the battery
++    icons in ubuntu-mono aren't square, we want to special case them
++    (LP: #1711085).
++  * Adapt test for the above change.
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 17 Aug 2017 08:30:02 +0200
++
++indicator-power (12.10.6+17.10.20170605-0ubuntu1) artful; urgency=medium
++
++  * Drop Unity8 recommends and suggests (ubuntu-system-settings, powerd,
++    unity-system-compositor)
++
++ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 05 Jun 2017 22:06:41 +0000
++
++indicator-power (12.10.6+17.04.20170322-0ubuntu1) zesty; urgency=medium
++
++  * no change rebuild
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Wed, 22 Mar 2017 18:28:10 +0000
++
++indicator-power (12.10.6+17.04.20170210-0ubuntu1) zesty; urgency=medium
++
++  * Remove old autostart files.
++  * Use gmock module from cmake-extras.
++  * Use coverage support from cmake-extras.
++  * Use intltool support from cmake-extras.
++
++ -- Rodney Dawes <rodney.dawes@canonical.com>  Fri, 10 Feb 2017 17:09:49 +0000
++
++indicator-power (12.10.6+17.04.20170116-0ubuntu1) zesty; urgency=medium
++
++  [ Shih-Yuan Lee (FourDollars) ]
++  * Make device with power supply has higher sorting priority. (LP: #1100546)
++
++ -- charles.kerr@canonical.com <charles.kerr@canonical.com>  Mon, 16 Jan 2017 20:29:09 +0000
++
++indicator-power (12.10.6+17.04.20161201-0ubuntu1) zesty; urgency=medium
++
++  [ Michael Terry ]
++  * Work inside a snap by prefixing hard coded paths with $SNAP. (LP:
++    #1629009)
++
++ -- Rodney Dawes <rodney.dawes@canonical.com>  Thu, 01 Dec 2016 22:34:02 +0000
++
++indicator-power (12.10.6+17.04.20161021-0ubuntu1) zesty; urgency=medium
++
++  [ Ted Gould ]
++  * Add systemd user session unit file
++
++ -- Martin Pitt <martin.pitt@ubuntu.com>  Fri, 21 Oct 2016 10:16:14 +0000
++
++indicator-power (12.10.6+16.10.20160708-0ubuntu1) yakkety; urgency=medium
++
++  [ Charles Kerr ]
++  * Fix bug that chose the wrong header icon if a connected device has a
++    charge but its charging/discharging state is unknown. (LP: #1470080)
++
++ -- Antti Kaijanmäki <antti@kaijanmaki.net>  Fri, 08 Jul 2016 08:00:43 +0000
++
++indicator-power (12.10.6+16.04.20160516.1-0ubuntu1) xenial; urgency=medium
++
++  * Fix the fallback power icon so the battery icon doesn't show red
++    above 20% even when the Suru icon theme isn't present. (LP:
++    #1559731)
++  * Use the fdo 'sound-file' hint to play a sound when a low battery
++    notification is shown.
++
++ -- Charles Kerr <charles.kerr@canonical.com>  Mon, 16 May 2016 21:33:32 +0000
++
++indicator-power (12.10.6+16.04.20160105-0ubuntu1) xenial; urgency=medium
++
++  [ Charles Kerr ]
++  * Play a 'low battery' sound when the low battery notification is
++    shown. (LP: #1470767)
++
++  [ charles kerr ]
++  * Play a 'low battery' sound when the low battery notification is
++    shown. (LP: #1470767)
++
++ -- Charles Kerr <charles.kerr@canonical.com>  Tue, 05 Jan 2016 14:37:51 +0000
++
++indicator-power (12.10.6+15.10.20151005.1-0ubuntu1) wily; urgency=medium
++
++  [ CI Train Bot ]
++  * New rebuild forced.
++
++  [ Sebastien Bacher ]
++  * under unity8 start system-settings instead unity-control-center (LP:
++    #1489482)
++
++ -- Charles Kerr <charles.kerr@canonical.com>  Mon, 05 Oct 2015 18:44:21 +0000
++
++indicator-power (12.10.6+15.10.20150522-0ubuntu1) wily; urgency=medium
++
++  [ Charles Kerr ]
++  * When powerd updates the backlight brightness, update the indicator
++    slider to show the new value. (LP: #1370791)
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Fri, 22 May 2015 17:54:53 +0000
++
++indicator-power (12.10.6+15.10.20150515-0ubuntu1) wily; urgency=medium
++
++  [ Charles Kerr ]
++  * Fix timing issue that caused "Adjust brightness automatically"
++    menuitem to sometimes not be shown. (LP: #1382861)
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Fri, 15 May 2015 16:40:33 +0000
++
++indicator-power (12.10.6+15.04.20150402-0ubuntu1) vivid; urgency=medium
++
++  [ Marc Deslauriers ]
++  * Change sort order to prefer items with known time remaining
++
++  [ Ubuntu MATE Developers ]
++  * This merge proposal adds support for MATE Desktop.
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Thu, 02 Apr 2015 20:31:02 +0000
++
++indicator-power (12.10.6+15.04.20150331-0ubuntu1) vivid; urgency=medium
++
++  [ Charles Kerr ]
++  * For the brightness slider, use the same left & right icons as ubunu-
++    system-settings (LP: #1289465)
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Tue, 31 Mar 2015 20:24:46 +0000
++
++indicator-power (12.10.6+15.04.20150212-0ubuntu1) vivid; urgency=medium
++
++  [ Charles Kerr ]
++  * Use the new power level icons for a more accurate display of the
++    battery level. (LP: #1388235)
++
++ -- CI Train Bot <ci-train-bot@canonical.com>  Thu, 12 Feb 2015 22:45:30 +0000
++
++indicator-power (12.10.6+15.04.20150130-0ubuntu1) vivid; urgency=medium
++
++  [ Charles Kerr ]
++  * Publish the primary device's state for on the bus. (LP: #1416096)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 30 Jan 2015 22:51:49 +0000
++
++indicator-power (12.10.6+15.04.20141203-0ubuntu1) vivid; urgency=low
++
++  [ Charles Kerr ]
++  * Show the phone menu in the phone greeter.
++
++  [ Christopher Lee ]
++  * Fix some minor typos in power testing xml file.
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 03 Dec 2014 16:26:04 +0000
++
++indicator-power (12.10.6+15.04.20141103-0ubuntu1) vivid; urgency=low
++
++  [ Sebastien Bacher ]
++  * List missing source for translations
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 03 Nov 2014 20:55:53 +0000
++
++indicator-power (12.10.6+14.10.20141015-0ubuntu1) utopic; urgency=low
++
++  [ Charles Kerr ]
++  * Add mock battery support to make QA testing easier. (LP: #1373511)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 15 Oct 2014 02:46:03 +0000
++
++indicator-power (12.10.6+14.10.20141009-0ubuntu1) utopic; urgency=low
++
++  [ Charles Kerr ]
++  * Remove the border around the icon when showing a low battery
++    notification. (LP: #1378411)
++
++  [ Cody Garver ]
++  * Add Switchboard as alternative recommend (LP: #1291051)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 09 Oct 2014 13:42:16 +0000
++
++indicator-power (12.10.6+14.10.20141006-0ubuntu1) utopic; urgency=low
++
++  [ Charles Kerr ]
++  * Move the position of this indicator on the panel. (LP: #1377294)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 06 Oct 2014 17:31:07 +0000
++
++indicator-power (12.10.6+14.10.20140912-0ubuntu1) utopic; urgency=low
++
++  [ Charles Kerr ]
++  * Restore the the brightness slider and have the brightness setting
++    persist between reboots. (LP: #1289470)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 12 Sep 2014 18:49:45 +0000
++
++indicator-power (12.10.6+14.10.20140909-0ubuntu1) utopic; urgency=low
++
++  [ Charles Kerr ]
++  * Add support for UPower 0.99. (LP: #1330037)
++  * When the phone's battery goes down past a certain level, pop up a
++    snap decision to warn the user. (LP: #1296431)
++
++  [ Ted Gould ]
++  * Synchronize process management across indicators
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 09 Sep 2014 04:22:52 +0000
++
++indicator-power (12.10.6+14.10.20140822-0ubuntu1) utopic; urgency=low
++
++  [ Charles Kerr ]
++  * Choose the icon that's closest to the current battery charge
++    percentage (LP: #1186181)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 22 Aug 2014 16:15:51 +0000
++
++indicator-power (12.10.6+14.10.20140814-0ubuntu1) utopic; urgency=low
++
++  [ Charles Kerr ]
++  * Re-use the same Translations.cmake file across indicators (LP:
++    #1354058)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 14 Aug 2014 14:51:02 +0000
++
++indicator-power (12.10.6+14.10.20140730-0ubuntu1) utopic; urgency=low
++
++  [ Charles Kerr ]
++  * Add low-battery notifications. (LP: #1317858)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 30 Jul 2014 10:52:39 +0000
++
++indicator-power (12.10.6+14.10.20140718-0ubuntu1) utopic; urgency=low
++
++  [ Charles Kerr ]
++  * Switch from automake/autoconf to CMake.
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 18 Jul 2014 21:33:30 +0000
++
++indicator-power (12.10.6+14.10.20140624-0ubuntu1) utopic; urgency=low
++
++  [ Alberto Aguirre ]
++  * Changes to address setBrightness interface moving from powerd to
++    unity-system-compositor
++
++  [ Iain Lane ]
++  * Drop powerd and u-s-c to suggests, since the code handles them not
++    being present and we don't need them on desktop (and they are in
++    universe).
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 24 Jun 2014 09:45:56 +0000
++
++indicator-power (12.10.6+14.10.20140611-0ubuntu1) utopic; urgency=low
++
++  [ Charles Kerr ]
++  * Prefer the 'battery-XXX-charging' (eg, 'battery-020-charging') icons
++    over the 'battery-low-charging' ones because the former are more
++    precise and likely closer to the actual battery level. (LP:
++    #1186181)
++
++  [ Iain Lane ]
++  * Remove the brightness slider from the phone menu. (LP: #1289470)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 11 Jun 2014 17:21:30 +0000
++
++indicator-power (12.10.6+14.10.20140428-0ubuntu1) utopic; urgency=low
++
++  [ Ricardo Salveti de Araujo ]
++  * Updating code to reflect latest powerd dbus API changes
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 28 Apr 2014 23:25:53 +0000
++
++indicator-power (12.10.6+14.04.20140411-0ubuntu1) trusty; urgency=low
++
++  [ Sebastien Bacher ]
++  * export an ubiquity profile, reusing the desktop_greeter object (LP:
++    #1306604)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 11 Apr 2014 14:01:36 +0000
++
++indicator-power (12.10.6+14.04.20140328-0ubuntu1) trusty; urgency=low
++
++  [ Charles Kerr ]
++  * If there are two batteries detected, combine their percentages and
++    their time-remainings as per the revised spec. (LP: #880881)
++
++  [ Lars Uebernickel ]
++  * Use com.canonical.indicator.basic menu item for device items That
++    menu item can handle non-square icons. (LP: #1263228)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 28 Mar 2014 16:10:45 +0000
++
++indicator-power (12.10.6+14.04.20140326-0ubuntu1) trusty; urgency=low
++
++  [ Y.C cheng ]
++  * Set brightness via powerd if it exist (using dbus) (LP: #1287599)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 26 Mar 2014 18:50:46 +0000
++
++indicator-power (12.10.6+14.04.20140314-0ubuntu1) trusty; urgency=low
++
++  [ Charles Kerr ]
++  * Change the implementation of the title text / title accessible text
++    / menuitem text to follow the spec changes in
++    https://wiki.ubuntu.com/Power?action=diff&rev2=44&rev1=43#Title and
++    update the tests accordingly. (LP: #1234458)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 14 Mar 2014 14:14:07 +0000
++
++indicator-power (12.10.6+14.04.20140311-0ubuntu1) trusty; urgency=low
++
++  [ Lars Uebernickel ]
++  * Add desktop_lockscreen profile
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 11 Mar 2014 18:33:10 +0000
++
++indicator-power (12.10.6+14.04.20140306-0ubuntu1) trusty; urgency=low
++
++  [ Simon Steinbeiß ]
++  * Add xfce4-powermanager as alternative recommend
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 06 Mar 2014 11:51:54 +0000
++
++indicator-power (12.10.6+14.04.20140207-0ubuntu1) trusty; urgency=low
++
++  [ Ted Gould ]
++  * Adding acceptance tests and merge review policies.
++
++  [ CI bot ]
++  * Adding acceptance tests and merge review policies
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 07 Feb 2014 16:32:36 +0000
++
++indicator-power (12.10.6+14.04.20140127-0ubuntu1) trusty; urgency=low
++
++  [ Ricardo Salveti de Araujo ]
++  * device.c: pending_charge means not charging.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 224
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 27 Jan 2014 13:17:49 +0000
++
++indicator-power (12.10.6+14.04.20140124-0ubuntu1) trusty; urgency=low
++
++  [ Robert Ancell ]
++  * Use unity-control-center if it is available. (LP: #1257505)
++
++  [ Simon Steinbeiß ]
++  * Run xfce-powermanager-settings when in an Xubuntu session.
++
++  [ Lars Uebernickel ]
++  * gcov.m4: add 1.10 to the lcov version list.
++  * Run xfce-powermanager-settings when in an Xubuntu session.
++
++  [ Calum Lind ]
++  * From bug 1255655: "focus[es] the correct tab upon opening gnome-
++    power-statistics when clicking the indicator battery.". (LP:
++    #1255655)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 222
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 24 Jan 2014 10:59:48 +0000
++
++indicator-power (12.10.6+14.04.20131129-0ubuntu1) trusty; urgency=low
++
++  [ Lars Uebernickel ]
++  * Use GSettingsActions instead of g_settings_bind This also fixes a
++    bug: the actions were created stateless, but assigned a state later.
++    (LP: #1255981)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 217
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 29 Nov 2013 18:36:27 +0000
++
++indicator-power (12.10.6+14.04.20131125-0ubuntu1) trusty; urgency=low
++
++  [ Charles Kerr ]
++  * We really only need to keep a handful of properties up-to-date for
++    each upower device. Given that upower requires us to refetch all
++    properties with GetAll whenever it signals that it's changed, we
++    really don't need to keep bus proxies alive for each device.
++    Removing the autogenerated proxy code and just using a couple of the
++    direct GDBusConnection API calls cuts out some unnecessary overhead
++    according to health-check. See the before & after profile logs
++    attached to the ticket. (LP: #1221871)
++  * fix a minor memory leak that was caused by treating the variant
++    returned by g_icon_serialize() as floating.
++
++  [ Ted Gould ]
++  * Switching DBus service to an Upstart Job. (LP: #1185565)
++
++  [ Nick Dedekind ]
++  * Removed Label from brightness slider. (LP: #1240756)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 215
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 25 Nov 2013 03:55:08 +0000
++
++indicator-power (12.10.6+14.04.20131029.1-0ubuntu1) trusty; urgency=low
++
++  [ Sebastien Bacher ]
++  * Don't leak the g_file_get_contents value, reported by valgrind .
++
++  [ Marcus Tomlinson ]
++  * Added torch icons to either end of brightness slider. (LP: #1227250)
++
++  [ Ted Gould ]
++  * Adding a phone_greeter profile.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 210
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 29 Oct 2013 10:31:03 +0000
++
++indicator-power (12.10.6+13.10.20131008-0ubuntu1) saucy; urgency=low
++
++  [ Ted Gould ]
++  * Adding an additional slash to the settings URL. (LP: #1231444)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 206
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 08 Oct 2013 02:34:01 +0000
++
++indicator-power (12.10.6+13.10.20131004-0ubuntu1) saucy; urgency=low
++
++  [ Charles Kerr ]
++  * Revert bug #824629 code -- use the correct charge % when deciding
++    what icon to use. (LP: #1215520, #824629)
++  * Listen for the "Resuming" signal from upower to refresh devices when
++    resuming from suspend/hibernate. (LP: #1224931)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 204
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 04 Oct 2013 02:28:43 +0000
++
++indicator-power (12.10.6+13.10.20130918.2-0ubuntu1) saucy; urgency=low
++
++  [ Timo Jyrinki ]
++  * The dependency url-dispatcher was fixed to not pull in extra packages 
++    on the desktop images, fixing the issue that caused the previous revert
++    (FFe bug - LP: #1215980)
++
++  [ Ted Gould ]
++  * Use URL dispatcher to show settings on the phone.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 201
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 18 Sep 2013 13:57:00 +0000
++
++indicator-power (12.10.6+13.10.20130913-0ubuntu2) saucy; urgency=low
++
++  * Revert previous upload since this was bringing quite a few extra and
++    likely unwanted dependencies on Ubuntu desktop after FeatureFreeze.
++
++ -- Stéphane Graber <stgraber@ubuntu.com>  Fri, 13 Sep 2013 21:46:57 -0400
++
++indicator-power (12.10.6+13.10.20130913-0ubuntu1) saucy; urgency=low
++
++  [ Charles Kerr ]
++  * Adds a title in the header's action state. (LP: #1223635)
++
++  [ Ted Gould ]
++  * Use URL Dispatcher for settings on the phone.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 196
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 13 Sep 2013 15:15:31 +0000
++
++indicator-power (12.10.6+13.10.20130830.2-0ubuntu1) saucy; urgency=low
++
++  [ Sebastien Bacher ]
++  * don't depends on gnome-control-center, recommends is enough, since
++    it's only required for the preferences menu item. Let ubuntu-system-
++    settings replace it as an alternative, that's needed on the touch
++    image.
++  * revert previous commit, liburl-dispatcher1 depends on upstart-app-
++    launch which is in universe, that's blocking indicators from
++    landing.
++
++  [ Ted Gould ]
++  * Make settings work on the phone.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 193
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 30 Aug 2013 10:07:38 +0000
++
++indicator-power (12.10.6+13.10.20130823-0ubuntu1) saucy; urgency=low
++
++  [ Charles Kerr ]
++  * Updates the power indicator to match the spec changes at
++    <https://wiki.ubuntu.com/Power?action=diff&rev2=37&rev1=36>. This
++    patch is based from hloeung's nice patch, fixes a few edge cases,
++    adds unit tests for labels, headers, & accessible text for all
++    combinations of show time & show percentage, and cleans up the
++    bindings between GSettings and the checkbox actions. . (LP: #811777)
++  * Don't show the time remaining for a discharging battery if it
++    exceeds 24 hours because it's probably an erroneous time estimate.
++    (LP: #1216030)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 189
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 23 Aug 2013 18:07:29 +0000
++
++indicator-power (12.10.6+13.10.20130821-0ubuntu1) saucy; urgency=low
++
++  [ Charles Kerr ]
++  * Add a brightness slider to indicator-power's phone menu.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 186
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 21 Aug 2013 06:06:49 +0000
++
++indicator-power (12.10.6+13.10.20130808-0ubuntu1) saucy; urgency=low
++
++  [ Allan LeSage ]
++  * This restores coverage reporting; we could alternately add the
++    COVERAGE_CFLAGS to SHARED_CFLAGS instead. (LP: #1204127)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 184
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 08 Aug 2013 02:02:11 +0000
++
++indicator-power (12.10.6+13.10.20130725-0ubuntu1) saucy; urgency=low
++
++  [ Charles Kerr ]
++  * Add a phone profile and menu.
++  * Set the battery-level action's 'sensitive' flag to false so that it
++    will not be clickable, as per the phone spec.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 182
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 25 Jul 2013 02:03:03 +0000
++
++indicator-power (12.10.6+13.10.20130708-0ubuntu1) saucy; urgency=low
++
++  [ Lars Uebernickel ]
++  * indicator file: rename greeter to desktop_greeter.
++  * Put service into libexecir.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 179
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 08 Jul 2013 02:01:53 +0000
++
++indicator-power (12.10.6+13.10.20130703.1-0ubuntu1) saucy; urgency=low
++
++  [ Charles Kerr ]
++  * make the greeter menu key consistent with indicator-session.
++  * add a Position entry in the .indicator file. (LP: #1196650)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 176
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 03 Jul 2013 14:16:57 +0000
++
++indicator-power (12.10.6+13.10.20130702-0ubuntu1) saucy; urgency=low
++
++  [ Charles Kerr ]
++  * similar to the i-datetime change, use the unicode ellipsis directly.
++  * don't rely on the dbus pkg-config variable to know where to install
++    .service files.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 173
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 02 Jul 2013 02:02:36 +0000
++
++indicator-power (12.10.6+13.10.20130628-0ubuntu2) saucy; urgency=low
++
++  * Backport the fix from ~charlesk/indicator-power/remove-localinstall to
++    unbreak saucy, the configure code was broken and relying on dbus to
++    be installed to figure the path of the service, which was leading to
++    the files to not be installed on the buildds and the indicator to not start
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 28 Jun 2013 23:19:21 +0200
++
++indicator-power (12.10.6+13.10.20130628-0ubuntu1) saucy; urgency=low
++
++  [ Charles Kerr ]
++  * Convert the power indicator into a service that exports GMenus and
++    GActions in accordance with our indicator-ng design.
++
++  [ Łukasz 'sil2100' Zemczak ]
++  * Add a build-dep on python. This is required as we're using gdbus-
++    codegen from libglib2.0-dev which only 'recommends' python. We don't
++    install recommends, so to get things working, this build-dep is
++    needed.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 169
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 28 Jun 2013 02:02:40 +0000
++
++indicator-power (12.10.6daily13.03.07-0ubuntu1) raring; urgency=low
++
++  [ Mathieu Trudel-Lapierre ]
++  * Jenkins build failure on gtest "undefined reference to symbol
++    'pthread_key_delete@@GLIBC_2.2.5'" (LP: #1126362)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 166
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Thu, 07 Mar 2013 02:01:57 +0000
++
++indicator-power (12.10.6daily13.01.25-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 164
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Fri, 25 Jan 2013 02:01:11 +0000
++
++indicator-power (12.10.6daily13.01.18-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 162
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Fri, 18 Jan 2013 02:01:18 +0000
++
++indicator-power (12.10.6daily13.01.17-0ubuntu1) raring; urgency=low
++
++  [ Charles Kerr ]
++  * g-p-m UPS power status does not show up in Unity (LP: #1007095)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 160
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Thu, 17 Jan 2013 02:01:38 +0000
++
++indicator-power (12.10.6daily12.11.21.1-0ubuntu1) raring; urgency=low
++
++  [ Mathieu Trudel-Lapierre ]
++  * debian/control:
++    - Bump Build-Depends on debhelper to (>= 9).
++    - Reorganize Build-Depends for clarity; build system b-deps first.
++    - Add autopoint to Build-Depends.
++    - Add libxorg-gtest-dev to Build-Depends for unit tests.
++    - Add libgtest-dev to Build-Depends for unit tests.
++    - Use trailing commas for dep lists, as per other indicator packages.
++    - Update Vcs-Bzr and Vcs-Browser fields, add notice to uploaders.
++  * debian/compat: bump to compat level 9.
++  * debian/rules:
++    - use the dh sequencer with --with autoreconf.
++    - override dh_autoreconf to call autogen.sh from upstream.
++    - use DPKG_GENSYMBOLS_CHECK_LEVEL=4.
++    - make sure we call dh_install --fail-missing in the dh_install override,
++      to be consistent with other indicator packages.
++
++  [ Didier Roche ]
++  * Automatic snapshot from revision 155 (bootstrap)
++
++  [ Charles Kerr ]
++  * unit test "DeviceTest.NewFromVariant" fails on armhf / powerpc (LP:
++    #1079795)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 158
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Wed, 21 Nov 2012 10:41:37 +0000
++
++indicator-power (12.10.5-0ubuntu1) raring; urgency=low
++
++  * New upstream release:
++    - Fix a device display bug introduced in 12.10.3 (LP: #1075192)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 14 Nov 2012 11:09:59 +0100
++
++indicator-power (12.10.4-0ubuntu1) raring; urgency=low
++
++  * New upstream release.
++    - Show the proper icon for mice and ups devices. (LP: #1066208)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 05 Nov 2012 12:41:37 +0100
++
++indicator-power (12.10.2-0ubuntu1) quantal; urgency=low
++
++  * New upstream release.
++    - Show a more accurate view of discharging batteries (LP: #1054146)
++    - Fix a GIcon memory leak
++    - In device.c, include gi18n-lib.h instead of gi18n.h
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 03 Oct 2012 21:26:58 +0200
++
++indicator-power (12.10.1-0ubuntu2) quantal; urgency=low
++
++  * Cherry-pick:
++    - Ensure the power indicator string translations are loaded. Thanks lars
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 20 Sep 2012 11:04:55 +0200
++
++indicator-power (12.10.1-0ubuntu1) quantal; urgency=low
++
++  * New upstream release.
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 22 Aug 2012 11:29:28 +0200
++
++indicator-power (12.10.0-0ubuntu1) quantal; urgency=low
++
++  * New upstream release.
++  * debian/control: updated glib requirement
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 11 Jul 2012 21:46:39 +0200
++
++indicator-power (2.0-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++    * Make menu items accessible with Orca Screen reader (LP: #953176)
++    * Plug memory leaks when updating our icons
++
++ -- Charles Kerr <charles.kerr@canonical.com>  Wed, 11 Apr 2012 10:12:54 -0500
++
++indicator-power (1.93-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++    * Fix for translatable strings not being extracted for i18n (LP: #957542)
++
++ -- Charles Kerr <charles.kerr@canonical.com>  Wed, 21 Mar 2012 12:47:31 -0500
++
++indicator-power (1.92-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 14 Mar 2012 19:43:58 +0100
++
++indicator-power (1.91-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++    * Fix for the icon not changing when state changes (LP: #933466)
++    * Fix accessible descriptions (LP: #891932)
++
++ -- Ted Gould <ted@ubuntu.com>  Thu, 23 Feb 2012 00:35:31 -0600
++
++indicator-power (1.90-0ubuntu2) precise; urgency=low
++
++  * src/indicator-power.c
++    - cherry picked a fix for the icon not changing when state 
++      changes (LP: #933466)
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 17 Feb 2012 10:41:52 -0500
++
++indicator-power (1.90-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++    * Support for hiding of icon and settings for it as well (lp: #811769)
++    * Adding a name hint
++
++ -- Ted Gould <ted@ubuntu.com>  Tue, 14 Feb 2012 16:26:48 -0600
++
++indicator-power (0.10-0ubuntu2) precise; urgency=low
++
++  * no change rebuild for libindicator7
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Wed, 25 Jan 2012 09:58:07 -0500
++
++indicator-power (0.10-0ubuntu1) precise; urgency=low
++
++  * New upstream release.
++    - Use battery-with-a-plug when the batttery is fully charged but still 
++      on AC (LP: #865342)
++    - Only show a red icon when we have less than 30 minutes of battery 
++      remaining (LP: #743823)
++    - Fix icon creation for UP_DEVICE_STATE_CHARGING state
++    - support for old name icons
++    - Do not hardcode icon percentage when discharging
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Mon, 24 Oct 2011 11:07:54 -0400
++
++indicator-power (0.9-0ubuntu2) oneiric; urgency=low
++
++  * src/indicator-power.c
++    - Add a workaround to fix the case when we get a empty bay as a real 
++      battery. (LP: #863518)
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Mon, 03 Oct 2011 10:35:48 -0400
++
++indicator-power (0.9-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++    - Use correct dgettext and g_dngettext calls (LP: #846895)
++    - Ensure we use the same icon for all charge levels if we are in the 
++      charging status (LP: #824629)
++    - Fix gap when the power indicator is not show (LP: #842188)
++    - Do not show (charged) in menu title when fully charged (LP: #850011)
++    - Do not activate g-s-d, but just watch dbus for g-s-d to 
++      appear (LP: #854717)
++  * po/POTFILES.in
++    - Fixed gsettings schema filename
++  * debian/copyright
++    - Removed an extra line to make dep5 compliant
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 23 Sep 2011 13:03:13 -0400
++
++indicator-power (0.7-0ubuntu2) oneiric; urgency=low
++
++  * debian/control
++    - depend on gnome-settings-daemon instead of 
++      gnome-power-manager (LP: #833397)
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 25 Aug 2011 09:13:55 -0400
++
++indicator-power (0.7-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++    - Use gsettings to store the status of "Show time in Menu Bar" 
++      option (LP: #829853)
++    - Follow standard alignment of icons in menus (LP: #829697)
++    - Do not use a space before an ellipsis at the end of a string.
++  * debian/control
++    - Added build depends for libglib2.0-dev
++  * data/org.ubuntu.indicator-power.gschema.xml.in
++    - cherry pick typo fix from trunk
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Tue, 23 Aug 2011 12:44:58 -0400
++
++indicator-power (0.6-0ubuntu2) oneiric; urgency=low
++
++  * src/indicator-power.c
++    - cherry pick fix to prevent it from showing the icon on devices that
++      have no battery
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 12 Aug 2011 16:17:51 -0400
++
++indicator-power (0.6-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++    - Show time left to use without brackets, time left to charge with 
++      brackets. (LP: #824629)
++    - Fix some memory leaks
++    - Don't show settings links when used in a greeter
++    - Use a string when the energy source is not present instead 
++      of 0%
++    - only batteries status icons are allowed in the menu title
++  * src/indicator-power.c
++    - cherry picked crasher fix
++  * debian/rules: 
++    - Don't autoreconf 
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 12 Aug 2011 09:57:47 -0400
++
++indicator-power (0.5-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++    - Set GETTEXT_PACKAGE to generate proper templates
++    - Dropped support for gnome-power-manager
++  * debian/patches/fix_defines.patch
++    - removed, merged upstream
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Wed, 03 Aug 2011 09:30:18 -0400
++
++indicator-power (0.4-0ubuntu3) oneiric; urgency=low
++
++  * debian/control
++    - Added dh-autoreconf to build depends 
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 28 Jul 2011 15:02:03 -0400
++
++indicator-power (0.4-0ubuntu2) oneiric; urgency=low
++
++  * debian/patches/fix_defines.patch
++    - Use the HAVE_GSD defines so it works without gpm
++  * debian/rules
++    - added autoreconf
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 28 Jul 2011 12:59:33 -0400
++
++indicator-power (0.4-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++    - Always select a device (LP: #810872)
++    - Use the dbus interface provided in g-s-d 3.1.4
++  * debian/control
++    - Added build depends for gnome-settings-daemon-dev >= 3.1.4 
++  * debian/source_indicator-power.py
++    - Install apport hook to collect upower -d output
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Tue, 26 Jul 2011 16:34:30 -0400
++
++indicator-power (0.3-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++    - Refine the text of the items in the menu to follow the specification
++    - Draw option checkbox as check, not radio
++    - Show the apropiate icon depending of the status of the devices
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 14 Jul 2011 11:04:23 -0400
++
++indicator-power (0.2-0ubuntu1) oneiric; urgency=low
++
++  * New upstream release.
++  * debian/control
++    - Bump build depends for libindicator to >- 0.3.90
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 08 Jul 2011 09:59:26 -0400
++
++indicator-power (0.1-0ubuntu1) oneiric; urgency=low
++
++  * Initial package (LP: #807132)
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 07 Jul 2011 13:12:21 -0400
+--- indicator-power-12.10.6+17.10.20170829.1.orig/debian/compat
++++ indicator-power-12.10.6+17.10.20170829.1/debian/compat
+@@ -0,0 +1 @@
++9
+--- indicator-power-12.10.6+17.10.20170829.1.orig/debian/control
++++ indicator-power-12.10.6+17.10.20170829.1/debian/control
+@@ -0,0 +1,44 @@
++Source: indicator-power
++Section: gnome
++Priority: optional
++Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
++Build-Depends: cmake,
++               cmake-extras (>= 0.10),
++               debhelper (>= 9),
++               dh-translations,
++               gcovr,
++               intltool,
++               lcov,
++               libnotify-dev (>= 0.7.6),
++               libglib2.0-dev (>= 2.36),
++               libgmock-dev,
++               libgudev-1.0-dev,
++# for com.ubuntu.touch.AccountsService.Sound.xml
++               accountsservice-ubuntu-schemas,
++# for tests
++               googletest | google-mock,
++               python3-dbusmock,
++               dbus-test-runner,
++               libdbustest1-dev,
++# for systemd unit
++               systemd,
++Standards-Version: 3.9.5
++Homepage: https://launchpad.net/indicator-power
++# If you aren't a member of ~indicator-applet-developers but need to upload
++# packaging changes, just go ahead.  ~indicator-applet-developers will notice
++# and sync up the code again.
++Vcs-Bzr: https://code.launchpad.net/~indicator-applet-developers/indicator-power/trunk.13.04
++Vcs-Browser: https://bazaar.launchpad.net/~indicator-applet-developers/indicator-power/trunk.13.04/files
++X-Ubuntu-Use-Langpack: yes
++
++Package: indicator-power
++Architecture: any
++Depends: ${shlibs:Depends},
++         ${misc:Depends},
++         indicator-common,
++         upower,
++Recommends: unity-control-center | gnome-control-center (>= 3.1) | switchboard-plug-power | xfce4-power-manager | mate-power-manager,
++            indicator-applet (>= 0.2) | indicator-renderer,
++Description: Indicator showing power state.
++ This indicator displays current power management information and gives 
++ the user a way to access power management preferences.
+--- indicator-power-12.10.6+17.10.20170829.1.orig/debian/copyright
++++ indicator-power-12.10.6+17.10.20170829.1/debian/copyright
+@@ -0,0 +1,37 @@
++Format: http://dep.debian.net/deps/dep5
++Upstream-Name: indicator-power
++Source: http://launchpad.net/indicator-power
++
++Files: *
++Copyright: 2011 Canonical Ltd.
++License: GPL-3
++ This program is free software: you can redistribute it and/or modify it
++ under the terms of the GNU General Public License version 3, as published 
++ by the Free Software Foundation.
++ .
++ This program is distributed in the hope that it will be useful, but
++ WITHOUT ANY WARRANTY; without even the implied warranties of
++ MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR
++ PURPOSE.  See the GNU General Public License for more details.
++ .
++ On Debian systems, the complete text of the GNU General
++ Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
++
++Files: debian/*
++Copyright: 2011 Ken VanDine <ken.vandine@canonical.com>
++License: GPL-2+
++ This package is free software; you can redistribute it and/or modify
++ it under the terms of the GNU General Public License as published by
++ the Free Software Foundation; either version 2 of the License, or
++ (at your option) any later version.
++ .
++ This package is distributed in the hope that it will be useful,
++ but WITHOUT ANY WARRANTY; without even the implied warranty of
++ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ GNU General Public License for more details.
++ .
++ You should have received a copy of the GNU General Public License
++ along with this program. If not, see <http://www.gnu.org/licenses/>
++ .
++ On Debian systems, the complete text of the GNU General
++ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+--- indicator-power-12.10.6+17.10.20170829.1.orig/debian/indicator-power.maintscript
++++ indicator-power-12.10.6+17.10.20170829.1/debian/indicator-power.maintscript
+@@ -0,0 +1 @@
++rm_conffile /etc/xdg/autostart/indicator-power.desktop 12.10.6+17.04.20170210-0ubuntu1~
+--- indicator-power-12.10.6+17.10.20170829.1.orig/debian/rules
++++ indicator-power-12.10.6+17.10.20170829.1/debian/rules
+@@ -0,0 +1,17 @@
++#!/usr/bin/make -f
++# -*- makefile -*-
++
++# Uncomment this to turn on verbose mode.
++#export DH_VERBOSE=1
++
++export DPKG_GENSYMBOLS_CHECK_LEVEL=4
++
++%:
++	dh $@ --with translations
++
++override_dh_install:
++	find debian/indicator-power -name \*.la -delete
++	find debian/indicator-power -name \*.a -delete
++	dh_install --fail-missing
++	mkdir -p debian/indicator-power/usr/share/apport/package-hooks/
++	cp debian/source_indicator-power.py debian/indicator-power/usr/share/apport/package-hooks/
+--- indicator-power-12.10.6+17.10.20170829.1.orig/debian/source_indicator-power.py
++++ indicator-power-12.10.6+17.10.20170829.1/debian/source_indicator-power.py
+@@ -0,0 +1,12 @@
++'''apport package hook for indicator-power
++
++(c) 2011 Canonical Ltd.
++Author: Ken VanDine <ken.vandine@ubuntu.com>
++'''
++
++from apport.hookutils import *
++from os import path
++
++def add_info(report):
++    report['UPowerDump'] = command_output(['upower', '-d'])
++    return report
+--- indicator-power-12.10.6+17.10.20170829.1.orig/src/notifier.c
++++ indicator-power-12.10.6+17.10.20170829.1/src/notifier.c
+@@ -23,8 +23,6 @@
+ #include "dbus-shared.h"
+ #include "notifier.h"
+ 
+-#include <url-dispatcher.h>
+-
+ #include <libnotify/notify.h>
+ 
+ #include <glib/gi18n.h>
+@@ -222,14 +220,6 @@
+ }
+ 
+ static void
+-on_battery_settings_clicked(NotifyNotification * nn        G_GNUC_UNUSED,
+-                            char               * action    G_GNUC_UNUSED,
+-                            gpointer             user_data G_GNUC_UNUSED)
+-{
+-  url_dispatch_send("settings:///system/battery", NULL, NULL);
+-}
+-
+-static void
+ on_dismiss_clicked(NotifyNotification * nn        G_GNUC_UNUSED,
+                    char               * action    G_GNUC_UNUSED,
+                    gpointer             user_data G_GNUC_UNUSED)
+@@ -319,7 +309,6 @@
+       notify_notification_set_hint(nn, "x-canonical-snap-decisions-timeout", g_variant_new_int32(INT32_MAX));
+       notify_notification_set_timeout(nn, NOTIFY_EXPIRES_NEVER);
+       notify_notification_add_action(nn, "dismiss", _("OK"), on_dismiss_clicked, NULL, NULL);
+-      notify_notification_add_action(nn, "settings", _("Battery settings"), on_battery_settings_clicked, NULL, NULL);
+     }
+ 
+   /* if we can show it, keep it */
+--- indicator-power-12.10.6+17.10.20170829.1.orig/src/service.c
++++ indicator-power-12.10.6+17.10.20170829.1/src/service.c
+@@ -20,7 +20,6 @@
+ 
+ #include <glib/gi18n.h>
+ #include <gio/gio.h>
+-#include <url-dispatcher.h>
+ 
+ #include "brightness.h"
+ #include "dbus-shared.h"
+@@ -817,12 +816,7 @@
+ 
+   if (control_center_cmd == NULL)
+     {
+-      if (g_getenv ("MIR_SOCKET") != NULL)
+-        {
+-          url_dispatch_send("settings:///system/battery", NULL, NULL);
+-          return;
+-        }
+-      else if (!g_strcmp0 (g_getenv ("DESKTOP_SESSION"), "xubuntu"))
++      if (!g_strcmp0 (g_getenv ("DESKTOP_SESSION"), "xubuntu"))
+         {
+           control_center_cmd = "xfce4-power-manager-settings";
+         }
+@@ -862,14 +856,6 @@
+   g_free (cmd);
+ }
+ 
+-static void
+-on_phone_settings_activated (GSimpleAction * a      G_GNUC_UNUSED,
+-                             GVariant      * param  G_GNUC_UNUSED,
+-                             gpointer        gself  G_GNUC_UNUSED)
+-{
+-  url_dispatch_send("settings:///system/battery", NULL, NULL);
+-}
+-
+ /***
+ ****
+ ***/
+@@ -906,7 +892,6 @@
+ 
+   GActionEntry entries[] = {
+     { "activate-settings", on_settings_activated },
+-    { "activate-phone-settings", on_phone_settings_activated },
+     { "activate-statistics", on_statistics_activated, "s" }
+   };
+ 

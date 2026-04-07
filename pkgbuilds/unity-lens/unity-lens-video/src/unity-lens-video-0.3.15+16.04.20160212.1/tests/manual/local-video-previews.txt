@@ -1,0 +1,34 @@
+Preview of local video file
+---------------------------
+Test that details of a local video file are displayed in the preview.
+
+Setup:
+Have some video files available in ~/Videos folder.
+
+Actions:
+1. Open the Dash and switch to the video lens.
+2. Make sure some video files from ~/Videos folder are displayed.
+3. Right click a video file.
+
+Expected Result:
+Video preview should be displayed. Verify the preview display a sample video frame (a picture) and contains
+the following data: file name (as title), modification date and time (as subtitle)  and 'Format', 'Dimensions',
+'Size' info; 'Dimensions' should include resolution and aspect ratio, e.g. '1280:720, 16:9'.
+
+
+Preview of local video file - preview-player close
+--------------------------------------------------
+Test that music-preview-player is closed automatically when not needed.
+
+Setup:
+Have some video files available in ~/Videos folder.
+
+Actions:
+1. Open the Dash and switch to the video lens.
+2. Make sure some video files from ~/Videos folder are displayed.
+3. Right click a video file.
+4. Close the preview.
+
+Expected Result:
+Video preview should be displayed. After closing the preview, verify with 'ps aux' that music-preview-player
+process disappears after approximately 1 minute.

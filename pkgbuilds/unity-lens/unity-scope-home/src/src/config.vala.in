@@ -1,0 +1,16 @@
+namespace Config {
+
+  public const string PREFIX = "@prefix@";
+
+  public const string DATADIR = "@DATADIR@";
+
+  public const string PKGDATADIR = "@DATADIR@/unity";
+
+  public const string BINDIR = "@prefix@/bin";
+
+  public const string LOCALEDIR = "@DATADIR@/locale";
+
+  public const string PACKAGE = "@PACKAGE@";
+
+  public const string VERSION = "@VERSION@";
+}

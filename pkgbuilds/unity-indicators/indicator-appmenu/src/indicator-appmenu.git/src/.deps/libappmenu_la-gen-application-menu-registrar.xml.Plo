@@ -1,0 +1,3 @@
+libappmenu_la-gen-application-menu-registrar.xml.lo: \
+ gen-application-menu-registrar.xml.c /usr/include/stdc-predef.h
+/usr/include/stdc-predef.h:

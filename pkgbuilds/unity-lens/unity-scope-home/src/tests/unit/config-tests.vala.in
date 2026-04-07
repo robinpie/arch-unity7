@@ -1,0 +1,10 @@
+namespace Config {
+  public const string VERSION = "@VERSION@";
+  public const string TOPSRCDIR = "@abs_top_srcdir@";
+  public const string TESTDATADIR = "@abs_top_srcdir@/tests/unit/data";
+  public const string TESTRUNDATADIR = "@abs_top_builddir@/tests/unit";
+  public const string DATADIR = "@DATADIR@";
+  public const string PKGDATADIR = "@abs_top_srcdir@/tests/unit/data/unity";
+  public const string LOCALEDIR = "@DATADIR@/locale";
+  public const string PACKAGE = "@PACKAGE@";
+}

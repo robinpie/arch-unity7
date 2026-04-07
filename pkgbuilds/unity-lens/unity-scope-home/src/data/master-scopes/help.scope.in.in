@@ -1,0 +1,23 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/help
+Icon=
+CategoryIcon=@prefix@/share/icons/unity-icon-theme/places/svg/group-help.svg
+_Name=Help
+Type=help
+IsMaster=true
+_Keywords=help;
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category help]
+_Name=Help
+Icon=
+DedupField=title
+
+[Category community]
+_Name=Community
+Icon=
+DedupField=title
+

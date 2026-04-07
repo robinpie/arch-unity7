@@ -1,0 +1,106 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/indicator-keyboard
+
+pkgname=indicator-keyboard
+pkgver=0.0.0
+_uver=+19.10.20240924
+_urev=0ubuntu1
+pkgrel=1
+pkgdesc="Keyboard indicator used by the Unity7 user interface"
+arch=('x86_64')
+url="https://launchpad.net/indicator-keyboard"
+license=('GPL-3.0-or-later')
+depends=(
+    'ibus'
+    'libgee'
+    'gnome-desktop'
+    'libgnomekbd'
+    'accountsservice'
+    'gtk3'
+    'lightdm'
+    'glib2'
+    'libindicator-gtk3'
+    'dconf'
+    'cairo'
+    'libxklavier'
+    'pango'
+)
+makedepends=(
+    'pkgconf'
+    'gobject-introspection'
+    'dbus'
+    'systemd'
+    'vala'
+    'xorg-xauth'
+    'intltool'
+    'autoconf'
+    'automake'
+    'libtool'
+)
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "optional-fcitx.patch"
+    "Prevent-segfault-by-obtaining-style-context-associated-to-widget.patch"
+)
+sha256sums=('SKIP' 'SKIP' 'SKIP')
+
+prepare() {
+    cd "${pkgname}-${pkgver}${_uver}"
+
+    patch -p1 -i ../optional-fcitx.patch
+    patch -p1 -i "../Prevent-segfault-by-obtaining-style-context-associated-to-widget.patch"
+
+    # Remove Ubuntu-specific AccountsService properties (input_sources, xkeyboard_layouts)
+    # not present in standard accountsservice; fall through to LightDM fallback
+    python3 - lib/main.vala << 'PYEOF'
+import re, sys
+fname = sys.argv[1]
+with open(fname) as f:
+    c = f.read()
+
+# Remove the foreach (var outer in ((!) user).input_sources) block in greeter path
+c = re.sub(
+    r'\s*foreach \(var outer in \(\(!\) user\)\.input_sources\) \{.*?\}\n\n\s*if \(source == null\) \{\n\s*var layouts = \(\(!\) user\)\.xkeyboard_layouts;',
+    '\n\t\t\t\t\tif (source == null) {\n\t\t\t\t\t\tvar layouts = new string[0];',
+    c, flags=re.DOTALL)
+
+# Remove foreach (var outer in user.input_sources) block in migrate_input_sources
+c = re.sub(
+    r'\s*foreach \(var outer in user\.input_sources\) \{.*?\}\n\n\s*if \(!done\) \{\n\s*var layouts = user\.xkeyboard_layouts;',
+    '\n\t\t\t\tif (!done) {\n\t\t\t\t\tvar layouts = new string[0];',
+    c, flags=re.DOTALL)
+
+with open(fname, 'w') as f:
+    f.write(c)
+print("Patched AccountsService Ubuntu props")
+PYEOF
+
+    # Apply debian patch series if present
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+
+    # Disable tests
+    sed -i "s/ tests//" Makefile.am || true
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "${pkgname}-${pkgver}${_uver}"
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --disable-fcitx
+    make
+}
+
+package() {
+    cd "${pkgname}-${pkgver}${_uver}"
+    make DESTDIR="$pkgdir" install
+    find "$pkgdir" -name '*.la' -delete
+}

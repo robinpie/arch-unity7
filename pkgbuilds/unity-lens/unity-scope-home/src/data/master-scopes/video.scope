@@ -1,0 +1,48 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/video
+Icon=/usr/share/unity/icons/lens-nav-video.svg
+CategoryIcon=/usr/share/icons/unity-icon-theme/places/svg/group-videos.svg
+Name=Videos
+SearchHint=Search videos
+Type=video
+IsMaster=true
+Shortcut=v
+Keywords=videos;video;
+NoContentHint=There are no videos currently available on this computer.
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category global]
+Name=Videos
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-videos.svg
+ContentType=video
+Renderer=carousel
+
+[Category local]
+Name=My videos
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-videos.svg
+DedupField=uri
+ContentType=video
+Renderer=carousel
+
+[Category online]
+Name=Online
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-internet.svg
+DedupField=uri
+ContentType=video
+
+[Category popular]
+Name=Popular online
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-internet.svg
+DedupField=uri
+ContentType=video
+
+[Category more]
+Name=More suggestions
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-treat-yourself.svg
+DedupField=uri
+ContentType=video
+RendererHint=portrait
+

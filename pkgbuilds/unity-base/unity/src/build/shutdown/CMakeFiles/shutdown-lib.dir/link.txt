@@ -1,0 +1,2 @@
+/usr/bin/ar qc libshutdown-lib.a "CMakeFiles/shutdown-lib.dir/SessionButton.cpp.o" "CMakeFiles/shutdown-lib.dir/SessionController.cpp.o" "CMakeFiles/shutdown-lib.dir/SessionDBusManager.cpp.o" "CMakeFiles/shutdown-lib.dir/SessionView.cpp.o"
+/usr/bin/ranlib libshutdown-lib.a

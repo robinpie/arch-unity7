@@ -1,0 +1,9 @@
+	../src/im-phone-menu.c \
+	../src/messages-service.c \
+	../src/im-desktop-menu.c \
+	../src/im-menu.c \
+	../src/im-application-list.c \
+	../src/gsettingsstrv.c \
+	../src/gactionmuxer.c \
+	../libmessaging-menu/messaging-menu-message.c \
+	../libmessaging-menu/messaging-menu-app.c

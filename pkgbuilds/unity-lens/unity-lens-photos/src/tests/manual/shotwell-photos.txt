@@ -1,0 +1,14 @@
+Photos imported in Shotwell
+---------------------------
+Test that photos imported in Shotwell appear in the lens
+
+Setup:
+Have some photos imported in Shotwell
+
+Actions:
+1. Open the Dash and switch to the photos lens
+2. Make sure the 100 most recently taken Shotwell imports are present
+
+Expected Result:
+The lens should display the 100 most recently taken Shotwell imports, 
+50 in the Recent category, 50 in the My Photos category.

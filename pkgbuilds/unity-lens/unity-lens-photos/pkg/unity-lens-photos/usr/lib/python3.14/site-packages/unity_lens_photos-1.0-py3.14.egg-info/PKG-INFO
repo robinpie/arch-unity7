@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: unity-lens-photos
+Version: 1.0
+Home-page: http://launchpad.net/unity-lens-photos
+Author: David Calle
+Author-email: davidc@framli.eu
+License: GNU General Public License (GPL)
+License-File: COPYING
+License-File: AUTHORS
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file

@@ -1,0 +1,13 @@
+[Scope]
+DBusName=com.canonical.Unity.Scope.SubscopeA1
+DBusPath=/com/canonical/unity/scope/subscopeA1
+Icon=/usr/share/unity/6/icon-sub1.svg
+RequiredMetadata=bid[s];
+OptionalMetadata=
+Keywords=suba1;sub1a1b
+Type=varia
+QueryPattern=^@
+Name=Sample subscope 1
+Description=Find various stuff subscope a1
+SearchHint=Search stuff subscope a1
+Shortcut=x

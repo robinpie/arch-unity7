@@ -1,0 +1,6 @@
+	../src/daemon.vala \
+	../src/main.vala \
+	../src/scope.vala \
+	../src/ubuntu-video-search.vala \
+	../tests/unit/test-ubuntu-video-search.vala \
+	../data/local.scope.in.in

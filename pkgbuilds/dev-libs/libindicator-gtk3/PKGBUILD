@@ -1,0 +1,63 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/libindicator
+# Ubuntu version 16.10.0 with indicator-ng.h (newer than Arch's 12.10.1)
+# Provides: libindicator3-0.4 (GTK3 slot only)
+
+pkgname=libindicator-gtk3
+pkgver=16.10.0
+_uver=+18.04.20180321.1
+_urev=0ubuntu8
+pkgrel=1
+pkgdesc="Symbols and convenience functions for Unity7 indicators (GTK3)"
+arch=('x86_64')
+url="https://launchpad.net/libindicator"
+license=('GPL-3.0-or-later')
+# Conflicts with Arch's libindicator (same pkg-config name indicator3-0.4)
+conflicts=('libindicator')
+provides=('libindicator' "libindicator=${pkgver}")
+depends=('glib2' 'ido' 'gtk3' 'gdk-pixbuf2')
+makedepends=('pkgconf' 'autoconf' 'automake' 'libtool' 'intltool' 'gnome-common')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/libindicator_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/libindicator_${pkgver}${_uver}-${_urev}.diff.gz"
+)
+sha256sums=('SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+
+    # Apply Ubuntu diff
+    patch -p1 --batch --forward -i "libindicator_${pkgver}${_uver}-${_urev}.diff" || true
+
+    # Apply debian patch series (skip if quilt already applied)
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+
+    # Fix typo in configure.ac
+    sed -i "/AM_SILENT_RULES/{s/]$//}" configure.ac || true
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "$srcdir"
+    MAKEOPTS="-j1"
+    ./configure \
+        --prefix=/usr \
+        --libdir=/usr/lib \
+        --sysconfdir=/etc \
+        --disable-static \
+        --disable-tests \
+        --with-gtk=3
+    make -j1
+}
+
+package() {
+    cd "$srcdir"
+    make DESTDIR="$pkgdir" install
+    find "$pkgdir" -name '*.la' -delete
+}

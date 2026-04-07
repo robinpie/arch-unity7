@@ -1,0 +1,42 @@
+Fuzzy searching in the Dash
+---------------------------
+
+Tests that fuzzy matching works in the Dash.
+
+Actions:
+
+Tap super.
+Enter an application name that is slightly misspelled. Check that the Dash.
+returns valid replies.
+
+Examples:
+
+  fimp -> Gimp
+  fierfox -> Firefox
+  sttings -> settings
+
+Fuzzy searching in the app lens
+-------------------------------
+
+Tests that fuzzy matching works in the app lens.
+
+Actions:
+
+Tap super.
+Select app lens.
+Do the same searches as in the previous test. Check that they return the
+same results.
+
+
+Searching with filters
+----------------------
+
+When filters are enabled, the search falls back to non-fuzzy mode.
+
+Actions:
+
+Tap super.
+Select app lens.
+Enable filters, activate "graphics".
+Type "fimp" in search field, Gimp should not be show in the results.
+Type "gimp" in search field, Gimp should be shown in the results.

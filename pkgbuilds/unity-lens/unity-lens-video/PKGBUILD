@@ -1,0 +1,67 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/unity-lens-video
+
+pkgname=unity-lens-video
+pkgver=0.3.15
+_uver=+16.04.20160212.1
+_urev=0ubuntu6
+pkgrel=1
+pkgdesc="Video lens for the Unity7 user interface"
+arch=('x86_64')
+url="https://launchpad.net/unity-lens-video"
+license=('GPL-3.0-or-later')
+depends=(
+    'dee'
+    'glib2'
+    'libgee'
+    'libunity'
+    'libzeitgeist'
+    'plocate'
+)
+makedepends=(
+    'pkgconf'
+    'vala'
+    'gnome-common'
+    'autoconf'
+    'automake'
+    'libtool'
+)
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "Remove-remote-video-support.patch"
+)
+sha256sums=('SKIP' 'SKIP')
+
+prepare() {
+    cd "${pkgname}-${pkgver}${_uver}"
+
+    patch -p1 -i ../Remove-remote-video-support.patch
+
+    # Apply debian patch series if present
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+
+    # Wait for updatedb (use sync instead of async to ensure locate db is ready)
+    sed -i "/updatedb_bin/{s/async/sync/}" src/locate.vala || true
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "${pkgname}-${pkgver}${_uver}"
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static
+    make
+}
+
+package() {
+    cd "${pkgname}-${pkgver}${_uver}"
+    make DESTDIR="$pkgdir" install
+    find "$pkgdir" -name '*.la' -delete
+}

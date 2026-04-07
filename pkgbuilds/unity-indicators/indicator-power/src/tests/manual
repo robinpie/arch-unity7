@@ -1,0 +1,112 @@
+
+Notes on Battery Testing
+
+Mock battery propreties are available for testing purposes.
+
+The testing properties are DBus properties published on busname "com.canonical.indicator.power", object path "/com/canonical/indicator/power/Testing", and interface "com.canonical.indicator.power.Testing". The four properties are "MockBatteryEnabled" (boolean, default false), "MockBatteryLevel" (uint32 [0-100], default 50), "MockBatteryState" (string, default 'discharging'), "MockBatteryMinutesLeft" (minutes remaining to charge/discharge, uint32, default 30).
+
+Example use:
+
+Show the testing properties:
+
+$ gdbus call --session --dest "com.canonical.indicator.power" \
+             --object-path /com/canonical/indicator/power/Testing \
+             --method org.freedesktop.DBus.Properties.GetAll \
+             com.canonical.indicator.power.Testing
+
+Enable the mock battery:
+
+$ gdbus call --session --dest "com.canonical.indicator.power" \
+             --object-path /com/canonical/indicator/power/Testing \
+             --method org.freedesktop.DBus.Properties.Set \
+             com.canonical.indicator.power.Testing \
+             MockBatteryEnabled \
+             "<true>"
+
+Set the mock battery's charge to 10%
+
+$ gdbus call --session --dest "com.canonical.indicator.power" \
+             --object-path /com/canonical/indicator/power/Testing \
+             --method org.freedesktop.DBus.Properties.Set \
+             com.canonical.indicator.power.Testing \
+             MockBatteryLevel \
+             "<uint32 10>"
+
+
+Test-case indicator-power/unity7-items-check
+<dl>
+    <dt>Log in to a Unity 7 user session</dt>
+    <dt>Go to the panel and click on the Power indicator</dt>
+        <dd>Ensure there are items in the menu</dd>
+</dl>
+
+Test-case indicator-power/unity7-greeter-items-check
+<dl>
+    <dt>Start a system and wait for the greeter or logout of the current user session</dt>
+    <dt>Go to the panel and click on the Power indicator</dt>
+        <dd>Ensure there are items in the menu</dd>
+</dl>
+
+Test-case indicator-power/unity8-items-check
+<dl>
+    <dt>Login to a user session running Unity 8</dt>
+    <dt>Pull down the top panel until it sticks open</dt>
+    <dt>Navigate through the tabs until "Battery" is shown</dt>
+        <dd>Battery is at the top of the menu</dd>
+        <dd>The menu is populated with items</dd>
+</dl>
+
+Test-case indicator-power/detect-charging-or-discharging
+<dl>
+    <dt>Begin with a discharging device</dt>
+        <dd>The indicator's icon should denote a discharging battery; e.g. an icon without the '⚡' sign</dd>
+    <dt>Plug it in so that its battery is charging</dt>
+        <dd>The indicator's icon should change to show a charging battery</dd> 
+    <dt>Unplug it again</dt>
+        <dd>The indicator's icon should revert back to the same one in step one</dd>
+</dl>
+
+Test-case indicator-power/low-power-notifications
+<dl>
+    <dt>Wait for the system's battery level to drop to 10% (or fake it, see 'Notes on Battery Testing' above)</dt>
+        <dd>A notification should appear</dd>
+        <dd>Its title should read "Battery Low"</dd>
+        <dd>Its text should read "10% charge remaining"</dd>
+        <dd>The icon should be a low power icon</dd>
+        <dd>It should have two actions, "Battery settings" and "OK". </dd>
+    <dt>Tap OK to dismiss the popup</dt>
+    <dt>Wait (or fake) the battery level to drop to 9%</dt>
+        <dd>No new notification should appear -- we're still at the "Low" level </dd>
+    <dt>Wait (or fake) the battery level to drop to 4%</dt>
+        <dd>A notification should appear</dd>
+        <dd>Its title should read "Battery Critical"</dd>
+        <dd>Its text should read "4% charge remaining"</dd>
+        <dd>The icon should be a critical power icon</dd>
+        <dd>It should have two actions, "Battery settings" and "OK". </dd>
+    <dt>Tap 'Battery Settings'</dt>
+        <dd>ubuntu-system-settings should be launched to the Battery page </dd>
+</dl>
+
+Test-case indicator-power/low-power-icon
+<dl>
+    <dt>Wait for the system's battery level to drop to 21% (or fake it, see 'Notes on Battery Testing' above)</dt>
+        <dd>The indicator's icon should use the non-critical coloring (eg, grey)</dd>
+    <dt>Wait for the system's battery level to drop to 20% (or fake it, see 'Notes on Battery Testing' above)</dt>
+        <dd>The indicator's icon should use the critical coloring (eg, red)</dd>
+</dl>
+
+Test-case indicator-power/device-brightness-slider
+<dl>
+    <dt>On a device, pull down the power indicator's menu</dt>
+        <dd>The menu should include a brightness slider with icons</dd>
+    <dt>Slide the brightness slider back and forth</dt>
+        <dd>The screen should get brighter and darker in sync with the slider's position</dd>
+    <dt>Launch unity-system-settings' Brightness panel</dt>
+    <dt>Move both the indicator's and the settings panel's sliders</dt>
+        <dd>Both sliders' positions should stay in sync with each other</dd>
+        <dd>Both should have the same effect on the screen's brightness</dd>
+    <dt>Make a note of the current brightness level and slider position</dt>
+    <dt>Reboot the device</dt>
+        <dd>The screen brightness should be the same as it was before rebooting</dd>
+        <dd>The indicator's brightness slider should be in the same position as it was before rebooting</dd>
+</dl>

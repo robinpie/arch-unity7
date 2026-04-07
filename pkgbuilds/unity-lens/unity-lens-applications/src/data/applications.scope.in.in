@@ -1,0 +1,16 @@
+[Scope]
+DBusName=com.canonical.Unity.Scope.Applications
+DBusPath=/com/canonical/unity/scope/applications
+Module=@libdir@/unity/unity-scope-applications.so
+ModuleType=C
+Timeout=-1
+Icon=@prefix@/share/unity/icons/lens-nav-app.svg
+_Name=Applications
+_Description=This is an Ubuntu search plugin that enables information from local applications to be searched and displayed in the Dash underneath the Applications header. If you do not wish to search this content source, you can disable this search plugin.
+Type=applications
+_SearchHint=Search applications
+Shortcut=a
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-lens-applications
+

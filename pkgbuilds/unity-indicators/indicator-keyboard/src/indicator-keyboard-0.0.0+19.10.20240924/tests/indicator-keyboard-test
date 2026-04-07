@@ -1,0 +1,15 @@
+#!/bin/sh
+
+export PATH="/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-indicators/indicator-keyboard/src/indicator-keyboard-0.0.0+19.10.20240924/tests/execute:$PATH"
+export DCONF_PROFILE="/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-indicators/indicator-keyboard/src/indicator-keyboard-0.0.0+19.10.20240924/tests/profiles/indicator-keyboard-test"
+export GSETTINGS_SCHEMA_DIR="/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-indicators/indicator-keyboard/src/indicator-keyboard-0.0.0+19.10.20240924/data"
+export XDG_RUNTIME_DIR="/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-indicators/indicator-keyboard/src/indicator-keyboard-0.0.0+19.10.20240924/tests"
+export GTK_IM_MODULE="ibus"
+export GDK_BACKEND="x11"
+
+if xvfb-run -a ./indicator-keyboard-tests
+then
+  pkill -f tests/gvfs || exit 0
+else
+  pkill -f tests/gvfs && exit 1
+fi

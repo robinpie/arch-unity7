@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+DESTDIR := debian/session-shortcuts
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	./build.sh
+
+override_dh_clean:
+	rm -rf build/
+
+override_dh_auto_install:
+	mkdir -p $(DESTDIR)/usr/share/applications
+	cp build/* $(DESTDIR)/usr/share/applications
+	dh_auto_install

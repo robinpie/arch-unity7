@@ -1,0 +1,19 @@
+[Scope]
+DBusName=com.canonical.Unity.Scope.Webhistory.Chromiumbookmarks
+DBusPath=/com/canonical/unity/scope/webhistory/chromiumbookmarks
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-browserbookmarks.svg
+QueryBinary=chromium-browser
+Keywords=chromiumbookmarks;chromium;web;bookmarks;
+RequiredMetadata=
+OptionalMetadata=
+Loader=/usr/share/unity-scopes/chromiumbookmarks/unity_chromiumbookmarks_daemon.py
+Module=chromiumbookmarks.unity_chromiumbookmarks_daemon
+ModuleType=python3
+RemoteContent=false
+Type=web
+Name=Chromium Bookmarks
+Description=This is an Ubuntu search plugin that enables information from Chromium to be searched and displayed in the Dash underneath the Web header. If you do not wish to search this content source, you can disable this search plugin.
+SearchHint=Search Chromiumbookmarks
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-chromiumbookmarks

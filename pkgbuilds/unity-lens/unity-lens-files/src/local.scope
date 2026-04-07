@@ -1,0 +1,13 @@
+[Scope]
+DBusName=com.canonical.Unity.Scope.LocalFiles
+DBusPath=/com/canonical/unity/scope/files
+Icon=/usr/share/unity/icons/lens-nav-file.svg
+Name=Files & Folders
+Type=files
+Description=This is an Ubuntu search plugin that enables local files to be searched and displayed in the Dash underneath the Files & Folders header. If you do not wish to search this content source, you can disable this search plugin.
+SearchHint=Search Files & Folders
+Shortcut=f
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-lens-files
+

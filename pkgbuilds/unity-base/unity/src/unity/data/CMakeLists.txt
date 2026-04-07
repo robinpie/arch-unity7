@@ -1,5 +1,4 @@
 add_subdirectory(compiz)
-add_subdirectory(pam)
 
 # GSettings Schema
 SET (UNITY_SCHEMAS "com.canonical.Unity.gschema.xml")
@@ -25,8 +24,6 @@ endif (_schemas_invalid)
 # Actually install and recomple schemas
 message (STATUS "GSettings schemas will be installed into ${GSETTINGS_DIR}")
 install (FILES ${UNITY_SCHEMAS} DESTINATION ${GSETTINGS_DIR} OPTIONAL)
-install (CODE "message (STATUS \"Compiling GSettings schemas\")")
-install (CODE "execute_process (COMMAND ${_glib_comple_schemas} ${GSETTINGS_DIR})")
 
 # Settings for testing
 configure_file (${CMAKE_SOURCE_DIR}/data/${UNITY_SCHEMAS} ${CMAKE_BINARY_DIR}/settings/${UNITY_SCHEMAS})

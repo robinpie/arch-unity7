@@ -1,0 +1,24 @@
+Locate scope
+============
+Tests that the built-in locate scope works.
+
+Search
+------
+
+#. Create a file named "report.txt" in your home directory (`touch report.txt`).
+#. Run updatedb (`sudo updatedb`).
+#. Search for this file with files lens.
+
+Outcome
+  The "report.txt" should show up as a result in the Recent category of files lens.
+
+Privacy
+-------
+
+#. Open the "Privacy" application and add your home directory to the list of folders that shouldn't be monitored.
+#. Create a file named "report.txt" in your home directory (`touch report.txt`).
+#. Run updatedb (`sudo updatedb`).
+#. Search for this file with files lens.
+
+Outcome
+  The "report.txt" should NOT show up as a result in any of the categories of files lens.

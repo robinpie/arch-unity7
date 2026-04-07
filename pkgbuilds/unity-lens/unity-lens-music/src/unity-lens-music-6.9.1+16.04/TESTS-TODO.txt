@@ -1,0 +1,7 @@
+Since testing lenses is dependant on multiple components in the system,
+we use the `libunity-tool` which is able to talk to the lenses and examine
+results they return.
+
+Currently this is not hooked into the build system, but you can run the tests
+by invoking `libunity-tool --test-server-mode ./tests`
+

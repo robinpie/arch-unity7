@@ -32,7 +32,6 @@ set (UNITY_SHARED_SOURCES
      ExpanderView.cpp
      GnomeFileManager.cpp
      FontSettings.cpp
-     FileManager.cpp
      GraphicsUtils.cpp
      IMTextEntry.cpp
      IconLoader.cpp
@@ -46,7 +45,6 @@ set (UNITY_SHARED_SOURCES
      LayoutSystem.cpp
      LineSeparator.cpp
      MenuManager.cpp
-     NemoFileManager.cpp
      OverlayRenderer.cpp
      OverlayScrollView.cpp
      OverlayWindowButtons.cpp

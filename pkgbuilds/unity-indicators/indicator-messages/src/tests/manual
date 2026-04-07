@@ -1,0 +1,80 @@
+
+Test-case indicator-messages/unity7-items-check
+<dl>
+	<dt>Log in to a Unity 7 user session</dt>
+	<dt>Go to the panel and click on the Messages indicator</dt>
+		<dd>Ensure there are items in the menu</dd>
+</dl>
+
+Test-case indicator-messages/unity7-greeter-items-check
+<dl>
+	<dt>Start a system and wait for the greeter or logout of the current user session</dt>
+	<dt>Go to the panel and click on the Messages indicator</dt>
+		<dd>Ensure there are items in the menu</dd>
+</dl>
+
+Test-case indicator-messages/unity8-items-check
+<dl>
+	<dt>Login to a user session running Unity 8</dt>
+	<dt>Pull down the top panel until it sticks open</dt>
+	<dt>Navigate through the tabs until "Notifications" is shown</dt>
+		<dd>Incoming is at the top of the menu</dd>
+		<dd>The menu is populated with items</dd>
+</dl>
+
+Test-case indicator-messages/unity8-phone-symbolic-icon
+<dl>
+	<dt>NOTE: Requires Unity8 and Telephony hardware</dt>
+	<dt>Login to a user session running Unity 8</dt>
+	<dt>Send an SMS to the device</dt>
+		<dd>Icon on the panel should change color signifying a new message</dd>
+	<dt>Verify the application icon in the menu item is monochromatic</dt>
+		<dd>On the right side of the item the application icon should have no color</dd>
+</dl>
+
+Test-case indicator-messages/unity8-embedded-greeter
+<dl>
+	<dt>NOTE: Only works with embedded greeter, split greeter will require modifications to this test</dt>
+	<dt>NOTE: Only works on a device that can receive SMS messages</dt>
+	<dt>Ensure System Settings is set to "Show Messages on Greeter"</dt>
+	<dt>Send an SMS to the device</dt>
+		<dd>The notification icon should change color</dd>
+		<dd>There should be an entry in the messaging menu with the SMS message</dd>
+		<dd>The item should include the sender and the start of the message</dd>
+	<dt>Go to the greeter. This can be done by hitting the lock button twice.</dt>
+	<dt>Ensure the messaging menu has the message</dt>
+		<dd>The notification icon should have color</dd>
+		<dd>There should be an entry in the messaging menu with the SMS message</dd>
+		<dd>The item should include the sender and the start of the message</dd>
+	<dt>Clear the message in the greeter</dt>
+		<dd>The message should no longer be in the messaging menu</dd>
+	<dt>Disable System Settings value "Show Messages on Greeter"</dt>
+	<dt>Send an SMS to the device</dt>
+		<dd>The notification icon should change color</dd>
+		<dd>There should be an entry in the messaging menu with the SMS message</dd>
+		<dd>The item should include the sender and the start of the message</dd>
+	<dt>Go to the greeter. This can be done by hitting the lock button twice.</dt>
+	<dt>Ensure the messaging menu has the message, but it does not include the start of the message</dt>
+		<dd>The notification icon should have color</dd>
+		<dd>There should be an entry in the messaging menu with the SMS message</dd>
+		<dd>The item should include the sender but NOT the start of the message</dd>
+	<dt>Clear the message in the greeter</dt>
+		<dd>The message should no longer be in the messaging menu</dd>
+</dl>
+
+Test-case indicator-messages/push-message-twitter
+<dl>
+	<dt>From a shell prompt send a simultated Twitter push notification</dt>
+		<dd>gdbus call --session --dest com.ubuntu.Postal --object-path /com/ubuntu/Postal/com_2eubuntu_2edeveloper_2ewebapps_2ewebapp_2dtwitter --method com.ubuntu.Postal.Post com.ubuntu.developer.webapps.webapp-twitter_webapp-twitter '"{\"message\": \"foobar\", \"notification\":{\"card\": {\"summary\": \"yes\", \"body\": \"hello\", \"popup\": true, \"persist\": true}}}"'</dd>
+		<dd>The messaging envelope on the panel should change to highlight a message</dd>
+	<dt>Open the messaging menu</dt>
+		<dd>The menu should contain an entry with the Twitter icon for the application</dd>
+		<dd>The title of the message should be 'yes'</dd>
+		<dd>The body of the message should be 'hello'</dd>
+		<dd>At the bottom of them menu there should be a 'Clear All' menu item</dd>
+	<dt>Clear the message using the 'Clear All' command</dt>
+		<dd>The Twitter message should disappear</dd>
+		<dd>The 'Clear All' item should disappear</dd>
+		<dd>The icon in the panel should return to its original state</dd>
+</dl>
+

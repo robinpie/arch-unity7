@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.canonical.Unity.Scope.Photos.Shotwell
+Exec=/usr/share/unity-scopes/shotwell/unity_shotwell_daemon.py

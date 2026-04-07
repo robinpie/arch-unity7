@@ -1,0 +1,23 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/web
+Icon=
+CategoryIcon=/usr/share/icons/unity-icon-theme/places/svg/group-internet.svg
+Name=Web
+Type=web
+IsMaster=true
+Keywords=web;
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category history]
+Name=History
+Icon=
+DedupField=uri
+
+[Category bookmarks]
+Name=Bookmarks
+Icon=
+DedupField=uri
+

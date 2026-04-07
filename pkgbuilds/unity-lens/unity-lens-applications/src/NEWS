@@ -1,0 +1,31 @@
+2010-10-06: unity-place-applications 0.4.12
+------------------------------------------
+
+ * Update category icons
+
+ * Make sure we don't update the model too soon, otherwise Dash flickers
+
+ * Fix duplicates in Installed and Available applications
+ 
+ * Unset DBUS_STARTER* environment variables which caused weird behaviour 
+   of subprocesses
+ 
+2010-06-24: unity-place-applications 0.2.1
+------------------------------------------
+
+ * Prototype impl. of application sections in place.
+ 
+ * Pull Most Used apps from Zeitgeist
+ 
+ * Search still only working against Zeitgeist, no Software Center/APT
+   integration yet
+
+2010-06-22: unity-place-applications 0.2.0
+------------------------------------------
+
+ * Very partial implementation ofnew Unity DBus API for places.
+   Basically only searching works, and you'll only get results
+   in the "Most Used" group - pulled from Zeitgeist. Nothing
+   like seeing all apps - let alone restricting them by section
+   is ready yet.
+

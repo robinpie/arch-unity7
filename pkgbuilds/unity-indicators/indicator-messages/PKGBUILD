@@ -1,0 +1,69 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/indicator-messages
+
+pkgname=indicator-messages
+pkgver=13.10.1
+_uver=+18.10.20180918
+_urev=0ubuntu7
+pkgrel=1
+pkgdesc="Indicator that collects messages that need a response used by the Unity7 user interface"
+arch=('x86_64')
+url="https://launchpad.net/indicator-messages"
+license=('GPL-3.0-or-later')
+depends=(
+    'glib2'
+    'libindicator-gtk3'
+    'dconf'
+    'accountsservice'
+    'gobject-introspection'
+)
+makedepends=(
+    'gnome-common'
+    'systemd'
+    'vala'
+    'intltool'
+    'autoconf'
+    'automake'
+    'libtool'
+)
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+)
+sha256sums=('SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+
+    # Apply Ubuntu diff (flat extraction)
+    patch -p1 --batch --forward -i "${pkgname}_${pkgver}${_uver}-${_urev}.diff" || true
+
+    # Apply debian patch series
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+
+    # Remove dbus-test-runner dependency (not available on Arch)
+    sed -i "/DBUSTEST/d" configure.ac || true
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "$srcdir"
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --disable-gtk-doc
+    make
+}
+
+package() {
+    cd "$srcdir"
+    make DESTDIR="$pkgdir" install
+    find "$pkgdir" -name '*.la' -delete
+}

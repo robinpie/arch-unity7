@@ -1,0 +1,9 @@
+/usr/share/unity/indicators/com.canonical.indicator.sound
+/usr/lib/systemd/user/indicator-sound.service
+/usr/share/upstart/systemd-session/upstart/indicator-sound.override
+/usr/share/upstart/sessions/indicator-sound.conf
+/usr/share/glib-2.0/schemas/com.canonical.indicator.sound.gschema.xml
+/usr/share/dbus-1/interfaces/com.canonical.indicator.sound.AccountsService.xml
+/usr/share/polkit-1/actions/com.canonical.indicator.sound.AccountsService.policy
+/usr/var/lib/polkit-1/localauthority/10-vendor.d/50-com.canonical.indicator.sound.AccountsService.pkla
+/usr/libexec/indicator-sound/indicator-sound-service

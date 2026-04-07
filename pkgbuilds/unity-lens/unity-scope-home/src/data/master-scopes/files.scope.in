@@ -1,0 +1,49 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/files
+Icon=/usr/share/unity/icons/lens-nav-file.svg
+CategoryIcon=/usr/share/icons/unity-icon-theme/places/svg/group-files.svg
+_Name=Files & Folders
+_SearchHint=Search files & folders
+Type=files
+IsMaster=true
+Shortcut=f
+_Keywords=files;
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category recent]
+_Name=Recent
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-recent.svg
+DedupField=uri
+
+[Category downloads]
+_Name=Downloads
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-downloads.svg
+DedupField=uri
+
+[Category folders]
+_Name=Folders
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-folders.svg
+DedupField=uri
+
+[Filter modified]
+_Name=Last modified
+Type=filter-radiooption
+OptionIDs=last-7-days;last-30-days;last-year;
+_OptionNames=Last 7 days;Last 30 days;Last year;
+
+[Filter type]
+_Name=Type
+Type=filter-checkoption
+SortType=display-name
+OptionIDs=documents;folders;images;audio;videos;presentations;other;
+_OptionNames=Documents;Folders;Images;Audio;Videos;Presentations;Other;
+
+[Filter size]
+_Name=Size
+Type=filter-multirange
+OptionIDs=100kB;1MB;10MB;100MB;1GB;>1GB;
+_OptionNames=100kB;1MB;10MB;100MB;1GB;>1GB;
+

@@ -1,0 +1,14 @@
+Hidden files / dirs are not displayed
+-------------------------------------
+Test that hidden files, hidden folders, or normal files in hidden folders are not displayed in search results.
+
+Setup:
+Create a few combinations of hidden files/folders using nautilus (CTRL+H in nautilus to view hidden files), e.g. ~/.Foo/bar.txt, ~/.foo.txt, ~/.Foo/bar/baz.txt.
+Update locatedb (e.g. sudo /etc/cron.daily/mlocate).
+
+Actions:
+Type search queries such as "Foo", "bar", "baz" in the dash search query.
+
+Expected Result:
+Verify none of the newly created hidden files are displayed in the Dash home view with empty search.
+Verify none of the hidden files are displayed after entering a search query.

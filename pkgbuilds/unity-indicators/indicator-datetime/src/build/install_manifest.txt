@@ -1,0 +1,6 @@
+/usr/libexec/indicator-datetime/indicator-datetime-service
+/usr/share/glib-2.0/schemas/com.canonical.indicator.datetime.gschema.xml
+/usr/lib/systemd/user/indicator-datetime.service
+/usr/share/upstart/systemd-session/upstart/indicator-datetime.override
+/usr/share/upstart/sessions/indicator-datetime.conf
+/usr/share/unity/indicators/com.canonical.indicator.datetime

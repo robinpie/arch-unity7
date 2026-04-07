@@ -1,0 +1,54 @@
+#!/usr/bin/make -f
+
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
+
+%:
+	dh $@ --with autoreconf,translations
+
+override_dh_autoreconf:
+	NOCONFIGURE=1 dh_autoreconf ./autogen.sh
+
+override_dh_install:
+	dh_install --fail-missing
+	rm -f debian/unity-lens-applications/usr/lib/*/unity/*.la
+
+override_dh_auto_test:
+	# get the real home directory - some tests rely on HOME and ~${USER}
+	# corresponding
+	HOME="$(shell eval echo ~${USER})" dh_auto_test
+#!/usr/bin/make -f
+
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
+
+%:
+	dh $@ --with autoreconf,translations
+
+override_dh_autoreconf:
+	NOCONFIGURE=1 dh_autoreconf ./autogen.sh
+
+override_dh_install:
+	dh_install --fail-missing
+	rm -f debian/unity-lens-applications/usr/lib/*/unity/*.la
+
+override_dh_auto_test:
+	# get the real home directory - some tests rely on HOME and ~${USER}
+	# corresponding
+	HOME="$(shell eval echo ~${USER})" dh_auto_test
+#!/usr/bin/make -f
+
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
+
+%:
+	dh $@ --with autoreconf,translations
+
+override_dh_autoreconf:
+	NOCONFIGURE=1 dh_autoreconf ./autogen.sh
+
+override_dh_install:
+	dh_install --fail-missing
+	rm -f debian/unity-lens-applications/usr/lib/*/unity/*.la
+
+override_dh_auto_test:
+	# get the real home directory - some tests rely on HOME and ~${USER}
+	# corresponding
+	HOME="$(shell eval echo ~${USER})" dh_auto_test

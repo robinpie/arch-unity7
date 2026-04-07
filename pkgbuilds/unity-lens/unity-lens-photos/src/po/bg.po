@@ -1,0 +1,239 @@
+# Bulgarian translation for unity-lens-photos
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the unity-lens-photos package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: unity-lens-photos\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-03-18 01:34+0100\n"
+"PO-Revision-Date: 2013-11-21 12:14+0000\n"
+"Last-Translator: Atanas Kovachki <Unknown>\n"
+"Language-Team: Bulgarian <bg@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-11-22 05:59+0000\n"
+"X-Generator: Launchpad (build 16831)\n"
+
+#. Translatable strings
+#: ../src/unity_facebook_daemon.py:44 ../data/facebook.scope.in.h:2
+msgid "Facebook"
+msgstr "Фейсбук"
+
+#: ../src/unity_facebook_daemon.py:45 ../src/unity_picasa_daemon.py:56
+#: ../src/unity_shotwell_daemon.py:36 ../src/unity_flickr_daemon.py:47
+msgid "Sorry, there are no photos that match your search."
+msgstr "Извинете, няма снимки, отговарящи на вашето търсене."
+
+#: ../src/unity_facebook_daemon.py:47 ../src/unity_picasa_daemon.py:45
+#: ../src/unity_shotwell_daemon.py:41 ../src/unity_flickr_daemon.py:49
+msgid "My Photos"
+msgstr "Моите снимки"
+
+#: ../src/unity_facebook_daemon.py:48 ../src/unity_picasa_daemon.py:46
+#: ../src/unity_shotwell_daemon.py:42 ../src/unity_flickr_daemon.py:50
+msgid "Friends Photos"
+msgstr "Снимки на приятели"
+
+#: ../src/unity_facebook_daemon.py:49 ../src/unity_picasa_daemon.py:47
+#: ../src/unity_shotwell_daemon.py:43 ../src/unity_flickr_daemon.py:51
+msgid "Online Photos"
+msgstr "Снимки в интернет"
+
+#: ../src/unity_facebook_daemon.py:50 ../src/unity_picasa_daemon.py:48
+#: ../src/unity_shotwell_daemon.py:44 ../src/unity_flickr_daemon.py:52
+msgid "Photos"
+msgstr "Снимки"
+
+#: ../src/unity_facebook_daemon.py:51 ../src/unity_picasa_daemon.py:49
+#: ../src/unity_shotwell_daemon.py:45 ../src/unity_flickr_daemon.py:53
+msgid "Recent"
+msgstr "Последни"
+
+#: ../src/unity_facebook_daemon.py:52 ../src/unity_picasa_daemon.py:50
+#: ../src/unity_shotwell_daemon.py:46 ../src/unity_flickr_daemon.py:54
+msgid "Date"
+msgstr "Дата"
+
+#: ../src/unity_facebook_daemon.py:53 ../src/unity_picasa_daemon.py:51
+#: ../src/unity_shotwell_daemon.py:47 ../src/unity_flickr_daemon.py:55
+msgid "Last 7 days"
+msgstr "Последните 7 дни"
+
+#: ../src/unity_facebook_daemon.py:54 ../src/unity_picasa_daemon.py:52
+#: ../src/unity_shotwell_daemon.py:48 ../src/unity_flickr_daemon.py:56
+msgid "Last 30 days"
+msgstr "Последните 30 дни"
+
+#: ../src/unity_facebook_daemon.py:55 ../src/unity_picasa_daemon.py:53
+#: ../src/unity_shotwell_daemon.py:49 ../src/unity_flickr_daemon.py:57
+msgid "Last 6 months"
+msgstr "Последните 6 месеца"
+
+#: ../src/unity_facebook_daemon.py:56 ../src/unity_picasa_daemon.py:54
+#: ../src/unity_shotwell_daemon.py:50 ../src/unity_flickr_daemon.py:58
+msgid "Older"
+msgstr "По-стари"
+
+#: ../src/unity_facebook_daemon.py:503
+msgid "Location"
+msgstr "Местоположение"
+
+#: ../src/unity_facebook_daemon.py:508 ../src/unity_picasa_daemon.py:415
+msgid "Album"
+msgstr "Албум"
+
+#: ../src/unity_facebook_daemon.py:510
+msgid "With"
+msgstr "С"
+
+#: ../src/unity_facebook_daemon.py:514 ../src/unity_picasa_daemon.py:418
+#: ../src/unity_shotwell_daemon.py:238 ../src/unity_flickr_daemon.py:543
+msgid "View"
+msgstr "Преглеждане"
+
+#: ../src/unity_picasa_daemon.py:405 ../src/unity_flickr_daemon.py:521
+#, python-format
+msgid "By %s, %s"
+msgstr "От %s, %s"
+
+#: ../src/unity_picasa_daemon.py:407 ../src/unity_flickr_daemon.py:536
+msgid "Camera"
+msgstr "Фотоапарат"
+
+#: ../src/unity_picasa_daemon.py:409 ../src/unity_shotwell_daemon.py:232
+msgid "Dimensions"
+msgstr "Размери"
+
+#: ../src/unity_picasa_daemon.py:411 ../src/unity_shotwell_daemon.py:234
+msgid "Size"
+msgstr "Размер"
+
+#: ../src/unity_picasa_daemon.py:413 ../src/unity_flickr_daemon.py:538
+msgid "License"
+msgstr "Лиценз"
+
+#. Translatable strings
+#: ../src/unity_shotwell_daemon.py:35
+msgid "This Computer"
+msgstr "Този компютър"
+
+#: ../src/unity_shotwell_daemon.py:214
+msgid ""
+"<b>This photo is missing.</b>\n"
+"You can open Shotwell to retrieve it or remove it from your library."
+msgstr ""
+"<b>Тази снимка липсва.</b>\n"
+"Можете да отворите Shotwell за да я изтеглите или премахнете от вашата "
+"библиотека."
+
+#: ../src/unity_shotwell_daemon.py:228
+#, python-format
+msgid "%s x %s pixels"
+msgstr "%s x %s пиксела"
+
+#: ../src/unity_shotwell_daemon.py:236 ../src/unity_flickr_daemon.py:540
+msgid "Tags"
+msgstr "Етикети"
+
+#: ../src/unity_shotwell_daemon.py:242
+msgid "Show in Folder"
+msgstr "Покажи в папката"
+
+#: ../src/unity_shotwell_daemon.py:246
+msgid "Email"
+msgstr "Имейл"
+
+#: ../src/unity_shotwell_daemon.py:250
+msgid "Print"
+msgstr "Печат"
+
+#: ../src/unity_shotwell_daemon.py:254
+msgid "Open Shotwell"
+msgstr "Отваряне на Shotwell"
+
+#. Translatable strings
+#: ../src/unity_flickr_daemon.py:46 ../data/flickr.scope.in.h:2
+msgid "Flickr"
+msgstr "Flickr"
+
+#: ../data/flickr.scope.in.h:1
+msgid "flickr;"
+msgstr "flickr;"
+
+#: ../data/flickr.scope.in.h:3
+msgid "Find Flickr photos"
+msgstr "Намери снимките си във Flickr"
+
+#: ../data/flickr.scope.in.h:4
+msgid "Search Flickr"
+msgstr "Търсене във Flickr"
+
+#: ../data/facebook.scope.in.h:1
+msgid "facebook;"
+msgstr "facebook;"
+
+#: ../data/facebook.scope.in.h:3
+msgid "Find Facebook photos"
+msgstr "Намери снимките си във Фейсбук"
+
+#: ../data/facebook.scope.in.h:4
+msgid "Search Facebook"
+msgstr "Търсене във Фейсбук"
+
+#: ../data/shotwell.scope.in.h:1
+msgid "shotwell;"
+msgstr "shotwell;"
+
+#: ../data/shotwell.scope.in.h:2
+msgid "Shotwell"
+msgstr "Shotwell"
+
+#: ../data/shotwell.scope.in.h:3
+msgid "Find Shotwell photos"
+msgstr "Намери снимките си в Shotwell"
+
+#: ../data/shotwell.scope.in.h:4
+msgid "Search Shotwell"
+msgstr "Търсене в Shotwell"
+
+#: ../data/picasa.scope.in.h:1
+msgid "picasa;"
+msgstr "picasa;"
+
+#: ../data/picasa.scope.in.h:2
+msgid "Picasa"
+msgstr "Picasa"
+
+#: ../data/picasa.scope.in.h:3
+msgid "Find Picasa photos"
+msgstr "Намери снимките си в Picasa"
+
+#: ../data/picasa.scope.in.h:4
+msgid "Search Picasa"
+msgstr "Търсене в Picasa"
+
+#: ../unity-lens-photos.application.in.h:1
+msgid "Photos search plugin"
+msgstr "Добавка за търсене на снимки"
+
+#: ../unity-lens-photos.application.in.h:2
+msgid "Search your and your friends' Flickr photos"
+msgstr "Търсене във вашите снимки и в снимките на вашите приятели във Flickr"
+
+#: ../unity-lens-photos.application.in.h:3
+msgid "Search your and your friends' Facebook photos"
+msgstr ""
+"Търсене във вашите снимки и в снимките на вашите приятели във Фейсбук"
+
+#: ../unity-lens-photos.application.in.h:4
+msgid "Search your Picasa photos"
+msgstr "Върсене във вашите снимки в Picasa"
+
+#~ msgid "Search Photos"
+#~ msgstr "Търсене на снимки"
+
+#~ msgid "Sources"
+#~ msgstr "Източници"

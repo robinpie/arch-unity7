@@ -1,0 +1,44 @@
+{
+  "other": [
+    {
+      "url": "http://url0",
+      "source": "source0",
+      "img": "http://image0",
+      "title": "title0"
+    },
+    {
+      "url": "http://url1",
+      "source": "source1",
+      "details": "http://details1",
+      "img": "http://image1",
+      "title": "title1"
+    }
+  ],
+  "treats": [
+    {
+      "img": "http://image2",
+      "title": "title2",
+      "url": "http://url2",
+      "price": 1,
+      "source": "source2",
+      "details": "http://details2",
+      "formatted_price": "1 USD"
+    },
+    {
+      "img": "http://image3",
+      "title": "title3",
+      "url": "http://url3",
+      "price": 0,
+      "source": "source3",
+      "details": "http://details3",
+      "formatted_price": "free"
+    },
+    {
+      "img": "http://image4",
+      "title": "title4",
+      "url": "http://url4",
+      "source": "source4",
+      "details": "http://details4"
+    }
+  ]
+}

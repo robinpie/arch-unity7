@@ -1,0 +1,22 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/books
+Icon=
+CategoryIcon=@prefix@/share/icons/unity-icon-theme/places/svg/group-books.svg
+_Name=Books
+Type=books
+IsMaster=true
+_Keywords=books;
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category recent]
+_Name=Recent
+Icon=@prefix@/share/icons/unity-icon-theme/places/svg/group-favouritefolders.svg
+DedupField=uri
+
+[Category top]
+_Name=Top
+Icon=@prefix@/share/icons/unity-icon-theme/places/svg/group-favouritefolders.svg
+DedupField=uri

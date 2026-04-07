@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: unity-scope-calculator
+Version: 0.1
+Home-page: http://launchpad.net/ubuntu-scopes
+Author: David Callé
+Author-email: davidc@framli.eu
+License: GNU General Public License (GPL)
+License-File: COPYING
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file

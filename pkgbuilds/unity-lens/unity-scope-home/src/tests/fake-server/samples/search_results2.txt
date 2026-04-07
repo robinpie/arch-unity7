@@ -1,0 +1,7 @@
+{"scopes": [["more_suggestions-amazon.scope", "server"], ["more_suggestions-skimlinks.scope", "server"], ["more_suggestions-u1ms.scope", "server"], ["reference-wikipedia.scope", "server"], ["reference-dictionary.scope", "server"], ["reference-synonym.scope", "server"], ["reference-antonym.scope", "server"]], "type": "recommendations"}
+{"info": {"more_suggestions-amazon.scope": []}, "type": "results"}
+{"info": {"more_suggestions-u1ms.scope": []}, "type": "results"}
+{"info": {"reference-antonym.scope": []}, "type": "results"}
+{"info": {"reference-synonym.scope": []}, "type": "results"}
+{"info": {"reference-wikipedia.scope": []}, "type": "results"}
+{"info": {"reference-dictionary.scope": []}, "type": "results"}

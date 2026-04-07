@@ -1,0 +1,2 @@
+/usr/bin/ar qc libhud-lib.a "CMakeFiles/hud-lib.dir/HudAbstractView.cpp.o" "CMakeFiles/hud-lib.dir/HudButton.cpp.o" "CMakeFiles/hud-lib.dir/HudController.cpp.o" "CMakeFiles/hud-lib.dir/HudIcon.cpp.o" "CMakeFiles/hud-lib.dir/HudIconTextureSource.cpp.o" "CMakeFiles/hud-lib.dir/HudPrivate.cpp.o" "CMakeFiles/hud-lib.dir/HudView.cpp.o"
+/usr/bin/ranlib libhud-lib.a

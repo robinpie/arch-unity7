@@ -1,0 +1,115 @@
+# Danish translation for unity-place-applications
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the unity-place-applications package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: unity-place-applications\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-08-23 21:02+0200\n"
+"PO-Revision-Date: 2010-08-23 19:45+0000\n"
+"Last-Translator: Mikkel Kamstrup Erlandsen <mikkel.kamstrup@gmail.com>\n"
+"Language-Team: Danish <da@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-08-25 06:44+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: ../src/daemon.vala:223
+msgid "All Applications"
+msgstr "Alle programmer"
+
+#: ../src/daemon.vala:225
+msgid "Accessories"
+msgstr "Tilbehør"
+
+#: ../src/daemon.vala:227
+msgid "Games"
+msgstr "Spil"
+
+#: ../src/daemon.vala:229
+msgid "Internet"
+msgstr "Internet"
+
+#: ../src/daemon.vala:231
+msgid "Media"
+msgstr "Medie"
+
+#: ../src/daemon.vala:233
+msgid "Office"
+msgstr "Kontor"
+
+#: ../src/daemon.vala:235
+msgid "System"
+msgstr "System"
+
+#: ../src/daemon.vala:251
+msgid "Most Used"
+msgstr "Mest brugte"
+
+#: ../src/daemon.vala:254
+msgid "Installed"
+msgstr "Installeret"
+
+#: ../src/daemon.vala:257
+msgid "Available"
+msgstr "Tilgængelig"
+
+#: ../src/daemon.vala:774
+msgid "You search did not match any applications"
+msgstr "Ingen programmer matchede din søgning"
+
+#: ../src/daemon.vala:784
+msgid "Search the web"
+msgstr "Søg på nettet"
+
+#: ../src/daemon.vala:800 ../src/daemon.vala:821
+msgid "applications"
+msgstr "programmer"
+
+#: ../src/daemon.vala:803
+msgid "accessories"
+msgstr "tilbehør"
+
+#: ../src/daemon.vala:806
+msgid "games"
+msgstr "spil"
+
+#: ../src/daemon.vala:809
+msgid "internet applications"
+msgstr "internetprogrammer"
+
+#: ../src/daemon.vala:812
+msgid "media applications"
+msgstr "mediaprogrammer"
+
+#: ../src/daemon.vala:815
+msgid "office applications"
+msgstr "kontorprogrammer"
+
+#: ../src/daemon.vala:818
+msgid "system applications"
+msgstr "systemprogrammer"
+
+#: ../src/daemon.vala:830
+msgid "There are no $section_name installed on this computer"
+msgstr "Der er ingen $section_name installeret på denne computer"
+
+#: ../src/main.vala:50
+msgid ""
+"Another Applications Place daemon appears to be running.\n"
+"Bailing out."
+msgstr ""
+"Der kører allerede en anden programdæmon.\n"
+"Afslutter."
+
+#: ../src/main.vala:54
+#, c-format
+msgid ""
+"Error connecting to session bus: %s.\n"
+"Bailing out."
+msgstr ""
+"Fejl ved opkobling til sessionsbus: %s.\n"
+"Afslutter."

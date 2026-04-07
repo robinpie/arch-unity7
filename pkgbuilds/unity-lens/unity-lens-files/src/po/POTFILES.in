@@ -1,0 +1,6 @@
+[encoding: UTF-8]
+src/daemon.vala
+src/utils.vala
+src/main.vala
+[type: gettext/ini]local.scope.in.in
+

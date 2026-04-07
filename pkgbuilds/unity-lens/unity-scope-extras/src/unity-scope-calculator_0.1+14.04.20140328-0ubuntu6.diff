@@ -1,0 +1,270 @@
+--- unity-scope-calculator-0.1+14.04.20140328.orig/debian/changelog
++++ unity-scope-calculator-0.1+14.04.20140328/debian/changelog
+@@ -0,0 +1,162 @@
++unity-scope-calculator (0.1+14.04.20140328-0ubuntu6) resolute; urgency=medium
++
++  * No-change mass rebuild for Ubuntu 26.04 (LP: #2132257)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 02 Dec 2025 23:10:11 +0100
++
++unity-scope-calculator (0.1+14.04.20140328-0ubuntu5) hirsute; urgency=medium
++
++  * debian/control:
++    - updated for the new libunity gir naming
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 27 Jan 2021 16:45:03 +0100
++
++unity-scope-calculator (0.1+14.04.20140328-0ubuntu4) disco; urgency=medium
++
++  [ Khurshid Alam ]
++  * Fix build for disco (lp: #1810727)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 01 Mar 2019 17:39:10 +0100
++
++unity-scope-calculator (0.1+14.04.20140328-0ubuntu3) bionic; urgency=medium
++
++  * Add "X-Ubuntu-Use-Langpack: yes" to debian/control now that this package is
++    in Universe (LP: #1760435).
++
++ -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 07 Apr 2018 11:44:58 -0500
++
++unity-scope-calculator (0.1+14.04.20140328-0ubuntu1) trusty; urgency=low
++
++  [ David Callé ]
++  * Don't crash Unity bindings when building results. (LP: #1274669)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 28 Mar 2014 09:18:45 +0000
++
++unity-scope-calculator (0.1+13.10.20130723-0ubuntu1) saucy; urgency=low
++
++  [ David Callé ]
++  * Add module and moduletype.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 41
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 23 Jul 2013 06:21:34 +0000
++
++unity-scope-calculator (0.1daily13.06.05-0ubuntu1) saucy; urgency=low
++
++  [ James Henstridge ]
++  * Re-enable test, using a stub script to emulate gnome-calculator.
++  * Disable test of "sqrtpi" test due to encoding issues.
++  * Open calculator results in gnome-calculator.
++  * Add a calculator image to the scope preview.
++
++  [ David Callé ]
++  * * Scope init * Use gcalctool * Add tests
++  * Don't return results if operation==result
++  * One more test
++  * Init/update POT file
++  * * New API * Python3 * Icon * Tests
++  * Add packaging
++  * Update tests
++  * Fix scope-package error in rules
++  * Update .scope file to specs
++  * Use gnome-calculator instead of gcalctool
++  * Use gnome-calculator as a dependency instead of gcalctool
++  * Fix copyright
++  * Install .scope file in its master folder
++  * Install to /usr/share/unity-scopes, fix service file accordingly
++  * Depends on unity-scopes-runner
++  * Remove failing test for now : requires X. No time to port to xorg
++    fake server
++  * Fix Loader field
++  * Don't install service icon. It exists in unity-asset-pool.
++  * Update cat id to match master scope.
++  * Add QueryBinary field to .scope file.
++  * Open calculator results in gnome-calculator.
++  * Implement basic calculator previews.
++  * Change RemoteContent to false.
++  * Update description.
++  * Bump Unity deps.
++
++  [ Didier Roche ]
++  * make debian/rules executable
++  * fix typo
++  * add python3-gi build-dep
++  * nuke wrong seederie
++  * Fix special character in debian/control
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 39
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 06:18:58 +0000
++
++unity-scope-calculator (0.1daily13.05.31ubuntu.unity.next-0ubuntu1) raring; urgency=low
++
++  [ James Henstridge ]
++  * Re-enable test, using a stub script to emulate gnome-calculator.
++  * Disable test of "sqrtpi" test due to encoding issues.
++  * Open calculator results in gnome-calculator.
++  * Add a calculator image to the scope preview.
++
++  [ David Callé ]
++  * * Scope init * Use gcalctool * Add tests
++  * Don't return results if operation==result
++  * One more test
++  * Init/update POT file
++  * * New API * Python3 * Icon * Tests
++  * Add packaging
++  * Update tests
++  * Fix scope-package error in rules
++  * Update .scope file to specs
++  * Use gnome-calculator instead of gcalctool
++  * Use gnome-calculator as a dependency instead of gcalctool
++  * Fix copyright
++  * Install .scope file in its master folder
++  * Install to /usr/share/unity-scopes, fix service file accordingly
++  * Depends on unity-scopes-runner
++  * Remove failing test for now : requires X. No time to port to xorg
++    fake server
++  * Fix Loader field
++  * Don't install service icon. It exists in unity-asset-pool.
++  * Update cat id to match master scope.
++  * Add QueryBinary field to .scope file.
++  * Open calculator results in gnome-calculator.
++  * Implement basic calculator previews.
++  * Change RemoteContent to false.
++  * Update description.
++  * Bump Unity deps.
++
++  [ Didier Roche ]
++  * make debian/rules executable
++  * fix typo
++  * add python3-gi build-dep
++  * nuke wrong seederie
++  * Fix special character in debian/control
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 38 (ubuntu-unity/next)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 31 May 2013 04:22:19 +0000
++
++unity-scope-calculator (0.1daily13.05.07ubuntu.unity.experimental.certified-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 35 (ubuntu-unity/experimental-
++    certified)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 07 May 2013 07:22:47 +0000
++
++unity-scope-calculator (0.1daily13.04.10ubuntu.unity.experimental.certified-0ubuntu1) raring; urgency=low
++
++  [ David Callé ]
++  * Initial release
++
++  [ Didier Roche ]
++  * bump version in debian/control
++  * small packaging fixes. Don't go native but split
++  * Automatic snapshot from revision 1 (boostrap)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 33 (ubuntu-unity/experimental-
++    certified)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 10 Apr 2013 07:33:41 +0000
+--- unity-scope-calculator-0.1+14.04.20140328.orig/debian/compat
++++ unity-scope-calculator-0.1+14.04.20140328/debian/compat
+@@ -0,0 +1 @@
++9
+--- unity-scope-calculator-0.1+14.04.20140328.orig/debian/control
++++ unity-scope-calculator-0.1+14.04.20140328/debian/control
+@@ -0,0 +1,37 @@
++Source: unity-scope-calculator
++Section: gnome
++Priority: optional
++Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
++XSBC-Original-Maintainer: David Callé <davidc@framli.eu>
++Build-Depends: debhelper (>= 9),
++               dh-python,
++               python3,
++               python3-distutils-extra,
++               python3-gi,
++               pkg-config,
++               gnome-calculator,
++               python3-nose,
++               gir1.2-unity-7.0 (>= 7),
++               gir1.2-dee-1.0 (>= 1.2.5),
++               gir1.2-glib-2.0,
++Standards-Version: 3.9.4
++Homepage: https://launchpad.net/unity-scope-calculator
++# If you aren't a member of ~submarine but need to upload packaging changes,
++# just go ahead. ~submarine will notice and sync up the code again.
++Vcs-Bzr: https://code.launchpad.net/~submarine/unity-scope-calculator/trunk
++X-Ubuntu-Use-Langpack: yes
++
++Package: unity-scope-calculator
++Architecture: all
++Depends: ${misc:Depends},
++         ${python3:Depends},
++         python3,
++         python3-gi,
++         gnome-calculator,
++         gir1.2-unity-7.0 (>= 7),
++         gir1.2-dee-1.0 (>= 1.2.5),
++         unity-scopes-runner,
++         gir1.2-glib-2.0
++Description: Calculator scope for Unity
++ This package contains the "calculator" scope which allows Unity
++ to compute calculator results.
+--- unity-scope-calculator-0.1+14.04.20140328.orig/debian/copyright
++++ unity-scope-calculator-0.1+14.04.20140328/debian/copyright
+@@ -0,0 +1,22 @@
++Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
++Source: https://launchpad.net/unity-scope-calculator
++Upstream-Name: unity-scope-calculator
++Upstream-Contact: David Callé <davidc@framli.eu>
++
++Files: *
++Copyright: 2013 David Callé
++License: GPL-3
++ This program is free software: you can redistribute it and/or modify
++ it under the terms of the GNU General Public License as published by
++ the Free Software Foundation, version 3 of the License.
++ .
++ This program is distributed in the hope that it will be useful,
++ but WITHOUT ANY WARRANTY; without even the implied warranty of
++ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ GNU General Public License for more details.
++ .
++ You should have received a copy of the GNU General Public License
++ along with this program.  If not, see <http://www.gnu.org/licenses/>.
++ .
++ On Debian systems, the complete text of the GNU General
++ Public License version 3 can be found in '/usr/share/common-licenses/GPL-3'.
+--- unity-scope-calculator-0.1+14.04.20140328.orig/debian/rules
++++ unity-scope-calculator-0.1+14.04.20140328/debian/rules
+@@ -0,0 +1,18 @@
++#!/usr/bin/make -f
++# -*- makefile -*-
++
++
++%:
++	dh $@ --with python3
++
++override_dh_auto_clean:
++	python3 setup.py clean -a
++
++override_dh_auto_build:
++	python3 setup.py build
++
++override_dh_auto_test:
++	nosetests3
++
++override_dh_auto_install:
++	python3 setup.py install --root=$(CURDIR)/debian/unity-scope-calculator --install-layout=deb
+--- unity-scope-calculator-0.1+14.04.20140328.orig/debian/source/format
++++ unity-scope-calculator-0.1+14.04.20140328/debian/source/format
+@@ -0,0 +1 @@
++1.0
+--- unity-scope-calculator-0.1+14.04.20140328.orig/tests/test_calculator.py
++++ unity-scope-calculator-0.1+14.04.20140328/tests/test_calculator.py
+@@ -79,7 +79,7 @@
+         self.assertEqual(preview.props.title, "3")
+         self.assertEqual(preview.props.subtitle, "1+2")
+         self.assertNotEqual(preview.props.image, None)
+-        self.assertEqual(preview.props.image.get_names(), ['gnome-calculator'])
++        self.assertEqual(preview.props.image.get_names(), ['gnome-calculator', 'gnome-calculator-symbolic'])
+ 
+ if __name__ == '__main__':
+     unittest.main()

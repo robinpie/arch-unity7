@@ -1,0 +1,24 @@
+# Maintainer: arch-unity7 port
+
+pkgname=unity-lens-meta
+pkgver=7
+pkgrel=1
+pkgdesc="Unity Desktop - meta package to pull in all Unity lenses"
+arch=('any')
+url="https://launchpad.net/unity"
+license=('GPL-3.0-or-later')
+depends=(
+    'unity-lens-applications'
+    'unity-scope-home'
+    'unity-lens-files'
+    'unity-lens-music'
+    'unity-lens-photos'
+    'unity-lens-video'
+    'unity-scope-extras'
+)
+source=()
+sha256sums=()
+
+package() {
+    : # metapackage
+}

@@ -1,0 +1,378 @@
+--- unity-lens-photos-1.0+17.10.20170605.orig/debian/changelog
++++ unity-lens-photos-1.0+17.10.20170605/debian/changelog
+@@ -0,0 +1,246 @@
++unity-lens-photos (1.0+17.10.20170605-0ubuntu10) resolute; urgency=medium
++
++  * No-change mass rebuild for Ubuntu 26.04 (LP: #2132257)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 02 Dec 2025 23:10:01 +0100
++
++unity-lens-photos (1.0+17.10.20170605-0ubuntu9) hirsute; urgency=medium
++
++  * debian/control:
++    - updated the signon gir depends to the new version
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 05 Feb 2021 17:30:07 +0100
++
++unity-lens-photos (1.0+17.10.20170605-0ubuntu8) hirsute; urgency=medium
++
++  * debian/control:
++    - depends on the correct gir unity version
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 02 Feb 2021 16:07:10 +0100
++
++unity-lens-photos (1.0+17.10.20170605-0ubuntu7) hirsute; urgency=medium
++
++  * debian/rules:
++    - use --buildsystem=pybuild to fix the build failing trying to call
++      pyversions which isn't available anymore
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 29 Jan 2021 11:17:35 +0100
++
++unity-lens-photos (1.0+17.10.20170605-0ubuntu6) hirsute; urgency=medium
++
++  * Updated the build to work with the current python
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 28 Jan 2021 17:43:16 +0100
++
++unity-lens-photos (1.0+17.10.20170605-0ubuntu5) hirsute; urgency=medium
++
++  * No-change rebuild for libsignon-glib soname change.
++
++ -- Matthias Klose <doko@ubuntu.com>  Mon, 18 Jan 2021 12:42:08 +0100
++
++unity-lens-photos (1.0+17.10.20170605-0ubuntu4) disco; urgency=medium
++
++  * [ Andrea Azzarone ]
++    Add NoDisplay=true to unity-lens-photos.desktop, it's a technical 
++    unity component and not a software to be listed in desktops
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 11 Apr 2019 20:37:16 +0200
++
++unity-lens-photos (1.0+17.10.20170605-0ubuntu3) bionic; urgency=medium
++
++  * Add "X-Ubuntu-Use-Langpack: yes" to debian/control now that this package is
++    in Universe (LP: #1760435).
++
++ -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 07 Apr 2018 11:42:38 -0500
++
++unity-lens-photos (1.0+17.10.20170605-0ubuntu1) artful; urgency=medium
++
++  * Don't recommend obsolete Ubuntu Online Accounts plugins
++
++ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 05 Jun 2017 16:36:25 +0000
++
++unity-lens-photos (1.0+14.04.20140318-0ubuntu1) trusty; urgency=low
++
++  [ David Callé ]
++  * Catch errors when previewing FB deleted photos, fallback on existing
++    result data
++  * Revert 159, we are in a brand new world now...
++  * Catch errors when previewing FB deleted photos, fallback on existing
++    result data (LP: #1194650)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 18 Mar 2014 14:59:46 +0000
++
++unity-lens-photos (1.0daily13.06.05-0ubuntu1) saucy; urgency=low
++
++  * Automatic snapshot from revision 141
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 06:08:36 +0000
++
++unity-lens-photos (1.0daily13.05.31ubuntu.unity.next-0ubuntu1) raring; urgency=low
++
++  [ David Callé ]
++  * New upstream release
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 140 (ubuntu-unity/next)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 31 May 2013 04:02:35 +0000
++
++unity-lens-photos (0.9daily13.05.08ubuntu.unity.experimental.certified-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 148 (ubuntu-unity/experimental-
++    certified)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 08 May 2013 07:00:55 +0000
++
++unity-lens-photos (0.9daily13.05.07ubuntu.unity.experimental.certified-0ubuntu1) raring; urgency=low
++
++  [ David Callé ]
++  * Raring Smartscopes Photo Lens only works the first time (LP:
++    #1159004)
++  * strange behavior with online accounts and photos scope (LP:
++    #1160643)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 146 (ubuntu-unity/experimental-
++    certified)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 07 May 2013 07:00:56 +0000
++
++unity-lens-photos (0.9daily13.05.01.1ubuntu.unity.next-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 136 (ubuntu-unity/next)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 01 May 2013 21:58:03 +0000
++
++unity-lens-photos (0.9daily13.04.10ubuntu.unity.experimental.certified-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 143 (ubuntu-unity/experimental-
++    certified)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 10 Apr 2013 07:02:00 +0000
++
++unity-lens-photos (0.9daily12.12.05-0ubuntu1) raring; urgency=low
++
++  [ Michael Terry ]
++  * debian/control:
++    - Update Vcs-Bzr
++  * debian/rules:
++    - Use --fail-missing
++  * Automatic snapshot from revision 115 (bootstrap)
++
++  [ Automatic PS uploader ]
++  * Automatic snapshot from revision 123
++
++ -- Automatic PS uploader <ps-jenkins@lists.canonical.com>  Wed, 05 Dec 2012 09:29:04 +0000
++
++unity-lens-photos (0.9-0ubuntu1) quantal-proposed; urgency=low
++
++  * New upstream release.
++    - [SRU] Default lenses results should appear above the shopping category
++      (LP: #1066957)
++    - TypeError:<module>:__init__:__init__:_get_accounts_for_service:constructor
++      (LP: #1058061)
++    - geeqie-standard crashes on start with SIGSEGV in editor_command_parse()
++      when unity-lens-photos is installed (LP: #1056532)
++
++ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Fri, 19 Oct 2012 10:09:51 +0200
++
++unity-lens-photos (0.8-0ubuntu1) quantal-proposed; urgency=low
++
++  * New upstream release.
++    - Fix previews for raw files by using shotwell generated jpg file
++      (LP: #1057949, #1057432)
++    - [FFe] [UIFe] No easy way to disable online-fetched results in lenses
++      (LP: #1054746)
++  * Cherry-pick:
++    - The shortcut Super + P is conflicting with the Video out hotkey
++      (LP: #1049090)
++  * debian/control:
++    - needs latest gir1.2-unity-5.0 for new API
++  * debian/source/format:
++    - remove format 3, not playing nice with merge-upstream workflow
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 04 Oct 2012 17:27:38 +0200
++
++unity-lens-photos (0.6-0ubuntu2) quantal; urgency=low
++
++  * debian/control:
++    - add miss dep from previous upload:
++      gir1.2-gdata-0.0, python3-oauthlib (LP: #1053257)
++    - add gir1.2-unity-5.0 versionning
++
++ -- Didier Roche <didrocks@ubuntu.com>  Thu, 20 Sep 2012 14:51:25 +0200
++
++unity-lens-photos (0.6-0ubuntu1) quantal; urgency=low
++
++  * New upstream release.
++    - The online account g-c-c interface doesn't support i18n (LP: #1052375)
++    - Desktop file does not validate with desktop-file-validate (LP: #1051949)
++    - Unity-lens-photo takes all cpu (LP: #1047739)
++    - no pictures previews from dash (LP: #1049268)
++    - unity-lens-photos crashed with TypeError in constructor(): Argument 0 
++      does not allow None as a value (LP: #1047754)
++    - Older results from Shotwell are not correctly sorted when they contain 
++      photos without an exposure time (LP: #1049561)
++    - Description of application should be ‘Photos search plugin’ (LP: #1050361)
++    - Unity-lens-photo can only search one tag at a time (LP: #1047740)
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Wed, 19 Sep 2012 16:17:30 -0400
++
++unity-lens-photos (0.2.1-0ubuntu3) quantal; urgency=low
++
++  * debian/patches/signond_application.patch
++    - Don't refer a .desktop file that doesn't exist
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 30 Aug 2012 20:00:16 -0400
++
++unity-lens-photos (0.2.1-0ubuntu2) quantal; urgency=low
++
++  * debian/patches/new_shotwell_location.patch:
++    - updated for the new shotwell location (lp: #1041040)
++
++ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 29 Aug 2012 11:32:26 +0200
++
++unity-lens-photos (0.2.1-0ubuntu1) quantal; urgency=low
++
++  * New upstream release.
++  * debian/patches/dont_require_unreleased_unity.patch
++    - Don't require features from an unreleased version of unity
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Wed, 22 Aug 2012 12:30:35 -0400
++
++unity-lens-photos (0.1.1-0ubuntu3) quantal; urgency=low
++
++  * debian/control
++    - Recommend the account plugins instead of depending on them
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Tue, 21 Aug 2012 12:52:13 -0400
++
++unity-lens-photos (0.1.1-0ubuntu2) quantal; urgency=low
++
++  * debian/control
++    - Don't depend on dh-translations
++  * debian/copyright
++    - fixed typo
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Tue, 21 Aug 2012 10:00:23 -0400
++
++unity-lens-photos (0.1.1-0ubuntu1) quantal; urgency=low
++
++  [ David Callé ]
++  * First iteration of the new Photos lens for Quantal
++
++  [ Ken VanDine ]
++  * debian/copyright
++    - updated dep5 formating
++  * debian/control
++    - use latest standards version
++    - debhelper 9
++    - python3:Depends
++  * debian/rules
++    - added --with python3
++  * debian/watch
++    - added
++
++ -- Ken VanDine <ken.vandine@canonical.com>  Mon, 20 Aug 2012 13:00:56 -0400
+--- unity-lens-photos-1.0+17.10.20170605.orig/debian/compat
++++ unity-lens-photos-1.0+17.10.20170605/debian/compat
+@@ -0,0 +1 @@
++9
+--- unity-lens-photos-1.0+17.10.20170605.orig/debian/control
++++ unity-lens-photos-1.0+17.10.20170605/debian/control
+@@ -0,0 +1,36 @@
++Source: unity-lens-photos
++Section: gnome
++Priority: optional
++Maintainer: Ubuntu Desktop Team <ubuntu-desktop@lists.ubuntu.com>
++Build-Depends: debhelper (>= 9), 
++               dh-python,
++               python3, 
++               python3-distutils-extra, 
++               dh-python,
++               dh-translations
++Standards-Version: 3.9.3
++# If you aren't a member of ~unity-lens-photos but need to upload packaging
++# changes, just go ahead.  ~unity-lens-photos will notice and sync up the code
++# again.
++Vcs-Bzr: https://code.launchpad.net/~unity-lens-photos/unity-lens-photos/trunk
++X-Ubuntu-Use-Langpack: yes
++
++Package: unity-lens-photos
++Architecture: all
++Depends: ${misc:Depends},
++         ${shlibs:Depends},
++         ${python3:Depends},
++         gir1.2-accounts-1.0,
++         gir1.2-dee-1.0 (>= 1.2.5),
++         gir1.2-gdata-0.0,
++         gir1.2-signon-2.0,
++         gir1.2-soup-2.4,
++         gir1.2-unity-7.0 (>= 7),
++         python3-httplib2,
++         python3-oauthlib,
++Recommends: shotwell
++Breaks: unity-lens-photo
++Replaces: unity-lens-photo
++Description: Photos lens for Unity
++ This package contains photos scopes which allow Unity
++ to search for local photos using Shotwell.
+--- unity-lens-photos-1.0+17.10.20170605.orig/debian/copyright
++++ unity-lens-photos-1.0+17.10.20170605/debian/copyright
+@@ -0,0 +1,53 @@
++Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
++Upstream-Name: unity-lens-photos
++Upstream-Contact: David Calle <davidc@framli.eu>
++Source: http://launchpad.net/unity-lens-photos
++
++Files: *
++Copyright: 2012 David Calle <davidc@framli.eu>
++License: GPL-3+
++
++Files: debian/*
++Copyright: 2012 David Calle <davidc@framli.eu>
++License: GPL-3+
++
++Files: src/oauth2.py
++Copyright: 2007, 2010 Leah Culver
++           2007, 2010 Joe Stump
++           2007, 2010 Mark Paschal
++           2007, 2010 Vic Fryzel
++License: MIT
++ Permission is hereby granted, free of charge, to any person obtaining a copy
++ of this software and associated documentation files (the "Software"), to deal
++ in the Software without restriction, including without limitation the rights
++ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++ copies of the Software, and to permit persons to whom the Software is
++ furnished to do so, subject to the following conditions:
++ .
++ The above copyright notice and this permission notice shall be included in
++ all copies or substantial portions of the Software.
++ .
++ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
++ THE SOFTWARE.
++
++License: GPL-3+
++ This package is free software; you can redistribute it and/or modify
++ it under the terms of the GNU General Public License as published by
++ the Free Software Foundation; either version 2 of the License, or
++ (at your option) any later version.
++ .
++ This package is distributed in the hope that it will be useful,
++ but WITHOUT ANY WARRANTY; without even the implied warranty of
++ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ GNU General Public License for more details.
++ .
++ You should have received a copy of the GNU General Public License
++ along with this program. If not, see <http://www.gnu.org/licenses/>
++ .
++ On Debian systems, the complete text of the GNU General
++ Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
+--- unity-lens-photos-1.0+17.10.20170605.orig/debian/rules
++++ unity-lens-photos-1.0+17.10.20170605/debian/rules
+@@ -0,0 +1,15 @@
++#!/usr/bin/make -f
++# -*- makefile -*-
++
++
++%:
++	dh $@ --with python3,translations --buildsystem=pybuild
++
++override_dh_install:
++	dh_install --fail-missing
++
++override_dh_auto_build:
++	python3 setup.py build
++
++override_dh_auto_install:
++	python3 setup.py install --root=$(CURDIR)/debian/unity-lens-photos --install-layout=deb
+--- unity-lens-photos-1.0+17.10.20170605.orig/debian/watch
++++ unity-lens-photos-1.0+17.10.20170605/debian/watch
+@@ -0,0 +1,2 @@
++version=3
++http://launchpad.net/unity-lens-photos/+download .*/unity-lens-photos-([0-9.]+)\.tar\.gz
+--- unity-lens-photos-1.0+17.10.20170605.orig/unity-lens-photos.desktop
++++ unity-lens-photos-1.0+17.10.20170605/unity-lens-photos.desktop
+@@ -5,3 +5,4 @@
+ Icon=unity-lens-photos
+ Terminal=false
+ Type=Application
++NoDisplay=true

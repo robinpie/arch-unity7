@@ -1,0 +1,17 @@
+[
+    {
+      "url": "http://url0",
+      "source": "source0",
+      "img": "http://image0",
+      "title": "title0"
+    },
+    {
+      "url": "http://url1",
+      "source": "source1",
+      "details": "http://details1",
+      "img": "http://image1",
+      "title": "title1",
+      "price": 1,
+      "formatted_price": "1 USD"
+    }
+]

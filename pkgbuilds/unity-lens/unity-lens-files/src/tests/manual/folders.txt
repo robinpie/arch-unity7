@@ -1,0 +1,51 @@
+Folders
+=======
+Tests that global searches find folders as well as files.
+
+#. Open the Dash.
+#. Perform a generic search in the home view. (for example 'd')
+
+Outcome
+  You should see "Files and Folders" category with both folders starting with 'd' (including "Desktop"), followed by files containing 'd' or residing in a folder with 'd' in name.
+
+
+File system icons - Plug
+----------------------------------------------------
+Tests that file system icons are shown in the "Folder" category.
+
+Actions:
+#. Plug a USB flash drive.
+#. Open files lens.
+#. Expand "Folder" category.
+
+Expected Result:
+You should see the icon of the USB flash drive in the "Folders" category.
+
+
+File system icons - Click
+----------------------------------------------------
+Test that file system icons can be mounted and are opened in the file manager.
+
+Actions:
+#. Plug a USB flash drive.
+#. Open files lens.
+#. Expand "Folder" category.
+#. Click on the icon of the USB flash drive.
+
+Expected Result:
+The file manager should be opened showing the content of the USB flash drive.
+
+  
+File system icons - Unplug
+----------------------------------------------------
+Test that file system icons are removed from the "Folder" category.
+
+Actions:
+#. Plug a USB flash drive.
+#. Open files lens.
+#. Expand "Folder" category.
+#. Make sure you see the icon of the USB flash drive.
+#. Unplug the USB flash drive.
+
+Expected Result:
+Make sure the icon is correctly removed from the "Folder" category.

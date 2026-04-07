@@ -1,0 +1,14 @@
+Since testing lenses is dependant on multiple components in the system,
+we will implement a `unity-tool` to help which will be able to talk
+to the lenses and examine their results.
+
+Here are some of the use-cases it will be used for:
+
+1) Start a domain-specific search which should return non-zero number
+   of results.
+
+2) Start a search with non-sensical string and check that it returns 0 results
+   and that the "no-results-hint" is set in the method reply.
+
+More to come...
+

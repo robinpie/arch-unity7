@@ -1,0 +1,14 @@
+MANIFEST.in
+setup.cfg
+setup.py
+data/chromiumbookmarks.scope.in
+data/unity-scope-chromiumbookmarks.service
+po/POTFILES.in
+po/unity-scope-chromiumbookmarks.pot
+src/__init__.py
+src/unity_chromiumbookmarks_daemon.py
+src/unity_scope_chromiumbookmarks.egg-info/PKG-INFO
+src/unity_scope_chromiumbookmarks.egg-info/SOURCES.txt
+src/unity_scope_chromiumbookmarks.egg-info/dependency_links.txt
+src/unity_scope_chromiumbookmarks.egg-info/top_level.txt
+tests/test_chromiumbookmarks.py

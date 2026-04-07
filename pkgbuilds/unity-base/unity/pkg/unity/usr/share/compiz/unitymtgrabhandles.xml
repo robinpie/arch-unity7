@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compiz>
+	<plugin useBcop="true" name="unitymtgrabhandles">
+	<short>Unity MT Grab Handles</short>
+	<long>Small touch-based grab handles to move and resize a window</long>
+	<deps>
+		<requirement>
+			<plugin>opengl</plugin>
+			<plugin>composite</plugin>
+			<plugin>imgpng</plugin>
+		</requirement>
+		<relation type="after">
+			<plugin>composite</plugin>
+			<plugin>opengl</plugin>
+			<plugin>cube</plugin>
+			<plugin>rotate</plugin>
+			<plugin>imgpng</plugin>
+			<plugin>imgsvg</plugin>
+			<plugin>imgjpeg</plugin>
+		</relation>
+	</deps>
+	<options>
+		<option type="key" name="toggle_handles_key">
+			<short>Toggle Handles</short>
+			<long>Key to toggle the handles</long>
+			
+		</option>
+		<option type="key" name="show_handles_key">
+			<short>Show Handles</short>
+			<long>Key to show the handles</long>
+		</option>
+		<option type="key" name="hide_handles_key">
+			<short>Hide Handles</short>
+			<long>Key to hide the handles</long>
+		</option>
+		<option type="int" name="fade_duration">
+			<short>Fade Duration</short>
+			<long>How long the fade should last</long>
+			<default>150</default>
+		</option>
+	</options>
+	</plugin>
+</compiz>

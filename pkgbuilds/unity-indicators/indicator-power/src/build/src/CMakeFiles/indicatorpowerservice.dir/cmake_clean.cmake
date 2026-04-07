@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/indicatorpowerservice.dir/brightness.c.o"
+  "CMakeFiles/indicatorpowerservice.dir/brightness.c.o.d"
+  "CMakeFiles/indicatorpowerservice.dir/datafiles.c.o"
+  "CMakeFiles/indicatorpowerservice.dir/datafiles.c.o.d"
+  "CMakeFiles/indicatorpowerservice.dir/dbus-accounts-sound.c.o"
+  "CMakeFiles/indicatorpowerservice.dir/dbus-accounts-sound.c.o.d"
+  "CMakeFiles/indicatorpowerservice.dir/dbus-battery.c.o"
+  "CMakeFiles/indicatorpowerservice.dir/dbus-battery.c.o.d"
+  "CMakeFiles/indicatorpowerservice.dir/dbus-powerd.c.o"
+  "CMakeFiles/indicatorpowerservice.dir/dbus-powerd.c.o.d"
+  "CMakeFiles/indicatorpowerservice.dir/dbus-testing.c.o"
+  "CMakeFiles/indicatorpowerservice.dir/dbus-testing.c.o.d"
+  "CMakeFiles/indicatorpowerservice.dir/device-provider-mock.c.o"
+  "CMakeFiles/indicatorpowerservice.dir/device-provider-mock.c.o.d"
+  "CMakeFiles/indicatorpowerservice.dir/device-provider-upower.c.o"
+  "CMakeFiles/indicatorpowerservice.dir/device-provider-upower.c.o.d"
+  "CMakeFiles/indicatorpowerservice.dir/device-provider.c.o"
+  "CMakeFiles/indicatorpowerservice.dir/device-provider.c.o.d"
+  "CMakeFiles/indicatorpowerservice.dir/device.c.o"
+  "CMakeFiles/indicatorpowerservice.dir/device.c.o.d"
+  "CMakeFiles/indicatorpowerservice.dir/notifier.c.o"
+  "CMakeFiles/indicatorpowerservice.dir/notifier.c.o.d"
+  "CMakeFiles/indicatorpowerservice.dir/service.c.o"
+  "CMakeFiles/indicatorpowerservice.dir/service.c.o.d"
+  "CMakeFiles/indicatorpowerservice.dir/testing.c.o"
+  "CMakeFiles/indicatorpowerservice.dir/testing.c.o.d"
+  "dbus-accounts-sound.c"
+  "dbus-accounts-sound.h"
+  "dbus-battery.c"
+  "dbus-battery.h"
+  "dbus-powerd.c"
+  "dbus-powerd.h"
+  "dbus-testing.c"
+  "dbus-testing.h"
+  "libindicatorpowerservice.a"
+  "libindicatorpowerservice.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/indicatorpowerservice.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

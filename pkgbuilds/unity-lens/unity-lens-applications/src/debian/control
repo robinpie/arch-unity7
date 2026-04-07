@@ -1,0 +1,108 @@
+Source: unity-lens-applications
+Section: gnome
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>= 9),
+               dh-translations,
+               gnome-common,
+               pkg-config,
+               valac (>= 0.18.0),
+               libglib2.0-dev (>= 2.27),
+               libgee-0.8-dev,
+               libdee-dev (>= 0.5.16),
+               libzeitgeist-dev (>= 0.3.8),
+               libunity-dev (>= 7.1.1),
+               libgnome-menu-3-dev,
+               dh-autoreconf,
+               libxapian-dev,
+               libdb-dev,
+               libapt-pkg-dev,
+               libcolumbus1-dev (>= 1.0.0),
+Standards-Version: 3.9.4
+Homepage: https://launchpad.net/unity-lens-applications
+# If you aren't a member of ~unity-team but need to upload packaging changes,
+# just go ahead.  ~unity-team will notice and sync up the code again.
+Vcs-Bzr: https://code.launchpad.net/~unity-team/unity-lens-applications/trunk
+X-Ubuntu-Use-Langpack: yes
+
+Package: unity-lens-applications
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+Recommends: unity-common-7.0 | unity-common (>= 7.0.0)
+Breaks: unity (<< 6.0.0),
+Description: Application lens for unity
+ This package contains the "application" lens which can be used
+ inside Unity to launch and install applications.
+Source: unity-lens-applications
+Section: gnome
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>= 9),
+               dh-translations,
+               gnome-common,
+               pkg-config,
+               valac (>= 0.18.0),
+               libglib2.0-dev (>= 2.27),
+               libgee-0.8-dev,
+               libdee-dev (>= 0.5.16),
+               libzeitgeist-dev (>= 0.3.8),
+               libunity-dev (>= 7.1.1),
+               libgnome-menu-3-dev,
+               dh-autoreconf,
+               libxapian-dev,
+               libdb-dev,
+               libapt-pkg-dev,
+               libcolumbus1-dev (>= 1.0.0),
+Standards-Version: 3.9.4
+Homepage: https://launchpad.net/unity-lens-applications
+# If you aren't a member of ~unity-team but need to upload packaging changes,
+# just go ahead.  ~unity-team will notice and sync up the code again.
+Vcs-Bzr: https://code.launchpad.net/~unity-team/unity-lens-applications/trunk
+X-Ubuntu-Use-Langpack: yes
+
+Package: unity-lens-applications
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+Recommends: unity-common-7.0 | unity-common (>= 7.0.0)
+Breaks: unity (<< 6.0.0),
+Description: Application lens for unity
+ This package contains the "application" lens which can be used
+ inside Unity to launch and install applications.
+Source: unity-lens-applications
+Section: gnome
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>= 9),
+               dh-translations,
+               gnome-common,
+               pkg-config,
+               valac (>= 0.18.0),
+               libglib2.0-dev (>= 2.27),
+               libgee-0.8-dev,
+               libdee-dev (>= 0.5.16),
+               libzeitgeist-dev (>= 0.3.8),
+               libunity-dev (>= 7.1.1),
+               libgnome-menu-3-dev,
+               dh-autoreconf,
+               libxapian-dev,
+               libdb-dev,
+               libapt-pkg-dev,
+               libcolumbus1-dev (>= 1.0.0),
+Standards-Version: 3.9.4
+Homepage: https://launchpad.net/unity-lens-applications
+# If you aren't a member of ~unity-team but need to upload packaging changes,
+# just go ahead.  ~unity-team will notice and sync up the code again.
+Vcs-Bzr: https://code.launchpad.net/~unity-team/unity-lens-applications/trunk
+X-Ubuntu-Use-Langpack: yes
+
+Package: unity-lens-applications
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+Recommends: unity-common-7.0 | unity-common (>= 7.0.0)
+Breaks: unity (<< 6.0.0),
+Description: Application lens for unity
+ This package contains the "application" lens which can be used
+ inside Unity to launch and install applications.

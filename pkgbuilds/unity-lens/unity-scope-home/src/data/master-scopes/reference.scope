@@ -1,0 +1,33 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/reference
+Icon=
+CategoryIcon=/usr/share/icons/unity-icon-theme/places/svg/group-reference.svg
+Name=Reference
+Type=reference
+IsMaster=true
+Keywords=reference;
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category encyclopedia]
+Name=Encyclopedia
+Icon=
+DedupField=uri
+
+[Category vocabulary]
+Name=Vocabulary
+Icon=
+DedupField=uri
+
+[Category scholar]
+Name=Scholar
+Icon=
+DedupField=uri
+
+[Category sources]
+Name=Sources
+Icon=
+DedupField=uri
+

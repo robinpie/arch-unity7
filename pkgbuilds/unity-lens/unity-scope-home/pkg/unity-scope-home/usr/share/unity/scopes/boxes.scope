@@ -1,0 +1,17 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/boxes
+Icon=
+CategoryIcon=/usr/share/icons/unity-icon-theme/places/svg/group-boxes.svg
+Name=Boxes
+Type=boxes
+IsMaster=true
+Keywords=boxes;
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category boxes]
+Name=Boxes
+Icon=
+DedupField=uri

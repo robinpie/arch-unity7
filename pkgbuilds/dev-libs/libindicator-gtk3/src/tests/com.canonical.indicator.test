@@ -1,0 +1,6 @@
+[Indicator Service]
+Name=indicator-test
+ObjectPath=/com/canonical/indicator/test
+
+[desktop]
+ObjectPath=/com/canonical/indicator/test/desktop

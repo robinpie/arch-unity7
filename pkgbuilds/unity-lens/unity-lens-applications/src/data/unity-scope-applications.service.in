@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.canonical.Unity.Scope.Applications
+Exec=@bindir@/unity-scope-loader applications/applications.scope applications/scopes.scope commands.scope

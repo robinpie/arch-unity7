@@ -1,0 +1,7 @@
+namespace Config {
+  const string TESTDATADIR = "@abs_top_srcdir@/tests/unit/data";
+  const string LOCALEDIR = "@DATADIR@/locale";
+  const string PACKAGE = "@PACKAGE@";
+  const string VERSION = "@VERSION@";
+  const string ICON_PATH = "@DATADIR@/icons/unity-icon-theme/places/svg";
+}

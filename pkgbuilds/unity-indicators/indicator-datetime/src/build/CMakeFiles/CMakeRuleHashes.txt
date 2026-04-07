@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+6ce35c3cdaa39eb9bc6f1f7938a3ff90 CMakeFiles/cppcheck
+43782d2b20e51ea9856f556352116c2b CMakeFiles/dist
+da08721310ce678eec0ffcf6647f486d src/dbus-accounts-sound.h
+648e778bb3c9d26b4c84b18adc839af7 src/dbus-alarm-properties.h

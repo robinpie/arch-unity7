@@ -1,0 +1,10 @@
+Move events
+===========
+Tests that moving files using Nautilus get picked up by Zeitgeist and therefore by files lens.
+
+#. Create a file named "report.txt" in your home directory (`touch report.txt`).
+#. Open nautilus and move the file to a different directory.
+#. Search for this file with files lens.
+
+Outcome
+  The "report.txt" should show up as a result in the Recent category of files lens and clicking on it should open it from the new location.

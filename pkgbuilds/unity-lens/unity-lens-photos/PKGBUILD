@@ -1,0 +1,70 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/unity-lens-photos
+
+pkgname=unity-lens-photos
+pkgver=1.0
+_uver=+17.10.20170605
+_urev=0ubuntu10
+pkgrel=1
+pkgdesc="Photo lens for the Unity7 user interface"
+arch=('x86_64')
+url="https://launchpad.net/unity-lens-photos"
+license=('GPL-3.0-or-later')
+depends=(
+    'dee'
+    'libunity'
+    'python'
+    'python-gobject'
+    'shotwell'
+)
+makedepends=(
+    'pkgconf'
+    'python-setuptools'
+    'python-distutils-extra'
+)
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+    "Fix-timestamp-NoneType-error.patch"
+    "remove-goa-scopes.diff"
+)
+sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+
+    # Apply Ubuntu diff (flat extraction)
+    patch -p1 --batch --forward -i "${pkgname}_${pkgver}${_uver}-${_urev}.diff" || true
+
+    # Apply debian patch series
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+
+    patch -p1 -i ../Fix-timestamp-NoneType-error.patch
+    patch -p1 -i ../remove-goa-scopes.diff
+
+    # Remove unsupported social/cloud scopes
+    find . -type f \( -name '*facebook*' -o -name '*flickr*' -o -name '*picasa*' \) -delete 2>/dev/null || true
+
+    # Fix .desktop file name for modern shotwell
+    sed -i "s/shotwell\.desktop/org.gnome.Shotwell.desktop/" src/unity_shotwell_daemon.py || true
+
+    # Fix python shebang
+    sed -i '1s|.*|#!/usr/bin/python3|' src/unity_shotwell_daemon.py || true
+}
+
+build() {
+    cd "$srcdir"
+    python setup.py build
+}
+
+package() {
+    cd "$srcdir"
+    python setup.py install --root="$pkgdir" --optimize=1
+    # Remove language files (provided by language packs)
+    rm -rf "$pkgdir/usr/share/locale"
+}

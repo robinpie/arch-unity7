@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/decorations-lib.dir/DecoratedWindow.cpp.o"
+  "CMakeFiles/decorations-lib.dir/DecoratedWindow.cpp.o.d"
+  "CMakeFiles/decorations-lib.dir/DecorationsDataPool.cpp.o"
+  "CMakeFiles/decorations-lib.dir/DecorationsDataPool.cpp.o.d"
+  "CMakeFiles/decorations-lib.dir/DecorationsEdge.cpp.o"
+  "CMakeFiles/decorations-lib.dir/DecorationsEdge.cpp.o.d"
+  "CMakeFiles/decorations-lib.dir/DecorationsEdgeBorders.cpp.o"
+  "CMakeFiles/decorations-lib.dir/DecorationsEdgeBorders.cpp.o.d"
+  "CMakeFiles/decorations-lib.dir/DecorationsForceQuitDialog.cpp.o"
+  "CMakeFiles/decorations-lib.dir/DecorationsForceQuitDialog.cpp.o.d"
+  "CMakeFiles/decorations-lib.dir/DecorationsGrabEdge.cpp.o"
+  "CMakeFiles/decorations-lib.dir/DecorationsGrabEdge.cpp.o.d"
+  "CMakeFiles/decorations-lib.dir/DecorationsInputMixer.cpp.o"
+  "CMakeFiles/decorations-lib.dir/DecorationsInputMixer.cpp.o.d"
+  "CMakeFiles/decorations-lib.dir/DecorationsManager.cpp.o"
+  "CMakeFiles/decorations-lib.dir/DecorationsManager.cpp.o.d"
+  "CMakeFiles/decorations-lib.dir/DecorationsMenuDropdown.cpp.o"
+  "CMakeFiles/decorations-lib.dir/DecorationsMenuDropdown.cpp.o.d"
+  "CMakeFiles/decorations-lib.dir/DecorationsMenuEntry.cpp.o"
+  "CMakeFiles/decorations-lib.dir/DecorationsMenuEntry.cpp.o.d"
+  "CMakeFiles/decorations-lib.dir/DecorationsMenuLayout.cpp.o"
+  "CMakeFiles/decorations-lib.dir/DecorationsMenuLayout.cpp.o.d"
+  "CMakeFiles/decorations-lib.dir/DecorationsShape.cpp.o"
+  "CMakeFiles/decorations-lib.dir/DecorationsShape.cpp.o.d"
+  "CMakeFiles/decorations-lib.dir/DecorationsSlidingLayout.cpp.o"
+  "CMakeFiles/decorations-lib.dir/DecorationsSlidingLayout.cpp.o.d"
+  "CMakeFiles/decorations-lib.dir/DecorationsTitle.cpp.o"
+  "CMakeFiles/decorations-lib.dir/DecorationsTitle.cpp.o.d"
+  "CMakeFiles/decorations-lib.dir/DecorationsWidgets.cpp.o"
+  "CMakeFiles/decorations-lib.dir/DecorationsWidgets.cpp.o.d"
+  "CMakeFiles/decorations-lib.dir/DecorationsWindowButton.cpp.o"
+  "CMakeFiles/decorations-lib.dir/DecorationsWindowButton.cpp.o.d"
+  "libdecorations-lib.a"
+  "libdecorations-lib.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/decorations-lib.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

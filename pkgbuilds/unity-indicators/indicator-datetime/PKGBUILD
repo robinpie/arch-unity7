@@ -1,0 +1,93 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/indicator-datetime
+
+pkgname=indicator-datetime
+pkgver=15.10
+_uver=+21.04.20210304
+_urev=0ubuntu6
+pkgrel=1
+pkgdesc="Date and Time Indicator used by the Unity7 user interface"
+arch=('x86_64')
+url="https://launchpad.net/indicator-datetime"
+license=('GPL-3.0-or-later')
+depends=(
+    'glib2'
+    'libical'
+    'gstreamer'
+    'libaccounts-glib'
+    'systemd'
+    'util-linux-libs'
+    'gsettings-ubuntu-touch-schemas'
+    'indicator-messages'
+    'libnotify'
+    'libindicator-gtk3'
+    'dconf'
+)
+makedepends=(
+    'cmake'
+    'pkgconf'
+    'properties-cpp'
+    'cmake-extras'
+    'gvfs'
+    'dbus'
+    'intltool'
+    'gcc'
+)
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "optional-eds_19.10.patch"
+)
+sha256sums=('SKIP' 'SKIP')
+options=('!makeflags')
+
+prepare() {
+    cd "${pkgname}-${pkgver}${_uver}"
+
+    patch -p1 -i ../optional-eds_19.10.patch
+
+    # Apply debian patch series if present
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+
+    # Fix 'uint32_t' was not declared in this scope
+    sed -i '/#include <vector>/a #include <cstdint>' src/haptic.cpp || true
+
+    # Fix schema errors and sandbox violations
+    if [ -f cmake/UseGSettings.cmake ]; then
+        sed -i \
+            -e 's:SEND_ERROR:WARNING:g' \
+            -e '/Compiling GSettings schemas/,+1 d' \
+            cmake/UseGSettings.cmake || true
+    fi
+
+    # Disable tests
+    sed -i '/^add_subdirectory.*tests/s/^/#/' CMakeLists.txt || true
+
+    # Disable po subdirectory (incomplete translations)
+    sed -i '/^add_subdirectory.*po/s/^/#/' CMakeLists.txt || true
+
+    # Fix CMake minimum version for CMake 4
+    find . -name "CMakeLists.txt" -exec sed -i \
+        's/cmake_minimum_required(VERSION 2\.[0-9]\+\.[0-9]\+/cmake_minimum_required(VERSION 3.10/' {} \; 2>/dev/null || true
+}
+
+build() {
+    cmake -B build -S "${pkgname}-${pkgver}${_uver}" \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DCMAKE_INSTALL_FULL_LOCALEDIR=/usr/share/locale \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.10 \
+        -DWITH_EDS=OFF \
+        -DENABLE_TESTS=OFF \
+        -Wno-dev
+    cmake --build build -j1
+}
+
+package() {
+    DESTDIR="$pkgdir" cmake --install build
+}

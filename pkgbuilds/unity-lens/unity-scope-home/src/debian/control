@@ -1,0 +1,80 @@
+Source: unity-scope-home
+Section: gnome
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>= 9),
+               dh-autoreconf,
+               gnome-common,
+               libdee-dev (>= 1.0.7),
+               libgee-0.8-dev,
+               libglib2.0-dev (>= 2.27),
+               libunity-dev (>= 7.1.3),
+               valac (>= 0.18.0),
+               libjson-glib-dev,
+               uuid-dev,
+               libsoup-gnome2.4-dev,
+               python3,
+               lsb-release,
+Standards-Version: 3.9.4
+Homepage: https://launchpad.net/unity-scope-home
+# If you aren't a member of ~unity-team but need to upload packaging changes,
+# just go ahead.  ~unity-team will notice and sync up the code again.
+Vcs-Bzr: https://code.launchpad.net/~unity-team/unity-scope-home/trunk
+X-Ubuntu-Use-Langpack: yes
+
+Package: unity-scope-home
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         lsb-release,
+         unity-scopes-master-default | unity-scopes-master,
+Conflicts: unity-lens-shopping,
+           unity-scope-askubuntu,
+           unity-scope-sumo,
+           unity-scope-asklibreoffice,
+           unity-scope-deviantart,
+           unity-scope-gallica,
+           unity-scope-github,
+           unity-scope-googlenews,
+           unity-scope-openweathermap,
+           unity-scope-soundcloud,
+           unity-scope-yahoostock,
+Replaces: unity-lens-shopping,
+          unity-scope-askubuntu,
+          unity-scope-sumo,
+          unity-scope-asklibreoffice,
+          unity-scope-deviantart,
+          unity-scope-gallica,
+          unity-scope-github,
+          unity-scope-googlenews,
+          unity-scope-openweathermap,
+          unity-scope-soundcloud,
+          unity-scope-yahoostock,
+Provides: unity-lens-shopping,
+          unity-scope-askubuntu,
+          unity-scope-sumo,
+          unity-scope-asklibreoffice,
+          unity-scope-deviantart,
+          unity-scope-gallica,
+          unity-scope-github,
+          unity-scope-googlenews,
+          unity-scope-openweathermap,
+          unity-scope-soundcloud,
+          unity-scope-yahoostock,
+Description: Home scope that aggregates results from multiple scopes
+ A scope that aggregates results from multiple scopes and Server Scopes for
+ Home Lens view in the Unity Dash.
+ .
+ It replaces the old implementation of Home Lens in Unity Dash.
+
+Package: unity-scopes-master-default
+Architecture: all
+Depends: ${misc:Depends},
+Provides: unity-scopes-master
+Replaces: unity-scope-home (<< 6.8.1),
+Description: Home scope that aggregates results from multiple scopes
+ A scope that aggregates results from multiple scopes and Server Scopes for
+ Home Lens view in the Unity Dash.
+ .
+ This package contains the master scopes definition that can be handled by the
+ home scope service.

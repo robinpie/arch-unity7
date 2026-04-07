@@ -1,0 +1,10 @@
+Downloads
+=========
+Tests that the downloads category shows files from your ~/Downloads directory.
+
+#. Create a file in the ~/Downloads category (or equivalent for your locale).
+#. Search for this file with files lens.
+
+Outcome
+  The file you created in the first step should show up as a result in the Downloads category of files lens.
+

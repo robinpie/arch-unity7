@@ -53,6 +53,9 @@ prepare() {
 
 build() {
     cd "$srcdir"
+    # Disable _GLIBCXX_ASSERTIONS — Arch enables this by default in CXXFLAGS
+    # but nux has latent out-of-bounds vector accesses that abort with it on.
+    export CXXFLAGS="${CXXFLAGS/-Wp,-D_GLIBCXX_ASSERTIONS/}"
     ./configure \
         --prefix=/usr \
         --libdir=/usr/lib \

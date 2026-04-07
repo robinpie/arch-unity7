@@ -1,0 +1,214 @@
+--- unity-scope-chromiumbookmarks-0.1+13.10.20130723.orig/debian/copyright
++++ unity-scope-chromiumbookmarks-0.1+13.10.20130723/debian/copyright
+@@ -0,0 +1,22 @@
++Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
++Source: https://launchpad.net/unity-scope-chromiumbookmarks
++Upstream-Name: unity-scope-chromiumbookmarks
++Upstream-Contact: Mark Tully <markjtully@gmail.com>
++
++Files: *
++Copyright: 2013 Mark Tully
++License: GPL-3
++ This program is free software: you can redistribute it and/or modify
++ it under the terms of the GNU General Public License as published by
++ the Free Software Foundation, version 3 of the License.
++ .
++ This program is distributed in the hope that it will be useful,
++ but WITHOUT ANY WARRANTY; without even the implied warranty of
++ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ GNU General Public License for more details.
++ .
++ You should have received a copy of the GNU General Public License
++ along with this program.  If not, see <http://www.gnu.org/licenses/>.
++ .
++ On Debian systems, the complete text of the GNU General
++ Public License version 3 can be found in '/usr/share/common-licenses/GPL-3'.
+--- unity-scope-chromiumbookmarks-0.1+13.10.20130723.orig/debian/control
++++ unity-scope-chromiumbookmarks-0.1+13.10.20130723/debian/control
+@@ -0,0 +1,32 @@
++Source: unity-scope-chromiumbookmarks
++Section: gnome
++Priority: optional
++Maintainer: Mark Tully <markjtully@gmail.com>
++Build-Depends: debhelper (>= 9),
++               python3,
++               python3-distutils-extra,
++               python3-gi,
++               pkg-config,
++               python3-nose,
++               gir1.2-unity-5.0 (>= 7),
++               gir1.2-dee-1.0 (>= 1.2.5),
++               gir1.2-glib-2.0,
++Standards-Version: 3.9.4
++Homepage: https://launchpad.net/unity-scope-chromiumbookmarks
++# If you aren't a member of ~submarine but need to upload packaging changes,
++# just go ahead. ~submarine will notice and sync up the code again.
++Vcs-Bzr: https://code.launchpad.net/~submarine/unity-scope-chromiumbookmarks/trunk
++
++Package: unity-scope-chromiumbookmarks
++Architecture: all
++Depends: ${misc:Depends},
++         ${python3:Depends},
++         python3,
++         python3-gi,
++         gir1.2-unity-5.0 (>= 7),
++         gir1.2-dee-1.0 (>= 1.2.5),
++         unity-scopes-runner,
++         gir1.2-glib-2.0
++Description: Chromium bookmarks scope for Unity
++ This package contains the "chromiumbookmarks" scope which allows Unity
++ to search your Chromium bookmarks.
+--- unity-scope-chromiumbookmarks-0.1+13.10.20130723.orig/debian/compat
++++ unity-scope-chromiumbookmarks-0.1+13.10.20130723/debian/compat
+@@ -0,0 +1 @@
++9
+--- unity-scope-chromiumbookmarks-0.1+13.10.20130723.orig/debian/rules
++++ unity-scope-chromiumbookmarks-0.1+13.10.20130723/debian/rules
+@@ -0,0 +1,18 @@
++#!/usr/bin/make -f
++# -*- makefile -*-
++
++
++%:
++	dh $@ --with python3
++
++override_dh_auto_clean:
++	python3 setup.py clean -a
++
++override_dh_auto_build:
++	python3 setup.py build
++
++override_dh_auto_test:
++	nosetests3
++
++override_dh_auto_install:
++	python3 setup.py install --root=$(CURDIR)/debian/unity-scope-chromiumbookmarks --install-layout=deb
+--- unity-scope-chromiumbookmarks-0.1+13.10.20130723.orig/debian/changelog
++++ unity-scope-chromiumbookmarks-0.1+13.10.20130723/debian/changelog
+@@ -0,0 +1,122 @@
++unity-scope-chromiumbookmarks (0.1+13.10.20130723-0ubuntu1) saucy; urgency=low
++
++  [ David Callé ]
++  * Add module and moduletype.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 34
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 23 Jul 2013 06:19:29 +0000
++
++unity-scope-chromiumbookmarks (0.1daily13.06.19-0ubuntu1) saucy; urgency=low
++
++  [ David Callé ]
++  * Use the bookmark icon and change Show to Open.
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 32
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 19 Jun 2013 04:28:25 +0000
++
++unity-scope-chromiumbookmarks (0.1daily13.06.05-0ubuntu1) saucy; urgency=low
++
++  [ Michael Terry ]
++  * Update Description
++
++  [ David Callé ]
++  * Init/update POT file
++  * Update .scope file to specs
++  * Fix copyright
++  * Install .scope file in its master folder
++  * Install to /usr/share/unity-scopes, fix service file accordingly
++  * Depends on unity-scopes-runner
++  * Fix Loader field in scope file
++  * Parse bookmarks for all Chromium profiles. (LP: #1156706)
++  * Add QueryBinary field to .scope file.
++  * Fix display name.
++  * Update description.
++  * Fix icons and duplicated results.
++  * Bump Unity deps.
++
++  [ Mark Tully ]
++  * Initial commit
++  * Added tests
++  * Updated to new API Converted to Python 3
++  * Updated translations
++  * Add packaging
++  * Add Previews.
++
++  [ Didier Roche ]
++  * make debian/rules executable
++  * fix typo
++  * add python3-gi build-dep
++  * nuke wrong seederie
++  * Fix special character in debian/control
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 30
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 06:18:48 +0000
++
++unity-scope-chromiumbookmarks (0.1daily13.05.31ubuntu.unity.next-0ubuntu1) raring; urgency=low
++
++  [ Michael Terry ]
++  * Update Description
++
++  [ David Callé ]
++  * Init/update POT file
++  * Update .scope file to specs
++  * Fix copyright
++  * Install .scope file in its master folder
++  * Install to /usr/share/unity-scopes, fix service file accordingly
++  * Depends on unity-scopes-runner
++  * Fix Loader field in scope file
++  * Parse bookmarks for all Chromium profiles. (LP: #1156706)
++  * Add QueryBinary field to .scope file.
++  * Fix display name.
++  * Update description.
++  * Fix icons and duplicated results.
++  * Bump Unity deps.
++
++  [ Mark Tully ]
++  * Initial commit
++  * Added tests
++  * Updated to new API Converted to Python 3
++  * Updated translations
++  * Add packaging
++  * Add Previews.
++
++  [ Didier Roche ]
++  * make debian/rules executable
++  * fix typo
++  * add python3-gi build-dep
++  * nuke wrong seederie
++  * Fix special character in debian/control
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 29 (ubuntu-unity/next)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 31 May 2013 04:20:55 +0000
++
++unity-scope-chromiumbookmarks (0.1daily13.05.07ubuntu.unity.experimental.certified-0ubuntu1) raring; urgency=low
++
++  * Automatic snapshot from revision 26 (ubuntu-unity/experimental-
++    certified)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 07 May 2013 07:22:36 +0000
++
++unity-scope-chromiumbookmarks (0.1daily13.04.10ubuntu.unity.experimental.certified-0ubuntu1) raring; urgency=low
++
++  [ Mark Tully ]
++  * Initial release
++
++  [ Didier Roche ]
++  * bump version in debian/control
++  * small packaging fixes. Don't go native but split
++  * Automatic snapshot from revision 1 (boostrap)
++
++  [ Ubuntu daily release ]
++  * Automatic snapshot from revision 23 (ubuntu-unity/experimental-
++    certified)
++
++ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 10 Apr 2013 07:28:27 +0000
+--- unity-scope-chromiumbookmarks-0.1+13.10.20130723.orig/debian/source/format
++++ unity-scope-chromiumbookmarks-0.1+13.10.20130723/debian/source/format
+@@ -0,0 +1 @@
++1.0

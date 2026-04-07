@@ -1,0 +1,810 @@
+unity-scope-home (6.8.2+19.04.20190412-0ubuntu8) resolute; urgency=medium
+
+  * Change source format to "quilt" and move changes to a patch.
+
+ -- Florent 'Skia' Jacquet <skia@ubuntu.com>  Fri, 27 Feb 2026 13:30:14 +0100
+
+unity-scope-home (6.8.2+19.04.20190412-0ubuntu7) resolute; urgency=medium
+
+  [ Florent 'Skia' Jacquet ]
+  * Add missing debian/source/format
+
+  [ Tomasz Jeruzalski ]
+  * Drop broken Smart Scopes Search functionality,
+  * Remove dependency on libsoup libraries including deprecated
+    libsoup-gnome-2.4-1 (LP: #2069962)
+
+ -- Tomasz Jeruzalski <tomekdev17@gmail.com>  Mon, 16 Feb 2026 23:05:54 +0000
+
+unity-scope-home (6.8.2+19.04.20190412-0ubuntu6) noble; urgency=high
+
+  * No change rebuild against libsoup-2.4-1, libsoup-gnome-2.4-1.
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Mon, 08 Apr 2024 16:51:31 +0200
+
+unity-scope-home (6.8.2+19.04.20190412-0ubuntu5) noble; urgency=medium
+
+  * No-change rebuild for CVE-2024-3094
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 31 Mar 2024 17:24:28 +0000
+
+unity-scope-home (6.8.2+19.04.20190412-0ubuntu4) noble; urgency=medium
+
+  * Fix problems with values being non-public when they should have been.
+    (LP: #2051343)
+
+ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Fri, 29 Mar 2024 01:14:49 +0000
+
+unity-scope-home (6.8.2+19.04.20190412-0ubuntu3) noble; urgency=medium
+
+  * No-change rebuild against libglib2.0-0t64
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 08 Mar 2024 07:53:33 +0000
+
+unity-scope-home (6.8.2+19.04.20190412-0ubuntu2) focal; urgency=medium
+
+  * Build using python3.
+
+ -- Matthias Klose <doko@ubuntu.com>  Mon, 30 Mar 2020 14:57:04 +0200
+
+unity-scope-home (6.8.2+19.04.20190412-0ubuntu1) disco; urgency=medium
+
+  [ Khurshid Alam ]
+  * Fix build against vala >= 0.43
+
+  [ Marco Trevisan (Treviño) ]
+  * debian/control: add back X-Ubuntu-Use-Langpack: yes
+
+ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Fri, 12 Apr 2019 19:22:29 +0000
+
+unity-scope-home (6.8.2+16.04.20160212.1-0ubuntu1) xenial; urgency=medium
+
+  [ Matthias Klose ]
+  * Build using libgee-0.8-dev instead of libgee-dev (LP: #1502094)
+
+ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Fri, 12 Feb 2016 19:44:02 +0000
+
+unity-scope-home (6.8.2+16.04.20160209-0ubuntu1) xenial; urgency=medium
+
+  [ Andrea Azzarone ]
+  * Update search hint if online search is enabled/disabled. (LP:
+    #1536590)
+
+ -- Marco Trevisan (Treviño) <mail@3v1n0.net>  Tue, 09 Feb 2016 01:20:45 +0000
+
+unity-scope-home (6.8.2+15.04.20150311.1-0ubuntu1) vivid; urgency=medium
+
+  [ CI Train Bot ]
+  * New rebuild forced.
+
+  [ Stephen M. Webb ]
+  * initialized an uninitialized variable used in an "if" statement (LP:
+    #1430063)
+  * m4/gcov.m4: update to current lcov version (LP: #1430248)
+
+ -- CI Train Bot <ci-train-bot@canonical.com>  Wed, 11 Mar 2015 02:32:01 +0000
+
+unity-scope-home (6.8.2+14.04.20131029.1-0ubuntu1) trusty; urgency=low
+
+  [ Pawel Stolowski ]
+  * Collect click metrics for preview actions. (LP: #1243623)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 177
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 29 Oct 2013 12:00:54 +0000
+
+unity-scope-home (6.8.2+13.10.20131003-0ubuntu1) saucy; urgency=low
+
+  [ Pawel Stolowski ]
+  * Disable filter updates if phone factor is not 'desktop'. (LP:
+    #1229201)
+  * Renamed 'Search plugins' filter option of Applications to 'Dash
+    plugins'. (LP: #1231556)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 175
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 03 Oct 2013 05:03:35 +0000
+
+unity-scope-home (6.8.2+13.10.20131001-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Set renderer_hint on categories read from the scope files. (LP:
+    #1231951)
+  * Update category renderers to match latest designs. (LP: #1231951)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 172
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 01 Oct 2013 03:48:16 +0000
+
+unity-scope-home (6.8.2+13.10.20130927.1-0ubuntu1) saucy; urgency=low
+
+  [ Chris Wayne ]
+  * Changing the title from Home Scope to Home. (LP: #1231554)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 169
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 27 Sep 2013 11:08:21 +0000
+
+unity-scope-home (6.8.2+13.10.20130927-0ubuntu1) saucy; urgency=low
+
+  [ Pawel Stolowski ]
+  * Don't maintain own instances of cancellables. Use cancellable from
+    search context. (LP: #1228260)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 167
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 27 Sep 2013 03:09:19 +0000
+
+unity-scope-home (6.8.2+13.10.20130920-0ubuntu1) saucy; urgency=low
+
+  [ Pawel Stolowski ]
+  * Check if "images" member exists in metadata column to avoid
+    assertion warnings. (LP: #1220630)
+  * Reuse existing session_id for canned queries. (LP: #1222788)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 165
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 20 Sep 2013 11:17:35 +0000
+
+unity-scope-home (6.8.2+13.10.20130918.1-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Use latest protocol library to discover scopes, fixes support for
+    OEM customizations. (LP: #1220733)
+  * Support non-FileIcons coming from the smart scopes server. (LP:
+    #1223940)
+
+  [ Pawel Stolowski ]
+  * Properly handle info hints and subtitle when parsing previews from
+    Smart Scopes Server. Don't print errors if 'attribution' is missing.
+    (LP: #1219911)
+
+  [ Guillermo Gonzalez ]
+  * Fix smart-scopes preview parser to display info hints if icon_hint
+    is not provided or it's empty. (LP: #1221387)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 162
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 18 Sep 2013 07:53:18 +0000
+
+unity-scope-home (6.8.2+13.10.20130903.1-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Fix missing files and translations.
+
+  [ Pawel Stolowski ]
+  * Unescape search query that comes with scopes-query:// uri. (LP:
+    #1218857)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 157
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 03 Sep 2013 06:35:48 +0000
+
+unity-scope-home (6.8.2+13.10.20130829.1-0ubuntu2) saucy; urgency=low
+
+  * Ship an up-to-date .pot in the source, we need to bootstrap the
+    translations so they are availables in launchpad (lp: #1205489). 
+    That domain contains most of the unity lenses strings, 
+    which are currently showing non translated in saucy.
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 02 Sep 2013 11:38:31 +0200
+
+unity-scope-home (6.8.2+13.10.20130829.1-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Send country code and network code properties from the SIM if
+    available.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 153
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 29 Aug 2013 06:42:49 +0000
+
+unity-scope-home (6.8.2+13.10.20130828.1-0ubuntu1) saucy; urgency=low
+
+  [ Pawel Stolowski ]
+  * Support for new search as an activation response. Require libunity-7.1.0.
+
+  [ Michal Hruby ]
+  * Updated category definition and renderers to match latest versions
+    of designs.
+  * Sort scopes by title within the enabled/disabled groups.
+
+  [ Pawel Stolowski ]
+  * Don't add master scope to Categories filter if it has no scopes.
+    (LP: #1211691)
+
+  [ Łukasz 'sil2100' Zemczak ]
+  * Add R/P/C for the latest scopes that have been deprecated. Now the
+    home scope offers the same results through the smart-scopes - we
+    need to remove the old ones as those might conflict soon.
+  * Add R/P/C for unity-scope-openweathermap, forcing the removal of it
+    as we're handling the same functionality in the smart scopes server
+    now.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 151
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 28 Aug 2013 13:22:05 +0000
+
+unity-scope-home (6.8.1+13.10.20130816.1-0ubuntu1) saucy; urgency=low
+
+  [ Pawel Stolowski ]
+  * Added support for remote-scopes call to the fake-sss-server.py.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 144
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 16 Aug 2013 22:48:54 +0000
+
+unity-scope-home (6.8.1+13.10.20130809.1-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Add a separate category for scopes.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 142
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 09 Aug 2013 11:49:24 +0000
+
+unity-scope-home (6.8.1+13.10.20130806-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Make sorting and deduplication actually work.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 140
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 06 Aug 2013 07:38:25 +0000
+
+unity-scope-home (6.8.1+13.10.20130730-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * If available send build_id to the smart scopes server.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 138
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 30 Jul 2013 04:02:29 +0000
+
+unity-scope-home (6.8.1+13.10.20130729-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Bring back applications master scope, plus define content types for
+    some of the masters' categories.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 136
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 29 Jul 2013 04:02:39 +0000
+
+unity-scope-home (6.8.1+13.10.20130723-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Update POTFILES.in.
+  * Revert r133.
+
+  [ James Henstridge ]
+  * Define a master scope for applications, allowing other scopes to
+    provide results in parallel to the current monolithic unity-lens-
+    applications.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 134
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 23 Jul 2013 06:12:42 +0000
+
+unity-scope-home (6.8.1+13.10.20130705-0ubuntu1) saucy; urgency=low
+
+  [ Jeremy Bicha ]
+  * Build with default vala.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 130
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 05 Jul 2013 04:01:35 +0000
+
+unity-scope-home (6.8.1+13.10.20130702-0ubuntu1) saucy; urgency=low
+
+  [ Didier Roche ]
+  * ship definition of master scopes in unity-scopes-master-default
+
+  [ Michal Hruby ]
+  * Take renderer definitions from .scope files if present.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 128
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 02 Jul 2013 04:01:14 +0000
+
+unity-scope-home (6.8.0daily13.06.21-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * As per design guidelines, use capital letters only for first words.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 125
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 21 Jun 2013 04:01:58 +0000
+
+unity-scope-home (6.8.0daily13.06.19-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Remove the static declarations of all Master scopes and use the
+    protocol library to parse everything from the .scope files.
+  * Extract form-factor from search hints and pass it to SSS.
+  * Capitalize S in "More Suggestions".
+  * Revert r120.
+
+  [ David Callé ]
+  * Use the books icon for the Books master scope.
+
+  [ Jeremy Bicha ]
+  * capitalize More Suggestions.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 123
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 19 Jun 2013 04:28:14 +0000
+
+unity-scope-home (6.8.0daily13.06.10-0ubuntu1) saucy; urgency=low
+
+  [ Pawel Stolowski ]
+  * Append attribution text to description in previews.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 116
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 10 Jun 2013 04:02:08 +0000
+
+unity-scope-home (6.8.0daily13.06.05-0ubuntu1) saucy; urgency=low
+
+  [ Michal Hruby ]
+  * Create master scopes in home scope. Bugfixes.
+  * Added filter definitions for some default master scopes.
+  * Add missing shortcuts.
+  * Preliminary support for previews (still missess all preview types
+    and actions). Tested with generic previews from the server (the only
+    type supported by the server at the moment). Various fixes
+    (including category sorting).
+  * Fix races with DBus object export.
+  * Update master scope definitions.
+  * Update search hints.
+  * Expose remote scopes information in a DeeSharedModel.
+  * Improved category reordering and results flushing.
+  * Convert scope ids to master scope ids when calculating recommended
+    order.
+  * Bump control file.
+  * Show no results msgs for some master scopes in surfacing mode.
+  * Add dots.
+
+  [ David Callé ]
+  * Add recipes and calendar master scopes. Rename developer to code.
+    Add results category to info master scope.
+  * Add photos/friends category, add sort field and sort flags on photos
+    categories.
+  * Change some dedup and sort fields (boxes, web, code, help,
+    graphics).
+
+  [ Jussi Pakkanen ]
+  * Now with autofoo coverage bling blingness.
+
+  [ Chris Townsend ]
+  * Fix localization of the search hint. (LP: #1158779)
+
+  [ Didier Roche ]
+  * bump libunity-dev build-dep
+
+  [ Pawel Stolowski ]
+  * Home scope - repository init.
+  * Added SessionManager, some more logic implemented in the scope and
+    ScopeManager.
+  * Fixes, more implementation bits.
+  * Fixed search handling.
+  * Made ScopeSearchSession a proper class. Support cancellable when
+    dispatching search.
+  * First cut at category handling.
+  * Set home scope categories, signal category order.
+  * Some category fixes.
+  * Added ScopeRegistry wrapper class. Preliminary support for
+    categories and filters.
+  * Added skeleton files for unit tests.
+  * Added global session id handling. Added some stub code to preview
+    and activate handlers.
+  * First cut at activation
+  * First cut at refactoring.
+  * Added keyword search. Various fixes.
+  * Keyword search tests, cleanups, removed unneeded sources.
+  * Pass correct master scope id when dispatching search. Update search
+    query string when keyword search is in use.
+  * Autoconf magic.
+  * Set merge_mode.
+  * Don't assume home scope connects only to master scopes.
+  * Don't assume dee shared models; use dee model pointer for unique
+    ids.
+  * Added DBus .service file.
+  * Skip home.scope when processing registry.
+  * Added some debug messages.
+  * Added debug message.
+  * Updated pkg name.
+  * Fixed path in dbus service file.
+  * CategoryManager: use string ids of the models, not model references.
+    Clean internal structures up when home model is destroyed.
+  * Added very very very preliminary skeleton code for parsing smart
+    scope service results, plus simple unit tests.
+  * Merged main branch.
+  * Support multiple scope ids for single keyword.
+  * Refactored search loop and no longer assume only scopes from always-
+    search list are searched - search_scopes list is populated by
+    filters or awlays-search-list before entering the loop.
+  * Some more skeleton code for smart scopes service.
+  * Added optional &scopes=.. argument to the smart scopes search query.
+  * Added SmartScopesInterface definition and some search handling code.
+  * Added temporary support for ENABLE_SSS env var that enables Smart
+    Scopes Service queries. Disabled gnome proxy in soup session for now
+    due to weird schema error in raring. Initialize
+    SearchResponseHandler in SmartScopesClient.
+  * Reworked / cleaned-up main search method in preparation for handling
+    online recommendations.
+  * Improved async search & recommendations handling.
+  * Updated smart scopes json parsing for latest changes.
+  * Implemented chunked response handling. Added metrics support (not
+    really used yet).
+  * Adder wrapper for uuid, generate time-uuid and override its MAC part
+    and pass it as session id.
+  * Added fake-server and unit tests that use it. Analyse search query
+    for added/removed characters and only generate new session id for
+    new search query.
+  * Added unit test for Category sorting. Some cleanups.
+  * Randomize fake-server port in unit tests, to minimize risk of
+    collisions of concurrent builds in jenkins.
+  * Added support for server_sid.
+  * Merged search-cleanup branch.
+  * Parse lsb_release output to get Ubuntu version in PlatformInfo.
+  * Create master scopes in home scope. Bugfixes.
+  * Preliminary support for previews (still missess all preview types
+    and actions). Tested with generic previews from the server (the only
+    type supported by the server at the moment). Various fixes
+    (including category sorting).
+  * Assign client_scopes_info value so that sending client scopes diff
+    to the server actually works.
+  * Light up filters according to recommendations and searched scopes.
+  * Implemented advanced filter behaviour (e.g. default view where user
+    can modify default filters when search query is empty).
+  * Handle actions for server previews. Handle music preview. Added
+    MarkupCleaner (taken from shopping lens). Removed handles for
+    preview types that we don't really expect, and use generic preview
+    handler as a fallback. Added support for SMART_SCOPES_GEO_STORE
+    environment variable to force geo_store parameter in search queries.
+  * Handle remote-content-search and disabled-scopes gsettings flags.
+  * Maintain result counts for every subscope, based on scope-id value
+    from "content".
+  * Fixed conditional in smart scopes query callback that blocked it
+    until local searches finish. Added custom log handler that prints
+    timestamps (enabled only if HOME_SCOPE_VERBOSE is set, in additon to
+    G_MESSAGES_DEBUG=all).
+  * Push remote data results to master scopes in an idle callback.
+  * Cancel previous search on new one in same channel. (LP: #1158459)
+  * Signal category order on finish of each scope search. Limit the
+    number of recommendations that we take into consideration to 5.
+  * Extract scope_id from metadata when handling activate request, so
+    that activation/click feedback have specific scope ids. Added
+    Unity.HomeScope.verbose_debug and restrict preview/metrics debug
+    output based on it. Added SMART_SCOPES_QUERY_MIN_DELAY_MS,
+    SMART_SCOPES_QUERY_MAX_DELAY_MS constants that define delay before
+    sending smart scopes query off to the server. Set them to 50 and
+    100. Fixed preview parsing bug if description_html is empty. (LP:
+    #1160476)
+  * Implemented direct search (keyword search) for server scopes, this
+    also makes client-side keyword search actually work. Various fixes
+    regarding filters (interrelationships, lighting them up). Limit
+    updates of user's default view in dconf. (LP: #1159928, #1160851)
+  * Don't issue a warning on cancellation.
+  * Actually return from one of the if cancelled .. checks.
+  * Don't attempt to record feedback events if there is no server_sid
+    (which may be the case if smart scopes server wasn't queried).
+  * Improved category reordering and results flushing.
+  * Don't add scopes that miss required binaries (QueryBinary) to the
+    registry. This removes offending scopes from 'Sources' filter and
+    adds them to removed_scopes for the smart scopes server query. (LP:
+    #1166731)
+  * Monitor network availability on failures of remote-scopes query (on
+    startup). (LP: #1157096)
+  * Fixed search hint of music master scope. (LP: #1170729)
+  * Recreate filters if the list of disabled scopes changes. Disabled
+    scopes are not shown in 'Sources' filter.
+  * Sort 'Sources' filter by display names.
+  * Display preview for More Suggestions also on left-mouse-click. (LP:
+    #1170712)
+  * Don't wait for finish of feedback sending. .
+  * Set no-results-hint.
+  * Fixed bugs in remote preview handling. Fixed errors about "mv"
+    variants.
+  * Flush results as soon as application.scope transaction completes. .
+  * Added keywords definitions for master scopes. . (LP: #1174475)
+  * Refined model flushing on transaction completion for applications;
+    only do this if search query is different (i.e. don't flush on
+    filter change, this reduces flickering).
+  * Include remote scopes in Sources filter.
+  * Removed unused categories callback in smart scopes results parser.
+  * Enabled back support for GNOME proxy settings.
+  * Take nullable session_id in handle_metrics to avoid misleading
+    warnings.
+  * Pass all scopes in subscopes-filter when executing search query with
+    recommended scopes.
+
+  [ Michael Terry ]
+  * Drop generated code from bzr
+  * Add -rpath to find private protocol library since it isn't in the
+    standard library search path
+  * Install scope binary in pkglibexec not libexec for cleanliness
+  * Rename to unity-scope-home to match all the other scopes
+  * add debian/ directory
+  * Add missing provides on asklibreoffice.
+
+  [ Timo Jyrinki ]
+  * Enable split for bzr-builddeb
+
+  [ Francis Ginther ]
+  * Add libjson-glib-dev and libsoup-gnome2.4-dev to debian/control.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 114
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 06:09:45 +0000
+
+unity-scope-home (6.8.0daily13.05.31ubuntu.unity.next-0ubuntu1) raring; urgency=low
+
+  [ Michal Hruby ]
+  * Create master scopes in home scope. Bugfixes.
+  * Added filter definitions for some default master scopes.
+  * Add missing shortcuts.
+  * Preliminary support for previews (still missess all preview types
+    and actions). Tested with generic previews from the server (the only
+    type supported by the server at the moment). Various fixes
+    (including category sorting).
+  * Fix races with DBus object export.
+  * Update master scope definitions.
+  * Update search hints.
+  * Expose remote scopes information in a DeeSharedModel.
+  * Improved category reordering and results flushing.
+  * Convert scope ids to master scope ids when calculating recommended
+    order.
+  * Bump control file.
+  * Show no results msgs for some master scopes in surfacing mode.
+  * Add dots.
+
+  [ David Callé ]
+  * Add recipes and calendar master scopes. Rename developer to code.
+    Add results category to info master scope.
+  * Add photos/friends category, add sort field and sort flags on photos
+    categories.
+  * Change some dedup and sort fields (boxes, web, code, help,
+    graphics).
+
+  [ Jussi Pakkanen ]
+  * Now with autofoo coverage bling blingness.
+
+  [ Chris Townsend ]
+  * Fix localization of the search hint. (LP: #1158779)
+
+  [ Didier Roche ]
+  * bump libunity-dev build-dep
+
+  [ Pawel Stolowski ]
+  * Home scope - repository init.
+  * Added SessionManager, some more logic implemented in the scope and
+    ScopeManager.
+  * Fixes, more implementation bits.
+  * Fixed search handling.
+  * Made ScopeSearchSession a proper class. Support cancellable when
+    dispatching search.
+  * First cut at category handling.
+  * Set home scope categories, signal category order.
+  * Some category fixes.
+  * Added ScopeRegistry wrapper class. Preliminary support for
+    categories and filters.
+  * Added skeleton files for unit tests.
+  * Added global session id handling. Added some stub code to preview
+    and activate handlers.
+  * First cut at activation
+  * First cut at refactoring.
+  * Added keyword search. Various fixes.
+  * Keyword search tests, cleanups, removed unneeded sources.
+  * Pass correct master scope id when dispatching search. Update search
+    query string when keyword search is in use.
+  * Autoconf magic.
+  * Set merge_mode.
+  * Don't assume home scope connects only to master scopes.
+  * Don't assume dee shared models; use dee model pointer for unique
+    ids.
+  * Added DBus .service file.
+  * Skip home.scope when processing registry.
+  * Added some debug messages.
+  * Added debug message.
+  * Updated pkg name.
+  * Fixed path in dbus service file.
+  * CategoryManager: use string ids of the models, not model references.
+    Clean internal structures up when home model is destroyed.
+  * Added very very very preliminary skeleton code for parsing smart
+    scope service results, plus simple unit tests.
+  * Merged main branch.
+  * Support multiple scope ids for single keyword.
+  * Refactored search loop and no longer assume only scopes from always-
+    search list are searched - search_scopes list is populated by
+    filters or awlays-search-list before entering the loop.
+  * Some more skeleton code for smart scopes service.
+  * Added optional &scopes=.. argument to the smart scopes search query.
+  * Added SmartScopesInterface definition and some search handling code.
+  * Added temporary support for ENABLE_SSS env var that enables Smart
+    Scopes Service queries. Disabled gnome proxy in soup session for now
+    due to weird schema error in raring. Initialize
+    SearchResponseHandler in SmartScopesClient.
+  * Reworked / cleaned-up main search method in preparation for handling
+    online recommendations.
+  * Improved async search & recommendations handling.
+  * Updated smart scopes json parsing for latest changes.
+  * Implemented chunked response handling. Added metrics support (not
+    really used yet).
+  * Adder wrapper for uuid, generate time-uuid and override its MAC part
+    and pass it as session id.
+  * Added fake-server and unit tests that use it. Analyse search query
+    for added/removed characters and only generate new session id for
+    new search query.
+  * Added unit test for Category sorting. Some cleanups.
+  * Randomize fake-server port in unit tests, to minimize risk of
+    collisions of concurrent builds in jenkins.
+  * Added support for server_sid.
+  * Merged search-cleanup branch.
+  * Parse lsb_release output to get Ubuntu version in PlatformInfo.
+  * Create master scopes in home scope. Bugfixes.
+  * Preliminary support for previews (still missess all preview types
+    and actions). Tested with generic previews from the server (the only
+    type supported by the server at the moment). Various fixes
+    (including category sorting).
+  * Assign client_scopes_info value so that sending client scopes diff
+    to the server actually works.
+  * Light up filters according to recommendations and searched scopes.
+  * Implemented advanced filter behaviour (e.g. default view where user
+    can modify default filters when search query is empty).
+  * Handle actions for server previews. Handle music preview. Added
+    MarkupCleaner (taken from shopping lens). Removed handles for
+    preview types that we don't really expect, and use generic preview
+    handler as a fallback. Added support for SMART_SCOPES_GEO_STORE
+    environment variable to force geo_store parameter in search queries.
+  * Handle remote-content-search and disabled-scopes gsettings flags.
+  * Maintain result counts for every subscope, based on scope-id value
+    from "content".
+  * Fixed conditional in smart scopes query callback that blocked it
+    until local searches finish. Added custom log handler that prints
+    timestamps (enabled only if HOME_SCOPE_VERBOSE is set, in additon to
+    G_MESSAGES_DEBUG=all).
+  * Push remote data results to master scopes in an idle callback.
+  * Cancel previous search on new one in same channel. (LP: #1158459)
+  * Signal category order on finish of each scope search. Limit the
+    number of recommendations that we take into consideration to 5.
+  * Extract scope_id from metadata when handling activate request, so
+    that activation/click feedback have specific scope ids. Added
+    Unity.HomeScope.verbose_debug and restrict preview/metrics debug
+    output based on it. Added SMART_SCOPES_QUERY_MIN_DELAY_MS,
+    SMART_SCOPES_QUERY_MAX_DELAY_MS constants that define delay before
+    sending smart scopes query off to the server. Set them to 50 and
+    100. Fixed preview parsing bug if description_html is empty. (LP:
+    #1160476)
+  * Implemented direct search (keyword search) for server scopes, this
+    also makes client-side keyword search actually work. Various fixes
+    regarding filters (interrelationships, lighting them up). Limit
+    updates of user's default view in dconf. (LP: #1159928, #1160851)
+  * Don't issue a warning on cancellation.
+  * Actually return from one of the if cancelled .. checks.
+  * Don't attempt to record feedback events if there is no server_sid
+    (which may be the case if smart scopes server wasn't queried).
+  * Improved category reordering and results flushing.
+  * Don't add scopes that miss required binaries (QueryBinary) to the
+    registry. This removes offending scopes from 'Sources' filter and
+    adds them to removed_scopes for the smart scopes server query. (LP:
+    #1166731)
+  * Monitor network availability on failures of remote-scopes query (on
+    startup). (LP: #1157096)
+  * Fixed search hint of music master scope. (LP: #1170729)
+  * Recreate filters if the list of disabled scopes changes. Disabled
+    scopes are not shown in 'Sources' filter.
+  * Sort 'Sources' filter by display names.
+  * Display preview for More Suggestions also on left-mouse-click. (LP:
+    #1170712)
+  * Don't wait for finish of feedback sending. .
+  * Set no-results-hint.
+  * Fixed bugs in remote preview handling. Fixed errors about "mv"
+    variants.
+  * Flush results as soon as application.scope transaction completes. .
+  * Added keywords definitions for master scopes. . (LP: #1174475)
+  * Refined model flushing on transaction completion for applications;
+    only do this if search query is different (i.e. don't flush on
+    filter change, this reduces flickering).
+  * Include remote scopes in Sources filter.
+  * Removed unused categories callback in smart scopes results parser.
+  * Enabled back support for GNOME proxy settings.
+  * Take nullable session_id in handle_metrics to avoid misleading
+    warnings.
+  * Pass all scopes in subscopes-filter when executing search query with
+    recommended scopes.
+
+  [ Michael Terry ]
+  * Drop generated code from bzr
+  * Add -rpath to find private protocol library since it isn't in the
+    standard library search path
+  * Install scope binary in pkglibexec not libexec for cleanliness
+  * Rename to unity-scope-home to match all the other scopes
+  * add debian/ directory
+  * Add missing provides on asklibreoffice.
+
+  [ Timo Jyrinki ]
+  * Enable split for bzr-builddeb
+
+  [ Francis Ginther ]
+  * Add libjson-glib-dev and libsoup-gnome2.4-dev to debian/control.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 113 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 31 May 2013 04:20:52 +0000
+
+unity-scope-home (6.8.0daily13.05.07ubuntu.unity.experimental.certified-0ubuntu1) raring; urgency=low
+
+  [ Pawel Stolowski ]
+  * Direct search should support master scopes (LP: #1174475)
+  * Left and Right clicking on “More Suggestions” should open a preview
+    (LP: #1170712)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 108 (ubuntu-unity/experimental-
+    certified)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 07 May 2013 07:03:57 +0000
+
+unity-scope-home (6.8.0daily13.04.23ubuntu.unity.experimental.certified-0ubuntu1) raring; urgency=low
+
+  [ Pawel Stolowski ]
+  * Scopes which miss an executable to work properly should be added to
+    remove_scopes (LP: #1166731)
+  * Incorrect hint in Music Lens (LP: #1170729)
+  * Erratic filter behavior (LP: #1160851)
+  * Direct search is not supported for server scopes (LP: #1159928)
+  * Home Scope should be smarter about network availability (LP:
+    #1157096)
+
+  [ Chris Townsend ]
+  * dash translations are incomplete (likely a code bug, regression from
+    new scopes version) (LP: #1158779)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 95 (ubuntu-unity/experimental-
+    certified)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 23 Apr 2013 07:08:38 +0000
+
+unity-scope-home (6.8.0daily13.04.10ubuntu.unity.experimental.certified-0ubuntu1) raring; urgency=low
+
+  [ Michael Terry ]
+  * Initial release
+
+  [ Didier Roche ]
+  * Misc fixes for working for being able to NEW/MIR it
+  * Automatic snapshot from revision 1 (boostrap)
+  * build-dep on python for the test being able to run
+  * C/R/P some unity-lens-* as the recommendations are delivered by
+    the server through the smart scope.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 82 (ubuntu-unity/experimental-
+    certified)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 10 Apr 2013 07:17:17 +0000

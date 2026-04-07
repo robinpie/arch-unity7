@@ -1,0 +1,2 @@
+/usr/bin/ar qc libunity-shared-bamf.a "CMakeFiles/unity-shared-bamf.dir/DesktopApplicationManager.cpp.o" "CMakeFiles/unity-shared-bamf.dir/BamfApplicationManager.cpp.o" "CMakeFiles/unity-shared-bamf.dir/BamfApplicationManagerFactory.cpp.o"
+/usr/bin/ranlib libunity-shared-bamf.a

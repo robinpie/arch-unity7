@@ -1,0 +1,12 @@
+[encoding: UTF-8]
+src/daemon.vala
+src/commands-scope.vala
+src/scopes-scope.vala
+src/utils.vala
+src/main.vala
+src/running-apps-scope.vala
+data/X-Unity-All-Applications.directory.in
+[type: gettext/ini]data/applications.scope.in.in
+[type: gettext/ini]data/commands.scope.in.in
+[type: gettext/ini]data/scopes.scope.in.in
+[type: gettext/ini]data/runningapps.scope.in.in

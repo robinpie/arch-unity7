@@ -1,0 +1,47 @@
+# Danish translation for indicator-keyboard
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the indicator-keyboard package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: indicator-keyboard\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2023-09-14 08:42+0000\n"
+"PO-Revision-Date: 2013-09-28 10:32+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Danish <da@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2023-09-15 04:45+0000\n"
+"X-Generator: Launchpad (build 32eed776db4e1fe74faaa77122cde19862d565ac)\n"
+
+#: ../lib/main.vala:852
+#, c-format
+msgid "%s input source"
+msgstr "%s-inputkilde"
+
+#: ../lib/main.vala:856
+msgid "Keyboard Layout"
+msgstr "Tastaturlayout"
+
+#: ../lib/main.vala:857
+msgid "Input source selection"
+msgstr "Valg af inputkilde"
+
+#: ../lib/indicator-menu.vala:62
+msgid "Character Map"
+msgstr "Tegnoversigt"
+
+#: ../lib/indicator-menu.vala:63
+msgid "Keyboard Layout Chart"
+msgstr "Oversigt over tastaturlayout"
+
+#: ../lib/indicator-menu.vala:64
+msgid "Text Entry Settings..."
+msgstr "Indstillinger for indtastning..."
+
+#: ../lib/indicator-menu.vala:120
+msgid "On-screen keyboard"
+msgstr "Skærmtastatur"

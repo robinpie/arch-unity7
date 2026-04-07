@@ -1,0 +1,1527 @@
+<?xml version="1.0"?>
+<!-- This file was automatically generated from C sources - DO NOT EDIT!
+To affect the contents of this file, edit the original C definitions,
+and/or use gtk-doc annotations.  -->
+<repository version="1.2"
+            xmlns="http://www.gtk.org/introspection/core/1.0"
+            xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:doc="http://www.gtk.org/introspection/doc/1.0"
+            xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+  <include name="GObject" version="2.0"/>
+  <include name="Gio" version="2.0"/>
+  <package name="messaging-menu"/>
+  <c:include name="messaging-menu.h"/>
+  <doc:format name="unknown"/>
+  <namespace name="MessagingMenu"
+             version="1.0"
+             shared-library="libmessaging-menu.so.0"
+             c:identifier-prefixes="MessagingMenu"
+             c:symbol-prefixes="messaging_menu">
+    <alias name="AppClass" c:type="MessagingMenuAppClass">
+      <source-position filename="messaging-menu-app.h" line="52"/>
+      <type name="GObject.ObjectClass" c:type="GObjectClass"/>
+    </alias>
+    <function-macro name="APP"
+                    c:identifier="MESSAGING_MENU_APP"
+                    introspectable="0">
+      <source-position filename="messaging-menu-app.h" line="29"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="APP_CLASS"
+                    c:identifier="MESSAGING_MENU_APP_CLASS"
+                    introspectable="0">
+      <source-position filename="messaging-menu-app.h" line="30"/>
+      <parameters>
+        <parameter name="c">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <class name="App"
+           c:symbol-prefix="app"
+           c:type="MessagingMenuApp"
+           parent="GObject.Object"
+           glib:type-name="MessagingMenuApp"
+           glib:get-type="messaging_menu_app_get_type">
+      <doc xml:space="preserve"
+           filename="messaging-menu-app.c"
+           line="94">#MessagingMenuApp is an opaque structure.</doc>
+      <constructor name="new" c:identifier="messaging_menu_app_new">
+        <source-position filename="messaging-menu-app.h" line="57"/>
+        <return-value transfer-ownership="full">
+          <type name="App" c:type="MessagingMenuApp*"/>
+        </return-value>
+        <parameters>
+          <parameter name="desktop_id" transfer-ownership="none">
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="append_message"
+              c:identifier="messaging_menu_app_append_message">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="1324">Appends @msg to the source with id @source_id of @app.  The messaging
+menu might not display this message immediately if other messages are
+queued before this one.
+
+If @source_id has a count associated with it, that count will be
+increased by one.
+
+If @source_id is %NULL, @msg won't be associated with a source.</doc>
+        <source-position filename="messaging-menu-app.h" line="147"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1326">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="msg" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1327">the #MessagingMenuMessage to append</doc>
+            <type name="Message" c:type="MessagingMenuMessage*"/>
+          </parameter>
+          <parameter name="source_id"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1328">the source id to which @msg is added, or NULL</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="notify" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1329">whether a notification bubble should be shown for this
+         message</doc>
+            <type name="gboolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="append_source"
+              c:identifier="messaging_menu_app_append_source">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="909">Appends a new message source to the end of the section representing @app.
+Equivalent to calling messaging_menu_app_append_source_with_time() with the
+current time.
+
+It is an error to add a source with an @id which already exists.  Use
+messaging_menu_app_has_source() to find out whether there is such a source.</doc>
+        <source-position filename="messaging-menu-app.h" line="71"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="911">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="912">a unique identifier for the source to be added</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="icon"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="913">the icon associated with the source</doc>
+            <type name="Gio.Icon" c:type="GIcon*"/>
+          </parameter>
+          <parameter name="label" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="914">a user-visible string best describing the source</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="append_source_with_count"
+              c:identifier="messaging_menu_app_append_source_with_count">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="960">Appends a new message source to the end of the section representing @app and
+initializes it with @count.
+
+To update the count, use messaging_menu_app_set_source_count().
+
+It is an error to add a source with an @id which already exists.  Use
+messaging_menu_app_has_source() to find out whether there is such a source.</doc>
+        <source-position filename="messaging-menu-app.h" line="83"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="962">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="963">a unique identifier for the source to be added</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="icon"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="964">the icon associated with the source</doc>
+            <type name="Gio.Icon" c:type="GIcon*"/>
+          </parameter>
+          <parameter name="label" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="965">a user-visible string best describing the source</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="count" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="966">the count for the source</doc>
+            <type name="guint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="append_source_with_string"
+              c:identifier="messaging_menu_app_append_source_with_string">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="1070">Appends a new message source to the end of the section representing @app and
+initializes it with @str.
+
+To update the string, use messaging_menu_app_set_source_string().
+
+It is an error to insert a source with an @id which already exists.  Use
+messaging_menu_app_has_source() to find out whether there is such a source.</doc>
+        <source-position filename="messaging-menu-app.h" line="102"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1072">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1073">a unique identifier for the source to be added</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="icon"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1074">the icon associated with the source</doc>
+            <type name="Gio.Icon" c:type="GIcon*"/>
+          </parameter>
+          <parameter name="label" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1075">a user-visible string best describing the source</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="str" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1076">a string associated with the source</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="append_source_with_time"
+              c:identifier="messaging_menu_app_append_source_with_time">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="1014">Appends a new message source to the end of the section representing
+@app and initializes it with @time.  Use
+messaging_menu_app_append_source() to append a source with the
+current time.
+
+To change the time, use messaging_menu_app_set_source_time().
+
+It is an error to insert a source with an @id which already exists.  Use
+messaging_menu_app_has_source() to find out whether there is such a source.</doc>
+        <source-position filename="messaging-menu-app.h" line="96"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1016">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1017">a unique identifier for the source to be added</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="icon"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1018">the icon associated with the source</doc>
+            <type name="Gio.Icon" c:type="GIcon*"/>
+          </parameter>
+          <parameter name="label" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1019">a user-visible string best describing the source</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="time" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1020">the time when the source was created, in microseconds</doc>
+            <type name="gint64" c:type="gint64"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="draw_attention"
+              c:identifier="messaging_menu_app_draw_attention">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="1265">Indicates that @source_id has important unread messages.  Currently, this
+means that the messaging menu's envelope icon will turn blue.
+
+Use messaging_menu_app_remove_attention() to stop indicating that the source
+needs attention.</doc>
+        <source-position filename="messaging-menu-app.h" line="141"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1267">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="source_id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1268">a source id</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_message" c:identifier="messaging_menu_app_get_message">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="1377">Retrieves the message with @id, that was added with
+messaging_menu_app_append_message().</doc>
+        <source-position filename="messaging-menu-app.h" line="152"/>
+        <return-value transfer-ownership="none" nullable="1">
+          <doc xml:space="preserve"
+               filename="messaging-menu-app.c"
+               line="1385">the #MessagingMenuApp with
+@id, or %NULL</doc>
+          <type name="Message" c:type="MessagingMenuMessage*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1379">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1380">id of the message to retrieve</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="has_source" c:identifier="messaging_menu_app_has_source">
+        <source-position filename="messaging-menu-app.h" line="118"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="messaging-menu-app.c"
+               line="1119">TRUE if there is a source associated with @source_id</doc>
+          <type name="gboolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1116">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="source_id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1117">a source id</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="insert_source"
+              c:identifier="messaging_menu_app_insert_source">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="883">Inserts a new message source into the section representing @app.  Equivalent
+to calling messaging_menu_app_insert_source_with_time() with the current
+time.
+
+It is an error to insert a source with an @id which already exists.  Use
+messaging_menu_app_has_source() to find out whether there is such a source.</doc>
+        <source-position filename="messaging-menu-app.h" line="65"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="885">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="position" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="886">the position at which to insert the source</doc>
+            <type name="gint" c:type="gint"/>
+          </parameter>
+          <parameter name="id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="887">a unique identifier for the source to be added</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="icon" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="888">the icon associated with the source</doc>
+            <type name="Gio.Icon" c:type="GIcon*"/>
+          </parameter>
+          <parameter name="label" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="889">a user-visible string best describing the source</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="insert_source_with_count"
+              c:identifier="messaging_menu_app_insert_source_with_count">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="932">Inserts a new message source into the section representing @app and
+initializes it with @count.
+
+To update the count, use messaging_menu_app_set_source_count().
+
+It is an error to insert a source with an @id which already exists.  Use
+messaging_menu_app_has_source() to find out whether there is such a source.</doc>
+        <source-position filename="messaging-menu-app.h" line="76"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="934">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="position" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="935">the position at which to insert the source</doc>
+            <type name="gint" c:type="gint"/>
+          </parameter>
+          <parameter name="id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="936">a unique identifier for the source to be added</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="icon"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="937">the icon associated with the source</doc>
+            <type name="Gio.Icon" c:type="GIcon*"/>
+          </parameter>
+          <parameter name="label" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="938">a user-visible string best describing the source</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="count" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="939">the count for the source</doc>
+            <type name="guint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="insert_source_with_string"
+              c:identifier="messaging_menu_app_insert_source_with_string">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="1042">Inserts a new message source into the section representing @app and
+initializes it with @str.
+
+To update the string, use messaging_menu_app_set_source_string().
+
+It is an error to insert a source with an @id which already exists.  Use
+messaging_menu_app_has_source() to find out whether there is such a source.</doc>
+        <source-position filename="messaging-menu-app.h" line="108"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1044">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="position" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1045">the position at which to insert the source</doc>
+            <type name="gint" c:type="gint"/>
+          </parameter>
+          <parameter name="id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1046">a unique identifier for the source to be added</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="icon"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1047">the icon associated with the source</doc>
+            <type name="Gio.Icon" c:type="GIcon*"/>
+          </parameter>
+          <parameter name="label" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1048">a user-visible string best describing the source</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="str" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1049">a string associated with the source</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="insert_source_with_time"
+              c:identifier="messaging_menu_app_insert_source_with_time">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="985">Inserts a new message source into the section representing @app and
+initializes it with @time.  Use messaging_menu_app_insert_source() to
+insert a source with the current time.
+
+To change the time, use messaging_menu_app_set_source_time().
+
+It is an error to insert a source with an @id which already exists.  Use
+messaging_menu_app_has_source() to find out whether there is such a source.</doc>
+        <source-position filename="messaging-menu-app.h" line="89"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="987">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="position" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="988">the position at which to insert the source</doc>
+            <type name="gint" c:type="gint"/>
+          </parameter>
+          <parameter name="id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="989">a unique identifier for the source to be added</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="icon"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="990">the icon associated with the source</doc>
+            <type name="Gio.Icon" c:type="GIcon*"/>
+          </parameter>
+          <parameter name="label" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="991">a user-visible string best describing the source</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="time" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="992">the time when the source was created, in microseconds</doc>
+            <type name="gint64" c:type="gint64"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="register" c:identifier="messaging_menu_app_register">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="672">Registers @app with the Messaging Menu.
+
+If the application doesn't already have a section in the Messaging
+Menu, one will be created for it.  The application will also be
+marked as "running".
+
+The application will be marked as "not running" as soon as @app is
+destroyed.  The application launcher as well as shortcut actions will
+remain in the menu.  To completely remove the application section
+from the Messaging Menu, call messaging_menu_app_unregister().</doc>
+        <source-position filename="messaging-menu-app.h" line="59"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="674">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="remove_attention"
+              c:identifier="messaging_menu_app_remove_attention">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="1293">Stop indicating that @source_id needs attention.
+
+This function does not need to be called when the source is removed
+with messaging_menu_app_remove_source() or the user has activated the
+source.
+
+Use messaging_menu_app_draw_attention() to make @source_id draw attention
+again.</doc>
+        <source-position filename="messaging-menu-app.h" line="144"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1295">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="source_id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1296">a source id</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove_message"
+              c:identifier="messaging_menu_app_remove_message">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="1398">Removes @msg from @app.
+
+If @source_id has a count associated with it, that count will be
+decreased by one.</doc>
+        <source-position filename="messaging-menu-app.h" line="155"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1400">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="msg" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1401">the #MessagingMenuMessage to remove</doc>
+            <type name="Message" c:type="MessagingMenuMessage*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove_message_by_id"
+              c:identifier="messaging_menu_app_remove_message_by_id">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="1419">Removes the message with the id @id from @app.
+
+If @source_id has a count associated with it, that count will be
+decreased by one.</doc>
+        <source-position filename="messaging-menu-app.h" line="158"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1421">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1422">the unique id of @msg</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="remove_source"
+              c:identifier="messaging_menu_app_remove_source">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="1096">Removes the source corresponding to @source_id from the menu.</doc>
+        <source-position filename="messaging-menu-app.h" line="115"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1098">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="source_id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1099">the id of the source to remove</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_source_count"
+              c:identifier="messaging_menu_app_set_source_count">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="1187">Updates the count of @source_id to @count.</doc>
+        <source-position filename="messaging-menu-app.h" line="129"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1189">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="source_id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1190">a source id</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="count" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1191">the new count for the source</doc>
+            <type name="guint" c:type="guint"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_source_icon"
+              c:identifier="messaging_menu_app_set_source_icon">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="1159">Changes the icon of @source_id to @icon.</doc>
+        <source-position filename="messaging-menu-app.h" line="125"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1161">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="source_id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1162">a source id</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="icon"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1163">the new icon for the source</doc>
+            <type name="Gio.Icon" c:type="GIcon*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_source_label"
+              c:identifier="messaging_menu_app_set_source_label">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="1131">Changes the label of @source_id to @label.</doc>
+        <source-position filename="messaging-menu-app.h" line="121"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1133">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="source_id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1134">a source id</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="label" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1135">the new label for the source</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_source_string"
+              c:identifier="messaging_menu_app_set_source_string">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="1238">Updates the string displayed next to @source_id to @str.</doc>
+        <source-position filename="messaging-menu-app.h" line="137"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1240">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="source_id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1241">a source id</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="str" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1242">the new string for the source</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_source_time"
+              c:identifier="messaging_menu_app_set_source_time">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="1212">Updates the time of @source_id to @time.</doc>
+        <source-position filename="messaging-menu-app.h" line="133"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1214">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="source_id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1215">a source id</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="time" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="1216">the new time for the source, in microseconds</doc>
+            <type name="gint64" c:type="gint64"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_status" c:identifier="messaging_menu_app_set_status">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="743">Notify the Messaging Menu that the chat status of @app has changed to
+@status.
+
+Connect to the ::status-changed signal to receive notification about
+the user changing their global chat status through the Messaging
+Menu.
+
+This function does nothing for applications whose desktop file does
+not include X-MessagingMenu-UsesChatSection.</doc>
+        <source-position filename="messaging-menu-app.h" line="62"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="745">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+          <parameter name="status" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="746">a #MessagingMenuStatus</doc>
+            <type name="Status" c:type="MessagingMenuStatus"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="unregister" c:identifier="messaging_menu_app_unregister">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="713">Completely removes the @app from the Messaging Menu.  If the
+application's launcher and shortcut actions should remain in the
+menu, destroying @app with g_object_unref() suffices.
+
+Note: @app will remain valid and usable after this call.</doc>
+        <source-position filename="messaging-menu-app.h" line="60"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="app" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="715">a #MessagingMenuApp</doc>
+            <type name="App" c:type="MessagingMenuApp*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <property name="desktop-id"
+                readable="0"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none"
+                default-value="NULL">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="341">The desktop id of the application associated with this application
+section.  Must be given when the #MessagingMenuApp is created.</doc>
+        <type name="utf8" c:type="gchar*"/>
+      </property>
+      <glib:signal name="activate-source" when="first" detailed="1">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="357">Emitted when the user has activated the message source with id
+@source_id.  The source is immediately removed from the menu,
+handlers of this signal do not need to call
+messaging_menu_app_remove_source().</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="source_id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="360">the source id that was activated</doc>
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+      <glib:signal name="status-changed" when="first">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.c"
+             line="376">Emitted when the chat status is changed through the messaging menu.
+
+Applications which are registered to use the chat status should
+change their status to @status upon receiving this signal.  Call
+messaging_menu_app_set_status() to acknowledge that the application
+changed its status.</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="status" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-app.c"
+                 line="379">a #MessagingMenuStatus</doc>
+            <type name="gint" c:type="gint"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <function-macro name="IS_APP"
+                    c:identifier="MESSAGING_MENU_IS_APP"
+                    introspectable="0">
+      <source-position filename="messaging-menu-app.h" line="31"/>
+      <parameters>
+        <parameter name="o">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_MESSAGE"
+                    c:identifier="MESSAGING_MENU_IS_MESSAGE"
+                    introspectable="0">
+      <source-position filename="messaging-menu-message.h" line="30"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_MESSAGE_CLASS"
+                    c:identifier="MESSAGING_MENU_IS_MESSAGE_CLASS"
+                    introspectable="0">
+      <source-position filename="messaging-menu-message.h" line="31"/>
+      <parameters>
+        <parameter name="klass">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="MESSAGE"
+                    c:identifier="MESSAGING_MENU_MESSAGE"
+                    introspectable="0">
+      <source-position filename="messaging-menu-message.h" line="28"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="MESSAGE_CLASS"
+                    c:identifier="MESSAGING_MENU_MESSAGE_CLASS"
+                    introspectable="0">
+      <source-position filename="messaging-menu-message.h" line="29"/>
+      <parameters>
+        <parameter name="klass">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="MESSAGE_GET_CLASS"
+                    c:identifier="MESSAGING_MENU_MESSAGE_GET_CLASS"
+                    introspectable="0">
+      <source-position filename="messaging-menu-message.h" line="32"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <class name="Message"
+           c:symbol-prefix="message"
+           c:type="MessagingMenuMessage"
+           parent="GObject.Object"
+           glib:type-name="MessagingMenuMessage"
+           glib:get-type="messaging_menu_message_get_type">
+      <constructor name="new" c:identifier="messaging_menu_message_new">
+        <doc xml:space="preserve"
+             filename="messaging-menu-message.c"
+             line="285">Creates a new #MessagingMenuMessage.</doc>
+        <source-position filename="messaging-menu-message.h" line="38"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="messaging-menu-message.c"
+               line="296">a new #MessagingMenuMessage</doc>
+          <type name="Message" c:type="MessagingMenuMessage*"/>
+        </return-value>
+        <parameters>
+          <parameter name="id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="287">unique id of the message</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="icon"
+                     transfer-ownership="full"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="288">a #GIcon representing the message</doc>
+            <type name="Gio.Icon" c:type="GIcon*"/>
+          </parameter>
+          <parameter name="title" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="289">the title of the message</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="subtitle"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="290">the subtitle of the message</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="body"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="291">the message body</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="time" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="292">the time the message was received</doc>
+            <type name="gint64" c:type="gint64"/>
+          </parameter>
+        </parameters>
+      </constructor>
+      <method name="add_action"
+              c:identifier="messaging_menu_message_add_action">
+        <doc xml:space="preserve"
+             filename="messaging-menu-message.c"
+             line="434">Adds an action with @id and @label to @message.  Actions are an
+alternative way for users to activate a message.  Note that messages
+can still be activated without an action.
+
+If @parameter_type is non-%NULL, the action is able to receive user
+input in addition to simply activating the action.  Currently, only
+string parameters are supported.
+
+A list of predefined parameters can be supplied as a #GVariant array
+of @parameter_type in @parameter_hint.  If @parameter_hint is
+floating, it will be consumed.
+
+It is recommended to add at most two actions to a message.</doc>
+        <source-position filename="messaging-menu-message.h" line="62"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="msg" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="436">a #MessagingMenuMessage</doc>
+            <type name="Message" c:type="MessagingMenuMessage*"/>
+          </instance-parameter>
+          <parameter name="id" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="437">unique id of the action</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="label"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="438">label of the action</doc>
+            <type name="utf8" c:type="const gchar*"/>
+          </parameter>
+          <parameter name="parameter_type"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="439">a #GVariantType</doc>
+            <type name="GLib.VariantType" c:type="const GVariantType*"/>
+          </parameter>
+          <parameter name="parameter_hint"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="440">a #GVariant suggesting a valid range
+for parameters</doc>
+            <type name="GLib.Variant" c:type="GVariant*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_body"
+              c:identifier="messaging_menu_message_get_body"
+              glib:get-property="body">
+        <source-position filename="messaging-menu-message.h" line="53"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="messaging-menu-message.c"
+               line="379">the body of @msg</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="msg" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="377">a #MessagingMenuMessage</doc>
+            <type name="Message" c:type="MessagingMenuMessage*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_draws_attention"
+              c:identifier="messaging_menu_message_get_draws_attention"
+              glib:get-property="draws-attention">
+        <source-position filename="messaging-menu-message.h" line="57"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="messaging-menu-message.c"
+               line="407">whether @msg is drawing attention</doc>
+          <type name="gboolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="msg" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="405">a #MessagingMenuMessage</doc>
+            <type name="Message" c:type="MessagingMenuMessage*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_icon"
+              c:identifier="messaging_menu_message_get_icon"
+              glib:get-property="icon">
+        <source-position filename="messaging-menu-message.h" line="47"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="messaging-menu-message.c"
+               line="337">the icon of @msg</doc>
+          <type name="Gio.Icon" c:type="GIcon*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="msg" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="335">a #MessagingMenuMessage</doc>
+            <type name="Message" c:type="MessagingMenuMessage*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_id"
+              c:identifier="messaging_menu_message_get_id"
+              glib:get-property="id">
+        <source-position filename="messaging-menu-message.h" line="45"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="messaging-menu-message.c"
+               line="323">the unique id of @msg</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="msg" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="321">a #MessagingMenuMessage</doc>
+            <type name="Message" c:type="MessagingMenuMessage*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_subtitle"
+              c:identifier="messaging_menu_message_get_subtitle"
+              glib:get-property="subtitle">
+        <source-position filename="messaging-menu-message.h" line="51"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="messaging-menu-message.c"
+               line="365">the subtitle of @msg</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="msg" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="363">a #MessagingMenuMessage</doc>
+            <type name="Message" c:type="MessagingMenuMessage*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_time"
+              c:identifier="messaging_menu_message_get_time"
+              glib:get-property="time">
+        <source-position filename="messaging-menu-message.h" line="55"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="messaging-menu-message.c"
+               line="393">the time at which @msg was received</doc>
+          <type name="gint64" c:type="gint64"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="msg" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="391">a #MessagingMenuMessage</doc>
+            <type name="Message" c:type="MessagingMenuMessage*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_title"
+              c:identifier="messaging_menu_message_get_title"
+              glib:get-property="title">
+        <source-position filename="messaging-menu-message.h" line="49"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="messaging-menu-message.c"
+               line="351">the title of @msg</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="msg" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="349">a #MessagingMenuMessage</doc>
+            <type name="Message" c:type="MessagingMenuMessage*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="set_draws_attention"
+              c:identifier="messaging_menu_message_set_draws_attention"
+              glib:set-property="draws-attention">
+        <doc xml:space="preserve"
+             filename="messaging-menu-message.c"
+             line="417">Sets whether @msg is drawing attention.</doc>
+        <source-position filename="messaging-menu-message.h" line="59"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="msg" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="419">a #MessagingMenuMessage</doc>
+            <type name="Message" c:type="MessagingMenuMessage*"/>
+          </instance-parameter>
+          <parameter name="draws_attention" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="420">whether @msg should draw attention</doc>
+            <type name="gboolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="body"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none"
+                getter="get_body"
+                default-value="NULL">
+        <type name="utf8" c:type="gchar*"/>
+      </property>
+      <property name="draws-attention"
+                writable="1"
+                transfer-ownership="none"
+                setter="set_draws_attention"
+                getter="get_draws_attention"
+                default-value="TRUE">
+        <type name="gboolean" c:type="gboolean"/>
+      </property>
+      <property name="icon"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none"
+                getter="get_icon">
+        <type name="Gio.Icon"/>
+      </property>
+      <property name="id"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none"
+                getter="get_id"
+                default-value="NULL">
+        <type name="utf8" c:type="gchar*"/>
+      </property>
+      <property name="subtitle"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none"
+                getter="get_subtitle"
+                default-value="NULL">
+        <type name="utf8" c:type="gchar*"/>
+      </property>
+      <property name="time"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none"
+                getter="get_time"
+                default-value="0">
+        <type name="gint64" c:type="gint64"/>
+      </property>
+      <property name="title"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none"
+                getter="get_title"
+                default-value="NULL">
+        <type name="utf8" c:type="gchar*"/>
+      </property>
+      <glib:signal name="activate" when="first" detailed="1">
+        <doc xml:space="preserve"
+             filename="messaging-menu-message.c"
+             line="258">Emitted when the user has activated the message.  The message is
+immediately removed from the application's menu, handlers of this
+signal do not need to call messaging_menu_app_remove_message().</doc>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <parameter name="action"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="261">the id of activated action, or %NULL</doc>
+            <type name="utf8" c:type="gchar*"/>
+          </parameter>
+          <parameter name="parameter"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="messaging-menu-message.c"
+                 line="262">activation parameter, or %NULL</doc>
+            <type name="GLib.Variant"/>
+          </parameter>
+        </parameters>
+      </glib:signal>
+    </class>
+    <enumeration name="Status" c:type="MessagingMenuStatus">
+      <doc xml:space="preserve"
+           filename="messaging-menu-app.h"
+           line="33">An enumeration for the possible chat statuses the messaging menu can be in.</doc>
+      <source-position filename="messaging-menu-app.h" line="49"/>
+      <member name="available"
+              value="0"
+              c:identifier="MESSAGING_MENU_STATUS_AVAILABLE">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.h"
+             line="35">available</doc>
+      </member>
+      <member name="away" value="1" c:identifier="MESSAGING_MENU_STATUS_AWAY">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.h"
+             line="36">away</doc>
+      </member>
+      <member name="busy" value="2" c:identifier="MESSAGING_MENU_STATUS_BUSY">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.h"
+             line="37">busy</doc>
+      </member>
+      <member name="invisible"
+              value="3"
+              c:identifier="MESSAGING_MENU_STATUS_INVISIBLE">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.h"
+             line="38">invisible</doc>
+      </member>
+      <member name="offline"
+              value="4"
+              c:identifier="MESSAGING_MENU_STATUS_OFFLINE">
+        <doc xml:space="preserve"
+             filename="messaging-menu-app.h"
+             line="39">offline</doc>
+      </member>
+    </enumeration>
+    <docsection name="messaging-menu-app">
+      <doc xml:space="preserve"
+           filename="messaging-menu-app.c"
+           line="27">A #MessagingMenuApp represents an application section in the
+Messaging Menu.  An application section is tied to an installed
+application through a desktop file id, which must be passed to
+messaging_menu_app_new().
+
+To register the application with the Messaging Menu, call
+messaging_menu_app_register().  This signifies that the application
+should be present in the menu and be marked as "running".
+
+The first menu item in an application section represents the
+application itself, using the name and icon found in the associated
+desktop file.  Activating this item starts the application.
+
+Following the application item, the Messaging Menu inserts all
+shortcut actions found in the desktop file.  Actions whose
+&lt;code&gt;NotShowIn&lt;/code&gt; keyword contains "Messaging Menu" or whose
+&lt;code&gt;OnlyShowIn&lt;/code&gt; keyword does not contain "Messaging Menu"
+will not appear (the &lt;ulink
+url="http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.1.html#extra-actions"&gt;
+desktop file specification&lt;/ulink&gt; contains a detailed explanation of
+shortcut actions.)  An application cannot add, remove, or change
+these shortcut items while it is running.
+
+Next, an application section contains menu items for message sources.
+What exactly constitutes a message source depends on the type of
+application:  an email client's message sources are folders
+containing new messages, while those of a chat program are persons
+that have contacted the user.
+
+A message source is represented in the menu by a label and optionally
+also an icon.  It can be associated with either a count, a time, or
+an arbitrary string, which will appear on the right side of the menu
+item.
+
+When the user activates a source, the source is immediately removed
+from the menu and the "activate-source" signal is emitted.
+
+Applications should always expose all the message sources available.
+However, the Messaging Menu might limit the amount of sources it
+displays to the user.
+
+The Messaging Menu offers users a way to set their chat status
+(available, away, busy, invisible, or offline) for multiple
+applications at once.  Applications that appear in the Messaging Menu
+can integrate with this by setting the
+"X-MessagingMenu-UsesChatSection" key in their desktop file to True.
+Use messaging_menu_app_set_status() to signify that the application's
+chat status has changed.  When the user changes status through the
+Messaging Menu, the ::status-changed signal will be emitted.
+
+If the application stops running without calling
+messaging_menu_app_unregister(), it will be marked as "not running".
+Its application and shortcut items stay in the menu, but all message
+sources are removed.  If messaging_menu_app_unregister() is called,
+the application section is removed completely.
+
+More information about the design and recommended usage of the
+Messaging Menu is available at &lt;ulink
+url="https://wiki.ubuntu.com/MessagingMenu"&gt;https://wiki.ubuntu.com/MessagingMenu&lt;/ulink&gt;.</doc>
+    </docsection>
+  </namespace>
+</repository>

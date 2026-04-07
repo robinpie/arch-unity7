@@ -1,0 +1,4 @@
+	../src/daemon.vala \
+	../src/utils.vala \
+	../src/main.vala \
+	../local.scope.in.in

@@ -279,7 +279,7 @@ CTAGS = ctags
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wp,-D_GLIBCXX_ASSERTIONS -g -ffile-prefix-map=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/nux/src=/usr/src/debug/nux -flto=auto -fno-permissive
+CXXFLAGS = -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -g -ffile-prefix-map=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/nux/src=/usr/src/debug/nux -flto=auto -fno-permissive
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -289,16 +289,16 @@ DSYMUTIL =
 DUMPBIN = 
 DX_CONFIG = doxygen.cfg
 DX_DOCDIR = doc
-DX_DOT = 
-DX_DOXYGEN = 
+DX_DOT = /usr/bin/dot
+DX_DOXYGEN = /usr/bin/doxygen
 DX_DVIPS = 
 DX_EGREP = 
-DX_ENV =  SRCDIR='.' PROJECT='nux' DOCDIR='doc' VERSION='4.0.8' HAVE_DOT='NO' GENERATE_MAN='NO' GENERATE_RTF='NO' GENERATE_XML='NO' GENERATE_HTMLHELP='NO' GENERATE_CHI='NO' GENERATE_HTML='NO' GENERATE_LATEX='NO'
+DX_ENV =  SRCDIR='.' PROJECT='nux' DOCDIR='doc' VERSION='4.0.8' PERL_PATH='/usr/bin/perl' HAVE_DOT='YES' DOT_PATH='/usr/bin' GENERATE_MAN='NO' GENERATE_RTF='NO' GENERATE_XML='NO' GENERATE_HTMLHELP='NO' GENERATE_CHI='NO' GENERATE_HTML='YES' GENERATE_LATEX='NO'
 DX_FLAG_chi = 0
 DX_FLAG_chm = 0
-DX_FLAG_doc = 0
-DX_FLAG_dot = 0
-DX_FLAG_html = 0
+DX_FLAG_doc = 1
+DX_FLAG_dot = 1
+DX_FLAG_html = 1
 DX_FLAG_man = 0
 DX_FLAG_pdf = 0
 DX_FLAG_ps = 0
@@ -457,29 +457,29 @@ top_build_prefix =
 top_builddir = .
 top_srcdir = .
 SUBDIRS = data NuxCore NuxGraphics Nux examples gputests tests tools
-##DX_CLEAN_HTML = doc/html
-##DX_CLEAN_CHM = doc/chm
-###DX_CLEAN_CHI = doc/nux.chi
-##DX_CLEAN_MAN = doc/man
-##DX_CLEAN_RTF = doc/rtf
-##DX_CLEAN_XML = doc/xml
-##DX_CLEAN_PS = doc/nux.ps
-##DX_PS_GOAL = doxygen-ps
-##DX_CLEAN_PDF = doc/nux.pdf
-##DX_PDF_GOAL = doxygen-pdf
-##DX_CLEAN_LATEX = doc/latex
-#DX_CLEANFILES = \
-#    doc/nux.tag \
-#    -r \
-#    $(DX_CLEAN_HTML) \
-#    $(DX_CLEAN_CHM) \
-#    $(DX_CLEAN_CHI) \
-#    $(DX_CLEAN_MAN) \
-#    $(DX_CLEAN_RTF) \
-#    $(DX_CLEAN_XML) \
-#    $(DX_CLEAN_PS) \
-#    $(DX_CLEAN_PDF) \
-#    $(DX_CLEAN_LATEX)
+DX_CLEAN_HTML = doc/html
+#DX_CLEAN_CHM = doc/chm
+##DX_CLEAN_CHI = doc/nux.chi
+#DX_CLEAN_MAN = doc/man
+#DX_CLEAN_RTF = doc/rtf
+#DX_CLEAN_XML = doc/xml
+#DX_CLEAN_PS = doc/nux.ps
+#DX_PS_GOAL = doxygen-ps
+#DX_CLEAN_PDF = doc/nux.pdf
+#DX_PDF_GOAL = doxygen-pdf
+#DX_CLEAN_LATEX = doc/latex
+DX_CLEANFILES = \
+    doc/nux.tag \
+    -r \
+    $(DX_CLEAN_HTML) \
+    $(DX_CLEAN_CHM) \
+    $(DX_CLEAN_CHI) \
+    $(DX_CLEAN_MAN) \
+    $(DX_CLEAN_RTF) \
+    $(DX_CLEAN_XML) \
+    $(DX_CLEAN_PS) \
+    $(DX_CLEAN_PDF) \
+    $(DX_CLEAN_LATEX)
 
 DISTCLEANFILES = doc/html/* doc/*
 EXTRA_DIST = $(DX_CONFIG) autogen.sh COPYING.gpl COPYING.lgpl-v2.1 .bzrignore
@@ -1022,51 +1022,51 @@ clean-local: clean-gcno clean-coverage-html clean-coverage-gcovr
 ##clean-coverage-gcovr: clean-gcda
 ##	-rm -rf $(top_builddir)/coverage.xml
 
-##doxygen-ps: doc/nux.ps
+#doxygen-ps: doc/nux.ps
 
-##doc/nux.ps: doc/nux.tag
-##	cd doc/latex; \
-##	rm -f *.aux *.toc *.idx *.ind *.ilg *.log *.out; \
-##	$(DX_LATEX) refman.tex; \
-##	$(MAKEINDEX_PATH) refman.idx; \
-##	$(DX_LATEX) refman.tex; \
-##	countdown=5; \
-##	while $(DX_EGREP) 'Rerun (LaTeX|to get cross-references right)' \
-##	                  refman.log > /dev/null 2>&1 \
-##	   && test $$countdown -gt 0; do \
-##	    $(DX_LATEX) refman.tex; \
-##	    countdown=`expr $$countdown - 1`; \
-##	done; \
-##	$(DX_DVIPS) -o ../nux.ps refman.dvi
+#doc/nux.ps: doc/nux.tag
+#	cd doc/latex; \
+#	rm -f *.aux *.toc *.idx *.ind *.ilg *.log *.out; \
+#	$(DX_LATEX) refman.tex; \
+#	$(MAKEINDEX_PATH) refman.idx; \
+#	$(DX_LATEX) refman.tex; \
+#	countdown=5; \
+#	while $(DX_EGREP) 'Rerun (LaTeX|to get cross-references right)' \
+#	                  refman.log > /dev/null 2>&1 \
+#	   && test $$countdown -gt 0; do \
+#	    $(DX_LATEX) refman.tex; \
+#	    countdown=`expr $$countdown - 1`; \
+#	done; \
+#	$(DX_DVIPS) -o ../nux.ps refman.dvi
 
-##doxygen-pdf: doc/nux.pdf
+#doxygen-pdf: doc/nux.pdf
 
-##doc/nux.pdf: doc/nux.tag
-##	cd doc/latex; \
-##	rm -f *.aux *.toc *.idx *.ind *.ilg *.log *.out; \
-##	$(DX_PDFLATEX) refman.tex; \
-##	$(DX_MAKEINDEX) refman.idx; \
-##	$(DX_PDFLATEX) refman.tex; \
-##	countdown=5; \
-##	while $(DX_EGREP) 'Rerun (LaTeX|to get cross-references right)' \
-##	                  refman.log > /dev/null 2>&1 \
-##	   && test $$countdown -gt 0; do \
-##	    $(DX_PDFLATEX) refman.tex; \
-##	    countdown=`expr $$countdown - 1`; \
-##	done; \
-##	mv refman.pdf ../nux.pdf
+#doc/nux.pdf: doc/nux.tag
+#	cd doc/latex; \
+#	rm -f *.aux *.toc *.idx *.ind *.ilg *.log *.out; \
+#	$(DX_PDFLATEX) refman.tex; \
+#	$(DX_MAKEINDEX) refman.idx; \
+#	$(DX_PDFLATEX) refman.tex; \
+#	countdown=5; \
+#	while $(DX_EGREP) 'Rerun (LaTeX|to get cross-references right)' \
+#	                  refman.log > /dev/null 2>&1 \
+#	   && test $$countdown -gt 0; do \
+#	    $(DX_PDFLATEX) refman.tex; \
+#	    countdown=`expr $$countdown - 1`; \
+#	done; \
+#	mv refman.pdf ../nux.pdf
 
-#.PHONY: doxygen-run doxygen-doc $(DX_PS_GOAL) $(DX_PDF_GOAL)
+.PHONY: doxygen-run doxygen-doc $(DX_PS_GOAL) $(DX_PDF_GOAL)
 
-#.INTERMEDIATE: doxygen-run $(DX_PS_GOAL) $(DX_PDF_GOAL)
+.INTERMEDIATE: doxygen-run $(DX_PS_GOAL) $(DX_PDF_GOAL)
 
-#doxygen-run: doc/nux.tag
+doxygen-run: doc/nux.tag
 
-#doxygen-doc: doxygen-run $(DX_PS_GOAL) $(DX_PDF_GOAL)
+doxygen-doc: doxygen-run $(DX_PS_GOAL) $(DX_PDF_GOAL)
 
-#doc/nux.tag: $(DX_CONFIG) $(pkginclude_HEADERS)
-#	rm -rf doc
-#	$(DX_ENV) $(DX_DOXYGEN) $(srcdir)/$(DX_CONFIG)
+doc/nux.tag: $(DX_CONFIG) $(pkginclude_HEADERS)
+	rm -rf doc
+	$(DX_ENV) $(DX_DOXYGEN) $(srcdir)/$(DX_CONFIG)
 
 #all: doxygen-doc
 

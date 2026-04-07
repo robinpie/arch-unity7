@@ -1,0 +1,33 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/session-shortcuts
+
+pkgname=session-shortcuts
+pkgver=1.4
+_uver=build1
+pkgrel=1
+pkgdesc="Unity session shortcuts (shutdown, logout, reboot from dash)"
+arch=('x86_64')
+url="https://launchpad.net/session-shortcuts"
+license=('GPL-2.0-or-later')
+depends=('gnome-session')
+makedepends=('intltool' 'gettext')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.tar.xz"
+)
+sha256sums=('SKIP')
+
+build() {
+    cd "${pkgname}-${pkgver}${_uver}"
+    bash build.sh
+}
+
+package() {
+    cd "${pkgname}-${pkgver}${_uver}"
+    install -d "$pkgdir/usr/share/applications"
+    install -m644 build/*.desktop "$pkgdir/usr/share/applications/"
+
+    # Add gettext domain fallback for inline translations
+    for f in "$pkgdir/usr/share/applications/"*.desktop; do
+        echo "X-GNOME-Gettext-Domain=${pkgname}" >> "$f"
+    done
+}

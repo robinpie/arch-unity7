@@ -189,6 +189,14 @@ prepare() {
     # Remove upstart integration
     sed -i "/[Uu]pstart/d" lockscreen/LockScreenController.cpp lockscreen/LockScreenController.h 2>/dev/null || true
 
+    # Arch's libindicator 12.10.1 lacks indicator_desktop_shortcuts_nick_exec_with_context
+    # (added in Ayatana fork); fall back to the older nick_exec variant
+    sed -i 's/indicator_desktop_shortcuts_nick_exec_with_context(\(.*\), \(.*\), [^)]*)/indicator_desktop_shortcuts_nick_exec(\1, \2)/' \
+        launcher/ApplicationLauncherIcon.cpp || true
+
+    # Relax indicator3 version requirement (Arch has 12.10.1, ubuntu patch requires 12.10.2)
+    sed -i 's/indicator3-0.4>=12.10.2/indicator3-0.4>=12.10.1/' services/CMakeLists.txt || true
+
     # Fix python shebangs
     find tools -name "*.py" -exec sed -i 's|#!/usr/bin/python$|#!/usr/bin/python3|' {} \; 2>/dev/null || true
 
@@ -210,6 +218,9 @@ prepare() {
 }
 
 build() {
+    # Disable _GLIBCXX_ASSERTIONS — Arch enables this by default in CXXFLAGS
+    # but unity/nux have latent out-of-bounds vector accesses that abort with it on.
+    export CXXFLAGS="${CXXFLAGS/-Wp,-D_GLIBCXX_ASSERTIONS/}"
     cmake -B build -S "${pkgname}" \
         -DCMAKE_BUILD_TYPE=None \
         -DCMAKE_INSTALL_PREFIX=/usr \

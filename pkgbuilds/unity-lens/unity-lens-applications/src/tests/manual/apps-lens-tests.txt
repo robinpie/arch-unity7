@@ -1,0 +1,100 @@
+Application lens sort order
+---------------------------
+Tests that the sort order of the "Installed" category is alphabetical.
+
+Setup:
+At least default ubuntu applications installed.
+
+Actions:
+Open the Dash and switch to the application lens.
+Make sure that the search string is empty.
+
+Expected Result:
+The "Installed" category should be shown and the items within should be sorted alphabetically (respecting sorting of your locale).
+
+Search for applications with CamelCase names
+--------------------------------------------
+Searching for applications should work by searching for the whole name of a CamelCase application as well as with any part of the Camel name.
+
+Setup:
+At least default ubuntu applications installed.
+
+Actions:
+Open the Dash and switch to the application lens.
+Search for an application with CamelCase name (for example "AisleRiot").
+
+Expected Result:
+The search has to find the application when searching both "aisleriot" as well as "aisle" or "riot".
+
+Prices for search results
+------------------------
+Price ribbon in search results and Buy/Free Download button correctly reflects application price.
+
+Setup:
+Software-Center cache is updated (launch Software-Center at least once).
+
+Actions:
+1. Spot some commercial non-free apps as some free open-source apps in the app lens earch results.
+2. Right-click an app to activate its preview (repeat for commercial and free apps).
+
+Expected Result:
+Open-source free applications display 'Free' string in ribbons in the search results. Their previews should have 'Developer site' and 'Free Download' buttons.
+Commercial apps should have the price displayed in ribbons (e.g. 'US$ 8.40'). Their previews should have 'Developer site' and 'Buy US$ ...' buttons.
+
+Test updates to gnome menu structure
+------------------------------------
+Check that adding/removing applications updates applications lens contents.
+
+Setup:
+At least default ubuntu applications installed.
+
+Actions:
+Open the Dash and switch to the application lens.
+Right-click one of free apps listed in 'More suggestions' category and install it via its preview.
+Open the Dash and switch to the application lens again.
+
+Expected Result:
+'Recently used', 'Installed', 'More suggestions' categories are displayed.
+The new application is listed in the 'Installed' category (note: this may take a few seconds after installation finished).
+
+Preview activation
+------------------
+LMB activates an application preview for installable/purchasable applications.
+
+Setup:
+Software-Center cache is updated (launch Software-Center at least once).
+
+Actions:
+1. Left-click an application from 'More suggestions' category of Applications Lens.
+
+Expected Result:
+Application preview is displayed in the Dash, with buttons to download/buy the application and visit developer's site (may not always
+be present if not available).
+
+Preview activation (RMB)
+------------------------
+RMB activates an application preview for all categories of applications (Installed/Recently used/More suggestions).
+
+Setup:
+Software-Center cache is updated (launch Software-Center at least once).
+
+Actions:
+1. Right-click an application in any of the Applications Lens categories.
+
+Expected Result:
+Application preview is displayed in the Dash, with buttons to download/buy the application and visit developer's site (may not always
+be present if not available) for installable apps or Uninstall/Launch for installed apps (Uninstall may not be available for some
+important base packages).
+
+Starting applications
+---------------------
+LMB starts an application from Recently used/Installed category.
+
+Setup:
+Software-Center cache is updated (launch Software-Center at least once).
+
+Actions:
+1. Left-click an application from 'Installed' or 'Recently used' category of Applications Lens.
+
+Expected Result:
+Application gets started and Dash hides.

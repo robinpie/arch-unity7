@@ -1,0 +1,49 @@
+2010-10-06: unity-place-files 0.6.12
+
+ * Update category icons
+
+ * Make sure we don't update the model too soon, otherwise Dash flickers
+
+2010-09-29: unity-place-files 0.6.10
+
+ * Open bookmarks in default file browser
+
+ * Search in Downloads folder
+
+ * Fix problems with DBUS_STARTER* enviroment variables
+
+2010-08-02: unity-place-files 0.5.12
+
+ * Folder browsing mode
+
+ * Downloads group on front page
+
+ * Favorite Folders group on front page (gtk bookmarks) 
+
+2010-06-24: unity-place-files-0.5.2
+
+ * (temporarily) Disabled monitoring of Zeitgeist events since it leads
+   to annoying duplicates in the Today group. This will be properly fixed later
+
+2010-06-23: unity-place-files-0.5.1
+
+ * More correct time grouping
+ 
+ * Add a Top Results group in search results containing relevancy ranked results
+
+2010-06-18: unity-place-files-0.5.0
+
+ * Enable sections, groups, and full text searching. Everything still
+   at a prototype level. especially the time based grouping.
+   Requires at least Unity r337 and libzeitgeist >= 0.2.1, and Zeitgeist
+   running with the FTS extension for full text searching to work
+
+2010-06-09: unity-place-files-0.3.1
+
+ * Second release... This time distcheck actually passes. Great stuff :-)
+
+
+2010-06-09: unity-place-files-0.3.0
+
+ * First release
+

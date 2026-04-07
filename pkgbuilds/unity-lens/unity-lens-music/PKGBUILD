@@ -1,0 +1,72 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/unity-lens-music
+
+pkgname=unity-lens-music
+pkgver=6.9.1
+_uver=+16.04
+_urev=0ubuntu7
+pkgrel=1
+pkgdesc="Music lens for the Unity7 user interface"
+arch=('x86_64')
+url="https://launchpad.net/unity-lens-music"
+license=('GPL-3.0-or-later')
+depends=(
+    'sqlite'
+    'dee'
+    'glib2'
+    'libgee'
+    'libunity'
+    'gst-plugins-base'
+    'gstreamer'
+    'tdb'
+)
+makedepends=(
+    'pkgconf'
+    'vala'
+    'json-glib'
+    'gnome-common'
+    'libnotify'
+    'autoconf'
+    'automake'
+    'libtool'
+)
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+    "Remove-Banshee-support.patch"
+)
+sha256sums=('SKIP' 'SKIP' 'SKIP')
+
+prepare() {
+    cd "${pkgname}-${pkgver}${_uver}"
+
+    # Apply Ubuntu diff
+    patch -p1 --batch --forward -i "../${pkgname}_${pkgver}${_uver}-${_urev}.diff" || true
+
+    # Apply debian patch series
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+
+    patch -p1 -i ../Remove-Banshee-support.patch
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "${pkgname}-${pkgver}${_uver}"
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static
+    make
+}
+
+package() {
+    cd "${pkgname}-${pkgver}${_uver}"
+    make DESTDIR="$pkgdir" install
+    find "$pkgdir" -name '*.la' -delete
+}

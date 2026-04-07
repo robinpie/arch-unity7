@@ -1,0 +1,15 @@
+[Scope]
+DBusName=com.canonical.Unity.Scope.Applications
+DBusPath=/com/canonical/unity/scope/scopes
+Module=/usr/lib/unity/unity-scope-applications.so
+ModuleType=C
+Icon=/usr/share/unity/icons/lens-nav-app.svg
+Name=Dash plugins
+Description=This is an Ubuntu search plugin that enables information from available search plugins to be searched and displayed in the Dash underneath the Dash plugins header. If you do not wish to search this content source, you can disable this search plugin.
+Type=applications
+SearchHint=Search search plugins
+OptionalMetadata=scope_disabled[u]
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-lens-applications
+

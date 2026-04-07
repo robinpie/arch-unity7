@@ -1,0 +1,32 @@
+Source: unity-lens-files
+Section: gnome
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>= 9),
+               gnome-common,
+               pkg-config,
+               valac (>= 0.16),
+               libglib2.0-dev (>= 2.27),
+               libgee-0.8-dev,
+               libdee-dev (>= 0.5.16),
+               libzeitgeist-2.0-dev (>= 0.9.12),
+               libunity-dev (>= 7.0.0),
+               zeitgeist-core (>= 0.9.12),
+               dh-autoreconf,
+               dh-translations,
+Standards-Version: 3.9.4
+Homepage: https://launchpad.net/unity-lens-files
+# If you aren't a member of ~unity-team but need to upload packaging changes,
+# just go ahead.  ~unity-team will notice and sync up the code again.
+Vcs-Bzr: https://code.launchpad.net/~unity-team/unity-lens-files/trunk
+X-Ubuntu-Use-Langpack: yes
+
+Package: unity-lens-files
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+Breaks: unity (<< 6.0.0),
+Description: File lens for unity
+ This package contains the "file" lens which can be used
+ inside Unity to browse your files.
+

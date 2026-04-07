@@ -1,0 +1,51 @@
+Source: indicator-session
+Section: gnome
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: cmake,
+               cmake-extras (>= 1.3),
+               dbus,
+               debhelper (>= 9),
+               dh-translations,
+               gcovr,
+               googletest | google-mock,
+               intltool,
+               lcov,
+               libglib2.0-dev (>= 2.36),
+               libgtest-dev,
+               libwhoopsie-dev (>= 0.2.52),
+               python3,
+               unity-settings-daemon-schemas,
+               systemd,
+Standards-Version: 3.9.3
+Homepage: https://launchpad.net/indicator-session
+# If you aren't a member of ~indicator-applet-developers but need to upload
+# packaging changes, just go ahead.  ~indicator-applet-developers will notice
+# and sync up the code again.
+Vcs-Bzr: https://code.launchpad.net/~indicator-applet-developers/indicator-session/trunk.14.10
+Vcs-Browser: https://bazaar.launchpad.net/~indicator-applet-developers/indicator-session/trunk.14.10/files
+X-Ubuntu-Use-Langpack: yes
+
+Package: indicator-session
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         libpam-systemd,
+         gnome-settings-daemon-common,
+         gsettings-desktop-schemas,
+         indicator-common,
+Recommends: indicator-applet (>= 0.2) | indicator-renderer,
+            yelp,
+            unity-control-center | gnome-control-center | mate-control-center,
+            unity-settings-daemon-schemas,
+Suggests: lightdm,
+          apport,
+          zenity,
+Description: indicator showing session management, status and user switching
+ This indicator is designed to be placed on the right side of a panel and
+ give the user easy control for changing their instant message status.  
+ Switching to another user.  Starting a guest session.  Or controlling the
+ status of their own session.
+ .
+ It requires some way to be hosted into a panel.  For the GNOME Panel the
+ appropriate package is indicator-applet-session.

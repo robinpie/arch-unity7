@@ -1,0 +1,14 @@
+MANIFEST.in
+setup.cfg
+setup.py
+data/firefoxbookmarks.scope.in
+data/unity-scope-firefoxbookmarks.service
+po/POTFILES.in
+po/unity-scope-firefoxbookmarks.pot
+src/__init__.py
+src/unity_firefoxbookmarks_daemon.py
+src/unity_scope_firefoxbookmarks.egg-info/PKG-INFO
+src/unity_scope_firefoxbookmarks.egg-info/SOURCES.txt
+src/unity_scope_firefoxbookmarks.egg-info/dependency_links.txt
+src/unity_scope_firefoxbookmarks.egg-info/top_level.txt
+tests/test_firefoxbookmarks.py

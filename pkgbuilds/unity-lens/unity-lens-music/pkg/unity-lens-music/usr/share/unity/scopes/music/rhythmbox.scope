@@ -1,0 +1,14 @@
+[Scope]
+DBusName=com.canonical.Unity.Scope.Music
+DBusPath=/com/canonical/unity/scope/rhythmbox
+Icon=/usr/share/unity/icons/lens-nav-music.svg
+QueryBinary=rhythmbox
+Name=Rhythmbox
+Description=This is an Ubuntu search plugin that enables information from Rhythmbox to be searched and displayed in the Dash underneath the Music header. If you do not wish to search this content source, you can disable this search plugin.
+SearchHint=Search music collection
+Shortcut=m
+Type=music
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-lens-music
+

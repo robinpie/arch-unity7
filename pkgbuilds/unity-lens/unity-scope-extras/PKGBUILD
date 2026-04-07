@@ -1,0 +1,110 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/onehundredscopes
+
+pkgname=unity-scope-extras
+pkgver=7
+pkgrel=1
+pkgdesc="Extra scopes for the Unity Dash (calculator, chromiumbookmarks, firefoxbookmarks)"
+arch=('x86_64')
+url="https://launchpad.net/onehundredscopes"
+license=('GPL-3.0-or-later')
+depends=(
+    'dee'
+    'libunity'
+    'gobject-introspection'
+    'python'
+    'python-gobject'
+)
+makedepends=(
+    'pkgconf'
+    'python-setuptools'
+    'python-distutils-extra'
+)
+
+# Scopes to build: calculator, chromiumbookmarks, firefoxbookmarks
+_scopes=(
+    "calculator:0.1+14.04.20140328:0ubuntu6"
+    "chromiumbookmarks:0.1+13.10.20130723:0ubuntu1"
+    "firefoxbookmarks:0.1+13.10.20130809.1:0ubuntu1"
+)
+
+source=()
+sha256sums=()
+
+for _entry in "${_scopes[@]}"; do
+    _name="${_entry%%:*}"
+    _rest="${_entry#*:}"
+    _ver="${_rest%%:*}"
+    _rev="${_rest##*:}"
+    source+=(
+        "https://launchpad.net/ubuntu/+archive/primary/+files/unity-scope-${_name}_${_ver}.orig.tar.gz"
+        "https://launchpad.net/ubuntu/+archive/primary/+files/unity-scope-${_name}_${_ver}-${_rev}.diff.gz"
+    )
+    sha256sums+=('SKIP' 'SKIP')
+done
+
+source+=("chromiumbookmarks.patch" "firefoxbookmarks.patch")
+sha256sums+=('SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+
+    # calculator
+    cd unity-scope-calculator-0.1+14.04.20140328
+    patch -p1 --batch --forward -i "../unity-scope-calculator_0.1+14.04.20140328-0ubuntu6.diff" || true
+    if [ -f debian/patches/series ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+    cd ..
+
+    # chromiumbookmarks
+    cd unity-scope-chromiumbookmarks-0.1+13.10.20130723
+    patch -p1 --batch --forward -i "../unity-scope-chromiumbookmarks_0.1+13.10.20130723-0ubuntu1.diff" || true
+    if [ -f debian/patches/series ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+    patch -p1 -i ../chromiumbookmarks.patch || true
+    cd ..
+
+    # firefoxbookmarks
+    cd unity-scope-firefoxbookmarks-0.1+13.10.20130809.1
+    patch -p1 --batch --forward -i "../unity-scope-firefoxbookmarks_0.1+13.10.20130809.1-0ubuntu1.diff" || true
+    if [ -f debian/patches/series ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+    patch -p1 -i ../firefoxbookmarks.patch || true
+    cd ..
+}
+
+build() {
+    for _dir in \
+        unity-scope-calculator-0.1+14.04.20140328 \
+        unity-scope-chromiumbookmarks-0.1+13.10.20130723 \
+        unity-scope-firefoxbookmarks-0.1+13.10.20130809.1
+    do
+        cd "$srcdir/$_dir"
+        python setup.py build
+        cd "$srcdir"
+    done
+}
+
+package() {
+    for _dir in \
+        unity-scope-calculator-0.1+14.04.20140328 \
+        unity-scope-chromiumbookmarks-0.1+13.10.20130723 \
+        unity-scope-firefoxbookmarks-0.1+13.10.20130809.1
+    do
+        cd "$srcdir/$_dir"
+        python setup.py install --root="$pkgdir" --optimize=1
+        cd "$srcdir"
+    done
+}

@@ -1,0 +1,47 @@
+# Franco-Provençal translation for indicator-keyboard
+# Copyright (c) 2017 Rosetta Contributors and Canonical Ltd 2017
+# This file is distributed under the same license as the indicator-keyboard package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: indicator-keyboard\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2023-09-14 08:42+0000\n"
+"PO-Revision-Date: 2017-05-21 23:07+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Franco-Provençal <frp@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2023-09-15 04:45+0000\n"
+"X-Generator: Launchpad (build 32eed776db4e1fe74faaa77122cde19862d565ac)\n"
+
+#: ../lib/main.vala:852
+#, c-format
+msgid "%s input source"
+msgstr "Sorce d’entrâ %s"
+
+#: ../lib/main.vala:856
+msgid "Keyboard Layout"
+msgstr "Mapa de claviér"
+
+#: ../lib/main.vala:857
+msgid "Input source selection"
+msgstr "Sèlèccion de la sorce d’entrâ"
+
+#: ../lib/indicator-menu.vala:62
+msgid "Character Map"
+msgstr "Mapa de lètres"
+
+#: ../lib/indicator-menu.vala:63
+msgid "Keyboard Layout Chart"
+msgstr ""
+
+#: ../lib/indicator-menu.vala:64
+msgid "Text Entry Settings..."
+msgstr ""
+
+#: ../lib/indicator-menu.vala:120
+msgid "On-screen keyboard"
+msgstr "Claviér sur l’ècran"

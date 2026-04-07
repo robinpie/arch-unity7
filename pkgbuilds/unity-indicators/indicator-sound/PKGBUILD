@@ -1,0 +1,98 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/indicator-sound
+
+pkgname=indicator-sound
+pkgver=12.10.2
+_uver=+18.10.20180612
+_urev=0ubuntu7
+pkgrel=1
+pkgdesc="System sound indicator for Unity7"
+arch=('x86_64')
+url="https://launchpad.net/indicator-sound"
+license=('GPL-3.0-or-later')
+depends=(
+    'glib2'
+    'libgee'
+    'libpulse'
+    'accountsservice'
+    'gsettings-ubuntu-touch-schemas'
+    'libnotify'
+    'libindicator-gtk3'
+    'dconf'
+)
+makedepends=(
+    'cmake'
+    'pkgconf'
+    'vala'
+    'gobject-introspection'
+    'libxml2'
+    'cmake-extras'
+    'qt5-declarative'
+    'gnome-common'
+    'dbus'
+    'systemd'
+    'unity-api'
+    'intltool'
+)
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+    "fix-notification-icon.patch"
+)
+sha256sums=('SKIP' 'SKIP' 'SKIP')
+options=('!makeflags')
+
+prepare() {
+    cd "$srcdir"
+
+    # Apply Ubuntu diff (flat extraction)
+    patch -p1 --batch --forward -i "${pkgname}_${pkgver}${_uver}-${_urev}.diff" || true
+
+    # Apply debian patch series (skip if quilt already applied)
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+
+    patch -p1 -i ../fix-notification-icon.patch
+
+    # dbustest-1 is not available on Arch; remove the entire check block
+    sed -i '/^pkg_check_modules(/{
+        /TEST REQUIRED/{
+            N; N; N; s/.*/# dbustest check removed/
+        }
+    }' CMakeLists.txt || true
+    sed -i 's/pkg_check_modules(\n  TEST REQUIRED\n  dbustest-1[^\n]*\n)//g' CMakeLists.txt || true
+    # Direct line replacement approach
+    python3 -c "
+import re, sys
+with open('CMakeLists.txt') as f: c = f.read()
+c = re.sub(r'pkg_check_modules\(\s*TEST REQUIRED\s*dbustest-1[^\)]*\)', '# dbustest removed', c, flags=re.DOTALL)
+with open('CMakeLists.txt', 'w') as f: f.write(c)
+" || true
+
+    # Add missing includes in main.c
+    sed -i '/#include <locale.h>/a #include <libintl.h>\n#include <glib-unix.h>' src/main.c || true
+
+    # Fix CMake minimum version for CMake 4
+    find . -name "CMakeLists.txt" -exec sed -i \
+        's/cmake_minimum_required(VERSION 2\.[0-9]\+\.[0-9]\+/cmake_minimum_required(VERSION 3.10/' {} \; 2>/dev/null || true
+}
+
+build() {
+    cmake -B build -S "$srcdir" \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_C_FLAGS="-Wno-incompatible-pointer-types" \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.10 \
+        -DENABLE_TESTS=OFF \
+        -Wno-dev
+    cmake --build build -j1
+}
+
+package() {
+    DESTDIR="$pkgdir" cmake --install build
+}

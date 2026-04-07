@@ -1,0 +1,32 @@
+Source: unity-scope-firefoxbookmarks
+Section: gnome
+Priority: optional
+Maintainer: Mark Tully <markjtully@gmail.com>
+Build-Depends: debhelper (>= 9),
+               python3,
+               python3-distutils-extra,
+               python3-gi,
+               pkg-config,
+               python3-nose,
+               gir1.2-unity-5.0 (>= 7),
+               gir1.2-dee-1.0 (>= 1.2.5),
+               gir1.2-glib-2.0,
+Standards-Version: 3.9.4
+Homepage: https://launchpad.net/unity-scope-firefoxbookmarks
+# If you aren't a member of ~submarine but need to upload packaging changes,
+# just go ahead. ~submarine will notice and sync up the code again.
+Vcs-Bzr: https://code.launchpad.net/~submarine/unity-scope-firefoxbookmarks/trunk
+
+Package: unity-scope-firefoxbookmarks
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends},
+         python3,
+         python3-gi,
+         gir1.2-unity-5.0 (>= 7),
+         gir1.2-dee-1.0 (>= 1.2.5),
+         unity-scopes-runner,
+         gir1.2-glib-2.0
+Description: Firefox bookmarks scope for Unity
+ This package contains the "firefoxbookmarks" scope which allows Unity
+ to search your Firefox bookmarks.

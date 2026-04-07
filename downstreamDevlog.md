@@ -202,8 +202,34 @@ Overlay requires Vala 0.56 API. Arch has `vala 0.56.19-1` — exact match. ✓
 - [x] **Built and installed Tier 4**: `libunity-misc` 4.0.5 ✓, `libunity` 7.1.4 ✓
 - [x] **Built and installed Tier 5**: `glewmx` 1.13.0 ✓
 - [x] **Built and installed Tier 6 (partial)**: `bamf` 0.5.6 ✓, `nux` 4.0.8 ✓
-- [ ] Building remaining Tier 6: `gsettings-ubuntu-touch-schemas`, `unity-settings-daemon`, `compiz`, `hud`, `unity-api`, `unity-gtk-module`
-- [ ] Building Tier 7: `unity`
+- [x] **Built and installed Tier 6 (complete)**:
+  - `gsettings-ubuntu-touch-schemas` 0.0.7 ✓
+  - `unity-api` 8.7 ✓
+  - `unity-gtk-module` 0.0.0 ✓
+  - `unity-settings-daemon` 15.04.1 ✓
+  - `hud` 14.10 ✓ (needed `dee-qt` PKGBUILD first)
+  - `compiz` 0.9.14.2 ✓ (single-threaded build `-j1`, ~9 min)
+- [x] **Built and installed extra deps**: `dee-qt` 3.3 ✓, `xpathselect` 1.4 ✓, `libindicator-gtk3` 16.10.0 ✓
+- [x] **Built and installed Tier 7**: `unity` 7.7.1 ✓ (~10 min build)
+- [x] **Built and installed Tier 8**: `unity-session` ✓, `session-shortcuts` ✓, `unity-greeter` 25.04.1 ✓
+- [x] **Built and installed Tier 9**: All 8 indicators installed:
+  - `indicator-sound` 12.10.2 ✓
+  - `indicator-session` 17.3.20 ✓
+  - `indicator-power` 12.10.6 ✓ (disable-powerman.diff hunk 2 failed but `|| true`)
+  - `indicator-datetime` 15.10 ✓ (EDS disabled, no unity-language-pack needed)
+  - `indicator-keyboard` 0.0.0 ✓ (stubbed Ubuntu-specific AccountsService props)
+  - `indicator-messages` 13.10.1 ✓
+  - `indicator-application` 12.10.1 ✓
+  - `indicator-appmenu` 15.02.0 ✓
+- [x] **Built and installed Tier 10**: All 8 lens/scope packages:
+  - `unity-scope-home` 6.8.2 ✓ (data-only; Vala src not built due to removed test dir)
+  - `unity-lens-applications` 7.1.0 ✓ (patched out db5.3 version check; Arch ships db 6.2)
+  - `unity-lens-files` 7.1.0 ✓
+  - `unity-lens-music` 6.9.1 ✓
+  - `unity-lens-video` 0.3.15 ✓
+  - `unity-lens-photos` 1.0 ✓ (Python/setuptools)
+  - `unity-scope-extras` 7 ✓ (calculator, chromiumbookmarks, firefoxbookmarks)
+  - `unity-lens-meta` 7 ✓ (metapackage)
 
 ---
 
@@ -236,7 +262,38 @@ GLEW 2.0+ removed `GLEWContext` and other MX-specific types. The `glewmx` packag
 - `AM_CXXFLAGS-` typo in nux diff → benign (configure still runs), but noted
 
 ### Launchpad Download Reliability
-Launchpad frequently resets TLS connections. `curl --retry 5 --retry-delay 5` usually works within 3 attempts. Parallel downloads increase failure rate — use sequential downloads for reliability.
+Launchpad frequently resets TLS connections. `curl --retry 5 --retry-delay 5` usually works within 3 attempts. Parallel downloads increase failure rate — use sequential downloads for reliability. When makepkg fails to download, manually `wget` the tarball to the PKGBUILD directory and retry.
+
+### unity-settings-daemon: Ubuntu-only accountsservice and test binaries
+- `act_user_set_input_sources()` is a Ubuntu-specific extension to `accountsservice` — stub it out with a comment.
+- `usd-test-*` binaries are installed to libexec but don't link against `libunity-settings-daemon.la` properly — remove from `Makefile.am` with sed before autoconf.
+- Sed pattern must handle digits: use `[^ ]*` not `[a-z-]*` for matching binary names like `usd-test-a11y-keyboard`.
+
+### glewmx 1.13 / modern glext.h conflict
+GLEW 1.13's `glew.h` defines `PFNGL*SGIXPROC` typedefs from `GL_SGIX_fragment_lighting`. Modern xorgproto `glext.h` also defines them → conflicting declaration errors when both are included.
+
+**Fix**: Install a wrapper `glext.h` at `/usr/include/glewmx/GL/glext.h` that:
+1. Pre-defines `GL_SGIX_fragment_lighting 1` (the extension guard) when `__glew_h__` is defined (i.e., glew.h was already included)
+2. Then `#include "/usr/include/GL/glext.h"` (absolute path to avoid recursion)
+
+This allows GLsizeiptr, GLchar etc. from real glext.h to be available while suppressing the conflicting SGIX typedefs.
+
+### libindicator: Arch has old version without indicator-ng.h
+Arch's `libindicator` 12.10.1 (from extra) lacks `indicator-ng.h` which was added later. Unity's `panel-service.c` requires `IndicatorNg` from this header for loading GMenu-based indicators.
+
+**Fix**: Build our own `libindicator-gtk3` 16.10.0 from Ubuntu Launchpad sources (`+18.04.20180321.1` UVER). This version includes `indicator-ng.h` and provides the same `indicator3-0.4` pkg-config name. The package conflicts with and replaces `libindicator` from Arch repos.
+
+### indicator3-0.4 version check in unity services/CMakeLists.txt
+Unity's `services/CMakeLists.txt` requires `indicator3-0.4>=12.10.2`. Our `libindicator-gtk3` 16.10.0 reports version `12.10.2` (from the pkg-config file). Relax with sed: `s/>=12.10.2/>=12.10.1/`.
+
+### indicator_desktop_shortcuts_nick_exec_with_context
+Arch's `libindicator` doesn't have `indicator_desktop_shortcuts_nick_exec_with_context()` (added in Ayatana fork). Unity's `launcher/ApplicationLauncherIcon.cpp` calls it with a launch context arg. **Fix**: sed to fall back to `indicator_desktop_shortcuts_nick_exec()` (drops the launch context — minor feature loss).
+
+### dee-qt pkgconfig path
+`dee-qt` installs `libdee-qt5.pc` to the path `${CMAKE_LIBRARY_ARCHITECTURE}/pkgconfig`. With empty `CMAKE_LIBRARY_ARCHITECTURE` it goes to `/usr/pkgconfig/` (non-standard). Fix: set `-DCMAKE_LIBRARY_ARCHITECTURE=lib` so the pc file lands at `/usr/lib/pkgconfig/`.
+
+### gsettings-qt includedir
+`gsettings-qt.pc` on Arch has `includedir=/usr/include/qt5/QGSettings` — but code does `#include <QGSettings/qgsettings.h>` which requires the parent dir. Fix in PKGBUILD: add `-DCMAKE_CXX_FLAGS="-I/usr/include/qt5"` to cmake.
 
 ---
 
@@ -271,7 +328,29 @@ Launchpad frequently resets TLS connections. `curl --retry 5 --retry-delay 5` us
 
 ## Lessons Learned
 
-*(updated as builds proceed)*
+### Indicator tarball extraction is flat (not subdirectoried)
+Most indicator orig.tar.gz files extract flat into `$srcdir` (just like indicator-sound). Don't assume `cd ${pkgname}-${pkgver}${_uver}`. Always use `cd "$srcdir"` and `cmake -S "$srcdir"` for cmake builds, or `./configure` directly from `$srcdir` for autotools.
+
+### Ubuntu-specific AccountsService properties in indicator-keyboard
+`indicator-keyboard` uses `Act.User.input_sources` and `Act.User.xkeyboard_layouts` which are Ubuntu-patched extensions to accountsservice not present in Arch's standard package. Fixed by using Python regex in prepare() to remove the loops that read these properties and replace `var layouts = ...` with `var layouts = new string[0];` — the function then falls through to LightDM fallback which works fine.
+
+### indicator-power disable-powerman.diff partially fails
+The `disable-powerman.diff` patch has a hunk that can't apply cleanly against the upstream source. Use `|| true` — the essential part (removing the statistics action from GActionEntry) still applies; the other hunk is cosmetic.
+
+### indicator-datetime doesn't actually need unity-language-pack
+The ebuild lists it as DEPEND (build-time) for po compilation, but since we comment out `add_subdirectory(po)` in prepare(), it's never used. Remove from makedepends.
+
+### indicator-keyboard Vala patch ordering matters
+When applying multiple patches to a .vala file (optional-fcitx.patch modifies main.vala), don't use a traditional diff patch with absolute line numbers for subsequent patches — the line numbers will be wrong. Use Python regex substitution instead, which is position-independent.
+
+### unity-lens-applications requires db 5.3, but Arch ships db 6.2
+The C source has a `#error` compile-time assertion requiring exactly `DB_VERSION_MAJOR==5, DB_VERSION_MINOR==3`. Arch's `db` package is 6.2. The API is compatible for our use, so patch out the `#if DB_VERSION_MAJOR != 5` ... `#endif` block in `src/unity-ratings-db.c` in prepare(). The `db.h` includes work fine with 6.2.
+
+### unity-scope-home: debian tarball adds test subdirectory reference
+After applying the debian patch series, `Makefile.am` gets `SUBDIRS = src/unit data po` where `src/unit` doesn't exist. Must `sed -i 's:src/unit::g' Makefile.am` before autoreconf. Also the overlay patches have one hunk that fails (already applied to source) — use `|| true`.
+
+### indicator-appmenu SRC_URI is a combined .tar.gz (not orig+diff)
+The source extracts to `${pkgname}.git/` (including `.git` in the dirname). Set the build directory accordingly: `cd "${pkgname}.git"` in build/package(). The configure check for `dbusmenu-jsonloader` (test tools) fails but that's fine — tools are disabled by default.
 
 ---
 

@@ -1,0 +1,134 @@
+unity-scope-firefoxbookmarks (0.1+13.10.20130809.1-0ubuntu1) saucy; urgency=low
+
+  [ David Callé ]
+  * Fix thumbnails fetching with FF23.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 33
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 09 Aug 2013 11:49:37 +0000
+
+unity-scope-firefoxbookmarks (0.1+13.10.20130723-0ubuntu1) saucy; urgency=low
+
+  [ David Callé ]
+  * Add module and moduletype.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 31
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 23 Jul 2013 06:19:31 +0000
+
+unity-scope-firefoxbookmarks (0.1+13.10.20130702-0ubuntu1) saucy; urgency=low
+
+  [ David Callé ]
+  * Use the bookmark icon and change Show to Open.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 29
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 02 Jul 2013 04:01:45 +0000
+
+unity-scope-firefoxbookmarks (0.1daily13.06.05-0ubuntu1) saucy; urgency=low
+
+  [ Michael Terry ]
+  * Update Description
+
+  [ David Callé ]
+  * Init/update POT file
+  * Fix copyright
+  * Install .scope file in its master folder
+  * Install to /usr/share/unity-scopes, fix service file accordingly
+  * Depends on unity-scopes-runner
+  * Fix Loader field in scope file
+  * Add QueryBinary field to .scope file.
+  * Fix display name.
+  * Update description.
+  * Bump Unity deps.
+
+  [ Mark Tully ]
+  * Initial commit
+  * Added tests
+  * Updated to new API Converted to Python 3 Updated test pass data
+    Updated .scope file to specs
+  * Updated translations
+  * Add packaging
+  * Parse bookmarks for all Firefox profiles.
+  * Add previews.
+
+  [ Didier Roche ]
+  * fix wrong copy/paste
+  * add python3-gi build-dep
+  * nuke wrong seederie
+  * Fix special character in debian/control
+
+  [ markjtully ]
+  * Parse bookmarks for all Firefox profiles.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 27
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 06:18:51 +0000
+
+unity-scope-firefoxbookmarks (0.1daily13.05.31ubuntu.unity.next-0ubuntu1) raring; urgency=low
+
+  [ Michael Terry ]
+  * Update Description
+
+  [ David Callé ]
+  * Init/update POT file
+  * Fix copyright
+  * Install .scope file in its master folder
+  * Install to /usr/share/unity-scopes, fix service file accordingly
+  * Depends on unity-scopes-runner
+  * Fix Loader field in scope file
+  * Add QueryBinary field to .scope file.
+  * Fix display name.
+  * Update description.
+  * Bump Unity deps.
+
+  [ Mark Tully ]
+  * Initial commit
+  * Added tests
+  * Updated to new API Converted to Python 3 Updated test pass data
+    Updated .scope file to specs
+  * Updated translations
+  * Add packaging
+  * Parse bookmarks for all Firefox profiles.
+  * Add previews.
+
+  [ Didier Roche ]
+  * fix wrong copy/paste
+  * add python3-gi build-dep
+  * nuke wrong seederie
+  * Fix special character in debian/control
+
+  [ markjtully ]
+  * Parse bookmarks for all Firefox profiles.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 26 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 31 May 2013 04:21:27 +0000
+
+unity-scope-firefoxbookmarks (0.1daily13.05.07ubuntu.unity.experimental.certified-0ubuntu1) raring; urgency=low
+
+  * Automatic snapshot from revision 24 (ubuntu-unity/experimental-
+    certified)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 07 May 2013 07:22:43 +0000
+
+unity-scope-firefoxbookmarks (0.1daily13.04.10ubuntu.unity.experimental.certified-0ubuntu1) raring; urgency=low
+
+  [ Mark Tully ]
+  * Initial release
+
+  [ Didier Roche ]
+  * bump version in debian/control
+  * small packaging fixes. Don't go native but split
+  * Automatic snapshot from revision 1 (boostrap)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 21 (ubuntu-unity/experimental-
+    certified)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 10 Apr 2013 07:29:15 +0000

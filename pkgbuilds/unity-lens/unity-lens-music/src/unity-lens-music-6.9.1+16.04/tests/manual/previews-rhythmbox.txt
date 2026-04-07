@@ -1,0 +1,213 @@
+Preview of local album
+----------------------------------------------------
+Test that the local album preview are displayed correctly in the Dash.
+
+Setup:
+Rhythmbox installed and rhythmbox database exists, some music files are available in ~/Music and are indexed by Rhythmbox.
+
+Actions:
+1. Open the Dash and switch to the music lens.
+2. Make sure some local albums are displayed.
+3. Right-click an album.
+
+Expected Result:
+Album preview should be displayed. It should display album cover, album title, album artist and year (as subtitle)
+a list of tracks and 'Show in Folder' and 'Play' buttons.
+
+
+Album preview - 'Show in Folder' action.
+----------------------------------------------------
+Test 'Show in Folder' action opens proper folder.
+
+Setup:
+Rhythmbox installed and rhythmbox database exists, some music files are available in ~/Music and are indexed by Rhythmbox.
+
+Actions:
+1. Open a preview of local album.
+2. Click 'Show in Folder' button.
+
+Expected Result:
+Nautilus is launched, showing the parent folder of selected album.
+
+
+Album preview - 'Play' action.
+---------------------------------------------------
+Test that 'Play' action enqueues album in Rhythmbox.
+
+Setup:
+Rhythmbox installed and rhythmbox database exists, some music files are available in ~/Music and are indexed by Rhythmbox.
+
+Actions:
+1. Open a preview of local album.
+2. Click 'Play' button.
+
+Expected Result:
+The album is enqueued in Rhythmbox and playback starts.
+
+
+Preview - codec installation
+----------------------------------------------------
+Test that missing mp3 codec is installed when required by preview.
+
+Setup:
+Rhythmbox installed and rhythmbox database exists, some mp3 files are available in ~/Music and are indexed by Rhythmbox. MP3 codec
+(such as fluendo or gstreamer-bad/ugly package) is not installed.
+
+Actions:
+1. Open the Dash and switch to the music lens.
+2. Make sure some local albums are displayed.
+3. Right-click an album that contains mp3s.
+4. Hover mouse over track number to reveal play button, click it.
+
+Expected Result:
+Album preview should be displayed. A standard GNOME popup box is displayed prompting the user for
+codec installation and dash gets closed. After providing a password the codec gets installed (verify with 'dpkg -l|grep fluendo') and user is no longer
+prompted for it when previewing mp3s.
+
+
+Album preview - built-in playback for album tracks
+----------------------------------------------------
+Test that built-in playback via music-preview-player supports play/pause and resume.
+
+Setup:
+Rhythmbox installed and rhythmbox database exists, some music files are available in ~/Music and are indexed by Rhythmbox.
+
+Actions:
+1. Open a preview of local album.
+2. Click small play button next to a track.
+3. As the track is played, hit pause / play a few times.
+
+Expected Result:
+Selected track is played by music-preview-player. Playback progress is reported in the Dash. Playback is paused/resumed
+when hitting pause/play button.
+
+
+Album preview - end of playback with build-in playback
+----------------------------------------------------
+Test progress and playback state are reported correctly on end-of-playback when built-in playback is used.
+
+Setup:
+Rhythmbox installed and rhythmbox database exists, some music files are available in ~/Music and are indexed by Rhythmbox.
+
+Actions:
+1. Open a preview of local album.
+2. Click small play button next to a track.
+3. Wait for the playback to finish.
+
+Expected Result:
+Selected track is played by music-preview-player. Playback progress is reported in the Dash. When playback finishes,
+the progress is reset.
+
+
+Album preview - song change with built-in playback
+----------------------------------------------------
+Test that song can be changed with built-in playback functionality and progress/state are reported accordingly.
+
+Setup:
+Rhythmbox installed and rhythmbox database exists, some music files are available in ~/Music and are indexed by Rhythmbox.
+
+Actions:
+1. Open a preview of local album.
+2. Click small play button next to a track.
+3. As the track is played, click small play button for another track.
+
+Expected Result:
+Selected track is played by music-preview-player. When another track is activated for playback then playback progress
+is updated accrodingly to show play state and progress for only one track.
+
+
+Album preview - closing the preview during playback
+----------------------------------------------------
+Test that built-in playback stops when preview is closed.
+
+Setup:
+Rhythmbox installed and rhythmbox database exists, some music files are available in ~/Music and are indexed by Rhythmbox.
+
+Actions:
+1. Open a preview of local album.
+2. Click small play button next to a track.
+3. As the track is played, close the preview.
+
+Expected Result:
+Selected track is played by music-preview-player. Playback stops when the preview is closed. Preview player process
+quits (verify with 'ps uax|grep music-preview-player').
+
+
+Album preview - switching to a different preview during playback
+----------------------------------------------------
+Test that built-in playback stops when switching to a different preview.
+
+Setup:
+Rhythmbox installed and rhythmbox database exists, some music files are available in ~/Music and are indexed by Rhythmbox.
+
+Actions:
+1. Open a preview of local album.
+2. Click small play button next to a track.
+3. As the track is played, switch to a different preview by clicking left/right arrows.
+
+Expected Result:
+Selected track is played by music-preview-player. Playback stops when preview of different album is displayed.
+
+
+Single track preview display in the dash.
+----------------------------------------------------
+Test that the single track preview for local album is displayed correctly in the Dash.
+
+Setup:
+Rhythmbox installed and rhythmbox database exists, some music files are available in ~/Music and are indexed by Rhythmbox.
+
+Actions:
+1. Open the Dash and switch to the music lens.
+2. Make sure some local songs are displayed.
+3. Right-click a song.
+
+Expected Result:
+Song preview should be displayed. It should display album cover, song title, album artist and year (as subtitle).
+Only a single track should be displayed in the player area. Two buttons should be present: 'Show in Folder' and 'Play'.
+
+
+Single track preview  - 'Show in Folder' action.
+----------------------------------------------------
+Test 'Show in Folder' action opens proper folder.
+
+Setup:
+Rhythmbox installed and rhythmbox database exists, some music files are available in ~/Music and are indexed by Rhythmbox.
+
+Actions:
+1. Open a preview of local song.
+2. Click 'Show in Folder' button.
+
+Expected Result:
+Nautilus is launched, showing the parent folder of selected song (i.e. its album folder).
+
+
+Single track preview - 'Play' action.
+----------------------------------------------------
+Test that 'Play' action enqueues song in Rhythmbox.
+
+Setup:
+Rhythmbox installed and rhythmbox database exists, some music files are available in ~/Music and are indexed by Rhythmbox.
+
+Actions:
+1. Open a preview of local song.
+2. Click 'Play' button.
+
+Expected Result:
+The song is enqueued in Rhythmbox and playback starts.
+
+
+Test built-in playback for single track.
+----------------------------------------------------
+Test that built-in playback via music-preview-player supports play/pause and resume.
+
+Setup:
+Rhythmbox installed and rhythmbox database exists, some music files are available in ~/Music and are indexed by Rhythmbox.
+
+Actions:
+1. Open a preview of local song.
+2. Click small play button next to a track.
+3. As the track is played, hit pause / play a few times.
+
+Expected Result:
+The track is played by music-preview-player. Playback progress is reported in the Dash. Playback is paused/resumed
+when hitting pause/play button.

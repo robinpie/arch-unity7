@@ -1,0 +1,2 @@
+/usr/bin/ar qc libunity-shared-standalone.a "CMakeFiles/unity-shared-standalone.dir/StandaloneWindowManager.cpp.o"
+/usr/bin/ranlib libunity-shared-standalone.a

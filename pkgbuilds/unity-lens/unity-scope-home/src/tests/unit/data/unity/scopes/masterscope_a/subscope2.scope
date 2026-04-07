@@ -1,0 +1,11 @@
+[Scope]
+DBusName=com.canonical.Unity.Scope.SubscopeA2
+DBusPath=/com/canonical/unity/scope/subscopeA2
+Icon=/usr/share/unity/6/icon-sub2.svg
+Keywords=suba2;
+Type=various
+QueryPattern=^~
+Name=Sample subscope 2
+Description=Find various stuff subscope a2
+SearchHint=Search stuff subscope a2
+Shortcut=u

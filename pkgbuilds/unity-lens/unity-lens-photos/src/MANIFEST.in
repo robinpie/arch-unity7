@@ -1,0 +1,10 @@
+include build_i18n_ext.py
+include unity-lens-photos.application.in
+include unity-lens-photos.desktop
+include unity-lens-photos.png
+include po/*
+include MANIFEST.in
+include src/*
+include data/*
+include COPYING
+include AUTHORS

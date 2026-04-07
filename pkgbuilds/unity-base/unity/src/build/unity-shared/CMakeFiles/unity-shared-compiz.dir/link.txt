@@ -1,0 +1,2 @@
+/usr/bin/ar qc libunity-shared-compiz.a "CMakeFiles/unity-shared-compiz.dir/CompizUtils.cpp.o" "CMakeFiles/unity-shared-compiz.dir/PluginAdapter.cpp.o" "CMakeFiles/unity-shared-compiz.dir/GnomeKeyGrabber.cpp.o"
+/usr/bin/ranlib libunity-shared-compiz.a

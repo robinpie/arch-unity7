@@ -1,0 +1,26 @@
+{
+  "browser_url": "http://browserurl1",
+  "genres": [
+    "genre1",
+    "genre2"
+  ],
+  "description": "a movie",
+  "title": "title1",
+  "price": 1,
+  "source": "source1",
+  "directors": [
+    "director1",
+    "director2"
+  ],
+  "details": "http://detailsurl1",
+  "starring": [
+    "star1",
+    "star2"
+  ],
+  "uploaded_by": "uploader1",
+  "duration": "5477",
+  "release_date": "2010-04-01T07:00:00.000Z",
+  "image": "http://image1",
+  "date_uploaded": "2012-06-06T21:55:12.000Z",
+  "formatted_price": "$1"
+}

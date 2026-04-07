@@ -1,0 +1,23 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/info
+Icon=
+CategoryIcon=/usr/share/icons/unity-icon-theme/places/svg/group-info.svg
+Name=Info
+Type=info
+IsMaster=true
+Keywords=info;
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category results]
+Name=Results
+Icon=
+DedupField=uri
+
+[Category locations]
+Name=Locations
+Icon=
+DedupField=uri
+

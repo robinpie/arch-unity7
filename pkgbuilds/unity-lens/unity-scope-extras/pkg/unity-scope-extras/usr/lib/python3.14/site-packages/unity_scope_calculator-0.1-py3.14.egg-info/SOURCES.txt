@@ -1,0 +1,15 @@
+COPYING
+MANIFEST.in
+setup.cfg
+setup.py
+data/calculator.scope.in
+data/unity-scope-calculator.service
+po/POTFILES.in
+po/unity-scope-calculator.pot
+src/__init__.py
+src/unity_calculator_daemon.py
+src/unity_scope_calculator.egg-info/PKG-INFO
+src/unity_scope_calculator.egg-info/SOURCES.txt
+src/unity_scope_calculator.egg-info/dependency_links.txt
+src/unity_scope_calculator.egg-info/top_level.txt
+tests/test_calculator.py

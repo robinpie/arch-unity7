@@ -1,0 +1,16 @@
+[Scope]
+DBusName=com.canonical.Unity.Scope.Photos.Shotwell
+DBusPath=/com/canonical/unity/scope/photos/shotwell
+Icon=
+_Keywords=shotwell;
+RequiredMetadata=
+OptionalMetadata=
+Loader=/usr/share/unity-scopes/shotwell/unity_shotwell_daemon.py
+RemoteContent=false
+Type=photos
+_Name=Shotwell
+_Description=This is an Ubuntu search plugin that enables information from Shotwell to be searched and displayed in the Dash underneath the Photos header. If you do not wish to search this content source, you can disable this search plugin.
+_SearchHint=Search Shotwell
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-lens-photos

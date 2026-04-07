@@ -1,0 +1,1 @@
+unity_shotwell_daemon

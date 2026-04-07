@@ -1,0 +1,77 @@
+# Maintainer: arch-unity7 port
+# This is a session integration package providing the glue between
+# unity, gnome-session, lightdm, and systemd.
+# In Gentoo this is handled by the gnome-session ehook; here we
+# package the result directly.
+
+pkgname=unity-session
+pkgver=1.0
+pkgrel=1
+pkgdesc="Unity session integration for gnome-session and LightDM"
+arch=('any')
+url="https://launchpad.net/unity"
+license=('GPL-3.0-or-later')
+depends=('unity' 'gnome-session' 'lightdm')
+source=(
+    "unity-session.target"
+    "gnome-session.service"
+    "run-systemd-session"
+    "50-unity.conf"
+    "nemo-unity-autostart.desktop"
+    "05-unity-desktop-session"
+    "15-xdg-data-unity"
+    "unity.xsession"
+)
+sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP')
+
+package() {
+    # gnome-session unit files
+    install -Dm644 unity-session.target \
+        "$pkgdir/usr/lib/systemd/user/unity-session.target"
+    install -Dm644 gnome-session.service \
+        "$pkgdir/usr/lib/systemd/user/gnome-session.service"
+
+    # Session runner
+    install -Dm755 run-systemd-session \
+        "$pkgdir/usr/libexec/run-systemd-session"
+
+    # LightDM config
+    install -Dm644 50-unity.conf \
+        "$pkgdir/usr/share/lightdm/lightdm.conf.d/50-unity.conf"
+
+    # LightDM greeter config
+    install -dm755 "$pkgdir/etc/lightdm/lightdm.conf.d"
+    printf '%s\n' '[Seat:*]' 'greeter-session=unity-greeter' 'user-session=unity' \
+        > "$pkgdir/etc/lightdm/lightdm.conf.d/50-unity.conf"
+
+    # Nemo desktop autostart
+    install -Dm644 nemo-unity-autostart.desktop \
+        "$pkgdir/etc/xdg/autostart/unity-nemo-desktop.desktop"
+
+    # xinitrc scripts
+    install -Dm755 05-unity-desktop-session \
+        "$pkgdir/etc/X11/xinit/xinitrc.d/05-unity-desktop-session"
+    install -Dm755 15-xdg-data-unity \
+        "$pkgdir/etc/X11/xinit/xinitrc.d/15-xdg-data-unity"
+
+    # Xsession script (for startx)
+    install -Dm755 unity.xsession \
+        "$pkgdir/usr/share/xsessions/unity.xsession"
+
+    # gnome-session unity session file
+    install -dm755 "$pkgdir/usr/share/gnome-session/sessions"
+    printf '%s\n' '[GNOME Session]' 'Name=Unity' 'RequiredComponents=unity7;' \
+        > "$pkgdir/usr/share/gnome-session/sessions/unity.session"
+
+    # LightDM unity.desktop session entry
+    install -dm755 "$pkgdir/usr/share/xsessions"
+    cat > "$pkgdir/usr/share/xsessions/unity.desktop" << 'EOF'
+[Desktop Entry]
+Name=Unity
+Comment=This session logs you into Unity
+Exec=/usr/libexec/run-systemd-session unity-session.target
+TryExec=/usr/bin/compiz
+Icon=unity-logo-panel
+Type=XSession
+EOF
+}

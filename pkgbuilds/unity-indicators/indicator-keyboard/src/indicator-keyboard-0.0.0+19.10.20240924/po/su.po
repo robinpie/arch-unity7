@@ -1,0 +1,47 @@
+# Sundanese translation for indicator-keyboard
+# Copyright (c) 2024 Rosetta Contributors and Canonical Ltd 2024
+# This file is distributed under the same license as the indicator-keyboard package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: indicator-keyboard\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2023-09-14 08:42+0000\n"
+"PO-Revision-Date: 2024-05-25 12:03+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Sundanese <su@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2024-05-26 04:37+0000\n"
+"X-Generator: Launchpad (build 0e1f616671af724398db43b36ddfb3ed1f2682ec)\n"
+
+#: ../lib/main.vala:852
+#, c-format
+msgid "%s input source"
+msgstr "%s sumber input"
+
+#: ../lib/main.vala:856
+msgid "Keyboard Layout"
+msgstr "Susunan Papan Ketik"
+
+#: ../lib/main.vala:857
+msgid "Input source selection"
+msgstr "Pamilihan sumber input"
+
+#: ../lib/indicator-menu.vala:62
+msgid "Character Map"
+msgstr "Péta Karakter"
+
+#: ../lib/indicator-menu.vala:63
+msgid "Keyboard Layout Chart"
+msgstr "Bagan Susunan Papan Ketik"
+
+#: ../lib/indicator-menu.vala:64
+msgid "Text Entry Settings..."
+msgstr "Pangaturan Ngasupkeun Téks..."
+
+#: ../lib/indicator-menu.vala:120
+msgid "On-screen keyboard"
+msgstr "Papan ketik dina layar"

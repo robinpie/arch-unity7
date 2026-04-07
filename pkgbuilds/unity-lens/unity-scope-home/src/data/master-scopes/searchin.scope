@@ -1,0 +1,16 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/searchin
+Icon=
+CategoryIcon=/usr/share/icons/unity-icon-theme/places/svg/group-internet.svg
+Name=Search in
+Type=web
+IsMaster=true
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category global]
+Name=Search in
+Icon=
+DedupField=uri

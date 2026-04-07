@@ -1,0 +1,8 @@
+[Unit]
+Description=Indicator Keyboard Backend
+PartOf=graphical-session.target
+After=indicators-pre.target
+
+[Service]
+ExecStart=/usr/libexec/indicator-keyboard/indicator-keyboard-service --use-gtk
+Restart=on-failure

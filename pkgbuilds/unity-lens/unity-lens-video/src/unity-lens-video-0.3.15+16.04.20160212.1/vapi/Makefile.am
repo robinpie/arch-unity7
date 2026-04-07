@@ -1,0 +1,5 @@
+NULL =
+BUILT_SOURCES =
+CLEANFILES =
+EXTRA_DIST = libsoup-gnome-2.4.vapi
+

@@ -1,0 +1,70 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/unity-lens-files
+
+pkgname=unity-lens-files
+pkgver=7.1.0
+_uver=+17.10.20170605
+_urev=0ubuntu6
+pkgrel=1
+pkgdesc="File lens for the Unity7 user interface"
+arch=('x86_64')
+url="https://launchpad.net/unity-lens-files"
+license=('GPL-3.0-or-later')
+depends=(
+    'dee'
+    'glib2'
+    'libgee'
+    'libunity'
+    'zeitgeist'
+)
+makedepends=(
+    'pkgconf'
+    'vala'
+    'gnome-common'
+    'autoconf'
+    'automake'
+    'libtool'
+)
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+    "remove-1kb-filter-option.patch"
+)
+sha256sums=('SKIP' 'SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+
+    # Apply Ubuntu diff (flat extraction)
+    patch -p1 --batch --forward -i "${pkgname}_${pkgver}${_uver}-${_urev}.diff" || true
+
+    # Apply debian patch series
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+
+    patch -p1 -i ../remove-1kb-filter-option.patch
+
+    # Clear translations
+    > po/LINGUAS || true
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "$srcdir"
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static
+    make
+}
+
+package() {
+    cd "$srcdir"
+    make DESTDIR="$pkgdir" install
+    find "$pkgdir" -name '*.la' -delete
+}

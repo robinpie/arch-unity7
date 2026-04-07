@@ -1,0 +1,83 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/indicator-power
+
+pkgname=indicator-power
+pkgver=12.10.6
+_uver=+17.10.20170829.1
+_urev=0ubuntu9
+pkgrel=1
+pkgdesc="Indicator showing power state used by the Unity7 user interface"
+arch=('x86_64')
+url="https://launchpad.net/indicator-power"
+license=('GPL-3.0-or-later')
+depends=(
+    'glib2'
+    'libindicator-gtk3'
+    'dconf'
+    'upower'
+    'libnotify'
+)
+makedepends=(
+    'cmake'
+    'pkgconf'
+    'libgudev'
+    'cmake-extras'
+    'systemd'
+    'gsettings-ubuntu-touch-schemas'
+    'intltool'
+)
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+    "fix-gcc-14-build.patch"
+    "disable-powerman.diff"
+)
+sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
+options=('!makeflags')
+
+prepare() {
+    cd "$srcdir"
+
+    # Apply Ubuntu diff (flat extraction)
+    patch -p1 --batch --forward -i "${pkgname}_${pkgver}${_uver}-${_urev}.diff" || true
+
+    # Apply debian patch series
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+
+    patch -p1 -i ../fix-gcc-14-build.patch
+    patch -p1 --forward -i ../disable-powerman.diff || true
+
+    # Fix schema errors and sandbox violations
+    sed -i \
+        -e 's:SEND_ERROR:WARNING:g' \
+        -e '/Compiling GSettings schemas/,+1 d' \
+        cmake/UseGSettings.cmake || true
+
+    # Disable po subdirectory (incomplete translations)
+    sed -i '/^add_subdirectory.*po/s/^/#/' CMakeLists.txt || true
+
+    # Fix CMake minimum version for CMake 4
+    find . -name "CMakeLists.txt" -exec sed -i \
+        's/cmake_minimum_required(VERSION 2\.[0-9]\+\.[0-9]\+/cmake_minimum_required(VERSION 3.10/' {} \; 2>/dev/null || true
+}
+
+build() {
+    cmake -B build -S "$srcdir" \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DCMAKE_INSTALL_FULL_LOCALEDIR=/usr/share/locale \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.10 \
+        -DENABLE_TESTS=OFF \
+        -Wno-dev
+    cmake --build build -j1
+}
+
+package() {
+    DESTDIR="$pkgdir" cmake --install build
+}

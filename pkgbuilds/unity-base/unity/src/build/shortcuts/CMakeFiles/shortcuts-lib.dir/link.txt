@@ -1,0 +1,2 @@
+/usr/bin/ar qc libshortcuts-lib.a "CMakeFiles/shortcuts-lib.dir/BaseWindowRaiserImp.cpp.o" "CMakeFiles/shortcuts-lib.dir/CompizShortcutModeller.cpp.o" "CMakeFiles/shortcuts-lib.dir/ShortcutController.cpp.o" "CMakeFiles/shortcuts-lib.dir/ShortcutHint.cpp.o" "CMakeFiles/shortcuts-lib.dir/ShortcutHintPrivate.cpp.o" "CMakeFiles/shortcuts-lib.dir/ShortcutModel.cpp.o" "CMakeFiles/shortcuts-lib.dir/ShortcutView.cpp.o"
+/usr/bin/ranlib libshortcuts-lib.a

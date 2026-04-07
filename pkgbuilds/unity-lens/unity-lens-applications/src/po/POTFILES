@@ -1,0 +1,11 @@
+	../src/daemon.vala \
+	../src/commands-scope.vala \
+	../src/scopes-scope.vala \
+	../src/utils.vala \
+	../src/main.vala \
+	../src/running-apps-scope.vala \
+	../data/X-Unity-All-Applications.directory.in \
+	../data/applications.scope.in.in \
+	../data/commands.scope.in.in \
+	../data/scopes.scope.in.in \
+	../data/runningapps.scope.in.in

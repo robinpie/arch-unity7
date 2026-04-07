@@ -1,0 +1,43 @@
+{
+   "checksum": "dd2b4a3b6c1e009f1c3ff444b9885ed7",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "children": [ {
+               "date_added": "12946776668000000",
+               "id": "1",
+               "name": "Test Bookmark",
+               "type": "url",
+               "url": "http://www.ubuntu.com/"
+            } ],
+            "date_added": "12964667310451607",
+            "date_modified": "12990414256547950",
+            "id": "4",
+            "name": "Test Folder",
+            "type": "folder"
+         } ],
+         "date_added": "12964667271957138",
+         "date_modified": "12990414256541428",
+         "id": "1",
+         "name": "Bookmarks Bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "12964667271957147",
+         "date_modified": "0",
+         "id": "2",
+         "name": "Other Bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "12964667271957148",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Mobile Bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

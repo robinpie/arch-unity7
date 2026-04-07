@@ -1,0 +1,274 @@
+2010-06-18  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* configure.ac:
+
+	Bump libzeitgeist dep to 0.2.1 as 0.2.0 had a bad integer overflow bug causing time range queries to go askew
+
+2010-06-18  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* configure.ac:
+	* src/daemon.vala:
+	* src/schemas.vala:
+	* src/utils.vala:
+
+	Merge bzr merge lp:~anjali-team/anjali/unity-place-files.groups. Bumps libzeitgeist dep to 0.2.0 and enables a *prototype** implementation of the time based grouping of files. The grouping is not accurate nor to the spec, but is good enough for the gui to have something to play around with for now
+
+2010-06-17  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* configure.ac:
+
+	Bump libzeitgeist dep to 0.2.0
+
+2010-06-17  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/daemon.vala:
+	* src/schemas.vala:
+	* src/utils.vala:
+
+	First prototype of time grouping complete. The grouping is *not* complete or to the spec, but is there for Neil to have something to play with
+
+2010-06-17  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/daemon.vala:
+
+	Populate the groups model with all months ahead of time because we are going to need them anyway
+
+2010-06-17  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/daemon.vala:
+	* src/utils.vala:
+
+	Start adding the right time based grouping
+
+2010-06-18  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/utils.vala:
+	* configure.ac:
+	* src/Makefile.am:
+	* src/daemon.vala:
+
+	Merge bzr merge lp:~anjali-team/anjali/unity-place-files.search. Enabling the SetSearch() and SetGlobalSearch() methods in the DBus API. Note that you need Zeitgeist 0.4.0 or later running with the FTS extension in order for this to work
+
+2010-06-16  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/utils.vala:
+	* src/Makefile.am:
+	* src/daemon.vala:
+
+	Moce unused, but useful, code ti utils.vala
+
+2010-06-16  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/daemon.vala:
+
+	Search results for SetSearch() and SetGlobalSearch() are now added to their respective Dee.SharedModels (thus shared on the bus)
+
+2010-06-16  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* configure.ac:
+	* src/daemon.vala:
+
+	DBus calls to SetSearch() and SetGlobalSearch() getting through and result in an actual call against ZG FTS. The Dee models are still not populated, but we are getting there...
+
+2010-06-16  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/Makefile.am:
+	* src/daemon.vala:
+	* src/schemas.vala:
+
+	Merge lp:~anjali-team/anjali/unity-place-files.sections enabling the sections- and groups- models. You can also update the results model by setting the section of the files place entry
+
+2010-06-14  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/daemon.vala:
+
+	Restrict to subjects of URI file:*. We can't solely rely on NFO_FILE_DATA_OBJECT as NFO_REMOTE_FILE_DATA_OBJECT is also a child of this type
+
+2010-06-11  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/daemon.vala:
+
+	w00t! sections actually work (not exactly as specced, but somewhere close to that)
+
+2010-06-11  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/daemon.vala:
+
+	Fix memory corruption due to the fact that GPtrArray doesn't ref objects when you add them. Vala doesn't like that...
+
+2010-06-11  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/Makefile.am:
+	* src/daemon.vala:
+	* src/schemas.vala:
+
+	Hook up infrastructure for section shuffling
+
+2010-06-11  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/daemon.vala:
+
+	Add link to ZG bug reporthttps://bugs.launchpad.net/zeitgeist/+bug/592599
+
+2010-06-11  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/daemon.vala:
+
+	Build a list of event templates to use in the query indexed by section id
+
+2010-06-11  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/daemon.vala:
+
+	Grab a Zeitgeist.Index() so we can do full text search on ZG
+
+2010-06-11  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/daemon.vala:
+
+	Export the Unity.Place.Controller as the last thing in the Daemon constructor to ensure that all the Dee.SharedModels are up when the place is "ready"
+
+2010-06-11  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/daemon.vala:
+	* src/schemas.vala:
+
+	Fill out the sections model and entry goups model on construction of the Daemon
+
+2010-06-11  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/daemon.vala:
+	* src/main.vala:
+
+	Upgrade to work against libzeitgeist 0.1.1
+
+2010-06-11  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/daemon.vala:
+	* src/Makefile.am:
+	* src/main.vala:
+	* src/model-schemas.vala:
+	* src/schemas.vala:
+
+	Refactor: pull Daemon class out into its own .vala file so that main.vala only contains... well... main() :-)
+	
+	Rename model-schemas.vala to just schemas.vala
+
+2010-06-10  Neil Jagdish Patel  <neil.patel@canonical.com>
+
+	* files.place.in:
+	* src/main.vala:
+
+	- Update files.place.in with new key names
+	- Update main.vala to export with correct name (.Unity. instead of .unity.)
+
+2010-06-09  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/common:
+	* src/files:
+	* src/test:
+	* src/test/main.vala:
+	* NEWS:
+	* configure.ac:
+	* src/Makefile.am:
+	* src/common/config.vala.in:
+	* src/config.vala.in:
+	* src/common/model-schemas.vala:
+	* src/model-schemas.vala:
+	* src/files/main.vala:
+	* src/main.vala:
+
+	Flatten src/ dir and ensure distcheck passes. Clean up unused files. Bump version to 0.3.1
+
+2010-06-09  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* NEWS:
+
+	Post 0.3.0 tag
+
+2010-06-08  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/files/main.vala:
+
+	No more g_criticals() or g_warnings() on stderr... Vala *really* doesn't like anonymous variables... The following diff makes all the difference:
+	
+	-      templates.add (new Zeitgeist.Event ());
+	+      var event = new Zeitgeist.Event ();
+	+      templates.add (event);
+
+2010-06-08  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/files/main.vala:
+
+	Almost working again now, modulo Vala oddness
+
+2010-06-08  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/common/daemon.vala:
+	* src/Makefile.am:
+
+	Remove the old helper class Unity.Place.Daemon from the build as it's not all handled inside libunity
+
+2010-06-07  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* configure.ac:
+	* files.place.in:
+	* src/Makefile.am:
+	* src/common/model-schemas.vala:
+	* src/files/main.vala:
+
+	Refactor to new libunity place daemon impl. Works module the fact that libunity doesn't ship a .pc file yet, meaning that automagic fails to detect libunity
+
+2010-06-07  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/common/config.vala.in:
+	* configure.ac:
+	* src/Makefile.am:
+
+	Auto-magic to generate a config.vala and include that in the build
+
+2010-06-01  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/test:
+	* src/test/main.vala:
+
+	Initial import of (working!!) Vala/DBus prototype of the Place API
+
+2010-05-27  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* src/common/daemon.vala:
+	* src/files/main.vala:
+
+	Silence some cast-warnings from valac (requires yet to be released Dee 0.2.1)
+
+2010-05-27  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* configure.ac:
+	* src/Makefile.am:
+	* src/common/daemon.vala:
+	* src/files/main.vala:
+
+	Port from DbusModel to Dee
+
+2010-04-29  Mikkel Kamstrup Erlandsen  <kamstrup@hardback>
+
+	* AUTHORS:
+	* COPYING:
+	* ChangeLog:
+	* MAINTAINERS:
+	* Makefile.am:
+	* NEWS:
+	* README:
+	* autogen.sh:
+	* configure.ac:
+	* files.place.in:
+	* src:
+	* src/Makefile.am:
+	* src/common:
+	* src/common/daemon.vala:
+	* src/common/model-schemas.vala:
+	* src/files:
+	* src/files/main.vala:
+
+	Initial project setup of a Unity Place Daemon providing recently used files. At the time of writing we require dbusmodel trunk and libzeitgeist trunk in order to work.
+

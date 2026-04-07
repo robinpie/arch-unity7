@@ -1,0 +1,28 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/news
+Icon=
+CategoryIcon=@prefix@/share/icons/unity-icon-theme/places/svg/group-news.svg
+_Name=News
+Type=news
+IsMaster=true
+_Keywords=news;
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category recent]
+_Name=Recent
+Icon=
+DedupField=uri
+                         
+[Category top]
+_Name=Top
+Icon=
+DedupField=uri
+                         
+[Category local]
+_Name=Local
+Icon=
+DedupField=uri
+

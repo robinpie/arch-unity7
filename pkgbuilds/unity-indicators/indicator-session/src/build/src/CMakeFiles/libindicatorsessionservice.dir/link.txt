@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblibindicatorsessionservice.a CMakeFiles/libindicatorsessionservice.dir/actions.c.o CMakeFiles/libindicatorsessionservice.dir/guest.c.o CMakeFiles/libindicatorsessionservice.dir/service.c.o CMakeFiles/libindicatorsessionservice.dir/users.c.o
+/usr/bin/ranlib liblibindicatorsessionservice.a

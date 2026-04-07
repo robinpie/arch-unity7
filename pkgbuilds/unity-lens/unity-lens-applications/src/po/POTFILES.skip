@@ -1,0 +1,9 @@
+src/main.c
+src/daemon.c
+src/utils.c
+src/commands-scope.c
+src/scopes-scope.c
+src/running-apps-search.c
+src/winstack-client.c
+src/windows-stack.c
+src/running-apps-scope.c

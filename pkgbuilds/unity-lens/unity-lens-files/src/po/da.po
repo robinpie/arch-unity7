@@ -1,0 +1,225 @@
+# Danish translation for unity-place-files
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the unity-place-files package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: unity-place-files\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-08-23 21:08+0200\n"
+"PO-Revision-Date: 2010-08-23 19:54+0000\n"
+"Last-Translator: Mikkel Kamstrup Erlandsen <mikkel.kamstrup@gmail.com>\n"
+"Language-Team: Danish <da@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-08-25 07:12+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: ../src/daemon.vala:276
+msgid "All Files"
+msgstr "Alle filer"
+
+#: ../src/daemon.vala:278
+msgid "Documents"
+msgstr "Dokumenter"
+
+#: ../src/daemon.vala:280
+msgid "Folders"
+msgstr "Mapper"
+
+#: ../src/daemon.vala:282
+msgid "Images"
+msgstr "Billeder"
+
+#: ../src/daemon.vala:284
+msgid "Audio"
+msgstr "Lyd"
+
+#: ../src/daemon.vala:286
+msgid "Videos"
+msgstr "Video"
+
+#: ../src/daemon.vala:288
+msgid "Presentations"
+msgstr "Præsentationer"
+
+#: ../src/daemon.vala:290
+msgid "Other"
+msgstr "Andet"
+
+#: ../src/daemon.vala:309
+msgid "Top Results"
+msgstr "Topresultater"
+
+#: ../src/daemon.vala:312
+msgid "Recent"
+msgstr "Seneste"
+
+#: ../src/daemon.vala:315
+msgid "Downloads"
+msgstr "Downloads"
+
+#: ../src/daemon.vala:318
+msgid "Favorite Folders"
+msgstr "Favoritmapper"
+
+#: ../src/daemon.vala:321
+msgid "Files"
+msgstr "Filer"
+
+#: ../src/daemon.vala:330
+msgid "Today"
+msgstr "I dag"
+
+#: ../src/daemon.vala:333
+msgid "Yesterday"
+msgstr "I går"
+
+#: ../src/daemon.vala:336
+msgid "This week"
+msgstr "Denne uge"
+
+#: ../src/daemon.vala:339
+msgid "Last Week"
+msgstr "Sidste uge"
+
+#: ../src/daemon.vala:342
+msgid "This Month"
+msgstr "Denne måned"
+
+#: ../src/daemon.vala:345
+msgid "Past Six Months"
+msgstr "Sidste seks måneder"
+
+#: ../src/daemon.vala:348
+msgid "This Year"
+msgstr "I år"
+
+#: ../src/daemon.vala:351
+msgid "Last Year"
+msgstr "Sidste år"
+
+#: ../src/daemon.vala:983
+msgid "You search did not match any files"
+msgstr "Din søgning matchede ingen filer"
+
+#: ../src/daemon.vala:993
+msgid "Search the web"
+msgstr "Søg på nettet"
+
+#: ../src/daemon.vala:1009 ../src/daemon.vala:1034
+msgid "files"
+msgstr "filer"
+
+#: ../src/daemon.vala:1012
+msgid "documents"
+msgstr "dokumenter"
+
+#: ../src/daemon.vala:1015
+msgid "folders"
+msgstr "mapper"
+
+#: ../src/daemon.vala:1018
+msgid "images"
+msgstr "billeder"
+
+#: ../src/daemon.vala:1021
+msgid "audio files"
+msgstr "lydfiler"
+
+#: ../src/daemon.vala:1024
+msgid "videos"
+msgstr "videofiler"
+
+#: ../src/daemon.vala:1027
+msgid "presentations"
+msgstr "præsentationer"
+
+#: ../src/daemon.vala:1030
+msgid "other files"
+msgstr "andre filer"
+
+#: ../src/daemon.vala:1042
+msgid "There are no $section_name in your Home folder"
+msgstr "Der er ingen $section_name i din hjemmemappe"
+
+#: ../src/utils.vala:101
+msgid "Invalid Month"
+msgstr "Ugyldig måned"
+
+#: ../src/utils.vala:103
+msgid "January"
+msgstr "Januar"
+
+#: ../src/utils.vala:105
+msgid "February"
+msgstr "Februar"
+
+#: ../src/utils.vala:107
+msgid "March"
+msgstr "Marts"
+
+#: ../src/utils.vala:109
+msgid "April"
+msgstr "April"
+
+#: ../src/utils.vala:111
+msgid "May"
+msgstr "Maj"
+
+#: ../src/utils.vala:113
+msgid "June"
+msgstr "Juni"
+
+#: ../src/utils.vala:115
+msgid "July"
+msgstr "Juli"
+
+#: ../src/utils.vala:117
+msgid "August"
+msgstr "August"
+
+#: ../src/utils.vala:119
+msgid "September"
+msgstr "September"
+
+#: ../src/utils.vala:121
+msgid "October"
+msgstr "Oktober"
+
+#: ../src/utils.vala:123
+msgid "November"
+msgstr "November"
+
+#: ../src/utils.vala:125
+msgid "December"
+msgstr "December"
+
+#: ../src/main.vala:51
+msgid ""
+"Another Files Place daemon appears to be running.\n"
+"Bailing out."
+msgstr ""
+"Der kører allerede en anden fildæmon.\n"
+"Afslutter."
+
+#: ../src/main.vala:55
+#, c-format
+msgid ""
+"Error connecting to session bus: %s.\n"
+"Bailing out."
+msgstr ""
+"Fejl ved opkobling til sessionsbus: %s.\n"
+"Afslutter."
+
+#. namespace
+#: ../files.place.in.in.h:1
+msgid "Files & Folders"
+msgstr "Filer og mapper"
+
+#: ../files.place.in.in.h:2
+msgid "Find documents, downloads, and other files"
+msgstr "Find dokumenter, downloads og andre filer"
+

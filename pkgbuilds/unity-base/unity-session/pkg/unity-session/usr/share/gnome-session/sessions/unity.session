@@ -1,0 +1,3 @@
+[GNOME Session]
+Name=Unity
+RequiredComponents=unity7;

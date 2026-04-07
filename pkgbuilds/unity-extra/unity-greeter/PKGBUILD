@@ -1,0 +1,109 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/unity-greeter
+
+pkgname=unity-greeter
+pkgver=25.04.1
+_uver=
+_urev=0ubuntu1
+_srcver=24.10.1
+pkgrel=1
+pkgdesc="Unity LightDM greeter"
+arch=('x86_64')
+url="https://launchpad.net/unity-greeter"
+license=('GPL-3.0-or-later')
+depends=(
+    'at-spi2-core'
+    'ido'
+    'libindicator-gtk3'
+    'libcanberra'
+    'unity-settings-daemon'
+    'gtk3'
+    'lightdm'
+    'dconf'
+    'glib2'
+    'cairo'
+    'gdk-pixbuf2'
+    'libx11'
+    'libxext'
+    'pango'
+)
+makedepends=(
+    'pkgconf'
+    'vala'
+    'autoconf'
+    'automake'
+    'libtool'
+    'intltool'
+    'gnome-common'
+    'gnome-desktop'
+    'freetype2'
+    'pixman'
+    'dbus'
+)
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}-${_urev}.tar.xz"
+    "environment-variables.patch"
+    "start-notify-osd.patch"
+    "ubuntu-unity-greeter.gsettings-override"
+    "gentoo_logo.png"
+    "gentoo_cof.png"
+)
+sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP')
+
+prepare() {
+    cd "${pkgname}-${_srcver}"
+
+    patch -p1 -i ../environment-variables.patch
+    patch -p1 -i ../start-notify-osd.patch
+
+    # Panel icon size and padding
+    sed -i \
+        -e "/entry.image.show.connect/i entry.image.set_pixel_size(22);" \
+        -e "/hbox.pack_start (entry.image/{s/0/3/}" \
+        src/menubar.vala || true
+
+    # Patch at-spi-bus-launcher path to Arch location
+    sed -i \
+        -e "s:/usr/lib/at-spi2-core/at-spi-bus-launcher:/usr/libexec/at-spi-bus-launcher:" \
+        src/unity-greeter.vala || true
+
+    # Clear linguas to avoid incomplete translations
+    > po/LINGUAS || true
+
+    autoreconf -fiv
+}
+
+build() {
+    cd "${pkgname}-${_srcver}"
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --enable-nls
+    make
+}
+
+package() {
+    cd "${pkgname}-${_srcver}"
+    make DESTDIR="$pkgdir" install
+
+    # Install GSettings override
+    install -Dm644 ../ubuntu-unity-greeter.gsettings-override \
+        "$pkgdir/usr/share/glib-2.0/schemas/10_ubuntu-unity-greeter.gschema.override"
+
+    # Install branding (replace Gentoo with arch-style logos)
+    install -Dm644 ../gentoo_logo.png "$pkgdir/usr/share/unity-greeter/logo.png"
+    install -Dm644 ../gentoo_cof.png  "$pkgdir/usr/share/unity-greeter/cof.png"
+
+    # Install polkit rules from debian dir
+    if [ -f debian/unity-greeter.pkla ]; then
+        install -Dm644 debian/unity-greeter.pkla \
+            "$pkgdir/var/lib/polkit-1/localauthority/10-vendor.d/unity-greeter.pkla"
+    fi
+    if [ -f debian/01-unity-greeter.rules ]; then
+        install -Dm644 debian/01-unity-greeter.rules \
+            "$pkgdir/usr/share/polkit-1/rules.d/01-unity-greeter.rules"
+    fi
+
+    find "$pkgdir" -name '*.la' -delete
+}

@@ -210,7 +210,7 @@ g++: fatal error: no input files
 compilation terminated.
 configure:5577: $? = 1
 configure:5581: checking whether the compiler supports GNU C++
-configure:5601: g++ -c -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wp,-D_GLIBCXX_ASSERTIONS -g -ffile-prefix-map=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/nux/src=/usr/src/debug/nux -flto=auto  conftest.cpp >&5
+configure:5601: g++ -c -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -g -ffile-prefix-map=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/nux/src=/usr/src/debug/nux -flto=auto  conftest.cpp >&5
 configure:5601: $? = 0
 configure:5613: result: yes
 configure:5624: checking whether g++ accepts -g
@@ -468,18 +468,18 @@ configure:15243: checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld
 configure:15260: result: yes
 configure:15314: checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries
 configure:16410: result: yes
-configure:16446: g++ -c -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wp,-D_GLIBCXX_ASSERTIONS -g -ffile-prefix-map=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/nux/src=/usr/src/debug/nux -flto=auto  conftest.cpp >&5
+configure:16446: g++ -c -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -g -ffile-prefix-map=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/nux/src=/usr/src/debug/nux -flto=auto  conftest.cpp >&5
 configure:16449: $? = 0
 configure:16939: checking for g++ option to produce PIC
 configure:16948: result: -fPIC -DPIC
 configure:16956: checking if g++ PIC flag -fPIC -DPIC works
-configure:16975: g++ -c -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wp,-D_GLIBCXX_ASSERTIONS -g -ffile-prefix-map=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/nux/src=/usr/src/debug/nux -flto=auto  -fPIC -DPIC -DPIC conftest.cpp >&5
+configure:16975: g++ -c -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -g -ffile-prefix-map=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/nux/src=/usr/src/debug/nux -flto=auto  -fPIC -DPIC -DPIC conftest.cpp >&5
 configure:16979: $? = 0
 configure:16993: result: yes
 configure:17016: checking if g++ static flag -static works
 configure:17046: result: yes
 configure:17058: checking if g++ supports -c -o file.o
-configure:17080: g++ -c -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wp,-D_GLIBCXX_ASSERTIONS -g -ffile-prefix-map=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/nux/src=/usr/src/debug/nux -flto=auto  -o out/conftest2.o conftest.cpp >&5
+configure:17080: g++ -c -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -g -ffile-prefix-map=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/nux/src=/usr/src/debug/nux -flto=auto  -o out/conftest2.o conftest.cpp >&5
 configure:17084: $? = 0
 configure:17107: result: yes
 configure:17112: checking if g++ supports -c -o file.o
@@ -669,11 +669,14 @@ configure:20350: $PKG_CONFIG --exists --print-errors "libgeis >= 2.2.10"
 configure:20353: $? = 0
 configure:20391: result: yes
 configure:21516: checking for doxygen
-configure:21555: result: no
-configure:21575: WARNING: doxygen not found - will not generate any doxygen documentation
+configure:21539: found /usr/bin/doxygen
+configure:21552: result: /usr/bin/doxygen
 configure:21634: checking for perl
 configure:21657: found /usr/bin/perl
 configure:21670: result: /usr/bin/perl
+configure:21820: checking for dot
+configure:21843: found /usr/bin/dot
+configure:21856: result: /usr/bin/dot
 configure:23870: checking that generated files are newer than configure
 configure:23876: result: done
 configure:24051: creating ./config.status
@@ -708,20 +711,28 @@ config.status:1285: creating tests/Makefile
 config.status:1285: creating tools/Makefile
 config.status:1285: creating gputests/Makefile
 config.status:1285: creating config.h
+config.status:1466: config.h is unchanged
 config.status:1514: executing depfiles commands
 config.status:1589: cd NuxCore       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1596: $? = 0
 config.status:1589: cd NuxGraphics       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1596: $? = 0
 config.status:1589: cd Nux       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1596: $? = 0
 config.status:1589: cd examples       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1596: $? = 0
 config.status:1589: cd tests       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1596: $? = 0
 config.status:1589: cd tools       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1596: $? = 0
 config.status:1589: cd gputests       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1596: $? = 0
 config.status:1514: executing libtool commands
 
@@ -744,7 +755,7 @@ ac_cv_env_CPPFLAGS_value=
 ac_cv_env_CXXCPP_set=
 ac_cv_env_CXXCPP_value=
 ac_cv_env_CXXFLAGS_set=set
-ac_cv_env_CXXFLAGS_value='-march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wp,-D_GLIBCXX_ASSERTIONS -g -ffile-prefix-map=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/nux/src=/usr/src/debug/nux -flto=auto'
+ac_cv_env_CXXFLAGS_value='-march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -g -ffile-prefix-map=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/nux/src=/usr/src/debug/nux -flto=auto'
 ac_cv_env_CXX_set=
 ac_cv_env_CXX_value=
 ac_cv_env_DOXYGEN_PAPER_SIZE_set=
@@ -838,6 +849,8 @@ ac_cv_path_EGREP_TRADITIONAL='/usr/bin/grep -E'
 ac_cv_path_FGREP='/usr/bin/grep -F'
 ac_cv_path_GREP=/usr/bin/grep
 ac_cv_path_SED=/usr/bin/sed
+ac_cv_path_ac_pt_DX_DOT=/usr/bin/dot
+ac_cv_path_ac_pt_DX_DOXYGEN=/usr/bin/doxygen
 ac_cv_path_ac_pt_DX_PERL=/usr/bin/perl
 ac_cv_path_ac_pt_PKG_CONFIG=/usr/bin/pkg-config
 ac_cv_path_install='/usr/bin/install -c'
@@ -949,7 +962,7 @@ CTAGS='ctags'
 CXX='g++'
 CXXCPP='g++ -E'
 CXXDEPMODE='depmode=gcc3'
-CXXFLAGS='-march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wp,-D_GLIBCXX_ASSERTIONS -g -ffile-prefix-map=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/nux/src=/usr/src/debug/nux -flto=auto'
+CXXFLAGS='-march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -g -ffile-prefix-map=/run/media/robin/robinScard/codingStuff/arch-unity7/pkgbuilds/unity-base/nux/src=/usr/src/debug/nux -flto=auto'
 CYGPATH_W='echo'
 DEFS='-DHAVE_CONFIG_H'
 DEPDIR='.deps'
@@ -961,12 +974,12 @@ DX_COND_chi_FALSE=''
 DX_COND_chi_TRUE='#'
 DX_COND_chm_FALSE=''
 DX_COND_chm_TRUE='#'
-DX_COND_doc_FALSE=''
-DX_COND_doc_TRUE='#'
-DX_COND_dot_FALSE=''
-DX_COND_dot_TRUE='#'
-DX_COND_html_FALSE=''
-DX_COND_html_TRUE='#'
+DX_COND_doc_FALSE='#'
+DX_COND_doc_TRUE=''
+DX_COND_dot_FALSE='#'
+DX_COND_dot_TRUE=''
+DX_COND_html_FALSE='#'
+DX_COND_html_TRUE=''
 DX_COND_latex_FALSE=''
 DX_COND_latex_TRUE='#'
 DX_COND_man_FALSE=''
@@ -981,16 +994,16 @@ DX_COND_xml_FALSE=''
 DX_COND_xml_TRUE='#'
 DX_CONFIG='doxygen.cfg'
 DX_DOCDIR='doc'
-DX_DOT=''
-DX_DOXYGEN=''
+DX_DOT='/usr/bin/dot'
+DX_DOXYGEN='/usr/bin/doxygen'
 DX_DVIPS=''
 DX_EGREP=''
-DX_ENV=' SRCDIR='\''.'\'' PROJECT='\''nux'\'' DOCDIR='\''doc'\'' VERSION='\''4.0.8'\'' HAVE_DOT='\''NO'\'' GENERATE_MAN='\''NO'\'' GENERATE_RTF='\''NO'\'' GENERATE_XML='\''NO'\'' GENERATE_HTMLHELP='\''NO'\'' GENERATE_CHI='\''NO'\'' GENERATE_HTML='\''NO'\'' GENERATE_LATEX='\''NO'\'''
+DX_ENV=' SRCDIR='\''.'\'' PROJECT='\''nux'\'' DOCDIR='\''doc'\'' VERSION='\''4.0.8'\'' PERL_PATH='\''/usr/bin/perl'\'' HAVE_DOT='\''YES'\'' DOT_PATH='\''/usr/bin'\'' GENERATE_MAN='\''NO'\'' GENERATE_RTF='\''NO'\'' GENERATE_XML='\''NO'\'' GENERATE_HTMLHELP='\''NO'\'' GENERATE_CHI='\''NO'\'' GENERATE_HTML='\''YES'\'' GENERATE_LATEX='\''NO'\'''
 DX_FLAG_chi='0'
 DX_FLAG_chm='0'
-DX_FLAG_doc='0'
-DX_FLAG_dot='0'
-DX_FLAG_html='0'
+DX_FLAG_doc='1'
+DX_FLAG_dot='1'
+DX_FLAG_html='1'
 DX_FLAG_man='0'
 DX_FLAG_pdf='0'
 DX_FLAG_ps='0'

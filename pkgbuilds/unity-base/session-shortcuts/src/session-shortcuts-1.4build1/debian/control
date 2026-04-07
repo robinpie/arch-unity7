@@ -1,0 +1,18 @@
+Source: session-shortcuts
+Section: gnome
+Priority: optional
+Maintainer: Evan McIntire <mcintire.evan@gmail.com>
+Build-Depends: debhelper (>= 9),
+               intltool,
+               gettext,
+Standards-Version: 3.9.6
+
+Package: session-shortcuts
+Architecture: all
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         gnome-session-bin,
+         libunity-core-6.0-9,
+Description: Allows you to shutdown, logout, and reboot from dash
+ Adds several .desktop files that allow you to shutdown, logout,
+ and reboot from the Unity dash.

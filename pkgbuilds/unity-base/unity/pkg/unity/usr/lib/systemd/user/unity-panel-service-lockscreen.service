@@ -1,0 +1,8 @@
+[Unit]
+Description=Backing Service for the Unity Panel in Lockscreen mode
+PartOf=unity-screen-locked.target
+
+[Service]
+ExecStartPre=/usr/lib/unity/systemd-prestart-check
+ExecStart=/usr/lib/unity/unity-panel-service --lockscreen-mode
+Restart=on-failure

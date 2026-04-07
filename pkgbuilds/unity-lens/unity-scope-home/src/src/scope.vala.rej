@@ -1,0 +1,13 @@
+--- src/scope.vala
++++ src/scope.vala
+@@ -294,6 +294,10 @@ public class HomeScope : Unity.AggregatorScope
+ 
+   internal bool request_remote_scopes_retry ()
+   {
++    if (sss_client == null) {
++        debug ("SmartScopesClient is not initialized.");
++        return false;
++    }
+     request_remote_scopes.begin ();
+     return false; // don't run this timeout callback anymore
+   }

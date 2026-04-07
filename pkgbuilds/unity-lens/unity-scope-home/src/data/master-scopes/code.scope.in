@@ -1,0 +1,28 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/code
+Icon=
+CategoryIcon=/usr/share/icons/unity-icon-theme/places/svg/group-developer.svg
+_Name=Code
+Type=code
+IsMaster=true
+_Keywords=code;
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category documentation]
+_Name=Documentation
+Icon=
+DedupField=uri
+
+[Category code]
+_Name=Code
+Icon=
+DedupField=uri
+
+[Category people]
+_Name=People
+Icon=
+DedupField=uri
+

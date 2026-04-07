@@ -1,0 +1,8 @@
+[Unit]
+Description=Indicator Session Service
+PartOf=graphical-session.target
+After=indicators-pre.target
+
+[Service]
+ExecStart=/usr/libexec/indicator-session/indicator-session-service
+Restart=on-failure

@@ -1,0 +1,46 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/photos
+Icon=/usr/share/unity/icons/lens-nav-photo.svg
+CategoryIcon=/usr/share/icons/unity-icon-theme/places/svg/group-photos.svg
+Name=Photos
+SearchHint=Search photos
+Type=photos
+IsMaster=true
+Shortcut=c
+Keywords=photos;
+NoContentHint=There are no photos currently available on this computer.
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category recent]
+Name=Recent
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-recent.svg
+DedupField=uri
+SortField=comment
+
+[Category mine]
+Name=My photos
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-photos.svg
+DedupField=uri
+SortField=comment
+
+[Category friends]
+Name=Friends
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-friends.svg
+DedupField=uri
+SortField=comment
+
+[Category online]
+Name=Online photos
+Icon=/usr/share/icons/unity-icon-theme/places/svg/group-internet.svg
+DedupField=uri
+SortField=comment
+
+[Filter date]
+Name=Date
+Type=filter-radiooption
+OptionIDs=7;30;180;100000;
+OptionNames=Last 7 days;Last 30 days;Last 6 months;Older;
+

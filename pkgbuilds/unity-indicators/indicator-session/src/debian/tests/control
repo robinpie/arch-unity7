@@ -1,0 +1,5 @@
+Test-Command: obj-*/tests/test-service
+Depends: indicator-session,
+  policykit-1,
+  accountsservice
+Restrictions: build-needed

@@ -1,0 +1,18 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/recipes
+Icon=
+CategoryIcon=@prefix@/share/icons/unity-icon-theme/places/svg/group-recipes.svg
+_Name=Recipes
+Type=recipes
+IsMaster=true
+_Keywords=recipes;
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category recipes]
+_Name=Recipes
+Icon=
+DedupField=uri
+

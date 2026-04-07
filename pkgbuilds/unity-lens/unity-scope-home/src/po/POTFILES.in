@@ -1,0 +1,24 @@
+[encoding: UTF-8]
+src/scope.vala
+src/category-manager.vala
+[type: gettext/ini]data/home.scope.in.in
+[type: gettext/ini]data/master-scopes/applications.scope.in.in
+[type: gettext/ini]data/master-scopes/books.scope.in.in
+[type: gettext/ini]data/master-scopes/boxes.scope.in.in
+[type: gettext/ini]data/master-scopes/calendar.scope.in.in
+[type: gettext/ini]data/master-scopes/code.scope.in.in
+[type: gettext/ini]data/master-scopes/files.scope.in.in
+[type: gettext/ini]data/master-scopes/graphics.scope.in.in
+[type: gettext/ini]data/master-scopes/help.scope.in.in
+[type: gettext/ini]data/master-scopes/info.scope.in.in
+[type: gettext/ini]data/master-scopes/more_suggestions.scope.in.in
+[type: gettext/ini]data/master-scopes/music.scope.in.in
+[type: gettext/ini]data/master-scopes/news.scope.in.in
+[type: gettext/ini]data/master-scopes/notes.scope.in.in
+[type: gettext/ini]data/master-scopes/photos.scope.in.in
+[type: gettext/ini]data/master-scopes/recipes.scope.in.in
+[type: gettext/ini]data/master-scopes/reference.scope.in.in
+[type: gettext/ini]data/master-scopes/searchin.scope.in.in
+[type: gettext/ini]data/master-scopes/video.scope.in.in
+[type: gettext/ini]data/master-scopes/weather.scope.in.in
+[type: gettext/ini]data/master-scopes/web.scope.in.in

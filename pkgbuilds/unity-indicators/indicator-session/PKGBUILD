@@ -1,0 +1,77 @@
+# Maintainer: arch-unity7 port
+# Upstream: https://launchpad.net/indicator-session
+
+pkgname=indicator-session
+pkgver=17.3.20
+_uver=+21.10.20210613.1
+_urev=0ubuntu5
+pkgrel=1
+pkgdesc="Indicator showing session management, status and user switching used by the Unity7 user interface"
+arch=('x86_64')
+url="https://launchpad.net/indicator-session"
+license=('GPL-3.0-or-later')
+depends=(
+    'glib2'
+    'libindicator-gtk3'
+    'dconf'
+    'gsettings-desktop-schemas'
+    'systemd'
+)
+makedepends=(
+    'cmake'
+    'pkgconf'
+    'cmake-extras'
+    'dbus'
+    'unity-settings-daemon'
+    'intltool'
+)
+options=('!makeflags')
+source=(
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}.orig.tar.gz"
+    "https://launchpad.net/ubuntu/+archive/primary/+files/${pkgname}_${pkgver}${_uver}-${_urev}.diff.gz"
+)
+sha256sums=('SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir"
+
+    # Apply Ubuntu diff (flat extraction)
+    patch -p1 --batch --forward -i "${pkgname}_${pkgver}${_uver}-${_urev}.diff" || true
+
+    # Apply debian patch series
+    if [ -f debian/patches/series ] && [ ! -f .pc/applied-patches ]; then
+        while IFS= read -r p || [ -n "$p" ]; do
+            [[ "$p" =~ ^[[:space:]]*# ]] || [ -z "$p" ] && continue
+            [ -f "debian/patches/$p" ] && patch -p1 -i "debian/patches/$p" || true
+        done < debian/patches/series
+    fi
+
+    # Remove dependency on whoopsie (Ubuntu's error submission tracker)
+    sed -i 's:libwhoopsie):):g' CMakeLists.txt || true
+    sed -i '/whoopsie/d' src/service.c || true
+
+    # Fix icon cmake to not violate install-time operations
+    sed -i '/gtk-update-icon-cache/,+1 d' data/icons/CMakeLists.txt || true
+
+    # Disable po subdirectory (incomplete translations)
+    sed -i '/^add_subdirectory.*po/s/^/#/' CMakeLists.txt || true
+
+    # Fix CMake minimum version for CMake 4
+    find . -name "CMakeLists.txt" -exec sed -i \
+        's/cmake_minimum_required(VERSION 2\.[0-9]\+\.[0-9]\+/cmake_minimum_required(VERSION 3.10/' {} \; 2>/dev/null || true
+}
+
+build() {
+    cmake -B build -S "$srcdir" \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.10 \
+        -DENABLE_TESTS=OFF \
+        -Wno-dev
+    cmake --build build -j1
+}
+
+package() {
+    DESTDIR="$pkgdir" cmake --install build
+}

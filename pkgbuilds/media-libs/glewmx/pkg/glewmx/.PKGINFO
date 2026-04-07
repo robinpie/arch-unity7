@@ -6,9 +6,9 @@ xdata = pkgtype=pkg
 pkgver = 1.13.0-2
 pkgdesc = OpenGL Extension Wrangler Library with multi-context (MX) support
 url = https://glew.sourceforge.net/
-builddate = 1775424109
+builddate = 1775478425
 packager = Unknown Packager
-size = 1665678
+size = 1666310
 arch = x86_64
 license = BSD-3-Clause
 license = MIT

@@ -1,0 +1,14 @@
+[Scope]
+DBusName=com.canonical.Unity.Scope.Applications
+DBusPath=/com/canonical/unity/scope/runningapps
+Module=@libdir@/unity/unity-scope-runningapps.so
+ModuleType=C
+Icon=
+_Name=Running Applications
+_Description=This is an Ubuntu search plugin that enables information from running applications to be searched and displayed in the Dash underneath the Applications header. If you do not wish to search this content source, you can disable this search plugin.
+Type=applications
+_SearchHint=Search running applications
+Timeout=-1
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-lens-applications

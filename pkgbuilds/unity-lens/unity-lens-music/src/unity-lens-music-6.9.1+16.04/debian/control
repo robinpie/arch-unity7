@@ -1,0 +1,38 @@
+Source: unity-lens-music
+Section: gnome
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>= 9),
+               dh-autoreconf,
+               gnome-common,
+               pkg-config,
+               dh-translations,
+               valac,
+               libglib2.0-dev (>= 2.32),
+               libgee-0.8-dev,
+               libjson-glib-dev,
+               libnotify-dev,
+               libdee-dev (>= 1.2.5),
+               libsqlite3-dev (>= 3.7.7),
+               libunity-dev (>= 7.0.0),
+               libtdb-dev (>= 1.2.6),
+               libgstreamer1.0-dev,
+               libgstreamer-plugins-base1.0-dev
+Standards-Version: 3.9.3
+Homepage: https://launchpad.net/unity-lens-music
+# If you aren't a member of ~unity-team but need to upload packaging changes,
+# just go ahead.  ~unity-team will notice and sync up the code again.
+Vcs-Bzr: https://code.launchpad.net/~unity-team/unity-lens-music/trunk
+X-Ubuntu-Use-Langpack: yes
+
+Package: unity-lens-music
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+Breaks: unity (<< 6.0)
+Conflicts: unity-scope-musicstores
+Provides: unity-scope-musicstores
+Description: Music lens for unity
+ This package contains the "music" lens which can be used
+ into Unity to browse your media files.
+

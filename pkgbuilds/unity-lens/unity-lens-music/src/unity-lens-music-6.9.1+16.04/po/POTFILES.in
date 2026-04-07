@@ -1,0 +1,7 @@
+[encoding: UTF-8]
+src/daemon.vala
+src/main.vala
+src/rhythmbox-scope.vala
+src/simple-scope.vala
+[type: gettext/ini]rhythmbox.scope.in.in
+

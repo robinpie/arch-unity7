@@ -1,0 +1,23 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/calendar
+Icon=
+CategoryIcon=/usr/share/icons/unity-icon-theme/places/svg/group-calendar.svg
+_Name=Calendar
+Type=calendar
+IsMaster=true
+_Keywords=calendar;
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category upcoming]
+_Name=Upcoming
+Icon=
+DedupField=uri
+
+[Category recent]
+_Name=Recent
+Icon=
+DedupField=uri
+

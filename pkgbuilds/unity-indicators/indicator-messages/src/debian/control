@@ -1,0 +1,58 @@
+Source: indicator-messages
+Section: gnome
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: The Ayatana Packagers <pkg-ayatana-devel@lists.alioth.debian.org>
+Uploaders: Evgeni Golov <evgeni@debian.org>
+Build-Depends: debhelper (>= 9),
+               dh-autoreconf,
+               dh-translations,
+               gobject-introspection (>= 0.9.12-4~),
+               gnome-common,
+               gtk-doc-tools,
+               intltool,
+               libaccountsservice-dev,
+               libdbustest1-dev,
+               libgirepository1.0-dev (>= 0.9.12),
+               libgtest-dev,
+               python3-dbusmock,
+               valac,
+               systemd,
+Standards-Version: 3.9.3
+Homepage: https://launchpad.net/indicator-messages
+# If you aren't a member of ~indicator-applet-developers but need to upload
+# packaging changes, just go ahead.  ~indicator-applet-developers will notice
+# and sync up the code again.
+Vcs-Bzr: https://code.launchpad.net/~indicator-applet-developers/indicator-messages/trunk.13.04
+Vcs-Browser: https://bazaar.launchpad.net/~indicator-applet-developers/indicator-messages/trunk.13.04/files
+X-Ubuntu-Use-Langpack: yes
+
+Package: indicator-messages
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         indicator-common
+Recommends: indicator-applet | indicator-renderer
+Replaces: libindicator-messages-status-provider1,
+          libindicator-messages-status-provider-dev,
+          indicator-status-provider-mc5,
+          indicator-status-provider-pidgin,
+          indicator-status-provider-telepathy,
+          indicator-status-provider-emesene,
+Conflicts: libindicator-messages-status-provider1,
+           libindicator-messages-status-provider-dev,
+           indicator-status-provider-mc5,
+           indicator-status-provider-pidgin,
+           indicator-status-provider-telepathy,
+           indicator-status-provider-emesene,
+Breaks: gwibber-services (<< 3.5.4-0ubuntu1~),
+        telepathy-indicator (<< 0.3.0-0ubuntu1~),
+        thunderbird (<< 15.0+build1-0ubuntu1~),
+        xchat-indicator (<< 0.3.11-0ubuntu2~),
+        xchat-gnome-indicator (<< 0.3.11-0ubuntu2~),
+Description: indicator that collects messages that need a response
+ A place on the user's desktop that collects messages that need a response.
+ This menu provides a condensed and collected view of all of those messages
+ for quick access, but without making them annoying in times that you want
+ to ignore them.
+

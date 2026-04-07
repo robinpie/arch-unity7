@@ -1,0 +1,12 @@
+[Scope]
+DBusName=net.launchpad.scope.RemoteVideos
+DBusPath=/net/launchpad/scope/remotevideos
+_Name=Remote videos
+Type=video
+Icon=@prefix@/share/unity/icons/lens-nav-video.svg
+_Description=This is an Ubuntu search plugin that enables information from various video providers to be searched and displayed in the Dash underneath the Video header. If you do not wish to search these content sources, you can disable this search plugin.
+GlobalSearches=false
+RemoteContent=true
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-lens-video

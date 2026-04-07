@@ -1,0 +1,17 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/moresuggestions
+Icon=
+CategoryIcon=/usr/share/icons/unity-icon-theme/places/svg/group-treat-yourself.svg
+Name=More suggestions
+Type=moresug
+IsMaster=true
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category more_suggestions]
+Name=More suggestions
+Icon=
+SortField=uri
+

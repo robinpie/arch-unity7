@@ -1,0 +1,7 @@
+[encoding: UTF-8]
+src/daemon.vala
+src/main.vala
+src/scope.vala
+src/ubuntu-video-search.vala
+tests/unit/test-ubuntu-video-search.vala
+[type: gettext/ini]data/local.scope.in.in

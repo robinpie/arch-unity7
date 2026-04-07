@@ -1,0 +1,7 @@
+src/main.c
+src/scope.c
+src/keyword-search.c
+src/category-manager.c
+src/scope-registry.c
+tests/unit/category-manager.c
+tests/unit/scope.c

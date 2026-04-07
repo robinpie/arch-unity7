@@ -1,0 +1,50 @@
+Source: unity-greeter
+Section: x11
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Standards-Version: 4.6.2.0
+Build-Depends: appmenu-gtk3,
+               at-spi2-core,
+               dbus-x11,
+               debhelper-compat (= 13),
+               dh-autoreconf,
+               fonts-ubuntu,
+               gnome-common,
+               humanity-icon-theme,
+               unity-settings-daemon-dev (>= 15.04.1+19.10.20190921-0ubuntu3),
+               libcanberra-dev,
+               libgnome-desktop-3-dev,
+               libgtk-3-dev,
+               libindicator3-dev,
+               libido3-0.1-dev (>= 13.10.0),
+               liblightdm-gobject-1-dev (>= 1.4.0),
+               libpixman-1-dev,
+               valac (>= 0.20.0),
+               valgrind [amd64],
+               xvfb,
+Homepage: https://launchpad.net/unity-greeter
+# If you aren't a member of ~unity-greeter-team but need to upload packaging
+# changes, just go ahead.  ~unity-greeter-team will notice and sync up the code
+# again.
+Vcs-Bzr: https://code.launchpad.net/~unity-greeter-team/unity-greeter/trunk
+X-Ubuntu-Use-Langpack: yes
+
+Package: unity-greeter
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         systemd,
+         unity-settings-daemon (>= 15.04.1+19.10.20190921-0ubuntu3),
+         unity-settings-daemon-schemas (>= 15.04.1+19.10.20190921-0ubuntu3),
+Recommends: indicator-application,
+            indicator-datetime,
+            indicator-keyboard,
+            indicator-power,
+            indicator-session,
+            indicator-sound,
+            network-manager-gnome,
+Suggests: lightdm (>= 1.20.0-0ubuntu2~),
+Provides: lightdm-greeter
+Breaks: edubuntu-artwork (<< 12.01.1~)
+Description: Unity Greeter
+ The greeter for the Unity desktop.

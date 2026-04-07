@@ -1,0 +1,8 @@
+
+#Install
+sudo mkdir /usr/share/unity/lenses/video
+sudo cp video.lens /usr/share/unity/lenses/video
+
+#Run
+./src/unity-lens-video
+

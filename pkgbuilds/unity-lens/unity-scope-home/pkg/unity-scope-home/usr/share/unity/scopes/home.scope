@@ -1,0 +1,13 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/home
+Icon=/usr/share/unity/icons/lens-nav-home.svg
+RequiredMetadata=
+OptionalMetadata=
+Type=home
+Name=Home
+Description=Unity Home Scope
+SearchHint=Search your computer and online sources
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home

@@ -1,0 +1,23 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/notes
+Icon=
+CategoryIcon=/usr/share/icons/unity-icon-theme/places/svg/group-info.svg
+_Name=Notes
+Type=notes
+IsMaster=true
+_Keywords=notes;
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category recent]
+_Name=Recent
+Icon=
+DedupField=uri
+                         
+[Category most-used]
+_Name=Most used
+Icon=
+DedupField=uri
+

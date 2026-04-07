@@ -1,0 +1,23 @@
+[Scope]
+GroupName=com.canonical.Unity.Scope.Home
+UniqueName=/com/canonical/unity/masterscope/graphics
+Icon=
+CategoryIcon=/usr/share/icons/unity-icon-theme/places/svg/group-graphics.svg
+Name=Graphics
+Type=graphics
+IsMaster=true
+Keywords=graphics;
+
+[Desktop Entry]
+X-Ubuntu-Gettext-Domain=unity-scope-home
+
+[Category top]
+Name=Top
+Icon=
+DedupField=uri
+
+[Category recent]
+Name=Recent
+Icon=
+DedupField=uri
+

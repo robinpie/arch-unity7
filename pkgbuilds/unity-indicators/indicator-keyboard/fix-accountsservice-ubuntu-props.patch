@@ -1,0 +1,61 @@
+--- a/lib/main.vala
++++ b/lib/main.vala
+@@ -325,29 +325,11 @@ public class Indicator.Keyboard.Service : Object {
+ 			if (manager.is_loaded) {
+ 				Act.User? user = manager.get_user ((!) greeter_user);
+
+ 				if (user != null && ((!) user).is_loaded) {
+-					foreach (var outer in ((!) user).input_sources) {
+-						foreach (var inner in (!) outer) {
+-							unowned string key;
+-							unowned string value;
+-
+-							((!) inner).get ("{&s&s}", out key, out value);
+-
+-							if (key == "xkb") {
+-								source = value;
+-								break;
+-							}
+-						}
+-
+-						if (source != null) {
+-							break;
+-						}
+-					}
+-
+-					if (source == null) {
+-						var layouts = ((!) user).xkeyboard_layouts;
+-
++					if (source == null) {
++						var layouts = new string[0];
+ 						if (layouts.length <= 0) {
+ 							var user_list = LightDM.UserList.get_instance ();
+ 							LightDM.User? light_user = user_list.get_user_by_name ((!) greeter_user);
+
+@@ -537,23 +519,7 @@ public class Indicator.Keyboard.Service : Object {
+ 			if (user.is_loaded) {
+ 				var done = false;
+
+-				foreach (var outer in user.input_sources) {
+-					foreach (var inner in (!) outer) {
+-						unowned string key;
+-						unowned string source;
+-
+-						((!) inner).get ("{&s&s}", out key, out source);
+-
+-						if (key == "xkb") {
+-							done = true;
+-
+-							if (!added.contains (source)) {
+-								list.add (source);
+-								added.add (source);
+-							}
+-						}
+-					}
+-				}
+-
+ 				if (!done) {
+-					var layouts = user.xkeyboard_layouts;
++					var layouts = new string[0];
+ 					foreach (var layout in layouts) {
+ 						done = true;
