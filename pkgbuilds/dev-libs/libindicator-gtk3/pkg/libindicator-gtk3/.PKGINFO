@@ -6,7 +6,7 @@ xdata = pkgtype=pkg
 pkgver = 16.10.0-1
 pkgdesc = Symbols and convenience functions for Unity7 indicators (GTK3)
 url = https://launchpad.net/libindicator
-builddate = 1775480903
+builddate = 1775654925
 packager = Unknown Packager
 size = 120190
 arch = x86_64

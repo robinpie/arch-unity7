@@ -10,6 +10,23 @@ Porting [`gentoo-unity7`](https://github.com/c4pp4/gentoo-unity7) — a complete
 **Upstream Unity7**: Ubuntu's Unity7 is maintained at `https://launchpad.net/ubuntu/+source/unity`
 **Host**: Everyday-use Arch Linux (x86_64), snapshots available for recovery.
 
+## Status — 2026-04-08
+
+**Unity7 is running on Arch Linux.** First confirmed working session:
+- Launcher renders with app icons and trash
+- Panel renders with working indicators: battery (with time remaining), sound, clock
+- Indicator dropdowns open and are functional
+- compiz compositing active (Unity renders via unityshell plugin)
+- bamfdaemon, unity-settings-daemon, unity-panel-service, all 7 indicator services running
+
+Known remaining issues:
+- No wallpaper / black desktop background
+- Window decorations missing theme (cairo fallbacks for close/min/max buttons)
+- Dash not yet tested
+- HiDPI: display renders at native 2880×1920 with no scaling
+- `org.gnome.Shell` D-Bus name not registering (affects gnome-screenshot; workaround: scrot)
+- Session indicator (logout/shutdown) not yet verified
+
 ---
 
 ## Overlay Structure Summary
@@ -77,7 +94,19 @@ The Gentoo ehooks system patches tree packages. For Arch, initial approach:
 - **lightdm**: Install greeter config file manually
 - **Other ehooks** (Firefox/Thunderbird menus, etc.): Optional; document as not yet ported
 
-### 6. Vala version
+### 6. Arch package conflicts
+
+Some Unity packages conflict with packages in the Arch official repos that must be removed before installing:
+
+| Our package | Conflicts with | Resolution |
+|---|---|---|
+| `libindicator-gtk3` | `libindicator` (12.10.1 from extra/) | `pacman -Rdd libindicator` before installing |
+
+**Why the conflict matters beyond just installation**: The stock `libindicator` 12.10.1 was installed alongside our `libindicator-gtk3` 16.10.0 build (the conflict wasn't enforced during an earlier install). The older version was shadowing the newer one, and `indicator_ng_new_for_profile` (added in 16.x) was missing from the installed library, causing `unity-panel-service` to crash on startup with `symbol lookup error`.
+
+Track new conflicts here as they're discovered.
+
+### 7. Vala version
 Overlay requires Vala 0.56 API. Arch has `vala 0.56.19-1` — exact match. ✓
 
 ### 7. libdbusmenu
@@ -351,6 +380,24 @@ After applying the debian patch series, `Makefile.am` gets `SUBDIRS = src/unit d
 
 ### indicator-appmenu SRC_URI is a combined .tar.gz (not orig+diff)
 The source extracts to `${pkgname}.git/` (including `.git` in the dirname). Set the build directory accordingly: `cd "${pkgname}.git"` in build/package(). The configure check for `dbusmenu-jsonloader` (test tools) fails but that's fine — tools are disabled by default.
+
+---
+
+## Suggested Apps (not part of the Unity build, but useful for a functional desktop)
+
+These are standard GNOME apps that integrate well with Unity. Install with `pacman -S`:
+
+- `gnome-screenshot` — screenshot tool (bound to Print key via compiz commands plugin)
+- `gnome-terminal` — terminal emulator
+- `gnome-calculator` — calculator
+- `gnome-system-monitor` — task manager
+- `gnome-text-editor` — text editor
+- `eog` — image viewer (Eye of GNOME)
+- `evince` — document/PDF viewer
+- `file-roller` — archive manager
+- `gnome-disk-utility` — disk management
+- `baobab` — disk usage analyzer
+- `nautilus` — file manager (usually already installed)
 
 ---
 

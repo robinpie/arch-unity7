@@ -6,7 +6,7 @@ xdata = pkgtype=debug
 pkgver = 16.10.0-1
 pkgdesc = Detached debugging symbols for libindicator-gtk3
 url = https://launchpad.net/libindicator
-builddate = 1775480903
+builddate = 1775654925
 packager = Unknown Packager
 size = 496016
 arch = x86_64

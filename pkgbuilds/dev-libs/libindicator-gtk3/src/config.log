@@ -409,12 +409,16 @@ config.status:1127: creating libindicator/indicator3-0.4.pc.in
 config.status:1127: creating tests/Makefile
 config.status:1127: creating tools/Makefile
 config.status:1127: creating config.h
+config.status:1308: config.h is unchanged
 config.status:1356: executing depfiles commands
 config.status:1431: cd libindicator       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1438: $? = 0
 config.status:1431: cd tests       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1438: $? = 0
 config.status:1431: cd tools       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
 config.status:1438: $? = 0
 config.status:1356: executing libtool commands
 configure:17441:
