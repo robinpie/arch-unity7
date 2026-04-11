@@ -6,7 +6,7 @@ Forked from [gentoo-unity7] by c4pp4, which itself descends from [unity-gentoo] 
 
 ## Status
 
-Work in progress. The core stack builds and Unity starts. Expect rough edges.
+Work in progress. The core stack builds and Unity starts. Many things are broken.
 
 ## What's included
 
